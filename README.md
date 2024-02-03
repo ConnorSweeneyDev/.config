@@ -1,7 +1,7 @@
 # WorkflowForWindows11
 
 All my Neovim config files (using packer), along with fzf for PowerShell commands and shortcuts.
-I will list dependencies when I have to set everything up from scratch again, but pretty much everything is installed using winget, pip, packer or coc.
+I will list dependencies when I have to set everything up from scratch again, but pretty much everything is installed using winget, choco, pip, packer or coc.
 
 Full paths are as follows:
 - nvim -> C:\Users\conno\AppData\Local\nvim
