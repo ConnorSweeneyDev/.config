@@ -1,0 +1,233 @@
+--- MAIN FILE MENUS ---
+(Normal) <space>pv       -->  Go to main netrw menu
+(Normal) <space>pf       -->  Open packer menu for navigating files in the directory
+(Normal) <space>ps       -->  Enter word to search for in packer menu for navigating files in the directory
+(Normal) <space>u        -->  Open undo history menu
+--- MAIN FILE MENUS ---
+
+
+
+--- HARPOON ---
+(Normal) <space>a        -->  Add current file to harpoon
+(Normal) <control>e      -->  Open harpoon menu
+(Normal) <control>g      -->  Go to next file
+(Normal) <control>t      -->  Go to previous file
+--- HARPOON ---
+
+
+
+--- GIT ---
+(Normal) <space>gs       -->  Open fugitive menu for git stuff
+(Normal) cc              -->  Open commit file
+(Normal) s               -->  When cursor is on an unstaged change, stages it; when cursor is on an unpushed commit, pushes it
+(Normal) u               -->  When cursor is on a staged change, unstages it
+--- GIT ---
+
+
+
+--- LSP ---
+(Normal) gd              -->  Go to the definition of the word being hovered
+(Normal) gr              -->  Go to the references of the word being hovered
+(Normal) gi              -->  Go to the implementation of the word being hovered
+(Normal) gy              -->  Go to the type definition of the word being hovered
+(Normal) [c              -->  Go to the context at the top of the screen if it is currently shown
+
+(Normal) K               -->  Display information on the word being hovered
+
+(Normal) <space>td       -->  Display all system diagnostics
+(Normal) ]d              -->  Go to the next Info/Warning/Error
+(Normal) [d              -->  Go to the previous Info/Warning/Error
+
+(Normal) <space>rn       -->  Rename the word being hovered
+(Normal) <space>ca       -->  Perform code action on the content under the cursor
+
+(Insert) <down>	         -->  Next completion
+(Insert) <up>            -->  Previous completion
+(Insert) <control>y      -->  Accept completion
+(Insert) <control>e      -->  Dismiss completions
+--- LSP ---
+
+
+
+--- COPILOT ---
+(Insert) <tab>           -->  Accept whole suggestion
+(Insert) <alt>`      	 -->  Accept word in suggestion
+(Insert) <alt>~	         -->  Dismiss suggestion
+(Insert) <alt>\          -->  Force Suggestion
+(Insert) <alt>[          -->  Previous suggestion
+(Insert) <alt>]          -->  Next suggestion
+--- COPILOT ---
+
+
+
+--- WINDOWS ---
+(Normal) <control>w      -->  Enter window mode
+(Normal) <control>wh     -->  Move left one window
+(Normal) <control>wj     -->  Move down one window
+(Normal) <control>wk     -->  Move up one window
+(Normal) <control>wl     -->  Move right one window
+(Normal) <control>ws     -->  Split window horizontally
+(Normal) <control>wv     -->  Split window vertically
+
+(Normal) <control>f      -->  Create a new powershell tab and run "nw"
+--- WINDOWS ---
+
+
+
+--- CURSOR MOVEMENT ---
+(Normal) i               -->  Enters insert mode
+(Normal) I               -->  Moves the cursor to the start of the line and enters insert mode
+(Normal) a               -->  Moves the cursor right once and enters insert mode
+(Normal) A               -->  Moves the cursor to the end of the line and enters insert mode
+(Normal) <number>h       -->  Jumps the specified number of lines left
+(Normal) <number>l       -->  Jumps the specified number of lines right
+(Normal) w               -->  Jumps to the end of the currently hovered word
+(Normal) W               -->  Jumps to the end of the currently hovered text until whitespace
+(Normal) b               -->  Jumps to the start of the currently hovered word
+(Normal) B               -->  Jumps to the start of the currently hovered text until whitespace
+(Normal) _               -->  Jumps to the start of the line
+(Normal) $               -->  Jumps to the end of the line
+(Normal) f<char>         -->  Jumps to the first char in the line after the cursor that matches the input
+(Normal) t<char>         -->  Jumps to one character before the first char in the line after the cursor that matches the input
+(Normal) F<char>         -->  Jumps to the first char in the line before the cursor that matches the input
+(Normal) T<char>         -->  Jumps to one character before the first char in the line before the cursor that matches the input
+(Normal) ;               -->  Jumps to the next char in the line that matches the input
+(Normal) ,               -->  Jumps to the previous char in the line that matches the input
+
+(Normal) <number>j       -->  Jumps the specified number of lines down
+(Normal) <number>k       -->  Jumps the specified number of lines up
+(Normal) <control>d      -->  Jumps half a page down, keeping the cursor in the middle
+(Normal) <control>u      -->  Jumps half a page up, keeping the cursor in the middle
+(Normal) {               -->  Jumps to the previous paragraph
+(Normal) }               -->  Jumps to the next paragraph
+(Normal) %               -->  Jumps to the complementary bracket to the currently hovered one
+(Normal) /<searchterm>   -->  Jumps to the first instance of the search term below the cursor
+(Normal) ?<searchterm>   -->  Jumps to the first instance of the search term above the cursor
+(Normal) n               -->  Jumps to the next search term, keeping the cursor in the middle
+(Normal) N               -->  Jumps to the previous search term, keeping the cursor in the middle
+(Normal) ``              -->  Jumps to the previous cursor location
+(Visual) o               -->  Jumps to the top/bottom of the currently highlighted text
+
+(Normal) v               -->  Enters visual mode
+(Visual) v               -->  Exits visual mode
+(Normal) V               -->  Highlights the current line
+(Normal) vw              -->  Highlights from the cursor to the start of the next hovered word
+(Normal) vb              -->  Highlights from the cursor to the start of the current hovered word
+(Normal) vap             -->  Highlights the current hovered paragraph
+(Normal) vip             -->  Highlights the current hovered paragrpah and whitespace
+(Normal) vaw             -->  Highlights the current hovered word and whitespace
+(Normal) vaW             -->  Highlights the current hovered text until whitespace and whitespace
+(Normal) viw             -->  Highlights the current hovered word
+(Normal) viW             -->  Highlights the current hovered text until whitespace
+(Normal) vf<char>        -->  Highlights from the cursor to the specified char
+(Normal) vt<char>        -->  Highlights from the cursor to one char before the specified char
+(Normal) va<bracket>     -->  If the bracket is {, highlights the current scope including the { and } - if the bracket is ( or [, highlights the next () or [] and all content inside it
+(Normal) vi<bracket>     -->  If the bracket is {, highlights the current scope excluding the { and } - if the bracket is ( or [, highlights the content inside the next () or [] but not the brackets
+
+(Normal) s<char><char>   -->  Leap forward
+(Normal) S<char><char>   -->  Leap forward
+--- CURSOR MOVEMENT ---
+
+
+
+--- TEXT MOVEMENT ---
+(Normal) J               -->  Appends the line below the current to the end of the current line, keeping the cursor where it is
+(Visual) J               -->  Moves highlighted text down one line
+(Visual) K               -->  Moves highlighted text up one line
+
+(Normal) =ap             -->  Correctly indents the hovered paragraph
+(Visual) =               -->  Correctly indents the highlighted paragraph
+--- TEXT MOVEMENT ---
+
+
+
+--- TEXT MANIPULATION --- <<< EVERY BIND IN THIS SECTION WITHOUT A <prefix> EXISTS WITH <space> TOO WHICH WILL CHANGE THE CLIPBOARD BEHAVIOUR >>>
+(Normal) Y               -->  Copies text from the cursor to the end of the line to the vim clipboard rather than the system clipboard
+(Visual) y               -->  Copies highlighted text to the vim clipboard rather than the system clipboard
+(Normal) yy              -->  Copies current line text to the vim clipboard rather than the system clipboard
+(Normal) yw              -->  Copies from the cursor to the end of the current hovered word to the vim clipboard rather than the system clipboard
+(Normal) yW              -->  Copies from the cursor to the end of the current hovered text until whitespace to the vim clipboard rather than the system clipboard
+(Normal) yb              -->  Copies from the cursor to the start of the current hovered word to the vim clipboard rather than the system clipboard
+(Normal) yB              -->  Copies from the cursor to the start of the current hovered text until whitespace to the vim clipboard rather than the system clipboard
+(Normal) yap             -->  Copies the current hovered paragraph and whitespace to the vim clipboard rather than the system clipboard
+(Normal) yip             -->  Copies the current hovered paragraph to the vim clipboard rather than the system clipboard
+(Normal) yaw             -->  Copies the current hovered word and whitespace to the vim clipboard rather than the system clipboard
+(Normal) yaW             -->  Copies the current hovered text until whitespace and whitespace to the vim clipboard rather than the system clipboard
+(Normal) yiw             -->  Copies the current hovered word to the vim clipboard rather than the system clipboard
+(Normal) yiW             -->  Copies the current hovered text until whitespace to the vim clipboard rather than the system clipboard
+(Normal) yf<char>        -->  Copies from the cursor to the specified char to the vim clipboard rather than the system clipboard
+(Normal) yt<char>        -->  Copies from the cursor to one char before the specified char to the vim clipboard rather than the system clipboard
+(Normal) ya<bracket>     -->  If the bracket is {, copies the current scope including the { and } - if the bracket is ( or [, copies the next () or [] and all content inside it  to the vim clipboard rather than the system clipboard
+(Normal) yi<bracket>     -->  If the bracket is {, copies the current scope excluding the { and } - if the bracket is ( or [, copies the content inside the next () or [] but not the brackets to the vim clipboard rather than the system clipboard
+
+(Normal) D               -->  Deletes from the right of the cursor to the end of the current line, putting it in the clipboard
+(Visual) d               -->  Deletes highlighted text, putting it in the clipboard
+(Normal) dd              -->  Deletes the current line, putting it in the clipboard
+(Normal) dw              -->  Deletes from the cursor to the end of the current hovered word, putting it in the clipboard
+(Normal) dW              -->  Deletes from the cursor to the end of the current hovered text until whitespace, putting it in the clipboard
+(Normal) db              -->  Deletes from the cursor to the start of the current hovered word, putting it in the clipboard
+(Normal) dB              -->  Deletes from the cursor to the start of the current hovered text until whitespace, putting it in the clipboard
+(Normal) dap             -->  Deletes the current hovered paragraph and whitespace, putting it in the clipboard
+(Normal) dip             -->  Deletes the current hovered paragraph, putting it in the clipboard
+(Normal) daw             -->  Deletes the current hovered word and whitespace, putting it in the clipboard
+(Normal) daW             -->  Deletes the current hovered text until whitespace and whitespace, putting it in the clipboard
+(Normal) diw             -->  Deletes the current hovered word, putting it in the clipboard
+(Normal) diW             -->  Deletes the current hovered text until whitespace, putting it in the clipboard
+(Normal) df<char>        -->  Deletes from the cursor to the specified char, putting it in the clipboard
+(Normal) dt<char>        -->  Deletes from the cursor to one char before the specified char, putting it in the clipboard
+(Normal) da<bracket>     -->  If the bracket is {, deletes the current scope including the { and } - if the bracket is ( or [, deletes the next () or [] and all content inside it, putting it in the clipboard
+(Normal) di<bracket>     -->  If the bracket is {, deletes the current scope excluding the { and } - if the bracket is ( or [, deletes the content inside the next () or [] but not the brackets, putting it in the clipboard
+
+(Normal) C               -->  Deletes from the left of the cursor to the end of the current line, putting it in the clipboard and entering insert mode
+(Visual) c               -->  Deletes highlighted text, putting it in the clipboard and entering insert mode
+(Normal) cc              -->  Deletes the current line, putting it in the clipboard and entering insert mode
+(Normal) cw              -->  Deletes from the cursor to the end of the current hovered word, putting it in the clipboard and entering insert mode
+(Normal) cW              -->  Deletes from the cursor to the end of the current hovered text until whitespace, putting it in the clipboard and entering insert mode
+(Normal) cb              -->  Deletes from the cursor to the start of the current hovered word, putting it in the clipboard and entering insert mode
+(Normal) cB              -->  Deletes from the cursor to the start of the current hovered text until whitespace, putting it in the clipboard and entering insert mode
+(Normal) cap             -->  Deletes the current hovered paragraph and whitespace, putting it in the clipboard and entering insert mode
+(Normal) cip             -->  Deletes the current hovered paragraph, putting it in the clipboard and entering insert mode
+(Normal) caw             -->  Deletes the current hovered word and whitespace, putting it in the clipboard and entering insert mode
+(Normal) caW             -->  Deletes the current hovered text until whitespace and whitespace, putting it in the clipboard and entering insert mode
+(Normal) ciw             -->  Deletes the current hovered word, putting it in the clipboard and entering insert mode
+(Normal) ciW             -->  Deletes the current hovered text until whitespace, putting it in the clipboard and entering insert mode
+(Normal) cf<char>        -->  Deletes from the cursor to the specified char, putting it in the clipboard and entering insert mode
+(Normal) ct<char>        -->  Deletes from the cursor to one char before the specified char, putting it in the clipboard and entering insert mode
+(Normal) ca<bracket>     -->  If the bracket is {, deletes the current scope including the { and } - if the bracket is ( or [, deletes the next () or [] and all content inside it, putting it in the clipboard and entering insert mode
+(Normal) ci<bracket>     -->  If the bracket is {, deletes the current scope excluding the { and } - if the bracket is ( or [, deletes the content inside the next () or [] but not the brackets, putting it in the clipboard and entering insert mode
+
+(Normal) <space>s        -->  Replaces all instances of the current hovered word in the file
+(Visual) <space>p        -->  Replaces the currently highlighted text with the clipboard contents, but keeps the contents afterwards
+(Normal) <control>a      -->  Increments the next integer by 1
+(Normal) <control>x      -->  Decrements the next integer by 1
+--- TEXT MANIPULATION ---
+
+
+
+--- TEXT CREATION ---
+(Insert) <control>h      -->  Appends (); to the end of the line, leaving the cursor in the brackets
+(Insert) <control>j      -->  Appends () to the end of the line, leaving the cursor in the brackets
+(Insert) <control>k      -->  Appends {\n\n} to the end of the line, leaving the cursor in the brackets with a tab
+(Insert) <control>l      -->  Appends {\n\n}; to the end of the line, leaving the cursor in the brackets with a tab
+
+(Normal) o               -->  Inserts a new line below the current hovered line
+(Normal) O               -->  Inserts a new line above the current hovered line
+--- TEXT CREATION ---
+
+
+
+--- MACROS ---
+(Normal) q<register>     -->  Starts recording a macro to the specified register
+(Normal) q               -->  Stops recording the macro
+(Normal) @<register>     -->  Plays the macro in the specified register
+--- MACROS ---
+
+
+
+--- BUILD COMMANDS ---
+(Normal) <space><space>  -->  Runs :so in the current file
+(Normal) <space>b        -->  Runs build.bat in the current directory
+(Normal) <space>v        -->  Runs debug.bat in the current directory
+(Normal) <space>r        -->  Runs run.bat in the current directory
+(Normal) <space>x        -->  While inside of a file, makes it executable
+--- BUILD COMMANDS ---
