@@ -10,4 +10,4 @@ Full paths are as follows:
 
 These aren't in the repository but are valuable to have:
 - MinGW -> C:\MinGW (https://www.mingw-w64.org/downloads/)
-- DependenciesGUI -> C:\Dependency Walker (https://github.com/lucasg/Dependencies)
+- Dependencies -> C:\Dependency Walker (https://github.com/lucasg/Dependencies)
