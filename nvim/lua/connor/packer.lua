@@ -27,9 +27,7 @@ return require('packer').startup(function(use)
         } 
     }
     use('mbbill/undotree')
-    use('tpope/vim-fugitive') 
-    use('junegunn/fzf')
-    use('junegunn/fzf.vim')
+    use('tpope/vim-fugitive')
 
     use('nvim-treesitter/nvim-treesitter',
     {
