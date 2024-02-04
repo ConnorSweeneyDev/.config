@@ -1,6 +1,6 @@
 # Windows11 Workflow
 
-All my Neovim config files (using packer), along with fzf for PowerShell commands and shortcuts.
+All my NeoVim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation.
 
 ### Dependencies (Ensure these are in the path):
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`
