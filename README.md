@@ -1,4 +1,4 @@
-# Windows11 Workflow
+# Windows11Workflow
 
 All my NeoVim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation.
 
