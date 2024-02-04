@@ -7,8 +7,8 @@ All my NeoVim config files, using PowerShell in the Windows Terminal along with 
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in C:\Documents\Fonts, select all and click install
 ### Terminal Settings:
-- Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal. Everything else default.
-- Appearance &rightarrow; "Use acrylic material in the tab row" = On. "Use active terminal title as application title" = Off. Everything else default.
+- Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal.
+- Appearance &rightarrow; "Use acrylic material in the tab row" = On. "Use active terminal title as application title" = Off.
 - Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle fullscreen" to `alt+enter`.
 - Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove. "Font size" = 16. "Background opacity" = 75%.
 ### PowerShell Settings:
