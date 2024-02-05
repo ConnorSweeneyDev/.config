@@ -46,5 +46,10 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme onedark')
         end
     }
+    use
+    {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
     use("nvim-tree/nvim-web-devicons")
 end)
