@@ -34,10 +34,7 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     })
     use('nvim-treesitter/nvim-treesitter-context')
-    use
-    {
-        'neoclide/coc.nvim', branch = 'release'
-    }
+    use{'neoclide/coc.nvim', branch = 'release'}
     use('github/copilot.vim')
 
     use('tribela/vim-transparent') 
