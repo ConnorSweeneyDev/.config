@@ -10,10 +10,10 @@ All my NeoVim config files, using PowerShell in the Windows Terminal along with 
 - Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal.
 - Appearance &rightarrow; "Use acrylic material in the tab row" = On. "Use active terminal title as application title" = Off.
 - Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle fullscreen" to `alt+enter`.
-- Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove. "Font size" = 16. "Background opacity" = 75%.
+- Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%.
 ### PowerShell Settings:
 - Starting directory &rightarrow; C:\
-- Appearance &rightarrow; "Font face" = CaskaydiaCove. "Font size" = 16. "Background opacity" = 75%.
+- Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%.
 
 ## Dependencies (Ensure these are in the path):
 - MinGW &rightarrow; Download from [here](https://www.mingw-w64.org/downloads/) and put the contents in C:\MinGW
