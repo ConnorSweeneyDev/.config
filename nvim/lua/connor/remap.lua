@@ -21,6 +21,7 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set({"n", "v"}, "<leader>c", [["_c]])
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("v", "<leader>s", "\"hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>")
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
