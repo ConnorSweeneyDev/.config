@@ -197,6 +197,7 @@
 (Normal) ci<bracket>     -->  If the bracket is {, deletes the current scope excluding the { and } - if the bracket is ( or [, deletes the content inside the next () or [] but not the brackets, putting it in the clipboard and entering insert mode
 
 (Normal) <space>s        -->  Replaces all instances of the current hovered word in the file
+(Visual) <space>s        -->  Replaces all instances of the current selected text in the file
 (Visual) <space>p        -->  Replaces the currently highlighted text with the clipboard contents, but keeps the contents afterwards
 (Normal) <control>a      -->  Increments the next integer by 1
 (Normal) <control>x      -->  Decrements the next integer by 1
