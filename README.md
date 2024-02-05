@@ -2,6 +2,12 @@
 
 All my NeoVim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation.
 
+https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b5ce-4874-9753-19d537bba6c3
+
+*Showcase: **cw** (cd), **ew** (explorer.exe), **nw** (nvim .), **ctrl+f** in neovim (new tab + nw), **q** (exit).*
+
+**Disclaimer: This was recursively searching my whole C drive, which is why it is slightly slow, this is customisable.**
+
 ## Terminal (Required):
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`
