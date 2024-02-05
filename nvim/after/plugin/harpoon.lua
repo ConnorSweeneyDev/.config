@@ -12,8 +12,8 @@ vim.keymap.set("n", "<C-e>",
     function() harpoon.ui:toggle_quick_menu(
         harpoon:list(),
         {
-            title = " Harpoon ",
-            title_pos = "center",
+            title = "Harpoon",
+            title_pos = "left",
             border = "rounded",
         }
     ) end
