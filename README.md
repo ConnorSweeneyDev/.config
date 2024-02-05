@@ -1,7 +1,7 @@
 # Windows11Workflow
 
 All my NeoVim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation.
-This setup enables you to have many buffers open in NeoVim that you can easily switch between using Harpoon and Telescope, while also quickly opening entirely different directories in new tabs which you can easily switch between and close.
+This setup enables you to have many buffers open in NeoVim that you can easily switch between using Harpoon and Telescope, while also quickly opening entirely different directories in new tabs using fzf which you can easily switch between and close.
 
 https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b5ce-4874-9753-19d537bba6c3
 
