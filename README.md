@@ -1,11 +1,11 @@
 # Windows11Workflow
 
-All my NeoVim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation.\
-This setup enables you to have many buffers open in NeoVim that you can easily switch between using Harpoon and Telescope, while also quickly opening entirely different directories in new tabs using fzf which you can easily switch between and close.
+All my Neovim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation.\
+This setup enables you to have many buffers open in Neovim that you can easily switch between using Harpoon and Telescope, while also quickly opening entirely different directories in new tabs using fzf which you can easily switch between and close.
 
 https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b5ce-4874-9753-19d537bba6c3
 
-*Showcase: **cw** (cd), **ew** (explorer.exe), **nw** (nvim .), **ctrl+f** in neovim (new tab + nw), **q** (exit).*\
+*Showcase: **cw** (cd), **ew** (explorer.exe), **nw** (nvim .), **ctrl+f** in Neovim (new tab + nw), **q** (exit).*\
 **Disclaimer: This was recursively searching my whole C drive, which is why it is slightly slow, this is customisable.**
 
 ## Terminal (Required):
@@ -31,7 +31,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` OR download the exe from their [GitHub](https://github.com/junegunn/fzf-bin/releases) and put it in C:\Windows
 - bat &rightarrow; Run `winget install sharkdp.bat`
-- NeoVim &rightarrow; Run `winget install neovim`
+- Neovim &rightarrow; Run `winget install neovim`
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 
 ## Full paths to folders in the repo are as follows:
