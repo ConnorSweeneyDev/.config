@@ -14,6 +14,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in C:\Documents\Fonts, select all and click install
 ### Terminal Settings:
 - Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal.
+- Interaction &rightarrow; "Warn when closing more than one tab" = Off.
 - Appearance &rightarrow; "Use acrylic material in the tab row" = On. "Use active terminal title as application title" = Off.
 - Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle fullscreen" to `alt+enter`.
 - Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%.
