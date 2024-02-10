@@ -15,6 +15,8 @@ function ew {
 function nw {
     cd C:\
     cd (C:\which\which.bat)
+    $p = Split-Path -leaf -path (Get-Location)
+    $Host.UI.RawUI.WindowTitle = "$p"
     nvim .
 }
 
