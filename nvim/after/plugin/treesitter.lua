@@ -21,6 +21,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 vim.treesitter.language.register('c', 'glsl')
+vim.treesitter.language.register('cpp', 'cmake')
 vim.treesitter.language.register('python', 'gitcommit')
 vim.treesitter.language.register('python', 'gitignore')
 vim.treesitter.language.register('python', 'sh')
