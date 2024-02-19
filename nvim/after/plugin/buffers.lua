@@ -1,5 +1,5 @@
 function OpenBuffers()
-  local file_extensions = {'*.cpp', '*.hpp'}
+  local file_extensions = {'*.cpp', '*.hpp', '*.c', '*.h', '*.java', '*.py'}
   local original_buffer = vim.api.nvim_get_current_buf()
 
   for _, ext in ipairs(file_extensions) do
