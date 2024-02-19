@@ -40,8 +40,9 @@ return require('packer').startup(function(use)
     use('tribela/vim-transparent') 
     use
     {
-        'olimorris/onedarkpro.nvim',
-        as = 'onedarkpro',
+        "olimorris/onedarkpro.nvim",
+        commit = 'c5e6e7ba95aaa6cb85f99c19ecdd00b406b4feaf',
+        as = 'onedark',
         config = function()
             vim.cmd('colorscheme onedark')
         end
