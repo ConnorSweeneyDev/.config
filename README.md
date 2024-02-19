@@ -11,7 +11,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 ## Miscellaneous Prerequisites
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search "developer").
 
-## Terminal (Required):
+## Terminal
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in C:\Documents\Fonts, select all and click install
@@ -25,7 +25,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - Starting directory &rightarrow; C:\
 - Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%.
 
-## Dependencies (Ensure these are in the path):
+## Dependencies (Ensure these are in the path)
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`, then `git config --system core.longpaths true`
 - MinGW &rightarrow; Download from [here](https://www.mingw-w64.org/downloads/) and put the contents in C:\MinGW
@@ -37,10 +37,10 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - Neovim &rightarrow; Run `winget install neovim`
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 
-## Full paths to folders in the repo are as follows:
+## Full Paths to Repository Folders
 - nvim &rightarrow; C:\Users\conno\AppData\Local\nvim
 - which &rightarrow; C:\which
 - PowerShell &rightarrow; C:\Users\conno\Documents\PowerShell
 
-## Other tools that are good for development:
+## Other Useful Development Tools
 - Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in C:\Dependency Walker
