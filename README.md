@@ -8,6 +8,9 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 *Showcase: **cw** (cd), **ew** (explorer.exe), **nw** (nvim .), **ctrl+f** in Neovim (new tab + nw), **q** (exit).*\
 **Disclaimer: This was recursively searching my whole C drive, which is why it is slightly slow, this is customisable.**
 
+## Miscellaneous Prerequisites
+- Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search "developer").
+
 ## Terminal (Required):
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`
