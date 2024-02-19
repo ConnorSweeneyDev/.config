@@ -25,7 +25,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - Starting directory &rightarrow; C:\
 - Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%.
 
-## Dependencies (Ensure these are in the path)
+## Dependencies (Evironment Variables)
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`, then `git config --system core.longpaths true`
 - MinGW &rightarrow; Download from [here](https://www.mingw-w64.org/downloads/) and put the contents in C:\MinGW
