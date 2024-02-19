@@ -1,7 +1,9 @@
 --- MAIN FILE MENUS ---
 (Normal) <space>pv       -->  Go to main netrw menu
-(Normal) <space>pf       -->  Open packer menu for navigating files in the directory
+(Normal) <space>pf       -->  Open telescope menu for navigating files in the directory
 (Normal) <space>ps       -->  Enter word to search for in packer menu for navigating files in the directory
+(Normal) <space>pb       -->  Open telescope menu for navigating buffers
+(Normal) <Control>p      -->  Open telescope menu for navigating files in the git directory
 (Normal) <space>u        -->  Open undo history menu
 --- MAIN FILE MENUS ---
 
