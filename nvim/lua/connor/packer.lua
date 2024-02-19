@@ -40,10 +40,10 @@ return require('packer').startup(function(use)
     use('tribela/vim-transparent') 
     use
     {
-        'catppuccin/nvim',
-        as = 'catppuccin',
+        'olimorris/onedark.nvim',
+        as = 'onedark',
         config = function()
-            vim.cmd('colorscheme catppuccin')
+            vim.cmd('colorscheme onedark')
         end
     }
     use
