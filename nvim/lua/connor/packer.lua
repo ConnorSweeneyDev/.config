@@ -40,10 +40,10 @@ return require('packer').startup(function(use)
     use('tribela/vim-transparent') 
     use
     {
-        'olimorris/onedark.nvim',
-        as = 'onedark',
+        'Mofiqul/vscode.nvim',
+        as = 'vscode',
         config = function()
-            vim.cmd('colorscheme onedark')
+            vim.cmd('colorscheme vscode')
         end
     }
     use
