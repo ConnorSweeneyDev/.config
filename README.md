@@ -30,7 +30,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`, then `git config --system core.longpaths true`
 - MinGW &rightarrow; Download from [here](https://www.mingw-w64.org/downloads/) and put the contents in C:\MinGW
 - Python &rightarrow; Run `winget install --id Python.Python.3.11`
-- NodeJS &rightarrow; Run `winget install OpenJS.NodeJS`
+- NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` OR download the exe from their [GitHub](https://github.com/junegunn/fzf-bin/releases) and put it in C:\Windows
 - bat &rightarrow; Run `winget install sharkdp.bat`
