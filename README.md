@@ -9,21 +9,21 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 **Disclaimer: This was recursively searching my whole C drive, which is why it is slightly slow, this is customisable.**
 
 ## Miscellaneous Prerequisites
-- Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search "developer").
+- Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search "developer")
 
 ## Terminal
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in C:\Documents\Fonts, select all and click install
 ### Terminal Settings:
-- Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal.
-- Interaction &rightarrow; "Warn when closing more than one tab" = Off.
-- Appearance &rightarrow; "Use acrylic material in the tab row" = On. "Use active terminal title as application title" = Off.
-- Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle fullscreen" to `alt+enter`.
-- Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%.
+- Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal
+- Interaction &rightarrow; "Warn when closing more than one tab" = Off
+- Appearance &rightarrow; "Use acrylic material in the tab row" = On. "Use active terminal title as application title" = Off
+- Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle fullscreen" to `alt+enter`
+- Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%
 ### PowerShell Settings:
 - Starting directory &rightarrow; C:\
-- Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%.
+- Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%
 
 ## Dependencies (Evironment Variables)
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard
@@ -43,5 +43,6 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - PowerShell &rightarrow; C:\Users\conno\Documents\PowerShell
 
 ## Other Useful Development Tools
-- Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in C:\Dependency Walker
 - Make &rightarrow; Run `winget install make --source winget`
+- Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in C:\Dependency Walker
+
