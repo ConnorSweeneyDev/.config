@@ -44,5 +44,4 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 
 ## Other Useful Development Tools
 - Make &rightarrow; Run `winget install make --source winget`
-- Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in C:\Dependency Walker
-
+- Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in C:\Dependency Walker
