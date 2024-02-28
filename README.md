@@ -37,6 +37,9 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - Neovim &rightarrow; Run `winget install neovim`
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 
+## Coc Extensions
+- After installing Coc.nvim, run `CocInstall coc-discord-rpc coc-copilot coc-git coc-powershell coc-sh coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql coc-pyright coc-java coc-omnisharp coc-cmake coc-clangd`
+
 ## Full Paths to Repository Folders
 - nvim &rightarrow; C:\Users\conno\AppData\Local\nvim
 - which &rightarrow; C:\which
