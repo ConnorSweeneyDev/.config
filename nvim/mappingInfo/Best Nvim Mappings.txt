@@ -208,11 +208,6 @@
 
 
 --- TEXT CREATION ---
-(Insert) <control>h      -->  Appends (); to the end of the line, leaving the cursor in the brackets
-(Insert) <control>j      -->  Appends () to the end of the line, leaving the cursor in the brackets
-(Insert) <control>k      -->  Appends {\n\n} to the end of the line, leaving the cursor in the brackets with a tab
-(Insert) <control>l      -->  Appends {\n\n}; to the end of the line, leaving the cursor in the brackets with a tab
-
 (Normal) o               -->  Inserts a new line below the current hovered line
 (Normal) O               -->  Inserts a new line above the current hovered line
 --- TEXT CREATION ---
@@ -227,10 +222,10 @@
 
 
 
---- BUILD COMMANDS ---
+--- FILE COMMANDS ---
 (Normal) <space><space>  -->  Runs :so in the current file
 (Normal) <space>b        -->  Runs build.bat in the current directory
 (Normal) <space>v        -->  Runs debug.bat in the current directory
 (Normal) <space>r        -->  Runs run.bat in the current directory
 (Normal) <space>x        -->  While inside of a file, makes it executable
---- BUILD COMMANDS ---
+--- FILE COMMANDS ---
