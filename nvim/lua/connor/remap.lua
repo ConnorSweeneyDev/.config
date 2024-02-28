@@ -29,8 +29,3 @@ end)
 vim.keymap.set("n", "<leader>b", ":!build.bat<CR><CR>")
 vim.keymap.set("n", "<leader>v", ":!debug.bat<CR><CR>")
 vim.keymap.set("n", "<leader>n", ":!run.bat<CR><CR>")
-
-vim.keymap.set("i", "<C-h>", "<Esc>$i<Right>();<Left><Left>")
-vim.keymap.set("i", "<C-j>", "<Esc>$i<Right>()<Left>")
-vim.keymap.set("i", "<C-k>", "<Esc>$i<Right><CR>{<CR><CR>}<Up>a<Esc>v=$i<Del>")
-vim.keymap.set("i", "<C-l>", "<Esc>$i<Right><CR>{<CR><CR>};<Up>a<Esc>v=$i<Del>")
