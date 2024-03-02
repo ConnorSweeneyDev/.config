@@ -224,8 +224,9 @@
 
 --- FILE COMMANDS ---
 (Normal) <space><space>  -->  Runs :so in the current file
-(Normal) <space>b        -->  Runs build.bat in the current directory
-(Normal) <space>v        -->  Runs debug.bat in the current directory
-(Normal) <space>r        -->  Runs run.bat in the current directory
-(Normal) <space>x        -->  While inside of a file, makes it executable
+(Normal) <space>v        -->  Runs :!clean.bat in the current directory
+(Normal) <space>b        -->  Runs :!build.bat in the current directory
+(Normal) <space>n        -->  Runs :!run.bat in the current directory
+(Normal) <space>m        -->  Runs :!debug.bat in the current directory
+(Normal) <space>x        -->  Makes the current file executable
 --- FILE COMMANDS ---
