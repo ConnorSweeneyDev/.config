@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim',
         requires = 
         {
-            {'nvim-lua/plenary.nvim'}
+            'nvim-lua/plenary.nvim'
         }
     }
     use
@@ -22,17 +22,14 @@ return require('packer').startup(function(use)
         'theprimeagen/harpoon', branch = 'harpoon2',
         requires =
         { 
-            {'nvim-lua/plenary.nvim'},
-            {'nvim-telescope/telescope.nvim'}
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim'
         } 
     }
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
-    use('nvim-treesitter/nvim-treesitter',
-    {
-        run = ':TSUpdate'
-    })
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/nvim-treesitter-context')
     use{'neoclide/coc.nvim', branch = 'release'}
     use('github/copilot.vim')
@@ -49,7 +46,10 @@ return require('packer').startup(function(use)
     use
     {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        requires =
+        {
+            'nvim-tree/nvim-web-devicons', opt = true
+        }
     }
     use("nvim-tree/nvim-web-devicons")
 end)
