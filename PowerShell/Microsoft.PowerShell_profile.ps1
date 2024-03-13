@@ -24,8 +24,8 @@ function fh
     $find = $args
     Get-Content (Get-PSReadlineOption).HistorySavePath | ? {$_ -like "*$find*"} | Sort-Object -Unique -Descending
 }
-
 function nh { nvim (Get-PSReadlineOption).HistorySavePath }
+
 function np { nvim $PROFILE }
 
 function attend
