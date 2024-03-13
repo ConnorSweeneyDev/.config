@@ -14,7 +14,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 ## Terminal
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`
-- NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in C:\Documents\Fonts, select all and click install
+- NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in C:\Documents\Fonts, select all and right click then select install
 ### Terminal Settings:
 - Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal
 - Interaction &rightarrow; "Warn when closing more than one tab" = Off
