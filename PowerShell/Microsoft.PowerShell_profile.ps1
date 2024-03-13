@@ -1,18 +1,17 @@
-function q {
-    exit
-}
+function q { exit }
 
-function cw {
+function cw
+{
     cd C:\
     cd (C:\which\which.bat)
 }
-
-function ew {
+function ew
+{
     cd C:\
     explorer.exe (C:\which\which.bat)
 }
-
-function nw {
+function nw
+{
     cd C:\
     cd (C:\which\which.bat)
     $p = Split-Path -leaf -path (Get-Location)
@@ -20,16 +19,23 @@ function nw {
     nvim .
 }
 
-function nh {
-    nvim (Get-PSReadlineOption).HistorySavePath
+function fh
+{
+    $find = $args
+    Get-Content (Get-PSReadlineOption).HistorySavePath | ? {$_ -like "*$find*"} | Sort-Object -Unique -Descending
 }
 
-function attend {
+function nh { nvim (Get-PSReadlineOption).HistorySavePath }
+function np { nvim $PROFILE }
+
+function attend
+{
     cd C:\Users\conno\Documents\Programming\Web\AutoLogAttendance
     C:\Users\conno\Documents\Programming\Web\AutoLogAttendance\run.bat -nowin
 }
 
-function prompt {
+function prompt
+{
     $p = Split-Path -leaf -path (Get-Location)
     $Host.UI.RawUI.WindowTitle = "$p"
     "$pwd> "
