@@ -20,6 +20,10 @@ function nw {
     nvim .
 }
 
+function nh {
+    nvim (Get-PSReadlineOption).HistorySavePath
+}
+
 function attend {
     cd C:\Users\conno\Documents\Programming\Web\AutoLogAttendance
     C:\Users\conno\Documents\Programming\Web\AutoLogAttendance\run.bat -nowin
