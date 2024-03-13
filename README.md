@@ -27,7 +27,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 
 ## Dependencies (Evironment Variables)
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard
-- Git &rightarrow; Run `winget install --id Git.Git --source winget`, then `git config --system core.longpaths true`
+- Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system core.longpaths true`
 - MinGW &rightarrow; Download from [here](https://www.mingw-w64.org/downloads/) and put the contents in C:\MinGW
 - Python &rightarrow; Run `winget install --id Python.Python.3.11`
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey
