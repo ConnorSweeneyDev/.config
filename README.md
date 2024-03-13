@@ -35,6 +35,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` OR download the exe from their [GitHub](https://github.com/junegunn/fzf-bin/releases) and put it in C:\Windows
 - bat &rightarrow; Run `winget install sharkdp.bat`
 - Neovim &rightarrow; Run `winget install neovim`
+- Python Provider &rightarrow; Run `pip install pynvim --upgrade`
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 
 ## Coc Extensions
