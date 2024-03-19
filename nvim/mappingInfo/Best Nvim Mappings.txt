@@ -3,6 +3,8 @@
 (Normal) <space>pf       -->  Open telescope menu for navigating files in the directory
 (Normal) <space>ps       -->  Enter word to search for in packer menu for navigating files in the directory
 (Normal) <space>pb       -->  Open telescope menu for navigating buffers
+(Normal) <space>py       -->  Open telescope menu for navigating yank history
+(Normal) <space>ky       -->  Clear yank history
 (Normal) <Control>p      -->  Open telescope menu for navigating files in the git directory
 (Normal) <space>u        -->  Open undo history menu
 --- MAIN FILE MENUS ---

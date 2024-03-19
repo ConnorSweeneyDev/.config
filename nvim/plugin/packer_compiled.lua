@@ -149,6 +149,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\conno\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vscode",
     url = "https://github.com/Mofiqul/vscode.nvim"
+  },
+  ["yanky.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\conno\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\yanky.nvim",
+    url = "https://github.com/gbprod/yanky.nvim"
   }
 }
 
