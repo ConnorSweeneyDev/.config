@@ -8,7 +8,8 @@ function cw
 function ew
 {
     cd C:\
-    explorer.exe (C:\which\which.bat)
+    cd (C:\which\which.bat)
+    explorer $PWD
 }
 function nw
 {
