@@ -1,12 +1,10 @@
 --- MAIN FILE MENUS ---
 (Normal) <space>pv       -->  Go to main netrw menu
 (Normal) <space>pf       -->  Open telescope menu for navigating files in the directory
-(Normal) <space>ps       -->  Enter word to search for in packer menu for navigating files in the directory
+(Normal) <space>ps       -->  Enter word to search for in telescope menu for navigating files in the directory
 (Normal) <space>pb       -->  Open telescope menu for navigating buffers
 (Normal) <space>py       -->  Open telescope menu for navigating yank history
-(Normal) <space>ky       -->  Clear yank history
-(Normal) <Control>p      -->  Open telescope menu for navigating files in the git directory
-(Normal) <space>u        -->  Open undo history menu
+(Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
 --- MAIN FILE MENUS ---
 
 
@@ -26,6 +24,18 @@
 (Normal) s               -->  When cursor is on an unstaged change, stages it; when cursor is on an unpushed commit, pushes it
 (Normal) u               -->  When cursor is on a staged change, unstages it
 --- GIT ---
+
+
+
+--- UNDOTREE ---
+(Normal) <space>u        -->  Open undo history menu
+--- UNDOTREE ---
+
+
+
+--- YANKY ---
+(Normal) <space>ky       -->  Clear yank history
+--- YANKY ---
 
 
 
@@ -55,11 +65,8 @@
 
 --- COPILOT ---
 (Insert) <tab>           -->  Accept whole suggestion
-(Insert) <alt>`      	 -->  Accept word in suggestion
-(Insert) <alt>~	         -->  Dismiss suggestion
-(Insert) <alt>\          -->  Force Suggestion
-(Insert) <alt>[          -->  Previous suggestion
-(Insert) <alt>]          -->  Next suggestion
+(Insert) <control>`      -->  Accept word in suggestion
+(Insert) <control>~	     -->  Dismiss suggestion
 --- COPILOT ---
 
 
