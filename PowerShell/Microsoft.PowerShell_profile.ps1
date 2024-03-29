@@ -1,5 +1,7 @@
 function q { exit }
-function vi { nvim . }
+function c { clear }
+function e { explorer . }
+function n { nvim . }
 
 function cw
 {
@@ -26,13 +28,29 @@ function fh
     $find = $args
     Get-Content (Get-PSReadlineOption).HistorySavePath | ? {$_ -like "*$find*"} | Sort-Object -Unique -Descending
 }
-function nh { nvim (Get-PSReadlineOption).HistorySavePath }
-function np { nvim $PROFILE }
+function nh
+{
+    $directory = Split-Path (Get-PSReadlineOption).HistorySavePath
+    cd $directory
+    $p = Split-Path -leaf -path (Get-Location)
+    $Host.UI.RawUI.WindowTitle = "$p"
+    nvim ConsoleHost_history.txt
+}
+function np
+{
+    $directory = Split-Path $PROFILE
+    cd $directory
+    $p = Split-Path -leaf -path (Get-Location)
+    $Host.UI.RawUI.WindowTitle = "$p"
+    nvim Microsoft.PowerShell_profile.ps1
+}
 
 function attend
 {
     cd C:\Users\conno\Documents\Programming\Web\AutoLogAttendance
-    C:\Users\conno\Documents\Programming\Web\AutoLogAttendance\run.bat -nowin
+    $p = Split-Path -leaf -path (Get-Location)
+    $Host.UI.RawUI.WindowTitle = "$p"
+    .\run.bat -nowin
 }
 
 function prompt
