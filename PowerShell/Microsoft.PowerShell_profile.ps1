@@ -1,4 +1,5 @@
 function q { exit }
+function vi { nvim . }
 
 function cw
 {
@@ -26,7 +27,6 @@ function fh
     Get-Content (Get-PSReadlineOption).HistorySavePath | ? {$_ -like "*$find*"} | Sort-Object -Unique -Descending
 }
 function nh { nvim (Get-PSReadlineOption).HistorySavePath }
-
 function np { nvim $PROFILE }
 
 function attend
