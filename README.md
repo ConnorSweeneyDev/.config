@@ -50,3 +50,16 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - Make &rightarrow; Run `winget install make --source winget`
 - Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in C:\Dependency Walker
 - scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc)
+
+# Firefox With Tridactyl
+Go [here](https://www.mozilla.org/en-GB/firefox/new/) to download Firefox and then [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) to install the Tridactyl add-on. Also make it the default browser.
+After that is up and running go to Firefox settings and change the following:
+- General &rightarrow; Use reccommended performance settings &rightarrow; Off
+- General &rightarrow; Use hardware acceleration when available &rightarrow; Off
+- Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; moz-extension://13a1d2f1-5f72-41ad-bbed-17d8bb8bae85/static/newtab.html &rightarrow; Use Current Pages
+- Home &rightarrow; Default search engine &rightarrow; Google
+- Now go to this url `about:config` and search for `full-screen-api.transition-duration.enter` and `full-screen-api.transition-duration.leave` and change both to `0 0`
+
+Using Tridactyl, press `:` and type the following commands:
+- `set newtab google.com`
+- `set searchengine google`
