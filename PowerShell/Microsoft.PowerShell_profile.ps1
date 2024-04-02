@@ -1,4 +1,5 @@
 function q { exit }
+function :q { exit }
 function c { clear }
 function e { explorer . }
 function n { nvim . }
