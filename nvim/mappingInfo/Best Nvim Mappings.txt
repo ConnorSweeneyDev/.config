@@ -65,8 +65,8 @@
 
 --- COPILOT ---
 (Insert) <tab>           -->  Accept whole suggestion
-(Insert) <control>`      -->  Accept word in suggestion
-(Insert) <control>~	     -->  Dismiss suggestion
+(Insert) <alt>m          -->  Accept word in suggestion
+(Insert) <alt>n	         -->  Dismiss suggestion
 --- COPILOT ---
 
 
