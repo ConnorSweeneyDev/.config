@@ -43,9 +43,9 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - After installing Coc.nvim, run `:CocInstall coc-discord-rpc coc-copilot coc-git coc-powershell coc-sh coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql coc-pyright coc-java coc-omnisharp coc-cmake coc-clangd`
 
 ## Full Paths to Repository Folders
+- PowerShell &rightarrow; C:\Users\conno\Documents\PowerShell
 - nvim &rightarrow; C:\Users\conno\AppData\Local\nvim
 - scripts &rightarrow; C:\scripts
-- PowerShell &rightarrow; C:\Users\conno\Documents\PowerShell
 
 ## Other Useful Development Tools
 - Make &rightarrow; Run `winget install make --source winget`
