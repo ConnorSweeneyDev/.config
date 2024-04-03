@@ -5,7 +5,7 @@ function e { explorer . }
 function n { nvim . }
 function f
 {
-    firefoxnofocus
+    firefoxfocusfix
     exit
 }
 
