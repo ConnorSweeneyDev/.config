@@ -66,5 +66,7 @@ After that is up and running go to Firefox settings and change the following:
 Using Tridactyl, press `:` and type the following commands:
 - `set newtab google.com`
 - `set searchengine google`
+- `set modeindicatorshowkeys true`
+- `set modeindicatormodes {"normal":"true","insert":"true","input":"true","ignore":"false","ex":"true","hint":"true","visual":"true"}`
 
 You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to view all the most important bindings.
