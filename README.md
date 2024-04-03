@@ -26,6 +26,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%
 
 ## Dependencies (Evironment Variables)
+- scripts &rightarrow; Put `C:\scripts\which` and `C:\scripts\firefox` in the path
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system core.longpaths true`
 - MinGW &rightarrow; Download from [here](https://www.mingw-w64.org/downloads/) and put the contents in C:\MinGW
@@ -43,9 +44,9 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/618eca1f-b
 - After installing Coc.nvim, run `:CocInstall coc-discord-rpc coc-copilot coc-git coc-powershell coc-sh coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql coc-pyright coc-java coc-omnisharp coc-cmake coc-clangd`
 
 ## Full Paths to Repository Folders
-- PowerShell &rightarrow; C:\Users\conno\Documents\PowerShell
-- nvim &rightarrow; C:\Users\conno\AppData\Local\nvim
-- scripts &rightarrow; C:\scripts
+- PowerShell &rightarrow; `C:\Users\conno\Documents\PowerShell`
+- nvim &rightarrow; `C:\Users\conno\AppData\Local\nvim`
+- scripts &rightarrow; `C:\scripts`
 
 ## Other Useful Development Tools
 - Make &rightarrow; Run `winget install make --source winget`
