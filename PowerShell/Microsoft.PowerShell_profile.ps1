@@ -12,18 +12,18 @@ function f
 function cw
 {
     cd C:\
-    cd (C:\scripts\which\which.bat)
+    cd (which)
 }
 function ew
 {
     cd C:\
-    cd (C:\scripts\which\which.bat)
+    cd (which)
     explorer $PWD
 }
 function nw
 {
     cd C:\
-    cd (C:\scripts\which\which.bat)
+    cd (which)
     $p = Split-Path -leaf -path (Get-Location)
     $Host.UI.RawUI.WindowTitle = "$p"
     nvim .
