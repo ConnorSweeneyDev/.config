@@ -3,22 +3,27 @@ function :q { exit }
 function c { clear }
 function e { explorer . }
 function n { nvim . }
+function f
+{
+    firefoxnofocus
+    exit
+}
 
 function cw
 {
     cd C:\
-    cd (C:\which\which.bat)
+    cd (C:\scripts\which\which.bat)
 }
 function ew
 {
     cd C:\
-    cd (C:\which\which.bat)
+    cd (C:\scripts\which\which.bat)
     explorer $PWD
 }
 function nw
 {
     cd C:\
-    cd (C:\which\which.bat)
+    cd (C:\scripts\which\which.bat)
     $p = Split-Path -leaf -path (Get-Location)
     $Host.UI.RawUI.WindowTitle = "$p"
     nvim .

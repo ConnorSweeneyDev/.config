@@ -2,14 +2,14 @@ import os
 import sys
 import subprocess
 
-file = open("C:\\which\\path.txt", 'r')
+file = open("C:\\scripts\\which\\path.txt", 'r')
 path = file.readline()
 file.close()
-file = open("C:\\which\\path.txt", 'r').close()
+file = open("C:\\scripts\\which\\path.txt", 'r').close()
 
 path = os.path.dirname(path)
 
-file = open("C:\\which\\path.txt", 'w')
+file = open("C:\\scripts\\which\\path.txt", 'w')
 if (path == ""):
     path = "C:\\"
 file.writelines(path)
