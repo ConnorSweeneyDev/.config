@@ -58,7 +58,7 @@ Go [here](https://www.mozilla.org/en-GB/firefox/new/) to download Firefox and th
 After that is up and running go to Firefox settings and change the following:
 - General &rightarrow; Use reccommended performance settings &rightarrow; Off
 - General &rightarrow; Use hardware acceleration when available &rightarrow; Off
-- Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; Paste `moz-extension://13a1d2f1-5f72-41ad-bbed-17d8bb8bae85/static/newtab.html` &rightarrow; Use Current Pages
+- Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; Paste `moz-extension://13a1d2f1-5f72-41ad-bbed-17d8bb8bae85/static/newtab.html` &rightarrow; Use Current Page
 - Home &rightarrow; Default search engine &rightarrow; Google
 - Now go to this url `about:config` and search for `full-screen-api.transition-duration.enter` and `full-screen-api.transition-duration.leave` and change both to `0 0`
 - Scan the rest of the settings and disable things you don't want that will slow down the browser
