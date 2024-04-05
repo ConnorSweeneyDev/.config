@@ -49,7 +49,8 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - nvim &rightarrow; `C:\Users\conno\AppData\Local\nvim`
 - scripts &rightarrow; `C:\scripts`
 
-## Other Useful Development Tools
+## Other Useful Tools
+- PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget`
 - Make &rightarrow; Run `winget install make --source winget`
 - Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in C:\Dependency Walker
 - scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc)
