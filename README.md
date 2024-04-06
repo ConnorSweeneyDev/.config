@@ -50,8 +50,15 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - scripts &rightarrow; `C:\scripts`
 
 ## Other Useful Tools
-- PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget`
-- SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want
+- PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - my favourite tools are:\
+  Run with an activation shortcut of shift+backspace, input smoothing disabled, clear previous query on launch enabled, preferred monitor primary, all plugins off except window walker - this allows switching windows by searching their name instead of alt tabbing\
+  Color Picker with an activation shortcut of win+shift+c\
+  Screen Ruler with an activation shortcut of win+shift+p\
+  Text Extractor with an activation shortcut of win+shift+t
+- SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want - the only one I use is ZoomIt with the following settings:\
+  Zoom on ctrl+/ with animation turned off\
+  Draw on ctrl+'\
+  Draw on ctrl+;
 - Make &rightarrow; Run `winget install make --source winget`
 - Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in C:\Dependency Walker
 - scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc)
@@ -59,7 +66,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 # Firefox With Tridactyl
 Go [here](https://www.mozilla.org/en-GB/firefox/new/) to download Firefox and then [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) to install the Tridactyl add-on. Also make it the default browser.
 After that is up and running go to Firefox settings and change the following:
-- General &rightarrow; Use reccommended performance settings &rightarrow; Off
+- General &rightarrow; Use recommended performance settings &rightarrow; Off
 - General &rightarrow; Use hardware acceleration when available &rightarrow; Off
 - Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; Paste `moz-extension://13a1d2f1-5f72-41ad-bbed-17d8bb8bae85/static/newtab.html` &rightarrow; Use Current Page
 - Home &rightarrow; Default search engine &rightarrow; Google
