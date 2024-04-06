@@ -56,7 +56,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
   Screen Ruler with an activation shortcut of win+shift+p\
   Text Extractor with an activation shortcut of win+shift+t
 - SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want - the only one I use is ZoomIt with the following settings:\
-  Zoom on ctrl+/ with animation turned off\
+  Zoom on ctrl+/ with animate zoom in and zoom out disabled\
   Draw on ctrl+'\
   Draw on ctrl+;
 - Make &rightarrow; Run `winget install make --source winget`
