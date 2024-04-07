@@ -1,6 +1,6 @@
 require('telescope').setup{
     defaults = {
-        file_ignore_patterns = { "src", "assets", ".dll", ".class", ".jar", "packer_compiled", ".png", ".jpg", ".pyc" }
+        file_ignore_patterns = { "src", "assets", ".dll", ".class", ".jar", ".sln", ".vcxproj", "packer_compiled", ".png", ".jpg", ".pyc" }
     }
 }
 
