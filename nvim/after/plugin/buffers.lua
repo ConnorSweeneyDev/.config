@@ -3,7 +3,7 @@ function OpenBuffers()
     local original_buffer = vim.api.nvim_get_current_buf()
 
     for _, ext in ipairs(file_extensions) do
-        local files = vim.fn.globpath(vim.fn.getcwd() .. '', '**/' .. ext, 0, 1)
+        local files = vim.fn.globpath(vim.fn.getcwd() .. '/prog', '**/' .. ext, 0, 1)
         for _, file in ipairs(files) do
             vim.cmd('edit ' .. file)
         end
