@@ -80,7 +80,7 @@
 (Normal) <control>ws     -->  Split window horizontally
 (Normal) <control>wv     -->  Split window vertically
 
-(Normal) <control>f      -->  Create a new powershell tab and run "nw"
+(Normal) <control>f      -->  Create a new powershell tab and run "cw"
 --- WINDOWS ---
 
 
