@@ -20,9 +20,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set({"n", "v"}, "<leader>c", [["_c]])
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
-vim.keymap.set("v", "<leader>s", "\"hy:%s/<C-r>h//gI<Left><Left><Left>")
-vim.keymap.set("v", "<C-s>", ":s//gI<Left><Left><Left>")
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]])
+vim.keymap.set("v", "<leader>s", "\"hy:%s/<C-r>h//g<Left><Left>")
+vim.keymap.set("v", "<C-s>", ":s//g<Left><Left>")
 
 vim.keymap.set("n", "<leader><leader>", function() vim.cmd("so") end)
 vim.keymap.set("n", "<leader>v", ":!clean.bat<CR><CR>")
