@@ -2,6 +2,7 @@ function :q { exit }
 function q { exit }
 function c { clear }
 function e { explorer . }
+function b { explorer shell:RecycleBinFolder }
 function n { nvim . }
 function f
 {
