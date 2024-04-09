@@ -6,7 +6,7 @@ This setup enables you to have many buffers open in Neovim that you can easily s
 
 https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d7db-4bb0-a1d0-54b4ecd1262e
 
-*Showcase: **cw** (cd directory), **ew** (explorer directory), **nw** (nvim . directory), **ctrl+f** in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **:q** (exit terminal), **f** (open firefox with tridactyl).*\
+*Showcase: **cw** (cd directory), **ew** (explorer directory), **nw** (nvim . directory), **ctrl+f** in Neovim (new tab + cw), **ctrl+tab** (switch tabs), **:q** (exit terminal), **f** (open firefox with tridactyl).*\
 **Disclaimer: This was recursively searching my whole C drive, which is why it is slightly slow, this is customisable.**
 
 ## Miscellaneous Prerequisites
