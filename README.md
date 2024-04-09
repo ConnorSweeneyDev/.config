@@ -59,7 +59,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want - the only one I use is ZoomIt with the following settings:\
   Zoom on ctrl+/ with animate zoom in and zoom out disabled\
   Draw on ctrl+'\
-  Draw on ctrl+;
+  Record on ctrl+;
 - Visual Studio 2022 - Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already
 - Make &rightarrow; Run `winget install make --source winget`
 - Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in C:\Dependency Walker
