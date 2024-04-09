@@ -54,7 +54,8 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
   Run with an activation shortcut of shift+backspace, input smoothing disabled, clear previous query on launch enabled, preferred monitor primary, all plugins off except window walker - this allows switching windows by searching their name instead of alt tabbing\
   Color Picker with an activation shortcut of win+shift+c\
   Screen Ruler with an activation shortcut of win+shift+p\
-  Text Extractor with an activation shortcut of win+shift+t
+  Text Extractor with an activation shortcut of win+shift+t\
+  Command Not Found enabled
 - SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want - the only one I use is ZoomIt with the following settings:\
   Zoom on ctrl+/ with animate zoom in and zoom out disabled\
   Draw on ctrl+'\
