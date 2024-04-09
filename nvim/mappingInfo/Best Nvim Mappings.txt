@@ -20,7 +20,7 @@
 
 --- GIT ---
 (Normal) <space>gs       -->  Open fugitive menu for git stuff
-(Normal) cc              -->  Open commit file
+(Normal) cc              -->  Create a new commit
 (Normal) s               -->  When cursor is on an unstaged change, stages it; when cursor is on an unpushed commit, pushes it
 (Normal) u               -->  When cursor is on a staged change, unstages it
 --- GIT ---
@@ -136,7 +136,7 @@
 (Normal) vi<bracket>     -->  If the bracket is {, highlights the current scope excluding the { and } - if the bracket is ( or [, highlights the content inside the next () or [] but not the brackets
 
 (Normal) s<char><char>   -->  Leap forward
-(Normal) S<char><char>   -->  Leap forward
+(Normal) S<char><char>   -->  Leap backward
 --- CURSOR MOVEMENT ---
 
 
@@ -146,8 +146,9 @@
 (Visual) J               -->  Moves highlighted text down one line
 (Visual) K               -->  Moves highlighted text up one line
 
+(Normal) ==              -->  Correctly indents the current line
 (Normal) =ap             -->  Correctly indents the hovered paragraph
-(Visual) =               -->  Correctly indents the highlighted paragraph
+(Visual) =               -->  Correctly indents the highlighted text
 --- TEXT MOVEMENT ---
 
 
@@ -209,6 +210,7 @@
 
 (Normal) <space>s        -->  Replaces all instances of the current hovered word in the file
 (Visual) <space>s        -->  Replaces all instances of the current selected text in the file
+(Visual) <control>s      -->  Replaces all instances of the word you type with the second word you type, only in the current selection
 (Visual) <space>p        -->  Replaces the currently highlighted text with the clipboard contents, but keeps the contents afterwards
 (Normal) <control>a      -->  Increments the next integer by 1
 (Normal) <control>x      -->  Decrements the next integer by 1
@@ -224,9 +226,9 @@
 
 
 --- MACROS ---
-(Normal) q<register>     -->  Starts recording a macro to the specified register
+(Normal) q<char>         -->  Starts recording a macro to the specified register
 (Normal) q               -->  Stops recording the macro
-(Normal) @<register>     -->  Plays the macro in the specified register
+(Normal) @<char>         -->  Plays the macro in the specified register
 --- MACROS ---
 
 
@@ -237,5 +239,4 @@
 (Normal) <space>b        -->  Runs :!build.bat in the current directory
 (Normal) <space>n        -->  Runs :!run.bat in the current directory
 (Normal) <space>m        -->  Runs :!debug.bat in the current directory
-(Normal) <space>x        -->  Makes the current file executable
 --- FILE COMMANDS ---
