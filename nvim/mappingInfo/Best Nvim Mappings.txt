@@ -18,12 +18,12 @@
 
 
 
---- GIT ---
+--- FUGITIVE ---
 (Normal) <space>gs       -->  Open fugitive menu for git stuff
 (Normal) cc              -->  Create a new commit
 (Normal) s               -->  When cursor is on an unstaged change, stages it; when cursor is on an unpushed commit, pushes it
 (Normal) u               -->  When cursor is on a staged change, unstages it
---- GIT ---
+--- FUGITIVE ---
 
 
 
@@ -36,6 +36,14 @@
 --- YANKY ---
 (Normal) <space>ky       -->  Clear yank history
 --- YANKY ---
+
+
+
+--- RIPGREP ---
+(Normal) <space>ag       -->  Add all instances of the word you enter to a quickfix list (only files in the prog/ directory of the project)
+(Normal) <space>og       -->  Open the quickfix list
+(Normal) <space>rg       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
+--- RIPGREP ---
 
 
 
