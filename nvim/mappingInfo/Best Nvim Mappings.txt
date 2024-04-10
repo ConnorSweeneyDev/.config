@@ -40,7 +40,7 @@
 
 
 --- RIPGREP ---
-(Normal) <space>rg       -->  Add all lines containing the word you enter to a quickfix list (only files in the prog/ directory of the project)
+(Normal) <space>rg       -->  Add all lines containing the word you enter to a quickfix list (only files in the prog directory of the project)
 (Normal) <space>og       -->  Open the quickfix list
 (Normal) <space>fg       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
 --- RIPGREP ---
