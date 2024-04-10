@@ -14,17 +14,17 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 ## Terminal
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`
-- NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in C:\Documents\Fonts, select all and right click then select install\
-  You can delete the .ttf files from the folder after you've installed them.
+- NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in C:\Documents\Fonts, select all and right click then select "Install"\
+  You can delete the .ttf files from the folder after you've installed them
 ### Terminal Settings:
-- Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal. "Launch size" = 120x25. "Launch parameters" = Center on launch enabled.
+- Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal. "Launch size" = 120x25. "Launch parameters" = Center on launch enabled
 - Interaction &rightarrow; "Warn when closing more than one tab" = Off
 - Appearance &rightarrow; "Use acrylic material in the tab row" = On. "Use active terminal title as application title" = Off
 - Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle fullscreen" to `alt+enter`
-- Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%
+- Defaults &rightarrow; Appearance &rightarrow; "Font face" = IosevkaTermSlab NF. "Font size" = 16. "Background opacity" = 75%
 ### PowerShell Settings:
 - Starting directory &rightarrow; C:\
-- Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%
+- Appearance &rightarrow; "Font face" = IosevkaTermSlab NF. "Font size" = 16. "Background opacity" = 75%
 
 ## Dependencies (Evironment Variables)
 - scripts &rightarrow; Put `C:\scripts\which` and `C:\scripts\firefox` in the path
