@@ -34,7 +34,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - Python &rightarrow; Run `winget install --id Python.Python.3.11`
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`
-- fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from [here](https://github.com/junegunn/fzf-bin/releases) and put it in C:\Windows
+- fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`
 - bat &rightarrow; Run `winget install sharkdp.bat`
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`
 - Neovim &rightarrow; Run `winget install neovim`
