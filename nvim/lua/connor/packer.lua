@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
 
     use('ggandor/leap.nvim')
+    use('nvim-treesitter/nvim-treesitter-context')
 
     use
     {
@@ -31,7 +32,6 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('nvim-treesitter/nvim-treesitter-context')
     use{'neoclide/coc.nvim', branch = 'release'}
     use('github/copilot.vim')
 
@@ -44,13 +44,10 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme vscode')
         end
     }
+    use("nvim-tree/nvim-web-devicons")
     use
     {
         'nvim-lualine/lualine.nvim',
-        requires =
-        {
-            'nvim-tree/nvim-web-devicons', opt = true
-        }
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use("nvim-tree/nvim-web-devicons")
 end)
