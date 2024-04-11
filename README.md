@@ -30,7 +30,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - scripts &rightarrow; Put `C:\scripts\which` and `C:\scripts\firefox` in the path
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system core.longpaths true`
-- MinGW &rightarrow; Download from [here](https://www.mingw-w64.org/downloads/) and put the contents in C:\MinGW
+- MinGW &rightarrow; Download from [here](https://www.mingw-w64.org/downloads/) and put the contents in C:\MinGW (Treesitter will only work with 64-bit MinGW)
 - Python &rightarrow; Run `winget install --id Python.Python.3.11`
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`
