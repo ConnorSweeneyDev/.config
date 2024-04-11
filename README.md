@@ -14,7 +14,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 ## Terminal
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`
-- NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in C:\Documents\Fonts, select all and right click then select "Install"\
+- NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in `C:\Documents\Fonts`, select all and right click then select "Install"\
   You can delete the .ttf files from the folder after you've installed them
 ### Terminal Settings:
 - Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal. "Launch size" = 120x25. "Launch parameters" = Center on launch enabled
@@ -23,14 +23,14 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle fullscreen" to `alt+enter`
 - Defaults &rightarrow; Appearance &rightarrow; "Font face" = IosevkaTermSlab NF. "Font size" = 16. "Background opacity" = 75%
 ### PowerShell Settings:
-- Starting directory &rightarrow; C:\
+- Starting directory &rightarrow; `C:\`
 - Appearance &rightarrow; "Font face" = IosevkaTermSlab NF. "Font size" = 16. "Background opacity" = 75%
 
 ## Dependencies (Evironment Variables)
 - scripts &rightarrow; Put `C:\scripts\which` and `C:\scripts\firefox` in the path
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system core.longpaths true`
-- MinGW &rightarrow; Download from [here](https://www.mingw-w64.org/downloads/) and put the contents in C:\MinGW (Treesitter will only work with 64-bit MinGW)
+- MinGW &rightarrow; Download from [here](https://www.mingw-w64.org/downloads/) and put the contents in `C:\MinGW` (Treesitter will only work with 64-bit MinGW)
 - Python &rightarrow; Run `winget install --id Python.Python.3.11`
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`
@@ -62,7 +62,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
   Record on ctrl+;
 - Visual Studio 2022 - Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already
 - Make &rightarrow; Run `winget install make --source winget`
-- Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in C:\DependencyWalker
+- Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`
 - scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc)
 
 # Firefox With Tridactyl
