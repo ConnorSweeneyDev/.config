@@ -27,10 +27,10 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - Interaction &rightarrow; "Warn when closing more than one tab" = Off
 - Appearance &rightarrow; "Use acrylic material in the tab row" = On. "Use active terminal title as application title" = Off
 - Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle fullscreen" to `alt+enter`
-- Defaults &rightarrow; Appearance &rightarrow; "Font face" = IosevkaTermSlab NF. "Font size" = 16. "Background opacity" = 75%
+- Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%
 ### PowerShell Settings:
 - Starting directory &rightarrow; `C:\`
-- Appearance &rightarrow; "Font face" = IosevkaTermSlab NF. "Font size" = 16. "Background opacity" = 75%
+- Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%
 
 ### Dependencies (Evironment Variables):
 - scripts &rightarrow; Put `C:\scripts\which` and `C:\scripts\firefox` in the path
