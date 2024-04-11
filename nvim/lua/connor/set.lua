@@ -17,8 +17,9 @@ vim.opt.wrap = false
 vim.opt.scrolloff = 8
 
 vim.opt.swapfile = false
-vim.opt.backup = false
 vim.opt.undofile = true
+vim.opt.backup = false
+vim.opt.writebackup = false
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -28,4 +29,4 @@ vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.termguicolors = true
 
 vim.opt.isfname:append("@-@")
-vim.opt.updatetime = 50
+vim.opt.updatetime = 300

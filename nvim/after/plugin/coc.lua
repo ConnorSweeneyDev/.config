@@ -1,11 +1,3 @@
--- Some servers have issues with backup files, see #649
-vim.opt.backup = false
-vim.opt.writebackup = false
-
--- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
--- delays and poor user experience
-vim.opt.updatetime = 300
-
 vim.keymap.set("i", "<C-y>", 'coc#pum#confirm()', {expr = true, noremap = true, silent = true, replace_keycodes = false})
 
 vim.keymap.set("n", "<leader>td", ":<C-u>CocList diagnostics<cr>", {silent = true, nowait = true})

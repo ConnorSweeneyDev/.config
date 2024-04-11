@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 vim.keymap.set("n", "<C-f>", ":!pwsh -c \"wt --window 0 -p \"PowerShell\" pwsh -NoExit -c \"cw\"\"<CR><CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -26,9 +26,10 @@ vim.keymap.set("v", "<C-s>", ":s//g<Left><Left>")
 
 vim.keymap.set("n", "<leader>rg", ":silent grep  prog<Left><Left><Left><Left><Left>")
 vim.keymap.set("n", "<leader>og", ":copen<CR>")
+vim.keymap.set("n", "<leader>dg", ":call setqflist(filter(getqflist(), 'v:key != line(\".\")-1'))<CR>")
 vim.keymap.set("n", "<leader>fg", ":cdo s//g<Left><Left>")
 
-vim.keymap.set("n", "<leader><leader>", function() vim.cmd("so") end)
+vim.keymap.set("n", "<leader><leader>", ":so<CR>")
 vim.keymap.set("n", "<leader>v", ":!clean.bat<CR><CR>")
 vim.keymap.set("n", "<leader>b", ":!build.bat<CR><CR>")
 vim.keymap.set("n", "<leader>n", ":!run.bat<CR><CR>")
