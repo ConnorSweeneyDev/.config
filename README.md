@@ -8,6 +8,11 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 
 *Showcase: **cw** (cd directory), **ew** (explorer directory), **nw** (nvim . directory), **ctrl+f** in Neovim (new tab + cw), **ctrl+tab** (switch tabs), **:q** (exit terminal), **f** (open firefox with tridactyl).*
 
+## Full Paths to Repository Folders
+- PowerShell &rightarrow; `C:\Users\conno\Documents\PowerShell`
+- nvim &rightarrow; `C:\Users\conno\AppData\Local\nvim`
+- scripts &rightarrow; `C:\scripts`
+
 ## Miscellaneous Prerequisites
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search "developer")
 
@@ -44,27 +49,6 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 ## Coc Extensions
 - After all plugins have been installed without errors, run `:CocInstall coc-discord-rpc coc-copilot coc-git coc-powershell coc-sh coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql coc-pyright coc-java coc-omnisharp coc-cmake coc-clangd`
 
-## Full Paths to Repository Folders
-- PowerShell &rightarrow; `C:\Users\conno\Documents\PowerShell`
-- nvim &rightarrow; `C:\Users\conno\AppData\Local\nvim`
-- scripts &rightarrow; `C:\scripts`
-
-## Other Useful Tools
-- PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - my favourite tools are:\
-  Run with an activation shortcut of shift+backspace, input smoothing disabled, clear previous query on launch enabled, preferred monitor primary, all plugins off except window walker - this allows switching windows by searching their name instead of alt tabbing\
-  Color Picker with an activation shortcut of win+shift+c\
-  Screen Ruler with an activation shortcut of win+shift+p\
-  Text Extractor with an activation shortcut of win+shift+t\
-  Command Not Found enabled
-- SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want - the only one I use is ZoomIt with the following settings:\
-  Zoom on ctrl+/ with animate zoom in and zoom out disabled\
-  Draw on ctrl+'\
-  Record on ctrl+;
-- Visual Studio 2022 - Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already
-- Make &rightarrow; Run `winget install make --source winget`
-- Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`
-- scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc)
-
 # Firefox With Tridactyl
 Go [here](https://www.mozilla.org/en-GB/firefox/new/) to download Firefox and then [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) to install the Tridactyl add-on. Also make it the default browser.
 After that is up and running go to Firefox settings and change the following:
@@ -82,3 +66,19 @@ Using Tridactyl, press `:` and type the following commands:
 - `set modeindicatormodes {"normal":"true","insert":"true","input":"true","ignore":"false","ex":"true","hint":"true","visual":"true"}`
 
 You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to view all the most important bindings.
+
+# Other Useful Tools
+- PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - my favourite tools are:\
+  Run with an activation shortcut of shift+backspace, input smoothing disabled, clear previous query on launch enabled, preferred monitor primary, all plugins off except window walker - this allows switching windows by searching their name instead of alt tabbing\
+  Color Picker with an activation shortcut of win+shift+c\
+  Screen Ruler with an activation shortcut of win+shift+p\
+  Text Extractor with an activation shortcut of win+shift+t\
+  Command Not Found enabled
+- SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want - the only one I use is ZoomIt with the following settings:\
+  Zoom on ctrl+/ with animate zoom in and zoom out disabled\
+  Draw on ctrl+'\
+  Record on ctrl+;
+- Visual Studio 2022 - Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already
+- Make &rightarrow; Run `winget install make --source winget`
+- Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`
+- scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc)
