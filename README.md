@@ -13,10 +13,10 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - nvim &rightarrow; `C:\Users\conno\AppData\Local\nvim`
 - scripts &rightarrow; `C:\scripts`
 
-## Miscellaneous Prerequisites
+# Neovim Setup
+### Miscellaneous Prerequisites
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search "developer")
 
-## Neovim Setup
 ### Terminal
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`
