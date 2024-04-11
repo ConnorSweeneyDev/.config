@@ -45,6 +45,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`
 - Neovim &rightarrow; Run `winget install neovim`
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`
+- NodeJS Provider &rightarrow; Run `npm install -g neovim`
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`
 
 ### Coc Extensions:
