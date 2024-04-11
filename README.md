@@ -16,7 +16,8 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 ## Miscellaneous Prerequisites
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search "developer")
 
-## Terminal
+## Neovim Setup
+### Terminal
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in `C:\Documents\Fonts`, select all and right click then select "Install"\
@@ -31,7 +32,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - Starting directory &rightarrow; `C:\`
 - Appearance &rightarrow; "Font face" = IosevkaTermSlab NF. "Font size" = 16. "Background opacity" = 75%
 
-## Dependencies (Evironment Variables)
+### Dependencies (Evironment Variables)
 - scripts &rightarrow; Put `C:\scripts\which` and `C:\scripts\firefox` in the path
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system core.longpaths true`
@@ -44,9 +45,9 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`
 - Neovim &rightarrow; Run `winget install neovim`
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`
-- Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
+- Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`
 
-## Coc Extensions
+### Coc Extensions
 - After all plugins have been installed without errors, run `:CocInstall coc-discord-rpc coc-copilot coc-git coc-powershell coc-sh coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql coc-pyright coc-java coc-omnisharp coc-cmake coc-clangd`
 
 # Firefox With Tridactyl
