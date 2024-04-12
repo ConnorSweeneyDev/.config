@@ -59,8 +59,6 @@ You should start with the top level `init.lua`, replace "connor" with "[YOUR USE
 
 Now you can create `lua/[USERNAME]/packer.lua`, populate it with only the following lines:
 ```lua
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
