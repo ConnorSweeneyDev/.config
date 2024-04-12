@@ -113,6 +113,7 @@ PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` 
 - Command Not Found enabled.
 
 SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want - the only one I use is ZoomIt with the following settings:
+- Run ZoomIt when Windows starts and Show tray icon both enabled.
 - Zoom on `ctrl+/` with animate zoom in and zoom out disabled.
 - Draw on `ctrl+'`.
 - Record on `ctrl+;`.
