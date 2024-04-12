@@ -107,17 +107,17 @@ Using Tridactyl, press `:` and type the following commands:
 You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to view all the most important bindings.
 
 # Other Useful Tools
-- PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - my favourite tools are:
-  - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous query on launch enabled, preferred monitor primary, all plugins off except window walker - this allows switching windows by searching their name instead of alt tabbing.
-  - Color Picker with an activation shortcut of `win+shift+c`.
-  - Screen Ruler with an activation shortcut of `win+shift+p`.
-  - Text Extractor with an activation shortcut of `win+shift+t`.
-  - Command Not Found enabled.
-- SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want - the only one I use is ZoomIt with the following settings:
-  - Zoom on `ctrl+/` with animate zoom in and zoom out disabled.
-  - Draw on `ctrl+'`.
-  - Record on `ctrl+;`.
-- Visual Studio 2022 - Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already.
-- Make &rightarrow; Run `winget install make --source winget`.
-- Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`.
-- scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc).
+PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - my favourite tools are:
+- Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous query on launch enabled, preferred monitor primary, all plugins off except window walker - this allows switching windows by searching their name instead of alt tabbing.
+- Color Picker with an activation shortcut of `win+shift+c`.
+- Screen Ruler with an activation shortcut of `win+shift+p`.
+- Text Extractor with an activation shortcut of `win+shift+t`.
+- Command Not Found enabled.
+SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want - the only one I use is ZoomIt with the following settings:
+- Zoom on `ctrl+/` with animate zoom in and zoom out disabled.
+- Draw on `ctrl+'`.
+- Record on `ctrl+;`.
+Visual Studio 2022 - Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already.
+Make &rightarrow; Run `winget install make --source winget`.
+Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`.
+scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc).
