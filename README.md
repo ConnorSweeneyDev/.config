@@ -117,10 +117,10 @@ SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us
 - Draw on `ctrl+'`.
 - Record on `ctrl+;`.
 
-Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already.
-
 Make &rightarrow; Run `winget install make --source winget`.
 
 Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`.
+
+Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already.
 
 scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc).
