@@ -8,10 +8,10 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 
 *Showcase: **cw** (cd directory), **ew** (explorer directory), **nw** (nvim . directory), **ctrl+f** in Neovim (new tab + cw), **ctrl+tab** (switch tabs), **:q** (exit terminal), **f** (open firefox with tridactyl).*
 
-# Setup Instructions
+## System Setup
 ### Full Paths to Repository Folders:
-- PowerShell &rightarrow; `C:\Users\conno\Documents\PowerShell`
-- nvim &rightarrow; `C:\Users\conno\AppData\Local\nvim`
+- PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`
+- nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`
 - scripts &rightarrow; `C:\scripts`
 
 ### Miscellaneous Prerequisites:
@@ -36,7 +36,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - scripts &rightarrow; Put `C:\scripts\which` and `C:\scripts\firefox` in the path
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system core.longpaths true`
-- MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW` (Treesitter will only work with 64-bit MinGW)
+- MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW` (Ensure this matches your OS)
 - Python &rightarrow; Run `winget install --id Python.Python.3.11`
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`
@@ -48,12 +48,42 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`
 
-### Neovim Setup:
-This repository does not cover the installation instructions for after all dependencies are installed, the layout of the nvim folder is simple.\
-This is where you should install the plugins. After all plugins are installed and you are not getting any errors, move on to the next section.
+## Neovim Setup
+I recommend manually recreating the `nvim` folder on your PC rather than just pasting it in, because this will allow you to single out any unexpected errors as they happen.
 
-### Coc Extensions:
-- To get language servers, run `:CocInstall coc-discord-rpc coc-copilot coc-git coc-powershell coc-sh coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql coc-pyright coc-java coc-omnisharp coc-cmake coc-clangd`
+You should start with the top level `init.lua`, replace "connor" with "[YOUR USERNAME]" then move on to the `lua/[USERNAME]/init.lua` and replace my name with yours again. Then you can create `lua/[USERNAME]/remap.lua` and `lua/[USERNAME]/set.lua`. Running `nvim .` in that directory now should open Neovim and give you no errors.
+
+Now you can create `lua/[USERNAME]/packer.lua`, populate it with only the following lines:
+```lua
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim
+
+-- Only required if you have packer configured as `opt`
+vim.cmd [[packadd packer.nvim]]
+
+return require('packer').startup(function(use)
+    -- Packer can manage itself
+    use('wbthomason/packer.nvim')
+end)
+```
+Run `nvim .` and navigate to this file, run `:so` and `:PackerSync`, then press `q` after packer finishes.
+
+Now, under the line `use('wbthomason/packer.nvim')` you can start adding plugins, do so in the following pattern (with some exceptions):
+- Add the line to `lua/[USERNAME]/packer.lua` and run `:so` then `:PackerSync` inside it
+- If it needs one, add an `after/plugin/[PLUGIN].lua` file for the plugin and run `:so` inside it
+- Run `:q` then `nvim .` incase the plugin needs a restart
+
+The following plugins require extra or different steps than those outlined above:
+- Treesitter &rightarrow; After restarting, you should see it compiling languages at the bottom of your screen, don't touch your keyboard until this is finished. You might get an error along the lines of `[LANGUAGE].so is not a valid Win32 app`, which means either your version of MinGW does not match your operating system or treesitter is using the wrong compiler. After fixing the issue you can run `TSInstall [LANGUAGE]` to recompile it
+- Coc &rightarrow; After restarting, run `:CocInstall coc-discord-rpc coc-copilot coc-git coc-powershell coc-sh coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql coc-pyright coc-java coc-omnisharp coc-cmake coc-clangd` and run `:q` to close the dialog once everything is installed and add `coc-settings.json`, then restart again. If you don't want discord integration with Neovim, dont include `coc-discord-rpc` or just run `CocUninstall coc-discord-rpc`. If a language you want is missing, you can find it [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions)
+- Copilot &rightarrow; If you don't have a license for Copilot then don't include this plugin. If you do, then after restarting run `:Copilot setup` and follow the instructions
+- Colorscheme &rightarrow; You can use the one that I use, but if you don't want to you will have to change the lines in `lua/[USERNAME]/packer.lua`, `after/plugin/colors.lua` and `after/plugin/lualine.lua` accordingly
+
+After all those plugins are installed, don't forget to include `after/plugin/buffers.lua`, `after/plugin/colors.lua`, they are not related to any plugins.\
+`colors.lua` will just make everthing look slightly better, and `buffers.lua` is optional, as it can slow down the startup time but will open every file in the specified directory that has any of the file extensions specified - this can be useful because renaming symbols across multiple files can fail if you need to change words in a buffer that is not already open.
+
+Finally, you can paste the `mapping-info` folder for safe keeping.
+
+All keybinds can be edited at `lua/[USERNAME]/remap.lua` or the respective `after/plugin/[PLUGIN].lua` file, and all settings can be edited at `lua/[USERNAME]/set.lua`.
 
 # Firefox With Tridactyl
 Go [here](https://www.mozilla.org/en-GB/firefox/new/) to download Firefox and then [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) to install the Tridactyl add-on. Also make it the default browser.
@@ -75,15 +105,15 @@ You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#high
 
 # Other Useful Tools
 - PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - my favourite tools are:\
-  Run with an activation shortcut of shift+backspace, input smoothing disabled, clear previous query on launch enabled, preferred monitor primary, all plugins off except window walker - this allows switching windows by searching their name instead of alt tabbing\
-  Color Picker with an activation shortcut of win+shift+c\
-  Screen Ruler with an activation shortcut of win+shift+p\
-  Text Extractor with an activation shortcut of win+shift+t\
+  Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous query on launch enabled, preferred monitor primary, all plugins off except window walker - this allows switching windows by searching their name instead of alt tabbing\
+  Color Picker with an activation shortcut of `win+shift+c\`
+  Screen Ruler with an activation shortcut of `win+shift+p\`
+  Text Extractor with an activation shortcut of `win+shift+t\`
   Command Not Found enabled
 - SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that you want - the only one I use is ZoomIt with the following settings:\
-  Zoom on ctrl+/ with animate zoom in and zoom out disabled\
-  Draw on ctrl+'\
-  Record on ctrl+;
+  Zoom on `ctrl+/` with animate zoom in and zoom out disabled\
+  Draw on `ctrl+'\`
+  Record on `ctrl+;`
 - Visual Studio 2022 - Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already
 - Make &rightarrow; Run `winget install make --source winget`
 - Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`
