@@ -48,7 +48,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`
 
-### Neovim:
+### Neovim Setup:
 This repository does not cover the installation instructions for after all dependencies are installed, the layout of the nvim folder is simple.\
 This is where you should install the plugins. After all plugins are installed and you are not getting any errors, move on to the next section.
 
