@@ -107,7 +107,7 @@ You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#high
 # Other Useful Tools
 PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - enable Run at startup - my favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous query on launch enabled, preferred monitor primary, all plugins off except window walker - this allows switching windows by searching their name instead of alt tabbing.
-- Color Picker with an activation shortcut of `win+shift+c`.
+- Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
 - Screen Ruler with an activation shortcut of `win+shift+p`.
 - Text Extractor with an activation shortcut of `win+shift+t`.
 - Command Not Found enabled.
