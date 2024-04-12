@@ -22,14 +22,14 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete the .ttf files from the folder after you've installed them.
 ### Terminal Settings:
-- Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows Terminal. "Launch size" = 120x25. "Launch parameters" = Center on launch enabled.
-- Interaction &rightarrow; "Warn when closing more than one tab" = Off.
-- Appearance &rightarrow; "Use acrylic material in the tab row" = On. "Use active terminal title as application title" = Off.
-- Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle fullscreen" to `alt+enter`.
-- Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%.
+- Startup &rightarrow; Default profile = PowerShell. Default termial application = Windows Terminal. Launch size = 120x25. Launch parameters = Center on launch enabled.
+- Interaction &rightarrow; Warn when closing more than one tab = Off.
+- Appearance &rightarrow; Use acrylic material in the tab row = On. Use active terminal title as application title = Off.
+- Actions &rightarrow; Add a new action Close tab assigned to `ctrl+shift+d`. Set Toggle fullscreen to `alt+enter`.
+- Defaults &rightarrow; Appearance &rightarrow; Font face = CaskaydiaCove Nerd Font. Font size = 16. Background opacity = 75%.
 ### PowerShell Settings:
 - Starting directory &rightarrow; `C:\`.
-- Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 16. "Background opacity" = 75%.
+- Appearance &rightarrow; Font face = CaskaydiaCove Nerd Font. Font size = 16. Background opacity = 75%.
 
 ### Dependencies (Evironment Variables) for Neovim:
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard.
@@ -91,10 +91,10 @@ All keybinds can be edited at `lua/[USERNAME]/remap.lua` or the respective `afte
 
 # Firefox With Tridactyl
 First make firefox your default browser. After that go to Firefox settings and change the following:
-- General &rightarrow; Use recommended performance settings &rightarrow; Off.
-- General &rightarrow; Use hardware acceleration when available &rightarrow; Off.
+- General &rightarrow; Use recommended performance settings = Off.
+- General &rightarrow; Use hardware acceleration when available = Off.
 - Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; Paste `moz-extension://13a1d2f1-5f72-41ad-bbed-17d8bb8bae85/static/newtab.html` &rightarrow; Use Current Page.
-- Home &rightarrow; Default search engine &rightarrow; Google.
+- Home &rightarrow; Default search engine = Google.
 - Now go to this url `about:config` and search for `full-screen-api.transition-duration.enter` and `full-screen-api.transition-duration.leave` and change both to `0 0`.
 - Scan the rest of the settings and disable things you don't want that will slow down the browser.
 
