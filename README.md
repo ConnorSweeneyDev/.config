@@ -50,7 +50,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to `C:\Program Files\Mozilla Firefox\firefox.exe`.
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
 - Tridactyl &rightarrow; Go [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) on Firefox.
-- Paste the `C:/scripts` folder to that location, make sure the path to your firefox installation in `C:/scripts/firefox/firefoxfocusfix.bat` is correct. Ensure you put `C:/scripts/which` and `C:/scripts/firefox` in the path.
+- Paste the `C:/scripts` folder to that location. Ensure you put `C:/scripts/which` and `C:/scripts/firefox` in the path.
 
 # Neovim Setup
 I recommend manually recreating the `nvim` folder on your PC rather than just pasting it in, because this will allow you to single out any unexpected errors as they happen.
