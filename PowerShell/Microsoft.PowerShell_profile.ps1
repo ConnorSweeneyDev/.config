@@ -1,14 +1,11 @@
 function :q { exit }
 function q { exit }
+function t { wt --window 0 }
 function c { clear }
 function e { explorer . }
 function b { explorer shell:RecycleBinFolder }
 function n { nvim . }
-function f
-{
-    firefoxfocusfix
-    exit
-}
+function f { firefoxfocusfix }
 
 function cw
 {
@@ -66,3 +63,8 @@ function prompt
     $Host.UI.RawUI.WindowTitle = "$p"
     "$pwd> "
 }
+
+#34de4b3d-13a8-4540-b76d-b9e8d3851756 PowerToys CommandNotFound module
+
+Import-Module "C:\Program Files\PowerToys\WinUI3Apps\..\WinGetCommandNotFound.psd1"
+#34de4b3d-13a8-4540-b76d-b9e8d3851756
