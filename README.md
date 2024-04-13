@@ -47,7 +47,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 ### Dependencies (Evironment Variables) for the scripts folder:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
-- Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/).
+- Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to `C:\Program Files\Mozilla Firefox\firefox.exe`.
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
 - Tridactyl &rightarrow; Go [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) on Firefox.
 - Paste the `C:/scripts` folder to that location, make sure the path to your firefox installation in `C:/scripts/firefox/firefoxfocusfix.bat` is correct. Ensure you put `C:/scripts/which` and `C:/scripts/firefox` in the path.
