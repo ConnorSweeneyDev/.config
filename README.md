@@ -8,7 +8,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 
 *Showcase: **cw** (cd directory), **ew** (explorer directory), **nw** (nvim . directory), **ctrl+f** in Neovim (new tab + cw), **ctrl+tab** (switch tabs), **:q** (exit terminal), **f** (open firefox with tridactyl).*
 
-## System Setup
+# System Setup
 ### Full Paths to Repository Folders:
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`.
@@ -52,7 +52,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/a4e1d524-d
 - Tridactyl &rightarrow; Go [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) on Firefox.
 - Paste the `C:/scripts` folder to that location, make sure the path to your firefox installation in `C:/scripts/firefox/firefoxfocusfix.bat` is correct. Ensure you put `C:/scripts/which` and `C:/scripts/firefox` in the path.
 
-## Neovim Setup
+# Neovim Setup
 I recommend manually recreating the `nvim` folder on your PC rather than just pasting it in, because this will allow you to single out any unexpected errors as they happen.
 
 You should start with the top level `init.lua`, replace "connor" with "[YOUR USERNAME]" then move on to the `lua/[USERNAME]/init.lua` and replace my name with yours again. Then you can create `lua/[USERNAME]/remap.lua` and `lua/[USERNAME]/set.lua`. Running `nvim .` in that directory now should open Neovim and give you no errors.
