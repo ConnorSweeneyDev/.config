@@ -6,8 +6,8 @@ vim.keymap.set("n", "]d", "<Plug>(coc-diagnostic-next)", {silent = true})
 
 vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
 vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
-vim.keymap.set("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 vim.keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
+vim.keymap.set("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 
 function _G.show_docs()
     local cw = vim.fn.expand('<cword>')
