@@ -1,11 +1,11 @@
---- MAIN FILE MENUS ---
+--- TELESCOPE MENUS ---
 (Normal) <space>pv       -->  Go to main netrw menu
 (Normal) <space>pf       -->  Open telescope menu for navigating files in the directory
 (Normal) <space>ps       -->  Enter word to search for in telescope menu for navigating files in the directory
 (Normal) <space>pb       -->  Open telescope menu for navigating buffers
 (Normal) <space>py       -->  Open telescope menu for navigating yank history
 (Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
---- MAIN FILE MENUS ---
+--- TELESCOPE MENUS ---
 
 
 
@@ -39,6 +39,13 @@
 
 
 
+--- LEAP ---
+(Normal) s<char><char>   -->  Leap forward
+(Normal) S<char><char>   -->  Leap backward
+--- LEAP ---
+
+
+
 --- RIPGREP ---
 (Normal) <space>rg       -->  Add all lines containing the word you enter to a quickfix list (only files in the prog directory of the project)
 (Normal) <space>og       -->  Open the quickfix list
@@ -55,8 +62,6 @@
 (Normal) gy              -->  Go to the type definition of the word being hovered
 (Normal) [c              -->  Go to the context at the top of the screen if it is currently shown
 
-(Normal) K               -->  Display information on the word being hovered
-
 (Normal) <space>td       -->  Display all system diagnostics
 (Normal) ]d              -->  Go to the next Info/Warning/Error
 (Normal) [d              -->  Go to the previous Info/Warning/Error
@@ -68,6 +73,8 @@
 (Insert) <up>            -->  Previous completion
 (Insert) <control>y      -->  Accept completion
 (Insert) <control>e      -->  Dismiss completions
+
+(Normal) K               -->  Display information on the word being hovered
 --- LSP ---
 
 
@@ -89,7 +96,7 @@
 (Normal) <control>ws     -->  Split window horizontally
 (Normal) <control>wv     -->  Split window vertically
 
-(Normal) <control>f      -->  Create a new powershell tab and run "cw"
+(Normal) <control>f      -->  Create a new powershell tab
 --- WINDOWS ---
 
 
@@ -144,8 +151,9 @@
 (Normal) va<bracket>     -->  If the bracket is {, highlights the current scope including the { and } - if the bracket is ( or [, highlights the next () or [] and all content inside it
 (Normal) vi<bracket>     -->  If the bracket is {, highlights the current scope excluding the { and } - if the bracket is ( or [, highlights the content inside the next () or [] but not the brackets
 
-(Normal) s<char><char>   -->  Leap forward
-(Normal) S<char><char>   -->  Leap backward
+(Normal) <control>o      -->  Move to the previous cursor location
+(Normal) <control>i      -->  Move to the next cursor location
+(Visual) <control>^      -->  Move to the last visited file
 --- CURSOR MOVEMENT ---
 
 
@@ -220,6 +228,7 @@
 (Normal) <space>s        -->  Replaces all instances of the current hovered word in the file
 (Visual) <space>s        -->  Replaces all instances of the current selected text in the file
 (Visual) <control>s      -->  Replaces all instances of the word you type with the second word you type, only in the current selection
+
 (Visual) <space>p        -->  Replaces the currently highlighted text with the clipboard contents, but keeps the contents afterwards
 (Normal) <control>a      -->  Increments the next integer by 1
 (Normal) <control>x      -->  Decrements the next integer by 1
