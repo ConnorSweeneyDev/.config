@@ -132,7 +132,6 @@
 (Normal) ?<searchterm>   -->  Jumps to the first instance of the search term above the cursor
 (Normal) n               -->  Jumps to the next search term, keeping the cursor in the middle
 (Normal) N               -->  Jumps to the previous search term, keeping the cursor in the middle
-(Normal) ``              -->  Jumps to the previous cursor location
 (Visual) o               -->  Jumps to the top/bottom of the currently highlighted text
 
 (Normal) v               -->  Enters visual mode
@@ -151,8 +150,9 @@
 (Normal) va<bracket>     -->  If the bracket is {, highlights the current scope including the { and } - if the bracket is ( or [, highlights the next () or [] and all content inside it
 (Normal) vi<bracket>     -->  If the bracket is {, highlights the current scope excluding the { and } - if the bracket is ( or [, highlights the content inside the next () or [] but not the brackets
 
-(Normal) <control>o      -->  Move to the previous cursor location
-(Normal) <control>i      -->  Move to the next cursor location
+(Normal) <control>o      -->  Move to the previous location in the jump history
+(Normal) <control>i      -->  Move to the next location in the jump history
+(Normal) ``              -->  Move to the last jumped cursor location
 (Visual) <control>^      -->  Move to the last visited file
 --- CURSOR MOVEMENT ---
 
