@@ -225,11 +225,12 @@
 (Normal) ca<bracket>     -->  If the bracket is {, deletes the current scope including the { and } - if the bracket is ( or [, deletes the next () or [] and all content inside it, putting it in the clipboard and entering insert mode
 (Normal) ci<bracket>     -->  If the bracket is {, deletes the current scope excluding the { and } - if the bracket is ( or [, deletes the content inside the next () or [] but not the brackets, putting it in the clipboard and entering insert mode
 
+(Visual) p               -->  Replaces the currently highlighted text with the clipboard contents, putting the highlighted text in the clipboard
+(Normal) x               -->  Deletes the character under the cursor and puts it in the clipboard
+
 (Normal) <space>s        -->  Replaces all instances of the current hovered word in the file
 (Visual) <space>s        -->  Replaces all instances of the current selected text in the file
 (Visual) <control>s      -->  Replaces all instances of the word you type with the second word you type, only in the current selection
-
-(Visual) <space>p        -->  Replaces the currently highlighted text with the clipboard contents, but keeps the contents afterwards
 
 (Normal) <control>a      -->  Increments the next integer by 1
 (Normal) <control>x      -->  Decrements the next integer by 1

@@ -19,6 +19,7 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set({"n", "v"}, "<leader>c", [["_c]])
+vim.keymap.set({"n", "v"}, "<leader>x", [["_x]])
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]])
 vim.keymap.set("v", "<leader>s", "\"hy:%s/<C-r>h//g<Left><Left>")
