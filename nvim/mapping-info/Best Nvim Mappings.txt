@@ -230,8 +230,10 @@
 (Visual) <control>s      -->  Replaces all instances of the word you type with the second word you type, only in the current selection
 
 (Visual) <space>p        -->  Replaces the currently highlighted text with the clipboard contents, but keeps the contents afterwards
+
 (Normal) <control>a      -->  Increments the next integer by 1
 (Normal) <control>x      -->  Decrements the next integer by 1
+(Normal) ~               -->  Toggles the case of the hovered character and moves the cursor to the right
 --- TEXT MANIPULATION ---
 
 
