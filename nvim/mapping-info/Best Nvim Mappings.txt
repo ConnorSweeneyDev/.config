@@ -5,6 +5,8 @@
 (Normal) <space>pb       -->  Open telescope menu for navigating buffers
 (Normal) <space>py       -->  Open telescope menu for navigating yank history
 (Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
+
+(Normal) <control>q      -->  Add every entry in the telescope window to the quickfix list
 --- TELESCOPE MENUS ---
 
 
@@ -136,7 +138,8 @@
 
 (Normal) v               -->  Enters visual mode
 (Visual) v               -->  Exits visual mode
-(Normal) V               -->  Highlights the current line
+(Normal) V               -->  Enters visual line mode
+(Normal) <control>q      -->  Enters visual block mode
 (Normal) vw              -->  Highlights from the cursor to the start of the next hovered word
 (Normal) vb              -->  Highlights from the cursor to the start of the current hovered word
 (Normal) vap             -->  Highlights the current hovered paragraph
