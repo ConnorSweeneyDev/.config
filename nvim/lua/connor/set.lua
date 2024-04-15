@@ -4,7 +4,7 @@ vim.opt.shell = "cmd.exe"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
 vim.opt.colorcolumn = "0"
 
 vim.opt.tabstop = 4

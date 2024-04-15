@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
             'nvim-telescope/telescope.nvim'
         } 
     }
-    use("gbprod/yanky.nvim")
+    use('gbprod/yanky.nvim')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
@@ -34,15 +34,12 @@ return require('packer').startup(function(use)
     use('github/copilot.vim')
 
     use('tribela/vim-transparent') 
+    use('nvim-tree/nvim-web-devicons')
     use
     {
-        'Mofiqul/vscode.nvim',
-        as = 'vscode',
-        config = function()
-            vim.cmd('colorscheme vscode')
-        end
+        'Mofiqul/vscode.nvim', as = 'vscode',
+        config = function() vim.cmd('colorscheme vscode') end
     }
-    use("nvim-tree/nvim-web-devicons")
     use
     {
         'nvim-lualine/lualine.nvim',
