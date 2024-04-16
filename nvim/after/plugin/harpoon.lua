@@ -1,23 +1,18 @@
 local harpoon = require("harpoon")
 
 -- REQUIRED
-harpoon:setup({
-    settings = {
-        save_on_toggle = true
-    }
-})
+harpoon:setup { settings = { save_on_toggle = true } }
 -- REQUIRED
 
-vim.keymap.set("n", "<C-e>",
-    function() harpoon.ui:toggle_quick_menu(
+vim.keymap.set("n", "<C-e>", function()
+    harpoon.ui:toggle_quick_menu(
         harpoon:list(),
         {
             title = " Harpoon ",
             title_pos = "left",
             border = "rounded",
-        }
-    ) end
-)
+        })
+end)
 
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<leader>z", function() harpoon:list():remove() end)
