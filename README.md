@@ -88,7 +88,13 @@ Finally, you can paste the `mapping-info` folder for safe keeping.
 All keybinds can be edited at `lua/[USERNAME]/remap.lua` or the respective `after/plugin/[PLUGIN].lua` file, and all settings can be edited at `lua/[USERNAME]/set.lua`.
 
 # Firefox With Tridactyl
-First make firefox your default browser. After that go to Firefox settings and change the following:
+To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
+- Go to `C:/ProgramData/Microsoft/Windows/Start Menu/Programs` and right click on the Firefox shortcut, then properties.
+- Change the target to `C:/scripts/firefox/firefoxfocusfix.bat`.
+- Click Change Icon and browse to `C:/Program Files/Mozilla Firefox` then select the Firefox icon.
+- Apply the changes.
+
+Now make firefox your default browser. After that go to Firefox settings and change the following:
 - General &rightarrow; Use recommended performance settings = Off.
 - General &rightarrow; Use hardware acceleration when available = Off.
 - Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; Paste `moz-extension://13a1d2f1-5f72-41ad-bbed-17d8bb8bae85/static/newtab.html` &rightarrow; Use Current Page.
