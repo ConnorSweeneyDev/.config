@@ -1,48 +1,26 @@
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use('wbthomason/packer.nvim')
+
+    use('nvim-lua/plenary.nvim')
+    use('stevearc/oil.nvim')
+    use('nvim-telescope/telescope.nvim')
+    use{'theprimeagen/harpoon', branch = 'harpoon2'}
+    use('mbbill/undotree')
+    use('tpope/vim-fugitive')
+    use('gbprod/yanky.nvim')
+
+    use{'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use{'neoclide/coc.nvim', branch = 'release'}
+    use('github/copilot.vim')
 
     use('ggandor/leap.nvim')
     use('nvim-treesitter/nvim-treesitter-context')
 
-    use
-    {
-        'nvim-telescope/telescope.nvim',
-        requires = 
-        {
-            'nvim-lua/plenary.nvim'
-        }
-    }
-    use
-    {
-        'theprimeagen/harpoon', branch = 'harpoon2',
-        requires =
-        { 
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope.nvim'
-        } 
-    }
-    use('gbprod/yanky.nvim')
-    use('mbbill/undotree')
-    use('tpope/vim-fugitive')
-
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use{'neoclide/coc.nvim', branch = 'release'}
-    use('github/copilot.vim')
-
-    use('tribela/vim-transparent') 
     use('nvim-tree/nvim-web-devicons')
-    use
-    {
-        'Mofiqul/vscode.nvim', as = 'vscode',
-        config = function() vim.cmd('colorscheme vscode') end
-    }
-    use
-    {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
+    use('MunifTanjim/nui.nvim')
+    use('tribela/vim-transparent') 
+    use('nvim-lualine/lualine.nvim')
+    use{'Mofiqul/vscode.nvim', as = 'vscode', config = function() vim.cmd('colorscheme vscode') end}
 end)
