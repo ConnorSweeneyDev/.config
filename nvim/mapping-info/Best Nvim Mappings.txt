@@ -1,36 +1,41 @@
---- TELESCOPE MENUS ---
-(Normal) <space>pv       -->  Go to main netrw menu
+--- FILE MENUS ---
+(Normal) <space>pv       -->  Open oil menu for the current file directory
+
 (Normal) <space>pf       -->  Open telescope menu for navigating files in the directory
 (Normal) <space>ps       -->  Enter word to search for in telescope menu for navigating files in the directory
 (Normal) <space>pb       -->  Open telescope menu for navigating buffers
 (Normal) <space>py       -->  Open telescope menu for navigating yank history
 (Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
-
 (Normal) <control>q      -->  Add every entry in the telescope window to the quickfix list
---- TELESCOPE MENUS ---
 
-
-
---- HARPOON ---
 (Normal) <space>a        -->  Add current file to harpoon
 (Normal) <control>e      -->  Open harpoon menu
 (Normal) <control>g      -->  Go to next file
 (Normal) <control>t      -->  Go to previous file
---- HARPOON ---
+--- FILE MENUS ---
 
 
 
 --- FUGITIVE ---
-(Normal) <space>gs       -->  Open fugitive menu for git stuff
-(Normal) cc              -->  Create a new commit
+(Normal) <space>gs       -->  Open fugitive menu
 (Normal) s               -->  When cursor is on an unstaged change, stages it; when cursor is on an unpushed commit, pushes it
 (Normal) u               -->  When cursor is on a staged change, unstages it
+(Normal) cc              -->  Create a new commit
 --- FUGITIVE ---
+
+
+
+--- RIPGREP ---
+(Normal) <space>rg       -->  Add all lines containing the word you enter to a quickfix list (only files in the prog directory of the project)
+(Normal) <space>og       -->  Open the quickfix list
+(Normal) <space>fg       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
+(Normal) <space>dg       -->  Delete the hovered line from the quickfix list
+--- RIPGREP ---
 
 
 
 --- UNDOTREE ---
-(Normal) <space>u        -->  Open undo history menu
+(Normal) <space>u        -->  Open undotree menu
 --- UNDOTREE ---
 
 
@@ -42,29 +47,20 @@
 
 
 --- LEAP ---
-(Normal) s<char><char>   -->  Leap forward
-(Normal) S<char><char>   -->  Leap backward
+(Normal) s<char><char>   -->  Check forward for the two characters and leap to them by pressing the displayed key
+(Normal) S<char><char>   -->  Check backward for the two characters and leap to them by pressing the displayed key
 --- LEAP ---
 
 
 
---- RIPGREP ---
-(Normal) <space>rg       -->  Add all lines containing the word you enter to a quickfix list (only files in the prog directory of the project)
-(Normal) <space>og       -->  Open the quickfix list
-(Normal) <space>dg       -->  Delete the hovered line from the quickfix list
-(Normal) <space>fg       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
---- RIPGREP ---
-
-
-
---- LSP ---
+--- LANGUAGE SERVER ---
 (Normal) gd              -->  Go to the definition of the word being hovered
 (Normal) gr              -->  Go to the references of the word being hovered
 (Normal) gi              -->  Go to the implementation of the word being hovered
 (Normal) gy              -->  Go to the type definition of the word being hovered
 (Normal) [c              -->  Go to the context at the top of the screen if it is currently shown
 
-(Normal) <space>td       -->  Display all system diagnostics
+(Normal) <space>td       -->  Display all diagnostics
 (Normal) ]d              -->  Go to the next Info/Warning/Error
 (Normal) [d              -->  Go to the previous Info/Warning/Error
 
@@ -77,7 +73,7 @@
 (Insert) <control>e      -->  Dismiss completions
 
 (Normal) K               -->  Display information on the word being hovered
---- LSP ---
+--- LANGUAGE SERVER ---
 
 
 
