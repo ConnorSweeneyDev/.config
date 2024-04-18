@@ -28,7 +28,6 @@ vim.keymap.set("v", "<C-s>", ":s//g<Left><Left>")
 
 vim.keymap.set("n", "<leader>rg", ":silent grep  prog<Left><Left><Left><Left><Left>")
 vim.keymap.set("n", "<leader>og", ":copen<CR>")
-vim.keymap.set("n", "<leader>dg", ":call setqflist(filter(getqflist(), 'v:key != line(\".\")-1'))<CR>")
 vim.keymap.set("n", "<leader>fg", ":cdo s//g<Left><Left>")
 
 vim.keymap.set("n", "<leader><leader>", ":so<CR>")

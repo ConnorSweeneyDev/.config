@@ -8,6 +8,9 @@
 (Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
 (Normal) <control>q      -->  Add every entry in the telescope window to the quickfix list
 
+(Normal) <space>u        -->  Open undotree menu
+(Normal) <space>gs       -->  Open fugitive menu
+
 (Normal) <space>a        -->  Add current file to harpoon
 (Normal) <control>e      -->  Open harpoon menu
 (Normal) <control>g      -->  Go to next file
@@ -16,33 +19,17 @@
 
 
 
+--- YANKY ---
+(Normal) <space>ky       -->  Clear yank history
+--- YANKY ---
+
+
+
 --- FUGITIVE ---
-(Normal) <space>gs       -->  Open fugitive menu
 (Normal) s               -->  When cursor is on an unstaged change, stages it; when cursor is on an unpushed commit, pushes it
 (Normal) u               -->  When cursor is on a staged change, unstages it
 (Normal) cc              -->  Create a new commit
 --- FUGITIVE ---
-
-
-
---- RIPGREP ---
-(Normal) <space>rg       -->  Add all lines containing the word you enter to a quickfix list (only files in the prog directory of the project)
-(Normal) <space>og       -->  Open the quickfix list
-(Normal) <space>fg       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
-(Normal) <space>dg       -->  Delete the hovered line from the quickfix list
---- RIPGREP ---
-
-
-
---- UNDOTREE ---
-(Normal) <space>u        -->  Open undotree menu
---- UNDOTREE ---
-
-
-
---- YANKY ---
-(Normal) <space>ky       -->  Clear yank history
---- YANKY ---
 
 
 
@@ -82,6 +69,14 @@
 (Insert) <alt>m          -->  Accept word in suggestion
 (Insert) <alt>n	         -->  Dismiss suggestion
 --- COPILOT ---
+
+
+
+--- QUICKFIX LIST ---
+(Normal) <space>rg       -->  Add all lines containing the word you enter to a quickfix list (only files in the prog directory of the project)
+(Normal) <space>og       -->  Open the quickfix list
+(Normal) <space>fg       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
+--- QUICKFIX LIST ---
 
 
 
