@@ -19,6 +19,12 @@
 
 
 
+--- OIL ---
+(Normal) <control>l      -->  Refresh oil menu
+--- OIL ---
+
+
+
 --- YANKY ---
 (Normal) <space>ky       -->  Clear yank history
 --- YANKY ---
