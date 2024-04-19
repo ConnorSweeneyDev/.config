@@ -103,7 +103,7 @@ Now make firefox your default browser. After that go to Firefox settings and cha
 - Scan the rest of the settings and disable things you don't want that will slow down the browser.
 
 Using Tridactyl, press `:` and type the following commands:
-- `set newtab google.com`.
+- `set newtab about:blank`.
 - `set searchengine google`.
 - `set modeindicatorshowkeys true`.
 - `set modeindicatormodes {"normal":"true","insert":"true","input":"true","ignore":"false","ex":"true","hint":"true","visual":"true"}`.
