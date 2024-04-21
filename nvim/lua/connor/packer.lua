@@ -18,6 +18,7 @@ return require("packer").startup(function(use)
 
     use("ggandor/leap.nvim")
     use("nvim-treesitter/nvim-treesitter-context")
+    use{"windwp/nvim-autopairs"}
 
     use("nvim-tree/nvim-web-devicons")
     use("MunifTanjim/nui.nvim")
