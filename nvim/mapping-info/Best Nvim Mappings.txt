@@ -20,6 +20,7 @@
 
 
 --- OIL ---
+(Normal) -               -->  Go up one directory
 (Normal) <control>l      -->  Refresh oil menu
 --- OIL ---
 
