@@ -244,8 +244,6 @@
 --- TEXT CREATION ---
 (Normal) o               -->  Inserts a new line below the current hovered line
 (Normal) O               -->  Inserts a new line above the current hovered line
-
-(Insert) <control>b      -->  Activate autopairs to insert a closing bracket
 --- TEXT CREATION ---
 
 
