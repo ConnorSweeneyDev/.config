@@ -131,6 +131,7 @@
 (Normal) /<searchterm>   -->  Jumps to the first instance of the search term below the cursor
 (Normal) ?<searchterm>   -->  Jumps to the first instance of the search term above the cursor
 (Normal) *               -->  Jumps to the next instance of the word being hovered
+(Normal) #               -->  Jumps to the previous instance of the word being hovered
 (Normal) n               -->  Jumps to the next search term, keeping the cursor in the middle
 (Normal) N               -->  Jumps to the previous search term, keeping the cursor in the middle
 (Visual) o               -->  Jumps to the top/bottom of the currently highlighted text
