@@ -21,7 +21,9 @@ return require("packer").startup(function(use)
 
     use("nvim-tree/nvim-web-devicons")
     use("MunifTanjim/nui.nvim")
+    use("rcarriga/nvim-notify")
     use("tribela/vim-transparent") 
     use("nvim-lualine/lualine.nvim")
+    use("folke/noice.nvim")
     use{"Mofiqul/vscode.nvim", as = "vscode", config = function() vim.cmd("colorscheme vscode") end}
 end)
