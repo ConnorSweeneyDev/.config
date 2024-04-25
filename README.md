@@ -1,6 +1,10 @@
 # Windows11Workflow
 
+<<<<<<< HEAD
 All my vim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation. Also a quick setup for Tridactyl on Firefox.
+=======
+All my config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation. Also a quick setup for Tridactyl on Firefox.
+>>>>>>> cf702ac58f83620c88c815c47d046a286174a0e7
 
 This setup enables you to have many buffers open in Neovim that you can easily switch between using Harpoon and Telescope, while also quickly opening entirely different directories in new tabs using fzf which you can easily switch between and close, all while having access to vim motions in your browser.
 
