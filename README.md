@@ -1,7 +1,11 @@
 # Windows11Workflow
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 All my vim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation. Also a quick setup for Tridactyl on Firefox.
+=======
+All my config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation. Also a quick setup for Tridactyl on Firefox.
+>>>>>>> cf702ac58f83620c88c815c47d046a286174a0e7
 =======
 All my config files, using PowerShell in the Windows Terminal along with fzf and bat for fast navigation. Also a quick setup for Tridactyl on Firefox.
 >>>>>>> cf702ac58f83620c88c815c47d046a286174a0e7
