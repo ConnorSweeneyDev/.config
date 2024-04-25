@@ -36,6 +36,10 @@
 (Normal) s               -->  When cursor is on an unstaged change, stages it; when cursor is on an unpushed commit, pushes it
 (Normal) u               -->  When cursor is on a staged change, unstages it
 (Normal) cc              -->  Create a new commit
+
+(Normal) <space>gd       -->  Run git diff split for resolving merge conflicts
+(Normal) <space>gg       -->  Run git diff get for resolving merge conflicts
+(Normal) <space>gc       -->  Run git commit for resolving merge conflicts
 --- FUGITIVE ---
 
 
