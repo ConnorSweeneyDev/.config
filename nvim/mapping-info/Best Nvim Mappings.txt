@@ -5,6 +5,7 @@
 (Normal) <space>ps       -->  Enter word to search for in telescope menu for navigating files in the directory
 (Normal) <space>pb       -->  Open telescope menu for navigating buffers
 (Normal) <space>py       -->  Open telescope menu for navigating yank history
+(Normal) <space>pm       -->  Open telescope menu for navigating message history
 (Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
 (Normal) <control>q      -->  Add every entry in the telescope window to the quickfix list
 
