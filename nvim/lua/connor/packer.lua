@@ -7,10 +7,10 @@ return require("packer").startup(function(use)
     use("nvim-telescope/telescope.nvim")
     use{"theprimeagen/harpoon", branch = "harpoon2"}
     use("mbbill/undotree")
+    use("gbprod/yanky.nvim")
     use('kevinhwang91/nvim-bqf')
     use("itchyny/vim-qfedit")
     use("tpope/vim-fugitive")
-    use("gbprod/yanky.nvim")
 
     use{"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use{"neoclide/coc.nvim", branch = "release"}
