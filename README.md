@@ -59,11 +59,8 @@ You should start with the top level `init.lua`, replace "connor" with "[YOUR USE
 
 Now you can create `lua/[USERNAME]/packer.lua`, populate it with only the following lines:
 ```lua
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use('wbthomason/packer.nvim')
 end)
 ```
