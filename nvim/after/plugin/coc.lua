@@ -1,6 +1,6 @@
 vim.keymap.set("i", "<C-y>", 'coc#pum#confirm()', {expr = true, noremap = true, silent = true, replace_keycodes = false})
 
-vim.keymap.set("n", "<leader>td", ":<C-u>CocList diagnostics<cr>", {silent = true, nowait = true})
+vim.keymap.set("n", "<LEADER>td", "<CMD>CocList diagnostics<cr>", {silent = true, nowait = true})
 vim.keymap.set("n", "[d", "<Plug>(coc-diagnostic-prev)", {silent = true})
 vim.keymap.set("n", "]d", "<Plug>(coc-diagnostic-next)", {silent = true})
 
@@ -19,7 +19,7 @@ function _G.show_docs()
         vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
     end
 end
-vim.keymap.set("n", "K", ":lua _G.show_docs()<CR>", {silent = true})
+vim.keymap.set("n", "K", "<CMD>lua _G.show_docs()<CR>", {silent = true})
 
-vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
-vim.keymap.set("n", "<leader>ka", "<Plug>(coc-codeaction-cursor)", {silent = true, nowait = true})
+vim.keymap.set("n", "<LEADER>rn", "<Plug>(coc-rename)", {silent = true})
+vim.keymap.set("n", "<LEADER>ka", "<Plug>(coc-codeaction-cursor)", {silent = true, nowait = true})

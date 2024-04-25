@@ -1,4 +1,5 @@
-require("oil").setup({
+require("oil").setup
+{
     default_file_explorer = false,
     skip_confirm_for_simple_edits = false,
     view_options =
@@ -25,6 +26,6 @@ require("oil").setup({
         ["g."] = "actions.toggle_hidden",
         ["g\\"] = "actions.toggle_trash",
     }
-})
+}
 
-vim.cmd(":Oil")
+vim.cmd("Oil")

@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<leader>gs", ":Git<CR>")
+vim.keymap.set("n", "<LEADER>gs", "<CMD>Git<CR>")
