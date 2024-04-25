@@ -41,7 +41,6 @@
 
 (Normal) <space>gd       -->  Run git diff split for resolving merge conflicts
 (Normal) <space>gg       -->  Run git diff get for resolving merge conflicts
-(Normal) <space>gc       -->  Run git commit for resolving merge conflicts
 --- FUGITIVE ---
 
 
@@ -259,6 +258,8 @@
 (Normal) q<char>         -->  Starts recording a macro to the specified register
 (Normal) q               -->  Stops recording the macro
 (Normal) @<char>         -->  Plays the macro in the specified register
+
+(Visual) <control>n      -->  Allows you to input keypresses to :normal to run on each line that is highlighted
 --- MACROS ---
 
 

@@ -25,6 +25,7 @@ vim.keymap.set({"n", "v"}, "<LEADER>x", [["_x]])
 vim.keymap.set("n", "<LEADER>s", [[:%s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>]])
 vim.keymap.set("v", "<LEADER>s", "\"hy:%s/<C-r>h/<C-r>h/g<Left><Left>")
 vim.keymap.set("v", "<C-s>", ":s//g<Left><Left>")
+vim.keymap.set("v", "<C-n>", ":normal ")
 
 vim.keymap.set("n", "<LEADER>rg", ":silent grep  prog<Left><Left><Left><Left><Left>")
 vim.keymap.set("n", "<LEADER>fg", ":cdo s//g<Left><Left>")
