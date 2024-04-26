@@ -50,14 +50,14 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/58348671-1
 - Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to `C:\Program Files\Mozilla Firefox\firefox.exe`.
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
 - Tridactyl &rightarrow; Go [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) on Firefox.
-- Paste the `C:/scripts` folder to that location. Ensure you put `C:/scripts/which` and `C:/scripts/firefox` in the path.
+- Paste the `C:\scripts` folder to that location. Ensure you put `C:\scripts\which` and `C:\scripts\firefox` in the path.
 
 # Neovim Setup
 I recommend manually recreating the `nvim` folder on your PC rather than just pasting it in, because this will allow you to single out any unexpected errors as they happen.
 
-You should start with the top level `init.lua`, replace "connor" with "[YOUR USERNAME]" then move on to the `lua/[USERNAME]/init.lua` and replace my name with yours again. Then you can create `lua/[USERNAME]/remap.lua` and `lua/[USERNAME]/set.lua` and paste the config into each. Running `nvim .` in the nvim directory now should open Neovim and give you no errors.
+You should start with the top level `init.lua`, replace "connor" with "[YOUR USERNAME]" then move on to the `lua\[USERNAME]\init.lua` and replace my name with yours again. Then you can create `lua\[USERNAME]\remap.lua` and `lua\[USERNAME]\set.lua` and paste the config into each. Running `nvim .` in the nvim directory now should open Neovim and give you no errors.
 
-Now you can create `lua/[USERNAME]/packer.lua`, populate it with only the following lines:
+Now you can create `lua\[USERNAME]\packer.lua`, populate it with only the following lines:
 ```lua
 vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
@@ -66,29 +66,29 @@ end)
 ```
 Run `nvim .` and navigate to this file, run `:so` and `:PackerSync`, then press `q` after packer finishes.
 
-Now, under the line `use('wbthomason/packer.nvim')` you can start adding plugins, do so in the following pattern (with some exceptions):
-- Add the line to `lua/[USERNAME]/packer.lua` and run `:so` then `:PackerSync` inside it.
-- If it needs one, add an `after/plugin/[PLUGIN].lua` file for the plugin and run `:so` inside it.
+Now, under the line `use('wbthomason\packer.nvim')` you can start adding plugins, do so in the following pattern (with some exceptions):
+- Add the line to `lua\[USERNAME]\packer.lua` and run `:so` then `:PackerSync` inside it.
+- If it needs one, add an `after\plugin\[PLUGIN].lua` file for the plugin and run `:so` inside it.
 - Run `:q` then `nvim .` incase the plugin needs a restart.
 
 The following plugins require extra or different steps than those outlined above:
 - Treesitter &rightarrow; After following the steps, you should see it compiling languages at the bottom of your screen, don't touch your keyboard until this is finished. You might get an error along the lines of `[LANGUAGE].so is not a valid Win32 app`, which means either your version of MinGW does not match your operating system or treesitter is using the wrong compiler. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Coc &rightarrow; After following the steps, run `:CocInstall coc-discord-rpc coc-copilot coc-git coc-powershell coc-sh coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql coc-pyright coc-java coc-omnisharp coc-cmake coc-clangd` and run `:q` to close the dialog once everything is installed and add `coc-settings.json`, then restart again. If you don't want discord integration with Neovim, dont include `coc-discord-rpc` or just run `:CocUninstall coc-discord-rpc` after the first command. If a language you want is missing, you can find it [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
 - Copilot &rightarrow; If you don't have a license for Copilot then don't include this plugin. If you do, then after following the steps run `:Copilot setup` and follow the instructions.
-- Colorscheme &rightarrow; You can use the one that I use, but if you don't want to you will have to change the lines in `lua/[USERNAME]/packer.lua`, `after/plugin/colors.lua` and `after/plugin/lualine.lua` accordingly.
+- Colorscheme &rightarrow; You can use the one that I use, but if you don't want to you will have to change the lines in `lua\[USERNAME]\packer.lua`, `after\plugin\colors.lua` and `after\plugin\lualine.lua` accordingly.
 
-After all those plugins are installed, don't forget to include `after/plugin/buffers.lua` and `after/plugin/colors.lua`, they are not related to any plugins.\
+After all those plugins are installed, don't forget to include `after\plugin\buffers.lua` and `after\plugin\colors.lua`, they are not related to any plugins.\
 `colors.lua` will just make everthing look slightly better, and `buffers.lua` is optional, as it can slow down the startup time but will open a separate buffer every file in the specified directory that has any of the file extensions specified - this can be useful because renaming symbols across multiple files can fail if you need to change words in a buffer that is not already open.
 
 Finally, you can paste the `mapping-info` folder for safe keeping.
 
-All keybinds can be edited at `lua/[USERNAME]/remap.lua` or the respective `after/plugin/[PLUGIN].lua` file, and all settings can be edited at `lua/[USERNAME]/set.lua`.
+All keybinds can be edited at `lua\[USERNAME]\remap.lua` or the respective `after\plugin\[PLUGIN].lua` file, and all settings can be edited at `lua\[USERNAME]\set.lua`.
 
 # Firefox With Tridactyl
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
-- Go to `C:/ProgramData/Microsoft/Windows/Start Menu/Programs` and right click on the Firefox shortcut, then properties.
-- Change the target to `C:/scripts/firefox/firefoxfocusfix.bat`.
-- Click Change Icon and browse to `C:/Program Files/Mozilla Firefox` then select the Firefox icon.
+- Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox shortcut, then properties.
+- Change the target to `C:\scripts\firefox\firefoxfocusfix.bat`.
+- Click Change Icon and browse to `C:\Program Files\Mozilla Firefox` then select the Firefox icon.
 - Apply the changes.
 
 Now make firefox your default browser. After that go to Firefox settings and change the following:
@@ -127,7 +127,7 @@ Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.micros
 
 Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`.
 
-Cutter &rightarrow; Download from [here](https://github.com/rizinorg/cutter/releases) and put the contents in `C:/Cutter`.
+Cutter &rightarrow; Download from [here](https://github.com/rizinorg/cutter/releases) and put the contents in `C:\Cutter`.
 
 Mp3tag &rightarrow; Download from [here](https://www.mp3tag.de/en/download.html).
 
