@@ -42,7 +42,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/58348671-1
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`.
-- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit `Microsoft.PowerShell_profile.ps1` and remove the `attend` function, as that is specific to me. This file is where you can see all the custom commands, you can delete the ones you don't want or add new ones.
+- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are specific to me. This file is where you can see all the custom commands, you can delete the ones you don't want or add new ones.
 
 ### Dependencies (Evironment Variables) for the scripts folder:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
@@ -123,10 +123,12 @@ SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us
 
 Make &rightarrow; Run `winget install make --source winget`.
 
+Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already.
+
 Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`.
 
 Cutter &rightarrow; Download from [here](https://github.com/rizinorg/cutter/releases) and put the contents in `C:/Cutter`.
 
-Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already.
+Mp3tag &rightarrow; Download from [here](https://www.mp3tag.de/en/download.html).
 
 scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc).
