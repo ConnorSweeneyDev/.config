@@ -62,7 +62,7 @@ function music
     cd C:\Users\conno\Documents\Programming\C++\TerminalMusicPlayer
     $p = Split-Path -leaf -path (Get-Location)
     $Host.UI.RawUI.WindowTitle = "$p"
-    .\bin\MusicPlayer.exe
+    .\bin\TerminalMusicPlayer.exe
 }
 
 function prompt
