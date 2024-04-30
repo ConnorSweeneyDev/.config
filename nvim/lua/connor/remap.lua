@@ -3,7 +3,7 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<LEADER>pv", "<CMD>Oil<CR>")
-vim.keymap.set("n", "<C-f>", "<CMD>!pwsh -Command \"wt --window 0\"<CR>")
+vim.keymap.set("n", "<C-f>", "<CMD>!pwsh -Command \"wt --window 0 -p \"PowerShell\" pwsh -NoExit -Command \"nw\"\"<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
