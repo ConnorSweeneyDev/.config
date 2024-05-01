@@ -5,8 +5,8 @@ function OpenBuffers()
     local original_buffer = vim.api.nvim_get_current_buf()
 
     for _, ext in ipairs(file_extensions) do
-        local files = vim.fn.globpath(vim.fn.getcwd() .. "/prog", "**/" .. ext, 0, 1)
-        --                                                ^^^
+        local files = vim.fn.globpath(vim.fn.getcwd() .. "/program", "**/" .. ext, 0, 1)
+        --                                                 ^^^
         --                          Change this to the directory where your files are
 
         for _, file in ipairs(files) do
