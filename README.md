@@ -108,6 +108,10 @@ Using Tridactyl, press `:` and type the following commands:
 You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to view all the most important bindings.
 
 # Other Useful Tools
+Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put the following in the path:
+- `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` for MSBuild.
+- `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\[VSVERSION]\bin\[HOSTOSVERSION]\[OSVERSION]` for cl.
+
 PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - enable Run at startup - my favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous query on launch enabled, preferred monitor primary, all plugins off except window walker - this allows switching windows by searching their name instead of alt tabbing.
 - Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
@@ -122,8 +126,6 @@ SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us
 - Record on `ctrl+;`.
 
 Make &rightarrow; Run `winget install make --source winget`.
-
-Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` in the path if it isn't already.
 
 Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`.
 
