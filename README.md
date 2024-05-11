@@ -136,4 +136,4 @@ Mp3tag &rightarrow; Download from [here](https://www.mp3tag.de/en/download.html)
 
 scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc).
 
-Win11CursorConceptV2.2 &rightarrow; Go [here](https://www.deviantart.com/jepricreations/art/Windows-11-Cursors-Concept-HD-v2-890672103) for a more fitting cursor.
+Win11CursorConceptV2.2 &rightarrow; Go [here](https://www.deviantart.com/jepricreations/art/Windows-11-Cursors-Concept-HD-v2-890672103) for a more fitting cursor. After buying, unzip and go to the version you desire, right click the `install.inf` file and click install.
