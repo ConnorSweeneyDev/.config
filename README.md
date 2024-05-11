@@ -46,6 +46,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 
 ### Dependencies (Evironment Variables) for the scripts folder:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
+- fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
 - Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to `C:\Program Files\Mozilla Firefox\firefox.exe`.
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
