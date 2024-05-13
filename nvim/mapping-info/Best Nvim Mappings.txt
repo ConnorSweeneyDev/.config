@@ -39,9 +39,10 @@
 (Normal) u               -->  When cursor is on a staged change, unstages it
 (Normal) cc              -->  Create a new commit
 
-(Normal) dv              -->  Run Gvdiffsplit! for resolving merge conflicts
-(Normal) d2o             -->  Select the left side of the merge conflict
-(Normal) d3o             -->  Select the right side of the merge conflict
+(Normal) dv              -->  Open vertical diff view for resolving merge conflicts
+(Normal) d2o             -->  Put the left side of the merge conflict in the working copy
+(Normal) d3o             -->  Put the right side of the merge conflict in the working copy
+(Normal) <space>dq       -->  Close the left and right diff windows and focus the git status window
 --- FUGITIVE ---
 
 
