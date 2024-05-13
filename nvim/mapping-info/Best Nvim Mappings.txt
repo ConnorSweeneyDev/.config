@@ -34,13 +34,14 @@
 
 
 --- FUGITIVE ---
+(Normal) <space>gp       -->  Run git pull
 (Normal) s               -->  When cursor is on an unstaged change, stages it; when cursor is on an unpushed commit, pushes it
 (Normal) u               -->  When cursor is on a staged change, unstages it
 (Normal) cc              -->  Create a new commit
-(Normal) <space>gp       -->  Run git pull
 
-(Normal) <space>gd       -->  Run git diff split for resolving merge conflicts
-(Normal) <space>gg       -->  Run git diff get for resolving merge conflicts
+(Normal) dv              -->  Run Gvdiffsplit! for resolving merge conflicts
+(Normal) d2o             -->  Select the left side of the merge conflict
+(Normal) d3o             -->  Select the right side of the merge conflict
 --- FUGITIVE ---
 
 
