@@ -31,7 +31,6 @@ vim.keymap.set("n", "<LEADER>rg", ":silent grep  program<Left><Left><Left><Left>
 vim.keymap.set("n", "<LEADER>fg", ":cdo s//g<Left><Left>")
 vim.keymap.set("n", "<LEADER>og", "<CMD>copen<CR>")
 
-vim.keymap.set("n", "<LEADER><LEADER>", "<CMD>so<CR>")
 vim.keymap.set("n", "<LEADER>v", "<CMD>!\"system/clean.bat\"<CR>")
 vim.keymap.set("n", "<LEADER>b", "<CMD>!\"system/build.bat\"<CR>")
 vim.keymap.set("n", "<LEADER>n", "<CMD>!\"system/run.bat\"<CR>")
