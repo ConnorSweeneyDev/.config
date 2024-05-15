@@ -3,12 +3,13 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<LEADER>pv", "<CMD>Oil<CR>")
-vim.keymap.set("n", "<C-f>", "<CMD>!pwsh -Command \"wt --window 0 -p \"PowerShell\" pwsh -NoExit -Command \"nw\"\"<CR>")
+vim.keymap.set("n", "<C-f>", "<CMD>!wt --window 0 -p \"PowerShell\" pwsh -NoExit -Command \"nw\"<CR>")
+vim.keymap.set("n", "<C-t>", "<CMD>!wt --window 0 -p \"PowerShell\"<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
 vim.keymap.set("n", "J", "mzJ`z")
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
@@ -31,7 +32,7 @@ vim.keymap.set("n", "<LEADER>rg", ":silent grep  program<Left><Left><Left><Left>
 vim.keymap.set("n", "<LEADER>fg", ":cdo s//g<Left><Left>")
 vim.keymap.set("n", "<LEADER>og", "<CMD>copen<CR>")
 
-vim.keymap.set("n", "<LEADER>v", "<CMD>!\"system/clean.bat\"<CR>")
-vim.keymap.set("n", "<LEADER>b", "<CMD>!\"system/build.bat\"<CR>")
-vim.keymap.set("n", "<LEADER>n", "<CMD>!\"system/run.bat\"<CR>")
-vim.keymap.set("n", "<LEADER>m", "<CMD>!\"system/debug.bat\"<CR>")
+vim.keymap.set("n", "<LEADER>v", "<CMD>!./system/clean.bat<CR>")
+vim.keymap.set("n", "<LEADER>b", "<CMD>!./system/build.bat<CR>")
+vim.keymap.set("n", "<LEADER>n", "<CMD>!./system/run.bat<CR>")
+vim.keymap.set("n", "<LEADER>m", "<CMD>!./system/debug.bat<CR>")

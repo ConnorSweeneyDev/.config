@@ -7,5 +7,5 @@ vim.keymap.set("n", "<LEADER>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<LEADER>z", function() harpoon:list():remove() end)
 vim.keymap.set("n", "<C-z>", function() harpoon:list():clear() end)
 
-vim.keymap.set("n", "<C-t>", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<C-y>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-g>", function() harpoon:list():next() end)
