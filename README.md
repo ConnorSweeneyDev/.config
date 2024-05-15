@@ -35,9 +35,11 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system core.longpaths true`.
 - MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW` (Most use cases are the 64-bit versions).
+- Make &rightarrow; Run `winget install make --source winget`.
 - Python &rightarrow; Run `winget install --id Python.Python.3.11`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
+- fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - Neovim &rightarrow; Run `winget install neovim`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
@@ -46,7 +48,6 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 
 ### Dependencies (Evironment Variables) for the scripts folder:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
-- fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
 - Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to `C:\Program Files\Mozilla Firefox\firefox.exe`.
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
@@ -125,8 +126,6 @@ SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put the following in the path:
 - `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` for MSBuild.
 - `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\[VSVERSION]\bin\[HOSTOSVERSION]\[OSVERSION]` for cl.
-
-Make &rightarrow; Run `winget install make --source winget`.
 
 Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`.
 
