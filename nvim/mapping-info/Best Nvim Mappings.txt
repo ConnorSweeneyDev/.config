@@ -15,7 +15,7 @@
 (Normal) <space>a        -->  Add current file to harpoon
 (Normal) <control>e      -->  Open harpoon menu
 (Normal) <control>g      -->  Go to next file
-(Normal) <control>t      -->  Go to previous file
+(Normal) <control>y      -->  Go to previous file
 --- FILE MENUS ---
 
 
@@ -71,6 +71,7 @@
 (Insert) <down>	         -->  Next completion
 (Insert) <up>            -->  Previous completion
 (Insert) <control>y      -->  Accept completion
+(Insert) <enter>         -->  Accept completion
 (Insert) <control>e      -->  Dismiss completions
 
 (Normal) K               -->  Display information on the word being hovered
@@ -97,13 +98,18 @@
 --- WINDOWS ---
 (Normal) <control>w      -->  Enter window mode
 (Normal) <control>wh     -->  Move left one window
+(Normal) <alt>h          -->  Move left one window
 (Normal) <control>wj     -->  Move down one window
+(Normal) <alt>j          -->  Move down one window
 (Normal) <control>wk     -->  Move up one window
+(Normal) <alt>k          -->  Move up one window
 (Normal) <control>wl     -->  Move right one window
+(Normal) <alt>l          -->  Move right one window
 (Normal) <control>ws     -->  Split window horizontally
 (Normal) <control>wv     -->  Split window vertically
 
-(Normal) <control>f      -->  Create a new powershell tab
+(Normal) <control>f      -->  Create a new powershell tab and run nw
+(Normal) <control>t      -->  Create a new powershell tab
 --- WINDOWS ---
 
 
@@ -141,7 +147,7 @@
 (Normal) #               -->  Jumps to the previous instance of the word being hovered
 (Normal) n               -->  Jumps to the next search term, keeping the cursor in the middle
 (Normal) N               -->  Jumps to the previous search term, keeping the cursor in the middle
-(Visual) o               -->  Jumps to the top/bottom of the currently highlighted text
+(Visual) o               -->  Jumps to the opposite side of the currently highlighted text
 
 (Normal) v               -->  Enters visual mode
 (Visual) v               -->  Exits visual mode
@@ -163,7 +169,7 @@
 (Normal) <control>o      -->  Move to the previous location in the jump history
 (Normal) <control>i      -->  Move to the next location in the jump history
 (Normal) ``              -->  Move to the last jumped cursor location
-(Visual) <control>^      -->  Move to the last visited file
+(Normal) <control>^      -->  Move to the last visited file
 --- CURSOR MOVEMENT ---
 
 

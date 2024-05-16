@@ -1,4 +1,4 @@
-vim.keymap.set("i", "<C-y>", 'coc#pum#confirm()', {expr = true, noremap = true, silent = true, replace_keycodes = false})
+vim.keymap.set("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], {expr = true, noremap = true, silent = true, replace_keycodes = false})
 
 vim.keymap.set("n", "<LEADER>td", "<CMD>CocList diagnostics<cr>", {silent = true, nowait = true})
 vim.keymap.set("n", "[d", "<Plug>(coc-diagnostic-prev)", {silent = true})
