@@ -95,9 +95,10 @@
 
 
 --- QUICKFIX LIST ---
-(Normal) <space>qg       -->  Add all lines containing the word you enter to a quickfix list
+(Normal) <space>qg       -->  Add all lines containing the word you enter to a quickfix list (program directory)
 (Normal) <space>qr       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
 (Normal) <space>qo       -->  Open the (editable) quickfix list
+(Normal) <space>qw       -->  Copy the hovered word to the system clipboard then <space>qg that word followed by <space>qo
 --- QUICKFIX LIST ---
 
 
