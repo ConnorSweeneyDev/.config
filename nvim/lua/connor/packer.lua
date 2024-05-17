@@ -12,12 +12,12 @@ return require("packer").startup(function(use)
     use("itchyny/vim-qfedit")
     use("tpope/vim-fugitive")
 
+    use("ggandor/leap.nvim")
+    use("nvim-treesitter/nvim-treesitter-context")
+
     use{"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use{"neoclide/coc.nvim", branch = "release"}
     use("github/copilot.vim")
-
-    use("ggandor/leap.nvim")
-    use("nvim-treesitter/nvim-treesitter-context")
 
     use("nvim-tree/nvim-web-devicons")
     use("MunifTanjim/nui.nvim")
