@@ -33,9 +33,9 @@ vim.keymap.set("v", "<LEADER>s", "\"hy:%s/<C-r>h/<C-r>h/g<Left><Left>")
 vim.keymap.set("v", "<C-s>", ":s//g<Left><Left>")
 vim.keymap.set("v", "<C-n>", ":normal ")
 
-vim.keymap.set("n", "<LEADER>rg", ":silent grep  program<Left><Left><Left><Left><Left><Left><Left><Left>")
-vim.keymap.set("n", "<LEADER>fg", ":cdo s//g<Left><Left>")
-vim.keymap.set("n", "<LEADER>og", "<CMD>copen<CR>")
+vim.keymap.set("n", "<LEADER>qg", ":silent grep  program<Left><Left><Left><Left><Left><Left><Left><Left>")
+vim.keymap.set("n", "<LEADER>qr", ":cdo s//g<Left><Left>")
+vim.keymap.set("n", "<LEADER>qo", "<CMD>copen<CR>")
 
 vim.keymap.set("n", "<LEADER>v", "<CMD>!./system/clean.bat<CR>")
 vim.keymap.set("n", "<LEADER>b", "<CMD>!./system/build.bat<CR>")

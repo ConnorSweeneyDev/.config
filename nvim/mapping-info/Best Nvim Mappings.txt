@@ -1,43 +1,50 @@
---- FILE MENUS ---
-(Normal) <space>pv       -->  Open oil menu for the current file directory
-
-(Normal) <space>pf       -->  Open telescope menu for navigating files in the directory
-(Normal) <space>ps       -->  Enter word to search for in telescope menu for navigating files in the directory
-(Normal) <space>pb       -->  Open telescope menu for navigating buffers
-(Normal) <space>py       -->  Open telescope menu for navigating yank history
-(Normal) <space>pm       -->  Open telescope menu for navigating message history
-(Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
-(Normal) <control>q      -->  Add every entry in the telescope window to the quickfix list
-
-(Normal) <space>u        -->  Open undotree menu
-(Normal) <space>gs       -->  Open fugitive menu
-
-(Normal) <space>a        -->  Add current file to harpoon
-(Normal) <control>e      -->  Open harpoon menu
-(Normal) <control>g      -->  Go to next file
-(Normal) <control>y      -->  Go to previous file
---- FILE MENUS ---
-
-
-
 --- OIL ---
+(Normal) <space>pv       -->  Open oil menu for the current file directory or go up one directory if already open
+(Normal) <enter>         -->  Open the file or directory under the cursor
 (Normal) -               -->  Go up one directory
 (Normal) <control>l      -->  Refresh oil menu
 --- OIL ---
 
 
 
+--- TELESCOPE ---
+(Normal) <space>pf       -->  Open telescope menu for navigating files in the directory
+(Normal) <space>ps       -->  Enter word to search for in telescope menu for navigating files in the directory
+(Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
+(Normal) <space>pb       -->  Open telescope menu for navigating buffers
+(Normal) <space>pm       -->  Open telescope menu for navigating message history
+(Normal) <control>q      -->  Add every entry in the telescope window to the quickfix list
+--- TELESCOPE ---
+
+
+
+--- HARPOON ---
+(Normal) <space>a        -->  Add current file to harpoon
+(Normal) <control>e      -->  Open harpoon menu
+(Normal) <control>g      -->  Go to next file
+(Normal) <control>y      -->  Go to previous file
+--- HARPOON ---
+
+
+--- UNDOTREE ---
+(Normal) <space>u        -->  Open undotree menu
+--- UNDOTREE ---
+
+
+
 --- YANKY ---
+(Normal) <space>py       -->  Open telescope menu for navigating yank history
 (Normal) <space>ky       -->  Clear yank history
 --- YANKY ---
 
 
 
 --- FUGITIVE ---
-(Normal) <space>gp       -->  Run git pull
+(Normal) <space>gs       -->  Open fugitive menu
 (Normal) s               -->  When cursor is on an unstaged change, stages it; when cursor is on an unpushed commit, pushes it
 (Normal) u               -->  When cursor is on a staged change, unstages it
 (Normal) cc              -->  Create a new commit
+(Normal) <space>gp       -->  Run git pull
 
 (Normal) dv              -->  Open vertical diff view for resolving merge conflicts
 (Normal) d2o             -->  Put the left side of the merge conflict in the working copy
@@ -88,9 +95,9 @@
 
 
 --- QUICKFIX LIST ---
-(Normal) <space>rg       -->  Add all lines containing the word you enter to a quickfix list (only files in the prog directory of the project)
-(Normal) <space>og       -->  Open the quickfix list
-(Normal) <space>fg       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
+(Normal) <space>qg       -->  Add all lines containing the word you enter to a quickfix list
+(Normal) <space>qr       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
+(Normal) <space>qo       -->  Open the (editable) quickfix list
 --- QUICKFIX LIST ---
 
 
@@ -273,7 +280,7 @@
 
 
 --- FILE COMMANDS ---
-(Normal) <space><space>  -->  Runs :so in the current file
+(Normal) <space><space>  -->  Runs :so in the current file (only in lua files)
 (Normal) <space>v        -->  Runs :!clean.bat in the current directory
 (Normal) <space>b        -->  Runs :!build.bat in the current directory
 (Normal) <space>n        -->  Runs :!run.bat in the current directory
