@@ -2,6 +2,7 @@
 (Normal) <space>pv       -->  Open oil menu for the current file directory or go up one directory if already open
 (Normal) <enter>         -->  Open the file or directory under the cursor
 (Normal) -               -->  Go up one directory
+(Normal) _               -->  Go to the root directory
 (Normal) <control>l      -->  Refresh oil menu
 --- OIL ---
 
