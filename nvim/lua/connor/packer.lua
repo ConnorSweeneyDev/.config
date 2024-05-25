@@ -6,11 +6,11 @@ return require("packer").startup(function(use)
     use("stevearc/oil.nvim")
     use("nvim-telescope/telescope.nvim")
     use{"theprimeagen/harpoon", branch = "harpoon2"}
+    use("tpope/vim-fugitive")
     use("mbbill/undotree")
     use("gbprod/yanky.nvim")
     use('kevinhwang91/nvim-bqf')
     use("itchyny/vim-qfedit")
-    use("tpope/vim-fugitive")
 
     use("ggandor/leap.nvim")
     use("nvim-treesitter/nvim-treesitter-context")
