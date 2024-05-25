@@ -51,12 +51,11 @@ function np
 
 function attend
 {
-    cd C:\Users\conno\Documents\Programming\Web\AutoLogAttendance
+    cd C:\Users\conno\Documents\Programming\Web\AutoAttendance
     $p = Split-Path -leaf -path (Get-Location)
     $Host.UI.RawUI.WindowTitle = "$p"
-    .\run.bat -nowin
+    .\system\run.bat -nowin
 }
-
 function music
 {
     cd C:\Users\conno\Documents\Programming\C++\TerminalMusicPlayer
