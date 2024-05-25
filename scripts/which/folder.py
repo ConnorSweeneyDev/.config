@@ -1,6 +1,4 @@
 import os
-import sys
-import subprocess
 
 file = open("C:\\scripts\\which\\path.txt", 'r')
 path = file.readline()
