@@ -34,7 +34,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 ### Dependencies (Evironment Variables) for Neovim:
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the installation wizard.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system core.longpaths true`.
-- MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW` (Most use cases are the 64-bit versions).
+- MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW` (I recommend 64-bit with POSIX threads for general purpose use).
 - Make &rightarrow; Run `winget install make --source winget`.
 - Python &rightarrow; Run `winget install --id Python.Python.3.11`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
