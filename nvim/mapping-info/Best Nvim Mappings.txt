@@ -274,6 +274,9 @@
 --- MACROS ---
 (Normal) q<char>         -->  Starts recording a macro to the specified register
 (Normal) q               -->  Stops recording the macro
+(Normal) "<char>p        -->  Pastes text from the specified register
+(Normal) "<char>y...     -->  Copies text into the specified register
+(Visual) "<char>y        -->  Copies highlighted text into the specified register
 (Normal) @<char>         -->  Plays the macro in the specified register
 
 (Visual) <control>n      -->  Allows you to input keypresses to :normal to run on each line that is highlighted
