@@ -284,10 +284,24 @@
 
 
 
+--- COMMAND LINE --- <<< THE FOLLOWING BINDS ARE ONLY AVAILABLE WHILE EDITING A COMMAND >>>
+<control>f               -->  Opens command history which can be edited like any other buffer
+
+<control>r<char>         -->  Inputs the specified register into the command line
+<control>r<control>w     -->  Inputs the word under the cursor into the command line
+<control>r<control>a     -->  Inputs the string under the cursor into the command line, cutoff at the first whitespace
+<control>r<control>l     -->  Inputs the line under the cursor into the command line
+
+<control>w               -->  Deletes the word to the left of the cursor
+<control>u               -->  Deletes all text to the left of the cursor
+--- COMMAND LINE ---
+
+
+
 --- FILE COMMANDS ---
 (Normal) <space><space>  -->  Runs :so in the current file (only in lua files)
-(Normal) <space>v        -->  Runs :!clean.bat in the current directory
-(Normal) <space>b        -->  Runs :!build.bat in the current directory
-(Normal) <space>n        -->  Runs :!run.bat in the current directory
-(Normal) <space>m        -->  Runs :!debug.bat in the current directory
+(Normal) <space>v        -->  Runs :!./system/clean.bat in the current directory
+(Normal) <space>b        -->  Runs :!./system/build.bat in the current directory
+(Normal) <space>n        -->  Runs :!./system/run.bat in the current directory
+(Normal) <space>m        -->  Runs :!./system/debug.bat in the current directory
 --- FILE COMMANDS ---
