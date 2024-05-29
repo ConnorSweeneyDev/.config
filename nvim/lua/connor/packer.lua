@@ -1,4 +1,4 @@
-vim.cmd[[packadd packer.nvim]]
+vim.cmd [[packadd packer.nvim]]
 return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
 
@@ -9,9 +9,9 @@ return require("packer").startup(function(use)
     use("tpope/vim-fugitive")
     use("mbbill/undotree")
     use("gbprod/yanky.nvim")
-    use('kevinhwang91/nvim-bqf')
-    use("itchyny/vim-qfedit")
 
+    use("kevinhwang91/nvim-bqf")
+    use("itchyny/vim-qfedit")
     use("ggandor/leap.nvim")
     use("nvim-treesitter/nvim-treesitter-context")
 
@@ -20,10 +20,11 @@ return require("packer").startup(function(use)
     use("github/copilot.vim")
 
     use("nvim-tree/nvim-web-devicons")
+    use("tribela/vim-transparent")
+    use{"Mofiqul/vscode.nvim", as = "vscode"}
+    use("nvim-lualine/lualine.nvim")
+    
     use("MunifTanjim/nui.nvim")
     use("rcarriga/nvim-notify")
-    use("tribela/vim-transparent")
-    use("nvim-lualine/lualine.nvim")
     use("folke/noice.nvim")
-    use{"Mofiqul/vscode.nvim", as = "vscode"}
 end)
