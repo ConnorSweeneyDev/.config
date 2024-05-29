@@ -66,7 +66,8 @@ return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
 end)
 ```
-Run `nvim .` and navigate to this file, run `:so` and `:PackerSync`, then press `q` after packer finishes.
+Run `nvim .` and navigate to this file, run `:so` and `:PackerSync`, then say yes to removing the directory and press `q` after packer finishes.
+You can now add the `after\ftplugin` folder and any files inside it, which are used for language specific commands.
 
 Now, under the line `use('wbthomason\packer.nvim')` you can start adding plugins, do so in the following pattern (with some exceptions):
 - Add the line to `lua\[USERNAME]\packer.lua` and run `:so` then `:PackerSync` inside it.
