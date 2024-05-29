@@ -81,7 +81,7 @@ The following plugins require extra or different steps than those outlined above
 - Colorscheme &rightarrow; You can use the one that I use, but if you don't want to you will have to change the lines in `lua\[USERNAME]\packer.lua`, `after\plugin\colors.lua` and `after\plugin\lualine.lua` accordingly.
 
 After all those plugins are installed, don't forget to include `after\plugin\buffers.lua` and `after\plugin\colors.lua`, they are not related to any plugins.\
-`colors.lua` will just make everthing look slightly better, and `buffers.lua` is optional, as it can slow down the startup time but will open a separate buffer every file in the specified directory that has any of the file extensions specified - this can be useful because renaming symbols across multiple files can fail if you need to change words in a buffer that is not already open.
+`colors.lua` will just make everthing look slightly better, and `buffers.lua` is optional, as it can slow down the startup time but will open, in separate buffers, every file in the specified directory that has any of the file extensions specified - this can be useful because renaming symbols across multiple files can fail if you need to change words in a buffer that is not already open.
 
 Finally, you can paste the `mapping-info` folder for safe keeping.
 
