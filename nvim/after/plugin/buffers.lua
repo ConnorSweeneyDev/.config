@@ -14,6 +14,7 @@ function OpenBuffers()
         end
     end
 
+    vim.cmd("bd 1")
     vim.api.nvim_set_current_buf(original_buffer)
 end
 
