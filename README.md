@@ -84,7 +84,7 @@ You can now add the `after\ftplugin` folder and any files inside it, which are u
 After all those plugins are installed, don't forget to include `after\plugin\buffers.lua` and `after\plugin\colors.lua`, they are not related to any plugins.
 `colors.lua` will just make everthing look slightly better, and `buffers.lua` is optional, as it can slow down the startup time but will open, in separate buffers, every file in the specified directory that has any of the file extensions specified - this can be useful because renaming symbols across multiple files can fail if you need to change words in a buffer that is not already open.
 
-Finally, you can paste the `mapping-info` folder for safe keeping.\
+Finally, you can paste the `mapping-info` folder into the root for safe keeping.
 All keybinds can be edited at `lua\[USERNAME]\remap.lua` or the respective `after\plugin\[PLUGIN].lua` file, and all settings can be edited at `lua\[USERNAME]\set.lua`.
 
 # Firefox With Tridactyl
