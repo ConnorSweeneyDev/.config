@@ -66,8 +66,7 @@ return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
 end)
 ```
-Run `nvim .` and navigate to this file, run `:so` and `:PackerSync`, then say yes to removing the directory and press `q` after packer finishes.
-You can now add the `after\ftplugin` folder and any files inside it, which are used for language specific commands.
+Now run `:so` and `:PackerSync`, then say yes to removing the packer directory if prompted and press `q` after packer finishes.
 
 Now, under the line `use('wbthomason\packer.nvim')` you can start adding plugins, do so in the following pattern (with some exceptions):
 - Add the line to `lua\[USERNAME]\packer.lua` and run `:so` then `:PackerSync` inside it.
@@ -80,6 +79,7 @@ The following plugins require extra or different steps than those outlined above
 - Copilot &rightarrow; If you don't have a license for Copilot then don't include this plugin. If you do, then after following the steps run `:Copilot setup` and follow the instructions.
 - Colorscheme &rightarrow; You can use the one that I use, but if you don't want to you will have to change the lines in `lua\[USERNAME]\packer.lua`, `after\plugin\colors.lua` and `after\plugin\lualine.lua` accordingly.
 
+You can now add the `after\ftplugin` folder and any files inside it, which are used for language specific configuration.\
 After all those plugins are installed, don't forget to include `after\plugin\buffers.lua` and `after\plugin\colors.lua`, they are not related to any plugins.\
 `colors.lua` will just make everthing look slightly better, and `buffers.lua` is optional, as it can slow down the startup time but will open, in separate buffers, every file in the specified directory that has any of the file extensions specified - this can be useful because renaming symbols across multiple files can fail if you need to change words in a buffer that is not already open.
 
