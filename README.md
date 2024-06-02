@@ -27,6 +27,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 - Appearance &rightarrow; Use acrylic material in the tab row = On. Use active terminal title as application title = Off.
 - Actions &rightarrow; Add a new action Close tab assigned to `ctrl+shift+d`. Set Toggle fullscreen to `alt+enter`.
 - Defaults &rightarrow; Appearance &rightarrow; Font face = CaskaydiaCove Nerd Font. Font size = 16. Background opacity = 75%.
+- Good Shortcut &rightarrow; Go to `C:\Users\[USERNAME]\AppData\Local\Microsoft\WindowsApps` and right click `wt.exe` and create a shortcut. Move that to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and edit it's properties - click `Change Icon...` and navigate to `C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_[LONG NUMBER]` and open `WindowsTerminal.exe` and select the correct icon. Now you can run a new terminal by pressing the windows button and typing `wt`.
 ### PowerShell Settings:
 - Starting directory &rightarrow; `C:\`.
 - Appearance &rightarrow; Font face = CaskaydiaCove Nerd Font. Font size = 16. Background opacity = 75%.
