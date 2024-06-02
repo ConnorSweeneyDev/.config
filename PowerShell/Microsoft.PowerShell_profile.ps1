@@ -1,5 +1,6 @@
 function :q { exit }
 function q { exit }
+function w { wt }
 function t { wt --window 0 }
 function c { clear }
 function e { explorer . }
