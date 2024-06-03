@@ -10,7 +10,7 @@ vim.o.shellxquote = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "no"
-vim.opt.colorcolumn = "0"
+vim.opt.colorcolumn = "100"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
