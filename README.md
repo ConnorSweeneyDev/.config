@@ -126,8 +126,8 @@ SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us
 - Record on `ctrl+;`.
 
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and make sure to put the following in the path:
-- `C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin` for MSBuild.
-- `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\[VSVERSION]\bin\[HOSTOSVERSION]\[OSVERSION]` for cl.
+- `C:\Program Files\Microsoft Visual Studio\[YEAR]\Community\MSBuild\Current\Bin` for MSBuild.
+- `C:\Program Files\Microsoft Visual Studio\[YEAR]\Community\VC\Tools\MSVC\[VSVERSION]\bin\[HOSTOSVERSION]\[OSVERSION]` for cl.
 
 Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in `C:\DependencyWalker`.
 
