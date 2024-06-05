@@ -17,7 +17,7 @@ function ew
 {
     cd C:\
     cd (which)
-    explorer $PWD
+    explorer .
 }
 function nw
 {
@@ -39,7 +39,16 @@ function nh
     cd $directory
     $p = Split-Path -leaf -path (Get-Location)
     $Host.UI.RawUI.WindowTitle = "$p"
-    nvim ConsoleHost_history.txt
+    nvim .
+}
+
+function ep
+{
+    $directory = Split-Path $PROFILE
+    cd $directory
+    $p = Split-Path -leaf -path (Get-Location)
+    $Host.UI.RawUI.WindowTitle = "$p"
+    explorer .
 }
 function np
 {
@@ -47,7 +56,7 @@ function np
     cd $directory
     $p = Split-Path -leaf -path (Get-Location)
     $Host.UI.RawUI.WindowTitle = "$p"
-    nvim Microsoft.PowerShell_profile.ps1
+    nvim .
 }
 
 function attend
