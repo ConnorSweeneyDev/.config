@@ -1,4 +1,4 @@
-function SetColors(color)
+function set_colors(color)
     color = color or "vscode"
     vim.cmd.colorscheme(color)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -20,4 +20,4 @@ function SetColors(color)
     vim.cmd("highlight DiffDelete guibg=NONE guifg=#6f1313")
 end
 
-SetColors()
+set_colors()
