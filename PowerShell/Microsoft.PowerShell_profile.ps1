@@ -81,5 +81,4 @@ function prompt
   "$pwd> "
 }
 
-clear
-oh-my-posh init pwsh --config "C:/posh/pure.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "C:/posh/config.omp.json" | Invoke-Expression

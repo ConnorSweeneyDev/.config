@@ -78,7 +78,7 @@
       "type": "prompt"
     }
   ],
-  "console_title_template": "{{if .Root}}(Admin){{end}} {{.PWD}}",
+  "console_title_template": "{{.Folder}}",
   "transient_prompt": {
     "foreground": "#F44747",
     "template": "\u276f "
