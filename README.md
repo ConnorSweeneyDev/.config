@@ -21,6 +21,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete the .ttf files from the folder after you've installed them.
+- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
 ### Terminal Settings:
 - Startup &rightarrow; Default profile = PowerShell. Default termial application = Windows Terminal. Launch size = 120x30. Launch parameters = Center on launch enabled.
 - Interaction &rightarrow; Warn when closing more than one tab = Off.
@@ -45,7 +46,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`.
-- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are specific to me. This file is where you can see all the custom commands, you can delete the ones you don't want or add new ones.
+- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are specific to me. This file is where you can see all the custom commands, you can delete the ones you don't want or add new ones. You will also need to put `posh` in `C:\`.
 
 ### Dependencies (Evironment Variables) for the scripts folder:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
