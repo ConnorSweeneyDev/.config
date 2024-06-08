@@ -12,6 +12,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 ### Full Paths to Repository Folders:
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`.
+- posh &rightarrow; `C:\posh`
 - scripts &rightarrow; `C:\scripts`.
 
 ### Miscellaneous Prerequisites:
