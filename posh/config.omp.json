@@ -5,7 +5,7 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#FFAF00",
+          "foreground": "#9CDCFE",
           "style": "plain",
           "template": "{{ .UserName }} ",
           "type": "session"
@@ -13,7 +13,8 @@
         {
           "foreground": "#0A7ACA",
           "properties": {
-            "style": "full"
+            "style": "full",
+            "mapped_locations_enabled": false
           },
           "style": "plain",
           "template": "{{ .Path }} ",
@@ -37,7 +38,7 @@
             "github_icon": ""
           },
           "style": "plain",
-          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#88C0D0> * </>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}</><#88C0D0> \uf046</><#6C6C6C>  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FFAF00> * </>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}</><#88C0D0> \uf046</><#6C6C6C>  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
         }
       ],
@@ -63,10 +64,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#FFAF00",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}#FFAF00{{ end }}"
-          ],
+          "foreground": "#9CDCFE",
           "properties": {
             "always_enabled": true
           },
@@ -80,7 +78,7 @@
   ],
   "console_title_template": "{{.Folder}}",
   "transient_prompt": {
-    "foreground": "#F44747",
+    "foreground": "#D4D4D4",
     "template": "\u276f "
   },
   "version": 2
