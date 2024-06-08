@@ -22,11 +22,12 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete the .ttf files from the folder after you've installed them.
+- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
 ### Terminal Settings:
-- Startup &rightarrow; Default profile = PowerShell. Default termial application = Windows Terminal. Launch size = 120x25. Launch parameters = Center on launch enabled.
+- Startup &rightarrow; Default profile = PowerShell. Default termial application = Windows Terminal. Launch size = 120x30. Launch parameters = Center on launch enabled.
 - Interaction &rightarrow; Warn when closing more than one tab = Off.
 - Appearance &rightarrow; Use acrylic material in the tab row = On. Use active terminal title as application title = Off.
-- Actions &rightarrow; Add a new action Close tab assigned to `ctrl+shift+d`. Set Toggle fullscreen to `alt+enter`.
+- Actions &rightarrow; Add a new action Close tab assigned to `ctrl+shift+d`. Set Toggle fullscreen to `alt+enter`. Set Search to `ctrl+shift+f`.
 - Defaults &rightarrow; Appearance &rightarrow; Font face = CaskaydiaCove Nerd Font. Font size = 19. Background opacity = 75%.
 - Useful Shortcut &rightarrow; Go to `C:\Users\[USERNAME]\AppData\Local\Microsoft\WindowsApps` and right click `wt.exe` and create a shortcut. Move that to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and edit it's properties - click `Change Icon...` and navigate to `C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_[LONG NUMBER]` and open `WindowsTerminal.exe` and select the correct icon. Now you can run a new terminal by pressing the windows button and typing `wt`.
 ### PowerShell Settings:
@@ -46,7 +47,7 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`.
-- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are specific to me. This file is where you can see all the custom commands, you can delete the ones you don't want or add new ones.
+- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are specific to me. This file is where you can see all the custom commands, you can delete the ones you don't want or add new ones. You will also need to put `posh` in `C:\`.
 
 ### Dependencies (Evironment Variables) for the scripts folder:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
