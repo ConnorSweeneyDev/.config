@@ -64,7 +64,7 @@ function attend
   cd C:\Users\conno\Documents\Programming\Web\AutoAttendance
   $p = Split-Path -leaf -path (Get-Location)
   $Host.UI.RawUI.WindowTitle = "$p"
-  .\system\run.bat -nowin
+  .\script\run.bat -nowin
 }
 function music
 {
