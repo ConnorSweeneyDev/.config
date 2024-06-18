@@ -48,8 +48,8 @@ https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-5
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`.
-- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are specific to me.
 - Paste the `C:\posh` folder to that location.
+- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are specific to me.
 
 ### Dependencies (Evironment Variables) for the scripts folder:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
