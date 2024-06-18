@@ -3,7 +3,8 @@ require("telescope").setup
   defaults =
   {
     -- Ignore any string that has the following patterns
-    file_ignore_patterns = { ".git\\", ".cache\\", "external\\", "assets\\", ".exe", ".dll", ".class", ".jar", ".sln", ".vcxproj", ".png", ".jpg", ".pyc", "packer_compiled.lua" }
+    file_ignore_patterns = { ".git\\", ".cache\\", "external\\", "assets\\", ".exe", ".dll",
+                             ".class", ".jar", ".sln", ".vcxproj", ".png", ".jpg", ".pyc", "packer_compiled.lua" }
   }
 }
 local builtin = require("telescope.builtin")
