@@ -71,9 +71,9 @@ function music
   if ($args.Count -eq 0)
   {
     cd C:\Users\conno\Documents\Programming\C++\TerminalMusicPlayer
-      $p = Split-Path -leaf -path (Get-Location)
-      $Host.UI.RawUI.WindowTitle = "$p"
-      .\binary\TerminalMusicPlayer.exe
+    $p = Split-Path -leaf -path (Get-Location)
+    $Host.UI.RawUI.WindowTitle = "$p"
+    .\binary\TerminalMusicPlayer.exe
   }
   elseif ($args -eq "-s")
   {
@@ -84,7 +84,7 @@ function music
   }
   else
   {
-    echo "Invalid argument"
+    echo "Invalid argument: $args"
   }
 }
 
