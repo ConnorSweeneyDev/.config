@@ -18,7 +18,7 @@ require("oil").setup
     ["<C-c>"] = "actions.close",
     ["<C-l>"] = "actions.refresh",
     ["-"] = "actions.parent",
-    ["_"] = "actions.open_cwd",
+    ["_"] = false,
     ["`"] = false,
     ["~"] = false,
     ["gs"] = "actions.change_sort",
