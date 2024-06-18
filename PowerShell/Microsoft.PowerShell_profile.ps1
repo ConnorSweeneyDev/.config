@@ -68,24 +68,13 @@ function attend
 }
 function music
 {
-  if ($args.Count -eq 0)
-  {
-    cd C:\Users\conno\Documents\Programming\C++\TerminalMusicPlayer
-    $p = Split-Path -leaf -path (Get-Location)
-    $Host.UI.RawUI.WindowTitle = "$p"
-    .\binary\TerminalMusicPlayer.exe
-  }
-  elseif ($args -eq "-s")
-  {
-    cd C:\Users\conno\Documents\Programming\C++\TerminalMusicPlayer\user\songs
-    $p = "Search Songs"
-    $Host.UI.RawUI.WindowTitle = "$p"
-    fzf
-  }
-  else
-  {
-    echo "Invalid argument: $args"
-  }
+  cd C:\Users\conno\Documents\Programming\C++\TerminalMusicPlayer
+  $p = Split-Path -leaf -path (Get-Location)
+  $Host.UI.RawUI.WindowTitle = "$p"
+
+  if ($args.Count -eq 0) { .\binary\TerminalMusicPlayer.exe }
+  elseif ($args -eq "-s") { .\binary\TerminalMusicPlayer.exe $(Get-ChildItem -Path .\user\songs -File | ForEach-Object { $_.Name } | fzf) }
+  else { echo "Invalid argument: $args" }
 }
 
 function prompt
