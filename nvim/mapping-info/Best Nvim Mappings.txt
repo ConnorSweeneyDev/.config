@@ -299,10 +299,10 @@
 
 
 --- FILE COMMANDS ---
-(Normal) <space>v        -->  Runs :!./system/clean.bat in the current directory
-(Normal) <space>b        -->  Runs :!./system/build.bat in the current directory
-(Normal) <space>n        -->  Runs :!./system/run.bat in the current directory
-(Normal) <space>m        -->  Runs :!./system/debug.bat in the current directory
+(Normal) <space>v        -->  Runs :!./scripts/clean.bat in the current directory
+(Normal) <space>b        -->  Runs :!./scripts/build.bat in the current directory
+(Normal) <space>n        -->  Runs :!./scripts/run.bat in the current directory
+(Normal) <space>m        -->  Runs :!./scripts/debug.bat in the current directory
 
 (Normal) <space><space>  -->  Runs :so in the current file (only in lua files)
 (Normal) <space>kf       -->  Runs :!clang-format -i % (only in c/cpp files)
