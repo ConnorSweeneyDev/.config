@@ -1,4 +1,6 @@
-require("lualine").setup
+local lualine = require("lualine")
+
+lualine.setup
 {
   options =
   {
@@ -18,7 +20,7 @@ require("lualine").setup
     lualine_b = {{"filename", path = 1}},
     lualine_c = {"diagnostics"},
     lualine_x = {"diff"},
-    lualine_y = {"progress"},
+    lualine_y = {{"macro-recording", fmt = show_macro_recording}},
     lualine_z = {"location"}
   },
   inactive_sections =
@@ -35,3 +37,15 @@ require("lualine").setup
   inactive_winbar = {},
   extensions = {}
 }
+
+vim.api.nvim_create_autocmd("RecordingEnter",
+{
+  callback = function() lualine.refresh({ place = { "statusline" }, }) end,
+})
+
+vim.api.nvim_create_autocmd("RecordingLeave",
+{
+  callback = function() local timer = vim.loop.new_timer()
+    timer:start( 50, 0, vim.schedule_wrap(function() lualine.refresh({ place = { "statusline" }, }) end))
+  end,
+})

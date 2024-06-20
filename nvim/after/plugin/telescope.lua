@@ -3,7 +3,7 @@ require("telescope").setup
   defaults =
   {
     -- Ignore any string that has the following patterns
-    file_ignore_patterns = { ".git\\", ".cache\\", "external\\", "assets\\", ".exe", ".dll",
+    file_ignore_patterns = { ".git\\", ".cache\\", "external\\", "assets\\", ".exe", ".dll", ".so.0",
                              ".class", ".jar", ".sln", ".vcxproj", ".png", ".jpg", ".pyc", "packer_compiled.lua" }
   }
 }
