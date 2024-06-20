@@ -87,7 +87,7 @@ The following plugins require extra or different steps than those outlined above
 You can now add the `after\ftplugin` folder and any files inside it, which are used for language specific configuration.
 
 After all those plugins are installed, don't forget to include `after\plugin\buffers.lua`, `after\plugin\colors.lua` and `after\plugin\recording.lua` as they are not directly tied to any plugins.\
-`colors.lua` will just make everthing look slightly better, `recording.lua` is a helper to `lualine.lua` that shows macro recording text, and `buffers.lua` is optional, as it can slow down the startup time but will open, in separate buffers, every file in the specified directory that has any of the file extensions specified - this can be useful because renaming symbols across multiple files can fail if you need to change words in a buffer that is not already open.
+`colors.lua` will apply all the settings of the selected colorscheme, `recording.lua` is a helper to `lualine.lua` that shows macro recording text, and `buffers.lua` is optional, as it can slow down the startup time but will open, in separate buffers, every file in the specified directory that has any of the file extensions specified - this can be useful because renaming symbols across multiple files can fail if you need to change words in a buffer that is not already open.
 
 Finally, you can paste the `mapping-info` folder into the root for safe keeping.
 All keybinds can be edited at `lua\[USERNAME]\remap.lua` or the respective `after\plugin\[PLUGIN].lua` file, and all settings can be edited at `lua\[USERNAME]\set.lua`.
