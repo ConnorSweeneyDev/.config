@@ -20,9 +20,11 @@
 
 --- HARPOON ---
 (Normal) <space>a        -->  Add current file to harpoon
+(Normal) <space>z        -->  Remove current file from harpoon
 (Normal) <control>e      -->  Open harpoon menu
 (Normal) <control>g      -->  Go to next file
 (Normal) <control>y      -->  Go to previous file
+(Normal) <control>z      -->  Clear list of files
 --- HARPOON ---
 
 
