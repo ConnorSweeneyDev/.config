@@ -6,7 +6,7 @@ lualine.setup
   {
     icons_enabled = true,
     theme = "vscode",
-    component_separators = { left = "", right = ""},
+    component_separators = { left = "|", right = "|"},
     section_separators = { left = "", right = ""},
     disabled_filetypes = { statusline = {}, winbar = {}, },
     ignore_focus = {},
@@ -17,11 +17,11 @@ lualine.setup
   sections =
   {
     lualine_a = {"mode"},
-    lualine_b = {{"filename", path = 1}},
+    lualine_b = {{"relative_path", fmt = get_relative_path}},
     lualine_c = {"diagnostics"},
     lualine_x = {"diff"},
     lualine_y = {{"macro-recording", fmt = show_macro_recording}},
-    lualine_z = {"location"}
+    lualine_z = {"progress", "location"}
   },
   inactive_sections =
   {
@@ -37,6 +37,33 @@ lualine.setup
   inactive_winbar = {},
   extensions = {}
 }
+
+function get_relative_path()
+  local path = vim.fn.expand("%:.")
+  if string.match(path, "^oil:///") then
+    path = string.gsub(path, "^oil:///", "")
+    path = string.sub(path, 0, 1) .. ":" .. string.sub(path, 2)
+    path = string.gsub(path, "/", "\\")
+    path = string.gsub(path, vim.fn.getcwd(), "")
+    path = "." .. path
+  else
+    path = ".\\" .. path
+  end
+
+  if string.match(path, "^.C:") then
+    path = string.gsub(path, "^.", "")
+  end
+  return path
+end
+
+function show_macro_recording()
+  local recording_register = vim.fn.reg_recording()
+  if recording_register == "" then
+    return "Not Recording"
+  else
+    return "Recording @" .. recording_register
+  end
+end
 
 vim.api.nvim_create_autocmd("RecordingEnter",
 {
