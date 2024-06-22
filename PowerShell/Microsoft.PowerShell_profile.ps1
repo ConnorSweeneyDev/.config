@@ -75,7 +75,8 @@ function music
   if ($args.Count -eq 0) { .\binary\TerminalMusicPlayer.exe }
   elseif ($args -eq "-s")
   {
-    $selectedSong = Get-ChildItem -Path.\user\songs -File | ForEach-Object { $_.Name } | fzf
+    $directoryPath = Get-Content -Path user\songs_directory.txt -First 1
+    $selectedSong = Get-ChildItem -Path $directoryPath -File | ForEach-Object { $_.Name } | fzf
     if (![string]::IsNullOrWhiteSpace($selectedSong)) { .\binary\TerminalMusicPlayer.exe $selectedSong }
   }
   else { echo "Invalid argument: $args" }
