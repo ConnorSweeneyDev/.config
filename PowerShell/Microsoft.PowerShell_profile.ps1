@@ -68,7 +68,7 @@ function attend
 }
 function music
 {
-  cd C:\Users\conno\Documents\Programming\C++\TerminalMusicPlayer
+  cd C:\Users\conno\Documents\Programming\CPP\TerminalMusicPlayer
   $p = Split-Path -leaf -path (Get-Location)
   $Host.UI.RawUI.WindowTitle = "$p"
 
