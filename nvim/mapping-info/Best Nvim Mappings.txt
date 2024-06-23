@@ -261,6 +261,9 @@
 (Normal) <control>a      -->  Increments the next integer by 1
 (Normal) <control>x      -->  Decrements the next integer by 1
 (Normal) ~               -->  Toggles the case of the hovered character and moves the cursor to the right
+
+(Normal) gq<motion>      -->  Reformats the text in the specified motion to fit within the text width
+(Visual) gq              -->  Reformats the highlighted text to fit within the text width
 --- TEXT MANIPULATION ---
 
 
