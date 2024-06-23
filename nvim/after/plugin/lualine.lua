@@ -40,6 +40,7 @@ lualine.setup
 
 function get_relative_path()
   local path = vim.fn.expand("%:.")
+
   if string.match(path, "^oil:///") then
     path = string.gsub(path, "^oil:///", "")
     path = string.sub(path, 0, 1) .. ":" .. string.sub(path, 2)
@@ -50,6 +51,9 @@ function get_relative_path()
     path = string.gsub(path, "^list:///", "")
   else
     path = ".\\" .. path
+    if (vim.bo.modified) then
+      path = path .. " [+]"
+    end
   end
 
   if string.match(path, "^.C:") then
