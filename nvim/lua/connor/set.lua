@@ -21,7 +21,8 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.textwidth = 100
-vim.opt.formatoptions = "roqwnj"
+vim.opt.formatoptions:remove("t")
+vim.opt.formatoptions:remove("c")
 
 vim.opt.swapfile = false
 vim.opt.undofile = true

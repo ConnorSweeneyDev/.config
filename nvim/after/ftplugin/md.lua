@@ -1,1 +1,1 @@
-vim.opt.formatoptions = "tcroqwnj"
+vim.opt.formatoptions:append("t")
