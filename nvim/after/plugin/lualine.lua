@@ -46,6 +46,8 @@ function get_relative_path()
     path = string.gsub(path, "/", "\\")
     path = string.gsub(path, vim.fn.getcwd(), "")
     path = "." .. path
+  elseif string.match(path, "^list:///") then
+    path = string.gsub(path, "^list:///", "")
   else
     path = ".\\" .. path
   end
