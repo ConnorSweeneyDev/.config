@@ -1,1 +1,1 @@
-vim.opt.formatoptions = "troqwnj"
+vim.opt.formatoptions = "tcroqwnj"

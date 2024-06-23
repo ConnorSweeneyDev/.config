@@ -11,8 +11,6 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "no"
 vim.opt.colorcolumn = "100"
-vim.opt.textwidth = 100
-vim.opt.formatoptions = "roqwnj"
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -22,6 +20,8 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
+vim.opt.textwidth = 100
+vim.opt.formatoptions = "roqwnj"
 
 vim.opt.swapfile = false
 vim.opt.undofile = true
