@@ -279,13 +279,14 @@
 (Normal) "<char>y...     -->  Copies text into the specified register
 (Visual) "<char>y        -->  Copies highlighted text into the specified register
 (Normal) @<char>         -->  Plays the macro in the specified register
+(Normal) .               -->  Repeats the last normal mode command
 
 (Visual) <control>n      -->  Allows you to input keypresses to :normal to run on each line that is highlighted
 --- MACROS ---
 
 
 
---- COMMAND LINE --- <<< THE FOLLOWING BINDS ARE ONLY AVAILABLE WHILE EDITING A COMMAND >>>
+--- COMMAND LINE --- <<< THE FOLLOWING BINDS ARE ONLY AVAILABLE WHILE IN THE : COMMAND LINE >>>
 <control>f               -->  Opens command history which can be edited like any other buffer
 
 <control>r<char>         -->  Inputs the specified register into the command line
