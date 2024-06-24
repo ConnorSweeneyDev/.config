@@ -23,15 +23,6 @@ lualine.setup
     lualine_y = {{"macro-recording", fmt = show_macro_recording}},
     lualine_z = {"progress", "location"}
   },
-  inactive_sections =
-  {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {"filename"},
-    lualine_x = {"location"},
-    lualine_y = {},
-    lualine_z = {}
-  },
   tabline = {},
   winbar = {},
   inactive_winbar = {},
@@ -39,26 +30,30 @@ lualine.setup
 }
 
 function get_relative_path()
+  local root = vim.fn.getcwd():match("^[^:]")
   local path = vim.fn.expand("%:.")
 
   if string.match(path, "^oil:///") then
     path = string.gsub(path, "^oil:///", "")
     path = string.sub(path, 0, 1) .. ":" .. string.sub(path, 2)
     path = string.gsub(path, "/", "\\")
-    path = string.gsub(path, vim.fn.getcwd(), "")
-    path = "." .. path
+    path = string.gsub(path, vim.fn.getcwd(), vim.fn.getcwd():match("^.*\\(.*)$"))
+
   elseif string.match(path, "^list:///") then
     path = string.gsub(path, "^list:///", "")
+
   else
-    path = ".\\" .. path
-    if (vim.bo.modified) then
-      path = path .. " [+]"
+    if not string.match(vim.fn.expand("%:."), "^" .. root .. ":\\")
+      and not string.match(vim.fn.expand("%:."), "^" .. root .. ":/") then
+      path = vim.fn.getcwd():match("^.*\\(.*)$") .. "\\" .. path
     end
+    if (vim.bo.modified) then path = path .. " [+]" end
   end
 
-  if string.match(path, "^.C:") then
-    path = string.gsub(path, "^.", "")
-  end
+  if string.match(path, "^." .. root .. ":") then path = string.gsub(path, "^.", "") end
+  if string.match(path, "^.\\" .. root .. ":\\") then path = string.gsub(path, "^.\\", "") end
+  path = string.gsub(path, "\\", "/")
+
   return path
 end
 
