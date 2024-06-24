@@ -42,6 +42,11 @@ function get_relative_path()
   elseif string.match(path, "^list:///") then
     path = string.gsub(path, "^list:///", "")
 
+  elseif string.match(path, "^fugitive:\\\\\\") then
+    if string.find(path, ".git\\\\2\\") then path = "2"
+    elseif string.find(path, ".git\\\\3\\") then path = "3"
+    else path = "fugitive" end
+
   else
     if not string.match(vim.fn.expand("%:."), "^" .. root .. ":\\")
       and not string.match(vim.fn.expand("%:."), "^" .. root .. ":/") then
