@@ -70,6 +70,7 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - Neovim &rightarrow; Run `winget install neovim`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
+- Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim
   "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`.
 - Paste the `C:\posh` folder to that location.

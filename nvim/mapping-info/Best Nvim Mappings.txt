@@ -28,6 +28,7 @@
 --- HARPOON ---
 
 
+
 --- UNDOTREE ---
 (Normal) <space>u        -->  Open undotree menu
 --- UNDOTREE ---
@@ -53,6 +54,12 @@
 (Normal) d3o             -->  Put the right side of the merge conflict in the working copy
 (Normal) <space>dq       -->  Close the left and right diff windows and focus the git status window
 --- FUGITIVE ---
+
+
+
+--- MARKDOWN PREVIEW ---
+(Normal) <space>tm       -->  Toggle markdown preview in browser
+--- MARKDOWN PREVIEW ---
 
 
 
