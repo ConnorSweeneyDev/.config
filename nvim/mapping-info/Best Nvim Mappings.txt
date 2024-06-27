@@ -13,6 +13,7 @@
 (Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
 (Normal) <space>pb       -->  Open telescope menu for navigating buffers
 (Normal) <space>pm       -->  Open telescope menu for navigating message history
+(Normal) <space>pu       -->  Open telescope menu for navigating files in a c++ compilation unit (if there's only 2 files in the unit, opens the other one)
 (Normal) <control>q      -->  Add every entry in the telescope window to the quickfix list
 --- TELESCOPE ---
 
@@ -104,7 +105,7 @@
 
 
 --- QUICKFIX LIST ---
-(Normal) <space>qg       -->  Add all lines containing the word you enter to a quickfix list (program directory)
+(Normal) <space>qg       -->  Add all lines containing the word you enter to a quickfix list
 (Normal) <space>qr       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
 (Normal) <space>qo       -->  Open the (editable) quickfix list
 (Normal) <space>qw       -->  Copy the hovered word to the system clipboard then <space>qg that word followed by <space>qo

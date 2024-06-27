@@ -5,6 +5,7 @@ return require("packer").startup(function(use)
   use("nvim-lua/plenary.nvim")
   use("stevearc/oil.nvim")
   use("nvim-telescope/telescope.nvim")
+  use("nvim-telescope/telescope-ui-select.nvim")
   use{"theprimeagen/harpoon", branch = "harpoon2"}
   use("tpope/vim-fugitive")
   use("mbbill/undotree")
