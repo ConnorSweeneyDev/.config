@@ -73,7 +73,8 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim
   "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`.
-- Paste the `C:\posh` folder to that location.
+- Paste the `C:\posh` folder to that location, run `oh-my-posh disable notice` to stop the annoying
+  update message every week.
 - Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
   specific to me.
