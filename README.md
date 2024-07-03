@@ -210,8 +210,8 @@ make sure to put the following in the path:
 - `C:\Program Files\Microsoft Visual
   Studio\[YEAR]\Community\VC\Tools\MSVC\[VSVERSION]\bin\[HOSTOSVERSION]\[OSVERSION]` for cl.
 
-Dependency Walker &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put
-the contents in `C:\DependencyWalker`.
+Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the
+contents in `C:\DependencyWalker`, make that folder an environment variable.
 
 Cutter &rightarrow; Download from [here](https://github.com/rizinorg/cutter/releases) and put the
 contents in `C:\Cutter`.
