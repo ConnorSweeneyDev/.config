@@ -82,7 +82,7 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
   specific to me.
 
-### Dependencies (Evironment Variables) for the scripts folder:
+### Dependencies (Evironment Variables) for the Scripts Folder:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from
   [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
@@ -159,7 +159,7 @@ Finally, you can paste the `mapping-info` folder into the root for safe keeping.
 edited at `lua\[USERNAME]\remap.lua` or the respective `after\plugin\[PLUGIN].lua` file, and all
 settings can be edited at `lua\[USERNAME]\set.lua`.
 
-# Firefox With Tridactyl
+# Firefox with Tridactyl Setup
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
 - Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
   shortcut, then properties.
