@@ -10,22 +10,59 @@ function f { firefoxfocusfix }
 
 function cw
 {
-  cd C:\
-  cd (which)
+  cd C:\Users
+  $location = which
+  if (![string]::IsNullOrWhiteSpace($location)) { cd $location }
 }
 function ew
 {
-  cd C:\
-  cd (which)
-  explorer .
+  cd C:\Users
+  $location = which
+  if (![string]::IsNullOrWhiteSpace($location))
+  {
+    cd $location
+    explorer .
+  }
 }
 function nw
 {
+  cd C:\Users
+  $location = which
+  if (![string]::IsNullOrWhiteSpace($location))
+  {
+    cd $location
+    $p = Split-Path -leaf -path (Get-Location)
+    $Host.UI.RawUI.WindowTitle = "$p"
+    nvim .
+  }
+}
+function cwa
+{
   cd C:\
-  cd (which)
-  $p = Split-Path -leaf -path (Get-Location)
-  $Host.UI.RawUI.WindowTitle = "$p"
-  nvim .
+  $location = which
+  if (![string]::IsNullOrWhiteSpace($location)) { cd $location }
+}
+function ewa
+{
+  cd C:\
+  $location = which
+  if (![string]::IsNullOrWhiteSpace($location))
+  {
+    cd $location
+    explorer .
+  }
+}
+function nwa
+{
+  cd C:\
+  $location = which
+  if (![string]::IsNullOrWhiteSpace($location))
+  {
+    cd $location
+    $p = Split-Path -leaf -path (Get-Location)
+    $Host.UI.RawUI.WindowTitle = "$p"
+    nvim .
+  }
 }
 
 function fh
