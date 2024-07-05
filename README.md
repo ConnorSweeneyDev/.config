@@ -36,15 +36,15 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
   the .ttf files from the folder after you've installed them.
 - OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
 ### Terminal Settings:
-- Startup &rightarrow; Default profile = PowerShell. Default termial application = Windows Terminal.
-  Launch size = 120x30. Launch parameters = Center on launch enabled.
-- Interaction &rightarrow; Warn when closing more than one tab = Off.
-- Appearance &rightarrow; Use acrylic material in the tab row = On. Use active terminal title as
-  application title = Off.
-- Actions &rightarrow; Add a new action Close tab assigned to `ctrl+shift+d`. Set Toggle fullscreen
-  to `alt+enter`. Set Search to `ctrl+shift+f`.
-- Defaults &rightarrow; Appearance &rightarrow; Font face = CaskaydiaCove Nerd Font. Font size = 19.
-  Background opacity = 75%.
+- Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows
+  Terminal. "Launch size" = 120x30. "Launch parameters" = Center on launch enabled.
+- Interaction &rightarrow; "Warn when closing more than one tab" = Off.
+- Appearance &rightarrow; "Use acrylic material in the tab row" = On. "Use active terminal title as
+  application title" = Off.
+- Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle
+  fullscreen" to `alt+enter`. Set "Search" to `ctrl+shift+f`.
+- Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" =
+  19. "Background opacity" = 75%.
 - Useful Shortcut &rightarrow; Go to `C:\Users\[USERNAME]\AppData\Local\Microsoft\WindowsApps` and
   right click `wt.exe` and create a shortcut. Move that to `C:\ProgramData\Microsoft\Windows\Start
   Menu\Programs` and edit it's properties - click `Change Icon...` and navigate to `C:\Program
@@ -54,8 +54,8 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 ### PowerShell Settings:
 - Command Line &rightarrow; `"[PATH TO PWSH.EXE]" -NoLogo`.
 - Starting Directory &rightarrow; `C:\`.
-- Appearance &rightarrow; Font face = CaskaydiaCove Nerd Font. Font size = 19. Background opacity =
-  75%.
+- Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 19. "Background
+  opacity" = 75%.
 
 ### Dependencies (Evironment Variables) for Neovim:
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
