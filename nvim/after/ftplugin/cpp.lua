@@ -2,7 +2,7 @@ vim.keymap.set("n", "<LEADER>kf", "<CMD>!clang-format -i %<CR>")
 
 function switch_file_in_unit(dir)
   if not string.match(vim.fn.expand("%:e"), "cpp") and not string.match(vim.fn.expand("%:e"), "hpp") then
-    vim.notify("Not a cpp or hpp file.", "error")
+    vim.notify("Error: Not a cpp or hpp file!", "error")
     return
   end
 
@@ -21,10 +21,10 @@ function switch_file_in_unit(dir)
   end
 
   if #files == 0 then
-    vim.notify("Error reading filename.", "error")
+    vim.notify("Error: Problem reading filename!", "error")
 
   elseif #files == 1 then
-    vim.notify("This is the only file in the compilation unit.", "error")
+    vim.notify("Error: There is only one file in this compilation unit!", "error")
 
   elseif #files == 2 then
     local source = ""
@@ -67,13 +67,13 @@ function switch_file_in_unit(dir)
     elseif string.match(vim.fn.expand("%:e"), "hpp") then
       selection = {source, template}
     else
-      vim.notify("Unexpected file extension.", "error")
+      vim.notify("Error: Unexpected file extension!", "error")
       return
     end
     vim.ui.select(selection, {prompt = "Choose a file:"}, function(choice) if choice then vim.cmd("edit " .. choice) end end)
 
   else
-    vim.notify("Unexpectedly high amount of corresponding files found.", "error")
+    vim.notify("Error: Unexpectedly high amount of corresponding files found!", "error")
   end
 end
 
