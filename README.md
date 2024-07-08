@@ -61,7 +61,7 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW`
   (I recommend 64-bit with POSIX threads for general purpose use).
 - Make &rightarrow; Run `winget install make --source winget`.
-- Python &rightarrow; Run `winget install --id Python.Python.3.11`.
+- Python &rightarrow; Run `winget install --id Python.Python.3.12`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
