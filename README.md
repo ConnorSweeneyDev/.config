@@ -3,7 +3,7 @@
 All my Neovim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast
 navigation. Also a quick setup for Tridactyl on Firefox.
 
-https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/6daf18bd-51fb-4ecd-8f21-59c4efa1896d
+https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/5024fc72-1f39-445e-a506-57b8cd181d88
 
 *Showcase: **cw** (cd directory), **ew** (explorer directory), **nw** (nvim directory), **ctrl+f**
 in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with tridactyl), **q or
