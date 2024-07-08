@@ -165,9 +165,9 @@ To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, 
 Now make firefox your default browser. After that go to Firefox settings and change the following:
 - General &rightarrow; Use recommended performance settings = Off.
 - General &rightarrow; Use hardware acceleration when available = Off.
-- Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; Paste
-  `moz-extension://13a1d2f1-5f72-41ad-bbed-17d8bb8bae85/static/newtab.html` &rightarrow; Use Current
-  Page.
+- Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; Open a new
+  tab, then close it and go to your history, copy the url of that closed tab and paste it into the
+  field - it should be of the form `moz-extension://[NUMBERS]/static/newtab.html`.
 - Home &rightarrow; Default search engine = Google.
 - Now go to this url `about:config` and search for `full-screen-api.transition-duration.enter` and
   `full-screen-api.transition-duration.leave` and change both to `0 0`.
