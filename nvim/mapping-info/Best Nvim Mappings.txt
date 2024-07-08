@@ -189,6 +189,11 @@
 (Normal) <control>i      -->  Move to the next location in the jump history
 (Normal) ``              -->  Move to the last jumped cursor location
 (Normal) <control>^      -->  Move to the last visited file
+
+(Normal) m<lowerchar>         -->  Set a local mark at the current cursor location
+(Normal) `<lowerchar>         -->  Move to the local mark set at the specified character
+(Normal) m<upperchar>         -->  Set a global mark at the current cursor location
+(Normal) `<upperchar>         -->  Move to the global mark set at the specified character
 --- CURSOR MOVEMENT ---
 
 
