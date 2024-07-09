@@ -2,6 +2,7 @@ require("telescope").setup
 {
   defaults =
   {
+    layout_config = { horizontal = { preview_width = 0.5 } },
     -- Ignore any string that has the following patterns
     -- Files in the .gitignore of each project are also ignored by default
     file_ignore_patterns = { ".git\\", ".cache\\", "external\\", "assets\\", ".exe", ".dll", ".0", ".1", ".2", ".3", ".4", ".5", ".6",
