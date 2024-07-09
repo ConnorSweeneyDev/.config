@@ -19,6 +19,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
+vim.opt.linebreak = true
 vim.opt.scrolloff = 8
 vim.opt.textwidth = 100
 vim.opt.formatoptions:remove("t")

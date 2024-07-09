@@ -27,5 +27,6 @@ require("oil").setup
     ["g\\"] = "actions.toggle_trash",
   }
 }
-
 vim.cmd("Oil")
+
+vim.keymap.set("n", "<LEADER>pv", "<CMD>Oil<CR>")
