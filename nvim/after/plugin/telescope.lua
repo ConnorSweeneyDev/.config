@@ -5,8 +5,8 @@ require("telescope").setup
     layout_config = { horizontal = { preview_width = 0.5 } },
     -- Ignore any string that has the following patterns
     -- Files in the .gitignore of each project are also ignored by default
-    file_ignore_patterns = { ".git\\", ".cache\\", "external\\", "assets\\", ".exe", ".dll", ".0", ".1", ".2", ".3", ".4", ".5", ".6",
-                             ".7", ".8", ".9", ".class", ".jar", ".sln", ".vcxproj", ".png", ".jpg", ".pyc", "packer_compiled.lua" }
+    file_ignore_patterns = { ".git\\", ".cache\\", "external\\", "ext\\", "assets\\", ".exe", ".dll", ".so", ".0", ".1", ".2", ".3", ".4", ".5",
+                             ".6", ".7", ".8", ".9", ".class", ".jar", ".sln", ".vcxproj", ".png", ".jpg", ".pyc", "packer_compiled.lua" }
   },
   extensions = { ["ui-select"] = { require("telescope.themes").get_dropdown { } } }
 }

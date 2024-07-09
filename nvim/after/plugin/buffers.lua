@@ -1,6 +1,6 @@
 function open_buffers()
   -- List of folders and file extensions to search for and open
-  local folders = {"/program", "/lua", "/after", "/script"}
+  local folders = {"/program", "/prog", "/lua", "/after", "/script"}
   local file_extensions = {"*.cpp", "*.hpp", "*.c", "*.h", "*.glsl", "*.cs", "*.java", "*.py", "*.lua", "*.bat"}
 
   local original_buffer = vim.api.nvim_get_current_buf()
