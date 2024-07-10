@@ -139,11 +139,9 @@ The following plugins require extra or different steps than those outlined above
   `after\plugin\lualine.lua` accordingly.
 
 You can now add the `after\ftplugin` folder and any files inside it, which are used for language
-specific configuration.
-
-After all those plugins are installed, don't forget to include `after\plugin\buffers.lua`,
-`after\plugin\colors.lua` and `after\plugin\source.lua` as they are not directly tied to any
-plugins.
+specific configuration. After all those plugins are installed, don't forget to include
+`after\plugin\buffers.lua`, `after\plugin\colors.lua` and `after\plugin\source.lua` as they are not
+directly tied to any plugins.
 
 `colors.lua` will apply all the settings of the selected colorscheme, `source.lua` is a helper for
 any files that need to be sourced after startup, and `buffers.lua` is optional, as it can slow down
