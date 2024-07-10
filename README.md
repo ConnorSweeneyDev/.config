@@ -127,7 +127,8 @@ The following plugins require extra or different steps than those outlined above
 - Coc &rightarrow; After following the steps, run `:CocInstall coc-discord-rpc coc-copilot coc-git
   coc-powershell coc-sh coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql
   coc-pyright coc-java coc-omnisharp coc-cmake coc-clangd` and run `:q` to close the dialog once
-  everything is installed and add `coc-settings.json`, then restart again. If you don't want discord
+  everything is installed and add `coc-settings.json`, where you should add the path to your java
+  installation instead of my one, then restart again. If you don't want discord
   integration with Neovim, dont include `coc-discord-rpc` or just run `:CocUninstall
   coc-discord-rpc` after the first command. If a language you want is missing, you can find it
   [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
