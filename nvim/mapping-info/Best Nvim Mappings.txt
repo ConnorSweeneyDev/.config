@@ -145,6 +145,7 @@
 (Normal) b               -->  Jumps to the start of the currently hovered word
 (Normal) B               -->  Jumps to the start of the currently hovered text until whitespace
 (Normal) _               -->  Jumps to the start of the line
+(Normal) g_              -->  Jumps to the end of the line excluding whitespace
 (Normal) $               -->  Jumps to the end of the line
 (Normal) f<char>         -->  Jumps to the first char in the line after the cursor that matches the input
 (Normal) t<char>         -->  Jumps to one character before the first char in the line after the cursor that matches the input
