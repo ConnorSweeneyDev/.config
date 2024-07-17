@@ -116,6 +116,7 @@ function music
     $selectedSong = Get-ChildItem -Path $directoryPath -File | ForEach-Object { $_.Name } | fzf -m
     if (![string]::IsNullOrWhiteSpace($selectedSong)) { .\binary\TerminalMusicPlayer.exe $selectedSong }
   }
+  elseif ($args -eq "-c") { .\binary\TerminalMusicPlayer.exe -c }
   else { echo "Invalid argument: $args" }
 }
 
