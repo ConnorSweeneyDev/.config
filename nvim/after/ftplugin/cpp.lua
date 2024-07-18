@@ -12,7 +12,7 @@ function switch_file_in_unit(dir)
     name = string.gsub(name, "%.tpl$", "")
   end
 
-  local long_files = vim.fn.globpath(dir, "**/" .. name .. "*", 0, 1)
+  local long_files = vim.fn.globpath(dir, "**/" .. name .. ".*", 0, 1)
   local files = {}
   for _, file in ipairs(long_files) do
     local new_file = string.gsub(file, cwd .. "\\", "")
