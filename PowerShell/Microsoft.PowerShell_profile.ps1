@@ -117,6 +117,7 @@ function music
     if (![string]::IsNullOrWhiteSpace($selectedSong)) { .\binary\TerminalMusicPlayer.exe $selectedSong }
   }
   elseif ($args -eq "-c") { .\binary\TerminalMusicPlayer.exe -c }
+  elseif ($args -eq "-r") { .\binary\TerminalMusicPlayer.exe -r && .\binary\TerminalMusicPlayer.exe }
   else { echo "Invalid argument: $args" }
 }
 
