@@ -48,7 +48,7 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
   `wt`.
 ### PowerShell Settings:
 - Command Line &rightarrow; `"[PATH TO PWSH.EXE]" -NoLogo`.
-- Starting Directory &rightarrow; `C:\`.
+- Starting Directory &rightarrow; `C:\Users`.
 - Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 19. "Background
   opacity" = 75%.
 
