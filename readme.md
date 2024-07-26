@@ -207,6 +207,9 @@ through the installation wizard.
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the
 contents in `C:\DependencyWalker`, make that folder an environment variable.
 
+Everything &rightarrow; Download the portable zip from [here](https://www.voidtools.com/) and put
+the contents in `C:\Everything`.
+
 Cutter &rightarrow; Download from [here](https://github.com/rizinorg/cutter/releases) and put the
 contents in `C:\Cutter`.
 
