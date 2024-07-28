@@ -158,6 +158,7 @@ To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, 
 - Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
   shortcut, then properties.
 - Change the target to `C:\scripts\firefox\firefoxfocusfix.bat`.
+- Change Run to `Minimized` (stops the terminal from opening).
 - Click Change Icon and browse to `C:\Program Files\Mozilla Firefox` then select the Firefox icon.
 - Apply the changes.
 
