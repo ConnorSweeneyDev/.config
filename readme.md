@@ -191,6 +191,8 @@ startup - my favourite tools are:
 - Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
 - Screen Ruler with an activation shortcut of `win+shift+p`.
 - Text Extractor with an activation shortcut of `win+shift+t`.
+- Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1200x900`.
+- File Locksmith enabled.
 - Command Not Found enabled.
 
 SysInternals &rightarrow; Download from
