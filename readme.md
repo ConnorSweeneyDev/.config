@@ -205,10 +205,14 @@ Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.micros
 through the installation wizard.
 
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the
-contents in `C:\DependencyWalker`, make that folder an environment variable.
+contents in `C:\Dependencies`, make that folder is an environment variable, then right click
+`DependenciesGui.exe` and select "Create shortcut" and rename it to `Dependencies`, then move that
+to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
 
 Everything &rightarrow; Download the portable zip from [here](https://www.voidtools.com/) and put
-the contents in `C:\Everything`.
+the contents in `C:\Everything`. Right click `Everything.exe` and select "Create shortcut", then
+rename it to `Everything` and place this shortcut in `C:\ProgramData\Microsoft\Windows\Start
+Menu\Programs`.
 
 Cutter &rightarrow; Download from [here](https://github.com/rizinorg/cutter/releases) and put the
 contents in `C:\Cutter`.
