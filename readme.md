@@ -185,7 +185,7 @@ view all the most important bindings.
 
 # Other Useful Tools
 VimEverywhereKeyboard &rightarrow; My
-[repositrory](https://github.com/ConnorSweeneyDev/VimEverywhereKeyboard) containing instructions for
+[repository](https://github.com/ConnorSweeneyDev/VimEverywhereKeyboard) containing instructions for
 modifying a qmk keyboard to have a toggleable vim mode.
 
 PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - enable Run at
