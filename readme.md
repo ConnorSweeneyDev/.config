@@ -184,6 +184,10 @@ You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#high
 view all the most important bindings.
 
 # Other Useful Tools
+VimEverywhereKeyboard &rightarrow; My
+[repositrory](https://github.com/ConnorSweeneyDev/VimEverywhereKeyboard) containing instructions for
+modifying a qmk keyboard to have a toggleable vim mode.
+
 PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - enable Run at
 startup - my favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous
