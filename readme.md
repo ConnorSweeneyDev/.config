@@ -1,7 +1,7 @@
 # Windows11Workflow
 
-l my Neovim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast
-navigation. Also a ick setup for Tridactyl on Firefox.
+All my Neovim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast
+navigation. Also a quick setup for Tridactyl on Firefox.
 
 https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/5024fc72-1f39-445e-a506-57b8cd181d88
 
