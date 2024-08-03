@@ -39,7 +39,7 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - Actions &rightarrow; Add a new action "Close tab" assigned to `ctrl+shift+d`. Set "Toggle
   fullscreen" to `alt+enter`. Set "Search" to `ctrl+shift+f`.
 - Defaults &rightarrow; Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" =
-  19. "Background opacity" = 75%.
+  19. "Background opacity" = 75%. "Cursor shape" = Filled box.
 - Useful Shortcut &rightarrow; Go to `C:\Users\[USERNAME]\AppData\Local\Microsoft\WindowsApps` and
   right click `wt.exe` and create a shortcut. Move that to `C:\ProgramData\Microsoft\Windows\Start
   Menu\Programs` and edit it's properties - click `Change Icon...` and navigate to `C:\Program
@@ -48,7 +48,7 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
   `wt`.
 ### PowerShell Settings:
 - Command Line &rightarrow; `"[PATH TO PWSH.EXE]" -NoLogo`.
-- Starting Directory &rightarrow; `C:\Users`.
+- Starting Directory &rightarrow; `C:\`.
 - Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 19. "Background
   opacity" = 75%.
 
