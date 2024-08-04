@@ -183,11 +183,17 @@ Using Tridactyl, press `:` and type the following commands:
 You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to
 view all the most important bindings.
 
-# Other Useful Tools
-VimForVoyager &rightarrow; My
-[repository](https://github.com/ConnorSweeneyDev/VimForVoyager) contains instructions for
-modifying the ZSA Voyager keyboard to have a native vim toggle using QMK firmware.
+# Vim Mode on ZSA Voyager
+If you happen to use a ZSA Voyager keyboard, you can follow the instructions in my
+[VimForVoyager](https://github.com/ConnorSweeneyDev/VimForVoyager) repository to set up a native vim
+toggle using a smart combination of utility keys like `home`, `end`, `delete` etc. and modifiers
+like `shift + arrow`, `ctrl + arrow` etc. meaning these bindings work almost everywhere.
 
+This is achieved using the QMK firmware, more specifically ZSA's fork of it, and programming certain
+actions to be triggered by certain key combinations. Details of exactly what is supported can be
+found in the repository.
+
+# Other Useful Tools
 PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - enable Run at
 startup - my favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous
