@@ -1,7 +1,7 @@
 # Windows11Workflow
-
 All my Neovim config files, using PowerShell in the Windows Terminal along with fzf and bat for fast
-navigation. Also a quick setup for Tridactyl on Firefox.
+navigation. Additionally, there is a quick setup for Tridactyl on Firefox, a quick setup for a
+toggleable vim mode for the ZSA Voyager keyboard, and a list of other useful tools for Windows.
 
 https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/5024fc72-1f39-445e-a506-57b8cd181d88
 
@@ -184,9 +184,9 @@ You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#high
 view all the most important bindings.
 
 # Other Useful Tools
-VimEverywhereKeyboard &rightarrow; My
-[repository](https://github.com/ConnorSweeneyDev/VimEverywhereKeyboard) containing instructions for
-modifying a qmk keyboard to have a toggleable vim mode.
+VimForVoyager &rightarrow; My
+[repository](https://github.com/ConnorSweeneyDev/VimForVoyager) contains instructions for
+modifying the ZSA Voyager keyboard to have a native vim toggle using QMK firmware.
 
 PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - enable Run at
 startup - my favourite tools are:
