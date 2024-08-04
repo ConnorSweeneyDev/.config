@@ -222,7 +222,7 @@ rename it to `Everything` and place this shortcut in `C:\ProgramData\Microsoft\W
 Menu\Programs`.
 
 Cutter &rightarrow; Download from [here](https://github.com/rizinorg/cutter/releases) and put the
-contents in `C:\Cutter`. Right click `Cutter.exe` and select "Create shortcut", then rename it to
+contents in `C:\Cutter`. Right click `cutter.exe` and select "Create shortcut", then rename it to
 `Cutter` and place this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
 
 Portal &rightarrow; Run `winget install SpatiumPortae.portal`, go
