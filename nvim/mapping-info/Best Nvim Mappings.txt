@@ -82,6 +82,7 @@
 (Normal) ]d              -->  Go to the next Info/Warning/Error
 (Normal) [d              -->  Go to the previous Info/Warning/Error
 
+(Normal) K               -->  Display information on the word being hovered
 (Normal) <space>rn       -->  Rename the word being hovered
 (Normal) <space>ca       -->  Perform code action on the content under the cursor
 
@@ -91,7 +92,7 @@
 (Insert) <enter>         -->  Accept completion
 (Insert) <control>e      -->  Dismiss completions
 
-(Normal) K               -->  Display information on the word being hovered
+(Normal) <space>cr       -->  Restart server
 --- LANGUAGE SERVER ---
 
 
@@ -268,6 +269,7 @@
 
 (Visual) p               -->  Replaces the currently highlighted text with the clipboard contents, putting the highlighted text in the clipboard
 (Normal) x               -->  Deletes the character under the cursor and puts it in the clipboard
+(Normal) X               -->  Deletes the character to the left of the cursor and puts it in the clipboard
 
 (Normal) <space>s        -->  Replaces all instances of the current hovered word in the file
 (Visual) <space>s        -->  Replaces all instances of the current selected text in the file
