@@ -29,7 +29,9 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the
   contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete
   the .ttf files from the folder after you've installed them.
-- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
+- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`, then paste the `C:\posh`
+  folder to that location and run `oh-my-posh disable notice` to stop the annoying update message
+  every so often.
 ### Terminal Settings:
 - Startup &rightarrow; "Default profile" = PowerShell. "Default termial application" = Windows
   Terminal. "Launch size" = 120x30. "Launch parameters" = Center on launch enabled.
@@ -71,8 +73,6 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
 - Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim
   "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`.
-- Paste the `C:\posh` folder to that location, run `oh-my-posh disable notice` to stop the annoying
-  update message every week.
 - Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
   specific to me.
