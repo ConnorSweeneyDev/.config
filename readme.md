@@ -106,7 +106,7 @@ Now you can create `lua\[USERNAME]\packer.lua`, populate it with only the follow
 ```lua
 vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
-    use('wbthomason/packer.nvim')
+  use('wbthomason/packer.nvim')
 end)
 ```
 Now run `:so` and `:PackerSync`, then say yes to removing the packer directory if prompted and press
