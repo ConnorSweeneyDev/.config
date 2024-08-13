@@ -20,7 +20,7 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search
   `developer`).
 - Ensure you are able to access and use the Windows Store, winget relies on this for certain things.
-  if you can't access the store (it's known to be glitchy for some accounts) then you can find
+  If you can't access the store (it's known to be glitchy for some accounts) then you can find
   alternative installs for dependencies on Chocolatey or their official websites.
 
 ### Terminal Installation:
