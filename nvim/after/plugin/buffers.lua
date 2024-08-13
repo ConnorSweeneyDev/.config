@@ -17,8 +17,21 @@ function open_buffers()
     end
   end
 
-  vim.cmd("bd 1")
   vim.api.nvim_set_current_buf(original_buffer)
 end
 
+function close_buffers()
+  local original_buffer = vim.api.nvim_get_current_buf()
+  local buffers = vim.api.nvim_list_bufs()
+  for _, buffer in ipairs(buffers) do
+    if buffer ~= original_buffer then
+      vim.api.nvim_buf_delete(buffer, {force = true})
+    end
+  end
+end
+
 open_buffers()
+vim.cmd("bd 1")
+
+vim.keymap.set("n", "<A-o>", function() open_buffers() end)
+vim.keymap.set("n", "<A-c>", function() close_buffers() end)

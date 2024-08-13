@@ -130,6 +130,9 @@
 
 (Normal) <control>f      -->  Create a new powershell tab and run nw
 (Normal) <control>t      -->  Create a new powershell tab
+
+(Normal) <alt>o          -->  Run open_buffers() from buffers.lua
+(Normal) <alt>c          -->  Run close_buffers() from buffers.lua
 --- WINDOWS ---
 
 
