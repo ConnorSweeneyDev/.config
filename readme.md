@@ -70,7 +70,7 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
-- Neovim &rightarrow; Run `winget install neovim`.
+- Neovim &rightarrow; Run `winget install neovim --version 0.10.0`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 - Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
