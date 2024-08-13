@@ -54,14 +54,14 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - Appearance &rightarrow; "Font face" = CaskaydiaCove Nerd Font. "Font size" = 19. "Background
   opacity" = 75%.
 
-### Dependencies (Evironment Variables) for Neovim:
+### Dependencies for Neovim:
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
   [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and
   run the installation wizard.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system
   core.longpaths true`.
 - MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW`
-  (I recommend 64-bit with POSIX threads for general purpose use).
+  (I recommend 64-bit with POSIX threads for general purpose use). Add `C:\MinGW\bin` to your path.
 - Make &rightarrow; Run `winget install make --source winget`.
 - Python &rightarrow; Run `winget install --id Python.Python.3.12`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
@@ -77,7 +77,7 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
   specific to me.
 
-### Dependencies (Evironment Variables) for the Scripts Folder:
+### Dependencies for the Scripts Folder:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from
   [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
@@ -87,8 +87,8 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - Tridactyl &rightarrow; Go
   [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md)
   on Firefox.
-- Paste the `C:\scripts` folder to that location. Ensure you put `C:\scripts\which` and
-  `C:\scripts\firefox` in the path.
+- Paste the `C:\scripts` folder to that location. Put `C:\scripts\which` and `C:\scripts\firefox` in
+  your path.
 
 # Neovim Setup
 I recommend manually recreating the `nvim` folder on your PC rather than just pasting it in, because
