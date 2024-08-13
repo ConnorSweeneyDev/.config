@@ -58,8 +58,10 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
   [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and
   run the installation wizard.
-- Java &rightarrow; Download from [here](https://www.oracle.com/java/technologies/downloads/) and
-  run the installation wizard.
+- Java &rightarrow; Download the compressed archive from
+  [here](https://www.oracle.com/java/technologies/downloads/) and place the folder named
+  `jdk-[VERSION]` in `C:\Program Files\Java` then add `C:\Program Files\Java\jdk-[VERSION]\bin` to
+  your path.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system
   core.longpaths true`.
 - MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW`
