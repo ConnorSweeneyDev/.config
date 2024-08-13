@@ -30,8 +30,10 @@ function close_buffers()
   end
 end
 
+local original_buffer = vim.api.nvim_get_current_buf()
 open_buffers()
 vim.cmd("bd 1")
+vim.api.nvim_set_current_buf(original_buffer)
 
 vim.keymap.set("n", "<A-o>", function() open_buffers() end)
 vim.keymap.set("n", "<A-c>", function() close_buffers() end)
