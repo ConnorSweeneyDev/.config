@@ -22,6 +22,7 @@ end
 vim.keymap.set("n", "K", "<CMD>lua _G.show_docs()<CR>", {silent = true})
 
 vim.keymap.set("n", "<LEADER>rn", "<Plug>(coc-rename)", {silent = true})
+vim.keymap.set("n", "<LEADER>rf", "<Plug>(coc-refactor)", {silent = true})
 vim.keymap.set("n", "<LEADER>ka", "<Plug>(coc-codeaction-cursor)", {silent = true, nowait = true})
 
 vim.keymap.set("n", "<LEADER>cr", "<CMD>CocRestart<CR>", {silent = true})
