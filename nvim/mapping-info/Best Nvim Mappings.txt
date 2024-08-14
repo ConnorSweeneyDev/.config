@@ -52,8 +52,8 @@
 (Normal) <space>gr       -->  Run git restore .
 
 (Normal) dv              -->  Open vertical diff view for resolving merge conflicts
-(Normal) d2o             -->  Put the left side of the merge conflict in the working copy
-(Normal) d3o             -->  Put the right side of the merge conflict in the working copy
+(Normal) <space>dh       -->  Put the left side of the merge conflict in the working copy
+(Normal) <space>dl       -->  Put the right side of the merge conflict in the working copy
 (Normal) <space>dq       -->  Close the left and right diff windows and focus the git status window
 --- FUGITIVE ---
 
