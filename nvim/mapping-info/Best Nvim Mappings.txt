@@ -49,6 +49,7 @@
 (Normal) u               -->  When cursor is on a staged change, unstages it
 (Normal) cc              -->  Create a new commit
 (Normal) <space>gp       -->  Run git pull
+(Normal) <space>gr       -->  Run git restore .
 
 (Normal) dv              -->  Open vertical diff view for resolving merge conflicts
 (Normal) d2o             -->  Put the left side of the merge conflict in the working copy

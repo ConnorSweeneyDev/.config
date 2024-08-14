@@ -131,7 +131,7 @@ The following plugins require extra or different steps than those outlined above
   coc-copilot coc-git coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql
   coc-pyright coc-java coc-omnisharp coc-clangd coc-clang-format-style-options` then `:q` to close
   the dialog once everything is installed and add `coc-settings.json`, where you should add the path
-  to your java installation instead of my one, then restart again. If you don't want any of the
+  to your java installation instead of my one, then restart again. If you don't want one of the
   listed servers, dont include them or just run `:CocUninstall [SERVER]` after the first command. If
   a language you want is missing, you can find it
   [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
