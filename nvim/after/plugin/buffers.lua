@@ -19,7 +19,6 @@ function open_buffers()
 
   vim.api.nvim_set_current_buf(original_buffer)
 end
-
 function close_buffers()
   local original_buffer = vim.api.nvim_get_current_buf()
   local buffers = vim.api.nvim_list_bufs()
@@ -30,16 +29,19 @@ function close_buffers()
   end
 end
 
+function clean_open()
+  open_buffers()
+  vim.cmd("CocRestart")
+end
+function clean_close()
+  close_buffers()
+  vim.cmd("CocRestart")
+end
+
+vim.keymap.set("n", "<A-o>", function() clean_open() end)
+vim.keymap.set("n", "<A-c>", function() clean_close() end)
+
 local original_buffer = vim.api.nvim_get_current_buf()
 open_buffers()
 vim.cmd("bd 1")
 vim.api.nvim_set_current_buf(original_buffer)
-
-vim.keymap.set("n", "<A-o>", function()
-  open_buffers()
-  vim.cmd("CocRestart")
-end)
-vim.keymap.set("n", "<A-c>", function()
-  close_buffers()
-  vim.cmd("CocRestart")
-end)
