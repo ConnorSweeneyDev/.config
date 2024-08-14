@@ -97,12 +97,12 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 I recommend manually recreating the `nvim` folder on your PC rather than just pasting it in, because
 this will allow you to single out any unexpected errors as they happen.
 
-You should start with the top level `init.lua`, replace "connor" with "[YOUR USERNAME]" then move on
-to the `lua\[USERNAME]\init.lua` and replace my name with yours again. Then you can create
-`lua\[USERNAME]\remap.lua` and `lua\[USERNAME]\set.lua` and paste the config into each. Running
-`nvim .` in the nvim directory now should open Neovim and give you no errors.
+You should start with the top level `init.lua` and the `lua\main\init.lua`. Then you can create
+`lua\main\remap.lua` and `lua\main\set.lua` and paste the config into each. Running `nvim .` (or
+just `n` if you're using my powershell config file) in the nvim directory now should open Neovim and
+give you no errors.
 
-Now you can create `lua\[USERNAME]\packer.lua`, populate it with only the following lines:
+Now you can create `lua\main\packer.lua`, populate it with only the following lines:
 ```lua
 vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
@@ -114,7 +114,7 @@ Now run `:so` and `:PackerSync`, then say yes to removing the packer directory i
 
 Now, under the line `use('wbthomason\packer.nvim')` you can start adding plugins, do so in the
 following pattern (with some exceptions):
-- Add the line to `lua\[USERNAME]\packer.lua` and run `:so` then `:PackerSync` inside it.
+- Add the line to `lua\main\packer.lua` and run `:so` then `:PackerSync` inside it.
 - If it needs one, add an `after\plugin\[PLUGIN].lua` file for the plugin and run `:so` inside it.
 - Run `:q` then `nvim .` incase the plugin needs a restart.
 
@@ -130,15 +130,15 @@ The following plugins require extra or different steps than those outlined above
 - Coc &rightarrow; After following the steps, run `:CocInstall coc-discord-rpc coc-diagnostic
   coc-copilot coc-git coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql
   coc-pyright coc-java coc-omnisharp coc-clangd coc-clang-format-style-options` then `:q` to close
-  the dialog once everything is installed and add `coc-settings.json`, where you should add the path
-  to your java installation instead of my one, then restart again. If you don't want one of the
+  the dialog once everything is installed. Now add `coc-settings.json`, where you should add the
+  path to your java installation instead of my one, then restart again. If you don't want one of the
   listed servers, dont include them or just run `:CocUninstall [SERVER]` after the first command. If
   a language you want is missing, you can find it
   [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
 - Copilot &rightarrow; If you don't have a license for Copilot then don't include this plugin. If
   you do, then after following the steps run `:Copilot setup` and follow the instructions.
 - Colorscheme &rightarrow; You can use the one that I use, but if you don't want to you will have to
-  change the lines in `lua\[USERNAME]\packer.lua`, `after\plugin\colors.lua` and
+  change the lines in `lua\main\packer.lua`, `after\plugin\colors.lua` and
   `after\plugin\lualine.lua` accordingly.
 
 You can now add the `after\ftplugin` folder and any files inside it, which are used for language
@@ -155,15 +155,15 @@ buffers except the current one (when you need to rename symbols, go to reference
 also provides the keybind for that, and the keybind for reopening them all again.
 
 Finally, you can paste the `mapping-info` folder into the root for safe keeping. All keybinds can be
-edited at `lua\[USERNAME]\remap.lua` or the respective `after\plugin\[PLUGIN].lua` file, and all
-settings can be edited at `lua\[USERNAME]\set.lua`.
+edited at `lua\main\remap.lua` or the respective `after\plugin\[PLUGIN].lua` file, and all
+settings can be edited at `lua\main\set.lua` or `coc-settings.json` for language server settings.
 
 # Firefox with Tridactyl Setup
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
 - Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
   shortcut, then properties.
 - Change the target to `C:\scripts\firefox\firefoxfocusfix.bat`.
-- Change Run to `Minimized` (stops the terminal from opening).
+- Change Run to `Minimized` (stops the terminal from opening, not the browser).
 - Click Change Icon and browse to `C:\Program Files\Mozilla Firefox` then select the Firefox icon.
 - Apply the changes.
 
