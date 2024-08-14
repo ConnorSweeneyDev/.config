@@ -151,8 +151,8 @@ any files that need to be sourced after startup, and `buffers.lua` is optional, 
 the startup time but will open, in separate buffers, every file in the specified directory that has
 any of the file extensions specified - this can be useful because diagnostics for files that are not
 open will still be shown when you toggle the diagnostics window. If you need to close all the
-buffers except the current one, this file also provides the keybind for that, and for reopening
-them.
+buffers except the current one (when you need to rename symbols, go to references etc.), this file
+also provides the keybind for that, and the keybind for reopening them all again.
 
 Finally, you can paste the `mapping-info` folder into the root for safe keeping. All keybinds can be
 edited at `lua\[USERNAME]\remap.lua` or the respective `after\plugin\[PLUGIN].lua` file, and all
