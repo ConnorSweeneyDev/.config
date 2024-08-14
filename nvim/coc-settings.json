@@ -1,7 +1,19 @@
 {
   "xml.java.home": "C:\\Program Files\\Java\\jdk-20",
+
   "suggest.noselect": true,
   "diagnostic.virtualText": false,
   "diagnostic.virtualTextCurrentLineOnly": false,
-  "inlayHint.enable": false
+  "inlayHint.enable": false,
+
+  "diagnostic.errorSign": "▌",
+  "diagnostic.warningSign": "▌",
+  "diagnostic.hintSign": "▌",
+  "diagnostic.infoSign": "▌",
+
+  "git.addedSign.text": "▎",
+  "git.changedSign.text": "▎",
+  "git.removedSign.text": "▎",
+  "git.changeRemovedSign.text": "▎",
+  "git.topRemovedSign.text": "▎",
 }
