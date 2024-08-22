@@ -23,7 +23,8 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
   `developer`).
 - Ensure you are able to access and use the Windows Store, winget relies on this for certain things.
   If you can't access the store (it's known to be glitchy for some accounts) then you can find
-  alternative installs for dependencies on Chocolatey or their official websites.
+  alternative installs for all dependencies on either Chocolatey (packaged with
+  [NodeJS](https://nodejs.org/en/download/prebuilt-installer)) or the dependency's official website.
 
 ### Terminal Installation:
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
