@@ -11,7 +11,8 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 
 # System Setup
 ### Full Paths to Repository Folders:
-- LocalState &rightarrow; `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`.
+- LocalState &rightarrow;
+  `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`.
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`.
 - posh &rightarrow; `C:\posh`
