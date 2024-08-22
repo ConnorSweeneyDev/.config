@@ -143,20 +143,21 @@ The following plugins require extra or different steps than those outlined above
 
 You can now add the `after\ftplugin` folder and any files inside it, which are used for language
 specific configuration. After all those plugins are installed, don't forget to include
-`after\plugin\buffers.lua`, `after\plugin\colors.lua` and `after\plugin\source.lua` as they are not
-directly tied to any plugins.
+`after\plugin\buffers.lua` and `after\plugin\colors.lua` as they are not directly tied to any
+plugins.
 
-`colors.lua` will apply all the settings of the selected colorscheme, `source.lua` is a helper for
-any files that need to be sourced after startup, and `buffers.lua` is optional, as it can slow down
-the startup time but will open, in separate buffers, every file in the specified directory that has
-any of the file extensions specified - this can be useful because diagnostics for files that are not
-open will still be shown when you toggle the diagnostics window. If you need to close all the
-buffers except the current one (when you need to rename symbols, go to references etc.), this file
-also provides the keybind for that, and the keybind for reopening them all again.
+`colors.lua` will apply all the settings of the selected colorscheme and any additional
+modifications and `buffers.lua` is optional, as it can slow down the startup time but will open, in
+separate buffers, every file in the specified directory that has any of the file extensions
+specified - this can be useful because diagnostics for files that are not open will still be shown
+when you toggle the diagnostics window. If you need to close all the buffers except the current one
+(when you need to rename symbols, go to references etc.), this file also provides the keybind for
+that, and the keybind for reopening them all again.
 
-Finally, you can paste the `mapping-info` folder into the root for safe keeping. All keybinds can be
-edited at `lua\main\remap.lua` or the respective `after\plugin\[PLUGIN].lua` file, and all
-settings can be edited at `lua\main\set.lua` or `coc-settings.json` for language server settings.
+Finally, you can paste the `mapping-info` folder into the root for safe keeping. All keybinds and
+settings can be edited at `lua\main\remap.lua`, `lua\main\set.lua` or the respective
+`after\plugin\[PLUGIN].lua` files. Furthermore, all language specific settings can be edited at
+`after\ftplugin\[EXTENSION].lua` and language server settings can be edited at `coc-settings.json`.
 
 # Firefox with Tridactyl Setup
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:

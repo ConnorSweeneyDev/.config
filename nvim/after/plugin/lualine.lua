@@ -1,34 +1,5 @@
 local lualine = require("lualine")
 
-lualine.setup
-{
-  options =
-  {
-    icons_enabled = true,
-    theme = "vscode",
-    component_separators = { left = "|", right = "|"},
-    section_separators = { left = "", right = ""},
-    disabled_filetypes = { statusline = {}, winbar = {}, },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = { statusline = 1000, tabline = 1000, winbar = 1000, }
-  },
-  sections =
-  {
-    lualine_a = {"mode"},
-    lualine_b = {{"relative_path", fmt = get_relative_path}},
-    lualine_c = {"diagnostics"},
-    lualine_x = {"diff"},
-    lualine_y = {{"macro-recording", fmt = show_macro_recording}},
-    lualine_z = {"progress", "location"}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
-}
-
 function get_relative_path()
   local root = vim.fn.getcwd():match("^[^:]")
   local path = vim.fn.expand("%:.")
@@ -70,6 +41,35 @@ function show_macro_recording()
     return "Recording @" .. recording_register
   end
 end
+
+lualine.setup
+{
+  options =
+  {
+    icons_enabled = true,
+    theme = "vscode",
+    component_separators = { left = "|", right = "|"},
+    section_separators = { left = "", right = ""},
+    disabled_filetypes = { statusline = {}, winbar = {}, },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+    refresh = { statusline = 1000, tabline = 1000, winbar = 1000, }
+  },
+  sections =
+  {
+    lualine_a = {"mode"},
+    lualine_b = {{"relative_path", fmt = get_relative_path}},
+    lualine_c = {"diagnostics"},
+    lualine_x = {"diff"},
+    lualine_y = {{"macro_recording", fmt = show_macro_recording}},
+    lualine_z = {"progress", "location"}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+}
 
 vim.api.nvim_create_autocmd("RecordingEnter",
 {

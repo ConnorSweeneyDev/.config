@@ -54,7 +54,7 @@
 (Normal) dv              -->  Open vertical diff view for resolving merge conflicts
 (Normal) <space>dh       -->  Put the left side of the merge conflict in the working copy
 (Normal) <space>dl       -->  Put the right side of the merge conflict in the working copy
-(Normal) <space>dq       -->  Close the left and right diff windows and focus the git status window
+(Normal) ZD              -->  Close the left and right diff windows and focus the git status window
 --- FUGITIVE ---
 
 
@@ -73,18 +73,18 @@
 
 
 --- LANGUAGE SERVER ---
-(Normal) gd              -->  Go to the definition of the word being hovered
-(Normal) gr              -->  Go to the references of the word being hovered
-(Normal) gi              -->  Go to the implementation of the word being hovered
-(Normal) gy              -->  Go to the type definition of the word being hovered
+(Normal) gd              -->  Go to the definition of the symbol being hovered
+(Normal) gr              -->  Go to the references of the symbol being hovered
+(Normal) gi              -->  Go to the implementation of the symbol being hovered
+(Normal) gy              -->  Go to the type definition of the symbol being hovered
 (Normal) [c              -->  Go to the context at the top of the screen if it is currently shown
 
 (Normal) <space>td       -->  Display all diagnostics
 (Normal) ]d              -->  Go to the next Info/Warning/Error
 (Normal) [d              -->  Go to the previous Info/Warning/Error
 
-(Normal) K               -->  Display information on the word being hovered
-(Normal) <space>rn       -->  Rename the word being hovered
+(Normal) K               -->  Display information on the symbol being hovered
+(Normal) <space>rn       -->  Rename the symbol being hovered
 (Normal) <space>rf       -->  Rename the symbol being hovered using the refactor interface
 (Normal) <space>ca       -->  Perform code action on the content under the cursor
 
@@ -117,6 +117,17 @@
 
 
 
+--- BUFFERS ---
+(Normal) <space>w        -->  Save the current buffer (equivalent to :w)
+(Normal) ZZ              -->  Save and close the current buffer (equivalent to :wq)
+(Normal) ZQ              -->  Close the current buffer without saving (equivalent to :q!)
+
+(Normal) <alt>o          -->  Run open_buffers() from buffers.lua
+(Normal) <alt>c          -->  Run close_buffers() from buffers.lua
+--- BUFFERS ---
+
+
+
 --- WINDOWS ---
 (Normal) <control>w      -->  Enter window mode
 (Normal) <control>wh     -->  Move left one window
@@ -134,9 +145,6 @@
 (Normal) <control>t      -->  Create a new powershell tab
 (Normal) gt              -->  Move to the next neovim tab
 (Normal) gT              -->  Move to the previous neovim tab
-
-(Normal) <alt>o          -->  Run open_buffers() from buffers.lua
-(Normal) <alt>c          -->  Run close_buffers() from buffers.lua
 --- WINDOWS ---
 
 
@@ -152,8 +160,11 @@
 (Normal) W               -->  Jumps to the end of the currently hovered text until whitespace
 (Normal) b               -->  Jumps to the start of the currently hovered word
 (Normal) B               -->  Jumps to the start of the currently hovered text until whitespace
-(Normal) _               -->  Jumps to the start of the line
+(Normal) 0               -->  Jumps to the start of the line
+(Normal) _               -->  Jumps to the start of the line excluding whitespace
+(Normal) H               -->  Jumps to the start of the line excluding whitespace
 (Normal) g_              -->  Jumps to the end of the line excluding whitespace
+(Normal) L               -->  Jumps to the end of the line excluding whitespace
 (Normal) $               -->  Jumps to the end of the line
 (Normal) f<char>         -->  Jumps to the first char in the line after the cursor that matches the input
 (Normal) t<char>         -->  Jumps to one character before the first char in the line after the cursor that matches the input

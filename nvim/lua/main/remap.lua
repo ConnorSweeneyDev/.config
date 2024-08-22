@@ -2,10 +2,13 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+vim.keymap.set("n", "<LEADER>w", "<CMD>w<CR>")
 vim.keymap.set("n", "<LEADER>tw", "<CMD>set wrap!<CR>")
 vim.keymap.set("n", "<C-f>", "<CMD>!wt --window 0 -p \"PowerShell\" pwsh -NoExit -Command \"nw\"<CR>")
 vim.keymap.set("n", "<C-t>", "<CMD>!wt --window 0 -p \"PowerShell\"<CR>")
 
+vim.keymap.set("n", "H", "_")
+vim.keymap.set("n", "L", "g_")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
