@@ -193,7 +193,9 @@
 (Normal) v               -->  Enters visual mode
 (Visual) v               -->  Exits visual mode
 (Normal) V               -->  Enters visual line mode
+(Visual) V               -->  Exits visual line mode
 (Normal) <control>q      -->  Enters visual block mode
+(Visual) <control>q      -->  Exits visual block mode
 (Normal) vw              -->  Highlights from the cursor to the start of the next hovered word
 (Normal) vb              -->  Highlights from the cursor to the start of the current hovered word
 (Normal) vap             -->  Highlights the current hovered paragraph

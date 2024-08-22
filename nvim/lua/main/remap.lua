@@ -9,6 +9,7 @@ vim.keymap.set("n", "<C-t>", "<CMD>!wt --window 0 -p \"PowerShell\"<CR>")
 
 vim.keymap.set("n", "H", "_")
 vim.keymap.set("n", "L", "g_")
+vim.keymap.set("v", "L", "g_")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "gJ", "mzgJ`z")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
