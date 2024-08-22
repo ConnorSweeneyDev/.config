@@ -349,6 +349,9 @@
 
 
 --- FILE COMMANDS ---
+(Normal) u               -->  Undoes the last change
+(Normal) U               -->  Undoes all changes made to the current line since editing a different line
+(Normal) <control>r      -->  Redoes the last change
 (Normal) gx              -->  Opens the file/link under the cursor in the system default program
 (Normal) gf              -->  Opens the file under the cursor in a new buffer
 
