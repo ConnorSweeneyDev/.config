@@ -162,6 +162,7 @@
 (Normal) B               -->  Jumps to the start of the currently hovered text until whitespace
 (Normal) 0               -->  Jumps to the start of the line
 (Normal) _               -->  Jumps to the start of the line excluding whitespace
+(Normal) ^               -->  Jumps to the start of the line excluding whitespace
 (Normal) H               -->  Jumps to the start of the line excluding whitespace
 (Normal) g_              -->  Jumps to the end of the line excluding whitespace
 (Normal) L               -->  Jumps to the end of the line excluding whitespace
@@ -175,6 +176,7 @@
 
 (Normal) <number>j       -->  Jumps the specified number of lines down
 (Normal) <number>k       -->  Jumps the specified number of lines up
+(Nomral) <number>G       -->  Jumps to the specified line number
 (Normal) <control>d      -->  Jumps half a page down, keeping the cursor in the middle
 (Normal) <control>u      -->  Jumps half a page up, keeping the cursor in the middle
 (Normal) {               -->  Jumps to the previous paragraph
@@ -204,28 +206,37 @@
 (Normal) vt<char>        -->  Highlights from the cursor to one char before the specified char
 (Normal) va<bracket>     -->  If the bracket is {, highlights the current scope including the { and } - if the bracket is ( or [, highlights the next () or [] and all content inside it
 (Normal) vi<bracket>     -->  If the bracket is {, highlights the current scope excluding the { and } - if the bracket is ( or [, highlights the content inside the next () or [] but not the brackets
+(Normal) vib             -->  Equivalent to vi(
+(Normal) vab             -->  Equivalent to va(
+(Normal) viB             -->  Equivalent to vi{
+(Normal) vaB             -->  Equivalent to va{
 
 (Normal) <control>o      -->  Move to the previous location in the jump history
 (Normal) <control>i      -->  Move to the next location in the jump history
 (Normal) ``              -->  Move to the last jumped cursor location
 (Normal) <control>^      -->  Move to the last visited file
+(Normal) <control>6      -->  Move to the last visited file
 
-(Normal) m<lowerchar>         -->  Set a local mark at the current cursor location
-(Normal) `<lowerchar>         -->  Move to the local mark set at the specified character
-(Normal) m<upperchar>         -->  Set a global mark at the current cursor location
-(Normal) `<upperchar>         -->  Move to the global mark set at the specified character
+(Normal) m<lowerchar>    -->  Set a local mark at the current cursor location
+(Normal) `<lowerchar>    -->  Move to the local mark set at the specified character
+(Normal) m<upperchar>    -->  Set a global mark at the current cursor location
+(Normal) `<upperchar>    -->  Move to the global mark set at the specified character
 --- CURSOR MOVEMENT ---
 
 
 
 --- TEXT MOVEMENT ---
 (Normal) J               -->  Appends the line below the current to the end of the current line, keeping the cursor where it is
+(Normal) gJ              -->  Appends the line below the current to the end of the current line, removing the whitespace between them and keeping the cursor where it is
 (Visual) J               -->  Moves highlighted text down one line
 (Visual) K               -->  Moves highlighted text up one line
 
 (Normal) ==              -->  Correctly indents the current line
 (Normal) =ap             -->  Correctly indents the hovered paragraph
 (Visual) =               -->  Correctly indents the highlighted text
+
+(Normal) gq<motion>      -->  Reformats the text in the specified motion to fit within the text width
+(Visual) gq              -->  Reformats the highlighted text to fit within the text width
 --- TEXT MOVEMENT ---
 
 
@@ -298,8 +309,6 @@
 (Normal) ~               -->  Toggles the case of the hovered character and moves the cursor to the right
 
 (Normal) <space>tw       -->  Toggles line wrapping
-(Normal) gq<motion>      -->  Reformats the text in the specified motion to fit within the text width
-(Visual) gq              -->  Reformats the highlighted text to fit within the text width
 --- TEXT MANIPULATION ---
 
 
@@ -340,6 +349,9 @@
 
 
 --- FILE COMMANDS ---
+(Normal) gx              -->  Opens the file/link under the cursor in the system default program
+(Normal) gf              -->  Opens the file under the cursor in a new buffer
+
 (Normal) <space>v        -->  Runs :!./script/clean.bat in the current directory
 (Normal) <space>b        -->  Runs :!./script/build.bat in the current directory
 (Normal) <space>n        -->  Runs :!./script/run.bat in the current directory
