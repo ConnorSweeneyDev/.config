@@ -1,11 +1,10 @@
 function open_buffers()
   -- List of folders and file extensions to search for and open
-  local folders = {"/program", "/prog", "/lua", "/after", "/script"}
-  local file_extensions = {"*.cpp", "*.hpp", "*.c", "*.h", "*.glsl", "*.cs", "*.java", "*.py", "*.lua", "*.bat"}
+  local folders = {"/program", "/script", "/make", "/lua", "/after"}
+  local file_extensions = {"*.cpp", "*.hpp", "*.c", "*.h", "*.glsl", "*.cs", "*.java", "*.py", "*.lua"}
   local ignore_files = {"resource.hpp", "resource.cpp"}
 
   local original_buffer = vim.api.nvim_get_current_buf()
-
   for _, folder in ipairs(folders) do
     for _, extension in ipairs(file_extensions) do
       local files = vim.fn.globpath(vim.fn.getcwd() .. folder, "**/" .. extension, 0, 1)
@@ -16,9 +15,14 @@ function open_buffers()
       end
     end
   end
-
   vim.api.nvim_set_current_buf(original_buffer)
 end
+function clean_open()
+  open_buffers()
+  vim.cmd("CocRestart")
+end
+vim.keymap.set("n", "<A-o>", function() clean_open() end)
+
 function close_buffers()
   local original_buffer = vim.api.nvim_get_current_buf()
   local buffers = vim.api.nvim_list_bufs()
@@ -28,20 +32,16 @@ function close_buffers()
     end
   end
 end
-
-function clean_open()
-  open_buffers()
-  vim.cmd("CocRestart")
-end
 function clean_close()
   close_buffers()
   vim.cmd("CocRestart")
 end
-
-vim.keymap.set("n", "<A-o>", function() clean_open() end)
 vim.keymap.set("n", "<A-c>", function() clean_close() end)
 
-local original_buffer = vim.api.nvim_get_current_buf()
-open_buffers()
-vim.cmd("bd 1")
-vim.api.nvim_set_current_buf(original_buffer)
+function open_on_startup()
+  local original_buffer = vim.api.nvim_get_current_buf()
+  open_buffers()
+  vim.cmd("bd 1")
+  vim.api.nvim_set_current_buf(original_buffer)
+end
+open_on_startup()
