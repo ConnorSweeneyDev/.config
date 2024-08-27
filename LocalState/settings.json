@@ -60,7 +60,7 @@
     "initialCols": 120,
     "initialPosition": ",",
     "initialRows": 30,
-    "launchMode": "maximized",
+    "launchMode": "default",
     "newTabMenu": 
     [
         {

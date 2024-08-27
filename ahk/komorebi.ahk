@@ -3,7 +3,7 @@
 Run "komorebic start"
 
 Komorebic(cmd) {
-  RunWait("komorebic start", , "Hide")
+  RunWait(format("komorebic.exe {}", cmd), , "Hide")
 }
 
 #c::Komorebic("close")
