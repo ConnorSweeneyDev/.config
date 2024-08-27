@@ -4,7 +4,7 @@ fast navigation. Additionally, there is a quick setup for a Tiling Window Manage
 Firefox, and for a toggleable Vim mode on the ZSA Voyager keyboard. You will also find a list of
 other useful tools at the end.
 
-https://github.com/ConnorSweeneyDev/Windows11Workflow/assets/75945279/5024fc72-1f39-445e-a506-57b8cd181d88
+https://github.com/user-attachments/assets/1c6a0cea-a7f4-4391-bf4f-ca637f9f3d38
 
 *Showcase: **cw** (cd directory), **ew** (explorer directory), **nw** (nvim directory), **ctrl+f**
 in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with tridactyl), **q or
