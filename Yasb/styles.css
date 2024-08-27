@@ -42,6 +42,63 @@
 .widget .label.alt {
 	padding: 1px 8px 1px 8px;
 }
+
+.komorebi-active-layout {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	padding: 0 4px 0 0;
+}
+.komorebi-active-layout .label {
+	font-weight: 600;
+	padding: 2px 0 0 0;
+}
+.apps-widget .widget-container,
+.komorebi-workspaces .widget-container,
+.wifi-widget .widget-container,
+.komorebi-active-layout .widget-container {
+	background-color: rgba(40, 40, 40, 0.75);
+	margin: 4px 0px 4px 0;
+	border-radius: 14px;
+}
+
+/*
+.komorebi-workspaces .ws-btn {
+	font-size: 16px;
+    background-color: transparent;
+	margin: 0 4px 0 4px;
+	color: #ffffff;
+}
+.komorebi-workspaces .ws-btn.populated {
+	color: #ffffff;
+}
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.populated:hover,
+.komorebi-workspaces .ws-btn.active {
+	color: #ffffff;
+}
+*/
+.komorebi-workspaces .ws-btn {
+	border-radius: 5px;
+	font-size: 10px;
+	width: 10px;
+	height: 10px;
+	margin: 0 4px 0 4px;
+	color: rgba(255, 255, 255, 0);
+	background-color: #aaaaaa;
+}
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.populated:hover {
+	background-color: #cccccc;
+}
+.komorebi-workspaces .ws-btn.populated {
+	background-color: #dddddd;
+}
+.komorebi-workspaces .ws-btn.active {
+	background-color: #ffffff;
+	color: rgba(0, 0, 0, 0);
+	width: 26px;
+}
+
 .active-window-widget {
 	border-radius: 0;
 	margin-left: 0px
