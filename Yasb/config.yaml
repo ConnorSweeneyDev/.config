@@ -50,12 +50,12 @@ widgets:
       label: "{icon}"
       layouts: ['bsp', 'columns', 'rows', 'grid', 'vertical_stack', 'horizontal_stack', 'ultrawide_vertical_stack','right_main_vertical_stack']
       layout_icons:
-        bsp: "BSP"
-        columns: "COLS"
-        rows: "ROWS"
-        grid: "GRID"
-        vertical_stack: "V-STACK"
-        horizontal_stack: "H-STACK"
+        bsp: "CODE"
+        columns: "BROWSE"
+        rows: "SOCIAL"
+        grid: "GAME"
+        vertical_stack: "MISC"
+        horizontal_stack: "MISC"
         ultrawide_vertical_stack: "W-STACK"
         right_main_vertical_stack: "RMV-STACK"
         monocle: "MONOCLE"

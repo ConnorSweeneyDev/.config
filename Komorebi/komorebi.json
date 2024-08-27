@@ -40,19 +40,19 @@
         },
         {
           "name": "II",
-          "layout": "BSP"
+          "layout": "Columns"
         },
         {
           "name": "III",
-          "layout": "BSP"
+          "layout": "Rows"
         },
         {
           "name": "IV",
-          "layout": "BSP"
+          "layout": "Grid"
         },
         {
           "name": "V",
-          "layout": "BSP"
+          "layout": "VerticalStack"
         }
       ]
     }
