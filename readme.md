@@ -159,7 +159,8 @@ settings can be edited at `lua\main\remap.lua`, `lua\main\set.lua` or the respec
 `after\ftplugin\[EXTENSION].lua` and language server settings can be edited at `coc-settings.json`.
 
 # Tiling Window Manager Setup
-To setup a tiling window manager, do the following:
+To setup a tiling window manager, with [komorebi](https://github.com/LGUG2Z/komorebi) and
+[yasb](https://github.com/amnweb/yasb) do the following:
 - Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the
   taskbar" under the taskbar behaviours.
 - Search `multitasking` and turn off everything under the snap windows section except "Show my
