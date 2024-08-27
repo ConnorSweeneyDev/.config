@@ -191,8 +191,10 @@ found in the repository.
 
 # Cleaner UI
 For a better looking windows, follow these steps:
-- Press Windows + I and search `taskbar`, go to taskbar settings and turn on always hide taskbar
-  under the taskbar behaviours.
+- Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the
+  taskbar" under the taskbar behaviours.
+- Search `multitasking` and turn off everything under the snap windows section except "Show my
+  snapped windows when i hover over taskbar apps... ...when I press Alt+Tab".
 - Yasb &rightarrow; Run `winget install --id AmN.yasb` and replace the files there with the ones
   from this repository. After that right click `C:\Users\[USERNAME]\AppData\Local\Yasb\yasb.exe` and
   create a shortcut, then rename it to just `Yasb` and move that to
