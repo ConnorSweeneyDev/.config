@@ -51,7 +51,7 @@ widgets:
       layouts: ['bsp', 'columns', 'rows', 'grid', 'vertical_stack', 'horizontal_stack', 'ultrawide_vertical_stack','right_main_vertical_stack']
       layout_icons:
         bsp: "CODE"
-        columns: "BROWSE"
+        columns: "UTILITY"
         rows: "SOCIAL"
         grid: "GAME"
         vertical_stack: "MISC"
