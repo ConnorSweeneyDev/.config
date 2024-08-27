@@ -77,7 +77,7 @@
             "font": 
             {
                 "face": "CaskaydiaCove Nerd Font",
-                "size": 19.0
+                "size": 18.0
             },
             "opacity": 75,
             "padding": "0",
@@ -514,5 +514,5 @@
     "showTerminalTitleInTitlebar": false,
     "tabWidthMode": "titleLength",
     "themes": [],
-    "useAcrylicInTabRow": true
+    "useAcrylicInTabRow": false
 }

@@ -14,6 +14,8 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 - LocalState &rightarrow;
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`.
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
+- Yasb &rightarrow; `C:\Users\[USERNAME]\AppData\Local\Yasb`.
+- ahk &rightarrow; `C:\Users\[USERNAME]\.config\ahk`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`.
 - posh &rightarrow; `C:\posh`
 - scripts &rightarrow; `C:\scripts`.
@@ -187,6 +189,19 @@ like `shift + arrow`, `ctrl + arrow` etc. meaning these bindings work almost eve
 This is achieved using the QMK firmware, more specifically ZSA's fork of it, and programming certain
 actions to be triggered by certain key combinations. Details of exactly what is supported can be
 found in the repository.
+
+# Cleaner UI
+For a better looking windows, follow these steps:
+- Press Windows + I and search `taskbar`, go to taskbar settings and turn on always hide taskbar
+  under the taskbar behaviours.
+- AutoHotKey &rightarrow; Run `winget install --id AutoHotkey.AutoHotkey` and paste the `ahk` folder
+  to it's full location. After that right click `hotkeys.ahk` and create a shortcut, then rename it
+  to just `hotkeys` and move that to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`.
+- Yasb &rightarrow; Run `winget install --id AmN.yasb` and replace the files there with the ones
+  from this repository. After that right click `C:\Users\[USERNAME]\AppData\Local\Yasb\yasb.exe` and
+  create a shortcut, then rename it to just `Yasb` and move that to
+  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`.
+- Restart your PC.
 
 # Other Useful Tools
 PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - enable Run at

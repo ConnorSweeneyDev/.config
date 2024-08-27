@@ -1,0 +1,68 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+
+bars:
+  status-bar:
+    enabled: true
+    #screens: ['DELL P2419H (1)'] 
+    #screens: ['DELL P2419H (2)'] 
+    screens: ['*'] 
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark: false
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 44
+    padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    widgets:
+      left: ["active_window"] 
+      center: ["clock"]
+      right: ["power_menu"]
+widgets:
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 16
+      max_length: 50
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%a %d, %b %H:%M}"
+      label_alt: "{%A %d %B %Y, %H:%M}"
+      timezones: []
+
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 300
+      button_row: 3
+      buttons:
+        sleep: ["\u23fe","Sleep"]
+        restart: ["\uead2","Restart"]
+        shutdown: ["\uf011","Shut Down"]
+        signout: ["\udb80\udf43","Sign out"]
+        cancel: ["\udb81\udf3a","Cancel"]
