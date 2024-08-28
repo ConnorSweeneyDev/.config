@@ -7,8 +7,8 @@ other useful tools at the end.
 https://github.com/user-attachments/assets/1c6a0cea-a7f4-4391-bf4f-ca637f9f3d38
 
 *Showcase: **cw** (cd directory), **ew** (explorer directory), **nw** (nvim directory), **ctrl+f**
-in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with tridactyl), **q or
-:q** (close the terminal tab)*
+in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with tridactyl), **q**
+(close the terminal tab)*
 
 # System Setup
 ### Full Paths to Repository Folders:
