@@ -1,6 +1,6 @@
 #SingleInstance Force
 
-Run "komorebic start"
+Run("pwsh -Command komorebic start", , "Hide")
 
 Komorebic(cmd) {
   RunWait(format("komorebic.exe {}", cmd), , "Hide")
