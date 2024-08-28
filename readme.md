@@ -12,8 +12,7 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
 
 # System Setup
 ### Full Paths to Repository Folders:
-- Komorebi &rightarrow; `C:\Users\[USERNAME]` (Komorebi folder does not exist, it's contents are in
-  the user folder itself).
+- Komorebi &rightarrow; `C:\Users\[USERNAME]\Komorebi`.
 - LocalState &rightarrow;
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`.
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
@@ -178,6 +177,8 @@ To setup a tiling window manager, with [komorebi](https://github.com/LGUG2Z/komo
   contents from this repository into it. Right click `komorebi.ahk` and create a shortcut, then
   rename it to just `komorebi` and move that to `C:\ProgramData\Microsoft\Windows\Start
   Menu\Programs\Startup`.
+- Ensure you have set the environment variable for komorebi config home at the bottom of your
+  powershell `.ps1` file as I have.
 - Restart your PC.
 
 Keybinds can be configured in `komorebi.ahk`, the top menu bar can be configured in the yasb

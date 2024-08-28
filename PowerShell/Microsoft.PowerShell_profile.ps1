@@ -129,3 +129,4 @@ function prompt
 }
 
 oh-my-posh init pwsh --config "C:/posh/config.omp.json" | Invoke-Expression
+$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/conno/Komorebi'
