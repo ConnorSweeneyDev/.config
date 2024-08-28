@@ -7,6 +7,7 @@ Komorebic(cmd) {
 }
 
 #c::Komorebic("close")
+#z::Komorebic("minimize")
 #^!0::Komorebic("toggle-float")
 
 #^!1::Komorebic("focus left")

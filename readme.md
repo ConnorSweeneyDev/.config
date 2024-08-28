@@ -38,7 +38,8 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
   the .ttf files from the folder after you've installed them.
 - OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`, then paste the `C:\posh`
   folder to that location and run `oh-my-posh disable notice` to stop the annoying update message
-  every so often.
+  every so often. Make sure you put `oh-my-posh init pwsh --config "C:/posh/config.omp.json" |
+  Invoke-Expression` at the bottom of your PowerShell `.ps1` file.
 
 ### Terminal Settings:
 If you want my exact settings (including the font I use which you must have installed), you can
@@ -177,8 +178,8 @@ To setup a tiling window manager, with [komorebi](https://github.com/LGUG2Z/komo
   contents from this repository into it. Right click `komorebi.ahk` and create a shortcut, then
   rename it to just `komorebi` and move that to `C:\ProgramData\Microsoft\Windows\Start
   Menu\Programs\Startup`.
-- Ensure you have set the environment variable for komorebi config home at the bottom of your
-  powershell `.ps1` file as I have.
+- Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
+  powershell `.ps1` file.
 - Restart your PC.
 
 Keybinds can be configured in `komorebi.ahk`, the top menu bar can be configured in the yasb
@@ -229,8 +230,9 @@ found in the repository.
 PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - enable Run at
 startup - my favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous
-  query on launch enabled, preferred monitor primary, all plugins off except window walker - this
-  allows switching windows by searching their name instead of alt tabbing.
+  query on launch enabled, preferred monitor primary, all plugins off except "Program" - this
+  behaves the windows run dialog but without cortana, searching the internet or any other
+  annoyances.
 - Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
 - Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1200x900`.
 - Screen Ruler with an activation shortcut of `win+shift+p`.

@@ -84,17 +84,17 @@
 	height: 10px;
 	margin: 0 4px 0 4px;
 	color: rgba(255, 255, 255, 0);
-	background-color: #aaaaaa;
+	background-color: #555555;
 }
 .komorebi-workspaces .ws-btn:hover,
 .komorebi-workspaces .ws-btn.populated:hover {
-	background-color: #cccccc;
+	background-color: #999999;
 }
 .komorebi-workspaces .ws-btn.populated {
-	background-color: #dddddd;
+	background-color: #cccccc;
 }
 .komorebi-workspaces .ws-btn.active {
-	background-color: #ffffff;
+	background-color: rgb(10, 122, 202);
 	color: rgba(0, 0, 0, 0);
 	width: 26px;
 }
