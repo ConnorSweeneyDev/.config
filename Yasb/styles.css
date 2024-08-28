@@ -19,7 +19,7 @@
 .language-widget {} -> Styles specific to the language widget
 */
 * {
-	font-size: 16px;
+	font-size: 18px;
 	color: #ffffff;
 	font-weight: 500;
 	font-family: "CaskaydiaCove Nerd Font";
@@ -32,7 +32,7 @@
   background-color: rgba(20, 20, 20, 0.75);
 }
 .widget {
-	background-color: rgba(60, 60, 60, 0.75);
+	background-color: rgba(20, 20, 20, 0.00);
 	padding: 0 8px;
 	margin: 0;
 }

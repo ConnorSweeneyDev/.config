@@ -10,7 +10,7 @@ bars:
     screens: ['*'] 
     class_name: "yasb-bar"
     alignment:
-      position: "top"
+      position: "bottom"
       center: false
     blur_effect:
       enabled: false
@@ -21,7 +21,7 @@ bars:
       windows_app_bar: true
     dimensions:
       width: "100%"
-      height: 44
+      height: 50
     padding:
       top: 0
       left: 0
@@ -29,8 +29,7 @@ bars:
       right: 0
     widgets:
       left: ["komorebi_workspaces", "komorebi_active_layout", "active_window"]
-      center: ["clock"]
-      right: ["power_menu"]
+      right: ["clock", "power_menu"]
 widgets:
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
@@ -82,7 +81,7 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "{%a %d, %b %H:%M}"
+      label: "{%A %d|%m|%Y %H:%M:%S}"
       label_alt: "{%A %d %B %Y, %H:%M}"
       timezones: []
 
