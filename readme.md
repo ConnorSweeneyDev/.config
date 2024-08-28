@@ -161,6 +161,10 @@ settings can be edited at `lua\main\remap.lua`, `lua\main\set.lua` or the respec
 # Tiling Window Manager Setup
 To setup a tiling window manager, with [komorebi](https://github.com/LGUG2Z/komorebi) and
 [yasb](https://github.com/amnweb/yasb) do the following:
+- Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled'
+  -Value 1` in PowerShell as an admin.
+- Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" -
+  enable "Turn off all unnecessary animations (when possible)".
 - Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the
   taskbar" under the taskbar behaviours.
 - Search `multitasking` and turn off everything under the snap windows section except "Show my
