@@ -17,7 +17,7 @@ bars:
       acrylic: false
       dark: false
     window_flags:
-      always_on_top: false
+      always_on_top: true
       windows_app_bar: true
     dimensions:
       width: "100%"
