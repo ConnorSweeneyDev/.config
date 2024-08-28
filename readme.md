@@ -180,6 +180,8 @@ To setup a tiling window manager, with [komorebi](https://github.com/LGUG2Z/komo
   Menu\Programs\Startup`.
 - Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
   powershell `.ps1` file.
+- Download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run it to disable
+  rounded corners for windows.
 - Restart your PC.
 
 Keybinds can be configured in `komorebi.ahk`, the top menu bar can be configured in the yasb
