@@ -50,7 +50,7 @@
 }
 .komorebi-active-layout .label {
 	font-weight: 600;
-	padding: 2px 0 0 0;
+	padding: 0 0 0 0;
 }
 .apps-widget .widget-container,
 .komorebi-workspaces .widget-container,
@@ -65,7 +65,7 @@
 	font-size: 10px;
 	width: 15px;
 	height: 15px;
-	margin: 4px 4px 0 4px;
+	margin: 2px 4px 0 4px;
 	color: rgba(255, 255, 255, 0);
 	background-color: #555555;
 }
@@ -84,7 +84,7 @@
 
 .active-window-widget {
 	border-radius: 0;
-	margin-top: 3px
+	margin-top: 0px
 }
 .container-left,
 .container-center,
@@ -96,6 +96,7 @@
 .clock-widget {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
+  margin-top: 0px;
 }
 
 .uptime {
@@ -104,6 +105,11 @@
 	color: #ffffff;
 	font-weight: 600;
 	font-family:  "CaskaydiaCove Nerd Font";
+}
+.power-menu-widget {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin: 0px 10px 0 0;
 }
 .power-menu-widget .label {
 	color: #ffffff;
