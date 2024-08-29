@@ -40,3 +40,5 @@ vim.opt.termguicolors = true
 
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 300
+
+vim.api.nvim_create_autocmd("VimResized", { command = "wincmd =" })
