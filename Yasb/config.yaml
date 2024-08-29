@@ -46,15 +46,15 @@ widgets:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
       hide_if_offline: true
-      label: "{icon}"
+      label: ""
       layouts: ['bsp', 'columns', 'rows', 'grid', 'vertical_stack', 'horizontal_stack', 'ultrawide_vertical_stack','right_main_vertical_stack']
       layout_icons:
-        bsp: "CODE"
-        columns: "UTILITY"
-        rows: "SOCIAL"
-        grid: "GAME"
-        vertical_stack: "MISC"
-        horizontal_stack: "MISC"
+        bsp: "BSP"
+        columns: "Columns"
+        rows: "Rows"
+        grid: "Grid"
+        vertical_stack: "V-STACK"
+        horizontal_stack: "H-STACK"
         ultrawide_vertical_stack: "W-STACK"
         right_main_vertical_stack: "RMV-STACK"
         monocle: "MONOCLE"
