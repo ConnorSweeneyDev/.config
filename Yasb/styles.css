@@ -78,9 +78,9 @@
 }
 .komorebi-workspaces .ws-btn.active {
 	background-color: rgb(255, 255, 255);
-	border-radius: 12;
-	width: 25px;
-  height: 25px;
+	border-radius: 10;
+	width: 21px;
+  height: 21px;
 }
 
 .active-window-widget {
