@@ -86,6 +86,9 @@
 	border-radius: 0;
 	margin-top: 0px
 }
+.active-window-widget .label.icon {
+  padding-top: 4px;
+}
 .container-left,
 .container-center,
 .container-right {
@@ -104,23 +107,20 @@
 	margin-bottom: 10px;
 	color: #ffffff;
 	font-weight: 600;
-	font-family:  "CaskaydiaCove Nerd Font";
 }
 .power-menu-widget {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  margin: 0px 10px 0 0;
+  margin: 0px 15px 0 0;
 }
 .power-menu-widget .label {
 	color: #ffffff;
-	font-size: 16px;
-  font-family: "CaskaydiaCove Nerd Font";
+	font-size: 20px;
 }
 .power-menu-popup {
   background-color: rgba(20, 20, 20, 0.75);
 	border-radius: 12px;
 	border: 4px solid rgb(60, 60, 60);
-  font-family: "CaskaydiaCove Nerd Font";
 }
 .power-menu-popup .button {
 	padding: 0;
@@ -128,7 +128,6 @@
 	height: 120px;
 	border-radius: 8px;
 	background-color: rgb(40, 40, 40);
-	font-family: "CaskaydiaCove Nerd Font";
 	color: white;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	margin: 8px;
@@ -142,7 +141,6 @@
 	font-size: 16px;
 	font-weight: 600;
 	color: rgba(255, 255, 255, 0.95);
-	font-family: "CaskaydiaCove Nerd Font";
 }
 .power-menu-popup .button .icon {
 	font-size: 48px;
