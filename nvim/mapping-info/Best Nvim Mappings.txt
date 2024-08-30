@@ -141,8 +141,14 @@
 (Normal) <control>ws     -->  Split window horizontally
 (Normal) <control>wv     -->  Split window vertically
 
-(Normal) <control>f      -->  Create a new powershell tab and run nw
-(Normal) <control>t      -->  Create a new powershell tab
+(Normal) <control>fn    -->  Create a new powershell tab and run nw
+(Normal) <control>fc    -->  Create a new powershell tab and run nw
+(Normal) <control>fe    -->  Create a new powershell tab and run ew
+(Normal) <control>tn    -->  Create a new powershell tab
+(Normal) <control>tc    -->  Create a new powershell tab at the current directory
+(Normal) <control>wn    -->  Create a new powershell window
+(Normal) <control>wc    -->  Create a new powershell window at the current directory
+(Normal) <control>we     -->  Open file explorer at the current directory
 (Normal) gt              -->  Move to the next neovim tab
 (Normal) gT              -->  Move to the previous neovim tab
 --- WINDOWS ---
@@ -163,9 +169,7 @@
 (Normal) 0               -->  Jumps to the start of the line
 (Normal) _               -->  Jumps to the start of the line excluding whitespace
 (Normal) ^               -->  Jumps to the start of the line excluding whitespace
-(Normal) H               -->  Jumps to the start of the line excluding whitespace
 (Normal) g_              -->  Jumps to the end of the line excluding whitespace
-(Normal) L               -->  Jumps to the end of the line excluding whitespace
 (Normal) $               -->  Jumps to the end of the line
 (Normal) f<char>         -->  Jumps to the first char in the line after the cursor that matches the input
 (Normal) t<char>         -->  Jumps to one character before the first char in the line after the cursor that matches the input
@@ -177,6 +181,9 @@
 (Normal) <number>j       -->  Jumps the specified number of lines down
 (Normal) <number>k       -->  Jumps the specified number of lines up
 (Nomral) <number>G       -->  Jumps to the specified line number
+(Normal) H               -->  Jumps to the upper scrolloff limit
+(Normal) M               -->  Jumps to the middle of the screen
+(Normal) L               -->  Jumps to the lower scrolloff limit
 (Normal) <control>d      -->  Jumps half a page down, keeping the cursor in the middle
 (Normal) <control>u      -->  Jumps half a page up, keeping the cursor in the middle
 (Normal) {               -->  Jumps to the previous paragraph
