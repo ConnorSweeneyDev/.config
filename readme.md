@@ -126,13 +126,13 @@ The following plugins require extra or different steps than those outlined above
   app`, this means either your version of MinGW does not match your operating system or treesitter
   is using the wrong compiler. After fixing the issue you can run `:TSInstall [LANGUAGE]` to
   recompile it.
-- Coc &rightarrow; After following the steps, run `:CocInstall coc-discord-rpc coc-diagnostic
-  coc-copilot coc-git coc-html coc-tsserver coc-css coc-cssmodules coc-json coc-xml coc-sql
-  coc-pyright coc-java coc-omnisharp coc-clangd coc-clang-format-style-options` then `:q` to close
-  the dialog once everything is installed. Now add `coc-settings.json`, where you should add the
-  path to your java installation instead of my one, then restart again. If you don't want one of the
-  listed servers, dont include them or just run `:CocUninstall [SERVER]` after the first command. If
-  a language you want is missing, you can find it
+- Coc &rightarrow; After following the steps, run `:CocInstall coc-diagnostic coc-copilot coc-git
+  coc-html coc-css coc-json coc-xml coc-sql coc-pyright coc-java coc-clangd
+  coc-clang-format-style-options` then `:q` to close the dialog once everything is installed. Now
+  add `coc-settings.json`, where you should add the path to your java installation instead of my
+  one, then restart again. If you don't want one of the listed servers, dont include them or just
+  run `:CocUninstall [SERVER]` after the first command. If a language you want is missing, you can
+  find it
   [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
 - Copilot &rightarrow; If you don't have a license for Copilot then don't include this plugin. If
   you do, then after following the steps run `:Copilot setup` and follow the instructions.
