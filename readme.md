@@ -1,7 +1,7 @@
 # Windows11Workflow
 All my dotfiles, using Neovim with PowerShell in the Windows Terminal along with fzf and bat for
-fast navigation. Additionally, there is a quick setup for a Tiling Window Manager, Tridactyl on
-Firefox, and for a toggleable Vim mode on the ZSA Voyager keyboard. You will also find a list of
+fast navigation. Additionally, there is a quick setup for Tridactyl on Firefox, a Tiling Window
+Manager and a toggleable Vim mode on the ZSA Voyager keyboard. You will also find a list of
 other useful tools at the end.
 
 https://github.com/user-attachments/assets/1c6a0cea-a7f4-4391-bf4f-ca637f9f3d38
@@ -181,36 +181,6 @@ settings can be edited at `lua\main\remap.lua`, `lua\main\set.lua` or the respec
 `after\plugin\[PLUGIN].lua` files. Furthermore, all language specific settings can be edited at
 `after\ftplugin\[EXTENSION].lua` and language server settings can be edited at `coc-settings.json`.
 
-# Tiling Window Manager Setup
-To setup a tiling window manager, with [komorebi](https://github.com/LGUG2Z/komorebi) and
-[yasb](https://github.com/amnweb/yasb) do the following:
-- Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled'
-  -Value 1` in PowerShell as an admin.
-- Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" -
-  enable "Turn off all unnecessary animations (when possible)".
-- Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the
-  taskbar" under the taskbar behaviours.
-- Search `multitasking` and turn off everything under the snap windows section except "Show my
-  snapped windows when i hover over taskbar apps... ...when I press Alt+Tab".
-- Yasb &rightarrow; Replace the files at `C:\Users\[USERNAME]\AppData\Local\Yasb` with the ones from
-  this repository. After that right click `yasb.exe` and create a shortcut, then rename it to just
-  `Yasb` and move that to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`.
-- Komorebi &rightarrow; Replace `komorebi.json` and `applications.yaml` at
-  `C:\Users\[USERNAME]` with the ones from this repository.
-- AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\ahk` folder and paste the
-  contents from this repository into it. Right click `komorebi.ahk` and create a shortcut, then
-  rename it to just `komorebi` and move that to `C:\ProgramData\Microsoft\Windows\Start
-  Menu\Programs\Startup`.
-- Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
-  powershell `.ps1` file.
-- Download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run it to disable
-  rounded corners for windows.
-- Restart your PC.
-
-Keybinds can be configured in `komorebi.ahk`, the top menu bar can be configured in the yasb
-`config.yaml` and `styles.css` files, and the window manager can be configured by editing
-`komorebi.json` and `applications.yaml`.
-
 # Firefox with Tridactyl Setup
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
 - Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
@@ -240,6 +210,36 @@ Using Tridactyl, press `:` and type the following commands:
 
 You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to
 view all the most important bindings.
+
+# Tiling Window Manager Setup
+To setup a tiling window manager, with [komorebi](https://github.com/LGUG2Z/komorebi) and
+[yasb](https://github.com/amnweb/yasb) do the following:
+- Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled'
+  -Value 1` in PowerShell as an admin.
+- Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" -
+  enable "Turn off all unnecessary animations (when possible)".
+- Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the
+  taskbar" under the taskbar behaviours.
+- Search `multitasking` and turn off everything under the snap windows section except "Show my
+  snapped windows when i hover over taskbar apps... ...when I press Alt+Tab".
+- Yasb &rightarrow; Replace the files at `C:\Users\[USERNAME]\AppData\Local\Yasb` with the ones from
+  this repository. After that right click `yasb.exe` and create a shortcut, then rename it to just
+  `yasb` and move that to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`.
+- Komorebi &rightarrow; Replace `komorebi.json` and `applications.yaml` at
+  `C:\Users\[USERNAME]\Komorebi` with the ones from this repository.
+- AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\ahk` folder and paste the
+  contents from this repository into it. Right click `komorebi.ahk` and create a shortcut, then
+  rename it to just `komorebi` and move that to `C:\ProgramData\Microsoft\Windows\Start
+  Menu\Programs\Startup`.
+- Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
+  PowerShell user config `.ps1` file.
+- Download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run it to disable
+  rounded corners for windows.
+- Restart your PC.
+
+Keybinds can be configured in `komorebi.ahk`, the top menu bar can be configured in the yasb
+`config.yaml` and `styles.css` files, and the window manager can be configured by editing
+`komorebi.json` and `applications.yaml`.
 
 # Vim Mode on ZSA Voyager
 If you happen to use a ZSA Voyager keyboard, you can follow the instructions in my
