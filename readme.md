@@ -293,7 +293,8 @@ contents in `C:\Cutter`. Right click `cutter.exe` and select "Create shortcut", 
 Portal &rightarrow; Run `winget install SpatiumPortae.portal`, go
 [here](https://github.com/SpatiumPortae/portal) for instructions.
 
-Mp3tag &rightarrow; Download from [here](https://www.mp3tag.de/en/download.html).
+Mp3tag &rightarrow; Download from [here](https://www.mp3tag.de/en/download.html) and go through the
+installation wizard.
 
 scc &rightarrow; As an admin, run `choco install scc` - details can be found
 [here](https://github.com/boyter/scc).
