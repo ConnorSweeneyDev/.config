@@ -1,3 +1,9 @@
+--- LAZY ---
+(Normal) <space>l        -->  Open lazy menu
+--- LAZY ---
+
+
+
 --- OIL ---
 (Normal) <space>pv       -->  Open oil menu for the current file directory or go up one directory if already open
 (Normal) <enter>         -->  Open the file or directory under the cursor

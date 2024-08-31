@@ -68,8 +68,6 @@ terminal settings gui.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 - Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
-- Packer &rightarrow; Run `git clone https://github.com/wbthomason/packer.nvim
-  "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.knvim"`.
 - Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
   specific to me.
@@ -96,36 +94,64 @@ terminal settings gui.
 I recommend manually recreating the `nvim` folder on your PC rather than just pasting it in, because
 this will allow you to single out any unexpected errors as they happen.
 
-You should start with the top level `init.lua` and the `lua\main\init.lua`. Then you can create
-`lua\main\remap.lua` and `lua\main\set.lua` and paste the config into each. Running `nvim .` (or
-just `n` if you're using my powershell config file) in the nvim directory now should open Neovim and
-give you no errors.
-
-Now you can create `lua\main\packer.lua`, populate it with only the following lines:
+You should start with the top level `init.lua` and then `lua\main\init.lua`. Then you can create
+`lua\main\remap.lua` and `lua\main\set.lua` and paste the config into each. Now you can create
+`lua\main\lazy.lua`, and populate it with only the following lines:
 ```lua
-vim.cmd [[packadd packer.nvim]]
-return require('packer').startup(function(use)
-  use('wbthomason/packer.nvim')
-end)
-```
-Now run `:so` and `:PackerSync`, then say yes to removing the packer directory if prompted and press
-`q` after packer finishes.
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
 
-Now, under the line `use('wbthomason\packer.nvim')` you can start adding plugins, do so in the
-following pattern (with some exceptions):
-- Add the line to `lua\main\packer.lua` and run `:so` then `:PackerSync` inside it.
-- If it needs one, add an `after\plugin\[PLUGIN].lua` file for the plugin and run `:so` inside it.
-- Run `:q` then `nvim .` incase the plugin needs a restart.
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.keymap.set("n", "<LEADER>l", "<CMD>Lazy<CR>")
+require("lazy").setup
+{
+}
+```
+Restart neovim and there should be no error messages.
+
+Now, inside the `.setup` field you can start adding plugins, do so in the following pattern (with
+some exceptions):
+- Add the line to `lua\main\lazy.lua` and restart neovim.
+- If it needs one, add an `after\plugin\[PLUGIN].lua` file for the plugin and restart neovim.
 
 The following plugins require extra or different steps than those outlined above:
-- Treesitter &rightarrow; After following the steps, you should see it compiling languages at the
-  bottom of your screen, don't touch your keyboard until this is finished, though it is common to
-  get errors at this point, if you do, generally restarting neovim a few times and deleting any
-  directories manually that it says it doesn't have permission to delete will let them all figure
-  themselves out. However if you get an error along the lines of `[LANGUAGE].so is not a valid Win32
-  app`, this means either your version of MinGW does not match your operating system or treesitter
-  is using the wrong compiler. After fixing the issue you can run `:TSInstall [LANGUAGE]` to
-  recompile it.
+- Telescope &rightarrow; This should be installed at the same time as telescope-ui-select,
+  `after\plugin\telescope.lua` requires both of these plugins to be installed.
+- Treesitter &rightarrow; After following the steps, you should see it compiling languages - don't
+  touch your keyboard until this is finished, though it is common to get errors at this point, if
+  you do, generally restarting neovim a few times and deleting any directories manually that it says
+  it doesn't have permission to delete will let them all figure themselves out. However if you get
+  an error along the lines of `[LANGUAGE].so is not a valid Win32 app`, this means either your
+  version of MinGW does not match your operating system or treesitter is using the wrong compiler.
+  After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Coc &rightarrow; After following the steps, run `:CocInstall coc-diagnostic coc-copilot coc-git
   coc-html coc-css coc-json coc-xml coc-sql coc-pyright coc-java coc-clangd
   coc-clang-format-style-options` then `:q` to close the dialog once everything is installed. Now
@@ -137,21 +163,18 @@ The following plugins require extra or different steps than those outlined above
 - Copilot &rightarrow; If you don't have a license for Copilot then don't include this plugin. If
   you do, then after following the steps run `:Copilot setup` and follow the instructions.
 - Colorscheme &rightarrow; You can use the one that I use, but if you don't want to you will have to
-  change the lines in `lua\main\packer.lua`, `after\plugin\colors.lua` and
+  change the lines in `lua\main\lazy.lua`, `after\plugin\colors.lua` and
   `after\plugin\lualine.lua` accordingly.
 
 You can now add the `after\ftplugin` folder and any files inside it, which are used for language
-specific configuration. After all those plugins are installed, don't forget to include
-`after\plugin\buffers.lua` and `after\plugin\colors.lua` as they are not directly tied to any
-plugins.
+specific configuration; After that, don't forget to include `after\plugin\buffers.lua`.
 
-`colors.lua` will apply all the settings of the selected colorscheme and any additional
-modifications and `buffers.lua` is optional, as it can slow down the startup time but will open, in
+`buffers.lua` is an optional "plugin", as it can slow down the startup time but will open, in
 separate buffers, every file in the specified directory that has any of the file extensions
 specified - this can be useful because diagnostics for files that are not open will still be shown
 when you toggle the diagnostics window. If you need to close all the buffers except the current one
 (when you need to rename symbols, go to references etc.), this file also provides the keybind for
-that, and the keybind for reopening them all again.
+that, and the keybind for re-opening them all again too.
 
 Finally, you can paste the `mapping-info` folder into the root for safe keeping. All keybinds and
 settings can be edited at `lua\main\remap.lua`, `lua\main\set.lua` or the respective
