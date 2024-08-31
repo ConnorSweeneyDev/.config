@@ -256,7 +256,7 @@ PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` 
 startup - my favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous
   query on launch enabled, preferred monitor primary, all plugins off except "Program" - this
-  behaves the windows run dialog but without cortana, searching the internet or any other
+  behaves just like the windows run dialog but without cortana, searching the internet or any other
   annoyances.
 - Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
 - Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1200x900`.
