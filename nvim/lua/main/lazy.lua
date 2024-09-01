@@ -27,6 +27,7 @@ require("lazy").setup
   {"kevinhwang91/nvim-bqf", commit = "1b24dc6"},
   {"itchyny/vim-qfedit", commit = "d05f2f3"},
   {"ggandor/leap.nvim", commit = "c6bfb19"},
+  {"Sleepful/leap-by-word.nvim", commit = "efc27cd"},
 
   {"MunifTanjim/nui.nvim", commit = "61574ce"},
   {"nvim-tree/nvim-web-devicons", commit = "3722e3d"},

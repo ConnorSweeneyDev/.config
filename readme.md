@@ -145,6 +145,8 @@ some exceptions):
 The following plugins require extra or different steps than those outlined above:
 - Telescope &rightarrow; This should be installed at the same time as telescope-ui-select,
   `after\plugin\telescope.lua` requires both of these plugins to be installed.
+- Leap &rightarrow; This should be installed at the same time as leap-by-word,
+  `after\plugin\leap.lua` requires both of these plugins to be installed.
 - Treesitter &rightarrow; After following the steps, you should see it compiling languages - don't
   touch your keyboard until this is finished, though it is common to get errors at this point, if
   you do, generally restarting neovim a few times and deleting any directories manually that it says
