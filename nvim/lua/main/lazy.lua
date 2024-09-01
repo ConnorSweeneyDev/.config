@@ -41,5 +41,5 @@ require("lazy").setup
   {"neoclide/coc.nvim", branch = "release"},
   {"tpope/vim-fugitive"},
   {"github/copilot.vim"},
-  {"iamcco/markdown-preview.nvim", build = "cd app && npm install", init = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }}
+  {"iamcco/markdown-preview.nvim", build = "cd app && npm install", init = function() vim.g.mkdp_filetypes = { "markdown" } end}
 }
