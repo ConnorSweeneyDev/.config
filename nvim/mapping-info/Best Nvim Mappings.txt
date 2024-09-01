@@ -73,7 +73,10 @@
 
 --- LEAP ---
 (Normal) s<char><char>   -->  Check forward for the two characters and leap to them by pressing the displayed key
+(Visual) s<char><char>   -->  Check forward for the two characters and leap to them by pressing the displayed key
 (Normal) S<char><char>   -->  Check backward for the two characters and leap to them by pressing the displayed key
+(Visual) S<char><char>   -->  Check backward for the two characters and leap to them by pressing the displayed key
+(Normal) <alt>s<char>    -->  Check the whole screen for the character as the first letter of a word and leap to it by pressing the displayed key
 --- LEAP ---
 
 
@@ -186,7 +189,7 @@
 
 (Normal) <number>j       -->  Jumps the specified number of lines down
 (Normal) <number>k       -->  Jumps the specified number of lines up
-(Nomral) <number>G       -->  Jumps to the specified line number
+(Normal) <number>G       -->  Jumps to the specified line number
 (Normal) H               -->  Jumps to the upper scrolloff limit
 (Normal) M               -->  Jumps to the middle of the screen
 (Normal) L               -->  Jumps to the lower scrolloff limit
