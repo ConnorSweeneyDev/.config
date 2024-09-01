@@ -24,10 +24,10 @@ require("lazy").setup
   {"theprimeagen/harpoon", branch = "harpoon2", commit = "0378a6c"},
   {"mbbill/undotree", commit = "56c684a"},
   {"gbprod/yanky.nvim", commit = "73215b7"},
-  {"kevinhwang91/nvim-bqf", commit = "1b24dc6"},
-  {"itchyny/vim-qfedit", commit = "d05f2f3"},
   {"ggandor/leap.nvim", commit = "c6bfb19"},
   {"Sleepful/leap-by-word.nvim", commit = "efc27cd"},
+  {"kevinhwang91/nvim-bqf", commit = "1b24dc6"},
+  {"itchyny/vim-qfedit", commit = "d05f2f3"},
 
   {"MunifTanjim/nui.nvim", commit = "61574ce"},
   {"nvim-tree/nvim-web-devicons", commit = "3722e3d"},
