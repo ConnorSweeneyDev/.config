@@ -4,7 +4,7 @@ fast navigation. Additionally, there is a quick setup for Tridactyl on Firefox, 
 Manager and a toggleable Vim mode on the ZSA Voyager keyboard. You will also find a list of
 other useful tools at the end.
 
-https://github.com/user-attachments/assets/1c6a0cea-a7f4-4391-bf4f-ca637f9f3d38
+https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 
 *Showcase: **cw** (cd directory), **ew** (explorer directory), **nw** (nvim directory), **ctrl+f**
 in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with tridactyl), **q**
