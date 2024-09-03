@@ -229,10 +229,11 @@ To setup a tiling window manager, with [komorebi](https://github.com/LGUG2Z/komo
 - Komorebi &rightarrow; Replace `komorebi.json` and `applications.yaml` at
   `C:\Users\[USERNAME]\Komorebi` with the ones from this repository.
 - AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\ahk` folder and paste the
-  file from this repository into it. Right click `wm.ahk` and create a shortcut, then rename it to
-  just `wm` and move that to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`.
-  Additionally, you can add it also to one directory back from that, so it appears in the start menu
-  incase you need to restart the environment.
+  file from this repository into it - ensure this folder is an environment variable. Right click
+  `wm.ahk` and create a shortcut, then rename it to just `wm` and create two more copies of it that
+  each go in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup` and
+  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`. Now it will be run at startup and is
+  accessible from the start menu or the command line in case you need to restart the manager.
 - Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
   PowerShell user config `.ps1` file.
 - Download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run it to disable

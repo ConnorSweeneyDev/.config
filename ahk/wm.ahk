@@ -1,7 +1,9 @@
 #SingleInstance Force
 
-Run("pwsh -Command komorebic start", , "Hide")
-Run("pwsh -Command yasb", , "Hide")
+RunWait("pwsh -Command if ((Get-Process -Name 'komorebi' -ErrorAction SilentlyContinue) -eq $null) { } else { komorebic stop }", , "Hide")
+RunWait("pwsh -Command if ((Get-Process -Name 'yasb' -ErrorAction SilentlyContinue) -eq $null) { } else { Stop-Process -Name 'yasb' -Force }", , "Hide")
+RunWait("pwsh -Command komorebic start", , "Hide")
+RunWait("pwsh -Command yasb", , "Hide")
 
 Komorebic(cmd) {
   RunWait(format("komorebic.exe {}", cmd), , "Hide")
