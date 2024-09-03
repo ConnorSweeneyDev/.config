@@ -8,9 +8,10 @@ PowerShell/Modules
 PowerShell/Scripts
 
 # Yasb
-*.dll
-frozen_application_license.json
+frozen_application_license.txt
 yasb.log
+Yasb/*.dll
+Yasb/*.exe
 Yasb/lib
 Yasb/share
 
