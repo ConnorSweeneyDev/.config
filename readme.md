@@ -72,7 +72,7 @@ terminal settings gui.
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
   specific to me.
 
-### Dependencies for the Scripts Folder:
+### Dependencies for the Scripts Folder and Firefox:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from
   [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
@@ -91,8 +91,9 @@ terminal settings gui.
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`
 
 # Neovim Setup
-I recommend manually recreating the `nvim` folder on your PC rather than just pasting it in, because
-this will allow you to single out any unexpected errors as they happen.
+After setting up the terminal and installing all the dependencies for this section, I recommend
+manually recreating the `nvim` folder on your PC rather than just pasting it in, because this will
+allow you to single out any unexpected errors as they happen.
 
 You should start with the top level `init.lua` and then `lua\main\init.lua`. Then you can create
 `lua\main\remap.lua` and `lua\main\set.lua` and paste the config into each. Now you can create
@@ -184,6 +185,9 @@ settings can be edited at `lua\main\remap.lua`, `lua\main\set.lua` or the respec
 `after\ftplugin\[EXTENSION].lua` and language server settings can be edited at `coc-settings.json`.
 
 # Firefox with Tridactyl Setup
+Only continue with this section if you have installed all the dependencies for the scripts folder
+and firefox.
+
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
 - Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
   shortcut, then properties.
@@ -214,8 +218,9 @@ You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#high
 view all the most important bindings.
 
 # Tiling Window Manager Setup
-To setup a tiling window manager, with [komorebi](https://github.com/LGUG2Z/komorebi) and
-[yasb](https://github.com/amnweb/yasb) do the following:
+After installing all the dependencies for this section, you can set up a tiling window manager with
+[komorebi](https://github.com/LGUG2Z/komorebi) and [yasb](https://github.com/amnweb/yasb) by
+following these steps:
 - Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled'
   -Value 1` in PowerShell as an admin.
 - Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" -
