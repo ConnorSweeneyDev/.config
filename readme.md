@@ -225,14 +225,14 @@ To setup a tiling window manager, with [komorebi](https://github.com/LGUG2Z/komo
 - Search `multitasking` and turn off everything under the snap windows section except "Show my
   snapped windows when i hover over taskbar apps... ...when I press Alt+Tab".
 - Yasb &rightarrow; Replace the files at `C:\Users\[USERNAME]\AppData\Local\Yasb` with the ones from
-  this repository. After that right click `yasb.exe` and create a shortcut, then rename it to just
-  `yasb` and move that to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`.
+  this repository, and ensure that this folder is an environment variable.
 - Komorebi &rightarrow; Replace `komorebi.json` and `applications.yaml` at
   `C:\Users\[USERNAME]\Komorebi` with the ones from this repository.
 - AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\ahk` folder and paste the
-  contents from this repository into it. Right click `komorebi.ahk` and create a shortcut, then
-  rename it to just `komorebi` and move that to `C:\ProgramData\Microsoft\Windows\Start
-  Menu\Programs\Startup`.
+  file from this repository into it. Right click `wm.ahk` and create a shortcut, then rename it to
+  just `wm` and move that to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`.
+  Additionally, you can add it also to one directory back from that, so it appears in the start menu
+  incase you need to restart the environment.
 - Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
   PowerShell user config `.ps1` file.
 - Download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run it to disable
