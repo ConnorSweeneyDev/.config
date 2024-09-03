@@ -6,9 +6,9 @@ other useful tools at the end.
 
 https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 
-*Showcase: **cw** (cd directory), **ew** (explorer directory), **nw** (nvim directory), **ctrl+f**
-in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with tridactyl), **q**
-(close the terminal tab)*
+*Showcase: An overhaul of the Windows development experience, using a tiling window manager with
+workspaces and a status bar rather than a taskbar, many command line utilities, some custom scripts,
+a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal.*
 
 # System Setup
 ### Full Paths to Repository Folders:
