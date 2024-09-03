@@ -30,24 +30,6 @@ in Neovim (new tab + nw), **ctrl+tab** (switch tabs), **f** (open firefox with t
   alternative installs for all dependencies on either
   [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
 
-### Terminal Installation:
-- Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
-- PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
-- NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the
-  contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete
-  the .ttf files from the folder after you've installed them.
-- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`, then paste the `C:\posh`
-  folder to that location and run `oh-my-posh disable notice` to stop the annoying update message
-  every so often. Make sure you put `oh-my-posh init pwsh --config "C:/posh/config.omp.json" |
-  Invoke-Expression` at the bottom of your PowerShell `.ps1` file.
-
-### Terminal Settings:
-If you want my exact settings (including the font I use which you must have installed), you can
-paste the `LocalState\settings.json` file into your `LocalState` folder. If you don't want to
-install my font, you can still paste the json file and just change the property inside the file to
-the name of the font you have installed, from there you can tweak settings to your liking from the
-terminal settings gui.
-
 ### Dependencies for Neovim:
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
   [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and
@@ -89,6 +71,24 @@ terminal settings gui.
 - Yasb &rightarrow; Run `winget install --id AmN.yasb`
 - Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`
+
+# Terminal Setup:
+- Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
+- PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
+- NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the
+  contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete
+  the .ttf files from the folder after you've installed them.
+- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`, then paste the `C:\posh`
+  folder to that location and run `oh-my-posh disable notice` to stop the annoying update message
+  every so often. Make sure you put `oh-my-posh init pwsh --config "C:/posh/config.omp.json" |
+  Invoke-Expression` at the bottom of your PowerShell `.ps1` file.
+
+If you want my exact settings including the [font](https://www.nerdfonts.com/font-downloads)
+(CaskaydiaCove Nerd Font) I use which you must have installed, you can paste the
+`LocalState\settings.json` file into your `LocalState` folder. If you don't want to install my font,
+you can still paste the json file and just change the font property inside the file to the name of
+the font you have installed, from there you can tweak settings to your liking from the terminal
+settings gui.
 
 # Neovim Setup
 After setting up the terminal and installing all the dependencies for this section, I recommend
