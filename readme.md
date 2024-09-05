@@ -203,9 +203,12 @@ Now make firefox your default browser. After that go to Firefox settings and cha
   tab, then close it and go to your history, copy the url of that closed tab and paste it into the
   field - it should be of the form `moz-extension://[NUMBERS]/static/newtab.html`.
 - Home &rightarrow; Default search engine = Google.
-- Now go to this url `about:config` and search for `full-screen-api.transition-duration.enter` and
+- Now go to the url `about:config` and search for `full-screen-api.transition-duration.enter` and
   `full-screen-api.transition-duration.leave` and change both to `0 0`.
 - Scan the rest of the settings and disable things you don't want that will slow down the browser.
+- Optionally, you can install the black
+  [theme](https://addons.mozilla.org/en-GB/firefox/addon/black21/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+  I use or find your own on their themes [page](https://addons.mozilla.org/firefox/themes).
 
 Using Tridactyl, press `:` and type the following commands:
 - `set newtab about:blank`.
