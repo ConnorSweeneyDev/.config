@@ -48,7 +48,7 @@
       "workspaces": [
         {
           "name": "I",
-          "layout": "BSP"
+          "custom_layout": "C:/Users/conno/Komorebi/layout1.json"
         },
         {
           "name": "II",

@@ -231,8 +231,9 @@ following these steps:
   snapped windows when i hover over taskbar apps... ...when I press Alt+Tab".
 - Yasb &rightarrow; Replace the files at `C:\Users\[USERNAME]\AppData\Local\Yasb` with the ones from
   this repository, and ensure that this folder is an environment variable.
-- Komorebi &rightarrow; Replace `komorebi.json` and `applications.yaml` at
-  `C:\Users\[USERNAME]\Komorebi` with the ones from this repository.
+- Komorebi &rightarrow; Add the files in this repository's `Komorebi` folder to
+  `C:\Users\[USERNAME]\Komorebi` with the ones from this repository. Ensure that you change the
+  "custom_layout" field in `komorebi.json` so that it is your username rather than mine.
 - AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\ahk` folder and paste the
   file from this repository into it - ensure this folder is an environment variable. Right click
   `wm.ahk` and create a shortcut, then rename it to just `wm` and create two more copies of it that
