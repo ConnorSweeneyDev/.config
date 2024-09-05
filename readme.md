@@ -68,9 +68,9 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   your path.
 
 ### Dependencies for Tiling Window Manager:
-- Yasb &rightarrow; Run `winget install --id AmN.yasb`
-- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`
-- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`
+- Yasb &rightarrow; Run `winget install --id AmN.yasb`.
+- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`.
+- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
 
 # Terminal Setup:
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
@@ -211,6 +211,7 @@ Now make firefox your default browser. After that go to Firefox settings and cha
   I use or find your own on their themes [page](https://addons.mozilla.org/firefox/themes).
 
 Using Tridactyl, press `:` and type the following commands:
+- `colorscheme midnight`.
 - `set newtab about:blank`.
 - `set searchengine google`.
 - `set modeindicatorshowkeys true`.
