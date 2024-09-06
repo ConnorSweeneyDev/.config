@@ -212,7 +212,7 @@ Now make firefox your default browser. After that go to Firefox settings and cha
 
 Using Tridactyl, press `:` and type the following commands:
 - `colorscheme midnight`.
-- `set newtab about:blank`.
+- `set newtab about:newtab`.
 - `set searchengine google`.
 - `set modeindicatorshowkeys true`.
 - `set modeindicatormodes
