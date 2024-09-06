@@ -1,5 +1,5 @@
 require"nvim-treesitter.install".prefer_git = false
-require"nvim-treesitter.install".compilers = { "clang", "gcc" }
+require"nvim-treesitter.install".compilers = { "gcc" }
 
 require"nvim-treesitter.configs".setup
 {
