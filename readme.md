@@ -156,7 +156,7 @@ The following plugins require extra or different steps than those outlined above
   version of MinGW does not match your operating system or treesitter is using the wrong compiler.
   After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Coc &rightarrow; After following the steps, run `:CocInstall coc-diagnostic coc-copilot coc-git
-  coc-html coc-css coc-json coc-xml coc-sql coc-pyright coc-java coc-clangd
+  coc-html coc-tsserver coc-css coc-json coc-xml coc-sql coc-pyright coc-java coc-clangd
   coc-clang-format-style-options` then `:q` to close the dialog once everything is installed. Now
   add `coc-settings.json`, where you should add the path to your java installation instead of my
   one, then restart again. If you don't want one of the listed servers, dont include them or just
