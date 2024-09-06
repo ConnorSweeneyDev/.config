@@ -289,6 +289,8 @@ you want - the only one I use is ZoomIt with the following settings:
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and go
 through the installation wizard.
 
+CMake &rightarrow; Run `winget install --id Kitware.CMake`.
+
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the
 contents in `C:\Dependencies`, make that folder is an environment variable, then right click
 `DependenciesGui.exe` and select "Create shortcut" and rename it to `Dependencies`, then move that
