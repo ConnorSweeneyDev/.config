@@ -88,12 +88,14 @@
 (Normal) gy              -->  Go to the type definition of the symbol being hovered
 (Normal) [c              -->  Go to the context at the top of the screen if it is currently shown
 
-(Normal) <space>td       -->  Display all diagnostics
+(Normal) <space>tD       -->  Display all diagnostics
+(Normal) <space>td       -->  Display all diagnostics of the current buffer
 (Normal) ]d              -->  Go to the next Info/Warning/Error
 (Normal) [d              -->  Go to the previous Info/Warning/Error
 
 (Normal) K               -->  Display information on the symbol being hovered
 (Normal) <space>rn       -->  Rename the symbol being hovered
+(Normal) <space>rN       -->  Rename the file being edited
 (Normal) <space>rf       -->  Rename the symbol being hovered using the refactor interface
 (Normal) <space>ca       -->  Perform code action on the content under the cursor
 
@@ -118,10 +120,10 @@
 
 --- QUICKFIX LIST ---
 (Normal) <space>qg       -->  Add all lines containing the word you enter to a quickfix list
-(Normal) <space>qr       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
 (Normal) <space>qo       -->  Open the (editable) quickfix list
-(Normal) <space>qw       -->  Copy the hovered word to the system clipboard then <space>qg that word followed by <space>qo
-(Visual) <space>q        -->  Copy the highlighted text to the system clipboard then <space>qg that text followed by <space>qo
+(Normal) <space>qr       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
+(Normal) <space>qf       -->  Copy the hovered word to the system clipboard then <space>qg that word followed by <space>qo
+(Visual) <space>qf       -->  Copy the highlighted text to the system clipboard then <space>qg that text followed by <space>qo
 --- QUICKFIX LIST ---
 
 

@@ -1,7 +1,8 @@
 vim.keymap.set("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], {expr = true, noremap = true, silent = true, replace_keycodes = false})
 vim.keymap.set("n", "<LEADER>ka", "<PLUG>(coc-codeaction-cursor)", {silent = true, nowait = true})
 
-vim.keymap.set("n", "<LEADER>td", "<CMD>CocList diagnostics<CR>", {silent = true, nowait = true})
+vim.keymap.set("n", "<LEADER>td", "<CMD>CocList diagnostics --buffer<CR>", {silent = true, nowait = true})
+vim.keymap.set("n", "<LEADER>tD", "<CMD>CocList diagnostics<CR>", {silent = true, nowait = true})
 vim.keymap.set("n", "[d", "<PLUG>(coc-diagnostic-prev)", {silent = true})
 vim.keymap.set("n", "]d", "<PLUG>(coc-diagnostic-next)", {silent = true})
 
@@ -23,5 +24,6 @@ end
 vim.keymap.set("n", "K", "<CMD>lua _G.show_docs()<CR>", {silent = true})
 
 vim.keymap.set("n", "<LEADER>rn", "<PLUG>(coc-rename)", {silent = true})
+vim.keymap.set("n", "<LEADER>rN", "<CMD>CocCommand workspace.renameCurrentFile<CR>", {silent = true})
 vim.keymap.set("n", "<LEADER>rf", "<PLUG>(coc-refactor)", {silent = true})
 vim.keymap.set("n", "<LEADER>cr", "<CMD>CocRestart<CR>", {silent = true})
