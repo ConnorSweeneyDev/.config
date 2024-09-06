@@ -357,6 +357,7 @@
 --- COMMAND LINE --- <<< THE FOLLOWING BINDS ARE ONLY AVAILABLE WHILE IN THE : COMMAND LINE >>>
 <control>f               -->  Opens command history which can be edited like any other buffer
 
+<control>q<char>         -->  Inputs the specified character as a raw literal into the command line
 <control>r<char>         -->  Inputs the specified register into the command line
 <control>r<control>w     -->  Inputs the word under the cursor into the command line
 <control>r<control>a     -->  Inputs the string under the cursor into the command line, cutoff at the first whitespace
