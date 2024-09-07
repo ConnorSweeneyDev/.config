@@ -22,6 +22,8 @@ function _G.show_docs()
   end
 end
 vim.keymap.set("n", "K", "<CMD>lua _G.show_docs()<CR>", {silent = true})
+vim.keymap.set("n", "<C-j>", [[coc#float#has_scroll() ? coc#float#scroll(1, 1) : "<C-j>"]], {expr = true, noremap = true, silent = true, replace_keycodes = false})
+vim.keymap.set("n", "<C-k>", [[coc#float#has_scroll() ? coc#float#scroll(0, 1) : "<C-k>"]], {expr = true, noremap = true, silent = true, replace_keycodes = false})
 
 vim.keymap.set("n", "<LEADER>rn", "<PLUG>(coc-rename)", {silent = true})
 vim.keymap.set("n", "<LEADER>rN", "<CMD>CocCommand workspace.renameCurrentFile<CR>", {silent = true})

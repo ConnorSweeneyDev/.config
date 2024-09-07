@@ -84,18 +84,20 @@
 
 
 --- LANGUAGE SERVER ---
+(Normal) <space>tD       -->  Display all diagnostics
+(Normal) <space>td       -->  Display all diagnostics of the current buffer
+(Normal) K               -->  Display information on the symbol being hovered
+(Normal) <control>j      -->  If there is a floating window with a scroll bar, scroll down on it
+(Normal) <control>k      -->  If there is a floating window with a scroll bar, scroll up on it
+
 (Normal) gd              -->  Go to the definition of the symbol being hovered
 (Normal) gr              -->  Go to the references of the symbol being hovered
 (Normal) gi              -->  Go to the implementation of the symbol being hovered
 (Normal) gy              -->  Go to the type definition of the symbol being hovered
 (Normal) [c              -->  Go to the context at the top of the screen if it is currently shown
-
-(Normal) <space>tD       -->  Display all diagnostics
-(Normal) <space>td       -->  Display all diagnostics of the current buffer
 (Normal) ]d              -->  Go to the next Info/Warning/Error
 (Normal) [d              -->  Go to the previous Info/Warning/Error
 
-(Normal) K               -->  Display information on the symbol being hovered
 (Normal) <space>rn       -->  Rename the symbol being hovered
 (Normal) <space>rN       -->  Rename the file being edited
 (Normal) <space>rf       -->  Rename the symbol being hovered using the refactor interface
@@ -155,13 +157,13 @@
 (Normal) <control>ws     -->  Split window horizontally
 (Normal) <control>wv     -->  Split window vertically
 
-(Normal) <control>fn    -->  Create a new powershell tab and run nw
-(Normal) <control>fc    -->  Create a new powershell tab and run nw
-(Normal) <control>fe    -->  Create a new powershell tab and run ew
-(Normal) <control>tn    -->  Create a new powershell tab
-(Normal) <control>tc    -->  Create a new powershell tab at the current directory
-(Normal) <control>wn    -->  Create a new powershell window
-(Normal) <control>wc    -->  Create a new powershell window at the current directory
+(Normal) <control>fn     -->  Create a new powershell tab and run nw
+(Normal) <control>fc     -->  Create a new powershell tab and run nw
+(Normal) <control>fe     -->  Create a new powershell tab and run ew
+(Normal) <control>tn     -->  Create a new powershell tab
+(Normal) <control>tc     -->  Create a new powershell tab at the current directory
+(Normal) <control>wn     -->  Create a new powershell window
+(Normal) <control>wc     -->  Create a new powershell window at the current directory
 (Normal) <control>we     -->  Open file explorer at the current directory
 (Normal) gt              -->  Move to the next neovim tab
 (Normal) gT              -->  Move to the previous neovim tab
