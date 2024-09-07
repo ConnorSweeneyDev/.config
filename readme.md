@@ -254,7 +254,7 @@ Keybinds can be configured in `komorebi.ahk`, the top menu bar can be configured
 `config.yaml` and `styles.css` files, and the window manager can be configured by editing
 `komorebi.json` and `applications.yaml`.
 
-# Vim Mode on ZSA Voyager
+# Vim Mode on the ZSA Voyager
 If you happen to use a ZSA Voyager keyboard, you can follow the instructions in my
 [VimForVoyager](https://github.com/ConnorSweeneyDev/VimForVoyager) repository to set up a native vim
 toggle using a smart combination of utility keys like `home`, `end`, `delete` etc. and modifiers
