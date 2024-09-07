@@ -124,8 +124,9 @@
 (Normal) <space>qg       -->  Add all lines containing the word you enter to a quickfix list
 (Normal) <space>qo       -->  Open the (editable) quickfix list
 (Normal) <space>qr       -->  Replace all instances of the word you enter with the second word you enter (only lines in the quickfix list)
-(Normal) <space>qf       -->  Copy the hovered word to the system clipboard then <space>qg that word followed by <space>qo
-(Visual) <space>qf       -->  Copy the highlighted text to the system clipboard then <space>qg that text followed by <space>qo
+(Normal) <space>qw       -->  Copy the hovered word to the system clipboard then <space>qg that word followed by <space>qo
+(Normal) <space>qW       -->  Copy the hovered text until whitespace to the system clipboard then <space>qg that text followed by <space>qo
+(Visual) <space>q        -->  Copy the highlighted text to the system clipboard then <space>qg that text followed by <space>qo
 --- QUICKFIX LIST ---
 
 
