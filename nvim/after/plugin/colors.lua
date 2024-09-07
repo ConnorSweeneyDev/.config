@@ -41,7 +41,5 @@ vim.api.nvim_create_autocmd({"BufEnter", "WinEnter"},
     vim.cmd("highlight LineNr2 guifg=#9c9c9c")
     vim.cmd("highlight LineNr3 guifg=#7b7b7b")
     vim.cmd("highlight LineNr4 guifg=#5a5a5a")
-
-    vim.opt.laststatus = 3
   end
 })

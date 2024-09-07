@@ -36,7 +36,7 @@ end
 function show_macro_recording()
   local recording_register = vim.fn.reg_recording()
   if recording_register == "" then
-    return "Not Recording"
+    return "Recording @\""
   else
     return "Recording @" .. recording_register
   end
@@ -48,12 +48,12 @@ lualine.setup
   {
     icons_enabled = true,
     theme = "vscode",
-    component_separators = { left = "|", right = "|"},
+    component_separators = { left = "│", right = "│"},
     section_separators = { left = "", right = ""},
     disabled_filetypes = { statusline = {}, winbar = {}, },
     ignore_focus = {},
     always_divide_middle = true,
-    globalstatus = false,
+    globalstatus = true,
     refresh = { statusline = 1000, tabline = 1000, winbar = 1000, }
   },
   sections =

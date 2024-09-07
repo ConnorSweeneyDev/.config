@@ -1,3 +1,5 @@
+vim.keymap.set("n", "<LEADER>kf", "<CMD>!clang-format -i %<CR>")
+
 function assign_files(long_files, cwd)
   local files = {}
   for _, file in ipairs(long_files) do
@@ -134,7 +136,5 @@ function switch_file_in_unit(dir)
     vim.notify("Error: Unexpectedly high amount of corresponding files found!", "error")
   end
 end
-
-                   -- Folder to recursively search for files in the compilation unit VVV
 vim.keymap.set("n", "<LEADER>pu", function() switch_file_in_unit(vim.fn.getcwd() .. "/program") end)
-vim.keymap.set("n", "<LEADER>kf", "<CMD>!clang-format -i %<CR>")
+                    -- Folder to recursively search for files in the compilation unit ^^^
