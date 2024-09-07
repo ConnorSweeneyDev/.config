@@ -289,6 +289,8 @@ you want - the only one I use is ZoomIt with the following settings:
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and go
 through the installation wizard.
 
+Make &rightarrow; Run `winget install --id ezwinports.make`.
+
 CMake &rightarrow; Run `winget install --id Kitware.CMake`.
 
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the
