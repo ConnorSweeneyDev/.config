@@ -49,6 +49,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Neovim &rightarrow; Run `winget install neovim --version 0.10.0`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
+- Deno &rightarrow; Run `winget install --id DenoLand.Deno`.
 - Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
 - Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
