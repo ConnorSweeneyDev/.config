@@ -48,13 +48,13 @@ lualine.setup
   {
     icons_enabled = true,
     theme = "vscode",
-    component_separators = { left = "│", right = "│"},
-    section_separators = { left = "", right = ""},
-    disabled_filetypes = { statusline = {}, winbar = {}, },
+    component_separators = {left = "│", right = "│"},
+    section_separators = {left = "", right = ""},
+    disabled_filetypes = {statusline = {}, winbar = {}},
     ignore_focus = {},
     always_divide_middle = true,
     globalstatus = true,
-    refresh = { statusline = 1000, tabline = 1000, winbar = 1000, }
+    refresh = {statusline = 1000, tabline = 1000, winbar = 1000}
   },
   sections =
   {
@@ -71,11 +71,7 @@ lualine.setup
   extensions = {}
 }
 
-vim.api.nvim_create_autocmd("RecordingEnter",
-{
-  callback = function() lualine.refresh({ place = { "statusline" }, }) end,
-})
-
+vim.api.nvim_create_autocmd("RecordingEnter", {callback = function() lualine.refresh({ place = { "statusline" }, }) end,})
 vim.api.nvim_create_autocmd("RecordingLeave",
 {
   callback = function() local timer = vim.loop.new_timer()

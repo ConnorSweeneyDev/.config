@@ -1,4 +1,4 @@
-function open_buffers()
+local function open_buffers()
   -- List of folders and file extensions to search for and open
   local folders = {"/program", "/lua", "/after"}
   local file_extensions = {"*.cpp", "*.hpp", "*.c", "*.h", "*.glsl", "*.cs", "*.java", "*.py", "*.lua"}
@@ -23,7 +23,7 @@ function clean_open()
 end
 vim.keymap.set("n", "<A-o>", function() clean_open() end)
 
-function close_buffers()
+local function close_buffers()
   local original_buffer = vim.api.nvim_get_current_buf()
   local buffers = vim.api.nvim_list_bufs()
   for _, buffer in ipairs(buffers) do
@@ -38,13 +38,13 @@ function clean_close()
 end
 vim.keymap.set("n", "<A-c>", function() clean_close() end)
 
-function floating_window_exists()
+local function floating_window_exists()
   for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
     if vim.api.nvim_win_get_config(winid).zindex then return true end
   end
   return false
 end
-function open_on_startup()
+local function open_on_startup()
   local original_buffer = vim.api.nvim_get_current_buf()
   open_buffers()
   vim.cmd("bd 1")

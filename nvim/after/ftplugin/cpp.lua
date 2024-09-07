@@ -1,6 +1,6 @@
 vim.keymap.set("n", "<LEADER>kf", "<CMD>!clang-format -i %<CR>")
 
-function assign_files(long_files, cwd)
+local function assign_files(long_files, cwd)
   local files = {}
   for _, file in ipairs(long_files) do
     local new_file = string.gsub(file, cwd .. "\\", "")
@@ -11,7 +11,7 @@ function assign_files(long_files, cwd)
   return files
 end
 
-function assign_file_types(files)
+local function assign_file_types(files)
   local source = ""
   local header = ""
   local template = ""
@@ -32,7 +32,7 @@ function assign_file_types(files)
   return source, header, template, inline
 end
 
-function find_one_from_three(file1, file2, file3)
+local function find_one_from_three(file1, file2, file3)
   if file1 ~= "" then
     return file1
   elseif file2 ~= "" then
@@ -42,7 +42,7 @@ function find_one_from_three(file1, file2, file3)
   end
 end
 
-function find_two_from_three(file1, file2, file3)
+local function find_two_from_three(file1, file2, file3)
   selection = {}
   if file1 ~= "" and file2 ~= "" then
     selection = {file1, file2}
