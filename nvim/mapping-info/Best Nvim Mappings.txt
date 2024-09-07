@@ -16,6 +16,7 @@
 --- TELESCOPE ---
 (Normal) <space>pf       -->  Open telescope menu for navigating files in the directory
 (Normal) <space>ps       -->  Enter word to search for in telescope menu for navigating files in the directory
+(Normal) <space>pw       -->  Open telescope menu for navigating files containing the word under the cursor in the directory
 (Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
 (Normal) <space>pb       -->  Open telescope menu for navigating buffers
 (Normal) <space>pm       -->  Open telescope menu for navigating message history
