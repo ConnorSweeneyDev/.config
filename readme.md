@@ -17,7 +17,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`.
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
 - Yasb &rightarrow; `C:\Users\[USERNAME]\AppData\Local\Yasb`.
-- ahk &rightarrow; `C:\Users\[USERNAME]\AppData\Local\ahk`.
+- AutoHotkey &rightarrow; `C:\Users\[USERNAME]\AppData\Local\AutoHotkey`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`.
 - posh &rightarrow; `C:\posh`
 - scripts &rightarrow; `C:\scripts`.
@@ -239,12 +239,12 @@ following these steps:
 - Komorebi &rightarrow; Add the files in this repository's `Komorebi` folder to
   `C:\Users\[USERNAME]\Komorebi` with the ones from this repository. Ensure that you change the
   "custom_layout" field in `komorebi.json` so that it is your username rather than mine.
-- AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\ahk` folder and paste the
-  file from this repository into it - ensure this folder is an environment variable. Right click
-  `wm.ahk` and create a shortcut, then rename it to just `wm` and create two more copies of it that
-  each go in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup` and
+- AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\AutoHotkey` folder and paste
+  the file from this repository into it. Right click `wm.ahk` and create a shortcut, then rename it
+  to just `wm` and create a copy of it, they should each be moved to
+  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup` and
   `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`. Now it will be run at startup and is
-  accessible from the start menu or the command line in case you need to restart the manager.
+  accessible from the start menu in case you need to restart the manager.
 - Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
   PowerShell user config `.ps1` file.
 - Download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run it to disable
