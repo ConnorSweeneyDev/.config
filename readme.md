@@ -11,7 +11,7 @@ workspaces and a status bar rather than a taskbar, many command line utilities, 
 a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal.*
 
 # System Setup
-### Full Paths to Repository Folders:
+### Local Paths to Modules:
 - AutoHotkey &rightarrow; `C:\Users\[USERNAME]\AppData\Local\AutoHotkey`.
 - Komorebi &rightarrow; `C:\Users\[USERNAME]\Komorebi`.
 - LocalState &rightarrow;
