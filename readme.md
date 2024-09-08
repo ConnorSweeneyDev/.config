@@ -12,12 +12,12 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 
 # System Setup
 ### Full Paths to Repository Folders:
+- AutoHotkey &rightarrow; `C:\Users\[USERNAME]\AppData\Local\AutoHotkey`.
 - Komorebi &rightarrow; `C:\Users\[USERNAME]\Komorebi`.
 - LocalState &rightarrow;
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`.
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
 - Yasb &rightarrow; `C:\Users\[USERNAME]\AppData\Local\Yasb`.
-- AutoHotkey &rightarrow; `C:\Users\[USERNAME]\AppData\Local\AutoHotkey`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`.
 - posh &rightarrow; `C:\posh`
 - scripts &rightarrow; `C:\scripts`.
