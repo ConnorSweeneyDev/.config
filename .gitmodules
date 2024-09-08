@@ -16,3 +16,6 @@
 [submodule "PowerShell"]
 	path = PowerShell
 	url = https://github.com/ConnorSweeneyDev/PowerShell
+[submodule "LocalState"]
+	path = LocalState
+	url = https://github.com/ConnorSweeneyDev/LocalState
