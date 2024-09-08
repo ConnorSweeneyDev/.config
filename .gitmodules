@@ -7,3 +7,6 @@
 [submodule "posh"]
 	path = posh
 	url = https://github.com/ConnorSweeneyDev/posh
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/ConnorSweeneyDev/nvim
