@@ -1,0 +1,3 @@
+[submodule "AutoHotKey"]
+	path = AutoHotKey
+	url = https://github.com/ConnorSweeneyDev/AutoHotKey
