@@ -277,7 +277,6 @@ startup - my favourite tools are:
 - Screen Ruler with an activation shortcut of `win+shift+p`.
 - Text Extractor with an activation shortcut of `win+shift+t`.
 - File Locksmith enabled.
-- Command Not Found enabled.
 
 SysInternals &rightarrow; Download from
 [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the executables that
