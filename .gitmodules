@@ -19,3 +19,6 @@
 [submodule "LocalState"]
 	path = LocalState
 	url = https://github.com/ConnorSweeneyDev/LocalState
+[submodule "Komorebi"]
+	path = Komorebi
+	url = https://github.com/ConnorSweeneyDev/Komorebi
