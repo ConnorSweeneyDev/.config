@@ -48,7 +48,7 @@ vim.keymap.set("v", "<C-s>", ":s//g<Left><Left>")
 vim.keymap.set("v", "<C-n>", ":normal ")
 
 -- Will specifically search in files in the program directory
-vim.keymap.set("n", "<LEADER>qg", ":silent grep  program<Left><Left><Left><Left><Left><Left><Left><Left>")
+vim.keymap.set("n", "<LEADER>qg", ":silent grep  program<C-Left><Left>")
 vim.keymap.set("n", "<LEADER>qo", "<CMD>copen<CR>")
 vim.keymap.set("n", "<LEADER>qr", ":cdo s//g<Left><Left>")
 vim.keymap.set("n", "<LEADER>qw", "\"+yiw:silent grep <C-r><C-w> program<CR><CMD>copen<CR>")
