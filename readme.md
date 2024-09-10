@@ -53,7 +53,8 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
 - Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
-  specific to me.
+  specific to me. Also, if you are not using Komorebi you can remove the "$Env:KOMOREBI_CONFIG_HOME"
+  line, or if you are change it to the path that you use.
 
 ### Dependencies for the Scripts Folder and Firefox:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from
@@ -245,12 +246,12 @@ following these steps:
   `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`. Now it will be run at startup and is
   accessible from the start menu in case you need to restart the manager.
 - Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
-  PowerShell user config `.ps1` file.
+  PowerShell user config `.ps1` file, rather than the name I use.
 - Download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run it to disable
   rounded corners for windows.
 - Restart your PC.
 
-Keybinds can be configured in `komorebi.ahk`, the top menu bar can be configured in the yasb
+Keybinds can be configured in `wm.ahk`, the top menu bar can be configured in the yasb
 `config.yaml` and `styles.css` files, and the window manager can be configured by editing
 `komorebi.json` and `applications.yaml`.
 
