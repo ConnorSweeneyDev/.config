@@ -54,7 +54,8 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
   specific to me. Also, if you are not planning on using Komorebi you can remove the
-  "$Env:KOMOREBI_CONFIG_HOME" line.
+  `$Env:KOMOREBI_CONFIG_HOME` line, or if you don't plan on using OhMyPosh you can remove the
+  `oh-my-posh init` line.
 
 ### Dependencies for the Scripts Folder and Firefox:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from
