@@ -15,7 +15,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - AutoHotkey &rightarrow; `C:\Users\[USERNAME]\AppData\Local\AutoHotkey`.
 - Komorebi &rightarrow; `C:\Komorebi`.
 - LocalState &rightarrow;
-  `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`.
+  `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
 - Posh &rightarrow; `C:\Posh`
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
 - Scripts &rightarrow; `C:\Scripts`.
