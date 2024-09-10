@@ -19,3 +19,6 @@
 [submodule "Komorebi"]
 	path = Komorebi
 	url = https://github.com/ConnorSweeneyDev/Komorebi
+[submodule "Scripts"]
+	path = Scripts
+	url = https://github.com/ConnorSweeneyDev/Scripts
