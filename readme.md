@@ -16,11 +16,11 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Komorebi &rightarrow; `C:\Komorebi`.
 - LocalState &rightarrow;
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`.
+- Posh &rightarrow; `C:\Posh`
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
 - Scripts &rightarrow; `C:\Scripts`.
 - Yasb &rightarrow; `C:\Users\[USERNAME]\AppData\Local\Yasb`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`.
-- Posh &rightarrow; `C:\Posh`
 
 ### Miscellaneous Prerequisites:
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search
