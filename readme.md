@@ -13,7 +13,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 # System Setup
 ### Local Paths to Modules:
 - AutoHotkey &rightarrow; `C:\Users\[USERNAME]\AppData\Local\AutoHotkey`.
-- Komorebi &rightarrow; `C:\Users\[USERNAME]\Komorebi`.
+- Komorebi &rightarrow; `C:\Komorebi`.
 - LocalState &rightarrow;
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`.
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
@@ -53,8 +53,8 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
 - Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
-  specific to me. Also, if you are not using Komorebi you can remove the "$Env:KOMOREBI_CONFIG_HOME"
-  line, or if you are change it to the path that you use.
+  specific to me. Also, if you are not planning on using Komorebi you can remove the
+  "$Env:KOMOREBI_CONFIG_HOME" line.
 
 ### Dependencies for the Scripts Folder and Firefox:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from
@@ -236,9 +236,8 @@ following these steps:
   snapped windows when i hover over taskbar apps... ...when I press Alt+Tab".
 - Yasb &rightarrow; Replace the files at `C:\Users\[USERNAME]\AppData\Local\Yasb` with the ones from
   this repository, and ensure that this folder is an environment variable.
-- Komorebi &rightarrow; Add the files in this repository's `Komorebi` folder to
-  `C:\Users\[USERNAME]\Komorebi` with the ones from this repository. Ensure that you change the
-  "custom_layout" field in `komorebi.json` so that it is your username rather than mine.
+- Komorebi &rightarrow; Add the files in this repository's `Komorebi` folder to `C:\Komorebi` with
+  the ones from this repository.
 - AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\AutoHotkey` folder and paste
   the file from this repository into it. Right click `wm.ahk` and create a shortcut, then rename it
   to just `wm` and create a copy of it, they should each be moved to
@@ -246,14 +245,14 @@ following these steps:
   `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`. Now it will be run at startup and is
   accessible from the start menu in case you need to restart the manager.
 - Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
-  PowerShell user config `.ps1` file, rather than the name I use.
+  PowerShell user config `.ps1` file.
 - Download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run it to disable
   rounded corners for windows.
 - Restart your PC.
 
-Keybinds can be configured in `wm.ahk`, the top menu bar can be configured in the yasb
-`config.yaml` and `styles.css` files, and the window manager can be configured by editing
-`komorebi.json`, `applications.yaml` and any `*.json` files for custom layouts.
+Keybinds can be configured in `wm.ahk`, the top menu bar can be configured in the yasb `config.yaml`
+and `styles.css` files, and the window manager can be configured by editing `komorebi.json`,
+`applications.yaml` and any `*.json` files for custom layouts.
 
 # Vim Mode on the ZSA Voyager
 If you happen to use a ZSA Voyager keyboard, you can follow the instructions in my
