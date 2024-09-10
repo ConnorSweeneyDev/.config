@@ -253,7 +253,7 @@ following these steps:
 
 Keybinds can be configured in `wm.ahk`, the top menu bar can be configured in the yasb
 `config.yaml` and `styles.css` files, and the window manager can be configured by editing
-`komorebi.json` and `applications.yaml`.
+`komorebi.json`, `applications.yaml` and any `*.json` files for custom layouts.
 
 # Vim Mode on the ZSA Voyager
 If you happen to use a ZSA Voyager keyboard, you can follow the instructions in my
