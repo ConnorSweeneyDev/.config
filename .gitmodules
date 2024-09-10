@@ -1,9 +1,6 @@
 [submodule "AutoHotKey"]
 	path = AutoHotKey
 	url = https://github.com/ConnorSweeneyDev/AutoHotKey
-[submodule "posh"]
-	path = posh
-	url = https://github.com/ConnorSweeneyDev/posh
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/ConnorSweeneyDev/nvim
@@ -22,3 +19,6 @@
 [submodule "Scripts"]
 	path = Scripts
 	url = https://github.com/ConnorSweeneyDev/Scripts
+[submodule "Posh"]
+	path = Posh
+	url = https://github.com/ConnorSweeneyDev/Posh

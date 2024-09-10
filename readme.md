@@ -20,7 +20,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Scripts &rightarrow; `C:\Scripts`.
 - Yasb &rightarrow; `C:\Users\[USERNAME]\AppData\Local\Yasb`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`.
-- posh &rightarrow; `C:\posh`
+- Posh &rightarrow; `C:\Posh`
 
 ### Miscellaneous Prerequisites:
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search
@@ -81,9 +81,9 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the
   contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete
   the .ttf files from the folder after you've installed them.
-- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`, then paste the `C:\posh`
+- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`, then paste the `C:\Posh`
   folder to that location and run `oh-my-posh disable notice` to stop the annoying update message
-  every so often. Make sure you put `oh-my-posh init pwsh --config "C:/posh/config.omp.json" |
+  every so often. Make sure you put `oh-my-posh init pwsh --config "C:/Posh/config.omp.json" |
   Invoke-Expression` at the bottom of your PowerShell `.ps1` file.
 
 If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can paste
