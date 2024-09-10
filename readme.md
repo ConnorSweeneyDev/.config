@@ -20,7 +20,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Yasb &rightarrow; `C:\Users\[USERNAME]\AppData\Local\Yasb`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`.
 - posh &rightarrow; `C:\posh`
-- scripts &rightarrow; `C:\scripts`.
+- Scripts &rightarrow; `C:\Scripts`.
 
 ### Miscellaneous Prerequisites:
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search
@@ -66,7 +66,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Tridactyl &rightarrow; Go
   [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md)
   on Firefox.
-- Paste the `C:\scripts` folder to that location. Put `C:\scripts\which` and `C:\scripts\firefox` in
+- Paste the `C:\Scripts` folder to that location. Put `C:\Scripts\which` and `C:\Scripts\firefox` in
   your path.
 
 ### Dependencies for Tiling Window Manager:
@@ -192,7 +192,7 @@ and firefox.
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
 - Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
   shortcut, then properties.
-- Change the target to `C:\scripts\firefox\firefoxfocusfix.bat`.
+- Change the target to `C:\Scripts\firefox\firefoxfocusfix.bat`.
 - Change Run to `Minimized` (stops the terminal from opening, not the browser).
 - Click Change Icon and browse to `C:\Program Files\Mozilla Firefox` then select the Firefox icon.
 - Apply the changes.

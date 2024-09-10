@@ -3,7 +3,7 @@
 	url = https://github.com/ConnorSweeneyDev/AutoHotKey
 [submodule "scripts"]
 	path = scripts
-	url = https://github.com/ConnorSweeneyDev/scripts
+	url = https://github.com/ConnorSweeneyDev/Scripts
 [submodule "posh"]
 	path = posh
 	url = https://github.com/ConnorSweeneyDev/posh
