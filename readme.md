@@ -86,11 +86,18 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   every so often. Make sure you put `oh-my-posh init pwsh --config "C:/Posh/config.omp.json" |
   Invoke-Expression` at the bottom of your PowerShell `.ps1` file.
 
-If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can paste
-the `LocalState\settings.json` file into your `LocalState` folder. If you don't want to install my
-font, you can still paste the json file and just change the font property inside the file to the
-name of the font you have installed, from there you can tweak settings to your liking from the
-terminal settings gui.
+If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can
+replace the following sections of your own `settings.json` file with the ones from this repository:
+- The entire `actions` section.
+- Everything between the `actions` section and the `profiles` section.
+- The `defaults` section inside of the `profiles` section.
+- Assuming you have it installed, everything inside the PowerShell (pwsh.exe) section inside the
+  `profiles: list` section, except the `guid` and `source` fields.
+- Everything after the `themes` section (not inside the `themes` section).
+
+If you don't want to install my font, you can still follow the above list but change the `font:
+face` property inside the `defaults` to the name of the font you have installed. After doing all of
+this, you can tweak other settings to your liking by using the settings gui in Windows Terminal.
 
 # Neovim Setup
 After setting up the terminal and installing all the dependencies for this section, I recommend
