@@ -254,12 +254,14 @@ following these steps:
   accessible from the start menu in case you need to restart the manager.
 - Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
   PowerShell user config `.ps1` file.
-- Download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run it to disable
-  rounded corners for windows. If you choose to do this, occasionally you will see that the rounded
-  corners are back, in which case you need to delete (or move)
+- If you want, download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run
+  it to disable rounded corners for windows. If you choose to do this, occasionally you will see
+  that the rounded corners are back, in which case you need to delete (or move)
   `C:\Windows\System32\uDWM_win11drc.bak` and run it again - don't worry, this is just the backup
   file created by the tool the last time it was patched, not an actual system file, although the
-  tool does modify uDWM.dll which is a real system file, so run at your own risk.
+  tool does modify uDWM.dll which is a real system file, so run at your own risk. This is not
+  necessary and most of the time you won't notice the rounded corners anyway due to the window
+  manager.
 - Restart your PC.
 
 Keybinds can be configured in `wm.ahk`, the top menu bar can be configured in the yasb `config.yaml`
