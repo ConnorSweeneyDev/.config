@@ -1,8 +1,8 @@
 # Windows11Workflow
-All my dotfiles, using Neovim with PowerShell in the Windows Terminal along with fzf and bat for
+All my files, using Neovim with PowerShell in the Windows Terminal along with fzf and bat for
 fast navigation. Additionally, there is a quick setup for Tridactyl on Firefox, a Tiling Window
 Manager and a toggleable Vim mode on the ZSA Voyager keyboard. You will also find a list of
-other useful tools at the end.
+other very useful tools at the end.
 
 https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 
