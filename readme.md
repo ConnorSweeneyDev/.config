@@ -30,7 +30,13 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   alternative installs for all dependencies on either
   [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
 
+### Dependencies for the Terminal:
+- Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
+- PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
+- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
+
 ### Dependencies for Neovim:
+- Follow the terminal setup below first.
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
   [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and
   run the installation wizard.
@@ -38,37 +44,32 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   [here](https://www.oracle.com/java/technologies/downloads/) and place the folder named
   `jdk-[VERSION]` in `C:\Program Files\Java` then add `C:\Program Files\Java\jdk-[VERSION]\bin` to
   your path.
-- Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system
-  core.longpaths true`.
 - MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW`
   (I recommend 64-bit with POSIX threads for general purpose use). Add `C:\MinGW\bin` to your path.
+- Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system
+  core.longpaths true`.
 - Python &rightarrow; Run `winget install --id Python.Python.3.12`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
+- Deno &rightarrow; Run `winget install --id DenoLand.Deno`.
+- Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - Neovim &rightarrow; Run `winget install neovim --version 0.10.0`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
-- Deno &rightarrow; Run `winget install --id DenoLand.Deno`.
-- Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
-- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
-  `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
-  specific to me. Also, if you are not planning on using Komorebi you can remove the
-  `$Env:KOMOREBI_CONFIG_HOME` line - similarly, if you don't plan on using OhMyPosh you can remove
-  the `oh-my-posh init` line.
 
 ### Dependencies for the Scripts Folder and Firefox:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from
   [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
+- NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
+- Paste the `C:\Scripts` folder to that location. Put `C:\Scripts\which` and `C:\Scripts\firefox` in
+  your path.
 - Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to
   `C:\Program Files\Mozilla Firefox\firefox.exe`.
-- NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
 - Tridactyl &rightarrow; Go
   [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md)
   on Firefox.
-- Paste the `C:\Scripts` folder to that location. Put `C:\Scripts\which` and `C:\Scripts\firefox` in
-  your path.
 
 ### Dependencies for Tiling Window Manager:
 - Yasb &rightarrow; Run `winget install --id AmN.yasb`.
@@ -76,15 +77,18 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
 
 # Terminal Setup:
-- Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
-- PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
-- NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) and put the
+- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
+  `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
+  specific to me. Also, if you are not planning on using Komorebi you can remove the
+  `$Env:KOMOREBI_CONFIG_HOME` line - similarly, if you don't plan on using OhMyPosh you can remove
+  the `oh-my-posh init` line.
+- Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the
   contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete
   the .ttf files from the folder after you've installed them.
-- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`, then paste the `C:\Posh`
-  folder to that location and run `oh-my-posh disable notice` to stop the annoying update message
-  every so often. Make sure you put `oh-my-posh init pwsh --config "C:/Posh/config.omp.json" |
-  Invoke-Expression` at the bottom of your PowerShell `.ps1` file.
+- OhMyPosh &rightarrow; Paste the `C:\Posh` folder to that location and run `oh-my-posh disable
+  notice` to stop the annoying update message every so often. Make sure you put `oh-my-posh init
+  pwsh --config "C:/Posh/config.omp.json" | Invoke-Expression` at the bottom of your PowerShell
+  `.ps1` file.
 
 If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can
 replace the following sections of your own `settings.json` file with the ones from this repository:
