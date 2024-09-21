@@ -249,7 +249,8 @@ following these steps:
 - Yasb &rightarrow; Replace the files at `C:\Users\[USERNAME]\AppData\Local\Yasb` with the ones from
   this repository, and ensure that this folder is an environment variable.
 - Komorebi &rightarrow; Add the files in this repository's `Komorebi` folder to `C:\Komorebi` with
-  the ones from this repository.
+  the ones from this repository. Ensure that the correct amount of monitors are configured in
+  `komorebi.json`.
 - AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\AutoHotkey` folder and paste
   the file from this repository into it. Right click `wm.ahk` and create a shortcut, then rename it
   to just `wm` and create a copy of it, they should each be moved to
