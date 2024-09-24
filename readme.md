@@ -252,11 +252,11 @@ following these steps:
   the ones from this repository. Ensure that the correct amount of monitors are configured in
   `komorebi.json`.
 - AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\AutoHotkey` folder and paste
-  the file from this repository into it. Right click `wm.ahk` and create a shortcut, then rename it
-  to just `wm` and create a copy of it, they should each be moved to
-  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup` and
-  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`. Now it will be run at startup and is
-  accessible from the start menu in case you need to restart the manager.
+  the file from this repository into it. Ensure you configure anything specific to monitor
+  resolution. Right click `wm.ahk` and create a shortcut, then rename it to just `wm` and create a
+  copy of it, they should each be moved to `C:\ProgramData\Microsoft\Windows\Start
+  Menu\Programs\Startup` and `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`. Now it will be
+  run at startup and is accessible from the start menu in case you need to restart the manager.
 - Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
   PowerShell user config `.ps1` file.
 - If you want, download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run
