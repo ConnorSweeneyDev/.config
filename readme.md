@@ -197,6 +197,11 @@ settings can be edited at `lua\main\remap.lua`, `lua\main\set.lua` or the respec
 `after\plugin\[PLUGIN].lua` files. Furthermore, all language specific settings can be edited at
 `after\ftplugin\[EXTENSION].lua` and language server settings can be edited at `coc-settings.json`.
 
+## Portable Setup
+I also have an extremely minimal setup (one file) that can be cloned and run on any machine
+that can run neovim. You can find it [here](https://github.com/ConnorSweeneyDev/nvim-portable), I
+mostly use it for when I have to use a remote machine or someone else's computer.
+
 # Firefox with Tridactyl Setup
 Only continue with this section if you have installed all the dependencies for the scripts folder
 and firefox.
