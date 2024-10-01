@@ -48,7 +48,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   (I recommend 64-bit with POSIX threads for general purpose use). Add `C:\MinGW\bin` to your path.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system
   core.longpaths true`.
-- Python &rightarrow; Run `winget install --id Python.Python.3.12`.
+- Python &rightarrow; Run `winget install --id Python.Python.3.10`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
 - Deno &rightarrow; Run `winget install --id DenoLand.Deno`.
 - Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
