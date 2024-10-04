@@ -47,7 +47,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW`
   (I recommend 64-bit with POSIX threads for general purpose use). Add `C:\MinGW\bin` to your path.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system
-  core.longpaths true`. I use the following aliases in my `.gitconfig` file:
+  core.longpaths true`. I use the following aliases in my `C:\Users\[USERNAME]\.gitconfig` file:
   ```
   [alias]
     a = add
