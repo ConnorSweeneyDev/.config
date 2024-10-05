@@ -7,9 +7,6 @@
 [submodule "LocalState"]
 	path = LocalState
 	url = https://github.com/ConnorSweeneyDev/LocalState
-[submodule "Scripts"]
-	path = Scripts
-	url = https://github.com/ConnorSweeneyDev/Scripts
 [submodule "yasb"]
 	path = yasb
 	url = https://github.com/ConnorSweeneyDev/yasb
