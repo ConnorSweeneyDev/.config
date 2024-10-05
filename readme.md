@@ -12,9 +12,9 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 
 # System Setup
 ### Local Paths to Modules:
-- AutoHotkey &rightarrow; `C:\Users\[USERNAME]\AppData\Local\AutoHotkey`.
 - LocalState &rightarrow;
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
+- ahk &rightarrow; `C:\Users\[USERNAME]\.config\ahk`.
 - komorebi &rightarrow; `C:\Users\[USERNAME]\.config\komorebi`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\.config\nvim`.
 - posh &rightarrow; `C:\Users\[USERNAME]\.config\posh`.
@@ -273,12 +273,12 @@ following these steps:
 - Komorebi &rightarrow; Add the files in this repository's `komorebi` folder to
   `C:\Users\[USERNAME]\.config\komorebi` on your machine. In `komorebi.json` ensure that the correct
   amount of monitors are configured and that any absolute paths are valid.
-- AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\AutoHotkey` folder and paste
-  the file from this repository into it. Ensure you configure anything specific to monitor
-  resolution. Right click `wm.ahk` and create a shortcut, then rename it to just `wm` and create a
-  copy of it, they should each be moved to `C:\ProgramData\Microsoft\Windows\Start
-  Menu\Programs\Startup` and `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`. Now it will be
-  run at startup and is accessible from the start menu in case you need to restart the manager.
+- AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\.config\ahk` folder and paste the file
+  from this repository into it. Ensure you configure anything specific to monitor resolution. Right
+  click `wm.ahk` and create a shortcut, then rename it to just `wm` and create a copy of it, one
+  each should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and that folder's
+  sub-directory `Startup`. Now it will be run at startup and is accessible from the start menu in
+  case you need to restart the manager.
 - If you want, download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run
   it to disable rounded corners for windows. If you choose to do this, occasionally you will see
   that the rounded corners are back, in which case you need to delete (or move)
@@ -289,7 +289,7 @@ following these steps:
   manager.
 - Restart your PC.
 
-Keybinds can be configured in `wm.ahk`, the top menu bar can be configured in the yasb `config.yaml`
+Keybinds can be configured in `wm.ahk`, the status bar can be configured in the Yasb `config.yaml`
 and `styles.css` files, and the window manager can be configured by editing `komorebi.json`,
 `applications.yaml` and any `*.json` files for custom layouts.
 
