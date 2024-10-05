@@ -89,9 +89,10 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   [alias]
     r = restore
     cl = clone
+    pl = pull
     a = add
     co = commit
-    p = push
+    ps = push
     sm = submodule
     b = branch
     ch = checkout
