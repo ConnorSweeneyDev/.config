@@ -200,12 +200,13 @@ The following plugins require extra or different steps than those outlined above
 You can now add the `after\ftplugin` folder and any files inside it, which are used for language
 specific configuration; After that, don't forget to include `after\plugin\buffers.lua`.
 
-`buffers.lua` is an optional "plugin", as it can slow down the startup time but will open, in
-separate buffers, every file in the specified directory that has any of the file extensions
+The file `buffers.lua` is an optional "plugin", as it can slow down the startup time but will open,
+in separate buffers, every file in the specified directory that has any of the file extensions
 specified - this can be useful because diagnostics for files that are not open will still be shown
 when you toggle the diagnostics window. If you need to close all the buffers except the current one
 (when you need to rename symbols, go to references etc.), this file also provides the keybind for
-that, and the keybind for re-opening them all again too.
+that, and the keybind for re-opening them all again too. It assumes you have coc installed, but if
+you don't you can remove the lines that use it.
 
 Finally, you can paste the `mapping-info` folder into the root for safe keeping. All keybinds and
 settings can be edited at `lua\main\remap.lua`, `lua\main\set.lua` or the respective
