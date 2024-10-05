@@ -47,21 +47,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW`
   (I recommend 64-bit with POSIX threads for general purpose use). Add `C:\MinGW\bin` to your path.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system
-  core.longpaths true`. I use the following aliases in my `C:\Users\[USERNAME]\.gitconfig` file:
-  ```
-  [alias]
-    r = restore
-    cl = clone
-    a = add
-    co = commit
-    p = push
-    b = branch
-    ch = checkout
-    m = merge
-    s = status
-    d = diff
-    l = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  ```
+  core.longpaths true`.
 - Python &rightarrow; Run `winget install --id Python.Python.3.10`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
 - Deno &rightarrow; Run `winget install --id DenoLand.Deno`.
@@ -95,9 +81,22 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
   specific to me. Also, if you are not planning on using Komorebi you can remove the
-  `$Env:KOMOREBI_CONFIG_HOME` line - similarly, if you don't plan on using OhMyPosh you can remove
-  the `oh-my-posh init` line and lastly you can remove the `FZF_DEFAULT_COMMAND` line if you aren't
-  using that.
+  `$Env:KOMOREBI_CONFIG_HOME` line.
+- You can use the following aliases in your `C:\Users\[USERNAME]\.gitconfig` file if you want:
+  ```
+  [alias]
+    r = restore
+    cl = clone
+    a = add
+    co = commit
+    p = push
+    b = branch
+    ch = checkout
+    m = merge
+    s = status
+    d = diff
+    l = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ```
 - Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the
   contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete
   the .ttf files from the folder after you've installed them.
@@ -113,7 +112,7 @@ replace the following sections of your own `settings.json` file with the ones fr
 - The `defaults` section inside of the `profiles` section.
 - Assuming you have it installed, everything inside the PowerShell (pwsh.exe) section inside the
   `profiles: list` section, except the `guid` and `source` fields.
-- Everything after the `themes` section (not inside the `themes` section).
+- Everything below the `schemes` section.
 
 If you don't want to install my font, you can still follow the above list but change the `font:
 face` property inside the `defaults` to the name of the font you have installed. After doing all of
