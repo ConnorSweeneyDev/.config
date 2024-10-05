@@ -4,9 +4,6 @@
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/ConnorSweeneyDev/nvim
-[submodule "PowerShell"]
-	path = PowerShell
-	url = https://github.com/ConnorSweeneyDev/PowerShell
 [submodule "LocalState"]
 	path = LocalState
 	url = https://github.com/ConnorSweeneyDev/LocalState
