@@ -92,7 +92,8 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
   specific to me. Also, if you are not planning on using Komorebi you can remove the
   `$Env:KOMOREBI_CONFIG_HOME` line - similarly, if you don't plan on using OhMyPosh you can remove
-  the `oh-my-posh init` line.
+  the `oh-my-posh init` line and lastly you can remove the `FZF_DEFAULT_COMMAND` line if you aren't
+  using that.
 - Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the
   contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete
   the .ttf files from the folder after you've installed them.
