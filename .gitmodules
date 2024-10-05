@@ -1,9 +1,6 @@
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/ConnorSweeneyDev/nvim
-[submodule "LocalState"]
-	path = LocalState
-	url = https://github.com/ConnorSweeneyDev/LocalState
 [submodule "yasb"]
 	path = yasb
 	url = https://github.com/ConnorSweeneyDev/yasb
