@@ -13,9 +13,6 @@
 [submodule "Scripts"]
 	path = Scripts
 	url = https://github.com/ConnorSweeneyDev/Scripts
-[submodule "Posh"]
-	path = Posh
-	url = https://github.com/ConnorSweeneyDev/Posh
 [submodule "yasb"]
 	path = yasb
 	url = https://github.com/ConnorSweeneyDev/yasb
