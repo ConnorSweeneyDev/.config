@@ -19,3 +19,6 @@
 [submodule "pwsh"]
 	path = pwsh
 	url = https://github.com/ConnorSweeneyDev/pwsh
+[submodule "posh"]
+	path = posh
+	url = https://github.com/ConnorSweeneyDev/posh
