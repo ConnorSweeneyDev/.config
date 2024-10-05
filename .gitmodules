@@ -19,3 +19,6 @@
 [submodule "yasb"]
 	path = yasb
 	url = https://github.com/ConnorSweeneyDev/yasb
+[submodule "pwsh"]
+	path = pwsh
+	url = https://github.com/ConnorSweeneyDev/pwsh
