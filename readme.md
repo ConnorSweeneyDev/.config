@@ -91,6 +91,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
     a = add
     co = commit
     p = push
+    sm = submodule
     b = branch
     ch = checkout
     m = merge
