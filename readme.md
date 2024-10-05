@@ -19,8 +19,8 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Posh &rightarrow; `C:\Posh`
 - PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
 - Scripts &rightarrow; `C:\Scripts`.
-- Yasb &rightarrow; `C:\Users\[USERNAME]\AppData\Local\Yasb`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\AppData\Local\nvim`.
+- yasb &rightarrow; `C:\Users\conno\.config\yasb`.
 
 ### Miscellaneous Prerequisites:
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search
@@ -262,8 +262,8 @@ following these steps:
   taskbar" under the taskbar behaviours.
 - Search `multitasking` and turn off everything under the snap windows section except "Show my
   snapped windows when i hover over taskbar apps... ...when I press Alt+Tab".
-- Yasb &rightarrow; Replace the files at `C:\Users\[USERNAME]\AppData\Local\Yasb` with the ones from
-  this repository, and ensure that this folder is an environment variable.
+- Yasb &rightarrow; Replace the files at `C:\Users\conno\.config\yasb` with the ones from
+  this repository. Make `C:\Users\[USERNAME]\AppData\Local\Yasb` an environment variable.
 - Komorebi &rightarrow; Add the files in this repository's `Komorebi` folder to `C:\Komorebi` with
   the ones from this repository. Ensure that the correct amount of monitors are configured in
   `komorebi.json`.
