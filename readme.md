@@ -17,9 +17,9 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - LocalState &rightarrow;
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
 - Posh &rightarrow; `C:\Posh`
-- PowerShell &rightarrow; `C:\Users\[USERNAME]\Documents\PowerShell`.
 - Scripts &rightarrow; `C:\Scripts`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\.config\nvim`.
+- pwsh &rightarrow; `C:\Users\[USERNAME]\.config\pwsh`.
 - yasb &rightarrow; `C:\Users\[USERNAME]\.config\yasb`.
 
 ### Miscellaneous Prerequisites:
@@ -78,10 +78,11 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
 
 # Terminal Setup:
-- Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
-  `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
-  specific to me. Other than those two functions, skim the rest of the file and remove anything you
-  know you won't need - everything is commented so you can be sure.
+- Paste the `C:\Users\[USERNAME]\.config\pwsh` folder to that location, then run `notepad $PROFILE`
+  and paste this line into the file that is opened: `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
+- Go back to `profile.ps1` and remove the `attend` and `music` functions, as they are specific to
+  me. Other than those two functions, skim the rest of the file and remove anything you know you
+  won't need - everything is commented so you can be sure of what you're doing.
 - You can use the following aliases in your `C:\Users\[USERNAME]\.gitconfig` file if you want:
   ```
   [alias]
@@ -104,7 +105,8 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   notice` to stop the annoying update message every so often.
 
 If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can
-replace the following sections of your own `settings.json` file with the ones from this repository:
+replace the following sections of your own `LocalState\settings.json` file with the ones from this
+repository:
 - The entire `actions` section.
 - Everything between the `actions` section and the `profiles` section.
 - The `defaults` section inside of the `profiles` section.
