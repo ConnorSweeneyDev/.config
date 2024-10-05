@@ -15,11 +15,11 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - AutoHotkey &rightarrow; `C:\Users\[USERNAME]\AppData\Local\AutoHotkey`.
 - LocalState &rightarrow;
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
-- Scripts &rightarrow; `C:\Scripts`.
 - komorebi &rightarrow; `C:\Users\[USERNAME]\.config\komorebi`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\.config\nvim`.
 - posh &rightarrow; `C:\Users\[USERNAME]\.config\posh`.
 - pwsh &rightarrow; `C:\Users\[USERNAME]\.config\pwsh`.
+- scripts &rightarrow; `C:\Users\[USERNAME]\.config\scripts`.
 - yasb &rightarrow; `C:\Users\[USERNAME]\.config\yasb`.
 
 ### Miscellaneous Prerequisites:
@@ -64,8 +64,8 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   Neovim requirements is also required for my usage of fzf.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
-- Paste the `C:\Scripts` folder to that location. Put `C:\Scripts\which` and `C:\Scripts\firefox` in
-  your path.
+- Paste the `C:\Users\[USERNAME]\.config\scripts` folder to that location. Put the `which` and
+  `firefox` sub-directories in your path.
 - Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to
   `C:\Program Files\Mozilla Firefox\firefox.exe`.
 - Tridactyl &rightarrow; Go
@@ -102,8 +102,8 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - OhMyPosh &rightarrow; Paste the `C:\Users\[USERNAME]\.config\posh` folder to that location and run
   `oh-my-posh disable notice` to stop the annoying update message every so often.
 - Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the contents
-  in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete the .ttf
-  files from the folder after you've installed them.
+  in `C:\Fonts`, select all and right click then select "Install". You can delete the .ttf files
+  from the folder after you've installed them.
 
 If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can
 replace the following sections of your own `LocalState\settings.json` file with the ones from this
@@ -226,7 +226,7 @@ and firefox.
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
 - Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
   shortcut, then properties.
-- Change the target to `C:\Scripts\firefox\firefoxfocusfix.bat`.
+- Change the target to `C:\Users\[USERNAME]\.config\scripts\firefox\firefoxfocusfix.bat`.
 - Change Run to `Minimized` (stops the terminal from opening, not the browser).
 - Click Change Icon and browse to `C:\Program Files\Mozilla Firefox` then select the Firefox icon.
 - Apply the changes.
