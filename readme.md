@@ -16,9 +16,9 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Komorebi &rightarrow; `C:\Komorebi`.
 - LocalState &rightarrow;
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
-- Posh &rightarrow; `C:\Posh`
 - Scripts &rightarrow; `C:\Scripts`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\.config\nvim`.
+- posh &rightarrow; `C:\Users\[USERNAME]\.config\posh`.
 - pwsh &rightarrow; `C:\Users\[USERNAME]\.config\pwsh`.
 - yasb &rightarrow; `C:\Users\[USERNAME]\.config\yasb`.
 
@@ -98,11 +98,11 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
     d = diff
     l = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ```
-- Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the
-  contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete
-  the .ttf files from the folder after you've installed them.
-- OhMyPosh &rightarrow; Paste the `C:\Posh` folder to that location and run `oh-my-posh disable
-  notice` to stop the annoying update message every so often.
+- OhMyPosh &rightarrow; Paste the `C:\Users\[USERNAME]\.config\posh` folder to that location and run
+  `oh-my-posh disable notice` to stop the annoying update message every so often.
+- Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the contents
+  in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete the .ttf
+  files from the folder after you've installed them.
 
 If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can
 replace the following sections of your own `LocalState\settings.json` file with the ones from this
@@ -268,7 +268,7 @@ following these steps:
 - Search `multitasking` and turn off everything under the snap windows section except "Show my
   snapped windows when i hover over taskbar apps... ...when I press Alt+Tab".
 - Yasb &rightarrow; Replace the files at `C:\Users\[USERNAME]\.config\yasb` with the ones from
-  this repository. Make `C:\Users\[USERNAME]\AppData\Local\Yasb` an environment variable.
+  this repository. Add `C:\Users\[USERNAME]\AppData\Local\Yasb` to your path.
 - Komorebi &rightarrow; Add the files in this repository's `Komorebi` folder to `C:\Komorebi` with
   the ones from this repository. Ensure that the correct amount of monitors are configured in
   `komorebi.json`.
