@@ -50,11 +50,14 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   core.longpaths true`. I use the following aliases in my `C:\Users\[USERNAME]\.gitconfig` file:
   ```
   [alias]
+    r = restore
+    cl = clone
     a = add
     co = commit
     p = push
     b = branch
     ch = checkout
+    m = merge
     s = status
     d = diff
     l = log --graph --decorate --pretty=oneline --abbrev-commit --all
