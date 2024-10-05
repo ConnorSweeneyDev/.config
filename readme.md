@@ -74,7 +74,8 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 
 ### Dependencies for the Scripts Folder and Firefox:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from
-  [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`.
+  [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`. fd from the
+  Neovim requirements is also required for my usage of fzf.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
 - Paste the `C:\Scripts` folder to that location. Put `C:\Scripts\which` and `C:\Scripts\firefox` in
