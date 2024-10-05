@@ -60,7 +60,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 
 ### Dependencies for the Scripts Folder and Firefox:
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from
-  [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`. fd from the
+  [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`; fd from the
   Neovim requirements is also required for my usage of fzf.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
@@ -81,7 +81,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Paste the `C:\Users\[USERNAME]\Documents\PowerShell` folder to that location, edit
   `Microsoft.PowerShell_profile.ps1` and remove the `attend` and `music` functions, as they are
   specific to me. Other than those two functions, skim the rest of the file and remove anything you
-  know you won't need.
+  know you won't need - everything is commented so you can be sure.
 - You can use the following aliases in your `C:\Users\[USERNAME]\.gitconfig` file if you want:
   ```
   [alias]
@@ -101,9 +101,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   contents in `C:\Documents\Fonts`, select all and right click then select "Install". You can delete
   the .ttf files from the folder after you've installed them.
 - OhMyPosh &rightarrow; Paste the `C:\Posh` folder to that location and run `oh-my-posh disable
-  notice` to stop the annoying update message every so often. Make sure you put `oh-my-posh init
-  pwsh --config "C:/Posh/config.omp.json" | Invoke-Expression` at the bottom of your PowerShell
-  `.ps1` file.
+  notice` to stop the annoying update message every so often.
 
 If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can
 replace the following sections of your own `settings.json` file with the ones from this repository:
@@ -278,8 +276,6 @@ following these steps:
   copy of it, they should each be moved to `C:\ProgramData\Microsoft\Windows\Start
   Menu\Programs\Startup` and `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`. Now it will be
   run at startup and is accessible from the start menu in case you need to restart the manager.
-- Ensure you have `$Env:KOMOREBI_CONFIG_HOME = 'C:/Users/[USERNAME]/Komorebi'` at the bottom of your
-  PowerShell user config `.ps1` file.
 - If you want, download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run
   it to disable rounded corners for windows. If you choose to do this, occasionally you will see
   that the rounded corners are back, in which case you need to delete (or move)
