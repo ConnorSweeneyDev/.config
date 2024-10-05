@@ -13,10 +13,10 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 # System Setup
 ### Local Paths to Modules:
 - AutoHotkey &rightarrow; `C:\Users\[USERNAME]\AppData\Local\AutoHotkey`.
-- Komorebi &rightarrow; `C:\Komorebi`.
 - LocalState &rightarrow;
   `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
 - Scripts &rightarrow; `C:\Scripts`.
+- komorebi &rightarrow; `C:\Users\[USERNAME]\.config\komorebi`.
 - nvim &rightarrow; `C:\Users\[USERNAME]\.config\nvim`.
 - posh &rightarrow; `C:\Users\[USERNAME]\.config\posh`.
 - pwsh &rightarrow; `C:\Users\[USERNAME]\.config\pwsh`.
@@ -267,12 +267,12 @@ following these steps:
 - Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the
   taskbar" under the taskbar behaviours.
 - Search `multitasking` and turn off everything under the snap windows section except "Show my
-  snapped windows when i hover over taskbar apps... ...when I press Alt+Tab".
+  snapped windows when I hover over taskbar apps... ...when I press Alt+Tab".
 - Yasb &rightarrow; Replace the files at `C:\Users\[USERNAME]\.config\yasb` with the ones from
   this repository. Add `C:\Users\[USERNAME]\AppData\Local\Yasb` to your path.
-- Komorebi &rightarrow; Add the files in this repository's `Komorebi` folder to `C:\Komorebi` with
-  the ones from this repository. Ensure that the correct amount of monitors are configured in
-  `komorebi.json`.
+- Komorebi &rightarrow; Add the files in this repository's `komorebi` folder to
+  `C:\Users\[USERNAME]\.config\komorebi` on your machine. In `komorebi.json` ensure that the correct
+  amount of monitors are configured and that any absolute paths are valid.
 - AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\AppData\Local\AutoHotkey` folder and paste
   the file from this repository into it. Ensure you configure anything specific to monitor
   resolution. Right click `wm.ahk` and create a shortcut, then rename it to just `wm` and create a
