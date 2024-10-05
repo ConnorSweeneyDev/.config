@@ -19,3 +19,6 @@
 [submodule "posh"]
 	path = posh
 	url = https://github.com/ConnorSweeneyDev/posh
+[submodule "komorebi"]
+	path = komorebi
+	url = https://github.com/ConnorSweeneyDev/komorebi.git
