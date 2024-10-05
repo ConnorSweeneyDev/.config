@@ -13,14 +13,14 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 # System Setup
 ### Local Paths to Modules:
 - LocalState &rightarrow;
-  `C:\Users\[USERNAME]\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
-- ahk &rightarrow; `C:\Users\[USERNAME]\.config\ahk`.
-- komorebi &rightarrow; `C:\Users\[USERNAME]\.config\komorebi`.
-- nvim &rightarrow; `C:\Users\[USERNAME]\.config\nvim`.
-- posh &rightarrow; `C:\Users\[USERNAME]\.config\posh`.
-- pwsh &rightarrow; `C:\Users\[USERNAME]\.config\pwsh`.
-- scripts &rightarrow; `C:\Users\[USERNAME]\.config\scripts`.
-- yasb &rightarrow; `C:\Users\[USERNAME]\.config\yasb`.
+  `$Env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
+- ahk &rightarrow; `$Env:USERPROFILE\.config\ahk`.
+- komorebi &rightarrow; `$Env:USERPROFILE\.config\komorebi`.
+- nvim &rightarrow; `$Env:USERPROFILE\.config\nvim`.
+- posh &rightarrow; `$Env:USERPROFILE\.config\posh`.
+- pwsh &rightarrow; `$Env:USERPROFILE\.config\pwsh`.
+- scripts &rightarrow; `$Env:USERPROFILE\.config\scripts`.
+- yasb &rightarrow; `$Env:USERPROFILE\.config\yasb`.
 
 ### Miscellaneous Prerequisites:
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search
@@ -64,7 +64,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   Neovim requirements is also required for my usage of fzf.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
-- Paste the `C:\Users\[USERNAME]\.config\scripts` folder to that location. Put the `which` and
+- Paste the `$Env:USERPROFILE\.config\scripts` folder to that location. Put the `which` and
   `firefox` sub-directories in your path.
 - Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to
   `C:\Program Files\Mozilla Firefox\firefox.exe`.
@@ -78,12 +78,13 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
 
 # Terminal Setup:
-- Paste the `C:\Users\[USERNAME]\.config\pwsh` folder to that location, then run `notepad $PROFILE`
-  and paste this line into the file that is opened: `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
+- Paste the `$Env:USERPROFILE\.config\pwsh` folder to that location, then run `notepad $PROFILE` and
+  paste this line into the file that is opened: `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
+  (You may have to create the file first if it doesn't exist).
 - Go back to `profile.ps1` and remove the `attend` and `music` functions, as they are specific to
   me. Other than those two functions, skim the rest of the file and remove anything you know you
   won't need - everything is commented so you can be sure of what you're doing.
-- You can use the following aliases in your `C:\Users\[USERNAME]\.gitconfig` file if you want:
+- You can use the following aliases in your `$Env:USERPROFILE\.gitconfig` file if you want:
   ```
   [alias]
     r = restore
@@ -99,7 +100,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
     d = diff
     l = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ```
-- OhMyPosh &rightarrow; Paste the `C:\Users\[USERNAME]\.config\posh` folder to that location and run
+- OhMyPosh &rightarrow; Paste the `$Env:USERPROFILE\.config\posh` folder to that location and run
   `oh-my-posh disable notice` to stop the annoying update message every so often.
 - Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the contents
   in `C:\Fonts`, select all and right click then select "Install". You can delete the .ttf files
@@ -226,7 +227,7 @@ and firefox.
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
 - Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
   shortcut, then properties.
-- Change the target to `C:\Users\[USERNAME]\.config\scripts\firefox\firefoxfocusfix.bat`.
+- Change the target to `$Env:USERPROFILE\.config\scripts\firefox\firefoxfocusfix.bat`.
 - Change Run to `Minimized` (stops the terminal from opening, not the browser).
 - Click Change Icon and browse to `C:\Program Files\Mozilla Firefox` then select the Firefox icon.
 - Apply the changes.
@@ -268,15 +269,15 @@ following these steps:
   taskbar" under the taskbar behaviours.
 - Search `multitasking` and turn off everything under the snap windows section except "Show my
   snapped windows when I hover over taskbar apps... ...when I press Alt+Tab".
-- Yasb &rightarrow; Replace the files at `C:\Users\[USERNAME]\.config\yasb` with the ones from
-  this repository. Add `C:\Users\[USERNAME]\AppData\Local\Yasb` to your path.
+- Yasb &rightarrow; Replace the files at `$Env:USERPROFILE\.config\yasb` with the ones from this
+  repository. Add `$Env:USERPROFILE\AppData\Local\Yasb` to your path.
 - Komorebi &rightarrow; Add the files in this repository's `komorebi` folder to
-  `C:\Users\[USERNAME]\.config\komorebi` on your machine. In `komorebi.json` ensure that the correct
+  `$Env:USERPROFILE\.config\komorebi` on your machine. In `komorebi.json` ensure that the correct
   amount of monitors are configured and that any absolute paths are valid.
-- AutoHotkey &rightarrow; Create the `C:\Users\[USERNAME]\.config\ahk` folder and paste the file
-  from this repository into it. Ensure you configure anything specific to monitor resolution. Right
-  click `wm.ahk` and create a shortcut, then rename it to just `wm` and create a copy of it, one
-  each should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and that folder's
+- AutoHotkey &rightarrow; Create the `$Env:USERPROFILE\.config\ahk` folder and paste the file from
+  this repository into it. Ensure you configure anything specific to monitor resolution. Right click
+  `wm.ahk` and create a shortcut, then rename it to just `wm` and create a copy of it, one each
+  should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and that folder's
   sub-directory `Startup`. Now it will be run at startup and is accessible from the start menu in
   case you need to restart the manager.
 - If you want, download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run
