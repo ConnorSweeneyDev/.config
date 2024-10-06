@@ -19,3 +19,6 @@
 [submodule "LocalState"]
 	path = LocalState
 	url = https://github.com/ConnorSweeneyDev/LocalState
+[submodule "which"]
+	path = which
+	url = https://github.com/ConnorSweeneyDev/which
