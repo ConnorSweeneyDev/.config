@@ -173,17 +173,20 @@ some exceptions):
 - If it needs one, add an `after\plugin\[PLUGIN].lua` file for the plugin and restart neovim.
 
 The following plugins require extra or different steps than those outlined above:
-- Telescope &rightarrow; This should be installed at the same time as telescope-ui-select,
+- Telescope &rightarrow; This should be installed at the same time as telescope-ui-select.nvim,
   `after\plugin\telescope.lua` requires both of these plugins to be installed.
-- Leap &rightarrow; This should be installed at the same time as leap-by-word,
+- Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim,
   `after\plugin\leap.lua` requires both of these plugins to be installed.
+- Colorscheme &rightarrow; vim-transparent and vscode.nvim should both be installed at the same
+  time, their plugin file is `after\plugin\colors.lua`.
 - Treesitter &rightarrow; After following the steps, you should see it compiling languages - don't
   touch your keyboard until this is finished, though it is common to get errors at this point, if
   you do, generally restarting neovim a few times and deleting any directories manually that it says
   it doesn't have permission to delete will let them all figure themselves out. However if you get
   an error along the lines of `[LANGUAGE].so is not a valid Win32 app`, this means either your
-  version of MinGW does not match your operating system or treesitter is using the wrong compiler.
-  After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
+  version of MinGW does not match your operating system or treesitter is using the wrong compiler
+  for that specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to
+  recompile it.
 - Coc &rightarrow; After following the steps, run `:CocInstall coc-diagnostic coc-copilot coc-git
   coc-html coc-tsserver coc-css coc-json coc-xml coc-sql coc-pyright coc-java coc-clangd
   coc-clang-format-style-options` then `:q` to close the dialog once everything is installed. Now
@@ -194,9 +197,6 @@ The following plugins require extra or different steps than those outlined above
   [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
 - Copilot &rightarrow; If you don't have a license for Copilot then don't include this plugin. If
   you do, then after following the steps run `:Copilot setup` and follow the instructions.
-- Colorscheme &rightarrow; You can use the one that I use, but if you don't want to you will have to
-  change the lines in `lua\main\lazy.lua`, `after\plugin\colors.lua` and
-  `after\plugin\lualine.lua` accordingly.
 
 You can now add the `after\ftplugin` folder and any files inside it, which are used for language
 specific configuration; After that, don't forget to include `after\plugin\buffers.lua`.
