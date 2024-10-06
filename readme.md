@@ -1,8 +1,8 @@
 # Windows11Workflow
-All my dotfiles, using Neovim with PowerShell Core in the Windows Terminal along with fzf and a
-custom scripts folder for fast navigation. Additionally, there is a quick setup for Firefox with
-Tridactyl and for a Tiling Window Manager using Komorebi with Yasb and AutoHotkey. You will also
-find a list of other useful tools at the end.
+All my dotfiles, using Neovim with PowerShell Core in the Windows Terminal along with fzf and
+wrapper for it for fast navigation. Additionally, there is a quick setup for Firefox with Tridactyl
+and for a Tiling Window Manager using Komorebi with Yasb and AutoHotkey. You will also find a list
+of other useful tools at the end.
 
 https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 
@@ -23,7 +23,7 @@ dependencies before trying to set up a later section.
 - nvim &rightarrow; `$Env:USERPROFILE\.config\nvim`.
 - posh &rightarrow; `$Env:USERPROFILE\.config\posh`.
 - pwsh &rightarrow; `$Env:USERPROFILE\.config\pwsh`.
-- scripts &rightarrow; `$Env:USERPROFILE\.config\scripts`.
+- which &rightarrow; `$Env:USERPROFILE\.config\which`.
 - yasb &rightarrow; `$Env:USERPROFILE\.config\yasb`.
 
 ### Setup
@@ -96,12 +96,11 @@ dependencies before trying to set up a later section.
   face` property inside the `defaults` to the name of the font you have installed. After doing all
   of this, you can tweak other settings to your liking by using the settings gui in Windows
   Terminal.
-- Paste the `$Env:USERPROFILE\.config\scripts` folder to that location. Put the `which`
-  sub-directory in your path.
+- Paste the `$Env:USERPROFILE\.config\which` folder to that location and put it in your path.
 
 # Neovim
 ### Dependencies
-- Complete the Scripts Folder section first.
+- Complete the Terminal section first.
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
   [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and
   run the installation wizard.
