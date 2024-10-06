@@ -13,9 +13,6 @@
 [submodule "komorebi"]
 	path = komorebi
 	url = https://github.com/ConnorSweeneyDev/komorebi.git
-[submodule "scripts"]
-	path = scripts
-	url = https://github.com/ConnorSweeneyDev/scripts
 [submodule "ahk"]
 	path = ahk
 	url = https://github.com/ConnorSweeneyDev/ahk
