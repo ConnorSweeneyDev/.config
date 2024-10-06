@@ -77,35 +77,27 @@ dependencies before trying to set up a later section.
     d = diff
     l = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ```
-- Paste the `$Env:USERPROFILE\.config\posh` folder to that location and run
-  `oh-my-posh disable notice` to stop the annoying update message every so often.
+- Paste the `$Env:USERPROFILE\.config\posh` folder to that location and run `oh-my-posh disable
+  notice` to stop the annoying update message every so often.
 - Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the contents
   in `C:\Fonts`, select all and right click then select "Install". You can delete the .ttf files
   from the folder after you've installed them.
+- If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can
+  replace the following sections of your own `LocalState\settings.json` file with the ones from this
+  repository:
+  - The entire `actions` section.
+  - Everything between the `actions` section and the `profiles` section.
+  - The `defaults` section inside of the `profiles` section.
+  - Assuming you have it installed, everything inside the PowerShell Core (pwsh.exe) section inside
+    the `profiles: list` section, except the `guid` and `source` fields.
+  - Everything below the `schemes` section.
 
-If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can
-replace the following sections of your own `LocalState\settings.json` file with the ones from this
-repository:
-- The entire `actions` section.
-- Everything between the `actions` section and the `profiles` section.
-- The `defaults` section inside of the `profiles` section.
-- Assuming you have it installed, everything inside the PowerShell Core (pwsh.exe) section inside
-  the `profiles: list` section, except the `guid` and `source` fields.
-- Everything below the `schemes` section.
-
-If you don't want to install my font, you can still follow the above list but change the `font:
-face` property inside the `defaults` to the name of the font you have installed. After doing all of
-this, you can tweak other settings to your liking by using the settings gui in Windows Terminal.
-
-# Scripts Folder
-### Dependencies
-- Complete the Terminal section first.
-- NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
-
-### Setup
-Paste the `$Env:USERPROFILE\.config\scripts` folder to that location. Put the `which` and `firefox`
-sub-directories in your path. You can ignore the `firefox` directory if you are planning to ignore
-the Firefox section below.
+  If you don't want to install my font, you can still follow the above list but change the `font:
+  face` property inside the `defaults` to the name of the font you have installed. After doing all
+  of this, you can tweak other settings to your liking by using the settings gui in Windows
+  Terminal.
+- Paste the `$Env:USERPROFILE\.config\scripts` folder to that location. Put the `which`
+  sub-directory in your path.
 
 # Neovim
 ### Dependencies
@@ -230,7 +222,6 @@ only use it when I have to use a remote machine or someone else's computer.
 
 # Firefox with Tridactyl
 ### Dependencies
-- Complete the Scripts Folder section first.
 - Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to
   `C:\Program Files\Mozilla Firefox\firefox.exe`.
 - Tridactyl &rightarrow; Go
@@ -238,15 +229,8 @@ only use it when I have to use a remote machine or someone else's computer.
   on Firefox.
 
 ### Setup
-To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
-- Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
-  shortcut, then properties.
-- Change the target to `$Env:USERPROFILE\.config\scripts\firefox\firefoxfocusfix.bat`.
-- Change Run to `Minimized` (stops the terminal from opening, not the browser).
-- Click Change Icon and browse to `C:\Program Files\Mozilla Firefox` then select the Firefox icon.
-- Apply the changes.
-
-Now make firefox your default browser. After that go to Firefox settings and change the following:
+First, make firefox your default browser. After that go to Firefox settings and change the
+following:
 - General &rightarrow; Use recommended performance settings = Off.
 - General &rightarrow; Use hardware acceleration when available = Off.
 - Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; Open a new
@@ -273,8 +257,8 @@ view all the most important bindings.
 
 # Tiling Window Manager
 ### Dependencies
-- Yasb &rightarrow; Run `winget install --id AmN.yasb`.
 - Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`.
+- Yasb &rightarrow; Run `winget install --id AmN.yasb`.
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
 - ToggleRoundedCorners &rightarrow; Download the portable executable from
   [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to
@@ -289,17 +273,17 @@ view all the most important bindings.
   taskbar" under the taskbar behaviours.
 - Search `multitasking` and turn off everything under the snap windows section except "Show my
   snapped windows when I hover over taskbar apps... ...when I press Alt+Tab".
-- Yasb &rightarrow; Replace the files at `$Env:USERPROFILE\.config\yasb` with the ones from this
-  repository. Add `$Env:USERPROFILE\AppData\Local\Yasb` to your path.
-- Komorebi &rightarrow; Add the files in this repository's `komorebi` folder to
-  `$Env:USERPROFILE\.config\komorebi` on your machine. In `komorebi.json` ensure that the correct
-  amount of monitors are configured and that any absolute paths are valid.
-- AutoHotkey &rightarrow; Create the `$Env:USERPROFILE\.config\ahk` folder and paste the file from
-  this repository into it. Ensure you configure anything specific to monitor resolution. Right click
-  `wm.ahk` and create a shortcut, then rename it to just `wm` and create a copy of it, one each
-  should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and that folder's
-  sub-directory `Startup`. Now it will be run at startup and is accessible from the start menu in
-  case you need to restart the manager.
+- Add the files in this repository's `komorebi` folder to `$Env:USERPROFILE\.config\komorebi` on
+  your machine. In `komorebi.json` ensure that the correct amount of monitors are configured and
+  that any absolute paths are valid.
+- Replace the files at `$Env:USERPROFILE\.config\yasb` with the ones from this repository. Add
+  `$Env:USERPROFILE\AppData\Local\Yasb` to your path.
+- Create the `$Env:USERPROFILE\.config\ahk` folder and paste the file from this repository into it.
+  Ensure you configure anything specific to monitor resolution. Right click `wm.ahk` and create a
+  shortcut, then rename it to just `wm` and create a copy of it, one each should be moved to
+  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and that folder's sub-directory `Startup`.
+  Now it will be run at startup and is accessible from the start menu in case you need to restart
+  the manager, and all three processes can be killed from the task manager.
 - Restart your PC.
 
 Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be
