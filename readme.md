@@ -32,6 +32,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 
 ### Dependencies for the Terminal:
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
+- gsudo &rightarrow; Run `winget install --id gerardog.gsudo`.
 - PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
 - OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
 
@@ -76,6 +77,9 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Yasb &rightarrow; Run `winget install --id AmN.yasb`.
 - Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`.
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
+- ToggleRoundedCorners &rightarrow; Download the portable executable from
+  [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases). Place it in
+  `C:\ToggleRoundedCorners`.
 
 # Terminal Setup:
 - Paste the `$Env:USERPROFILE\.config\pwsh` folder to that location, then run `notepad $PROFILE` and
@@ -84,6 +88,11 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - Go back to `profile.ps1` and remove the `attend` and `music` functions, as they are specific to
   me. Other than those two functions, skim the rest of the file and remove anything you know you
   won't need - everything is commented so you can be sure of what you're doing.
+- To set up gsudo after installing it, run the following commands:
+  - `sudo config PowerShellLoadProfile true`.
+  - `sudo config CacheMode auto`.
+  - `sudo config CacheDuration infinite`.
+  - `sudo config LogLevel None`.
 - You can use the following aliases in your `$Env:USERPROFILE\.gitconfig` file if you want:
   ```
   [alias]
@@ -282,14 +291,8 @@ following these steps:
   should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and that folder's
   sub-directory `Startup`. Now it will be run at startup and is accessible from the start menu in
   case you need to restart the manager.
-- If you want, download this [tool](https://github.com/valinet/Win11DisableRoundedCorners) and run
-  it to disable rounded corners for windows. If you choose to do this, occasionally you will see
-  that the rounded corners are back, in which case you need to delete (or move)
-  `C:\Windows\System32\uDWM_win11drc.bak` and run it again - don't worry, this is just the backup
-  file created by the tool the last time it was patched, not an actual system file, although the
-  tool does modify uDWM.dll which is a real system file, so run at your own risk. This is not
-  necessary and most of the time you won't notice the rounded corners anyway due to the window
-  manager.
+- DisableRoundedCorners &rightarrow; Add `C:\ToggleRoundedCorners` to your path and rename the
+  executable file inside it to `trc.exe`.
 - Restart your PC.
 
 Keybinds can be configured in `wm.ahk`, the status bar can be configured in the Yasb `config.yaml`
