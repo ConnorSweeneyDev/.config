@@ -87,6 +87,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - You can use the following aliases in your `$Env:USERPROFILE\.gitconfig` file if you want:
   ```
   [alias]
+    i = init
     r = restore
     cl = clone
     pl = pull
