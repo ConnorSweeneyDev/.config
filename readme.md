@@ -15,7 +15,7 @@ The layout of this repository assumes a chronological reading, meaning that depe
 section may carry over to later sections, so it is recommended to install all the previous
 dependencies before trying to set up a later section.
 
-### Local Paths to Modules:
+### Local Paths to Modules
 - LocalState &rightarrow;
   `$Env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
 - ahk &rightarrow; `$Env:USERPROFILE\.config\ahk`.
@@ -34,8 +34,8 @@ dependencies before trying to set up a later section.
   alternative installs for all dependencies on either
   [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
 
-# Terminal:
-### Dependencies:
+# Terminal
+### Dependencies
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
 - PowerShell Core (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source
   winget`.
@@ -47,7 +47,7 @@ dependencies before trying to set up a later section.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
 
-### Setup:
+### Setup
 - Paste the `$Env:USERPROFILE\.config\pwsh` folder to that location, then run `notepad $PROFILE` and
   paste this line into the file that is opened: `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
   (You may have to create the file first if it doesn't exist).
@@ -98,17 +98,17 @@ face` property inside the `defaults` to the name of the font you have installed.
 this, you can tweak other settings to your liking by using the settings gui in Windows Terminal.
 
 # Scripts Folder
-### Dependencies:
+### Dependencies
 - Complete the Terminal section first.
 - NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
 
-### Setup:
+### Setup
 Paste the `$Env:USERPROFILE\.config\scripts` folder to that location. Put the `which` and `firefox`
 sub-directories in your path. You can ignore the `firefox` directory if you are planning to ignore
 the Firefox section below.
 
 # Neovim
-### Dependencies:
+### Dependencies
 - Complete the Scripts Folder section first.
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
   [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and
@@ -128,7 +128,7 @@ the Firefox section below.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 
-### Setup:
+### Setup
 After setting up the terminal and installing all the dependencies for this section, I recommend
 manually recreating the `nvim` folder on your PC rather than just pasting it in, because this will
 allow you to single out any unexpected errors as they happen.
@@ -229,7 +229,7 @@ that can run neovim. You can find it [here](https://github.com/ConnorSweeneyDev/
 only use it when I have to use a remote machine or someone else's computer.
 
 # Firefox with Tridactyl
-### Dependencies:
+### Dependencies
 - Complete the Scripts Folder section first.
 - Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to
   `C:\Program Files\Mozilla Firefox\firefox.exe`.
@@ -237,7 +237,7 @@ only use it when I have to use a remote machine or someone else's computer.
   [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md)
   on Firefox.
 
-### Setup:
+### Setup
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
 - Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
   shortcut, then properties.
@@ -272,7 +272,7 @@ You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#high
 view all the most important bindings.
 
 # Tiling Window Manager
-### Dependencies:
+### Dependencies
 - Yasb &rightarrow; Run `winget install --id AmN.yasb`.
 - Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`.
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
@@ -280,7 +280,7 @@ view all the most important bindings.
   [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to
   `trc.exe`. Place it in `C:\ToggleRoundedCorners` and put that folder in your path.
 
-### Setup:
+### Setup
 - Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled'
   -Value 1` in PowerShell Core as an admin.
 - Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" -
