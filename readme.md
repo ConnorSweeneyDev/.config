@@ -1,8 +1,8 @@
 # Windows11Workflow
-All my dotfiles, using Neovim with PowerShell in the Windows Terminal along with fzf and bat for
-fast navigation. Additionally, there is a quick setup for Tridactyl on Firefox, a Tiling Window
-Manager and a toggleable Vim mode on the ZSA Voyager keyboard. You will also find a list of other
-useful tools at the end.
+All my dotfiles, using Neovim with PowerShell Core in the Windows Terminal along with fzf and a
+custom scripts folder for fast navigation. Additionally, there is a quick setup for Firefox with
+Tridactyl and for a Tiling Window Manager using Komorebi with Yasb and AutoHotkey. You will also
+find a list of other useful tools at the end.
 
 https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 
@@ -10,7 +10,11 @@ https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 workspaces and a status bar rather than a taskbar, many command line utilities, some custom scripts,
 a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal.*
 
-# System Setup
+# System
+The layout of this repository assumes a chronological reading, meaning that dependencies from one
+section may carry over to later sections, so it is recommended to install all the previous
+dependencies before trying to set up a later section.
+
 ### Local Paths to Modules:
 - LocalState &rightarrow;
   `$Env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
@@ -22,7 +26,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
 - scripts &rightarrow; `$Env:USERPROFILE\.config\scripts`.
 - yasb &rightarrow; `$Env:USERPROFILE\.config\yasb`.
 
-### Miscellaneous Prerequisites:
+### Setup
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search
   `developer`).
 - Ensure you are able to access and use the Windows Store, winget relies on this for certain things.
@@ -30,58 +34,20 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
   alternative installs for all dependencies on either
   [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
 
-### Dependencies for the Terminal:
+# Terminal:
+### Dependencies:
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
+- PowerShell Core (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source
+  winget`.
 - gsudo &rightarrow; Run `winget install --id gerardog.gsudo`.
-- PowerShell (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
-- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
-
-### Dependencies for Neovim:
-- Follow the terminal setup below first.
-- Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
-  [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and
-  run the installation wizard.
-- Java &rightarrow; Download the compressed archive from
-  [here](https://www.oracle.com/java/technologies/downloads/) and place the folder named
-  `jdk-[VERSION]` in `C:\Program Files\Java` then add `C:\Program Files\Java\jdk-[VERSION]\bin` to
-  your path.
-- MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW`
-  (I recommend 64-bit with POSIX threads for general purpose use). Add `C:\MinGW\bin` to your path.
-- Git &rightarrow; Run `winget install --id Git.Git --source winget` then `git config --system
+- Git &rightarrow; Run `winget install --id Git.Git --source winget`, then run `git config --system
   core.longpaths true`.
-- Python &rightarrow; Run `winget install --id Python.Python.3.10`.
-- NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
-- Deno &rightarrow; Run `winget install --id DenoLand.Deno`.
-- Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
-- ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
+- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
+- fzf &rightarrow; Run `winget install --id=junegunn.fzf`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
-- Neovim &rightarrow; Run `winget install neovim --version 0.10.0`.
-- Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
-- NodeJS Provider &rightarrow; Run `npm install -g neovim`.
-
-### Dependencies for the Scripts Folder and Firefox:
-- fzf &rightarrow; Run `winget install --id=junegunn.fzf` or download the exe from
-  [here](https://github.com/junegunn/fzf-bin/releases) and put it in `C:\Windows`; fd from the
-  Neovim requirements is also required for my usage of fzf.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
-- NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
-- Paste the `$Env:USERPROFILE\.config\scripts` folder to that location. Put the `which` and
-  `firefox` sub-directories in your path.
-- Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to
-  `C:\Program Files\Mozilla Firefox\firefox.exe`.
-- Tridactyl &rightarrow; Go
-  [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md)
-  on Firefox.
 
-### Dependencies for Tiling Window Manager:
-- Yasb &rightarrow; Run `winget install --id AmN.yasb`.
-- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`.
-- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
-- ToggleRoundedCorners &rightarrow; Download the portable executable from
-  [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases). Place it in
-  `C:\ToggleRoundedCorners`.
-
-# Terminal Setup:
+### Setup:
 - Paste the `$Env:USERPROFILE\.config\pwsh` folder to that location, then run `notepad $PROFILE` and
   paste this line into the file that is opened: `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
   (You may have to create the file first if it doesn't exist).
@@ -111,7 +77,7 @@ a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal
     d = diff
     l = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ```
-- OhMyPosh &rightarrow; Paste the `$Env:USERPROFILE\.config\posh` folder to that location and run
+- Paste the `$Env:USERPROFILE\.config\posh` folder to that location and run
   `oh-my-posh disable notice` to stop the annoying update message every so often.
 - Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the contents
   in `C:\Fonts`, select all and right click then select "Install". You can delete the .ttf files
@@ -123,15 +89,46 @@ repository:
 - The entire `actions` section.
 - Everything between the `actions` section and the `profiles` section.
 - The `defaults` section inside of the `profiles` section.
-- Assuming you have it installed, everything inside the PowerShell (pwsh.exe) section inside the
-  `profiles: list` section, except the `guid` and `source` fields.
+- Assuming you have it installed, everything inside the PowerShell Core (pwsh.exe) section inside
+  the `profiles: list` section, except the `guid` and `source` fields.
 - Everything below the `schemes` section.
 
 If you don't want to install my font, you can still follow the above list but change the `font:
 face` property inside the `defaults` to the name of the font you have installed. After doing all of
 this, you can tweak other settings to your liking by using the settings gui in Windows Terminal.
 
-# Neovim Setup
+# Scripts Folder
+### Dependencies:
+- Complete the Terminal section first.
+- NirCmd &rightarrow; Run `winget install --id NirSoft.NirCmd`.
+
+### Setup:
+Paste the `$Env:USERPROFILE\.config\scripts` folder to that location. Put the `which` and `firefox`
+sub-directories in your path. You can ignore the `firefox` directory if you are planning to ignore
+the Firefox section below.
+
+# Neovim
+### Dependencies:
+- Complete the Scripts Folder section first.
+- Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
+  [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and
+  run the installation wizard.
+- Java &rightarrow; Download the compressed archive from
+  [here](https://www.oracle.com/java/technologies/downloads/) and place the folder named
+  `jdk-[VERSION]` in `C:\Program Files\Java` then add `C:\Program Files\Java\jdk-[VERSION]\bin` to
+  your path.
+- MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW`
+  (I recommend 64-bit with POSIX threads for general purpose use). Add `C:\MinGW\bin` to your path.
+- Python &rightarrow; Run `winget install --id Python.Python.3.10`.
+- NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
+- Deno &rightarrow; Run `winget install --id DenoLand.Deno`.
+- Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
+- ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
+- Neovim &rightarrow; Run `winget install neovim --version 0.10.0`.
+- Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
+- NodeJS Provider &rightarrow; Run `npm install -g neovim`.
+
+### Setup:
 After setting up the terminal and installing all the dependencies for this section, I recommend
 manually recreating the `nvim` folder on your PC rather than just pasting it in, because this will
 allow you to single out any unexpected errors as they happen.
@@ -226,15 +223,21 @@ settings can be edited at `lua\main\remap.lua`, `lua\main\set.lua` or the respec
 `after\plugin\[PLUGIN].lua` files. Furthermore, all language specific settings can be edited at
 `after\ftplugin\[EXTENSION].lua` and language server settings can be edited at `coc-settings.json`.
 
-## Portable Setup
+## Portable Neovim
 I also have an extremely minimal setup (one file) that can be cloned and run on any machine
 that can run neovim. You can find it [here](https://github.com/ConnorSweeneyDev/nvim-portable), I
-mostly use it for when I have to use a remote machine or someone else's computer.
+only use it when I have to use a remote machine or someone else's computer.
 
-# Firefox with Tridactyl Setup
-Only continue with this section if you have installed all the dependencies for the scripts folder
-and firefox.
+# Firefox with Tridactyl
+### Dependencies:
+- Complete the Scripts Folder section first.
+- Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to
+  `C:\Program Files\Mozilla Firefox\firefox.exe`.
+- Tridactyl &rightarrow; Go
+  [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md)
+  on Firefox.
 
+### Setup:
 To use `firefoxfocusfix.bat` from the start menu rather than just the terminal, follow these steps:
 - Go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and right click on the Firefox
   shortcut, then properties.
@@ -268,12 +271,18 @@ Using Tridactyl, press `:` and type the following commands:
 You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to
 view all the most important bindings.
 
-# Tiling Window Manager Setup
-After installing all the dependencies for this section, you can set up a tiling window manager with
-[komorebi](https://github.com/LGUG2Z/komorebi) and [yasb](https://github.com/amnweb/yasb) by
-following these steps:
+# Tiling Window Manager
+### Dependencies:
+- Yasb &rightarrow; Run `winget install --id AmN.yasb`.
+- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`.
+- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
+- ToggleRoundedCorners &rightarrow; Download the portable executable from
+  [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to
+  `trc.exe`. Place it in `C:\ToggleRoundedCorners` and put that folder in your path.
+
+### Setup:
 - Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled'
-  -Value 1` in PowerShell as an admin.
+  -Value 1` in PowerShell Core as an admin.
 - Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" -
   enable "Turn off all unnecessary animations (when possible)".
 - Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the
@@ -291,25 +300,17 @@ following these steps:
   should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and that folder's
   sub-directory `Startup`. Now it will be run at startup and is accessible from the start menu in
   case you need to restart the manager.
-- DisableRoundedCorners &rightarrow; Add `C:\ToggleRoundedCorners` to your path and rename the
-  executable file inside it to `trc.exe`.
 - Restart your PC.
 
-Keybinds can be configured in `wm.ahk`, the status bar can be configured in the Yasb `config.yaml`
-and `styles.css` files, and the window manager can be configured by editing `komorebi.json`,
-`applications.yaml` and any `*.json` files for custom layouts.
-
-# Vim Mode on the ZSA Voyager
-If you happen to use a ZSA Voyager keyboard, you can follow the instructions in my
-[VimForVoyager](https://github.com/ConnorSweeneyDev/VimForVoyager) repository to set up a native vim
-toggle using a smart combination of utility keys like `home`, `end`, `delete` etc. and modifiers
-like `shift + arrow`, `ctrl + arrow` etc. meaning these bindings work almost everywhere.
-
-This is achieved using the QMK firmware, more specifically ZSA's fork of it, and programming certain
-actions to be triggered by certain key combinations. Details of exactly what is supported can be
-found in the repository.
+Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be
+configured in the Yasb `config.yaml` and `styles.css` files, and the window manager can be
+configured by Komorebi's `komorebi.json`, `applications.yaml` and any `*.json` files for custom
+layouts.
 
 # Other Useful Tools
+VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForVoyager) and follow
+the setup guide for a native Vim toggle for QMK keyboards.
+
 PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - enable Run at
 startup - my favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous
