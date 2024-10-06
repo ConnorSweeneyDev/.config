@@ -1,5 +1,5 @@
 # Windows11Workflow
-All my dotfiles, using Neovim with PowerShell Core in the Windows Terminal along with fzf and
+All my dotfiles, using Neovim with PowerShell Core in the Windows Terminal along with fzf and a
 wrapper for it for fast navigation. Additionally, there is a quick setup for Firefox with Tridactyl
 and for a Tiling Window Manager using Komorebi with Yasb and AutoHotkey. You will also find a list
 of other useful tools at the end.
