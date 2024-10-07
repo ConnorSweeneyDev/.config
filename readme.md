@@ -6,9 +6,9 @@ of other useful tools at the end.
 
 https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 
-*Showcase: An overhaul of the Windows development experience, using a tiling window manager with
-workspaces and a status bar rather than a taskbar, many command line utilities, some custom scripts,
-a lot of hotkeys and a fully fledged Neovim setup that uses the Windows Terminal.*
+*Showcase: An overhaul of Windows, using a tiling window manager with workspaces and a status bar
+rather than a taskbar, many command line utilities, some custom scripts, a lot of hotkeys and a
+fully fledged Neovim setup that uses the Windows Terminal with PowerShell Core.*
 
 # System
 The layout of this repository assumes a chronological reading, meaning that dependencies from one
@@ -33,6 +33,8 @@ dependencies before trying to set up a later section.
   If you can't access the store (it's known to be glitchy for some accounts) then you can find
   alternative installs for all dependencies on either
   [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
+- You can right click your desktop and go to "View" and then "Hide desktop icons" to have a clean
+  desktop.
 
 # Terminal
 ### Dependencies
