@@ -175,8 +175,6 @@ some exceptions):
 - If it needs one, add an `after\plugin\[PLUGIN].lua` file for the plugin and restart neovim.
 
 The following plugins require extra or different steps than those outlined above:
-- Telescope &rightarrow; This should be installed at the same time as telescope-ui-select.nvim,
-  `after\plugin\telescope.lua` requires both of these plugins to be installed.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim,
   `after\plugin\leap.lua` requires both of these plugins to be installed.
 - Colorscheme &rightarrow; vim-transparent and vscode.nvim should both be installed at the same
