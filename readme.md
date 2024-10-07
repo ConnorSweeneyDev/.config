@@ -42,8 +42,7 @@ dependencies before trying to set up a later section.
 - PowerShell Core (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source
   winget`.
 - gsudo &rightarrow; Run `winget install --id gerardog.gsudo`.
-- Git &rightarrow; Run `winget install --id Git.Git --source winget`, then run `git config --system
-  core.longpaths true`.
+- Git &rightarrow; Run `winget install --id Git.Git --source winget`.
 - OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
@@ -61,7 +60,8 @@ dependencies before trying to set up a later section.
   - `sudo config CacheMode auto`.
   - `sudo config CacheDuration infinite`.
   - `sudo config LogLevel None`.
-- You can use the following aliases in your `$Env:USERPROFILE\.gitconfig` file if you want:
+- Run `git config --system core.longpaths true`. After that you can use the following aliases in
+  your `$Env:USERPROFILE\.gitconfig` file if you want:
   ```
   [alias]
     i = init
