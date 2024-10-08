@@ -1,14 +1,14 @@
 # Windows11Workflow
-All my dotfiles, using Neovim with PowerShellCore in the Windows Terminal along with fzf and a
-wrapper for it for fast navigation. Additionally, there is a quick setup for Firefox with Tridactyl
-and for a Tiling Window Manager using Komorebi with Yasb and AutoHotkey. You will also find a list
-of other useful tools at the end.
+All my dotfiles, using Neovim with PowerShellCore in Wezterm along with fzf and a wrapper for it for
+fast navigation. Additionally, there is a quick setup for Firefox with Tridactyl and for a Tiling
+Window Manager using Komorebi with Yasb and AutoHotkey. You will also find a list of other useful
+tools at the end.
 
 https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 
 *Showcase: An overhaul of Windows, using a tiling window manager with workspaces and a status bar
 rather than a taskbar, many command line utilities, some custom scripts, a lot of hotkeys and a
-fully fledged Neovim setup that uses the Windows Terminal with PowerShellCore.*
+fully fledged Neovim setup that uses Wezterm with PowerShellCore.*
 
 The layout of this repository assumes a chronological reading, meaning that dependencies from one
 section may carry over to later sections, so it is recommended to install all the previous
@@ -16,13 +16,12 @@ dependencies before trying to set up a later section.
 
 # System
 ### Local Paths to Modules
-- LocalState &rightarrow;
-  `$Env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
 - ahk &rightarrow; `$Env:USERPROFILE\.config\ahk`.
 - komorebi &rightarrow; `$Env:USERPROFILE\.config\komorebi`.
 - nvim &rightarrow; `$Env:USERPROFILE\.config\nvim`.
 - posh &rightarrow; `$Env:USERPROFILE\.config\posh`.
 - pwsh &rightarrow; `$Env:USERPROFILE\.config\pwsh`.
+- wezterm &rightarrow; `$Env:USERPROFILE\.config\wezterm`.
 - which &rightarrow; `$Env:USERPROFILE\.config\which`.
 - yasb &rightarrow; `$Env:USERPROFILE\.config\yasb`.
 
@@ -38,7 +37,7 @@ dependencies before trying to set up a later section.
 
 # Terminal
 ### Dependencies
-- Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
+- Wezterm &rightarrow; Run `winget install --id wez.wezterm`.
 - PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget
   --version 7.4.5.0`.
 - gsudo &rightarrow; Run `winget install --id gerardog.gsudo`.
@@ -49,6 +48,11 @@ dependencies before trying to set up a later section.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
 
 ### Setup
+- Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the contents
+  in `C:\Fonts`, select all and right click then select "Install". You can delete the .ttf files
+  from the folder after you've installed them.
+- Paste the `$Env:USERPROFILE\.config\wezterm` folder to that location and change the font face to
+  whatever NerdFont you installed.
 - Paste the `$Env:USERPROFILE\.config\pwsh` folder to that location, then run `notepad $PROFILE` and
   paste this line into the file that is opened: `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
   (You may have to create the file first if it doesn't exist).
@@ -65,7 +69,8 @@ dependencies before trying to set up a later section.
   ```
   [alias]
     i = init
-    r = restore
+    re = remote
+    rs = restore
     cl = clone
     pl = pull
     a = add
@@ -81,23 +86,6 @@ dependencies before trying to set up a later section.
   ```
 - Paste the `$Env:USERPROFILE\.config\posh` folder to that location and run `oh-my-posh disable
   notice` to stop the annoying update message every so often.
-- Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the contents
-  in `C:\Fonts`, select all and right click then select "Install". You can delete the .ttf files
-  from the folder after you've installed them.
-- If you want my exact settings including the same font I use (CaskaydiaCove Nerd Font), you can
-  replace the following sections of your own `LocalState\settings.json` file with the ones from this
-  repository:
-  - The entire `actions` section.
-  - Everything between the `actions` section and the `profiles` section.
-  - The `defaults` section inside of the `profiles` section.
-  - Assuming you have it installed, everything inside the PowerShellCore section inside
-    the `profiles: list` section, except the `guid` and `source` fields.
-  - Everything below the `schemes` section.
-
-  If you don't want to install my font, you can still follow the above list but change the `font:
-  face` property inside the `defaults` to the name of the font you have installed. After doing all
-  of this, you can tweak other settings to your liking by using the settings gui in Windows
-  Terminal.
 - Paste the `$Env:USERPROFILE\.config\which` folder to that location and put it in your path.
 
 # Neovim
