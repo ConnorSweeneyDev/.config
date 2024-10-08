@@ -1,5 +1,5 @@
 # Windows11Workflow
-All my dotfiles, using Neovim with PowerShell Core in the Windows Terminal along with fzf and a
+All my dotfiles, using Neovim with PowerShellCore in the Windows Terminal along with fzf and a
 wrapper for it for fast navigation. Additionally, there is a quick setup for Firefox with Tridactyl
 and for a Tiling Window Manager using Komorebi with Yasb and AutoHotkey. You will also find a list
 of other useful tools at the end.
@@ -39,8 +39,8 @@ dependencies before trying to set up a later section.
 # Terminal
 ### Dependencies
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
-- PowerShell Core (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source
-  winget --version 7.4.5.0`.
+- PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget
+  --version 7.4.5.0`.
 - gsudo &rightarrow; Run `winget install --id gerardog.gsudo`.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`.
 - OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh --version 23.16.0`.
@@ -90,7 +90,7 @@ dependencies before trying to set up a later section.
   - The entire `actions` section.
   - Everything between the `actions` section and the `profiles` section.
   - The `defaults` section inside of the `profiles` section.
-  - Assuming you have it installed, everything inside the PowerShell Core (pwsh.exe) section inside
+  - Assuming you have it installed, everything inside the PowerShellCore section inside
     the `profiles: list` section, except the `guid` and `source` fields.
   - Everything below the `schemes` section.
 
@@ -265,7 +265,7 @@ view all the most important bindings.
 
 ### Setup
 - Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled'
-  -Value 1` in PowerShell Core as an admin.
+  -Value 1` in PowerShellCore as an admin.
 - Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" -
   enable "Turn off all unnecessary animations (when possible)".
 - Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the
