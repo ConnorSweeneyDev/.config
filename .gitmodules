@@ -16,9 +16,6 @@
 [submodule "ahk"]
 	path = ahk
 	url = https://github.com/ConnorSweeneyDev/ahk
-[submodule "LocalState"]
-	path = LocalState
-	url = https://github.com/ConnorSweeneyDev/LocalState
 [submodule "which"]
 	path = which
 	url = https://github.com/ConnorSweeneyDev/which
