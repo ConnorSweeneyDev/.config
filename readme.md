@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 
 *Showcase: An overhaul of Windows, using a tiling window manager with workspaces and a status bar
 rather than a taskbar, many command line utilities, some custom scripts, a lot of hotkeys and a
-fully fledged Neovim setup that uses the Windows Terminal with PowerShell Core.*
+fully fledged Neovim setup that uses the Windows Terminal with PowerShellCore.*
 
 # System
 The layout of this repository assumes a chronological reading, meaning that dependencies from one
