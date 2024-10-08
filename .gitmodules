@@ -19,3 +19,6 @@
 [submodule "which"]
 	path = which
 	url = https://github.com/ConnorSweeneyDev/which
+[submodule "wezterm"]
+	path = wezterm
+	url = https://github.com/ConnorSweeneyDev/wezterm
