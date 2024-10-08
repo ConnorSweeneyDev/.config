@@ -10,11 +10,11 @@ https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 rather than a taskbar, many command line utilities, some custom scripts, a lot of hotkeys and a
 fully fledged Neovim setup that uses the Windows Terminal with PowerShellCore.*
 
-# System
 The layout of this repository assumes a chronological reading, meaning that dependencies from one
 section may carry over to later sections, so it is recommended to install all the previous
 dependencies before trying to set up a later section.
 
+# System
 ### Local Paths to Modules
 - LocalState &rightarrow;
   `$Env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_[NUMBER]\LocalState`.
