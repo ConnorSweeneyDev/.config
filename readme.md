@@ -40,10 +40,10 @@ dependencies before trying to set up a later section.
 ### Dependencies
 - Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
 - PowerShell Core (pwsh.exe) &rightarrow; Run `winget install --id Microsoft.Powershell --source
-  winget`.
+  winget --version 7.4.5.0`.
 - gsudo &rightarrow; Run `winget install --id gerardog.gsudo`.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`.
-- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
+- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh --version 23.16.0`.
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
@@ -256,9 +256,9 @@ view all the most important bindings.
 
 # Tiling Window Manager
 ### Dependencies
-- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`.
-- Yasb &rightarrow; Run `winget install --id AmN.yasb`.
-- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
+- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi --version 0.1.29`.
+- Yasb &rightarrow; Run `winget install --id AmN.yasb --version 1.2.4`.
+- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey --version 2.0.18`.
 - ToggleRoundedCorners &rightarrow; Download the portable executable from
   [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to
   `trc.exe`. Place it in `C:\ToggleRoundedCorners` and put that folder in your path.
@@ -294,8 +294,8 @@ layouts.
 VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForVoyager) and follow
 the setup guide for a native Vim toggle for QMK keyboards.
 
-PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` - enable Run at
-startup - my favourite tools are:
+PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget --version 0.85.0` -
+enable Run at startup - my favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous
   query on launch enabled, preferred monitor primary, all plugins off except "Program" - this
   behaves just like the windows run dialog but without cortana, searching the internet or any other
