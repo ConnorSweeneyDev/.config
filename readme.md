@@ -37,7 +37,7 @@ dependencies before trying to set up a later section.
 
 # Terminal
 ### Dependencies
-- Wezterm &rightarrow; Run `winget install --id wez.wezterm`.
+- WezTerm &rightarrow; Run `winget install --id wez.wezterm`.
 - PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget
   --version 7.4.5.0`.
 - gsudo &rightarrow; Run `winget install --id gerardog.gsudo`.
