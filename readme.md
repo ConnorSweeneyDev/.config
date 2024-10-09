@@ -14,15 +14,7 @@ section may carry over to later sections, so it is recommended to install all th
 dependencies before trying to set up a later section.
 
 # System
-### Local Paths to Modules
-- ahk &rightarrow; `$Env:USERPROFILE\.config\ahk`.
-- komorebi &rightarrow; `$Env:USERPROFILE\.config\komorebi`.
-- nvim &rightarrow; `$Env:USERPROFILE\.config\nvim`.
-- posh &rightarrow; `$Env:USERPROFILE\.config\posh`.
-- pwsh &rightarrow; `$Env:USERPROFILE\.config\pwsh`.
-- wezterm &rightarrow; `$Env:USERPROFILE\.config\wezterm`.
-- which &rightarrow; `$Env:USERPROFILE\.config\which`.
-- yasb &rightarrow; `$Env:USERPROFILE\.config\yasb`.
+Every folder in this repository is located locally at `$Env:USERPROFILE\.config`.
 
 ### Setup
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search
