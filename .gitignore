@@ -5,3 +5,5 @@ portal/*
 scoop/*
 simple-update-notifier/*
 temp/*
+
+nvim/lazy-lock.json

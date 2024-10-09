@@ -1,0 +1,10 @@
+vim.keymap.set("n", "<LEADER>gs", "<CMD>G<CR>")
+vim.keymap.set("n", "<LEADER>gp", "<CMD>G pull<CR>")
+vim.keymap.set("n", "<LEADER>gu", "<CMD>G submodule update --recursive --remote<CR>")
+vim.keymap.set("n", "<LEADER>gr", "<CMD>G restore %<CR>")
+vim.keymap.set("n", "<LEADER>gR", "<CMD>G restore .<CR>")
+
+vim.keymap.set("n", "<LEADER>gg", "<CMD>diffget<CR>")
+vim.keymap.set("n", "<LEADER>gh", "<CMD>diffget //2<CR>")
+vim.keymap.set("n", "<LEADER>gl", "<CMD>diffget //3<CR>")
+vim.keymap.set("n", "ZG", "<C-w>o<CMD>G<CR>")
