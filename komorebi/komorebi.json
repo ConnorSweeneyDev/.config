@@ -1,0 +1,137 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.28/schema.json",
+  "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.yaml",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 0,
+  "default_container_padding": 0,
+  "border": false,
+  "border_width": 0,
+  "border_offset": 0,
+  "border_colours": {
+    "single": "#42a5f5",
+    "stack": "#00a542",
+    "monocle": "#ff3399",
+    "unfocused": "#808080"
+  },
+  "manage_rules": [
+    {
+      "kind": "Title",
+      "id": "Steam",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Title",
+      "id": "Friends List",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "float_rules": [
+    {
+      "kind": "Class",
+      "id": "SDL_app",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Class",
+      "id": "BATTLESWIN",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "stackbar": {
+    "height": 40,
+    "mode": "OnStack",
+    "tabs": {
+      "width": 300,
+      "focused_text": "#00a542",
+      "unfocused_text": "#b3b3b3",
+      "background": "#141414"
+    }
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "BSP"
+        },
+        {
+          "name": "III",
+          "layout": "BSP"
+        },
+        {
+          "name": "IV",
+          "layout": "BSP"
+        },
+        {
+          "name": "V",
+          "layout": "BSP"
+        },
+        {
+          "name": "VI",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "BSP"
+        },
+        {
+          "name": "III",
+          "layout": "BSP"
+        },
+        {
+          "name": "IV",
+          "layout": "BSP"
+        },
+        {
+          "name": "V",
+          "layout": "BSP"
+        },
+        {
+          "name": "VI",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "custom_layout": "C:/Users/conno/.config/komorebi/layout.json"
+        },
+        {
+          "name": "III",
+          "layout": "BSP"
+        },
+        {
+          "name": "IV",
+          "layout": "BSP"
+        },
+        {
+          "name": "V",
+          "layout": "BSP"
+        },
+        {
+          "name": "VI",
+          "layout": "BSP"
+        }
+      ]
+    }
+  ]
+}
