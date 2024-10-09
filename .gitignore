@@ -7,3 +7,5 @@ simple-update-notifier/*
 temp/*
 
 nvim/lazy-lock.json
+which/path.txt
+yasb/yasb.log

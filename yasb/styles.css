@@ -1,0 +1,161 @@
+/* DESIGNED FOR 2560x1440 SCREENS */
+
+* {
+  font-size: 22px;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: "CaskaydiaCove Nerd Font";
+  margin: 0;
+  padding: 0;
+}
+.yasb-bar {
+  padding: 0;
+  margin: 0;
+  background-color: rgba(10, 10, 10, 0.75);
+}
+.container-left {
+  max-width: 217px;
+}
+.container-center {
+  max-width: 3000px;
+}
+.container-right {
+  max-width: 322px;
+  margin: 0;
+  padding: 0;
+}
+.widget {
+  background-color: rgba(20, 20, 20, 0.00);
+  padding: 0 8px;
+}
+.widget .label {
+  padding: 1px 2px 1px 2px;
+}
+.widget .label.alt {
+  padding: 1px 2px 1px 2px;
+}
+
+.power-menu-widget {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin: 0 0 0 0;
+  padding-bottom: 2px;
+}
+.power-menu-widget .label {
+  color: #ffffff;
+  font-size: 20px;
+}
+.power-menu-popup {
+  background-color: rgba(20, 20, 20, 0.75);
+  border-radius: 12px;
+  border: 4px solid rgb(60, 60, 60);
+}
+.power-menu-popup .button {
+  padding: 0;
+  width: 240px;
+  height: 120px;
+  border-radius: 8px;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 8px;
+}
+.power-menu-popup .button.hover {
+  background-color: rgb(50, 50, 50);
+  border: 1px solid rgb(60, 60, 60);
+}
+.power-menu-popup .button .label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+.power-menu-popup .button .icon {
+  font-size: 48px;
+  padding-top: 8px;
+  color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.sleep .icon {
+  color: rgba(10, 122, 202, 0.55);
+}
+.power-menu-popup .button.sleep .label {
+  color: rgba(10, 122, 202, 0.55);
+}
+.power-menu-popup .button.restart .icon {
+  padding-right: 8px;
+  color: rgba(255, 175, 0, 0.55);
+}
+.power-menu-popup .button.restart .label {
+  color: rgba(255, 175, 0, 0.55);
+}
+.power-menu-popup .button.shutdown .icon {
+  padding-right: 12px;
+  color: rgba(244, 71, 71, 0.55);
+}
+.power-menu-popup .button.shutdown .label {
+  color: rgba(244, 71, 71, 0.55);  
+}
+.power-menu-popup .button.lock .icon {
+  padding-right: 12px;
+  color: rgba(78, 201, 176, 0.55);
+}
+.power-menu-popup .button.lock .label {
+  color: rgba(78, 201, 176, 0.55);
+}
+.power-menu-popup .button.signout .icon {
+  color: rgba(221, 182, 242, 0.55);
+}
+.power-menu-popup .button.signout .label {
+  color: rgba(221, 182, 242, 0.55);
+}
+.power-menu-popup .button.cancel .icon {
+  padding-right: 12px;
+}
+.uptime {
+  font-size: 30px;
+  margin-bottom: 500px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.komorebi-workspaces {
+  margin-left: -8px;
+  padding-bottom: 2px;
+}
+.komorebi-workspaces .ws-btn {
+  border-radius: 10;
+  width: 20px;
+  height: 20px;
+  margin: 2px 4px 0 4px;
+  color: rgba(255, 255, 255, 0);
+  background-color: rgb(60, 60, 60);
+}
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.populated:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.komorebi-workspaces .ws-btn.populated {
+  background-color: rgb(150, 150, 150);
+}
+.komorebi-workspaces .ws-btn.active {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12;
+  width: 24px;
+  height: 24px;
+}
+
+.active-window-widget {
+  border-radius: 0;
+  margin-left: -7px;
+  padding-bottom: 0;
+}
+.active-window-widget .label.icon {
+  padding-top: 0;
+}
+
+.clock-widget {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-top: 0;
+  padding-bottom: 1px;
+}
