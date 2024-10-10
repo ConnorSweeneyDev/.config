@@ -11,17 +11,17 @@ config.animation_fps = 144
 config.leader = { key = 'Tab', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.keys = {
   { key = 'Tab', mods = 'LEADER | CTRL', action = wezterm.action.SendKey { key = 'Tab', mods = 'CTRL' } },
-  { key = 'a', mods = 'LEADER', action = wezterm.action.ActivateTab(0) },
-  { key = 's', mods = 'LEADER', action = wezterm.action.ActivateTab(1) },
-  { key = 'd', mods = 'LEADER', action = wezterm.action.ActivateTab(2) },
-  { key = 'f', mods = 'LEADER', action = wezterm.action.ActivateTab(3) },
-  { key = 'z', mods = 'LEADER', action = wezterm.action.CloseCurrentTab { confirm = false } },
-  { key = 'c', mods = 'LEADER', action = wezterm.action.CopyTo 'Clipboard' },
-  { key = 'v', mods = 'LEADER', action = wezterm.action.PasteFrom 'Clipboard' },
-  { key = 'j', mods = 'LEADER', action = wezterm.action.ScrollByPage(1) },
-  { key = 'k', mods = 'LEADER', action = wezterm.action.ScrollByPage(-1) },
-  { key = 't', mods = 'LEADER', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
-  { key = 'w', mods = 'LEADER', action = wezterm.action.SpawnWindow }
+  { key = 'a', mods = 'LEADER | CTRL', action = wezterm.action.ActivateTab(0) },
+  { key = 's', mods = 'LEADER | CTRL', action = wezterm.action.ActivateTab(1) },
+  { key = 'd', mods = 'LEADER | CTRL', action = wezterm.action.ActivateTab(2) },
+  { key = 'f', mods = 'LEADER | CTRL', action = wezterm.action.ActivateTab(3) },
+  { key = 'z', mods = 'LEADER | CTRL', action = wezterm.action.CloseCurrentTab { confirm = false } },
+  { key = 'c', mods = 'LEADER | CTRL', action = wezterm.action.CopyTo 'Clipboard' },
+  { key = 'v', mods = 'LEADER | CTRL', action = wezterm.action.PasteFrom 'Clipboard' },
+  { key = 'j', mods = 'LEADER | CTRL', action = wezterm.action.ScrollByPage(1) },
+  { key = 'k', mods = 'LEADER | CTRL', action = wezterm.action.ScrollByPage(-1) },
+  { key = 't', mods = 'LEADER | CTRL', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
+  { key = 'w', mods = 'LEADER | CTRL', action = wezterm.action.SpawnWindow }
 }
 
 -- Window
