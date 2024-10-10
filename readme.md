@@ -1,7 +1,8 @@
-All my dotfiles, using Neovim with PowerShellCore in Wezterm along with fzf and a wrapper for it for
-fast navigation. Additionally, there is a quick setup for Firefox with Tridactyl and for a Tiling
-Window Manager using Komorebi with Yasb and AutoHotkey. You will also find a list of other useful
-tools at the end.
+# Welcome
+This is all my dotfiles for Windows, using Neovim with PowerShellCore in Wezterm along with fzf and
+a wrapper for it for fast navigation. Additionally, there is a quick setup for Firefox with
+Tridactyl and for a Tiling Window Manager using Komorebi with Yasb and AutoHotkey. You will also
+find a list of other useful tools at the end.
 
 https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
 
