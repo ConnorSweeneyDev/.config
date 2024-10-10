@@ -43,13 +43,12 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
 - Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the contents
   in `C:\Fonts`, select all and right click then select "Install". You can delete the .ttf files
   from the folder after you've installed them.
-- Paste the `$Env:USERPROFILE\.config\wezterm` folder to that location and change the font face to
-  whatever NerdFont you installed.
-- Paste the `$Env:USERPROFILE\.config\pwsh` folder to that location, then run `notepad $PROFILE` and
-  paste this line into the file that is opened: `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
-  (You may have to create the file first if it doesn't exist).
-- Go back to `profile.ps1` and remove the `attend` and `music` functions, as they are specific to
-  me. Other than those two functions, skim the rest of the file and remove anything you know you
+- Paste `wezterm` into your config and change the font face to whatever NerdFont you installed.
+- Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that
+  is opened: `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`. (You may have to create the file first
+  if it doesn't exist).
+- Go back to `pwsh\profile.ps1` and remove the `attend` and `music` functions, as they are specific
+  to me. Other than those two functions, skim the rest of the file and remove anything you know you
   won't need - everything is commented so you can be sure of what you're doing.
 - To set up gsudo after installing it, run the following commands:
   - `sudo config PowerShellLoadProfile true`.
@@ -76,9 +75,9 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
     d = diff
     l = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ```
-- Paste the `$Env:USERPROFILE\.config\posh` folder to that location and run `oh-my-posh disable
-  notice` to stop the annoying update message every so often.
-- Paste the `$Env:USERPROFILE\.config\which` folder to that location and put it in your path.
+- Paste `posh` into your config and run `oh-my-posh disable notice` to stop the annoying update
+  message every so often.
+- Paste `which` into your config and put it in your path.
 
 # Neovim
 ### Dependencies
@@ -102,9 +101,9 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 
 ### Setup
-After setting up the terminal and installing all the dependencies for this section, I recommend
-manually recreating the `nvim` folder on your PC rather than just pasting it in, because this will
-allow you to single out any unexpected errors as they happen.
+After completing the dependencies for this section, I recommend manually recreating `nvim` on your
+machine rather than just pasting it in, because this will allow you to single out any unexpected
+errors as they happen.
 
 You should start with the top level `init.lua` and then `lua\main\init.lua`. Then you can create
 `lua\main\remap.lua` and `lua\main\set.lua` and paste the config into each. Now you can create
@@ -195,9 +194,9 @@ settings can be edited at `lua\main\remap.lua`, `lua\main\set.lua` or the respec
 `after\ftplugin\[EXTENSION].lua` and language server settings can be edited at `coc-settings.json`.
 
 ## Portable Neovim
-I also have an extremely minimal setup (one file) that can be cloned and run on any machine
-that can run neovim. You can find it [here](https://github.com/ConnorSweeneyDev/nvim-portable), I
-only use it when I have to use a remote machine or someone else's computer.
+I also have an extremely minimal setup (one file) that can be cloned and run on any machine that can
+run neovim. You can find it [here](https://github.com/ConnorSweeneyDev/nvim-portable), I only use it
+when I have to use a remote machine or someone else's computer.
 
 # Firefox with Tridactyl
 ### Dependencies
@@ -252,17 +251,15 @@ view all the most important bindings.
   taskbar" under the taskbar behaviours.
 - Search `multitasking` and turn off everything under the snap windows section except "Show my
   snapped windows when I hover over taskbar apps... ...when I press Alt+Tab".
-- Add the files in this repository's `komorebi` folder to `$Env:USERPROFILE\.config\komorebi` on
-  your machine. In `komorebi.json` ensure that the correct amount of monitors are configured and
-  that any absolute paths are valid.
-- Replace the files at `$Env:USERPROFILE\.config\yasb` with the ones from this repository. Add
-  `$Env:USERPROFILE\AppData\Local\Yasb` to your path.
-- Create the `$Env:USERPROFILE\.config\ahk` folder and paste the file from this repository into it.
-  Ensure you configure anything specific to monitor resolution. Right click `wm.ahk` and create a
-  shortcut, then rename it to just `wm` and create a copy of it, one each should be moved to
-  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and that folder's sub-directory `Startup`.
-  Now it will be run at startup and is accessible from the start menu in case you need to restart
-  the manager, and all three processes can be killed from the task manager.
+- Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors
+  are configured and that any absolute paths are valid.
+- Paste `yasb` into your config. Add `$Env:USERPROFILE\AppData\Local\Yasb` to your path.
+- Paste `ahk` into your config. Ensure you configure anything specific to monitor resolution. Right
+  click `wm.ahk` and create a shortcut, then rename that shortcut to just `wm` and create a copy of
+  it, one each should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and that
+  folder's sub-directory `Startup`. Now it will be run at startup and is accessible from the start
+  menu in case you need to restart the manager, and all three processes can be killed from the task
+  manager.
 - Restart your PC.
 
 Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be
