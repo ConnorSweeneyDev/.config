@@ -48,6 +48,6 @@ YasbMenu() {
 
 #e::Run("explorer")
 #t::Run("pwsh -Command wezterm", , "Hide")
-#f::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Firefox.lnk")
+#f::Run("pwsh -Command firefox", , "Hide")
 #d::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Discord.lnk")
 #s::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam.lnk")
