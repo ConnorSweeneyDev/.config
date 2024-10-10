@@ -208,8 +208,9 @@ when I have to use a remote machine or someone else's computer.
   on Firefox.
 
 ### Setup
-First, make firefox your default browser. After that go to Firefox settings and change the
-following:
+First, make firefox your default browser and make the folder containing `firefox.exe` an environment
+variable (`C:\Program Files\Mozilla Firefox` by default). After that go to Firefox settings and
+change the following:
 - General &rightarrow; Use recommended performance settings = Off.
 - General &rightarrow; Use hardware acceleration when available = Off.
 - Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; Open a new
