@@ -4,7 +4,7 @@ Wezterm along with fzf and a wrapper for it for fast navigation. Additionally, t
 setup for Firefox with Tridactyl and for a Tiling Window Manager using Komorebi with Yasb and
 AutoHotkey. You will also find a list of other useful tools at the end.
 
-https://github.com/user-attachments/assets/88be324a-265e-4b93-9800-35db70285a57
+https://github.com/user-attachments/assets/bbb2e9e0-7cb5-43a9-92a0-12c65cbd7282
 
 *Showcase: An overhaul of Windows, using a Tiling Window Manager with workspaces and a status bar
 rather than a taskbar, many command line utilities, some custom scripts, a lot of hotkeys and a
