@@ -43,7 +43,9 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
 - Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the contents
   in `C:\Fonts`, select all and right click then select "Install". You can delete the .ttf files
   from the folder after you've installed them.
-- Paste `wezterm` into your config and change the font face to whatever NerdFont you installed.
+- Paste `wezterm` into your config and change the font face to whatever NerdFont you installed. You
+  can go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and rename the WezTerm shortcut
+  to something shorter like `wt` for ease of typing in the start menu.
 - Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that
   is opened: `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`. (You may have to create the file first
   if it doesn't exist).
