@@ -202,8 +202,7 @@ when I have to use a remote machine or someone else's computer.
 
 # Firefox with Tridactyl
 ### Dependencies
-- Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/). Install to
-  `C:\Program Files\Mozilla Firefox\firefox.exe`.
+- Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/).
 - Tridactyl &rightarrow; Go
   [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md)
   on Firefox.
