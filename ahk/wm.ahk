@@ -1,7 +1,7 @@
 #SingleInstance Force
 
-RunWait("pwsh -Command if ((Get-Process -Name 'komorebi' -ErrorAction SilentlyContinue) -eq $null) { } else { komorebic stop }", , "Hide")
-RunWait("pwsh -Command if ((Get-Process -Name 'yasb' -ErrorAction SilentlyContinue) -eq $null) { } else { Stop-Process -Name 'yasb' -Force }", , "Hide")
+RunWait("pwsh -NoProfile -Command if ((Get-Process -Name 'komorebi' -ErrorAction SilentlyContinue) -eq $null) { } else { komorebic stop }", , "Hide")
+RunWait("pwsh -NoProfile -Command if ((Get-Process -Name 'yasb' -ErrorAction SilentlyContinue) -eq $null) { } else { Stop-Process -Name 'yasb' -Force }", , "Hide")
 RunWait("pwsh -Command komorebic start", , "Hide")
 RunWait("pwsh -Command yasb", , "Hide")
 RunWait("pwsh -Command sudo trc --disable", , "Hide")
@@ -46,8 +46,8 @@ YasbMenu() {
 #^!+9::Komorebic("move-to-workspace 4")
 #^!+0::Komorebic("move-to-workspace 5")
 
-#e::Run "explorer"
-#t::Run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WezTerm.lnk"
-#f::Run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Firefox.lnk"
-#d::Run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Discord.lnk"
-#s::Run "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam.lnk"
+#e::Run("explorer")
+#t::Run("pwsh -Command wezterm", , "Hide")
+#f::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Firefox.lnk")
+#d::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Discord.lnk")
+#s::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam.lnk")
