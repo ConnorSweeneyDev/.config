@@ -52,33 +52,33 @@ config.color_scheme = 'Apple System Colors'
 config.colors = {
   foreground = foreground,
   background = background,
-
   cursor_fg = background,
   cursor_bg = foreground,
+
   tab_bar = {
     background = transparent_background,
+
     active_tab = {
       bg_color = transparent_background,
-      fg_color = foreground,
-      intensity = 'Bold'
+      fg_color = foreground
     },
+
     inactive_tab = {
       bg_color = transparent_background,
       fg_color = inactive_foreground
     },
     inactive_tab_hover = {
       bg_color = transparent_hover,
-      fg_color = inactive_foreground,
-      italic = false
+      fg_color = inactive_foreground
     },
+
     new_tab = {
       bg_color = transparent_background,
       fg_color = inactive_foreground
     },
     new_tab_hover = {
       bg_color = transparent_hover,
-      fg_color = inactive_foreground,
-      italic = false
+      fg_color = inactive_foreground
     }
   }
 }
