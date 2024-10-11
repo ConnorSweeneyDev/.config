@@ -47,7 +47,7 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
   can go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and rename the WezTerm shortcut
   to something shorter like `wt` for ease of typing in the start menu.
 - Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that
-  is opened (You may have to create the file first if it doesn't exist): `.
+  is opened (you may have to create the file first if it doesn't exist): `.
   $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
 - Go back to `pwsh\profile.ps1` and remove the `attend` and `music` functions, as they are specific
   to me. Other than those two functions, skim the rest of the file and remove anything you know you
