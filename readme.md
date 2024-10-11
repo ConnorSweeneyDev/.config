@@ -29,6 +29,9 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
 
 # Terminal
 ### Dependencies
+- NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) (I use
+  CaskaydiaCove), then in explorer select all `.ttf` files and right click them, now select
+  "Install". After that you can delete the files.
 - WezTerm &rightarrow; Run `winget install --id wez.wezterm`.
 - PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget
   --version 7.4.5.0`.
@@ -40,9 +43,6 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
 - bat &rightarrow; Run `winget install sharkdp.bat`.
 
 ### Setup
-- Install a NerdFont by going [here](https://www.nerdfonts.com/font-downloads) and put the contents
-  in `C:\Fonts`, select all and right click then select "Install". You can delete the .ttf files
-  from the folder after you've installed them.
 - Paste `wezterm` into your config and change the font face to whatever NerdFont you installed. You
   can go to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and rename the WezTerm shortcut
   to something shorter like `wt` for ease of typing in the start menu.
