@@ -21,7 +21,7 @@ config.keys =
   { key = 'v', mods = 'LEADER | CTRL', action = wezterm.action.PasteFrom 'Clipboard' },
   { key = 'j', mods = 'LEADER | CTRL', action = wezterm.action.ScrollByPage(1) },
   { key = 'k', mods = 'LEADER | CTRL', action = wezterm.action.ScrollByPage(-1) },
-  { key = 't', mods = 'LEADER | CTRL', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
+  { key = 't', mods = 'LEADER | CTRL', action = wezterm.action.SpawnTab},
   { key = 'w', mods = 'LEADER | CTRL', action = wezterm.action.SpawnWindow }
 }
 
