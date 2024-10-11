@@ -35,11 +35,11 @@ config.use_fancy_tab_bar = false
 config.tab_max_width = 100
 
 -- Font
-config.font_size = 22
+config.font_size = 19
 config.font = wezterm.font {
   family = 'CaskaydiaCove Nerd Font',
-  weight = 'DemiLight',
-  harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' }
+  weight = 'DemiBold',
+  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 }
 
 -- Colors
