@@ -9,7 +9,8 @@ config.animation_fps = 144
 
 -- Keymaps
 config.leader = { key = 'Tab', mods = 'CTRL', timeout_milliseconds = 1000 }
-config.keys = {
+config.keys =
+{
   { key = 'Tab', mods = 'LEADER | CTRL', action = wezterm.action.SendKey { key = 'Tab', mods = 'CTRL' } },
   { key = 'a', mods = 'LEADER | CTRL', action = wezterm.action.ActivateTab(0) },
   { key = 's', mods = 'LEADER | CTRL', action = wezterm.action.ActivateTab(1) },
@@ -36,11 +37,13 @@ config.tab_max_width = 100
 
 -- Font
 config.font_size = 19
-config.font = wezterm.font {
+config.font = wezterm.font
+{
   family = 'CaskaydiaCove Nerd Font',
   weight = 'DemiBold',
-  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
+  harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' }
 }
+config.freetype_load_target = 'Light'
 
 -- Colors
 local foreground = 'rgb(225, 225, 225)'
@@ -49,37 +52,23 @@ local transparent_background = 'rgba(10, 10, 10, 0.75)'
 local transparent_hover = 'rgba(30, 30, 30, 0.75)'
 local inactive_foreground = 'rgb(100, 100, 100)'
 config.color_scheme = 'Apple System Colors'
-config.colors = {
+config.colors =
+{
   foreground = foreground,
   background = background,
   cursor_fg = background,
   cursor_bg = foreground,
 
-  tab_bar = {
+  tab_bar =
+  {
     background = transparent_background,
 
-    active_tab = {
-      bg_color = transparent_background,
-      fg_color = foreground
-    },
+    active_tab = { bg_color = transparent_background, fg_color = foreground },
+    inactive_tab = { bg_color = transparent_background, fg_color = inactive_foreground },
+    inactive_tab_hover = { bg_color = transparent_hover, fg_color = inactive_foreground },
 
-    inactive_tab = {
-      bg_color = transparent_background,
-      fg_color = inactive_foreground
-    },
-    inactive_tab_hover = {
-      bg_color = transparent_hover,
-      fg_color = inactive_foreground
-    },
-
-    new_tab = {
-      bg_color = transparent_background,
-      fg_color = inactive_foreground
-    },
-    new_tab_hover = {
-      bg_color = transparent_hover,
-      fg_color = inactive_foreground
-    }
+    new_tab = { bg_color = transparent_background, fg_color = inactive_foreground },
+    new_tab_hover = { bg_color = transparent_hover, fg_color = inactive_foreground }
   }
 }
 
