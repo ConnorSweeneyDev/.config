@@ -5,10 +5,9 @@ require("telescope").setup
     layout_config = {horizontal = {preview_width = 0.5}},
 
     -- Ignore any string that has the following patterns
-    file_ignore_patterns = {".git\\", ".cache\\", "external\\", "ext\\", "binary\\", "bin\\", "assets\\", ".exe", ".dll", ".0", ".1", ".2", ".3",
-                            ".4", ".5", ".6", ".7", ".8", ".9", ".class", ".jar", ".sln", ".vcxproj", ".png", ".jpg", ".pyc", "packer_compiled.lua"}
-  },
-  extensions = {["ui-select"] = {require("telescope.themes").get_dropdown{}}}
+    file_ignore_patterns = {".git\\", ".cache\\", "external\\", "ext\\", "binary\\", "bin\\", "assets\\", ".exe", ".dll",
+                            ".class", ".jar", ".sln", ".vcxproj", ".png", ".jpg", ".pyc", "packer_compiled.lua"}
+  }
 }
 
 local builtin = require("telescope.builtin")
