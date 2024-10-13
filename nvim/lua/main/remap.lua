@@ -56,6 +56,7 @@ vim.keymap.set("n", "<LEADER>qw", "\"+yiw:silent grep <C-r><C-w> program<CR><CMD
 vim.keymap.set("n", "<LEADER>qW", "\"+yiw:silent grep <C-r><C-a> program<CR><CMD>copen<CR>")
 vim.keymap.set("v", "<LEADER>q", "\"+ygv\"hy:silent grep <C-r>h program<CR><CMD>copen<CR>")
 
+-- Change to your liking based on the terminal/project you are using
 vim.keymap.set("n", "<LEADER>v", "<CMD>!./script/clean.bat -wezterm<CR>")
 vim.keymap.set("n", "<LEADER>b", "<CMD>!./script/build.bat -wezterm<CR>")
 vim.keymap.set("n", "<LEADER>n", "<CMD>!./script/run.bat -wezterm<CR>")
