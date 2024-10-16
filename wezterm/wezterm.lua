@@ -29,7 +29,7 @@ config.keys =
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = 'NONE | RESIZE'
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.7
 
 -- Tabs
 config.use_fancy_tab_bar = false
@@ -48,8 +48,8 @@ config.freetype_load_target = 'Light'
 -- Colors
 local foreground = 'rgb(225, 225, 225)'
 local background = 'rgb(10, 10, 10)'
-local transparent_background = 'rgba(10, 10, 10, 0.75)'
-local transparent_hover = 'rgba(30, 30, 30, 0.75)'
+local transparent_background = 'rgba(10, 10, 10, 0.7)'
+local transparent_hover = 'rgba(30, 30, 30, 0.7)'
 local inactive_foreground = 'rgb(100, 100, 100)'
 config.color_scheme = 'Apple System Colors'
 config.colors =
