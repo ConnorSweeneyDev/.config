@@ -37,13 +37,13 @@ config.tab_max_width = 100
 
 -- Font
 config.font_size = 20
+config.freetype_load_target = 'Light'
 config.font = wezterm.font
 {
   family = 'CaskaydiaCove NF',
   weight = 'DemiBold',
   harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' }
 }
-config.freetype_load_target = 'Light'
 
 -- Colors
 local foreground = 'rgb(225, 225, 225)'
