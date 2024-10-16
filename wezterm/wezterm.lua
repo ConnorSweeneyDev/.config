@@ -39,7 +39,7 @@ config.tab_max_width = 100
 config.font_size = 20
 config.font = wezterm.font
 {
-  family = 'CaskaydiaCove Nerd Font',
+  family = 'CaskaydiaCove NF',
   weight = 'DemiBold',
   harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' }
 }

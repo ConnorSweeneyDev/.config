@@ -4,7 +4,7 @@
   font-size: 22px;
   color: #ffffff;
   font-weight: 500;
-  font-family: "CaskaydiaCove Nerd Font";
+  font-family: "CaskaydiaCove NF";
   margin: 0;
   padding: 0;
 }
@@ -44,6 +44,7 @@
 .power-menu-widget .label {
   color: #ffffff;
   font-size: 20px;
+  padding-right: 4px;
 }
 .power-menu-popup {
   background-color: rgba(20, 20, 20, 0);
@@ -76,27 +77,29 @@
   color: rgba(255, 255, 255, 0.25);
 }
 .power-menu-popup .button.sleep .icon {
+  padding-right: 4px;
   color: rgba(10, 122, 202, 0.55);
 }
 .power-menu-popup .button.sleep .label {
   color: rgba(10, 122, 202, 0.55);
 }
 .power-menu-popup .button.restart .icon {
-  padding-right: 8px;
+  padding-top: 12px;
+  padding-right: 11px;
   color: rgba(255, 175, 0, 0.55);
 }
 .power-menu-popup .button.restart .label {
   color: rgba(255, 175, 0, 0.55);
 }
 .power-menu-popup .button.shutdown .icon {
-  padding-right: 12px;
+  padding-right: 19px;
   color: rgba(244, 71, 71, 0.55);
 }
 .power-menu-popup .button.shutdown .label {
   color: rgba(244, 71, 71, 0.55);  
 }
 .power-menu-popup .button.lock .icon {
-  padding-right: 10px;
+  padding-right: 8px;
   color: rgba(78, 201, 176, 0.55);
 }
 .power-menu-popup .button.lock .label {
@@ -109,7 +112,11 @@
   color: rgba(221, 182, 242, 0.55);
 }
 .power-menu-popup .button.cancel .icon {
-  padding-right: 12px;
+  padding-right: 11px;
+  color: rgba(185, 185, 185, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+  color: rgba(185, 185, 185, 0.55);
 }
 .uptime {
   font-size: 30px;
@@ -126,7 +133,7 @@
   border-radius: 10;
   width: 20px;
   height: 20px;
-  margin: 2px 4px 0 4px;
+  margin: 2px 3px 0 3px;
   color: rgba(255, 255, 255, 0);
   background-color: rgb(60, 60, 60);
 }
