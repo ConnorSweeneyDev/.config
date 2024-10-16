@@ -40,7 +40,7 @@ end
 function macro_recording()
   local recording_register = vim.fn.reg_recording()
   if recording_register == "" then
-    return "Recording @_"
+    return "Recording @~"
   else
     return "Recording @" .. recording_register
   end
@@ -52,7 +52,7 @@ lualine.setup
   {
     icons_enabled = true,
     theme = "vscode",
-    component_separators = {left = "│", right = "│"},
+    component_separators = {left = "┃", right = "┃"},
     section_separators = {left = "", right = ""},
     disabled_filetypes = {statusline = {}, winbar = {}},
     ignore_focus = {},
