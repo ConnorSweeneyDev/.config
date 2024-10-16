@@ -1,33 +1,35 @@
 local lualine = require("lualine")
 
-function relative_path()
+function dynamic_path()
   local root = vim.fn.getcwd():match("^[^:]")
   local path = vim.fn.expand("%:.")
 
-  if string.match(path, "^oil:///") then
+  if string.match(path, "^list:///") then
+    path = string.gsub(path, "^list:///", "")
+
+  elseif string.match(path, "^oil:///") then
     path = string.gsub(path, "^oil:///", "")
     path = string.sub(path, 0, 1) .. ":" .. string.sub(path, 2)
     path = string.gsub(path, "/", "\\")
     path = string.gsub(path, vim.fn.getcwd(), vim.fn.getcwd():match("^.*\\(.*)$"))
 
-  elseif string.match(path, "^list:///") then
-    path = string.gsub(path, "^list:///", "")
-
-  elseif string.match(path, "^fugitive:\\\\\\") then
-    if string.find(path, ".git\\\\0\\") then path = "remote"
-    elseif string.find(path, ".git\\\\2\\") then path = "new"
-    elseif string.find(path, ".git\\\\3\\") then path = "old"
-    else path = "fugitive" end
-
   elseif string.match(path, "__harpoon") then
     path = "harpoon"
+
+  elseif string.match(path, "^fugitive:\\\\\\") then
+    if string.find(path, ".git\\\\0\\") then path = "fugitive/remote"
+    elseif string.find(path, ".git\\\\2\\") then path = "fugitive/new"
+    elseif string.find(path, ".git\\\\3\\") then path = "fugitive/old"
+    else path = "fugitive" end
+  elseif string.find(path, ".git\\COMMIT_EDITMSG") then
+    path = "fugitive/commit"
 
   else
     if not string.match(vim.fn.expand("%:."), "^" .. root .. ":\\")
       and not string.match(vim.fn.expand("%:."), "^" .. root .. ":/") then
       path = vim.fn.getcwd():match("^.*\\(.*)$") .. "\\" .. path
     end
-    if (vim.bo.modified) then path = path .. " [+]" end
+    if (vim.bo.modified) then path = path .. " ⬤" end
   end
 
   if string.match(path, "^." .. root .. ":") then path = string.gsub(path, "^.", "") end
@@ -37,7 +39,7 @@ function relative_path()
   return path
 end
 
-function macro_recording()
+function current_macro()
   local recording_register = vim.fn.reg_recording()
   if recording_register == "" then
     return "Recording @~"
@@ -63,10 +65,10 @@ lualine.setup
   sections =
   {
     lualine_a = {"mode"},
-    lualine_b = {{"relative_path", fmt = relative_path}},
+    lualine_b = {{"dynamic_path", fmt = dynamic_path}},
     lualine_c = {"diagnostics"},
     lualine_x = {"diff"},
-    lualine_y = {{"macro_recording", fmt = macro_recording}},
+    lualine_y = {{"current_macro", fmt = current_macro}},
     lualine_z = {"progress", "location"}
   },
   tabline = {},
