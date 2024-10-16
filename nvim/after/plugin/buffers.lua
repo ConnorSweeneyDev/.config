@@ -1,8 +1,8 @@
 local function open_buffers()
   -- List of folders and file extensions to search for and open
   local folders = {"/program", "/src", "/lua", "/after"}
-  local file_extensions = {"*.cpp", "*.hpp", "*.inl", "*.c", "*.h", "*.glsl", "*.cs", "*.java", "*.py", "*.lua"}
-  local ignore_files = {"resource.hpp", "resource.cpp"}
+  local file_extensions = {"*.cpp", "*.hpp", "*.inl", "*.glsl", "*.c", "*.h", "*.py", "*.lua", "*.java", "*.cs"}
+  local ignore_files = {"resource.cpp", "resource.hpp"}
 
   local original_buffer = vim.api.nvim_get_current_buf()
   for _, folder in ipairs(folders) do
