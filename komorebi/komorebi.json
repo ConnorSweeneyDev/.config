@@ -36,6 +36,11 @@
       "kind": "Class",
       "id": "BATTLESWIN",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Class",
+      "id": "pygame",
+      "matching_strategy": "Equals"
     }
   ],
   "stackbar": {
