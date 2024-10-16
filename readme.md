@@ -238,7 +238,7 @@ view all the most important bindings.
 - Search `multitasking` and turn off everything under the snap windows section except "Show my
   snapped windows when I hover over taskbar apps... ...when I press Alt+Tab".
 - Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors
-  are configured and that any absolute paths are valid.
+  are configured.
 - Paste `yasb` into your config. Add `$Env:USERPROFILE\AppData\Local\Yasb` to your path.
 - Paste `ahk` into your config. Ensure you configure anything specific to monitor resolution. Right
   click `wm.ahk` and create a shortcut, then rename that shortcut to just `wm` and create a copy of
