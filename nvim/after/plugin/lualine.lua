@@ -29,7 +29,7 @@ function dynamic_path()
       and not string.match(vim.fn.expand("%:."), "^" .. root .. ":/") then
       path = vim.fn.getcwd():match("^.*\\(.*)$") .. "\\" .. path
     end
-    if (vim.bo.modified) then path = path .. " ⬤" end
+    if (vim.bo.modified and not string.find(vim.bo.ft, "TelescopePrompt")) then path = path .. " ⬤" end
   end
 
   if string.match(path, "^." .. root .. ":") then path = string.gsub(path, "^.", "") end
@@ -79,5 +79,5 @@ lualine.setup
 
 vim.api.nvim_create_autocmd("RecordingEnter", {callback = function() lualine.refresh({place = {"statusline"}}) end})
 vim.api.nvim_create_autocmd("RecordingLeave", {callback = function()
-  local timer = vim.loop.new_timer() timer:start(50, 0, vim.schedule_wrap(function() lualine.refresh({place = {"statusline"}})end))
+  local timer = vim.loop.new_timer() timer:start(50, 0, vim.schedule_wrap(function() lualine.refresh({place = {"statusline"}}) end))
 end})
