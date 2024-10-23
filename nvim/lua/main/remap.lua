@@ -5,7 +5,7 @@ vim.keymap.set("n", "<C-f>", "<nop>")
 vim.keymap.set("n", "<LEADER>w", "<CMD>w<CR>")
 vim.keymap.set("n", "<LEADER>tw", "<CMD>set wrap!<CR>")
 
--- These bindings require the scripts folder to work
+-- These bindings require the which fzf wrapper to work
 vim.keymap.set("n", "<C-w>e", "<CMD>!e<CR>")
 vim.keymap.set("n", "<C-w>n", "<CMD>!wn<CR>")
 vim.keymap.set("n", "<C-t>n", "<CMD>!tn<CR>")
