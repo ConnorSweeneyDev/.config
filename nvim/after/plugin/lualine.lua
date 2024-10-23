@@ -42,9 +42,9 @@ end
 function current_macro()
   local recording_register = vim.fn.reg_recording()
   if recording_register == "" then
-    return "Recording @~"
+    return "@~"
   else
-    return "Recording @" .. recording_register
+    return "@" .. recording_register
   end
 end
 
