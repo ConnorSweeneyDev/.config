@@ -1,20 +1,22 @@
-local lualine = require("lualine")
-
 function dynamic_path()
   local root = vim.fn.getcwd():match("^[^:]")
   local path = vim.fn.expand("%:.")
 
-  if string.match(path, "^list:///") then
-    path = string.gsub(path, "^list:///", "")
+  if string.find(vim.bo.ft, "notify") then path = "notify"
+
+  elseif string.find(vim.bo.ft, "TelescopePrompt") then path = "telescope"
+  
+  elseif string.match(path, "__harpoon") then path = "harpoon"
+
+  elseif string.match(path, "nvim") and string.match(path, "\\doc\\") then path = "help/" .. string.match(path, "\\doc\\(.*)")
+
+  elseif string.match(path, "^list:///") then path = string.gsub(path, "^list:///", "")
 
   elseif string.match(path, "^oil:///") then
     path = string.gsub(path, "^oil:///", "")
     path = string.sub(path, 0, 1) .. ":" .. string.sub(path, 2)
     path = string.gsub(path, "/", "\\")
     path = string.gsub(path, vim.fn.getcwd(), vim.fn.getcwd():match("^.*\\(.*)$"))
-
-  elseif string.match(path, "__harpoon") then
-    path = "harpoon"
 
   elseif string.match(path, "^fugitive:\\\\\\") then
     if string.find(path, ".git\\\\0\\") then path = "fugitive/remote"
@@ -24,13 +26,11 @@ function dynamic_path()
   elseif string.find(path, ".git\\COMMIT_EDITMSG") then
     path = "fugitive/commit"
 
-  else
-    if not string.match(vim.fn.expand("%:."), "^" .. root .. ":\\")
-      and not string.match(vim.fn.expand("%:."), "^" .. root .. ":/") then
-      path = vim.fn.getcwd():match("^.*\\(.*)$") .. "\\" .. path
-    end
-    if (vim.bo.modified and not string.find(vim.bo.ft, "TelescopePrompt")) then path = path .. " ⬤" end
-  end
+  elseif not string.match(vim.fn.expand("%:."), "^" .. root .. ":\\") and not string.match(vim.fn.expand("%:."), "^" .. root .. ":/") then
+    path = vim.fn.getcwd():match("^.*\\(.*)$") .. "\\" .. path
+    if (vim.bo.modified) then path = path .. " ⬤" end
+
+  else path = "null" end
 
   if string.match(path, "^." .. root .. ":") then path = string.gsub(path, "^.", "") end
   if string.match(path, "^.\\" .. root .. ":\\") then path = string.gsub(path, "^.\\", "") end
@@ -48,6 +48,7 @@ function current_macro()
   end
 end
 
+local lualine = require("lualine")
 lualine.setup
 {
   options =
@@ -55,7 +56,7 @@ lualine.setup
     icons_enabled = true,
     theme = "vscode",
     component_separators = {left = "┃", right = "┃"},
-    section_separators = {left = "", right = ""},
+    section_separators = {left = "", right = ""},
     disabled_filetypes = {statusline = {}, winbar = {}},
     ignore_focus = {},
     always_divide_middle = true,
