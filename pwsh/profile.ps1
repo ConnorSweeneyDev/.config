@@ -1,5 +1,3 @@
-Set-Alias -Name "g" -Value "git"
-
 function q { exit }
 function c { clear }
 function e { explorer . }
@@ -29,22 +27,30 @@ function fh # Finds occurences of a string in your command history - Usage: fh <
   Get-Content (Get-PSReadlineOption).HistorySavePath | ? {$_ -like "*$find*"} | Sort-Object -Unique -Descending
 }
 
-function cw # Changes to the directory of your selected file in fzf, searches C:\Users
+function cw # Changes to the directory of your selected file in fzf searching either D:\, C:\ or C:\Users
 {
-  cd C:\Users
+  if ($args.Count -eq 0 || $args -eq "d") { cd D:\ }
+  elseif ($args -eq "c") { cd C:\ }
+  elseif ($args -eq "u") { cd C:\Users }
+  else
+  {
+    echo "Invalid argument: $args"
+    return
+  }
   $location = which
   if (![string]::IsNullOrWhiteSpace($location)) { cd $location }
   else { cd C:\ }
 }
-function cwa # Same as cw but searches the entire C:\ drive, not just C:\Users
+function ew # Opens the directory in file explorer of your selected file in fzf searching either D:\, C:\ or C:\Users
 {
-  cd C:\
-  $location = which
-  if (![string]::IsNullOrWhiteSpace($location)) { cd $location }
-}
-function ew # Opens the directory in file explorer of your selected file in fzf, searches C:\Users
-{
-  cd C:\Users
+  if ($args.Count -eq 0 || $args -eq "d") { cd D:\ }
+  elseif ($args -eq "c") { cd C:\ }
+  elseif ($args -eq "u") { cd C:\Users }
+  else
+  {
+    echo "Invalid argument: $args"
+    return
+  }
   $location = which
   if (![string]::IsNullOrWhiteSpace($location))
   {
@@ -53,19 +59,16 @@ function ew # Opens the directory in file explorer of your selected file in fzf,
   }
   else { cd C:\ }
 }
-function ewa # Same as ew but searches the entire C:\ drive, not just C:\Users
+function nw # Opens the directory in neovim of your selected file in fzf searching either D:\, C:\ or C:\Users
 {
-  cd C:\
-  $location = which
-  if (![string]::IsNullOrWhiteSpace($location))
+  if ($args.Count -eq 0 || $args -eq "d") { cd D:\ }
+  elseif ($args -eq "c") { cd C:\ }
+  elseif ($args -eq "u") { cd C:\Users }
+  else
   {
-    cd $location
-    explorer .
+    echo "Invalid argument: $args"
+    return
   }
-}
-function nw # Opens the directory in neovim of your selected file in fzf, searches C:\Users
-{
-  cd C:\Users
   $location = which
   if (![string]::IsNullOrWhiteSpace($location))
   {
@@ -75,30 +78,18 @@ function nw # Opens the directory in neovim of your selected file in fzf, search
     nvim .
   }
   else { cd C:\ }
-}
-function nwa # Same as nw but searches the entire C:\ drive, not just C:\Users
-{
-  cd C:\
-  $location = which
-  if (![string]::IsNullOrWhiteSpace($location))
-  {
-    cd $location
-    $p = Split-Path -leaf -path (Get-Location)
-    $Host.UI.RawUI.WindowTitle = "$p"
-    nvim .
-  }
 }
 
 function attend
 {
-  cd C:\Users\conno\Documents\Programming\Python\AttendanceLogger
+  cd D:\Python\AttendanceLogger
   $p = Split-Path -leaf -path (Get-Location)
   $Host.UI.RawUI.WindowTitle = "$p"
   python program/main.py
 }
 function music
 {
-  cd C:\Users\conno\Documents\Programming\CPP\TerminalMusicPlayer
+  cd D:\CPP\TerminalMusicPlayer
   $p = Split-Path -leaf -path (Get-Location)
   $Host.UI.RawUI.WindowTitle = "$p"
 
