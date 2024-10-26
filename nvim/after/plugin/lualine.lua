@@ -1,41 +1,46 @@
 function dynamic_path()
-  local root = vim.fn.getcwd():match("^[^:]")
+  local filetype = vim.bo.ft
+  local cwd = vim.fn.getcwd()
+  local root = cwd:match("^[^:]")
   local path = vim.fn.expand("%:.")
 
-  if string.find(vim.bo.ft, "notify") then path = "notify"
+  if string.find(filetype, "help") then path = "help\\" .. string.match(path, "\\doc\\(.*)")
+  elseif string.find(filetype, "list") then path = string.gsub(path, "^list:///", "")
+  elseif string.find(filetype, "qf") then path = "quickfix"
+  elseif string.find(filetype, "notify") then path = "notify"
+  elseif string.find(filetype, "TelescopePrompt") then path = "telescope"
+  elseif string.find(filetype, "harpoon") then path = "harpoon"
 
-  elseif string.find(vim.bo.ft, "TelescopePrompt") then path = "telescope"
-  
-  elseif string.match(path, "__harpoon") then path = "harpoon"
+  elseif string.find(path, "^fugitive:\\\\\\") then
+    if string.find(path, ".git\\\\0\\") then path = "fugitive\\remote"
+    elseif string.find(path, ".git\\\\2\\") then path = "fugitive\\new"
+    elseif string.find(path, ".git\\\\3\\") then path = "fugitive\\old"
+    else path = "fugitive" end
+  elseif string.find(path, ".git\\COMMIT_EDITMSG") then
+    path = "fugitive\\commit"
 
-  elseif string.match(path, "nvim") and string.match(path, "\\doc\\") then path = "help/" .. string.match(path, "\\doc\\(.*)")
-
-  elseif string.match(path, "^list:///") then path = string.gsub(path, "^list:///", "")
-
-  elseif string.match(path, "^oil:///") then
+  elseif string.find(filetype, "oil") then
     path = string.gsub(path, "^oil:///", "")
     path = string.sub(path, 0, 1) .. ":" .. string.sub(path, 2)
     path = string.gsub(path, "/", "\\")
-    path = string.gsub(path, vim.fn.getcwd(), vim.fn.getcwd():match("^.*\\(.*)$"))
+    if cwd ~= root .. ":\\" then path = string.gsub(path, cwd, cwd:match("^.*\\(.*)$")) end
+  elseif string.find(filetype, "netrw") then
+    if not string.find(path, ":/") then path = cwd:match("^.*\\(.*)$") .. "\\" .. path end
 
-  elseif string.match(path, "^fugitive:\\\\\\") then
-    if string.find(path, ".git\\\\0\\") then path = "fugitive/remote"
-    elseif string.find(path, ".git\\\\2\\") then path = "fugitive/new"
-    elseif string.find(path, ".git\\\\3\\") then path = "fugitive/old"
-    else path = "fugitive" end
-  elseif string.find(path, ".git\\COMMIT_EDITMSG") then
-    path = "fugitive/commit"
-
-  elseif not string.match(vim.fn.expand("%:."), "^" .. root .. ":\\") and not string.match(vim.fn.expand("%:."), "^" .. root .. ":/") then
-    path = vim.fn.getcwd():match("^.*\\(.*)$") .. "\\" .. path
+  else
+    if cwd:match("^.*\\(.*)$") == nil or cwd:match("^.*\\(.*)$") == "" then
+      if string.find(path, root .. ":\\") then path = string.gsub(path, root .. ":\\", "") end
+      path = root .. ":\\" .. path
+    else
+      path = cwd:match("^.*\\(.*)$") .. "\\" .. path
+    end
     if (vim.bo.modified) then path = path .. " ⬤" end
-
-  else path = "null" end
+  end
 
   if string.match(path, "^." .. root .. ":") then path = string.gsub(path, "^.", "") end
   if string.match(path, "^.\\" .. root .. ":\\") then path = string.gsub(path, "^.\\", "") end
-  path = string.gsub(path, "\\", "/")
 
+  path = string.gsub(path, "\\", "/")
   return path
 end
 
