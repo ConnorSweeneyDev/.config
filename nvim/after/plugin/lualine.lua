@@ -29,8 +29,7 @@ function dynamic_path()
 
   else
     if cwd:match("^.*\\(.*)$") == nil or cwd:match("^.*\\(.*)$") == "" then
-      if string.find(path, root .. ":\\") then path = string.gsub(path, root .. ":\\", "") end
-      path = root .. ":\\" .. path
+      if not string.find(path, root .. ":\\") then path = root .. ":\\" .. path end
     else
       path = cwd:match("^.*\\(.*)$") .. "\\" .. path
     end
