@@ -8,9 +8,6 @@ function wn { wezterm cli spawn --new-window } # Opens a new window
 function tn { wezterm cli spawn } # Opens a new tab
 function wc { wezterm cli spawn --new-window --cwd $pwd } # Runs wn then changes to the current directory
 function tc { wezterm cli spawn --cwd $pwd } # Runs tn then changes to the current directory
-function fc { wezterm cli spawn pwsh -NoExit -Command "cw" } # Runs tn then cw
-function fe { wezterm cli spawn pwsh -NoExit -Command "ew" } # Runs tn then ew
-function fn { wezterm cli spawn pwsh -NoExit -Command "nw" } # Runs tn then nw
 
 function d # Better rm - Usage: d <path1> <path2> ... <pathN>
 {
@@ -29,7 +26,7 @@ function fh # Finds occurences of a string in your command history - Usage: fh <
 
 function cw # Changes to the directory of your selected file in fzf searching either D:\, C:\ or C:\Users
 {
-  if ($args.Count -eq 0 || $args -eq "d") { cd D:\ }
+  if ($args.Count -eq 0 -or $args -eq "d") { cd D:\ }
   elseif ($args -eq "c") { cd C:\ }
   elseif ($args -eq "u") { cd C:\Users }
   else
@@ -43,7 +40,7 @@ function cw # Changes to the directory of your selected file in fzf searching ei
 }
 function ew # Opens the directory in file explorer of your selected file in fzf searching either D:\, C:\ or C:\Users
 {
-  if ($args.Count -eq 0 || $args -eq "d") { cd D:\ }
+  if ($args.Count -eq 0 -or $args -eq "d") { cd D:\ }
   elseif ($args -eq "c") { cd C:\ }
   elseif ($args -eq "u") { cd C:\Users }
   else
@@ -61,7 +58,7 @@ function ew # Opens the directory in file explorer of your selected file in fzf 
 }
 function nw # Opens the directory in neovim of your selected file in fzf searching either D:\, C:\ or C:\Users
 {
-  if ($args.Count -eq 0 || $args -eq "d") { cd D:\ }
+  if ($args.Count -eq 0 -or $args -eq "d") { cd D:\ }
   elseif ($args -eq "c") { cd C:\ }
   elseif ($args -eq "u") { cd C:\Users }
   else
@@ -79,6 +76,8 @@ function nw # Opens the directory in neovim of your selected file in fzf searchi
   }
   else { cd C:\ }
 }
+function fd { wezterm cli spawn pwsh -NoExit -Command "nw d" } # Runs tn then "nw d"
+function fu { wezterm cli spawn pwsh -NoExit -Command "nw u" } # Runs tn then "nw u"
 
 function attend
 {

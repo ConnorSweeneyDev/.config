@@ -5,15 +5,10 @@ vim.keymap.set("n", "<C-f>", "<nop>")
 vim.keymap.set("n", "<LEADER>w", "<CMD>w<CR>")
 vim.keymap.set("n", "<LEADER>tw", "<CMD>set wrap!<CR>")
 
--- These bindings require the which fzf wrapper to work
+-- These bindings require the powershell profile that defines these functions
 vim.keymap.set("n", "<C-w>e", "<CMD>!e<CR>")
-vim.keymap.set("n", "<C-w>n", "<CMD>!wn<CR>")
-vim.keymap.set("n", "<C-t>n", "<CMD>!tn<CR>")
-vim.keymap.set("n", "<C-w>c", "<CMD>!wc<CR>")
-vim.keymap.set("n", "<C-t>c", "<CMD>!tc<CR>")
-vim.keymap.set("n", "<C-f>c", "<CMD>!fc<CR>")
-vim.keymap.set("n", "<C-f>e", "<CMD>!fe<CR>")
-vim.keymap.set("n", "<C-f>n", "<CMD>!fn<CR>")
+vim.keymap.set("n", "<C-f>d", "<CMD>!fd<CR>")
+vim.keymap.set("n", "<C-f>u", "<CMD>!fu<CR>")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "gJ", "mzgJ`z")

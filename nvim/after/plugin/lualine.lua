@@ -31,7 +31,7 @@ function dynamic_path()
     if cwd:match("^.*\\(.*)$") == nil or cwd:match("^.*\\(.*)$") == "" then
       if not string.find(path, root .. ":\\") then path = root .. ":\\" .. path end
     else
-      path = cwd:match("^.*\\(.*)$") .. "\\" .. path
+      if not string.find(path, root .. ":\\") then path = cwd:match("^.*\\(.*)$") .. "\\" .. path end
     end
     if (vim.bo.modified) then path = path .. " ⬤" end
   end
