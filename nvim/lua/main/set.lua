@@ -21,7 +21,7 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 vim.opt.linebreak = true
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 1000
 vim.opt.textwidth = 100
 vim.opt.formatoptions:remove("t")
 vim.opt.formatoptions:remove("c")
