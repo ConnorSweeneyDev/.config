@@ -19,8 +19,8 @@ require("lazy").setup
 {
   {"nvim-lua/plenary.nvim", commit = "a3e3bc8"},
   {"stevearc/oil.nvim", commit = "fcca212"},
-  {"nvim-telescope/telescope.nvim", commit = "43c47eb"},
   {"divagueame/lacasitos.nvim", commit = "ae324c4"},
+  {"nvim-telescope/telescope.nvim", commit = "43c47eb"},
   {"theprimeagen/harpoon", branch = "harpoon2", commit = "0378a6c"},
   {"mbbill/undotree", commit = "56c684a"},
   {"gbprod/yanky.nvim", commit = "73215b7"},
