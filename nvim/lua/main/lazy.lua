@@ -38,7 +38,6 @@ require("lazy").setup
   {"folke/noice.nvim", commit = "d9328ef"},
 
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-  {"nvim-treesitter/nvim-treesitter-context"},
   {"neoclide/coc.nvim", branch = "release"},
   {"tpope/vim-fugitive"},
   {"github/copilot.vim"},

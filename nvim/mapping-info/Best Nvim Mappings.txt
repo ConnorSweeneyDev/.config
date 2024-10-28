@@ -100,7 +100,6 @@
 (Normal) gr              -->  Go to the references of the symbol being hovered
 (Normal) gi              -->  Go to the implementation of the symbol being hovered
 (Normal) gy              -->  Go to the type definition of the symbol being hovered
-(Normal) [c              -->  Go to the context at the top of the screen if it is currently shown
 (Normal) ]d              -->  Go to the next Info/Warning/Error
 (Normal) [d              -->  Go to the previous Info/Warning/Error
 
