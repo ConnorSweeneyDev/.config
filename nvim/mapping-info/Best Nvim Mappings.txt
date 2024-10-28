@@ -163,14 +163,8 @@
 (Normal) <control>ws     -->  Split window horizontally
 (Normal) <control>wv     -->  Split window vertically
 
-(Normal) <control>we     -->  Open file explorer at the current directory
-(Normal) <control>wn     -->  Create a new powershell window
-(Normal) <control>tn     -->  Create a new powershell tab
-(Normal) <control>wc     -->  Create a new powershell window at the current directory
-(Normal) <control>tc     -->  Create a new powershell tab at the current directory
-(Normal) <control>fc     -->  Create a new powershell tab and run cw
-(Normal) <control>fe     -->  Create a new powershell tab and run ew
-(Normal) <control>fn     -->  Create a new powershell tab and run nw
+(Normal) <control>fd     -->  Create a new powershell tab and run nw d
+(Normal) <control>fu     -->  Create a new powershell tab and run nw u
 (Normal) gt              -->  Move to the next neovim tab
 (Normal) gT              -->  Move to the previous neovim tab
 --- WINDOWS ---

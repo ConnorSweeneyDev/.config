@@ -1,1 +1,1 @@
-vim.opt.formatoptions:append("t")
+opt.formatoptions:append("t")

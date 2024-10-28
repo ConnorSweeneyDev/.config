@@ -12,5 +12,5 @@ require("yanky").setup
 
 require("telescope").load_extension("yank_history")
 
-vim.keymap.set("n", "<LEADER>py", "<CMD>Telescope yank_history<CR>", {noremap = true, silent = true})
-vim.keymap.set("n", "<LEADER>ky", "<CMD>YankyClearHistory<CR>", {noremap = true, silent = true})
+map("n", "<LEADER>py", "<CMD>Telescope yank_history<CR>", {noremap = true, silent = true})
+map("n", "<LEADER>ky", "<CMD>YankyClearHistory<CR>", {noremap = true, silent = true})

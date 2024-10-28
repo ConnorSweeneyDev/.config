@@ -27,11 +27,11 @@ require("oil").setup
     ["g\\"] = "actions.toggle_trash",
   }
 }
-vim.keymap.set("n", "<LEADER>pv", "<CMD>Oil<CR>")
+map("n", "<LEADER>pv", "<CMD>Oil<CR>")
 
 local function floating_window_exists()
-  for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
-    if vim.api.nvim_win_get_config(winid).zindex then return true end
+  for _, winid in pairs(api.nvim_tabpage_list_wins(0)) do
+    if api.nvim_win_get_config(winid).zindex then return true end
   end
   return false
 end

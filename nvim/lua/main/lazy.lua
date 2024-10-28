@@ -14,7 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.keymap.set("n", "<LEADER>l", "<CMD>Lazy<CR>")
+map("n", "<LEADER>l", "<CMD>Lazy<CR>")
 require("lazy").setup
 {
   {"nvim-lua/plenary.nvim", commit = "a3e3bc8"},

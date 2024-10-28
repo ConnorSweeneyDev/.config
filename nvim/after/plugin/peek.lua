@@ -1,11 +1,11 @@
 local peek = require("peek")
 
 peek.setup{app = "browser"}
-vim.api.nvim_create_user_command("PeekOpen", peek.open, {})
-vim.api.nvim_create_user_command("PeekClose", peek.close, {})
+api.nvim_create_user_command("PeekOpen", peek.open, {})
+api.nvim_create_user_command("PeekClose", peek.close, {})
 
 local peek_is_open = false
-vim.keymap.set("n", "<LEADER>tm", function()
+map("n", "<LEADER>tm", function()
   if peek_is_open then
     vim.cmd("PeekClose")
     peek_is_open = false

@@ -12,4 +12,4 @@ require"treesitter-context".setup
   on_attach = nil
 }
 
-vim.keymap.set("n", "[c", "<CMD>lua require(\"treesitter-context\").go_to_context()<CR>", {silent = true})
+map("n", "[c", "<CMD>lua require(\"treesitter-context\").go_to_context()<CR>", {silent = true})
