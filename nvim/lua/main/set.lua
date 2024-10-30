@@ -11,7 +11,7 @@ opt.shellxquote = ""
 opt.nu = true
 opt.relativenumber = true
 opt.signcolumn = "yes"
-opt.colorcolumn = "100"
+opt.colorcolumn = "120"
 
 opt.tabstop = 2
 opt.softtabstop = 2
@@ -22,7 +22,7 @@ opt.smartindent = true
 opt.wrap = false
 opt.linebreak = true
 opt.scrolloff = 1000
-opt.textwidth = 100
+opt.textwidth = 120
 opt.formatoptions:remove("t")
 opt.formatoptions:remove("c")
 
