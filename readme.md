@@ -129,12 +129,12 @@ below):
 - If it needs one, add an `after\plugin\[PLUGIN].lua` file for the plugin and restart neovim.
 
 The following plugins require extra or different steps than those outlined above:
-- Helpers &rightarrow; Some plugins are only here to help other plugins and files, these are:
+- Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
+  need, these are:
   - plenary.nvim
   - lacasitos.nvim
   - nui.nvim
-  - nvim-web-devicons\
-  If you end up not using any plugins or files that require these, you can remove them.
+  - nvim-web-devicons
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `after\plugin\leap.lua` requires
   both of these plugins to be installed.
