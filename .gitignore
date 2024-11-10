@@ -1,3 +1,4 @@
+# Unrelated files
 coc/*
 github-copilot/*
 jgit/*
@@ -7,6 +8,7 @@ scoop/*
 simple-update-notifier/*
 temp/*
 
+# Generated files
 nvim/lazy-lock.json
 which/path.txt
 yasb/yasb.log

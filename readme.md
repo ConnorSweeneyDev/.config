@@ -86,7 +86,6 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
   with POSIX threads for general purpose use). Add `C:\MinGW\bin` to your path.
 - Python &rightarrow; Run `winget install --id Python.Python.3.10`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
-- Deno &rightarrow; Run `winget install --id DenoLand.Deno`.
 - Yarn &rightarrow; Run `winget install --id Yarn.Yarn`.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
 - Neovim &rightarrow; Run `winget install neovim --version 0.10.0`.
@@ -124,41 +123,53 @@ require("lazy").setup
 ```
 Restart neovim and there should be no error messages.
 
-Now, inside the `.setup` field you can start adding plugins, do so in the following pattern (with some exceptions):
+Now, inside the `.setup` field you can start adding plugins, do so in the following pattern (with some exceptions
+below):
 - Add the line to `lua\main\lazy.lua` and restart neovim.
 - If it needs one, add an `after\plugin\[PLUGIN].lua` file for the plugin and restart neovim.
 
 The following plugins require extra or different steps than those outlined above:
-- Lacasitos &rightarrow; This is just an alternative for the built-in vim.ui.select() don't install it if you aren't
-  going to use it.
+- Helpers &rightarrow; Some plugins are only here to help other plugins and files, these are:
+  - plenary.nvim
+  - lacasitos.nvim
+  - nui.nvim
+  - nvim-web-devicons\
+  If you end up not using any plugins or files that require these, you can remove them.
+- Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `after\plugin\leap.lua` requires
   both of these plugins to be installed.
 - Colorscheme &rightarrow; vim-transparent and vscode.nvim should both be installed at the same time, their plugin file
-  is `after\plugin\colors.lua`.
+  is `after\plugin\colors.lua`. You don't have to use that combination of plugins, but the file assumes you are and
+  lualine is also set up to use the vscode colorscheme.
+- Lualine &rightarrow; The corresponding `after\plugin\lualine.lua` file contains a lot of code that references specific
+  plugins, but will not cause any errors if any are missing, so you can remove unnecessary lines if you want, and you
+  can also change the colorscheme to the one you want to use, but none of this is necessary.
+- Noice &rightarrow; This plugin requires nvim-notify to be installed, so make sure to do that first.
 - Treesitter &rightarrow; After following the steps, you should see it compiling languages - don't touch your keyboard
   until this is finished, though it is common to get errors at this point, if you do, generally restarting neovim a few
   times and deleting any directories manually that it says it doesn't have permission to delete will let them all figure
   themselves out. However if you get an error along the lines of `[LANGUAGE].so is not a valid Win32 app`, this means
   either your version of MinGW does not match your operating system or treesitter is using the wrong compiler for that
   specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
-- Coc &rightarrow; After following the steps, run `:CocInstall coc-diagnostic coc-copilot coc-git coc-html coc-tsserver
-  coc-css coc-json coc-xml coc-sql coc-pyright coc-java coc-clangd coc-clang-format-style-options` then `:q` to close
-  the dialog once everything is installed. Now add `coc-settings.json`, where you should add the path to your java
-  installation instead of my one, then restart again. If you don't want one of the listed servers, dont include them or
-  just run `:CocUninstall [SERVER]` after the first command. If a language you want is missing, you can find it
+- Coc &rightarrow; `after\plugin\coc.lua` contains code that only runs if you also have treesitter installed, so remove
+  that code if you aren't using treesitter. After following the steps, run `:CocInstall coc-diagnostic coc-copilot
+  coc-git coc-html coc-tsserver coc-css coc-json coc-xml coc-sql coc-pyright coc-java coc-clangd
+  coc-clang-format-style-options` then `:q` to close the dialog once everything is installed. Now add
+  `coc-settings.json`, where you should add the path to your java installation instead of my one, then restart again. If
+  you don't want one of the listed servers, dont include them or just run `:CocUninstall [SERVER]` after the first
+  command. If a language you want is missing, you can find it
   [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
 - Copilot &rightarrow; If you don't have a license for Copilot then don't include this plugin. If you do, then after
   following the steps run `:Copilot setup` and follow the instructions.
 
 You can now add the `after\ftplugin` folder and any files inside it, which are used for language specific configuration;
-After that, don't forget to include `after\plugin\buffers.lua`.
+after that, don't forget to include `after\plugin\buffers.lua`.
 
 The file `buffers.lua` is an optional "plugin", as it can slow down the startup time but will open, in separate buffers,
-every file in the specified directory that has any of the file extensions specified - this can be useful because
-diagnostics for files that are not open will still be shown when you toggle the diagnostics window. If you need to close
-all the buffers except the current one (when you need to rename symbols, go to references etc.), this file also provides
-the keybind for that, and the keybind for re-opening them all again too. It assumes you have coc installed, but if you
-don't you can remove the lines that use it.
+every file in the specified directory that has any of the file extensions specified - this can be useful for certain
+language servers. If you need to close all the buffers except the current one (when you need to rename symbols, go to
+references etc.), this file also provides the keybind for that, and the keybind for re-opening them all again too. It
+assumes you have coc installed, but if you don't you can remove the lines that use it.
 
 Finally, you can paste the `mapping-info` folder into the root for safe keeping. All keybinds and settings can be edited
 at `lua\main\remap.lua`, `lua\main\set.lua` or the respective `after\plugin\[PLUGIN].lua` files. Furthermore, all

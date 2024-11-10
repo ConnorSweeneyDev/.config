@@ -29,3 +29,13 @@ map("n", "<LEADER>rn", "<PLUG>(coc-rename)", {silent = true})
 map("n", "<LEADER>rN", "<CMD>CocCommand workspace.renameCurrentFile<CR>", {silent = true})
 map("n", "<LEADER>rf", "<PLUG>(coc-refactor)", {silent = true})
 map("n", "<LEADER>cr", "<CMD>CocRestart<CR>", {silent = true})
+
+api.nvim_create_autocmd({"BufEnter", "WinEnter"}, {callback = function()
+  language = vim.fn.expand("%:e")
+  if language ~= "" and language ~= nil then
+    if language == "h" then language = "c" end
+    if language == "hpp" or language == "inl" then language = "cpp" end
+    vim.treesitter.language.register(language, "crf")
+  end
+  if string.find(vim.fn.expand("%"), "__coc_refactor__") then vim.cmd("set filetype=crf") end
+end})
