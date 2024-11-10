@@ -97,16 +97,17 @@
 (Normal) ]d              -->  Go to the next Info/Warning/Error
 (Normal) [d              -->  Go to the previous Info/Warning/Error
 
+(Normal) <space>ka       -->  Perform code action on the content under the cursor
 (Normal) <space>rn       -->  Rename the symbol being hovered
 (Normal) <space>rN       -->  Rename the file being edited
 (Normal) <space>rf       -->  Rename the symbol being hovered using the refactor interface
-(Normal) <space>ca       -->  Perform code action on the content under the cursor
+(Normal) <tab>           -->  When in the refactor interface, open context menu for current hovered block
 
 (Insert) <down>	         -->  Next completion
 (Insert) <up>            -->  Previous completion
-(Insert) <control>y      -->  Accept completion
-(Insert) <enter>         -->  Accept completion
-(Insert) <control>e      -->  Dismiss completions
+(Insert) <control>y      -->  Accept completion, or dismiss completion menu if none is selected
+(Insert) <enter>         -->  Accept completion, or dismiss completion menu if none is selected
+(Insert) <control>e      -->  Dismiss completion menu
 
 (Normal) <space>cr       -->  Restart server
 --- LANGUAGE SERVER ---
