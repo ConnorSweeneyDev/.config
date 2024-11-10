@@ -26,7 +26,6 @@ function dynamic_path()
     if cwd ~= root .. ":\\" then path = string.gsub(path, cwd, cwd:match("^.*\\(.*)$")) end
   elseif string.find(filetype, "netrw") then
     if not string.find(path, ":/") then path = cwd:match("^.*\\(.*)$") .. "\\" .. path end
-
   else
     if cwd:match("^.*\\(.*)$") == nil or cwd:match("^.*\\(.*)$") == "" then
       if not string.find(path, root .. ":\\") then path = root .. ":\\" .. path end
