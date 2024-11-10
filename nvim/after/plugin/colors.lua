@@ -29,7 +29,7 @@ function set_colors(color)
 end
 set_colors()
 
-api.nvim_create_autocmd({"BufEnter", "WinEnter"},
+api.nvim_create_autocmd({"BufEnter", "WinEnter", "CursorMoved"},
 {
   callback = function()
     local separator = " ▎ "

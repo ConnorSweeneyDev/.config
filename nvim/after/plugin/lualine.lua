@@ -11,13 +11,12 @@ function dynamic_path()
   elseif string.match(filetype, "harpoon") then path = "harpoon"
   elseif string.match(filetype, "notify") then path = "notify"
   elseif string.match(filetype, "TelescopePrompt") then path = "telescope"
-  elseif string.match(filetype, "fugitive") then
-    if string.find(path, ".git\\\\0\\") then path = "fugitive\\remote"
-    elseif string.find(path, ".git\\\\2\\") then path = "fugitive\\new"
-    elseif string.find(path, ".git\\\\3\\") then path = "fugitive\\old"
-    else path = "fugitive" end
-  elseif string.match(filetype, "gitcommit") then
-    path = "fugitive\\commit"
+  elseif string.match(filetype, "fugitive") then path = "fugitive"
+  elseif string.match(filetype, "gitcommit") then path = "commit"
+  elseif string.find(path, ".git\\\\0\\") then path = "remote"
+  elseif string.find(path, ".git\\\\2\\") then path = "new"
+  elseif string.find(path, ".git\\\\3\\") then path = "old"
+  elseif string.find(path, "__coc_refactor__") then path = "refactor"
 
   elseif string.match(filetype, "oil") then
     path = string.gsub(path, "^oil:///", "")

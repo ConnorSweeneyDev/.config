@@ -1,10 +1,14 @@
 {
   "xml.java.home": "C:\\Program Files\\Java\\jdk-17.0.12",
 
-  "workspace.openResourceCommand": "",
+  "coc.preferences.useQuickfixForLocations": true,
   "suggest.noselect": true,
   "inlayHint.enable": false,
 
+  "workspace.openResourceCommand": "",
+  "refactor.openCommand": "split",
+
+  "diagnostic.refreshOnInsertMode": true,
   "diagnostic.virtualText": false,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.errorSign": "▌",

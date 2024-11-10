@@ -1,7 +1,7 @@
 map("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], {expr = true, noremap = true, silent = true, replace_keycodes = false})
 map("n", "<LEADER>ka", "<PLUG>(coc-codeaction-cursor)", {silent = true, nowait = true})
 
-map("n", "<LEADER>td", "<CMD>CocList diagnostics --buffer<CR>", {silent = true, nowait = true})
+map("n", "<LEADER>td", "<CMD>CocDiagnostics<CR>", {silent = true, nowait = true})
 map("n", "<LEADER>tD", "<CMD>CocList diagnostics<CR>", {silent = true, nowait = true})
 map("n", "[d", "<PLUG>(coc-diagnostic-prev)", {silent = true})
 map("n", "]d", "<PLUG>(coc-diagnostic-next)", {silent = true})
