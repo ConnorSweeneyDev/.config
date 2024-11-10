@@ -4,22 +4,22 @@ function dynamic_path()
   local root = cwd:match("^[^:]")
   local path = vim.fn.expand("%:.")
 
-  if string.find(filetype, "help") then path = "help\\" .. string.match(path, "\\doc\\(.*)")
-  elseif string.find(filetype, "list") then path = string.gsub(path, "^list:///", "")
-  elseif string.find(filetype, "qf") then path = "quickfix"
-  elseif string.find(filetype, "notify") then path = "notify"
-  elseif string.find(filetype, "TelescopePrompt") then path = "telescope"
-  elseif string.find(filetype, "harpoon") then path = "harpoon"
-
-  elseif string.find(path, "^fugitive:\\\\\\") then
+  if string.match(filetype, "help") then path = "help\\" .. string.match(path, "\\doc\\(.*)")
+  elseif string.match(filetype, "list") then path = string.gsub(path, "^list:///", "")
+  elseif string.match(filetype, "qf") then path = "quickfix"
+  elseif string.match(filetype, "lazy") then path = "lazy"
+  elseif string.match(filetype, "harpoon") then path = "harpoon"
+  elseif string.match(filetype, "notify") then path = "notify"
+  elseif string.match(filetype, "TelescopePrompt") then path = "telescope"
+  elseif string.match(filetype, "fugitive") then
     if string.find(path, ".git\\\\0\\") then path = "fugitive\\remote"
     elseif string.find(path, ".git\\\\2\\") then path = "fugitive\\new"
     elseif string.find(path, ".git\\\\3\\") then path = "fugitive\\old"
     else path = "fugitive" end
-  elseif string.find(path, ".git\\COMMIT_EDITMSG") then
+  elseif string.match(filetype, "gitcommit") then
     path = "fugitive\\commit"
 
-  elseif string.find(filetype, "oil") then
+  elseif string.match(filetype, "oil") then
     path = string.gsub(path, "^oil:///", "")
     path = string.sub(path, 0, 1) .. ":" .. string.sub(path, 2)
     path = string.gsub(path, "/", "\\")
@@ -52,8 +52,7 @@ function current_macro()
   end
 end
 
-local lualine = require("lualine")
-lualine.setup
+require("lualine").setup
 {
   options =
   {
@@ -75,9 +74,5 @@ lualine.setup
     lualine_x = {"diff"},
     lualine_y = {{"current_macro", fmt = current_macro}},
     lualine_z = {"progress", "location"}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
+  }
 }
