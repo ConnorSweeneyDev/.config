@@ -37,8 +37,8 @@ require("lazy").setup
   {"rcarriga/nvim-notify", commit = "d333b6f"},
   {"folke/noice.nvim", commit = "d9328ef"},
 
-  {"nvim-treesitter/nvim-treesitter", commit = "8e40904", build = ":TSUpdate"},
-  {"neoclide/coc.nvim", commit = "57d488a", branch = "release"},
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate", commit = "8e40904"},
+  {"neoclide/coc.nvim", branch = "release", commit = "57d488a"},
   {"tpope/vim-fugitive", commit = "d4877e5"},
   {"github/copilot.vim", commit = "8703812"}
 }
