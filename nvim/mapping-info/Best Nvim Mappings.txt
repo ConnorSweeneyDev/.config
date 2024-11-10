@@ -73,12 +73,6 @@
 
 
 
---- MARKDOWN PREVIEW ---
-(Normal) <space>tm       -->  Toggle markdown preview in browser
---- MARKDOWN PREVIEW ---
-
-
-
 --- LEAP ---
 (Normal) s<char><char>   -->  Check forward for the two characters and leap to them by pressing the displayed key
 (Visual) s<char><char>   -->  Check forward for the two characters and leap to them by pressing the displayed key

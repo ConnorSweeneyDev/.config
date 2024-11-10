@@ -40,6 +40,5 @@ require("lazy").setup
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {"neoclide/coc.nvim", branch = "release"},
   {"tpope/vim-fugitive"},
-  {"github/copilot.vim"},
-  {"toppair/peek.nvim", build = "deno task --quiet build:fast"}
+  {"github/copilot.vim"}
 }
