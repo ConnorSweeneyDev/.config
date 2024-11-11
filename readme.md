@@ -123,12 +123,12 @@ require("lazy").setup
 ```
 Restart neovim and there should be no error messages.
 
-Now, inside the `.setup` field you can start adding plugins, do so in the following pattern (with some exceptions
-below):
+Now, inside the `.setup` field start adding plugins, do so in the following pattern (with some exceptions below):
 - Add the line to `lua\main\lazy.lua` and restart neovim.
 - If it needs one, add an `after\plugin\[PLUGIN].lua` file for the plugin and restart neovim.
+- Test the functionality of the plugin.
 
-The following plugins require extra or different steps than those outlined above:
+The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
   - plenary.nvim
@@ -145,14 +145,14 @@ The following plugins require extra or different steps than those outlined above
   plugins, but will not cause any errors if any are missing, so you can remove unnecessary lines if you want, and you
   can also change the colorscheme to the one you want to use, but none of this is necessary.
 - Noice &rightarrow; This plugin requires nvim-notify to be installed, so make sure to do that first.
-- Treesitter &rightarrow; After following the steps, you should see it compiling languages - don't touch your keyboard
+- Treesitter &rightarrow; After following the pattern, you should see it compiling languages - don't touch your keyboard
   until this is finished, though it is common to get errors at this point, if you do, generally restarting neovim a few
   times and deleting any directories manually that it says it doesn't have permission to delete will let them all figure
   themselves out. However if you get an error along the lines of `[LANGUAGE].so is not a valid Win32 app`, this means
   either your version of MinGW does not match your operating system or treesitter is using the wrong compiler for that
   specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Coc &rightarrow; `after\plugin\coc.lua` contains code that only runs if you also have treesitter installed, so remove
-  that code if you aren't using treesitter. After following the steps, run `:CocInstall coc-diagnostic coc-copilot
+  that code if you aren't using treesitter. After following the pattern, run `:CocInstall coc-diagnostic coc-copilot
   coc-git coc-html coc-tsserver coc-css coc-json coc-xml coc-sql coc-pyright coc-java coc-clangd
   coc-clang-format-style-options` then `:q` to close the dialog once everything is installed. Now add
   `coc-settings.json`, where you should add the path to your java installation instead of my one, then restart again. If
@@ -160,7 +160,7 @@ The following plugins require extra or different steps than those outlined above
   command. If a language you want is missing, you can find it
   [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
 - Copilot &rightarrow; If you don't have a license for Copilot then don't include this plugin. If you do, then after
-  following the steps run `:Copilot setup` and follow the instructions.
+  following the pattern run `:Copilot setup` and follow the instructions.
 
 You can now add the `after\ftplugin` folder and any files inside it, which are used for language specific configuration;
 after that, don't forget to include `after\plugin\buffers.lua`.
