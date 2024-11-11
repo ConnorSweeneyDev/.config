@@ -1,19 +1,4 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
-end
-opt.rtp:prepend(lazypath)
-
+lazy_util.bootstrap()
 map("n", "<LEADER>l", "<CMD>Lazy<CR>")
 require("lazy").setup
 {
@@ -28,7 +13,6 @@ require("lazy").setup
   {"Sleepful/leap-by-word.nvim"},
   {"kevinhwang91/nvim-bqf"},
   {"itchyny/vim-qfedit"},
-
   {"MunifTanjim/nui.nvim"},
   {"nvim-tree/nvim-web-devicons"},
   {"tribela/vim-transparent"},
@@ -36,7 +20,6 @@ require("lazy").setup
   {"nvim-lualine/lualine.nvim"},
   {"rcarriga/nvim-notify"},
   {"folke/noice.nvim"},
-
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {"neoclide/coc.nvim", branch = "release"},
   {"tpope/vim-fugitive"},

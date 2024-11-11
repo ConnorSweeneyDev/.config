@@ -3,7 +3,6 @@ map("n", "<LEADER>gp", "<CMD>G pull<CR>")
 map("n", "<LEADER>gu", "<CMD>G submodule update --recursive --remote<CR>")
 map("n", "<LEADER>gr", "<CMD>G restore %<CR>")
 map("n", "<LEADER>gR", "<CMD>G restore .<CR>")
-
 map("n", "<LEADER>gg", "<CMD>diffget<CR>")
 map("n", "<LEADER>gh", "<CMD>diffget //2<CR>")
 map("n", "<LEADER>gl", "<CMD>diffget //3<CR>")

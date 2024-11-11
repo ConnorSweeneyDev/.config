@@ -28,11 +28,4 @@ require("oil").setup
   }
 }
 map("n", "<LEADER>pv", "<CMD>Oil<CR>")
-
-local function floating_window_exists()
-  for _, winid in pairs(api.nvim_tabpage_list_wins(0)) do
-    if api.nvim_win_get_config(winid).zindex then return true end
-  end
-  return false
-end
-if not floating_window_exists() then vim.cmd("Oil") end
+oil_util.open_on_startup()
