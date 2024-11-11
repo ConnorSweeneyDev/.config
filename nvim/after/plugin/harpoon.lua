@@ -1,5 +1,6 @@
 local harpoon = require("harpoon")
-harpoon:setup{ settings = { save_on_toggle = true } }
+harpoon:setup{settings = {save_on_toggle = true}}
+
 map("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list(), {title = " Harpoon ", title_pos = "left", border = "rounded"}) end)
 map("n", "<LEADER>a", function() harpoon:list():add() end)
 map("n", "<LEADER>z", function() harpoon:list():remove() end)

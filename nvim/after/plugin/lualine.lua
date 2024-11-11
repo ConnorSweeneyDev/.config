@@ -1,7 +1,5 @@
-require("lualine").setup
-{
-  options =
-  {
+require("lualine").setup{
+  options = {
     icons_enabled = true,
     theme = "vscode",
     component_separators = {left = "┃", right = "┃"},
@@ -12,8 +10,7 @@ require("lualine").setup
     globalstatus = true,
     refresh = {statusline = 10, tabline = 10, winbar = 10}
   },
-  sections =
-  {
+  sections = {
     lualine_a = {"mode"},
     lualine_b = {{"dynamic_path", fmt = lualine_util.dynamic_path}},
     lualine_c = {"diagnostics"},

@@ -3,20 +3,16 @@ opt = vim.opt
 api = vim.api
 g = vim.g
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 lazy_util = {}
 lazy_util.bootstrap = function()
   local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
   if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-    local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+    local out = vim.fn.system({"git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath})
     if vim.v.shell_error ~= 0 then
-      api.nvim_echo({
-        { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-        { out, "WarningMsg" },
-        { "\nPress any key to exit..." },
-      }, true, {})
+      api.nvim_echo({{"Failed to clone lazy.nvim:\n", "ErrorMsg"}, {out, "WarningMsg"}, {"\nPress any key to exit..."}}, true, {})
       vim.fn.getchar()
       os.exit(1)
     end
@@ -24,7 +20,7 @@ lazy_util.bootstrap = function()
   opt.rtp:prepend(lazypath)
 end
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 general_util = {}
 general_util.floating_window_exists = function()
@@ -34,7 +30,7 @@ general_util.floating_window_exists = function()
   return false
 end
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 cc_util = {}
 cc_util.assign_files = function(long_files, cwd)
@@ -89,7 +85,7 @@ cc_util.switch_file_in_unit = function(dir)
   end
 end
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 cxx_util = {}
 cxx_util.assign_files = function(long_files, cwd)
@@ -178,7 +174,7 @@ cxx_util.switch_file_in_unit = function(dir)
   end
 end
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 buffer_util = {}
 buffer_util.open_buffers = function(folders, file_extensions, ignore_files)
@@ -225,7 +221,7 @@ buffer_util.open_on_startup = function(folders, file_extensions, ignore_files)
   api.nvim_set_current_buf(original_buffer)
 end
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 color_util = {}
 color_util.initialize_colors = function(scheme, highlights)
@@ -236,22 +232,22 @@ color_util.initialize_colors = function(scheme, highlights)
     vim.cmd("highlight " .. highlight)
   end
 end
-color_util.line_number_handler = function(line_colors)
-  local separator = " ▎ "
-  opt.statuscolumn = "%s%=" ..
-  "%#LineNr4#%{(v:relnum >= 4)?v:relnum.\"" .. separator .. "\":\"\"}" ..
-  "%#LineNr3#%{(v:relnum == 3)?v:relnum.\"" .. separator .. "\":\"\"}" ..
-  "%#LineNr2#%{(v:relnum == 2)?v:relnum.\"" .. separator .. "\":\"\"}" ..
-  "%#LineNr1#%{(v:relnum == 1)?v:relnum.\"" .. separator .. "\":\"\"}" ..
-  "%#LineNr0#%{(v:relnum == 0)?v:lnum.\" " .. separator .. "\":\"\"}"
-  vim.cmd("highlight LineNr0 guifg=" .. line_colors[1])
-  vim.cmd("highlight LineNr1 guifg=" .. line_colors[2])
-  vim.cmd("highlight LineNr2 guifg=" .. line_colors[3])
-  vim.cmd("highlight LineNr3 guifg=" .. line_colors[4])
-  vim.cmd("highlight LineNr4 guifg=" .. line_colors[5])
+color_util.line_number_handler = function(separator, line_colors)
+  local status_column = ""
+  for index, line_color in ipairs(line_colors) do
+    local line_nr = index - 1
+    local rel_or_l_num = "relnum.\""
+    local operation = " == "
+    if line_nr == 0 then rel_or_l_num = "lnum.\" " end
+    if line_colors[index + 1] == nil then operation = " >= " end
+    status_column = "%#LineNr" .. line_nr .. "#%{(v:relnum" .. operation .. line_nr ..
+                    ")?v:" .. rel_or_l_num .. separator .. "\":\"\"}" .. status_column
+    vim.cmd("highlight LineNr" .. line_nr .. " guifg=" .. line_color)
+  end
+  opt.statuscolumn = "%s%=" .. status_column
 end
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 lualine_util = {}
 lualine_util.dynamic_path = function()
@@ -301,12 +297,12 @@ lualine_util.current_register = function()
   end
 end
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 oil_util = {}
 oil_util.open_on_startup = function() if not general_util.floating_window_exists() then vim.cmd("Oil") end end
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 coc_util = {}
 coc_util.show_docs = function()
