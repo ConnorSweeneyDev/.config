@@ -207,7 +207,7 @@ buffer_util.close_buffers = function()
     end
   end
 end
-buffer_util.manual_open = function(use_coc, folders, file_extensions, ignore_files)
+buffer_util.manual_open = function(folders, file_extensions, ignore_files, use_coc)
   buffer_util.open_buffers(folders, file_extensions, ignore_files)
   if use_coc then vim.cmd("silent CocRestart") end
   vim.notify("Buffers opened.")
