@@ -46,11 +46,8 @@ cc_util.assign_file_types = function(files)
   local source = ""
   local header = ""
   for _, file in ipairs(files) do
-    if string.match(file, "%.c$") then
-      source = file
-    elseif string.match(file, "%.h$") then
-      header = file
-    end
+    if string.match(file, "%.c$") then source = file
+    elseif string.match(file, "%.h$") then header = file end
   end
   return source, header
 end
@@ -64,25 +61,19 @@ cc_util.switch_file_in_unit = function(dir)
   local name = vim.fn.expand("%:t:r")
   local long_files = vim.fn.globpath(dir, "**/" .. name .. ".*", 0, 1)
   local files = cc_util.assign_files(long_files, cwd)
-  if #files == 0 then
-    vim.notify("Problem reading filename!", "error")
-  elseif #files == 1 then
-    vim.notify("There is only one file in this compilation unit!", "error")
+  if #files == 0 then vim.notify("Problem reading filename!", "error")
+  elseif #files == 1 then vim.notify("There is only one file in this compilation unit!", "error")
   elseif #files == 2 then
     local source, header = cc_util.assign_file_types(files)
     local other_file = ""
-    if string.match(extension, "c") then
-      other_file = header
-    elseif string.match(extension, "h") then
-      other_file = source
+    if string.match(extension, "c") then other_file = header
+    elseif string.match(extension, "h") then other_file = source
     else
       vim.notify("Unexpected file extension!", "error")
       return
     end
     vim.cmd("edit " .. other_file)
-  else
-    vim.notify("Unexpectedly high amount of corresponding files found!", "error")
-  end
+  else vim.notify("Unexpectedly high amount of corresponding files found!", "error") end
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -102,22 +93,15 @@ cxx_util.assign_file_types = function(files)
   local header = ""
   local inline = ""
   for _, file in ipairs(files) do
-    if string.match(file, "%.cpp$") then
-      source = file
-    elseif string.match(file, "%.hpp$") then
-      header = file
-    elseif string.match(file, "%.inl$") then
-      inline = file
-    end
+    if string.match(file, "%.cpp$") then source = file
+    elseif string.match(file, "%.hpp$") then header = file
+    elseif string.match(file, "%.inl$") then inline = file end
   end
   return source, header, inline
 end
 cxx_util.find_one_from_two = function(file1, file2)
-  if file1 ~= "" then
-    return file1
-  elseif file2 ~= "" then
-    return file2
-  end
+  if file1 ~= "" then return file1
+  elseif file2 ~= "" then return file2 end
 end
 cxx_util.switch_file_in_unit = function(dir)
   local extension = vim.fn.expand("%:e")
@@ -129,19 +113,14 @@ cxx_util.switch_file_in_unit = function(dir)
   local name = vim.fn.expand("%:t:r")
   local long_files = vim.fn.globpath(dir, "**/" .. name .. ".*", 0, 1)
   local files = cxx_util.assign_files(long_files, cwd)
-  if #files == 0 then
-    vim.notify("Problem reading filename!", "error")
-  elseif #files == 1 then
-    vim.notify("There is only one file in this compilation unit!", "error")
+  if #files == 0 then vim.notify("Problem reading filename!", "error")
+  elseif #files == 1 then vim.notify("There is only one file in this compilation unit!", "error")
   elseif #files == 2 then
     local source, header, inline = cxx_util.assign_file_types(files)
     local other_file = ""
-    if string.match(extension, "cpp") then
-      other_file = cxx_util.find_one_from_two(header, inline)
-    elseif string.match(extension, "hpp") then
-      other_file = cxx_util.find_one_from_two(source, inline)
-    elseif string.match(extension, "inl") then
-      other_file = cxx_util.find_one_from_two(source, header)
+    if string.match(extension, "cpp") then other_file = cxx_util.find_one_from_two(header, inline)
+    elseif string.match(extension, "hpp") then other_file = cxx_util.find_one_from_two(source, inline)
+    elseif string.match(extension, "inl") then other_file = cxx_util.find_one_from_two(source, header)
     else
       vim.notify("Unexpected file extension!", "error")
       return
@@ -150,28 +129,21 @@ cxx_util.switch_file_in_unit = function(dir)
   elseif #files == 3 then
     local source, header, inline = cxx_util.assign_file_types(files)
     local selection = {}
-    if string.match(extension, "cpp") then
-      selection = {header, inline}
-    elseif string.match(extension, "hpp") then
-      selection = {source, inline}
-    elseif string.match(extension, "inl") then
-      selection = {source, header}
+    if string.match(extension, "cpp") then selection = {header, inline}
+    elseif string.match(extension, "hpp") then selection = {source, inline}
+    elseif string.match(extension, "inl") then selection = {source, header}
     else
       vim.notify("Unexpected file extension!", "error")
       return
     end
     local extension_selection = {}
-    for _, file in ipairs(selection) do
-      table.insert(extension_selection, string.match(file, "%.([^.]+)$"))
-    end
+    for _, file in ipairs(selection) do table.insert(extension_selection, string.match(file, "%.([^.]+)$")) end
     local choice = require("lacasitos").choose_option(extension_selection)
     if choice then
       if choice == string.match(selection[1], "%.([^.]+)$") then vim.cmd("edit " .. selection[1])
       else vim.cmd("edit " .. selection[2]) end
     end
-  else
-    vim.notify("Unexpectedly high amount of corresponding files found!", "error")
-  end
+  else vim.notify("Unexpectedly high amount of corresponding files found!", "error") end
 end
 
 ----------------------------------------------------------------------------------------------------
