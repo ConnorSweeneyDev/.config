@@ -121,9 +121,10 @@ The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
   - plenary.nvim &rightarrow; Required by telescope.nvim and harpoon.
-  - lacasitos.nvim &rightarrow; Required by the `lua\main\util.lua` file.
+  - lacasitos.nvim &rightarrow; Required by `lua\main\util.lua`.
   - nui.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
+  - notify.nvim &rightarrow; Required by noice.nvim and `lua\main\util.lua`.
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `after\plugin\leap.lua` requires
   both of these plugins to be installed.
