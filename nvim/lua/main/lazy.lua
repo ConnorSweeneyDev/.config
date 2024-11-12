@@ -23,5 +23,5 @@ require("lazy").setup
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {"neoclide/coc.nvim", branch = "release"},
   {"tpope/vim-fugitive"},
-  {"github/copilot.vim"}
+  {"supermaven-inc/supermaven-nvim"}
 }

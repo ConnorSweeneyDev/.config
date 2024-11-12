@@ -276,6 +276,15 @@ oil_util.open_on_startup = function() if not general_util.floating_window_exists
 
 ----------------------------------------------------------------------------------------------------
 
+treesitter_util = {}
+treesitter_util.disable_for_large_files = function(max_size)
+  local size = vim.fn.getfsize(vim.fn.expand("%"))
+  if size > max_size then vim.cmd("TSBufDisable highlight")
+  else vim.cmd("TSBufEnable highlight") end
+end
+
+----------------------------------------------------------------------------------------------------
+
 coc_util = {}
 coc_util.show_docs = function()
   local cw = vim.fn.expand("<cword>")
@@ -295,4 +304,13 @@ coc_util.refactor_handler = function()
     vim.treesitter.language.register(language, "crf")
   end
   if string.find(vim.fn.expand("%"), "__coc_refactor__") then vim.cmd("set filetype=crf") end
+end
+
+----------------------------------------------------------------------------------------------------
+
+supermaven_util = {}
+supermaven_util.disable_for_large_files = function(max_size)
+  local size = vim.fn.getfsize(vim.fn.expand("%"))
+  if size > max_size and require("supermaven-nvim.api").is_running() then vim.cmd("SupermavenStop")
+  elseif size <= max_size and not require("supermaven-nvim.api").is_running() then vim.cmd("SupermavenStart") end
 end

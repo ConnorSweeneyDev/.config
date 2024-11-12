@@ -114,11 +114,11 @@
 
 
 
---- COPILOT ---
+--- SUPERMAVEN ---
 (Insert) <tab>           -->  Accept whole suggestion
 (Insert) <alt>m          -->  Accept word in suggestion
 (Insert) <alt>n	         -->  Dismiss suggestion
---- COPILOT ---
+--- SUPERMAVEN ---
 
 
 

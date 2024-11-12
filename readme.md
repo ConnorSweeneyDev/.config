@@ -121,10 +121,10 @@ The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
   - plenary.nvim &rightarrow; Required by telescope.nvim and harpoon.
-  - lacasitos.nvim &rightarrow; Required by `lua\main\util.lua`.
+  - lacasitos.nvim &rightarrow; Required by any files that I want a better vim.ui.select().
   - nui.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
-  - notify.nvim &rightarrow; Required by noice.nvim and `lua\main\util.lua`.
+  - notify.nvim &rightarrow; Required by any files that I want to notify the user in, and by noice.nvim.
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `after\plugin\leap.lua` requires
   both of these plugins to be installed.
@@ -145,8 +145,8 @@ The following plugins require some extra or different steps:
   then restart again. If you don't want one of the listed servers, dont include them or just run `:CocUninstall
   [SERVER]` after the first command. If a language you want is missing, you can find it
   [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
-- Copilot &rightarrow; If you don't have a license for Copilot then don't include this plugin. If you do, then after
-  following the pattern run `:Copilot setup` and follow the instructions.
+- Supermaven &rightarrow; If you don't have a subscription, you can still use it by running `:SupermavenUseFree` when
+  prompted, otherwise you can follow the instructions to use it with a subscription.
 
 You can now add the `after\ftplugin` folder and any files inside it, which are used for language specific configuration;
 after that, don't forget to include `after\plugin\buffers.lua`.

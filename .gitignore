@@ -6,6 +6,7 @@ nvim-data/*
 portal/*
 scoop/*
 simple-update-notifier/*
+supermaven/*
 temp/*
 
 # Generated files
