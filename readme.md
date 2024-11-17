@@ -31,6 +31,7 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
 - PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget --version 7.4.5.0`.
 - gsudo &rightarrow; Run `winget install --id gerardog.gsudo`.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`.
+- Difftastic &rightarrow; Run `winget install difftastic`.
 - OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh --version 23.16.0`.
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
@@ -50,7 +51,7 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
   - `sudo config CacheMode auto`.
   - `sudo config CacheDuration infinite`.
   - `sudo config LogLevel None`.
-- Run `git config --system core.longpaths true`. After that you can use the following aliases in your
+- Run `git config --system core.longpaths true`. After that you can use the following configuration in your
   `$Env:USERPROFILE\.gitconfig` file if you want:
   ```
   [alias]
@@ -69,6 +70,8 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
     s = status
     d = diff
     l = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  [diff]
+    external = difft
   ```
 - Paste `posh` into your config and run `oh-my-posh disable notice` to stop the annoying update message every so often.
 - Paste `which` into your config and put it in your path.
