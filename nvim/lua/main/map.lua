@@ -1,4 +1,3 @@
-g.mapleader = " "
 map("n", " ", "<NOP>")
 map("n", "<C-f>", "<NOP>")
 map("n", "<LEADER>w", "<CMD>w<CR>")

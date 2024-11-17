@@ -97,8 +97,8 @@ After completing the dependencies for this section, I recommend manually recreat
 just pasting it in, because this will allow you to single out any unexpected errors as they happen.
 
 You should start with the top level `init.lua` and then `lua\main\init.lua`. Then you can create `lua\main\util.lua`,
-`lua\main\set.lua` and `lua\main\remap.lua` and paste the config into each. `set.lua` is for global neovim settings,
-`remap.lua` is for neovim keybinds and `util.lua` is for helper functions used throughout the configuration, designed to
+`lua\main\set.lua` and `lua\main\map.lua` and paste the config into each. `set.lua` is for global neovim settings,
+`map.lua` is for neovim keybinds and `util.lua` is for helper functions used throughout the configuration, designed to
 remove the need for visible logic in any configuration files.
 
 Now you can create `lua\main\lazy.lua`, and populate it with only the following lines:
@@ -158,7 +158,7 @@ references etc.), this file also provides the keybind for that, and the keybind 
 also has a toggle for whether you are using Coc or not, so it is not necessary to use Coc to use this file.
 
 Finally, you can paste the `mapping-info` folder into the root for safe keeping. All keybinds and settings can be edited
-at `lua\main\remap.lua`, `lua\main\set.lua` or the respective `after\plugin\[PLUGIN].lua` files and you can go into
+at `lua\main\map.lua`, `lua\main\set.lua` or the respective `after\plugin\[PLUGIN].lua` files and you can go into
 deeper detail inside `lua\main\util.lua`. Furthermore, all language specific settings can be edited at
 `after\ftplugin\[EXTENSION].lua` and language server settings can be edited at `coc-settings.json`.
 

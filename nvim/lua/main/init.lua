@@ -1,4 +1,4 @@
 require("main.util")
 require("main.set")
-require("main.remap")
+require("main.map")
 require("main.lazy")
