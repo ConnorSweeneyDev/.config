@@ -9,6 +9,8 @@ function tn { wezterm cli spawn } # Opens a new tab
 function wc { wezterm cli spawn --new-window --cwd $pwd } # Runs wn then changes to the current directory
 function tc { wezterm cli spawn --cwd $pwd } # Runs tn then changes to the current directory
 
+Set-Alias -Name "g" -Value "git"
+
 function d # Better rm - Usage: d <path1> <path2> ... <pathN>
 {
   $paths = $args
