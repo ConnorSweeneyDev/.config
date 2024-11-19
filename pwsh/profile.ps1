@@ -20,10 +20,11 @@ function d # Better rm - Usage: d <path1> <path2> ... <pathN>
     else { echo "Path does not exist: $path" }
   }
 }
-function fh # Finds occurences of a string in your command history - Usage: fh <string>
+function fh # Searches your command history, sets your clipboard to the selected item - Usage: fh [<string>]
 {
   $find = $args
-  Get-Content (Get-PSReadlineOption).HistorySavePath | ? {$_ -like "*$find*"} | Sort-Object -Unique -Descending
+  $selected = Get-Content (Get-PSReadlineOption).HistorySavePath | ? {$_ -like "*$find*"} | Sort-Object -Unique -Descending | fzf
+  if (![string]::IsNullOrWhiteSpace($selected)) { Set-Clipboard $selected }
 }
 
 function cw # Changes to the directory of your selected file in fzf searching either D:\, C:\ or C:\Users
@@ -98,8 +99,8 @@ function music
   elseif ($args -eq "-s")
   {
     $directoryPath = Get-Content -Path user\songs_directory.txt -First 1
-    $selectedSong = Get-ChildItem -Path $directoryPath -File | ForEach-Object { $_.Name } | fzf -m
-    if (![string]::IsNullOrWhiteSpace($selectedSong)) { .\binary\TerminalMusicPlayer.exe $selectedSong }
+    $selectedSongs = Get-ChildItem -Path $directoryPath -File | ForEach-Object { $_.Name } | fzf -m
+    if (![string]::IsNullOrWhiteSpace($selectedSongs)) { .\binary\TerminalMusicPlayer.exe $selectedSongs }
   }
   elseif ($args -eq "-c") { .\binary\TerminalMusicPlayer.exe -c }
   elseif ($args -eq "-r") { .\binary\TerminalMusicPlayer.exe -r }
