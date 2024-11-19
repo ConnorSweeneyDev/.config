@@ -41,6 +41,11 @@
       "kind": "Class",
       "id": "pygame",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Class",
+      "id": "GLFW30",
+      "matching_strategy": "Equals"
     }
   ],
   "stackbar": {
