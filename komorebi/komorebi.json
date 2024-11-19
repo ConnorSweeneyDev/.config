@@ -26,7 +26,7 @@
       "matching_strategy": "Equals"
     }
   ],
-  "float_rules": [
+  "floating_applications": [
     {
       "kind": "Class",
       "id": "SDL_app",
