@@ -206,8 +206,8 @@ important bindings.
 
 # Tiling Window Manager
 ### Dependencies
-- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi --version 0.1.29`.
-- Yasb &rightarrow; Run `winget install --id AmN.yasb --version 1.2.4`.
+- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi --version 0.1.30`.
+- Yasb &rightarrow; Run `winget install --id AmN.yasb --version 1.2.7`.
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey --version 2.0.18`.
 - ToggleRoundedCorners &rightarrow; Download the portable executable from
   [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to `trc.exe`. Place it in
