@@ -228,7 +228,8 @@ lualine_util.dynamic_path = function()
   local cwd = vim.fn.getcwd()
   local root = cwd:match("^[^:]")
   local modified_symbol = " ⬤"
-  if string.match(filetype, "help") then path = "help\\" .. string.match(path, "\\doc\\(.*)")
+  if path == "" and filetype == "" then return "none"
+  elseif string.match(filetype, "help") then path = "help\\" .. string.match(path, "\\doc\\(.*)")
   elseif string.match(filetype, "list") then path = string.gsub(path, "^list:///", "")
   elseif string.match(filetype, "qf") then path = "quickfix"
   elseif string.match(filetype, "lazy") then path = "lazy"
