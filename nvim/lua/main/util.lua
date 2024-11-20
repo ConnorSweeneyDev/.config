@@ -5,29 +5,85 @@ g = vim.g
 
 ----------------------------------------------------------------------------------------------------
 
-lazy_util = {}
-lazy_util.bootstrap = function()
-  local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-  if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-    local out = vim.fn.system({"git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath})
-    if vim.v.shell_error ~= 0 then
-      api.nvim_echo({{"Failed to clone lazy.nvim:\n", "ErrorMsg"}, {out, "WarningMsg"}, {"\nPress any key to exit..."}}, true, {})
-      vim.fn.getchar()
-      os.exit(1)
-    end
-  end
-  opt.rtp:prepend(lazypath)
-end
-
-----------------------------------------------------------------------------------------------------
-
 general_util = {}
 general_util.floating_window_exists = function()
   for _, winid in pairs(api.nvim_tabpage_list_wins(0)) do
     if api.nvim_win_get_config(winid).zindex then return true end
   end
   return false
+end
+
+----------------------------------------------------------------------------------------------------
+
+buffer_util = {}
+buffer_util.open_buffers = function(folders, file_extensions, ignore_files)
+  local folders = {"/program", "/src", "/lua", "/after"}
+  local file_extensions = {"*.cpp", "*.hpp", "*.inl", "*.glsl", "*.c", "*.h", "*.py", "*.lua", "*.java", "*.cs"}
+  local ignore_files = {"resource.cpp", "resource.hpp"}
+  local original_buffer = api.nvim_get_current_buf()
+  for _, folder in ipairs(folders) do
+    for _, extension in ipairs(file_extensions) do
+      local files = vim.fn.globpath(vim.fn.getcwd() .. folder, "**/" .. extension, 0, 1)
+      for _, file in ipairs(files) do
+        if not vim.tbl_contains(ignore_files, vim.fn.fnamemodify(file, ":t")) then
+          vim.cmd("edit " .. file)
+        end
+      end
+    end
+  end
+  api.nvim_set_current_buf(original_buffer)
+end
+buffer_util.close_buffers = function()
+  local original_buffer = api.nvim_get_current_buf()
+  local buffers = api.nvim_list_bufs()
+  for _, buffer in ipairs(buffers) do
+    if buffer ~= original_buffer then
+      api.nvim_buf_delete(buffer, {force = true})
+    end
+  end
+end
+buffer_util.manual_open = function(folders, file_extensions, ignore_files, use_coc)
+  buffer_util.open_buffers(folders, file_extensions, ignore_files)
+  if use_coc then vim.cmd("silent CocRestart") end
+  vim.notify("Buffers opened.")
+end
+buffer_util.manual_close = function(use_coc)
+  buffer_util.close_buffers()
+  if use_coc then vim.cmd("silent CocRestart") end
+  vim.notify("Buffers closed.")
+end
+buffer_util.open_on_startup = function(folders, file_extensions, ignore_files)
+  if general_util.floating_window_exists() then return end
+  local original_buffer = api.nvim_get_current_buf()
+  buffer_util.open_buffers(folders, file_extensions, ignore_files)
+  vim.cmd("bd 1")
+  api.nvim_set_current_buf(original_buffer)
+end
+
+----------------------------------------------------------------------------------------------------
+
+color_util = {}
+color_util.initialize_colors = function(scheme, highlights)
+  vim.cmd.colorscheme(scheme)
+  api.nvim_set_hl(0, "Normal", {bg = "none"})
+  api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+  for _, highlight in ipairs(highlights) do
+    vim.cmd("highlight " .. highlight)
+  end
+end
+color_util.line_number_handler = function(separator, line_colors)
+  local status_column = ""
+  for index, line_color in ipairs(line_colors) do
+    local line_nr = index - 1
+    local rel_or_l_num = "relnum.\""
+    local operation = " == "
+    if line_nr == 0 then rel_or_l_num = "lnum.\" " end
+    if line_colors[index + 1] == nil then operation = " >= " end
+    status_column = "%#LineNr" .. line_nr .. "#%{(v:relnum" .. operation .. line_nr ..
+                    ")?v:" .. rel_or_l_num .. separator .. "\":\"\"}" .. status_column
+    vim.cmd("highlight LineNr" .. line_nr .. " guifg=" .. line_color)
+  end
+  opt.statuscolumn = "%s%=" .. status_column
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -148,75 +204,19 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-buffer_util = {}
-buffer_util.open_buffers = function(folders, file_extensions, ignore_files)
-  local folders = {"/program", "/src", "/lua", "/after"}
-  local file_extensions = {"*.cpp", "*.hpp", "*.inl", "*.glsl", "*.c", "*.h", "*.py", "*.lua", "*.java", "*.cs"}
-  local ignore_files = {"resource.cpp", "resource.hpp"}
-  local original_buffer = api.nvim_get_current_buf()
-  for _, folder in ipairs(folders) do
-    for _, extension in ipairs(file_extensions) do
-      local files = vim.fn.globpath(vim.fn.getcwd() .. folder, "**/" .. extension, 0, 1)
-      for _, file in ipairs(files) do
-        if not vim.tbl_contains(ignore_files, vim.fn.fnamemodify(file, ":t")) then
-          vim.cmd("edit " .. file)
-        end
-      end
+lazy_util = {}
+lazy_util.bootstrap = function()
+  local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+  if not (vim.uv or vim.loop).fs_stat(lazypath) then
+    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+    local out = vim.fn.system({"git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath})
+    if vim.v.shell_error ~= 0 then
+      api.nvim_echo({{"Failed to clone lazy.nvim:\n", "ErrorMsg"}, {out, "WarningMsg"}, {"\nPress any key to exit..."}}, true, {})
+      vim.fn.getchar()
+      os.exit(1)
     end
   end
-  api.nvim_set_current_buf(original_buffer)
-end
-buffer_util.close_buffers = function()
-  local original_buffer = api.nvim_get_current_buf()
-  local buffers = api.nvim_list_bufs()
-  for _, buffer in ipairs(buffers) do
-    if buffer ~= original_buffer then
-      api.nvim_buf_delete(buffer, {force = true})
-    end
-  end
-end
-buffer_util.manual_open = function(folders, file_extensions, ignore_files, use_coc)
-  buffer_util.open_buffers(folders, file_extensions, ignore_files)
-  if use_coc then vim.cmd("silent CocRestart") end
-  vim.notify("Buffers opened.")
-end
-buffer_util.manual_close = function(use_coc)
-  buffer_util.close_buffers()
-  if use_coc then vim.cmd("silent CocRestart") end
-  vim.notify("Buffers closed.")
-end
-buffer_util.open_on_startup = function(folders, file_extensions, ignore_files)
-  if general_util.floating_window_exists() then return end
-  local original_buffer = api.nvim_get_current_buf()
-  buffer_util.open_buffers(folders, file_extensions, ignore_files)
-  vim.cmd("bd 1")
-  api.nvim_set_current_buf(original_buffer)
-end
-
-----------------------------------------------------------------------------------------------------
-
-color_util = {}
-color_util.initialize_colors = function(scheme, highlights)
-  vim.cmd.colorscheme(scheme)
-  api.nvim_set_hl(0, "Normal", {bg = "none"})
-  api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
-  for _, highlight in ipairs(highlights) do
-    vim.cmd("highlight " .. highlight)
-  end
-end
-color_util.line_number_handler = function(separator, line_colors)
-  local status_column = ""
-  for index, line_color in ipairs(line_colors) do
-    local line_nr = index - 1
-    local rel_or_l_num = "relnum.\""
-    local operation = " == "
-    if line_nr == 0 then rel_or_l_num = "lnum.\" " end
-    if line_colors[index + 1] == nil then operation = " >= " end
-    status_column = "%#LineNr" .. line_nr .. "#%{(v:relnum" .. operation .. line_nr ..
-                    ")?v:" .. rel_or_l_num .. separator .. "\":\"\"}" .. status_column
-    vim.cmd("highlight LineNr" .. line_nr .. " guifg=" .. line_color)
-  end
-  opt.statuscolumn = "%s%=" .. status_column
+  opt.rtp:prepend(lazypath)
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -264,11 +264,10 @@ lualine_util.dynamic_path = function()
 end
 lualine_util.current_register = function()
   local recording_register = vim.fn.reg_recording()
-  if recording_register == "" then
-    return "@~"
-  else
+  if recording_register ~= "" then
     return "@" .. recording_register
   end
+  return "@~"
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -306,6 +305,34 @@ coc_util.refactor_handler = function()
     vim.treesitter.language.register(language, "crf")
   end
   if string.find(vim.fn.expand("%"), "__coc_refactor__") then vim.cmd("set filetype=crf") end
+end
+
+----------------------------------------------------------------------------------------------------
+
+local fugitive_saved_buffer = 0
+fugitive_util = {}
+fugitive_util.open_or_close = function()
+  local windows = api.nvim_list_wins()
+  local fugitive_windows = {}
+  for _, window in ipairs(windows) do
+    if string.find(api.nvim_buf_get_name(api.nvim_win_get_buf(window)), "fugitive:\\\\\\") then
+      table.insert(fugitive_windows, window)
+    end
+  end
+  if #fugitive_windows ~= 0 then
+    if not (#fugitive_windows == 1 and #windows == 1) then
+      for _, window in ipairs(fugitive_windows) do api.nvim_win_close(window, false) end
+      return
+    end
+    if fugitive_saved_buffer == nil then
+      vim.nvim_input("<C-o>")
+      return
+    end
+    vim.cmd("buf " .. fugitive_saved_buffer)
+    return
+  end
+  fugitive_saved_buffer = api.nvim_get_current_buf()
+  api.nvim_input("<CMD>G<CR><C-w>o")
 end
 
 ----------------------------------------------------------------------------------------------------

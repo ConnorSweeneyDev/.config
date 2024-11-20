@@ -55,7 +55,7 @@
 
 
 --- FUGITIVE ---
-(Normal) <space>gs       -->  Open fugitive menu
+(Normal) <space>gs       -->  Toggle fugitive status menu if closed, closes all existing fugitive windows if any are open
 (Normal) s               -->  When cursor is on an unstaged change, stages it; when cursor is on an unpushed commit, pushes it
 (Normal) u               -->  When cursor is on a staged change, unstages it
 (Normal) cc              -->  Create a new commit
@@ -68,7 +68,6 @@
 (Normal) <space>gg       -->  When viewing a diff, replace the local copy with the remote copy of the chunk
 (Normal) <space>gh       -->  Put the left side chunk of the merge conflict in the working copy
 (Normal) <space>gl       -->  Put the right side chunk of the merge conflict in the working copy
-(Normal) ZG              -->  When focused on the working copy, close all diff windows and focus the git status window
 --- FUGITIVE ---
 
 
