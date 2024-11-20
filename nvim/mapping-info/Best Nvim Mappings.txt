@@ -42,7 +42,7 @@
 
 
 --- UNDOTREE ---
-(Normal) <space>u        -->  Open undotree menu
+(Normal) U               -->  Open undotree menu
 --- UNDOTREE ---
 
 
