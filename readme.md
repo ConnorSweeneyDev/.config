@@ -124,17 +124,15 @@ The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
   - plenary.nvim &rightarrow; Required by telescope.nvim and harpoon.
-  - lacasitos.nvim &rightarrow; Required by any files that I want a better vim.ui.select().
   - nui.nvim &rightarrow; Required by noice.nvim.
+  - notify.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
-  - notify.nvim &rightarrow; Required by any files that I want to notify the user in, and by noice.nvim.
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `after\plugin\leap.lua` requires
   both of these plugins to be installed.
 - Colorscheme &rightarrow; vim-transparent and vscode.nvim should both be installed at the same time, their plugin file
   is `after\plugin\colors.lua`. You don't have to use that combination of plugins, but the file assumes you are and
   lualine is also set up to use the vscode colorscheme.
-- Noice &rightarrow; This plugin requires nvim-notify to be installed, so make sure to do that first.
 - Treesitter &rightarrow; After following the pattern, you should see it compiling languages - don't touch your keyboard
   until this is finished, though it is common to get errors at this point, if you do, generally restarting neovim a few
   times and deleting any directories manually that it says it doesn't have permission to delete will let them all figure

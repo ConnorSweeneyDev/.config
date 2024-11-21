@@ -3,7 +3,6 @@ map("n", "<LEADER>l", "<CMD>Lazy<CR>")
 require("lazy").setup
 {
   {"nvim-lua/plenary.nvim"},
-  {"divagueame/lacasitos.nvim"},
   {"stevearc/oil.nvim"},
   {"nvim-telescope/telescope.nvim"},
   {"theprimeagen/harpoon", branch = "harpoon2"},
