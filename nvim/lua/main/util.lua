@@ -112,6 +112,7 @@ cc_util.assign_file_types = function(files)
   return source, header
 end
 cc_util.switch_file_in_compilation_unit = function(directory, target_extension)
+  local directory = vim.fn.getcwd() .. directory
   local current_extension = vim.fn.expand("%:e")
   if not string.match(current_extension, "c") and not string.match(current_extension, "h") then
     vim.notify("Not a c or h file!", "error")
@@ -151,6 +152,7 @@ cxx_util.assign_file_types = function(files)
   return source, header, inline
 end
 cxx_util.switch_file_in_compilation_unit = function(directory, target_extension)
+  local directory = vim.fn.getcwd() .. directory
   local current_extension = vim.fn.expand("%:e")
   if not string.match(current_extension, "cpp") and not string.match(current_extension, "hpp") and not string.match(current_extension, "inl") then
     vim.notify("Not a cpp, hpp or inl file!", "error")
