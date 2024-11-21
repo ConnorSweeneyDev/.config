@@ -107,12 +107,6 @@
 (Insert) <control>e      -->  Dismiss completion menu
 
 (Normal) <space>cr       -->  Restart server
-
-(Normal) <space>uc       -->  Switch to the cpp file in a C++ compilation unit
-(Normal) <space>uh       -->  Switch to the hpp file in a C++ compilation unit
-(Normal) <space>ui       -->  Switch to the inl file in a C++ compilation unit
-(Normal) <space>Uc       -->  Switch to the c file in a C compilation unit
-(Normal) <space>Uh       -->  Switch to the h file in a C compilation unit
 --- LANGUAGE SERVER ---
 
 
@@ -380,7 +374,6 @@
 
 --- FILE COMMANDS ---
 (Normal) u               -->  Undoes the last change
-(Normal) U               -->  Undoes all changes made to the current line since editing a different line
 (Normal) <control>r      -->  Redoes the last change
 (Normal) gx              -->  Opens the file/link under the cursor in the system default program
 (Normal) gf              -->  Opens the file under the cursor in a new buffer
@@ -391,5 +384,11 @@
 (Normal) <space>m        -->  Runs :!./script/debug.bat -wezterm in the current directory
 
 (Normal) <space><space>  -->  Runs :so in the current file (only in lua files)
-(Normal) <space>kf       -->  Runs :!clang-format -i % (only in c/cpp files)
+
+(Normal) <space>kf       -->  Runs :!clang-format -i % (Only in C/C++ files)
+(Normal) <space>uc       -->  Switch to the cpp file in a C++ compilation unit
+(Normal) <space>uh       -->  Switch to the hpp file in a C++ compilation unit
+(Normal) <space>ui       -->  Switch to the inl file in a C++ compilation unit
+(Normal) <space>Uc       -->  Switch to the c file in a C compilation unit
+(Normal) <space>Uh       -->  Switch to the h file in a C compilation unit
 --- FILE COMMANDS ---
