@@ -69,7 +69,6 @@ buffer_util.open_on_startup = function(folders, file_extensions, ignore_files)
   if general_util.floating_window_exists() then return end
   local original_buffer = api.nvim_get_current_buf()
   buffer_util.open_buffers(folders, file_extensions, ignore_files)
-  vim.cmd("bd 1")
   api.nvim_set_current_buf(original_buffer)
 end
 
@@ -306,8 +305,8 @@ fugitive_util.open_or_close = function()
       for _, window in ipairs(fugitive_windows) do api.nvim_win_close(window, false) end
       return
     end
-    if fugitive_util.saved_buffer == nil then
-      vim.nvim_input("<C-o>")
+    if fugitive_util.saved_buffer == nil or api.nvim_buf_is_loaded(fugitive_util.saved_buffer) == false then
+      api.nvim_set_current_buf(1)
       return
     end
     vim.cmd("new " .. api.nvim_buf_get_name(fugitive_util.saved_buffer))
