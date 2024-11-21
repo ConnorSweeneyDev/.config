@@ -292,29 +292,30 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-local fugitive_saved_buffer = 0
 fugitive_util = {}
+fugitive_util.saved_buffer = 0
 fugitive_util.open_or_close = function()
-  local windows = api.nvim_list_wins()
+  local total_windows = api.nvim_list_wins()
   local fugitive_windows = {}
-  for _, window in ipairs(windows) do
+  for _, window in ipairs(total_windows) do
     if string.find(api.nvim_buf_get_name(api.nvim_win_get_buf(window)), "fugitive:\\\\\\") then
       table.insert(fugitive_windows, window)
     end
   end
   if #fugitive_windows ~= 0 then
-    if not (#fugitive_windows == 1 and #windows == 1) then
+    if #fugitive_windows ~= #total_windows then
       for _, window in ipairs(fugitive_windows) do api.nvim_win_close(window, false) end
       return
     end
-    if fugitive_saved_buffer == nil then
+    if fugitive_util.saved_buffer == nil then
       vim.nvim_input("<C-o>")
       return
     end
-    vim.cmd("buf " .. fugitive_saved_buffer)
+    vim.cmd("new " .. api.nvim_buf_get_name(fugitive_util.saved_buffer))
+    for _, window in ipairs(fugitive_windows) do api.nvim_win_close(window, false) end
     return
   end
-  fugitive_saved_buffer = api.nvim_get_current_buf()
+  fugitive_util.saved_buffer = api.nvim_get_current_buf()
   api.nvim_input("<CMD>G<CR><C-w>o")
 end
 
