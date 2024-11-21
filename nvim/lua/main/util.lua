@@ -33,9 +33,6 @@ end
 
 buffer_util = {}
 buffer_util.open_buffers = function(folders, file_extensions, ignore_files)
-  local folders = {"/program", "/src", "/lua", "/after"}
-  local file_extensions = {"*.cpp", "*.hpp", "*.inl", "*.glsl", "*.c", "*.h", "*.py", "*.lua", "*.java", "*.cs"}
-  local ignore_files = {"resource.cpp", "resource.hpp"}
   local original_buffer = api.nvim_get_current_buf()
   for _, folder in ipairs(folders) do
     for _, extension in ipairs(file_extensions) do
