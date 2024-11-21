@@ -1,6 +1,7 @@
 map("n", " ", "<NOP>")
 map("n", "<C-f>", "<NOP>")
 map("n", "<LEADER>w", "<CMD>w<CR>")
+map("n", "ZZ", "<CMD>wq<CR>")
 map("n", "<LEADER>tw", "<CMD>set wrap!<CR>")
 map("n", "J", "mzJ`z")
 map("n", "gJ", "mzgJ`z")
