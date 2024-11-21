@@ -23,8 +23,6 @@
 (Normal) <control>p      -->  Open telescope menu for navigating files in the git directory
 (Normal) <space>pb       -->  Open telescope menu for navigating buffers
 (Normal) <space>pm       -->  Open telescope menu for navigating message history
-(Normal) <space>pu       -->  Open telescope menu for navigating files in a C++ compilation unit (if there's only 2 files in the unit, opens the other one)
-(Normal) <space>pU       -->  Open telescope menu for navigating files in a C compilation unit (if there's only 2 files in the unit, opens the other one)
 (Normal) <control>q      -->  Add every entry in the telescope window to the quickfix list
 --- TELESCOPE ---
 
@@ -109,6 +107,12 @@
 (Insert) <control>e      -->  Dismiss completion menu
 
 (Normal) <space>cr       -->  Restart server
+
+(Normal) <space>uc       -->  Switch to the cpp file in a C++ compilation unit
+(Normal) <space>uh       -->  Switch to the hpp file in a C++ compilation unit
+(Normal) <space>ui       -->  Switch to the inl file in a C++ compilation unit
+(Normal) <space>Uc       -->  Switch to the c file in a C compilation unit
+(Normal) <space>Uh       -->  Switch to the h file in a C compilation unit
 --- LANGUAGE SERVER ---
 
 
