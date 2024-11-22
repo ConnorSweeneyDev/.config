@@ -28,11 +28,11 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) (I use CaskaydiaCove), then in
   explorer select all `.ttf` files and right click them, now select "Install". After that you can delete the files.
 - WezTerm &rightarrow; Run `winget install --id wez.wezterm`.
-- PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget --version 7.4.5.0`.
+- PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
 - gsudo &rightarrow; Run `winget install --id gerardog.gsudo`.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`.
 - Difftastic &rightarrow; Run `winget install difftastic`.
-- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh --version 23.16.0`.
+- OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
 - fzf &rightarrow; Run `winget install --id=junegunn.fzf`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
@@ -237,7 +237,7 @@ Keybinds and commands to run on startup can be configured in `wm.ahk`, the statu
 VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForVoyager) and follow the setup guide for a
 native Vim toggle for QMK keyboards.
 
-PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget --version 0.85.0` and enable Run at
+PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` and enable Run at
 startup - my favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous query on launch
   enabled, preferred monitor primary, all plugins off except "Program" - this behaves just like the windows run dialog
