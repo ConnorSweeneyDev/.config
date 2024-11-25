@@ -6,18 +6,27 @@ RunWait("pwsh -Command komorebic start", , "Hide")
 RunWait("pwsh -Command yasb", , "Hide")
 RunWait("pwsh -Command sudo trc --disable", , "Hide")
 
+#e::Run("explorer")
+#t::Run("pwsh -NoProfile -Command wezterm", , "Hide")
+#f::Run("pwsh -NoProfile -Command firefox", , "Hide")
+#d::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Discord.lnk")
+#s::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam.lnk")
+
+;ButtonOffsets are relative to the top left corner of the primary monitor
+OpenYasbMenu() {
+  ButtonOffsetX := 20
+  ButtonOffsetY := 20
+  MonitorPrimary := MonitorGetPrimary()
+  MonitorGet MonitorPrimary, &L, &T, &R, &B
+  DllCall("SetCursorPos", "int", (L + ButtonOffsetX), "int", (T + ButtonOffsetY))
+  MouseClick "Left"
+  DllCall("SetCursorPos", "int", R / 2, "int", B / 2)
+}
+#a::OpenYasbMenu()
+
 Komorebic(cmd) {
   RunWait(format("komorebic.exe {}", cmd), , "Hide")
 }
-
-;Assumes 2560x1440 resolution, and that the Yasb power menu button is in the top left
-YasbMenu() {
-  MouseMove -10000, -10000, 0, "R"
-  MouseMove 20, 20, 0, "R"
-  MouseClick "Left"
-  MouseMove 1260, 700, 0, "R"
-}
-#a::YasbMenu()
 
 #c::Komorebic("close")
 #z::Komorebic("minimize")
@@ -45,9 +54,3 @@ YasbMenu() {
 #^!+8::Komorebic("move-to-workspace 3")
 #^!+9::Komorebic("move-to-workspace 4")
 #^!+0::Komorebic("move-to-workspace 5")
-
-#e::Run("explorer")
-#t::Run("pwsh -Command wezterm", , "Hide")
-#f::Run("pwsh -Command firefox", , "Hide")
-#d::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Discord.lnk")
-#s::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam.lnk")
