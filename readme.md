@@ -255,6 +255,10 @@ executables that you want - the only one I use is ZoomIt with the following sett
 - Draw on `ctrl+'`.
 - Record on `ctrl+;`.
 
+WinLister &rightarrow; Go [here](https://www.nirsoft.net/utils/winlister.html) and click "Download WinLister 64-bit",
+move the executable to `C:\WinLister`, then right click `winlister.exe` and select "Create shortcut", then rename it to
+`WinLister` and place this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
+
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and go through the
 installation wizard.
 
