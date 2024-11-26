@@ -22,11 +22,18 @@
     }
   ],
   "floating_applications": [
-    {
-      "kind": "Class",
-      "id": "SDL_app",
-      "matching_strategy": "Equals"
-    },
+    [
+      {
+        "kind": "Class",
+        "id": "SDL_app",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "steamwebhelper.exe",
+        "matching_strategy": "DoesNotEqual"
+      }
+    ],
     {
       "kind": "Class",
       "id": "BATTLESWIN",
