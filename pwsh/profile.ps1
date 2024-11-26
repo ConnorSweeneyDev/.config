@@ -4,10 +4,8 @@ function e { explorer . }
 function b { explorer shell:RecycleBinFolder }
 function n { nvim . }
 
-function wn { wezterm cli spawn --new-window } # Opens a new window
-function tn { wezterm cli spawn } # Opens a new tab
-function wc { wezterm cli spawn --new-window --cwd $pwd } # Runs wn then changes to the current directory
-function tc { wezterm cli spawn --cwd $pwd } # Runs tn then changes to the current directory
+function w { wezterm cli spawn --new-window --cwd $pwd } # Opens a new window at the current directory
+function t { wezterm cli spawn --cwd $pwd } # Opens a new tab at the current directory
 
 Set-Alias -Name "g" -Value "git"
 
@@ -79,8 +77,8 @@ function nw # Opens the directory in neovim of your selected file in fzf searchi
   }
   else { cd C:\ }
 }
-function fd { wezterm cli spawn pwsh -NoExit -Command "nw d" } # Runs tn then "nw d"
-function fu { wezterm cli spawn pwsh -NoExit -Command "nw u" } # Runs tn then "nw u"
+function fd { wezterm cli spawn pwsh -NoExit -Command "nw d" } # Opens a new tab then runs "nw d"
+function fu { wezterm cli spawn pwsh -NoExit -Command "nw u" } # Opens a new tab then runs "nw u"
 
 function attend
 {
@@ -114,19 +112,13 @@ function prompt # Custom prompt to remove the "PS" prefix and also keep the tab 
   "$pwd> "
 }
 
-# Komorebi
 $Env:KOMOREBI_CONFIG_HOME = $Env:USERPROFILE + "/.config/komorebi"
-
-# OhMyPosh
-oh-my-posh init pwsh --config $Env:USERPROFILE/.config/posh/config.omp.json | Invoke-Expression
-# Which
-$Env:WHICH = $Env:USERPROFILE + "/.config/which"
-# FZF
 $Env:FZF_DEFAULT_COMMAND = 'fd --type f --strip-cwd-prefix --hidden --exclude .git'
-
-# Neovim
+$Env:WHICH = $Env:USERPROFILE + "/.config/which"
+$Env:NVIM_LOG_FILE = $Env:USERPROFILE + "/.config/nvim-data"
 $Env:XDG_CONFIG_HOME = $Env:USERPROFILE + "/.config"
 $Env:XDG_DATA_HOME = $Env:USERPROFILE + "/.config"
 $Env:XDG_STATE_HOME = $Env:USERPROFILE + "/.config"
 $Env:XDG_CACHE_HOME = $Env:USERPROFILE + "/.config/temp"
-$Env:NVIM_LOG_FILE = $Env:USERPROFILE + "/.config/nvim-data"
+
+oh-my-posh init pwsh --config $Env:USERPROFILE/.config/posh/config.omp.json | Invoke-Expression
