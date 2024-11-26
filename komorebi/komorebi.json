@@ -16,13 +16,8 @@
   },
   "manage_rules": [
     {
-      "kind": "Title",
-      "id": "Steam",
-      "matching_strategy": "Equals"
-    },
-    {
-      "kind": "Title",
-      "id": "Friends List",
+      "kind": "Exe",
+      "id": "steamwebhelper.exe",
       "matching_strategy": "Equals"
     }
   ],
