@@ -35,6 +35,11 @@
       }
     ],
     {
+      "kind": "Title",
+      "id": "notificationtoasts_",
+      "matching_strategy": "Contains"
+    },
+    {
       "kind": "Class",
       "id": "BATTLESWIN",
       "matching_strategy": "Equals"
