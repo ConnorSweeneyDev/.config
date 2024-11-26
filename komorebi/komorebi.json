@@ -34,11 +34,18 @@
         "matching_strategy": "DoesNotEqual"
       }
     ],
-    {
-      "kind": "Title",
-      "id": "notificationtoasts_",
-      "matching_strategy": "Contains"
-    },
+    [
+      {
+        "kind": "Exe",
+        "id": "steamwebhelper.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Title",
+        "id": "notificationtoasts_",
+        "matching_strategy": "Contains"
+      }
+    ],
     {
       "kind": "Class",
       "id": "BATTLESWIN",
