@@ -15,11 +15,18 @@
     "unfocused": "#808080"
   },
   "manage_rules": [
-    {
-      "kind": "Exe",
-      "id": "steamwebhelper.exe",
-      "matching_strategy": "Equals"
-    }
+    [
+      {
+        "kind": "Exe",
+        "id": "steamwebhelper.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Title",
+        "id": "notificationtoasts_",
+        "matching_strategy": "DoesNotContain"
+      }
+    ]
   ],
   "floating_applications": [
     [
@@ -32,18 +39,6 @@
         "kind": "Exe",
         "id": "steamwebhelper.exe",
         "matching_strategy": "DoesNotEqual"
-      }
-    ],
-    [
-      {
-        "kind": "Exe",
-        "id": "steamwebhelper.exe",
-        "matching_strategy": "Equals"
-      },
-      {
-        "kind": "Title",
-        "id": "notificationtoasts_",
-        "matching_strategy": "Contains"
       }
     ],
     {
