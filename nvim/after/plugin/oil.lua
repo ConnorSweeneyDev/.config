@@ -11,7 +11,7 @@ require("oil").setup{
     ["<C-s>"] = false,
     ["<C-h>"] = false,
     ["<C-t>"] = false,
-    ["<C-p>"] = "actions.preview",
+    ["<C-p>"] = false,
     ["<C-c>"] = "actions.close",
     ["<C-l>"] = "actions.refresh",
     ["-"] = "actions.parent",
