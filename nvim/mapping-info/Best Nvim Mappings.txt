@@ -40,7 +40,7 @@
 
 
 --- UNDOTREE ---
-(Normal) U               -->  Open undotree menu
+(Normal) <space>u        -->  Open undotree menu
 --- UNDOTREE ---
 
 
@@ -386,9 +386,9 @@
 (Normal) <space><space>  -->  Runs :so in the current file (only in lua files)
 
 (Normal) <space>kf       -->  Runs :!clang-format -i % (Only in C/C++ files)
-(Normal) <space>uc       -->  Switch to the cpp file in a C++ compilation unit
-(Normal) <space>uh       -->  Switch to the hpp file in a C++ compilation unit
-(Normal) <space>ui       -->  Switch to the inl file in a C++ compilation unit
-(Normal) <space>Uc       -->  Switch to the c file in a C compilation unit
-(Normal) <space>Uh       -->  Switch to the h file in a C compilation unit
+(Normal) <control>uc     -->  Switch to the cpp file in a C++ compilation unit
+(Normal) <control>uh     -->  Switch to the hpp file in a C++ compilation unit
+(Normal) <control>ui     -->  Switch to the inl file in a C++ compilation unit
+(Normal) <control>uC     -->  Switch to the c file in a C compilation unit
+(Normal) <control>uH     -->  Switch to the h file in a C compilation unit
 --- FILE COMMANDS ---
