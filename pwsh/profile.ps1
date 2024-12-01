@@ -1,13 +1,22 @@
+$Env:KOMOREBI_CONFIG_HOME = $Env:USERPROFILE + "/.config/komorebi"
+$Env:FZF_DEFAULT_COMMAND = 'fd --type f --strip-cwd-prefix --hidden --exclude .git'
+$Env:WHICH = $Env:USERPROFILE + "/.config/which"
+$Env:NVIM_LOG_FILE = $Env:USERPROFILE + "/.config/nvim-data"
+$Env:XDG_CONFIG_HOME = $Env:USERPROFILE + "/.config"
+$Env:XDG_DATA_HOME = $Env:USERPROFILE + "/.config"
+$Env:XDG_STATE_HOME = $Env:USERPROFILE + "/.config"
+$Env:XDG_CACHE_HOME = $Env:USERPROFILE + "/.config/temp"
+
+Set-Alias -Name "g" -Value "git"
+Set-Alias -Name "c" -Value "clear"
+
 function q { exit }
-function c { clear }
 function e { explorer . }
 function b { explorer shell:RecycleBinFolder }
 function n { nvim . }
 
 function w { wezterm cli spawn --new-window --cwd $pwd } # Opens a new window at the current directory
 function t { wezterm cli spawn --cwd $pwd } # Opens a new tab at the current directory
-
-Set-Alias -Name "g" -Value "git"
 
 function d # Better rm - Usage: d <path1> <path2> ... <pathN>
 {
@@ -112,13 +121,5 @@ function prompt # Custom prompt to remove the "PS" prefix and also keep the tab 
   "$pwd> "
 }
 
-$Env:KOMOREBI_CONFIG_HOME = $Env:USERPROFILE + "/.config/komorebi"
-$Env:FZF_DEFAULT_COMMAND = 'fd --type f --strip-cwd-prefix --hidden --exclude .git'
-$Env:WHICH = $Env:USERPROFILE + "/.config/which"
-$Env:NVIM_LOG_FILE = $Env:USERPROFILE + "/.config/nvim-data"
-$Env:XDG_CONFIG_HOME = $Env:USERPROFILE + "/.config"
-$Env:XDG_DATA_HOME = $Env:USERPROFILE + "/.config"
-$Env:XDG_STATE_HOME = $Env:USERPROFILE + "/.config"
-$Env:XDG_CACHE_HOME = $Env:USERPROFILE + "/.config/temp"
-
+Set-PSReadLineOption -PredictionViewStyle ListView
 oh-my-posh init pwsh --config $Env:USERPROFILE/.config/posh/config.omp.json | Invoke-Expression
