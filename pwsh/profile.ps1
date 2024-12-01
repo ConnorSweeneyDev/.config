@@ -121,5 +121,4 @@ function prompt # Custom prompt to remove the "PS" prefix and also keep the tab 
   "$pwd> "
 }
 
-Set-PSReadLineOption -PredictionViewStyle ListView
 oh-my-posh init pwsh --config $Env:USERPROFILE/.config/posh/config.omp.json | Invoke-Expression
