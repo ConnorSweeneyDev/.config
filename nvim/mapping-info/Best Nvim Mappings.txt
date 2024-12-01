@@ -378,17 +378,15 @@
 (Normal) gx              -->  Opens the file/link under the cursor in the system default program
 (Normal) gf              -->  Opens the file under the cursor in a new buffer
 
-(Normal) <space>v        -->  Runs :!./script/clean.bat -wezterm in the current directory
-(Normal) <space>b        -->  Runs :!./script/build.bat -wezterm in the current directory
-(Normal) <space>n        -->  Runs :!./script/run.bat -wezterm in the current directory
-(Normal) <space>m        -->  Runs :!./script/debug.bat -wezterm in the current directory
+(Normal) <space>v        -->  Runs ":!./script/clean.bat -wezterm" in the current directory
+(Normal) <space>b        -->  Runs ":!./script/build.bat -wezterm" in the current directory
+(Normal) <space>n        -->  Runs ":!./script/run.bat -wezterm" in the current directory
+(Normal) <space>m        -->  Runs ":!./script/debug.bat -wezterm" in the current directory
 
 (Normal) <space><space>  -->  Runs :so in the current file (only in lua files)
 
 (Normal) <space>kf       -->  Runs :!clang-format -i % (Only in C/C++ files)
-(Normal) <control>uc     -->  Switch to the cpp file in a C++ compilation unit
-(Normal) <control>uh     -->  Switch to the hpp file in a C++ compilation unit
-(Normal) <control>ui     -->  Switch to the inl file in a C++ compilation unit
-(Normal) <control>uC     -->  Switch to the c file in a C compilation unit
-(Normal) <control>uH     -->  Switch to the h file in a C compilation unit
+(Normal) <control>uc     -->  Switch to the source file in a C/C++ compilation unit
+(Normal) <control>uh     -->  Switch to the header file in a C/C++ compilation unit
+(Normal) <control>ui     -->  Switch to the inline file in a C++ compilation unit
 --- FILE COMMANDS ---

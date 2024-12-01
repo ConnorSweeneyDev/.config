@@ -21,13 +21,6 @@ general_util.make_relative_files = function(long_files, cwd)
   end
   return files
 end
-general_util.get_files_in_compilation_unit = function(directory)
-  local cwd = vim.fn.getcwd()
-  local name = vim.fn.expand("%:t:r")
-  local long_files = vim.fn.globpath(directory, "**/" .. name .. ".*", 0, 1)
-  local files = general_util.make_relative_files(long_files, cwd)
-  return files
-end
 
 ----------------------------------------------------------------------------------------------------
 
@@ -100,46 +93,15 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-cc_util = {}
-cc_util.assign_file_types = function(files)
-  local source = ""
-  local header = ""
-  for _, file in ipairs(files) do
-    if string.match(file, "%.c$") then source = file
-    elseif string.match(file, "%.h$") then header = file end
-  end
-  return source, header
+c_util = {}
+c_util.get_files_in_compilation_unit = function(directory)
+  local cwd = vim.fn.getcwd()
+  local name = vim.fn.expand("%:t:r")
+  local long_files = vim.fn.globpath(directory, "**/" .. name .. ".*", 0, 1)
+  local files = general_util.make_relative_files(long_files, cwd)
+  return files
 end
-cc_util.switch_file_in_compilation_unit = function(directory, target_extension)
-  local directory = vim.fn.getcwd() .. directory
-  local current_extension = vim.fn.expand("%:e")
-  if not string.match(current_extension, "c") and not string.match(current_extension, "h") then
-    vim.notify("Not a c or h file!", "error")
-    return
-  end
-  local files = general_util.get_files_in_compilation_unit(directory)
-  if string.match(current_extension, target_extension) then
-    vim.notify("Already in " .. target_extension .. " file!", "error")
-    return
-  end
-  if #files == 0 then vim.notify("Problem reading filename!", "error")
-  elseif #files == 1 then vim.notify("There is only one file in this compilation unit!", "error")
-  elseif #files == 2 then
-    local source, header, inline = cc_util.assign_file_types(files)
-    if target_extension == "c" then
-      if source ~= "" then vim.cmd("edit " .. source)
-      else vim.notify("No c file found!", "error") end
-    elseif target_extension == "h" then
-      if header ~= "" then vim.cmd("edit " .. header)
-      else vim.notify("No h file found!", "error") end
-    else vim.notify("Unexpected target file extension!", "error") end
-  else vim.notify("Unexpectedly high amount of corresponding files found!", "error") end
-end
-
-----------------------------------------------------------------------------------------------------
-
-cxx_util = {}
-cxx_util.assign_file_types = function(files)
+c_util.assign_cxx_file_types = function(files)
   local source = ""
   local header = ""
   local inline = ""
@@ -150,36 +112,72 @@ cxx_util.assign_file_types = function(files)
   end
   return source, header, inline
 end
-cxx_util.switch_file_in_compilation_unit = function(directory, target_extension)
+c_util.assign_cc_file_types = function(files)
+  local source = ""
+  local header = ""
+  for _, file in ipairs(files) do
+    if string.match(file, "%.c$") then source = file
+    elseif string.match(file, "%.h$") then header = file end
+  end
+  return source, header
+end
+c_util.switch_file_in_compilation_unit = function(directory, target_file)
   local directory = vim.fn.getcwd() .. directory
   local current_extension = vim.fn.expand("%:e")
-  if not string.match(current_extension, "cpp") and not string.match(current_extension, "hpp") and not string.match(current_extension, "inl") then
-    vim.notify("Not a cpp, hpp or inl file!", "error")
-    return
-  end
-  local files = general_util.get_files_in_compilation_unit(directory)
-  if string.match(current_extension, target_extension) then
-    vim.notify("Already in " .. target_extension .. " file!", "error")
-    return
-  end
-  if #files == 0 then vim.notify("Problem reading filename!", "error")
-  elseif #files == 1 then vim.notify("There is only one file in this compilation unit!", "error")
-  elseif #files == 2 or #files == 3 then
-    local source, header, inline = cxx_util.assign_file_types(files)
-    if target_extension == "cpp" then
-      if source ~= "" then vim.cmd("edit " .. source)
-      else vim.notify("No cpp file found!", "error") end
-    elseif target_extension == "hpp" then
-      if header ~= "" then vim.cmd("edit " .. header)
-      else vim.notify("No hpp file found!", "error") end
-    elseif target_extension == "inl" then
-      if inline ~= "" then vim.cmd("edit " .. inline)
-      else vim.notify("No inl file found!", "error") end
+  local files = c_util.get_files_in_compilation_unit(directory)
+  if string.match(current_extension, "cpp") or string.match(current_extension, "hpp") or string.match(current_extension, "inl") then
+    local target_extension = ""
+    if target_file == "source" then target_extension = "cpp"
+    elseif target_file == "header" then target_extension = "hpp"
+    elseif target_file == "inline" then target_extension = "inl"
     else
-      vim.notify("Unexpected target file extension!", "error")
+      vim.notify("Unexpected target file!", "error")
       return
     end
-  else vim.notify("Unexpectedly high amount of corresponding files found!", "error") end
+    if string.match(current_extension, target_extension) then
+      vim.notify("Already in " .. target_extension .. " file!", "error")
+      return
+    end
+    if #files == 0 then vim.notify("Problem reading filename!", "error")
+    elseif #files == 1 then vim.notify("There is only one file in this compilation unit!", "error")
+    elseif #files == 2 or #files == 3 then
+      local source, header, inline = c_util.assign_cxx_file_types(files)
+      if target_extension == "cpp" then
+        if source ~= "" then vim.cmd("edit " .. source)
+        else vim.notify("No cpp file found!", "error") end
+      elseif target_extension == "hpp" then
+        if header ~= "" then vim.cmd("edit " .. header)
+        else vim.notify("No hpp file found!", "error") end
+      elseif target_extension == "inl" then
+        if inline ~= "" then vim.cmd("edit " .. inline)
+        else vim.notify("No inl file found!", "error") end
+      else vim.notify("Unexpected target file extension!", "error") end
+    else vim.notify("Unexpectedly high amount of corresponding files found!", "error") end
+  elseif string.match(current_extension, "c") or string.match(current_extension, "h") then
+    local target_extension = ""
+    if target_file == "source" then target_extension = "c"
+    elseif target_file == "header" then target_extension = "h"
+    else
+      vim.notify("Unexpected target file!", "error")
+      return
+    end
+    if string.match(current_extension, target_extension) then
+      vim.notify("Already in " .. target_extension .. " file!", "error")
+      return
+    end
+    if #files == 0 then vim.notify("Problem reading filename!", "error")
+    elseif #files == 1 then vim.notify("There is only one file in this compilation unit!", "error")
+    elseif #files == 2 then
+      local source, header, inline = c_util.assign_cc_file_types(files)
+      if target_extension == "c" then
+        if source ~= "" then vim.cmd("edit " .. source)
+        else vim.notify("No c file found!", "error") end
+      elseif target_extension == "h" then
+        if header ~= "" then vim.cmd("edit " .. header)
+        else vim.notify("No h file found!", "error") end
+      else vim.notify("Unexpected target file extension!", "error") end
+    else vim.notify("Unexpectedly high amount of corresponding files found!", "error") end
+  else vim.notify("Not a c, h, cpp, hpp or inl file!", "error") end
 end
 
 ----------------------------------------------------------------------------------------------------
