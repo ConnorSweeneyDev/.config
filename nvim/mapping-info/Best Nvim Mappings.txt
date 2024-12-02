@@ -378,10 +378,10 @@
 (Normal) gx              -->  Opens the file/link under the cursor in the system default program
 (Normal) gf              -->  Opens the file under the cursor in a new buffer
 
-(Normal) <space>v        -->  Runs ":!sh script/clean.sh -wezterm" in the current directory
-(Normal) <space>b        -->  Runs ":!sh script/build.sh -wezterm" in the current directory
-(Normal) <space>n        -->  Runs ":!sh script/run.sh -wezterm" in the current directory
-(Normal) <space>m        -->  Runs ":!sh script/debug.sh -wezterm" in the current directory
+(Normal) <space>v        -->  Runs clean.sh in the current project
+(Normal) <space>b        -->  Runs build.sh in the current project
+(Normal) <space>n        -->  Runs run.sh in the current project
+(Normal) <space>m        -->  Runs debug.sh in the current project
 
 (Normal) <space><space>  -->  Runs :so in the current file (only in lua files)
 
