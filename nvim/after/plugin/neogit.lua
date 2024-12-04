@@ -23,7 +23,6 @@ require("neogit").setup {
   }
 }
 map("n", "<LEADER>gs", function() neogit_util.open_status_menu() end)
-map("n", "<LEADER>gp", "<CMD>Neogit pull<CR>")
 map("n", "<LEADER>gr", "<CMD>!g restore %<CR>")
 map("n", "<LEADER>gR", "<CMD>!g restore .<CR>")
 map("n", "<LEADER>gg", "<CMD>diffget<CR>")
