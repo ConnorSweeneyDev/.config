@@ -291,4 +291,3 @@ Windows11CursorConceptV2.2 &rightarrow; Go
 [here](https://www.deviantart.com/jepricreations/art/Windows-11-Cursors-Concept-HD-v2-890672103) for a more fitting
 cursor. After buying, extract the contents to a known location and go to the version you desire, right click the
 `install.inf` file, click install and accept any dialogs that appear.
-
