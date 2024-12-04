@@ -123,9 +123,8 @@ Now, inside the `.setup` field start adding plugins, do so in the following patt
 The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
-  - plenary.nvim &rightarrow; Required by telescope.nvim and harpoon.
+  - plenary.nvim &rightarrow; Required by telescope.nvim, harpoon and neogit.
   - nui.nvim &rightarrow; Required by noice.nvim.
-  - notify.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `after\plugin\leap.lua` requires
@@ -139,6 +138,7 @@ The following plugins require some extra or different steps:
   themselves out. However if you get an error along the lines of `[LANGUAGE].so is not a valid Win32 app`, this means
   either your version of MinGW does not match your operating system or treesitter is using the wrong compiler for that
   specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
+- Noice &rightarrow; This should be installed at the same time as notify.nvim.
 - Coc &rightarrow; `after\plugin\coc.lua` requires treesitter to run, so install that first. After following the
   pattern, run `:CocInstall coc-diagnostic coc-copilot coc-git coc-html coc-tsserver coc-css coc-json coc-xml
   coc-pyright coc-java coc-clangd coc-clang-format-style-options` then `:q` to close the dialog once everything is
@@ -146,6 +146,7 @@ The following plugins require some extra or different steps:
   then restart again. If you don't want one of the listed servers, dont include them or just run `:CocUninstall
   [SERVER]` after the first command. If a language you want is missing, you can find it
   [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
+- Neogit &rightarrow; This should be installed at the same time as diffview.nvim.
 - Supermaven &rightarrow; If you don't have a subscription, you can still use it by running `:SupermavenUseFree` when
   prompted, otherwise you can follow the instructions to use it with a subscription.
 
@@ -158,10 +159,10 @@ language servers. If you need to close all the buffers except the current one (w
 references etc.), this file also provides the keybind for that, and the keybind for re-opening them all again too. It
 also has a toggle for whether you are using Coc or not, so it is not necessary to use Coc to use this file.
 
-Finally, you can paste the `mapping-info` folder into the root for safe keeping. All keybinds and settings can be edited
-at `lua\main\map.lua`, `lua\main\set.lua` or the respective `after\plugin\[PLUGIN].lua` files and you can go into
-deeper detail inside `lua\main\util.lua`. Furthermore, all language specific settings can be edited at
-`after\ftplugin\[EXTENSION].lua` and language server settings can be edited at `coc-settings.json`.
+All global keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective
+`after\plugin\[PLUGIN].lua` files and you can go into deeper detail inside `lua\main\util.lua`. Furthermore, all
+language specific settings and mappings can be edited at `after\ftplugin\[EXTENSION].lua` and language server settings
+can be edited at `coc-settings.json`.
 
 ## Portable Neovim
 I also have an extremely minimal setup (one file) that can be cloned and run on any machine that can run neovim. You can

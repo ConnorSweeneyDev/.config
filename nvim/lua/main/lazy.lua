@@ -21,6 +21,7 @@ require("lazy").setup
   {"folke/noice.nvim"},
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {"neoclide/coc.nvim", branch = "release"},
-  {"tpope/vim-fugitive"},
+  {"sindrets/diffview.nvim"},
+  {"NeogitOrg/neogit"},
   {"supermaven-inc/supermaven-nvim"}
 }

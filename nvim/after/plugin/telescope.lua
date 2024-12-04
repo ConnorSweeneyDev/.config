@@ -5,7 +5,6 @@ require("telescope").setup{
                             ".class", ".jar", ".sln", ".vcxproj", ".png", ".jpg", ".pyc", "packer_compiled.lua"}
   }
 }
-
 local builtin = require("telescope.builtin")
 map("n", "<LEADER>pf", function() builtin.find_files({find_command = {"rg", "--files", "--hidden"}}) end, default_opts)
 map("n", "<LEADER>ps", function() builtin.grep_string({find_command = {"rg", "--files", "--hidden"}, search = vim.fn.input("Search Term: "), ignorecase = false}); end)

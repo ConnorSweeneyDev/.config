@@ -288,31 +288,11 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-fugitive_util = {}
-fugitive_util.saved_buffer = 0
-fugitive_util.open_or_close = function()
-  local total_windows = api.nvim_list_wins()
-  local fugitive_windows = {}
-  for _, window in ipairs(total_windows) do
-    if string.find(api.nvim_buf_get_name(api.nvim_win_get_buf(window)), "fugitive:\\\\\\") then
-      table.insert(fugitive_windows, window)
-    end
-  end
-  if #fugitive_windows ~= 0 then
-    if #fugitive_windows ~= #total_windows then
-      for _, window in ipairs(fugitive_windows) do api.nvim_win_close(window, false) end
-      return
-    end
-    if fugitive_util.saved_buffer == nil or api.nvim_buf_is_loaded(fugitive_util.saved_buffer) == false then
-      api.nvim_set_current_buf(1)
-      return
-    end
-    vim.cmd("new " .. api.nvim_buf_get_name(fugitive_util.saved_buffer))
-    for _, window in ipairs(fugitive_windows) do api.nvim_win_close(window, false) end
-    return
-  end
-  fugitive_util.saved_buffer = api.nvim_get_current_buf()
-  api.nvim_input("<CMD>G<CR><C-w>o")
+neogit_util = {}
+neogit_util.open_status_menu = function()
+  local cwd = vim.fn.getcwd()
+  vim.cmd("Neogit")
+  vim.api.nvim_set_current_dir(cwd)
 end
 
 ----------------------------------------------------------------------------------------------------

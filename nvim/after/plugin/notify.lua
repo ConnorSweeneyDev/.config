@@ -5,5 +5,4 @@ require("notify").setup{
   render = "minimal",
   stages = "static"
 }
-
 map("n", "<LEADER>pm", "<CMD>Telescope notify<CR>")
