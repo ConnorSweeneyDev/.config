@@ -7,7 +7,6 @@ require("neogit").setup {
   kind = "replace",
   disable_line_numbers = false,
   disable_relative_line_numbers = false,
-  commit_editor = { kind = "tab", show_staged_diff = true, staged_diff_split_kind = "split", spell_check = true },
   commit_view = { kind = "vsplit", verify_commit = false },
   mappings = { status = { ["<c-l>"] = "RefreshBuffer" } }
 }
