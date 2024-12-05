@@ -26,4 +26,3 @@ require("oil").setup{
 }
 map("n", "<LEADER>pv", "<CMD>Oil<CR>")
 oil_util.open_on_startup()
-api.nvim_create_autocmd({"BufEnter"}, {callback = function() oil_util.replace_netrw() end})
