@@ -26,7 +26,12 @@
         "id": "notificationtoasts_",
         "matching_strategy": "DoesNotContain"
       }
-    ]
+    ],
+    {
+      "kind": "Class",
+      "id": "SALFRAME",
+      "matching_strategy": "Equals"
+    }
   ],
   "floating_applications": [
     [
