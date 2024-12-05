@@ -40,7 +40,6 @@ buffer_util.open_buffers = function(folders, file_extensions, ignore_files)
   api.nvim_set_current_buf(original_buffer)
 end
 buffer_util.close_buffers = function()
-  local original_buffer = api.nvim_get_current_buf()
   local buffers = api.nvim_list_bufs()
   for _, buffer in ipairs(buffers) do
     if buffer ~= original_buffer then
@@ -60,9 +59,8 @@ buffer_util.manual_close = function(use_coc)
 end
 buffer_util.open_on_startup = function(folders, file_extensions, ignore_files)
   if general_util.floating_window_exists() then return end
-  local original_buffer = api.nvim_get_current_buf()
   buffer_util.open_buffers(folders, file_extensions, ignore_files)
-  api.nvim_set_current_buf(original_buffer)
+  vim.cmd("Ex .")
 end
 
 ----------------------------------------------------------------------------------------------------
