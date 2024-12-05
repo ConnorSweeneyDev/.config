@@ -254,7 +254,8 @@ end
 ----------------------------------------------------------------------------------------------------
 
 oil_util = {}
-oil_util.open_on_startup = function() if not general_util.floating_window_exists() then vim.cmd("Oil") end end
+oil_util.open_on_startup = function() if not general_util.floating_window_exists() then vim.cmd("Oil .") end end
+oil_util.replace_netrw = function() if vim.bo.filetype == "netrw" then vim.cmd("Oil .") end end
 
 ----------------------------------------------------------------------------------------------------
 

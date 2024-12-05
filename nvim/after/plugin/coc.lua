@@ -1,4 +1,5 @@
-map("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], {expr = true, noremap = true, silent = true, replace_keycodes = false})
+map("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
+    {expr = true, noremap = true, silent = true, replace_keycodes = false})
 map("n", "<LEADER>ka", "<PLUG>(coc-codeaction-cursor)", {silent = true, nowait = true})
 map("n", "<LEADER>td", "<CMD>CocDiagnostics<CR>", {silent = true, nowait = true})
 map("n", "<LEADER>tD", "<CMD>CocList diagnostics<CR>", {silent = true, nowait = true})
@@ -9,8 +10,10 @@ map("n", "gy", "<PLUG>(coc-type-definition)", {silent = true})
 map("n", "gr", "<PLUG>(coc-references)", {silent = true})
 map("n", "gi", "<PLUG>(coc-implementation)", {silent = true})
 map("n", "K", function() coc_util.show_docs() end, {silent = true})
-map("n", "<C-j>", [[coc#float#has_scroll() ? coc#float#scroll(1, 1) : "<C-j>"]], {expr = true, noremap = true, silent = true, replace_keycodes = false})
-map("n", "<C-k>", [[coc#float#has_scroll() ? coc#float#scroll(0, 1) : "<C-k>"]], {expr = true, noremap = true, silent = true, replace_keycodes = false})
+map("n", "<C-j>", [[coc#float#has_scroll() ? coc#float#scroll(1, 1) : "<C-j>"]],
+    {expr = true, noremap = true, silent = true, replace_keycodes = false})
+map("n", "<C-k>", [[coc#float#has_scroll() ? coc#float#scroll(0, 1) : "<C-k>"]],
+    {expr = true, noremap = true, silent = true, replace_keycodes = false})
 map("n", "<LEADER>rn", "<PLUG>(coc-rename)", {silent = true})
 map("n", "<LEADER>rN", "<CMD>CocCommand workspace.renameCurrentFile<CR>", {silent = true})
 map("n", "<LEADER>rf", "<PLUG>(coc-refactor)", {silent = true})

@@ -36,4 +36,6 @@ highlights = {
 }
 color_util.initialize_colors(scheme, highlights)
 api.nvim_create_autocmd({"BufEnter", "WinEnter", "CursorMoved"},
-                        {callback = function() color_util.line_number_handler(status_column_separator, line_colors) end})
+                        {callback = function()
+                           color_util.line_number_handler(status_column_separator, line_colors)
+                         end})
