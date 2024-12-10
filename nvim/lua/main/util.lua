@@ -40,6 +40,7 @@ buffer_util.open_buffers = function(folders, file_extensions, ignore_files)
   api.nvim_set_current_buf(original_buffer)
 end
 buffer_util.close_buffers = function()
+  local original_buffer = api.nvim_get_current_buf()
   local buffers = api.nvim_list_bufs()
   for _, buffer in ipairs(buffers) do
     if buffer ~= original_buffer then
