@@ -51,8 +51,8 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
   - `sudo config CacheMode auto`.
   - `sudo config CacheDuration infinite`.
   - `sudo config LogLevel None`.
-- Run `git config --system core.longpaths true`. After that you can use the following configuration in your
-  `$Env:USERPROFILE\.gitconfig` file if you want:
+- Run `git config --system core.longpaths true` and ensure that `[PATH_TO_GIT]\bin` is in your path. After that you can
+  use the following configuration in your `$Env:USERPROFILE\.gitconfig` file if you want:
   ```
   [alias]
     i = init
