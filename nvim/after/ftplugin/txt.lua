@@ -1,1 +1,0 @@
-opt.formatoptions:append("t")

@@ -111,11 +111,12 @@ map("n", "<LEADER>l", "<CMD>Lazy<CR>")
 require("lazy").setup{
 }
 ```
-Restart neovim and there should be no error messages.
+After creating an empty `lua\plugin\init.lua`, restart neovim and there should be no error messages.
 
 Now, inside the `.setup` field start adding plugins, do so in the following pattern (with some exceptions below):
 - Add the line to `lua\main\lazy.lua` and restart neovim.
-- If it needs one, add an `after\plugin\[PLUGIN].lua` file for the plugin and restart neovim.
+- If it needs one, add a `lua\plugin\[PLUGIN].lua` file for the plugin and add `require("plugin.[PLUGIN]")` to
+  `lua\plugin\init.lua` (order matters in this file), then restart neovim.
 - Customize the file to your liking.
 - Test the plugin.
 
@@ -126,10 +127,10 @@ The following plugins require some extra or different steps:
   - nui.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
-- Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `after\plugin\leap.lua` requires
+- Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `lua\plugin\leap.lua` requires
   both of these plugins to be installed.
 - Colorscheme &rightarrow; vim-transparent and vscode.nvim should both be installed at the same time, their plugin file
-  is `after\plugin\colors.lua`. You don't have to use that combination of plugins, but the file assumes you are and
+  is `lua\plugin\colors.lua`. You don't have to use that combination of plugins, but the file assumes you are and
   lualine is also set up to use the vscode colorscheme.
 - Treesitter &rightarrow; After following the pattern, you should see it compiling languages - don't touch your keyboard
   until this is finished, though it is common to get errors at this point, if you do, generally restarting neovim a few
@@ -138,7 +139,7 @@ The following plugins require some extra or different steps:
   either your version of MinGW does not match your operating system or treesitter is using the wrong compiler for that
   specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Noice &rightarrow; This should be installed at the same time as notify.nvim.
-- Coc &rightarrow; `after\plugin\coc.lua` requires treesitter to run, so install that first. After following the
+- Coc &rightarrow; `lua\plugin\coc.lua` requires treesitter to run, so install that first. After following the
   pattern, run `:CocInstall coc-diagnostic coc-copilot coc-git coc-html coc-tsserver coc-css coc-json coc-xml
   coc-pyright coc-java coc-clangd coc-clang-format-style-options` then `:q` to close the dialog once everything is
   installed. Now add `coc-settings.json`, where you should add the path to your java installation instead of my one,
@@ -149,18 +150,17 @@ The following plugins require some extra or different steps:
 - Supermaven &rightarrow; If you don't have a subscription, you can still use it by running `:SupermavenUseFree` when
   prompted, otherwise you can follow the instructions to use it with a subscription.
 
-You can now add the `after\ftplugin` folder and any files inside it, which are used for language specific configuration;
-after that, don't forget to include `after\plugin\buffers.lua`.
-
-The file `buffers.lua` is an optional "plugin", as it can slow down the startup time but will open, in separate buffers,
-every file in the specified directory that has any of the file extensions specified - this can be useful for certain
-language servers. If you need to close all the buffers except the current one (when you need to rename symbols, go to
-references etc.), this file also provides the keybind for that, and the keybind for re-opening them all again too. It
-also has a toggle for whether you are using Coc or not, so it is not necessary to use Coc to use this file.
+After all of that, don't forget to include these files that are not tied to any plugins if you want them:
+- `lua\plugin\language.lua` is the file this configuration uses to set up language specific settings and mappings.
+- `lua\plugin\buffers.lua` is optional as it can slow down the startup time but will open, in separate buffers, every
+  file in the specified directory that has any of the file extensions specified - this can be useful for certain
+  language servers. If you need to close all the buffers except the current one (when you need to rename symbols, go to
+  references etc.), this file also provides the keybind for that, and the keybind for re-opening them all again too. It
+  also has a toggle for whether you are using Coc or not, so it is not necessary to use Coc to use this file.
 
 All global keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective
-`after\plugin\[PLUGIN].lua` files and you can go into deeper detail inside `lua\main\util.lua`. Furthermore, all
-language specific settings and mappings can be edited at `after\ftplugin\[EXTENSION].lua` and language server settings
+`lua\plugin\[PLUGIN].lua` files and you can go into deeper detail inside `lua\main\util.lua`. Furthermore, all
+language specific settings and mappings can be edited at `lua\plugin\language.lua` and language server settings
 can be edited at `coc-settings.json`.
 
 ## Portable Neovim

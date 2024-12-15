@@ -66,6 +66,30 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
+language_util = {}
+language_util.format = function()
+  local extension = (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e") or vim.bo.ft
+  if extension == "c" or extension == "h" then
+    vim.cmd("w")
+    vim.cmd("!clang-format -i %")
+  elseif extension == "cpp" or extension == "hpp" or extension == "inl" then
+    vim.cmd("w")
+    vim.cmd("!clang-format -i %")
+  else vim.notify("Formatting not configured for " .. extension .. "!", "error") end
+end
+language_util.source_lua = function()
+  local extension = vim.fn.expand("%:e")
+  if extension == "lua" then vim.cmd("source %")
+  else vim.notify("Not a lua file!", "error") end
+end
+language_util.change_format_options = function()
+  local extension = vim.fn.expand("%:e")
+  if extension == "md" or extension == "txt" then opt.formatoptions:append("t")
+  else opt.formatoptions:remove("t") end
+end
+
+----------------------------------------------------------------------------------------------------
+
 color_util = {}
 color_util.initialize_colors = function(scheme, highlights)
   vim.cmd.colorscheme(scheme)
