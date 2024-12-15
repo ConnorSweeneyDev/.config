@@ -108,8 +108,7 @@ Now you can create `lua\main\lazy.lua`, and populate it with only the following 
 ```lua
 lazy_util.bootstrap()
 map("n", "<LEADER>l", "<CMD>Lazy<CR>")
-require("lazy").setup
-{
+require("lazy").setup{
 }
 ```
 Restart neovim and there should be no error messages.

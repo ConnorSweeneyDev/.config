@@ -1,7 +1,6 @@
 lazy_util.bootstrap()
 map("n", "<LEADER>l", "<CMD>Lazy<CR>")
-require("lazy").setup
-{
+require("lazy").setup{
   {"nvim-lua/plenary.nvim"},
   {"stevearc/oil.nvim"},
   {"nvim-telescope/telescope.nvim"},

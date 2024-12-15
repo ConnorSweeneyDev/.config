@@ -1,5 +1,5 @@
 local actions = require("diffview.actions")
-require("diffview").setup {
+require("diffview").setup{
   show_help_hints = false,
   view = {
     merge_tool = {

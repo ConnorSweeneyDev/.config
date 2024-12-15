@@ -1,4 +1,4 @@
-require("neogit").setup {
+require("neogit").setup{
   disable_hint = true,
   disable_context_highlighting = true,
   disable_signs = true,
