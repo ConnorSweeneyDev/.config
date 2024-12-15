@@ -1,4 +1,4 @@
-folders = {"/program", "/src", "/lua", "/after"}
+folders = {"/program", "/src", "/lua"}
 file_extensions = {"*.cpp", "*.hpp", "*.inl", "*.glsl", "*.c", "*.h", "*.py", "*.lua", "*.java", "*.cs"}
 ignore_files = {"resource.cpp", "resource.hpp"}
 use_coc = true
