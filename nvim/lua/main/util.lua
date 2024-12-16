@@ -21,6 +21,12 @@ general_util.make_relative_files = function(long_files)
   end
   return files
 end
+general_util.find_target_directory = function()
+  local target_directory = string.gsub(vim.fn.expand("%"), vim.fn.getcwd() .. "\\", "")
+  target_directory = string.gsub(string.gsub(target_directory, "/", "\\"), "\\.*$", "")
+  if string.find(target_directory, "%.") then target_directory = "" end
+  return target_directory
+end
 general_util.get_list_from_gitignore = function()
   local gitignore = vim.fn.glob(".gitignore")
   if gitignore == "" then return {} end
@@ -30,6 +36,32 @@ general_util.get_list_from_gitignore = function()
     if line ~= "" and not string.find(line, "^#") then table.insert(list, line) end
   end
   return list
+end
+
+----------------------------------------------------------------------------------------------------
+
+color_util = {}
+color_util.initialize_colors = function(scheme, highlights)
+  vim.cmd.colorscheme(scheme)
+  api.nvim_set_hl(0, "Normal", {bg = "none"})
+  api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+  for _, highlight in ipairs(highlights) do
+    vim.cmd("highlight " .. highlight)
+  end
+end
+color_util.line_number_handler = function(separator, line_colors)
+  local status_column = ""
+  for index, line_color in ipairs(line_colors) do
+    local line_nr = index - 1
+    local rel_or_l_num = "relnum.\""
+    local operation = " == "
+    if line_nr == 0 then rel_or_l_num = "lnum.\" " end
+    if line_colors[index + 1] == nil then operation = " >= " end
+    status_column = "%#LineNr" .. line_nr .. "#%{(v:relnum" .. operation .. line_nr ..
+                    ")?v:" .. rel_or_l_num .. separator .. "\":\"\"}" .. status_column
+    vim.cmd("highlight LineNr" .. line_nr .. " guifg=" .. line_color)
+  end
+  opt.statuscolumn = "%s%=" .. status_column
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -81,28 +113,22 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-color_util = {}
-color_util.initialize_colors = function(scheme, highlights)
-  vim.cmd.colorscheme(scheme)
-  api.nvim_set_hl(0, "Normal", {bg = "none"})
-  api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
-  for _, highlight in ipairs(highlights) do
-    vim.cmd("highlight " .. highlight)
-  end
+quickfix_util = {}
+quickfix_util.grep_search = function()
+  local target_directory = general_util.find_target_directory()
+  api.nvim_input(":silent grep  " .. target_directory .. "<C-Left><Left>")
 end
-color_util.line_number_handler = function(separator, line_colors)
-  local status_column = ""
-  for index, line_color in ipairs(line_colors) do
-    local line_nr = index - 1
-    local rel_or_l_num = "relnum.\""
-    local operation = " == "
-    if line_nr == 0 then rel_or_l_num = "lnum.\" " end
-    if line_colors[index + 1] == nil then operation = " >= " end
-    status_column = "%#LineNr" .. line_nr .. "#%{(v:relnum" .. operation .. line_nr ..
-                    ")?v:" .. rel_or_l_num .. separator .. "\":\"\"}" .. status_column
-    vim.cmd("highlight LineNr" .. line_nr .. " guifg=" .. line_color)
-  end
-  opt.statuscolumn = "%s%=" .. status_column
+quickfix_util.grep_word = function()
+  local target_directory = general_util.find_target_directory()
+  api.nvim_input("\"+yiw:silent grep <C-r><C-w> " .. target_directory .. "<CR>")
+end
+quickfix_util.grep_full_word = function()
+  local target_directory = general_util.find_target_directory()
+  api.nvim_input("\"+yiw:silent grep <C-r><C-a> " .. target_directory .. "<CR>")
+end
+quickfix_util.grep_selection = function()
+  local target_directory = general_util.find_target_directory()
+  api.nvim_input("\"+ygv\"hy:silent grep <C-r>h " .. target_directory .. "<CR>")
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -118,15 +144,19 @@ language_util.format = function()
     vim.cmd("!clang-format -i %")
   else vim.notify("Formatting not configured for " .. extension .. "!", "error") end
 end
-language_util.source_lua = function()
-  local extension = vim.fn.expand("%:e")
-  if extension == "lua" then vim.cmd("source %")
-  else vim.notify("Not a lua file!", "error") end
-end
 language_util.change_format_options = function()
   local extension = vim.fn.expand("%:e")
   if extension == "md" or extension == "txt" then opt.formatoptions:append("t")
   else opt.formatoptions:remove("t") end
+end
+
+----------------------------------------------------------------------------------------------------
+
+lua_util = {}
+lua_util.source= function()
+  local extension = vim.fn.expand("%:e")
+  if extension == "lua" then vim.cmd("source %")
+  else vim.notify("Not a lua file!", "error") end
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -159,10 +189,8 @@ c_util.assign_cc_file_types = function(files)
   return source, header
 end
 c_util.switch_file_in_compilation_unit = function(target_file)
-  local target_directory = string.gsub(vim.fn.expand("%"), vim.fn.getcwd() .. "\\", "")
-  target_directory = string.gsub(string.gsub(target_directory, "/", "\\"), "\\.*$", "")
-  if string.find(target_directory, "%.") then target_directory = ""
-  else target_directory = "\\" .. target_directory end
+  local target_directory = general_util.find_target_directory()
+  if target_directory ~= "" then target_directory = "\\" .. target_directory end
   local directory = vim.fn.getcwd() .. target_directory
   local current_extension = vim.fn.expand("%:e")
   local files = c_util.get_files_in_compilation_unit(directory)

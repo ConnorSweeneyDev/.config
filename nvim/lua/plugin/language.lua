@@ -1,5 +1,5 @@
 map("n", "<LEADER>kf", function() language_util.format() end)
-map("n", "<LEADER><LEADER>", function() language_util.source_lua() end)
+map("n", "<LEADER><LEADER>", function() lua_util.source() end)
 map("n", "UC", function() c_util.switch_file_in_compilation_unit("source") end)
 map("n", "UH", function() c_util.switch_file_in_compilation_unit("header") end)
 map("n", "UI", function() c_util.switch_file_in_compilation_unit("inline") end)
