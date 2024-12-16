@@ -15,8 +15,7 @@ end
 general_util.make_relative_files = function(long_files)
   local files = {}
   for _, file in ipairs(long_files) do
-    local new_file = string.gsub(file, vim.fn.getcwd() .. "\\", "")
-    new_file = string.gsub(new_file, "\\", "/")
+    local new_file = string.gsub(string.gsub(file, vim.fn.getcwd() .. "\\", ""), "\\", "/")
     table.insert(files, new_file)
   end
   return files
@@ -27,15 +26,15 @@ general_util.find_target_directory = function()
   if string.find(target_directory, "%.") then target_directory = "" end
   return target_directory
 end
-general_util.get_list_from_gitignore = function()
+general_util.get_patterns_from_gitignore = function()
   local gitignore = vim.fn.glob(".gitignore")
   if gitignore == "" then return {} end
   local lines = vim.fn.readfile(gitignore)
-  local list = {}
+  local patterns = {}
   for _, line in ipairs(lines) do
-    if line ~= "" and not string.find(line, "^#") then table.insert(list, line) end
+    if line ~= "" and line ~= nil and not string.find(line, "^#") then table.insert(patterns, line) end
   end
-  return list
+  return patterns
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -75,6 +74,10 @@ buffer_util.open_buffers = function(folders, file_extensions, ignore_patterns)
       for _, file in ipairs(files) do
         local valid_file = true
         for _, ignore_pattern in ipairs(ignore_patterns) do
+          if string.find(ignore_pattern, "^%.") then ignore_pattern = ignore_pattern .. "$" end
+          ignore_pattern = string.gsub(ignore_pattern, "%.", "%%.")
+          ignore_pattern = string.gsub(ignore_pattern, "^%*", "")
+          ignore_pattern = string.gsub(ignore_pattern, "%*$", "")
           if string.find(file, ignore_pattern) then
             valid_file = false
             break
@@ -90,9 +93,7 @@ buffer_util.close_buffers = function()
   local original_buffer = api.nvim_get_current_buf()
   local buffers = api.nvim_list_bufs()
   for _, buffer in ipairs(buffers) do
-    if buffer ~= original_buffer then
-      api.nvim_buf_delete(buffer, {force = true})
-    end
+    if buffer ~= original_buffer then api.nvim_buf_delete(buffer, {force = true}) end
   end
 end
 buffer_util.manual_open = function(folders, file_extensions, ignore_patterns, use_coc)
@@ -162,7 +163,10 @@ end
 ----------------------------------------------------------------------------------------------------
 
 c_util = {}
-c_util.get_files_in_compilation_unit = function(directory)
+c_util.get_files_in_compilation_unit = function()
+  local target_directory = general_util.find_target_directory()
+  if target_directory ~= "" then target_directory = "\\" .. target_directory end
+  local directory = vim.fn.getcwd() .. target_directory
   local name = vim.fn.expand("%:t:r")
   local long_files = vim.fn.globpath(directory, "**/" .. name .. ".*", 0, 1)
   local files = general_util.make_relative_files(long_files)
@@ -189,11 +193,8 @@ c_util.assign_cc_file_types = function(files)
   return source, header
 end
 c_util.switch_file_in_compilation_unit = function(target_file)
-  local target_directory = general_util.find_target_directory()
-  if target_directory ~= "" then target_directory = "\\" .. target_directory end
-  local directory = vim.fn.getcwd() .. target_directory
   local current_extension = vim.fn.expand("%:e")
-  local files = c_util.get_files_in_compilation_unit(directory)
+  local files = c_util.get_files_in_compilation_unit()
   if string.match(current_extension, "cpp") or string.match(current_extension, "hpp") or string.match(current_extension, "inl") then
     local target_extension = ""
     if target_file == "source" then target_extension = "cpp"
@@ -323,7 +324,11 @@ end
 ----------------------------------------------------------------------------------------------------
 
 oil_util = {}
-oil_util.open_on_startup = function() if not general_util.floating_window_exists() then vim.cmd("Oil .") end end
+oil_util.open_on_startup = function()
+  if general_util.floating_window_exists() then return end
+  vim.cmd("Oil .")
+  vim.cmd("bd 1")
+end
 
 ----------------------------------------------------------------------------------------------------
 
@@ -339,21 +344,13 @@ end
 coc_util = {}
 coc_util.show_docs = function()
   local cw = vim.fn.expand("<cword>")
-  if vim.fn.index({"vim", "help"}, vim.bo.filetype) >= 0 then
-    api.nvim_command("h " .. cw)
-  elseif api.nvim_eval("coc#rpc#ready()") then
-    vim.fn.CocActionAsync("doHover")
-  else
-    api.nvim_command("!" .. opt.keywordprg .. " " .. cw)
-  end
+  if vim.fn.index({"vim", "help"}, vim.bo.filetype) >= 0 then api.nvim_command("h " .. cw)
+  elseif api.nvim_eval("coc#rpc#ready()") then vim.fn.CocActionAsync("doHover")
+  else api.nvim_command("!" .. opt.keywordprg .. " " .. cw) end
 end
 coc_util.refactor_handler = function()
-  language = vim.fn.expand("%:e")
-  if language ~= "" and language ~= nil then
-    if language == "h" then language = "c" end
-    if language == "hpp" or language == "inl" then language = "cpp" end
-    vim.treesitter.language.register(language, "crf")
-  end
+  local language = vim.bo.filetype
+  if language ~= "" and language ~= nil and language ~= "crf" then vim.treesitter.language.register(language, "crf") end
   if string.find(vim.fn.expand("%"), "__coc_refactor__") then vim.cmd("set filetype=crf") end
 end
 
