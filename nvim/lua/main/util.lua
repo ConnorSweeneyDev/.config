@@ -12,28 +12,43 @@ general_util.floating_window_exists = function()
   end
   return false
 end
-general_util.make_relative_files = function(long_files, cwd)
+general_util.make_relative_files = function(long_files)
   local files = {}
   for _, file in ipairs(long_files) do
-    local new_file = string.gsub(file, cwd .. "\\", "")
+    local new_file = string.gsub(file, vim.fn.getcwd() .. "\\", "")
     new_file = string.gsub(new_file, "\\", "/")
     table.insert(files, new_file)
   end
   return files
 end
+general_util.get_list_from_gitignore = function()
+  local gitignore = vim.fn.glob(".gitignore")
+  if gitignore == "" then return {} end
+  local lines = vim.fn.readfile(gitignore)
+  local list = {}
+  for _, line in ipairs(lines) do
+    if line ~= "" and not string.find(line, "^#") then table.insert(list, line) end
+  end
+  return list
+end
 
 ----------------------------------------------------------------------------------------------------
 
 buffer_util = {}
-buffer_util.open_buffers = function(folders, file_extensions, ignore_files)
+buffer_util.open_buffers = function(folders, file_extensions, ignore_patterns)
   local original_buffer = api.nvim_get_current_buf()
   for _, folder in ipairs(folders) do
     for _, extension in ipairs(file_extensions) do
-      local files = vim.fn.globpath(vim.fn.getcwd() .. folder, "**/" .. extension, 0, 1)
+      local files = general_util.make_relative_files(vim.fn.globpath(vim.fn.getcwd() .. folder, "**/" .. extension, 0, 1))
       for _, file in ipairs(files) do
-        if not vim.tbl_contains(ignore_files, vim.fn.fnamemodify(file, ":t")) then
-          vim.cmd("edit " .. file)
+        local valid_file = true
+        for _, ignore_pattern in ipairs(ignore_patterns) do
+          if string.find(file, ignore_pattern) then
+            valid_file = false
+            break
+          end
         end
+        if valid_file then vim.cmd("edit " .. file) end
       end
     end
   end
@@ -48,8 +63,8 @@ buffer_util.close_buffers = function()
     end
   end
 end
-buffer_util.manual_open = function(folders, file_extensions, ignore_files, use_coc)
-  buffer_util.open_buffers(folders, file_extensions, ignore_files)
+buffer_util.manual_open = function(folders, file_extensions, ignore_patterns, use_coc)
+  buffer_util.open_buffers(folders, file_extensions, ignore_patterns)
   if use_coc then vim.cmd("silent CocRestart") end
   vim.notify("Buffers opened.")
 end
@@ -58,34 +73,10 @@ buffer_util.manual_close = function(use_coc)
   if use_coc then vim.cmd("silent CocRestart") end
   vim.notify("Buffers closed.")
 end
-buffer_util.open_on_startup = function(folders, file_extensions, ignore_files)
+buffer_util.open_on_startup = function(folders, file_extensions, ignore_patterns)
   if general_util.floating_window_exists() then return end
-  buffer_util.open_buffers(folders, file_extensions, ignore_files)
+  buffer_util.open_buffers(folders, file_extensions, ignore_patterns)
   vim.cmd("Ex .")
-end
-
-----------------------------------------------------------------------------------------------------
-
-language_util = {}
-language_util.format = function()
-  local extension = (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e") or vim.bo.ft
-  if extension == "c" or extension == "h" then
-    vim.cmd("w")
-    vim.cmd("!clang-format -i %")
-  elseif extension == "cpp" or extension == "hpp" or extension == "inl" then
-    vim.cmd("w")
-    vim.cmd("!clang-format -i %")
-  else vim.notify("Formatting not configured for " .. extension .. "!", "error") end
-end
-language_util.source_lua = function()
-  local extension = vim.fn.expand("%:e")
-  if extension == "lua" then vim.cmd("source %")
-  else vim.notify("Not a lua file!", "error") end
-end
-language_util.change_format_options = function()
-  local extension = vim.fn.expand("%:e")
-  if extension == "md" or extension == "txt" then opt.formatoptions:append("t")
-  else opt.formatoptions:remove("t") end
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -116,12 +107,35 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
+language_util = {}
+language_util.format = function()
+  local extension = (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e") or vim.bo.ft
+  if extension == "c" or extension == "h" then
+    vim.cmd("w")
+    vim.cmd("!clang-format -i %")
+  elseif extension == "cpp" or extension == "hpp" or extension == "inl" then
+    vim.cmd("w")
+    vim.cmd("!clang-format -i %")
+  else vim.notify("Formatting not configured for " .. extension .. "!", "error") end
+end
+language_util.source_lua = function()
+  local extension = vim.fn.expand("%:e")
+  if extension == "lua" then vim.cmd("source %")
+  else vim.notify("Not a lua file!", "error") end
+end
+language_util.change_format_options = function()
+  local extension = vim.fn.expand("%:e")
+  if extension == "md" or extension == "txt" then opt.formatoptions:append("t")
+  else opt.formatoptions:remove("t") end
+end
+
+----------------------------------------------------------------------------------------------------
+
 c_util = {}
 c_util.get_files_in_compilation_unit = function(directory)
-  local cwd = vim.fn.getcwd()
   local name = vim.fn.expand("%:t:r")
   local long_files = vim.fn.globpath(directory, "**/" .. name .. ".*", 0, 1)
-  local files = general_util.make_relative_files(long_files, cwd)
+  local files = general_util.make_relative_files(long_files)
   return files
 end
 c_util.assign_cxx_file_types = function(files)
@@ -144,8 +158,12 @@ c_util.assign_cc_file_types = function(files)
   end
   return source, header
 end
-c_util.switch_file_in_compilation_unit = function(directory, target_file)
-  local directory = vim.fn.getcwd() .. directory
+c_util.switch_file_in_compilation_unit = function(target_file)
+  local target_directory = string.gsub(vim.fn.expand("%"), vim.fn.getcwd() .. "\\", "")
+  target_directory = string.gsub(string.gsub(target_directory, "/", "\\"), "\\.*$", "")
+  if string.find(target_directory, "%.") then target_directory = ""
+  else target_directory = "\\" .. target_directory end
+  local directory = vim.fn.getcwd() .. target_directory
   local current_extension = vim.fn.expand("%:e")
   local files = c_util.get_files_in_compilation_unit(directory)
   if string.match(current_extension, "cpp") or string.match(current_extension, "hpp") or string.match(current_extension, "inl") then
