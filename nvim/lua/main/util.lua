@@ -327,7 +327,12 @@ oil_util = {}
 oil_util.open_on_startup = function()
   if general_util.floating_window_exists() then return end
   vim.cmd("Oil .")
-  vim.cmd("bd 1")
+  for _, buffer in ipairs(api.nvim_list_bufs()) do
+    if api.nvim_get_option_value("ft", {buf = buffer}) == "" then
+      api.nvim_buf_delete(buffer, {force = true})
+      break
+    end
+  end
 end
 
 ----------------------------------------------------------------------------------------------------
