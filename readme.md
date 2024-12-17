@@ -41,7 +41,7 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
 - Paste `wezterm` into your config and change the font face to whatever NerdFont you installed. You can go to
   `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and rename the WezTerm shortcut to something shorter like `wt`
   for ease of typing in the start menu.
-- Paste `television` into your config, customize those files to your liking.
+- Paste `television` into your config.
 - Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that is opened (you may
   have to create the file first if it doesn't exist): `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
 - Go back to `pwsh\profile.ps1` and remove the `attend` and `music` functions, as they are specific to me. Other than
