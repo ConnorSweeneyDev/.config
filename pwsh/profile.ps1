@@ -1,6 +1,6 @@
 $Env:KOMOREBI_CONFIG_HOME = $Env:USERPROFILE + "/.config/komorebi"
 $Env:FZF_DEFAULT_COMMAND = 'fd --type f --strip-cwd-prefix --hidden --exclude .git'
-$Env:WHICH = $Env:USERPROFILE + "/.config/which"
+$Env:BAT_THEME = "Visual Studio Dark+"
 $Env:NVIM_LOG_FILE = $Env:USERPROFILE + "/.config/nvim-data"
 $Env:XDG_CONFIG_HOME = $Env:USERPROFILE + "/.config"
 $Env:XDG_DATA_HOME = $Env:USERPROFILE + "/.config"
@@ -34,61 +34,31 @@ function fh # Searches your command history, sets your clipboard to the selected
   if (![string]::IsNullOrWhiteSpace($selected)) { Set-Clipboard $selected }
 }
 
-function cw # Changes to the directory of your selected file in fzf searching either D:\, C:\ or C:\Users
+function ctv
 {
-  if ($args.Count -eq 0 -or $args -eq "d") { cd D:\ }
-  elseif ($args -eq "c") { cd C:\ }
-  elseif ($args -eq "u") { cd C:\Users }
-  else
-  {
-    echo "Invalid argument: $args"
-    return
-  }
-  $location = which
-  if (![string]::IsNullOrWhiteSpace($location)) { cd $location }
-  else { cd C:\ }
+  $selected = tv $args
+  if (![string]::IsNullOrWhiteSpace($selected)) { cd $selected }
 }
-function ew # Opens the directory in file explorer of your selected file in fzf searching either D:\, C:\ or C:\Users
+function etv
 {
-  if ($args.Count -eq 0 -or $args -eq "d") { cd D:\ }
-  elseif ($args -eq "c") { cd C:\ }
-  elseif ($args -eq "u") { cd C:\Users }
-  else
+  $selected = tv $args
+  if (![string]::IsNullOrWhiteSpace($selected))
   {
-    echo "Invalid argument: $args"
-    return
-  }
-  $location = which
-  if (![string]::IsNullOrWhiteSpace($location))
-  {
-    cd $location
+    cd $selected
     explorer .
   }
-  else { cd C:\ }
 }
-function nw # Opens the directory in neovim of your selected file in fzf searching either D:\, C:\ or C:\Users
+function ntv
 {
-  if ($args.Count -eq 0 -or $args -eq "d") { cd D:\ }
-  elseif ($args -eq "c") { cd C:\ }
-  elseif ($args -eq "u") { cd C:\Users }
-  else
+  $selected = tv $args
+  if (![string]::IsNullOrWhiteSpace($selected))
   {
-    echo "Invalid argument: $args"
-    return
-  }
-  $location = which
-  if (![string]::IsNullOrWhiteSpace($location))
-  {
-    cd $location
+    cd $selected
     $p = Split-Path -leaf -path (Get-Location)
     $Host.UI.RawUI.WindowTitle = "$p"
     nvim .
   }
-  else { cd C:\ }
 }
-function nd { wezterm cli spawn pwsh -NoExit -Command "nw d" } # Opens a new tab then runs "nw d"
-function nc { wezterm cli spawn pwsh -NoExit -Command "nw c" } # Opens a new tab then runs "nw c"
-function nu { wezterm cli spawn pwsh -NoExit -Command "nw u" } # Opens a new tab then runs "nw u"
 
 function attend
 {
