@@ -1,11 +1,10 @@
 $Env:KOMOREBI_CONFIG_HOME = $Env:USERPROFILE + "/.config/komorebi"
-$Env:FZF_DEFAULT_COMMAND = 'fd --type f --strip-cwd-prefix --hidden --exclude .git'
-$Env:BAT_THEME = "Visual Studio Dark+"
-$Env:NVIM_LOG_FILE = $Env:USERPROFILE + "/.config/nvim-data"
 $Env:XDG_CONFIG_HOME = $Env:USERPROFILE + "/.config"
 $Env:XDG_DATA_HOME = $Env:USERPROFILE + "/.config"
 $Env:XDG_STATE_HOME = $Env:USERPROFILE + "/.config"
 $Env:XDG_CACHE_HOME = $Env:USERPROFILE + "/.config/temp"
+$Env:NVIM_LOG_FILE = $Env:USERPROFILE + "/.config/nvim-data"
+$Env:BAT_THEME = "Visual Studio Dark+"
 
 Set-Alias -Name "g" -Value "git"
 Set-Alias -Name "c" -Value "clear"
@@ -34,12 +33,12 @@ function fh # Searches your command history, sets your clipboard to the selected
   if (![string]::IsNullOrWhiteSpace($selected)) { Set-Clipboard $selected }
 }
 
-function ctv
+function tvc
 {
   $selected = tv $args
   if (![string]::IsNullOrWhiteSpace($selected)) { cd $selected }
 }
-function etv
+function tve
 {
   $selected = tv $args
   if (![string]::IsNullOrWhiteSpace($selected))
@@ -48,7 +47,7 @@ function etv
     explorer .
   }
 }
-function ntv
+function tvn
 {
   $selected = tv $args
   if (![string]::IsNullOrWhiteSpace($selected))
