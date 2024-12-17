@@ -86,8 +86,9 @@ function nw # Opens the directory in neovim of your selected file in fzf searchi
   }
   else { cd C:\ }
 }
-function fd { wezterm cli spawn pwsh -NoExit -Command "nw d" } # Opens a new tab then runs "nw d"
-function fu { wezterm cli spawn pwsh -NoExit -Command "nw u" } # Opens a new tab then runs "nw u"
+function nd { wezterm cli spawn pwsh -NoExit -Command "nw d" } # Opens a new tab then runs "nw d"
+function nc { wezterm cli spawn pwsh -NoExit -Command "nw c" } # Opens a new tab then runs "nw c"
+function nu { wezterm cli spawn pwsh -NoExit -Command "nw u" } # Opens a new tab then runs "nw u"
 
 function attend
 {
