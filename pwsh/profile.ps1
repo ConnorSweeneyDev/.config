@@ -33,12 +33,12 @@ function fh # Searches your command history, sets your clipboard to the selected
   if (![string]::IsNullOrWhiteSpace($selected)) { Set-Clipboard $selected }
 }
 
-function tvc
+function tvc # Runs television then cd's to the selected directory - Usage: tvc [<args>]
 {
   $selected = tv $args
   if (![string]::IsNullOrWhiteSpace($selected)) { cd $selected }
 }
-function tve
+function tve # Runs television then opens the selected directory in explorer - Usage: tve [<args>]
 {
   $selected = tv $args
   if (![string]::IsNullOrWhiteSpace($selected))
@@ -47,7 +47,7 @@ function tve
     explorer .
   }
 }
-function tvn
+function tvn # Runs television then opens the selected directory in neovim - Usage: tvn [<args>]
 {
   $selected = tv $args
   if (![string]::IsNullOrWhiteSpace($selected))

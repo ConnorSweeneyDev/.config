@@ -1,13 +1,12 @@
 # Welcome
-These are all my Windows dotfiles and how to set them up, using Neovim with PowerShellCore in Wezterm along with fzf and
-a wrapper for it for fast navigation. Additionally, there is a quick setup for Firefox with Tridactyl and for a Tiling
-Window Manager using Komorebi with Yasb and AutoHotkey. You will also find a list of other useful tools at the end.
+These are all my Windows dotfiles and how to set them up, using Wezterm with Neovim in PowerShellCore along with fuzzy
+finders. Additionally, there is a quick setup for Firefox with Tridactyl and for a Tiling Window Manager using Komorebi
+with Yasb and AutoHotkey. You will also find a list of other useful tools at the end.
 
 https://github.com/user-attachments/assets/bbb2e9e0-7cb5-43a9-92a0-12c65cbd7282
 
 *Showcase: An overhaul of Windows, using a Tiling Window Manager with workspaces and a status bar rather than a taskbar,
-many command line utilities, some custom scripts, a lot of hotkeys and a fully fledged Neovim setup that uses Wezterm
-with PowerShellCore.*
+many command line utilities, a lot of hotkeys and a Wezterm setup that uses Neovim with PowerShellCore.*
 
 The layout of this repository assumes a chronological reading, meaning that dependencies from one section may carry over
 to later sections, so it is recommended to install all the previous dependencies before trying to set up a later
@@ -33,14 +32,16 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`.
 - Difftastic &rightarrow; Run `winget install difftastic`.
 - OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
-- fzf &rightarrow; Run `winget install --id=junegunn.fzf`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
+- television &rightarrow; Go [here](https://github.com/alexpasmantier/television/releases) and download the windows
+  executable, store it in `C:\Television` and ensure that folder is in your path.
 
 ### Setup
 - Paste `wezterm` into your config and change the font face to whatever NerdFont you installed. You can go to
   `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and rename the WezTerm shortcut to something shorter like `wt`
   for ease of typing in the start menu.
+- Paste `television` into your config, customize those files to your liking.
 - Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that is opened (you may
   have to create the file first if it doesn't exist): `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
 - Go back to `pwsh\profile.ps1` and remove the `attend` and `music` functions, as they are specific to me. Other than
@@ -74,7 +75,6 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
     external = difft
   ```
 - Paste `posh` into your config and run `oh-my-posh disable notice` to stop the annoying update message every so often.
-- Paste `which` into your config and put it in your path.
 
 # Neovim
 ### Dependencies

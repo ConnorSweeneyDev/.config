@@ -10,6 +10,6 @@ supermaven/*
 temp/*
 
 # Generated files
-nvim/lazy-lock.json
-which/path.txt
 yasb/yasb.log
+television/television.log
+nvim/lazy-lock.json
