@@ -1,7 +1,7 @@
 # Welcome
-These are all my Windows dotfiles and how to set them up, using Wezterm with Neovim in PowerShellCore along with fuzzy
-finders. Additionally, there is a quick setup for Firefox with Tridactyl and for a Tiling Window Manager using Komorebi
-with Yasb and AutoHotkey. You will also find a list of other useful tools at the end.
+These are all my Windows dotfiles and how to set them up, using Wezterm with Neovim in PowerShellCore along with fzf.
+Additionally, there is a quick setup for Firefox with Tridactyl and for a Tiling Window Manager using Komorebi with Yasb
+and AutoHotkey. You will also find a list of other useful tools at the end.
 
 https://github.com/user-attachments/assets/bbb2e9e0-7cb5-43a9-92a0-12c65cbd7282
 
@@ -34,19 +34,18 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
 - OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
-- television &rightarrow; Go [here](https://github.com/alexpasmantier/television/releases) and download the windows
-  executable, store it in `C:\Television` and ensure that folder is in your path.
+- fzf &rightarrow; Run `winget install junegunn.fzf`.
 
 ### Setup
 - Paste `wezterm` into your config and change the font face to whatever NerdFont you installed. You can go to
   `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and rename the WezTerm shortcut to something shorter like `wt`
   for ease of typing in the start menu.
-- Paste `television` into your config.
+- Paste `posh` into your config and run `oh-my-posh disable notice` to stop the annoying update message every so often.
 - Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that is opened (you may
-  have to create the file first if it doesn't exist): `. $Env:USERPROFILE"\.config\pwsh\profile.ps1"`.
-- Go back to `pwsh\profile.ps1` and remove the `attend` and `music` functions, as they are specific to me. Other than
-  those two functions, skim the rest of the file and remove anything you know you won't need - everything is commented
-  so you can be sure of what you're doing.
+  have to create the file first if it doesn't exist): `. $Env:USERPROFILE"\.config\pwsh\main.ps1"`.
+- Go back to `pwsh\main.ps1` and remove the line that sources `personal.ps1`, and delete that file too as it is specific
+  to me. Other than that, skim the rest of the files and remove anything you know you won't need - everything is
+  commented or self-explanatory so you can be sure of what you're doing.
 - To set up gsudo after installing it, run the following commands:
   - `sudo config PowerShellLoadProfile true`.
   - `sudo config CacheMode auto`.
@@ -74,7 +73,6 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
   [diff]
     external = difft
   ```
-- Paste `posh` into your config and run `oh-my-posh disable notice` to stop the annoying update message every so often.
 
 # Neovim
 ### Dependencies

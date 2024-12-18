@@ -11,5 +11,4 @@ temp/*
 
 # Generated files
 yasb/yasb.log
-television/television.log
 nvim/lazy-lock.json

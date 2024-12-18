@@ -1,0 +1,7 @@
+$Env:KOMOREBI_CONFIG_HOME = $Env:USERPROFILE + "/.config/komorebi"
+$Env:XDG_CONFIG_HOME = $Env:USERPROFILE + "/.config"
+$Env:XDG_DATA_HOME = $Env:USERPROFILE + "/.config"
+$Env:XDG_STATE_HOME = $Env:USERPROFILE + "/.config"
+$Env:XDG_CACHE_HOME = $Env:USERPROFILE + "/.config/temp"
+$Env:NVIM_LOG_FILE = $Env:USERPROFILE + "/.config/nvim-data"
+$Env:BAT_THEME = "Visual Studio Dark+"
