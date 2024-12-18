@@ -25,7 +25,7 @@ function fzc # Runs fzf searching files then cd's to the directory of the select
     return
   }
   $Env:FZF_DEFAULT_COMMAND = "fd --type f --strip-cwd-prefix --hidden --exclude .git"
-  $Env:FZF_DEFAULT_OPTS = "--preview=`"bat --style=numbers --color=always {}`" --preview-window=border-rounded --preview-label=`" PREVIEW `" --border=rounded --border-label=`" FILES `" --tabstop=2 --color=16"
+  $Env:FZF_DEFAULT_OPTS = $Env:FZF_FILE_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
   if (![string]::IsNullOrWhiteSpace($selected))
@@ -46,7 +46,7 @@ function fze # Runs fzf searching files then opens the directory of the selected
     return
   }
   $Env:FZF_DEFAULT_COMMAND = "fd --type f --strip-cwd-prefix --hidden --exclude .git"
-  $Env:FZF_DEFAULT_OPTS = "--preview=`"bat --style=numbers --color=always {}`" --preview-window=border-rounded --preview-label=`" PREVIEW `" --border=rounded --border-label=`" FILES `" --tabstop=2 --color=16"
+  $Env:FZF_DEFAULT_OPTS = $Env:FZF_FILE_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
   if (![string]::IsNullOrWhiteSpace($selected))
@@ -68,7 +68,7 @@ function fzn # Runs fzf searching files then opens the directory of the selected
     return
   }
   $Env:FZF_DEFAULT_COMMAND = "fd --type f --strip-cwd-prefix --hidden --exclude .git"
-  $Env:FZF_DEFAULT_OPTS = "--preview=`"bat --style=numbers --color=always {}`" --preview-window=border-rounded --preview-label=`" PREVIEW `" --border=rounded --border-label=`" FILES `" --tabstop=2 --color=16"
+  $Env:FZF_DEFAULT_OPTS = $Env:FZF_FILE_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
   if (![string]::IsNullOrWhiteSpace($selected))
@@ -92,7 +92,7 @@ function dzc # Runs fzf searching directories then cd's to the selected director
     return
   }
   $Env:FZF_DEFAULT_COMMAND = "fd --type d --strip-cwd-prefix --hidden --exclude .git"
-  $Env:FZF_DEFAULT_OPTS = "--preview=`"pwsh -NoProfile -Command Get-ChildItem -Force -LiteralPath '{}'`" --preview-window=border-rounded --preview-label=`" PREVIEW `" --border=rounded --border-label=`" DIRECTORIES `" --tabstop=2 --color=16"
+  $Env:FZF_DEFAULT_OPTS = $Env:FZF_DIRECTORY_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
   if (![string]::IsNullOrWhiteSpace($selected)) { cd $selected }
@@ -109,7 +109,7 @@ function dze # Runs fzf searching directories then opens the selected directory 
     return
   }
   $Env:FZF_DEFAULT_COMMAND = "fd --type d --strip-cwd-prefix --hidden --exclude .git"
-  $Env:FZF_DEFAULT_OPTS = "--preview=`"pwsh -NoProfile -Command Get-ChildItem -Force -LiteralPath '{}'`" --preview-window=border-rounded --preview-label=`" PREVIEW `" --border=rounded --border-label=`" DIRECTORIES `" --tabstop=2 --color=16"
+  $Env:FZF_DEFAULT_OPTS = $Env:FZF_DIRECTORY_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
   if (![string]::IsNullOrWhiteSpace($selected))
@@ -130,7 +130,7 @@ function dzn # Runs fzf searching directories then opens the selected directory 
     return
   }
   $Env:FZF_DEFAULT_COMMAND = "fd --type d --strip-cwd-prefix --hidden --exclude .git"
-  $Env:FZF_DEFAULT_OPTS = "--preview=`"pwsh -NoProfile -Command Get-ChildItem -Force -LiteralPath '{}'`" --preview-window=border-rounded --preview-label=`" PREVIEW `" --border=rounded --border-label=`" DIRECTORIES `" --tabstop=2 --color=16"
+  $Env:FZF_DEFAULT_OPTS = $Env:FZF_DIRECTORY_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
   if (![string]::IsNullOrWhiteSpace($selected))
