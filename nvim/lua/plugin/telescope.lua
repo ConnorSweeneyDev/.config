@@ -1,10 +1,12 @@
 require("telescope").setup{
   defaults = {
-    layout_config = {horizontal = {preview_width = 0.5}},
+    layout_config = {horizontal = {height = 1000, width = 1000}},
     file_ignore_patterns = {".git\\", ".cache\\", "external\\", "ext\\", "binary\\", "bin\\", "assets\\", ".exe",
                             ".dll", ".class", ".jar", ".sln", ".vcxproj", ".png", ".jpg", ".pyc", "packer_compiled.lua"}
-  }
+  },
+  extensions = {coc = {timeout = 3000}}
 }
+require("telescope").load_extension("fzf")
 local builtin = require("telescope.builtin")
 map("n", "<LEADER>pf", function() builtin.find_files({find_command = {"rg", "--files", "--hidden"}}) end, default_opts)
 map("n", "<LEADER>ps", function()

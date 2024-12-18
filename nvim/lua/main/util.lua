@@ -283,6 +283,7 @@ lualine_util.dynamic_path = function()
   elseif string.match(filetype, "lazy") then path = "lazy"
   elseif string.match(filetype, "harpoon") then path = "harpoon"
   elseif string.match(filetype, "notify") then path = "notify"
+  elseif string.match(filetype, "noice") then path = "noice"
   elseif string.match(filetype, "TelescopePrompt") then path = "telescope"
   elseif string.match(filetype, "gitcommit") then path = "neogit\\commit"
   elseif string.find(filetype, "Neogit") then path = "neogit\\" .. string.lower(string.gsub(filetype, "Neogit", ""))

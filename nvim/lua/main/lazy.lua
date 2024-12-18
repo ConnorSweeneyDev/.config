@@ -4,6 +4,8 @@ require("lazy").setup{
   {"nvim-lua/plenary.nvim"},
   {"stevearc/oil.nvim"},
   {"nvim-telescope/telescope.nvim"},
+  {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
+  {"fannheyward/telescope-coc.nvim"},
   {"theprimeagen/harpoon", branch = "harpoon2"},
   {"mbbill/undotree"},
   {"gbprod/yanky.nvim"},
