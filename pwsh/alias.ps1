@@ -1,5 +1,5 @@
-Set-Alias -Name "g" -Value "git"
 Set-Alias -Name "c" -Value "clear"
+Set-Alias -Name "g" -Value "git"
 function q { exit }
 function e { explorer . }
 function b { explorer shell:RecycleBinFolder }
