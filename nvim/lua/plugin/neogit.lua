@@ -11,5 +11,5 @@ require("neogit").setup{
   mappings = { status = { ["<c-l>"] = "RefreshBuffer" } }
 }
 map("n", "<LEADER>gs", function() neogit_util.open_status_menu() end)
-map("n", "<LEADER>gr", "<CMD>!g restore %<CR>")
-map("n", "<LEADER>gR", "<CMD>!g restore .<CR>")
+map("n", "<LEADER>gr", "<CMD>!git restore %<CR>")
+map("n", "<LEADER>gR", "<CMD>!git restore .<CR>")
