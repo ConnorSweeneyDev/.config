@@ -7,8 +7,8 @@ function attend
 }
 function music
 {
-  cd D:\CPP\TuiMusic
+  cd C:\TuiMusic
   $p = Split-Path -leaf -path (Get-Location)
   $Host.UI.RawUI.WindowTitle = "$p"
-  .\binary\windows\TuiMusic.exe
+  .\TuiMusic.exe
 }

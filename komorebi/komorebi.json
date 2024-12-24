@@ -26,7 +26,12 @@
         "id": "notificationtoasts_",
         "matching_strategy": "DoesNotContain"
       }
-    ]
+    ],
+    {
+      "kind": "Exe",
+      "id": "upc.exe",
+      "matching_strategy": "Equals"
+    }
   ],
   "floating_applications": [
     [
