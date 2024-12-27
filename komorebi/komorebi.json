@@ -60,6 +60,11 @@
       "kind": "Class",
       "id": "GLFW30",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Trackmania.exe",
+      "matching_strategy": "Equals"
     }
   ],
   "stackbar": {
