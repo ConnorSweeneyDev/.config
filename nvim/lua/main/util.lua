@@ -44,9 +44,7 @@ color_util.initialize_colors = function(scheme, highlights)
   vim.cmd.colorscheme(scheme)
   api.nvim_set_hl(0, "Normal", {bg = "none"})
   api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
-  for _, highlight in ipairs(highlights) do
-    vim.cmd("highlight " .. highlight)
-  end
+  for _, highlight in ipairs(highlights) do vim.cmd("highlight " .. highlight) end
 end
 color_util.line_number_handler = function(separator, line_colors)
   local status_column = ""
