@@ -5,12 +5,10 @@ and AutoHotkey. You will also find a list of other useful tools at the end.
 
 https://github.com/user-attachments/assets/bbb2e9e0-7cb5-43a9-92a0-12c65cbd7282
 
-*Showcase: An overhaul of Windows, using a Tiling Window Manager with workspaces and a status bar rather than a taskbar,
-many command line utilities, a lot of hotkeys and a Wezterm setup that uses Neovim with PowerShellCore.*
-
-The layout of this repository assumes a chronological reading, meaning that dependencies from one section may carry over
-to later sections, so it is recommended to install all the previous dependencies before trying to set up a later
-section.
+> [!IMPORTANT]
+> The layout of this repository assumes a chronological reading, meaning that dependencies from one section may carry
+> over to later sections, so it is recommended to install all the previous dependencies before trying to set up a later
+> section.
 
 # System
 Every folder in this repository is located locally at `$Env:USERPROFILE\.config`.
