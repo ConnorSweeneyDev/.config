@@ -74,7 +74,7 @@ https://github.com/user-attachments/assets/298d47ea-595c-42d5-b092-fea8f2adaabf
   ```
 
 # Neovim
-> [!NOTE]
+> [!IMPORTANT]
 > This section requires completion of the terminal setup first.
 
 ### Dependencies
@@ -201,7 +201,7 @@ Using Tridactyl, press `:` and type the following commands:
 
 > [!TIP]
 > You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to view all the most
-> important bindings.
+> important Tridactyl bindings.
 
 # Tiling Window Manager
 ### Dependencies
