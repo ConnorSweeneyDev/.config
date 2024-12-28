@@ -3,7 +3,7 @@ These are all my Windows dotfiles and how to set them up, using Wezterm with Neo
 Additionally, there is a quick setup for Firefox with Tridactyl and for a Tiling Window Manager using Komorebi with Yasb
 and AutoHotkey. You will also find a list of other useful tools at the end.
 
-https://github.com/user-attachments/assets/bbb2e9e0-7cb5-43a9-92a0-12c65cbd7282
+https://github.com/user-attachments/assets/298d47ea-595c-42d5-b092-fea8f2adaabf
 
 > [!IMPORTANT]
 > The layout of this repository assumes a chronological reading, meaning that dependencies from one section may carry
