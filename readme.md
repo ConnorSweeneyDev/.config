@@ -11,7 +11,8 @@ https://github.com/user-attachments/assets/bbb2e9e0-7cb5-43a9-92a0-12c65cbd7282
 > section.
 
 # System
-Every folder in this repository is located locally at `$Env:USERPROFILE\.config`.
+> [!NOTE]
+> Every folder in this repository is located locally at `$Env:USERPROFILE\.config`.
 
 ### Setup
 - Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search `developer`).
@@ -73,8 +74,10 @@ Every folder in this repository is located locally at `$Env:USERPROFILE\.config`
   ```
 
 # Neovim
+> [!NOTE]
+> This section requires completion of the terminal setup first.
+
 ### Dependencies
-- Complete the Terminal section first.
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
   [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the
   installation wizard.
@@ -154,15 +157,16 @@ After all of that, don't forget to include these files that are not tied to any 
   references etc.), this file also provides the keybind for that, and the keybind for re-opening them all again too. It
   also has a toggle for whether you are using Coc or not, so it is not necessary to use Coc to use this file.
 
-All global keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective
-`lua\plugin\[PLUGIN].lua` files and you can go into deeper detail inside `lua\main\util.lua`. Furthermore, all
-language specific settings and mappings can be edited at `lua\plugin\language.lua` and language server settings
-can be edited at `coc-settings.json`.
+> [!TIP]
+> All global keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective
+> `lua\plugin\[PLUGIN].lua` files and you can go into deeper detail inside `lua\main\util.lua`. Furthermore, all
+> language specific settings and mappings can be edited at `lua\plugin\language.lua` and language server settings
+> can be edited at `coc-settings.json`.
 
-## Portable Neovim
-I also have an extremely minimal setup (one file) that can be cloned and run on any machine that can run neovim. You can
-find it [here](https://github.com/ConnorSweeneyDev/nvim-portable), I only use it when I have to use a remote machine or
-someone else's computer.
+> [!NOTE]
+> I also have an extremely minimal setup (one file) that can be cloned and run on any machine that can run neovim. You
+> can find it [here](https://github.com/ConnorSweeneyDev/nvim-portable), I only use it when I have to use a remote
+> machine or someone else's computer.
 
 # Firefox with Tridactyl
 ### Dependencies
@@ -195,8 +199,9 @@ Using Tridactyl, press `:` and type the following commands:
 - `set modeindicatormodes
   {"normal":"true","insert":"true","input":"true","ignore":"false","ex":"true","hint":"true","visual":"true"}`.
 
-You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to view all the most
-important bindings.
+> [!TIP]
+> You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to view all the most
+> important bindings.
 
 # Tiling Window Manager
 ### Dependencies
@@ -225,9 +230,10 @@ important bindings.
   processes can be killed from the task manager.
 - Restart your PC.
 
-Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be configured in the Yasb
-`config.yaml` and `styles.css` files, and the window manager can be configured by Komorebi's `komorebi.json`,
-`applications.yaml` and any `*.json` files for custom layouts.
+> [!TIP]
+> Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be configured in the Yasb
+> `config.yaml` and `styles.css` files, and the window manager can be configured by Komorebi's `komorebi.json`,
+> `applications.yaml` and any `*.json` files for custom layouts.
 
 # Other Useful Tools
 VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForVoyager) and follow the setup guide for a
