@@ -1,5 +1,11 @@
 #SingleInstance Force
 
+#e::Run("explorer")
+#t::Run("pwsh -NoProfile -Command wezterm", , "Hide")
+#f::Run("pwsh -NoProfile -Command firefox", , "Hide")
+#d::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Discord.lnk")
+#s::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam.lnk")
+
 RunWait("pwsh -NoProfile -Command if ((Get-Process -Name 'komorebi' -ErrorAction SilentlyContinue) -eq $null) { } else { komorebic stop }", , "Hide")
 RunWait("pwsh -Command komorebic start", , "Hide")
 Komorebic(cmd) {
