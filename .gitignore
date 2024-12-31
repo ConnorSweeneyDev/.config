@@ -12,3 +12,4 @@ temp/*
 # Generated files
 yasb/yasb.log
 nvim/lazy-lock.json
+mousemaster/mousemaster.exe

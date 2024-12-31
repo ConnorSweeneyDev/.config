@@ -1,7 +1,7 @@
 # Welcome
 These are all my Windows dotfiles and how to set them up, using Wezterm with Neovim in PowerShellCore along with fzf.
-Additionally, there is a quick setup for Firefox with Tridactyl and for a Tiling Window Manager using Komorebi with Yasb
-and AutoHotkey. You will also find a list of other useful tools at the end.
+Additionally, there's a setup for a Tiling Window Manager and MouseMaster using AutoHotkey, as well as one for Tridactyl
+on Firefox. You will also find a list of other useful tools at the end.
 
 https://github.com/user-attachments/assets/298d47ea-595c-42d5-b092-fea8f2adaabf
 
@@ -170,6 +170,42 @@ After all of that, don't forget to include these files that are not tied to any 
   [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) on
   Firefox.
 
+# Tiling Window Manager
+### Dependencies
+- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi --version 0.1.30`.
+- Yasb &rightarrow; Run `winget install --id AmN.yasb --version 1.2.7`.
+- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey --version 2.0.18`.
+- MouseMaster &rightarrow; Download the portable executable from
+  [here](https://github.com/petoncle/mousemaster/releases) and put it in the same folder as `mousemaster.properties` in
+  this repository. Place that folder in your path.
+- ToggleRoundedCorners &rightarrow; Download the portable executable from
+  [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to `trc.exe`. Place it in
+  `C:\ToggleRoundedCorners` and put that folder in your path.
+
+### Setup
+- Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1` in
+  PowerShellCore as an admin.
+- Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" - enable "Turn off all
+  unnecessary animations (when possible)".
+- Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the taskbar" under the
+  taskbar behaviours.
+- Search `multitasking` and turn off everything under the snap windows section except "Show my snapped windows when I
+  hover over taskbar apps... ...when I press Alt+Tab".
+- Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors are configured.
+- Paste `yasb` into your config. Add `$Env:USERPROFILE\AppData\Local\Yasb` to your path.
+- Paste `ahk` into your config. Ensure you configure anything specific to monitor resolution. Right click `wm.ahk` and
+  create a shortcut, then rename that shortcut to just `wm` and create a copy of it, one should be moved to
+  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and the other to that folder's sub-directory `Startup`. Now it
+  will be run at startup and is accessible from the start menu in case you need to restart the manager, and all three
+  processes can be killed from the task manager.
+- Restart your PC.
+
+> [!TIP]
+> Keybinds for everything but MouseMaster and commands to run on startup can be configured in `wm.ahk`, the status bar
+> can be configured in the Yasb `config.yaml` and `styles.css` files, and the window manager can be configured by
+> Komorebi's `komorebi.json`, `applications.yaml` and any `*.json` files for custom layouts. MouseMaster's keybinds and
+> other settings can be configured in `mousemaster.properties`.
+
 ### Setup
 First, make firefox your default browser and make the folder containing `firefox.exe` an environment variable
 (`C:\Program Files\Mozilla Firefox` by default). After that go to Firefox settings and change the following:
@@ -197,38 +233,6 @@ Using Tridactyl, press `:` and type the following commands:
 > [!TIP]
 > You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to view all the most
 > important Tridactyl bindings.
-
-# Tiling Window Manager
-### Dependencies
-- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi --version 0.1.30`.
-- Yasb &rightarrow; Run `winget install --id AmN.yasb --version 1.2.7`.
-- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey --version 2.0.18`.
-- ToggleRoundedCorners &rightarrow; Download the portable executable from
-  [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to `trc.exe`. Place it in
-  `C:\ToggleRoundedCorners` and put that folder in your path.
-
-### Setup
-- Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1` in
-  PowerShellCore as an admin.
-- Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" - enable "Turn off all
-  unnecessary animations (when possible)".
-- Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the taskbar" under the
-  taskbar behaviours.
-- Search `multitasking` and turn off everything under the snap windows section except "Show my snapped windows when I
-  hover over taskbar apps... ...when I press Alt+Tab".
-- Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors are configured.
-- Paste `yasb` into your config. Add `$Env:USERPROFILE\AppData\Local\Yasb` to your path.
-- Paste `ahk` into your config. Ensure you configure anything specific to monitor resolution. Right click `wm.ahk` and
-  create a shortcut, then rename that shortcut to just `wm` and create a copy of it, one should be moved to
-  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and the other to that folder's sub-directory `Startup`. Now it
-  will be run at startup and is accessible from the start menu in case you need to restart the manager, and all three
-  processes can be killed from the task manager.
-- Restart your PC.
-
-> [!TIP]
-> Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be configured in the Yasb
-> `config.yaml` and `styles.css` files, and the window manager can be configured by Komorebi's `komorebi.json`,
-> `applications.yaml` and any `*.json` files for custom layouts.
 
 # Other Useful Tools
 VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForVoyager) and follow the setup guide for a

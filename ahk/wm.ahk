@@ -49,4 +49,5 @@ OpenYasbMenu() {
 }
 #a::OpenYasbMenu()
 
+RunWait("pwsh -NoProfile -Command if ((Get-Process -Name 'mousemaster' -ErrorAction SilentlyContinue) -eq $null) { cd $Env:USERPROFILE\.config\mousemaster && sudo mousemaster }", , "Hide")
 RunWait("pwsh -NoProfile -Command sudo trc --disable", , "Hide")
