@@ -1,7 +1,7 @@
 # Welcome
 These are all my Windows dotfiles and how to set them up, using Wezterm with Neovim in PowerShellCore along with fzf.
-Additionally, there's a setup for a Tiling Window Manager and MouseMaster using AutoHotkey, as well as one for Tridactyl
-on Firefox. You will also find a list of other useful tools at the end.
+Additionally, there's a setup for a Tiling Window Manager using AutoHotkey, and for Tridactyl on Firefox. You will also
+find a list of other useful tools at the end.
 
 https://github.com/user-attachments/assets/298d47ea-595c-42d5-b092-fea8f2adaabf
 
@@ -163,21 +163,11 @@ After all of that, don't forget to include these files that are not tied to any 
 > can find it [here](https://github.com/ConnorSweeneyDev/nvim-portable), I only use it when I have to use a remote
 > machine or someone else's computer.
 
-# Firefox with Tridactyl
-### Dependencies
-- Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/).
-- Tridactyl &rightarrow; Go
-  [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) on
-  Firefox.
-
 # Tiling Window Manager
 ### Dependencies
 - Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi --version 0.1.30`.
 - Yasb &rightarrow; Run `winget install --id AmN.yasb --version 1.2.7`.
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey --version 2.0.18`.
-- MouseMaster &rightarrow; Download the portable executable from
-  [here](https://github.com/petoncle/mousemaster/releases) and put it in the same folder as `mousemaster.properties` in
-  this repository. Place that folder in your path.
 - ToggleRoundedCorners &rightarrow; Download the portable executable from
   [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to `trc.exe`. Place it in
   `C:\ToggleRoundedCorners` and put that folder in your path.
@@ -201,10 +191,16 @@ After all of that, don't forget to include these files that are not tied to any 
 - Restart your PC.
 
 > [!TIP]
-> Keybinds for everything but MouseMaster and commands to run on startup can be configured in `wm.ahk`, the status bar
-> can be configured in the Yasb `config.yaml` and `styles.css` files, and the window manager can be configured by
-> Komorebi's `komorebi.json`, `applications.yaml` and any `*.json` files for custom layouts. MouseMaster's keybinds and
-> other settings can be configured in `mousemaster.properties`.
+> Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be configured in the Yasb
+> `config.yaml` and `styles.css` files, and the window manager can be configured by Komorebi's `komorebi.json`,
+> `applications.yaml` and any `*.json` files for custom layouts.
+
+# Firefox with Tridactyl
+### Dependencies
+- Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/).
+- Tridactyl &rightarrow; Go
+  [here](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/?utm_source=github.com&utm_content=readme.md) on
+  Firefox.
 
 ### Setup
 First, make firefox your default browser and make the folder containing `firefox.exe` an environment variable
