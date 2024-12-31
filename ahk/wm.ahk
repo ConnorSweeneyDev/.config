@@ -1,20 +1,14 @@
 #SingleInstance Force
 
-#e::Run("explorer")
-#t::Run("pwsh -NoProfile -Command wezterm", , "Hide")
-#f::Run("pwsh -NoProfile -Command firefox", , "Hide")
-#d::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Discord.lnk")
-#s::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam.lnk")
-
 RunWait("pwsh -NoProfile -Command if ((Get-Process -Name 'komorebi' -ErrorAction SilentlyContinue) -eq $null) { } else { komorebic stop }", , "Hide")
 RunWait("pwsh -Command komorebic start", , "Hide")
 Komorebic(cmd) {
   RunWait(format("komorebic.exe {}", cmd), , "Hide")
 }
-#c::Komorebic("close")
-#z::Komorebic("minimize")
-#q::Komorebic("toggle-float")
-#w::Komorebic("toggle-monocle")
+#^!c::Komorebic("close")
+#^!z::Komorebic("minimize")
+#^!q::Komorebic("toggle-float")
+#^!w::Komorebic("toggle-monocle")
 #^!1::Komorebic("focus left")
 #^!2::Komorebic("focus down")
 #^!3::Komorebic("focus up")
@@ -47,7 +41,7 @@ OpenYasbMenu() {
   MouseClick "Left"
   DllCall("SetCursorPos", "int", R / 2, "int", B / 2)
 }
-#a::OpenYasbMenu()
+#^!a::OpenYasbMenu()
 
 RunWait("pwsh -NoProfile -Command if ((Get-Process -Name 'mousemaster' -ErrorAction SilentlyContinue) -eq $null) { cd $Env:USERPROFILE\.config\mousemaster && sudo mousemaster }", , "Hide")
 RunWait("pwsh -NoProfile -Command sudo trc --disable", , "Hide")
