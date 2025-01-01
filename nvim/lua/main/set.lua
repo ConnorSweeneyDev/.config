@@ -18,7 +18,7 @@ opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
 opt.linebreak = true
-opt.scrolloff = 1000
+opt.scrolloff = 12
 opt.textwidth = 120
 opt.formatoptions:remove("t")
 opt.formatoptions:remove("c")
