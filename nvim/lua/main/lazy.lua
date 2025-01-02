@@ -15,7 +15,6 @@ require("lazy").setup{
   {"itchyny/vim-qfedit"},
   {"MunifTanjim/nui.nvim"},
   {"nvim-tree/nvim-web-devicons"},
-  {"tribela/vim-transparent"},
   {"Mofiqul/vscode.nvim", name = "vscode"},
   {"nvim-lualine/lualine.nvim"},
   {"rcarriga/nvim-notify"},
