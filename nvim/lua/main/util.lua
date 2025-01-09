@@ -44,20 +44,6 @@ color_util.initialize_colors = function(scheme, highlights)
   vim.cmd.colorscheme(scheme)
   for _, highlight in ipairs(highlights) do vim.cmd("highlight " .. highlight) end
 end
-color_util.line_number_handler = function(separator, line_colors)
-  local status_column = ""
-  for index, line_color in ipairs(line_colors) do
-    local line_nr = index - 1
-    local rel_or_l_num = "relnum.\""
-    local operation = " == "
-    if line_nr == 0 then rel_or_l_num = "lnum.\" " end
-    if line_colors[index + 1] == nil then operation = " >= " end
-    status_column = "%#LineNr" .. line_nr .. "#%{(v:relnum" .. operation .. line_nr ..
-                    ")?v:" .. rel_or_l_num .. separator .. "\":\"\"}" .. status_column
-    vim.cmd("highlight LineNr" .. line_nr .. " guifg=" .. line_color)
-  end
-  opt.statuscolumn = "%s%=" .. status_column
-end
 
 ----------------------------------------------------------------------------------------------------
 

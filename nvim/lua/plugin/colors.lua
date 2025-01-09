@@ -1,6 +1,4 @@
 scheme = "vscode"
-status_column_separator = " ▎ "
-line_colors = {"#DEDEDE", "#BDBDBD", "#9C9C9C", "#7B7B7B", "#5A5A5A"}
 highlights = {
   "Normal guibg=NONE guifg=NONE",
   "NormalFloat guibg=NONE guifg=NONE",
@@ -42,5 +40,3 @@ highlights = {
   "NeogitHunkHeaderHighlight guibg=BG"
 }
 color_util.initialize_colors(scheme, highlights)
-api.nvim_create_autocmd({"BufEnter", "WinEnter"},
-                        {callback = function() color_util.line_number_handler(status_column_separator, line_colors) end})

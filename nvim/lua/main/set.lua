@@ -18,10 +18,11 @@ opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
 opt.linebreak = true
-opt.scrolloff = 12
+opt.scrolloff = 0
 opt.textwidth = 120
 opt.formatoptions:remove("t")
 opt.formatoptions:remove("c")
+opt.isfname:append("@-@")
 opt.autoread = true
 opt.swapfile = false
 opt.undofile = true
@@ -33,6 +34,6 @@ opt.incsearch = true
 opt.grepprg = "rg --vimgrep"
 opt.grepformat = "%f:%l:%c:%m"
 opt.termguicolors = true
-opt.isfname:append("@-@")
 opt.updatetime = 300
 api.nvim_create_autocmd("VimResized", {command = "wincmd ="})
+api.nvim_create_autocmd({"CursorMoved", "BufEnter", "WinEnter"}, {command = "normal! zz"})
