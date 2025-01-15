@@ -125,6 +125,9 @@ language_util.format = function()
   elseif extension == "cpp" or extension == "hpp" or extension == "inl" then
     vim.cmd("w")
     vim.cmd("!clang-format -i %")
+  elseif extension == "py" then
+    vim.cmd("w")
+    vim.cmd("!black %")
   else vim.notify("Formatting not configured for " .. extension .. "!", "error") end
 end
 language_util.change_format_options = function()
