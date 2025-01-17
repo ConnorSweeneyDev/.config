@@ -18,6 +18,8 @@ config.keys =
   {key = "s", mods = "LEADER | CTRL", action = wezterm.action.ActivateTab(1)},
   {key = "d", mods = "LEADER | CTRL", action = wezterm.action.ActivateTab(2)},
   {key = "f", mods = "LEADER | CTRL", action = wezterm.action.ActivateTab(3)},
+  {key = "h", mods = "LEADER | CTRL", action = wezterm.action.ActivateTabRelative(-1)},
+  {key = "l", mods = "LEADER | CTRL", action = wezterm.action.ActivateTabRelative(1)},
   {key = "z", mods = "LEADER | CTRL", action = wezterm.action.CloseCurrentTab {confirm = false}},
   {key = "c", mods = "LEADER | CTRL", action = wezterm.action.CopyTo "Clipboard"},
   {key = "v", mods = "LEADER | CTRL", action = wezterm.action.PasteFrom "Clipboard"},
