@@ -273,6 +273,7 @@ lualine_util.dynamic_path = function()
   elseif string.match(filetype, "gitcommit") then path = "neogit\\commit"
   elseif string.find(filetype, "Neogit") then path = "neogit\\" .. string.lower(string.gsub(filetype, "Neogit", ""))
   elseif string.find(filetype, "Diffview") then path = "diffview\\" .. string.lower(string.gsub(filetype, "Diffview", ""))
+  elseif string.find(path, "diffview:///") then path = "diffview\\panel"
   elseif string.find(path, ".git/:0:/") then path = "diffview\\remote"
   elseif string.find(path, ".git/:1:/") then path = "diffview\\base"
   elseif string.find(path, ".git/:2:/") then path = "diffview\\ours"
