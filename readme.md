@@ -81,6 +81,8 @@ https://github.com/user-attachments/assets/298d47ea-595c-42d5-b092-fea8f2adaabf
   to your path.
 - MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW` (I recommend 64-bit
   with POSIX threads for general purpose use). Add `C:\MinGW\bin` to your path.
+- Make &rightarrow; Run `winget install --id ezwinports.make`.
+- CMake &rightarrow; Run `winget install --id Kitware.CMake`.
 - Python &rightarrow; Run `winget install --id Python.Python.3.10`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
@@ -191,7 +193,7 @@ After all of that, don't forget to include these files that are not tied to any 
 > [!TIP]
 > Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be configured in the Yasb
 > `config.yaml` and `styles.css` files, and the window manager can be configured by Komorebi's `komorebi.json`,
-> `applications.yaml` and any `*.json` files for custom layouts.
+> `applications.yaml` and any `.json` files for custom layouts.
 
 # Firefox with Tridactyl
 ### Dependencies
@@ -256,10 +258,6 @@ move the executable to `C:\WinLister`, then right click `winlister.exe` and sele
 
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and go through the
 installation wizard.
-
-Make &rightarrow; Run `winget install --id ezwinports.make`.
-
-CMake &rightarrow; Run `winget install --id Kitware.CMake`.
 
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in
 `C:\Dependencies`, make that folder is an environment variable, then right click `DependenciesGui.exe` and select
