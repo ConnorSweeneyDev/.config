@@ -182,11 +182,10 @@ After all of that, don't forget to include these files that are not tied to any 
   hover over taskbar apps... ...when I press Alt+Tab".
 - Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors are configured.
 - Paste `yasb` into your config. Add `$Env:USERPROFILE\AppData\Local\Yasb` to your path.
-- Paste `ahk` into your config. Ensure you configure anything specific to monitor resolution. Right click `wm.ahk` and
-  create a shortcut, then rename that shortcut to just `wm` and create a copy of it, one should be moved to
-  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and the other to that folder's sub-directory `Startup`. Now it
-  will be run at startup and is accessible from the start menu in case you need to restart the manager, and all three
-  processes can be killed from the task manager.
+- Paste `ahk` into your config. Right click `wm.ahk` and create a shortcut, then rename that shortcut to just `wm` and
+  create a copy of it, one should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and the other to
+  that folder's sub-directory `Startup`. Now it will be run at startup and is accessible from the start menu in case you
+  need to restart the manager, and all three processes can be killed from the task manager.
 - Restart your PC.
 
 > [!TIP]
