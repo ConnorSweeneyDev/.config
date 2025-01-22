@@ -20,7 +20,7 @@ require("lazy").setup{
   {"rcarriga/nvim-notify"},
   {"folke/noice.nvim"},
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-  {"neoclide/coc.nvim", branch = "release"},
+  {"neoclide/coc.nvim", branch = "release", commit = "ae1a557"},
   {"sindrets/diffview.nvim"},
   {"NeogitOrg/neogit"},
   {"supermaven-inc/supermaven-nvim"}
