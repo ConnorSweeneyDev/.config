@@ -272,6 +272,10 @@ Cutter &rightarrow; Download from [here](https://github.com/rizinorg/cutter/rele
 `C:\Cutter`. Right click `cutter.exe` and select "Create shortcut", then rename it to `Cutter` and place this shortcut
 in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
 
+Black &rightarrow; Run `pip install git+https://github.com/psf/black`.
+
+Prettier &rightarrow; Run `npm install -g prettier`.
+
 Portal &rightarrow; Run `winget install SpatiumPortae.portal`, go [here](https://github.com/SpatiumPortae/portal) for
 instructions.
 

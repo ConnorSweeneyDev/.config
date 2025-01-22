@@ -118,16 +118,14 @@ end
 
 language_util = {}
 language_util.format = function()
+  vim.cmd("w")
   local extension = (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e") or vim.bo.ft
-  if extension == "c" or extension == "h" then
-    vim.cmd("w")
-    vim.cmd("!clang-format -i %")
-  elseif extension == "cpp" or extension == "hpp" or extension == "inl" then
-    vim.cmd("w")
+  if extension == "c" or extension == "h" or extension == "cpp" or extension == "hpp" or extension == "inl" then
     vim.cmd("!clang-format -i %")
   elseif extension == "py" then
-    vim.cmd("w")
     vim.cmd("!black %")
+  elseif extension == "js" or extension == "jsx" or extension == "css" or extension == "html" then
+    vim.cmd("!npx prettier % --write")
   else vim.notify("Formatting not configured for " .. extension .. "!", "error") end
 end
 language_util.change_format_options = function()
