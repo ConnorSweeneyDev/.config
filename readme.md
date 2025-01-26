@@ -86,7 +86,7 @@ https://github.com/user-attachments/assets/298d47ea-595c-42d5-b092-fea8f2adaabf
 - Python &rightarrow; Run `winget install --id Python.Python.3.10`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
-- Neovim &rightarrow; Run `winget install neovim --version 0.10.0`.
+- Neovim &rightarrow; Run `winget install neovim --version 0.10.3`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 
