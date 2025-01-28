@@ -1,6 +1,6 @@
 require("telescope").setup{
   defaults = {
-    layout_config = {horizontal = {height = 0.99, width = 0.99}},
+    layout_config = {horizontal = {height = 1000, width = 1000}},
     file_ignore_patterns = {".git\\", ".cache\\", "external\\", "ext\\", "binary\\", "bin\\", "assets\\", ".exe",
                             ".dll", ".class", ".jar", ".sln", ".vcxproj", ".png", ".jpg", ".pyc", "packer_compiled.lua"}
   },
