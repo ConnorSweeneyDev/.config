@@ -65,6 +65,11 @@
       "kind": "Exe",
       "id": "Trackmania.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "DarzasDominion.exe",
+      "matching_strategy": "Equals"
     }
   ],
   "stackbar": {
