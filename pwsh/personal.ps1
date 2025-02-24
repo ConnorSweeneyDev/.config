@@ -10,5 +10,6 @@ function music
   cd C:\TuiMusic
   $p = Split-Path -leaf -path (Get-Location)
   $Host.UI.RawUI.WindowTitle = "$p"
-  .\TuiMusic.exe
+  $arguments = $args
+  .\TuiMusic.exe $arguments
 }
