@@ -260,6 +260,24 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
+noice_util = {}
+noice_util.create_routes = function(hidden_messages)
+  local routes = {}
+  for _, find_string in ipairs(hidden_messages) do
+    table.insert(routes, {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = find_string
+      },
+      opts = {skip = true}
+    })
+  end
+  return routes
+end
+
+----------------------------------------------------------------------------------------------------
+
 lualine_util = {}
 lualine_util.dynamic_path = function()
   local filetype = vim.bo.filetype

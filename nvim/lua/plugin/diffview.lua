@@ -29,12 +29,14 @@ require("diffview").setup{
   keymaps = {
     disable_defaults = true,
     help_panel = {
-      {"n", "q", actions.close, {desc = "Close Help"}}
+      {"n", "q", actions.close, {desc = "Close Help"}},
+      {"n", "<ESC>", actions.close, {desc = "Close Help"}}
     },
     file_panel = {
-      {"n", "q", "<CMD>tabclose<CR>", {desc = "Quit Diffview"}},
       {"n", "<TAB>", actions.toggle_files, {desc = "Toggle Files"}},
       {"n", "<CR>", actions.select_entry, {desc = "Select Entry Under Cursor"}},
+      {"n", "<ESC>", actions.close, {desc = "Close Files"}},
+      {"n", "q", "<CMD>tabclose<CR>", {desc = "Quit Diffview"}},
       {"n", "g?", actions.help({"file_panel"}), {desc = "Help"}}
     },
     view = {

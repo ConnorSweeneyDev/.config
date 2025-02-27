@@ -1,7 +1,7 @@
 require("plugin.buffers")
 require("plugin.oil")
-require("plugin.colors")
 require("plugin.lualine")
+require("plugin.colors")
 require("plugin.notify")
 require("plugin.noice")
 require("plugin.telescope")
