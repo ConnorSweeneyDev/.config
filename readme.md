@@ -1,5 +1,5 @@
 # Welcome
-hese are all my Windows dotfiles and how to set them up, using Wezterm with Neovim in PowerShellCore along with fzf.
+These are all my Windows dotfiles and how to set them up, using Wezterm with Neovim in PowerShellCore along with fzf.
 Additionally there's a setup for a Tiling Window Manager using Komorebi, Yasb and AutoHotkey, and a Tridactyl setup for
 Firefox. You will also find a list of other useful tools at the end.
 
@@ -37,7 +37,7 @@ https://github.com/user-attachments/assets/298d47ea-595c-42d5-b092-fea8f2adaabf
 - Paste `posh` into your config and run `oh-my-posh disable notice` to stop the annoying update message every so often.
 - Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that is opened (you may
   have to create the file first if it doesn't exist): `. $Env:USERPROFILE"\.config\pwsh\main.ps1"`.
-- G back to `pwsh\main.ps1` and remove the line that sources `personal.ps1`, and delete that file too as it is specific
+- Go back to `pwsh\main.ps1` and remove the line that sources `personal.ps1`, and delete that file too as it is specific
   to me. Other than that, skim the rest of the files and remove anything you know you won't need - everything is
   commented or self-explanatory so you can be sure of what you're doing.
 - To set up gsudo after installing it, run the following commands:
