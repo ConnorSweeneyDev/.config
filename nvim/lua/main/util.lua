@@ -130,8 +130,16 @@ language_util.format = function()
 end
 language_util.change_format_options = function()
   local extension = vim.fn.expand("%:e")
-  if extension == "md" or extension == "txt" then opt.formatoptions:append("t")
+  local ft = vim.bo.filetype
+  if extension == "md" or extension == "txt" or ft == "gitcommit" then opt.formatoptions:append("t")
   else opt.formatoptions:remove("t") end
+  if ft == "gitcommit" then
+    opt.textwidth = 72
+    opt.colorcolumn = "72"
+  else
+    opt.textwidth = 120
+    opt.colorcolumn = "120"
+  end
 end
 
 ----------------------------------------------------------------------------------------------------

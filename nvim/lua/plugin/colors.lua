@@ -11,6 +11,7 @@ highlights = {
   "CocInlayHint guibg=BG",
   "Conceal guibg=BG",
   "FoldColumn guibg=BG",
+  "Folded guibg=BG guifg=#43698A",
   "Error guibg=BG",
   "ErrorMsg guibg=BG",
   "WarningMsg guibg=BG",
@@ -28,6 +29,7 @@ highlights = {
   "DiffAdd guibg=BG guifg=#4B5632",
   "DiffChange guibg=BG guifg=#646464",
   "DiffDelete guibg=BG guifg=#6F1313",
+  "DiffText guibg=BG guifg=#6F1313",
   "NeogitDiffAdd guibg=BG",
   "NeogitDiffAddHighlight guibg=BG",
   "NeogitDiffContext guibg=BG",
@@ -37,6 +39,8 @@ highlights = {
   "NeogitDiffHeader guibg=BG guifg=#C586C0",
   "NeogitDiffHeaderHighlight guibg=BG guifg=#C586C0",
   "NeogitHunkHeader guibg=BG",
-  "NeogitHunkHeaderHighlight guibg=BG"
+  "NeogitHunkHeaderHighlight guibg=BG",
+  "NeogitFloatHeader guibg=BG",
+  "NeogitFloatHeaderHighlight guibg=BG"
 }
 color_util.initialize_colors(scheme, highlights)
