@@ -124,9 +124,9 @@ The following plugins require some extra or different steps:
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `lua\plugin\leap.lua` requires
   both of these plugins to be installed.
-- Colorscheme &rightarrow; vim-transparent and vscode.nvim should both be installed at the same time, their plugin file
-  is `lua\plugin\colors.lua`. You don't have to use that combination of plugins, but the file assumes you are and
-  lualine is also set up to use the vscode colorscheme.
+- Colorscheme &rightarrow; vscode.nvim's plugin file is is `lua\plugin\colors.lua`. You don't have to use that
+  cholorscheme, but the file assumes you are and lualine is also set up to use the vscode colorscheme so you'll need to
+  change those too if you want a different scheme.
 - Treesitter &rightarrow; After following the pattern, you should see it compiling languages - don't touch your keyboard
   until this is finished, though it is common to get errors at this point, if you do, generally restarting neovim a few
   times and deleting any directories manually that it says it doesn't have permission to delete will let them all figure
@@ -134,12 +134,12 @@ The following plugins require some extra or different steps:
   either your version of MinGW does not match your operating system or treesitter is using the wrong compiler for that
   specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Noice &rightarrow; This should be installed at the same time as notify.nvim.
-- Coc &rightarrow; `lua\plugin\coc.lua` requires treesitter to run, so install that first. After following the
-  pattern, run `:CocInstall coc-diagnostic coc-copilot coc-git coc-html coc-tsserver coc-css coc-json coc-xml
-  coc-pyright coc-java coc-clangd coc-clang-format-style-options` then `:q` to close the dialog once everything is
-  installed. Now add `coc-settings.json`, where you should add the path to your java installation instead of my one,
-  then restart again. If you don't want one of the listed servers, dont include them or just run `:CocUninstall
-  [SERVER]` after the first command. If a language you want is missing, you can find it
+- Coc &rightarrow; `lua\plugin\coc.lua` requires treesitter to run, so install that first. After following the pattern,
+  run `:CocInstall coc-diagnostic coc-git coc-html coc-tsserver coc-css coc-json coc-xml coc-pyright coc-java coc-clangd
+  coc-clang-format-style-options` then `:q` to close the dialog once everything is installed. Now add
+  `coc-settings.json`, where you should add the path to your java installation instead of my one, then restart again. If
+  you don't want one of the listed servers, dont include them or just run `:CocUninstall [SERVER]` after the first
+  command. If a language you want is missing, you can find it
   [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
 - Neogit &rightarrow; This should be installed at the same time as diffview.nvim.
 - Supermaven &rightarrow; If you don't have a subscription, you can still use it by running `:SupermavenUseFree` when
