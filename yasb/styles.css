@@ -43,7 +43,7 @@
 }
 .power-menu-widget .label {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 18px;
   padding-right: 4px;
 }
 .power-menu-popup {
@@ -130,12 +130,12 @@
   padding-bottom: 2px;
 }
 .komorebi-workspaces .ws-btn {
-  border-radius: 10;
-  width: 20px;
-  height: 20px;
-  margin: 2px 3px 0 3px;
+  border-radius: 2;
+  width: 16px;
+  height: 16px;
+  margin: 2px 6px 0 3px;
   color: rgba(255, 255, 255, 0);
-  background-color: rgb(60, 60, 60);
+  background-color: rgb(80, 80, 80);
 }
 .komorebi-workspaces .ws-btn:hover,
 .komorebi-workspaces .ws-btn.populated:hover {
@@ -146,9 +146,8 @@
 }
 .komorebi-workspaces .ws-btn.active {
   background-color: rgb(255, 255, 255);
-  border-radius: 12;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 16px;
 }
 
 .active-window-widget {

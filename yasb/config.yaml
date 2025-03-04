@@ -35,7 +35,7 @@ widgets:
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
-      label: "\uf011"
+      label: "\uf015"
       uptime: True
       blur: False
       blur_background: True
