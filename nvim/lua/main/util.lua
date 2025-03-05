@@ -122,6 +122,8 @@ language_util.format = function()
   local extension = (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e") or vim.bo.ft
   if extension == "c" or extension == "h" or extension == "cpp" or extension == "hpp" or extension == "inl" then
     vim.cmd("!clang-format -i %")
+  elseif extension == "rs" then
+    vim.cmd("!rustfmt %")
   elseif extension == "py" then
     vim.cmd("!black %")
   elseif extension == "js" or extension == "jsx" or extension == "css" or extension == "html" then

@@ -3,7 +3,7 @@ require"nvim-treesitter.install".compilers = {"gcc"}
 require"nvim-treesitter.configs".setup{
   ensure_installed = {"c", "lua", "diff", "vimdoc", "query", "hurl", "http", "html", "javascript", "css", "java", "cpp",
                       "markdown_inline", "c_sharp", "python", "sql", "xml", "json", "glsl", "cmake", "gitcommit", "vim",
-                      "gitignore", "markdown", "regex", "bash"},
+                      "gitignore", "markdown", "regex", "bash", "rust"},
   sync_install = false,
   auto_install = false,
   highlight = {enable = true, additional_vim_regex_highlighting = false}

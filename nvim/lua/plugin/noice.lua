@@ -1,13 +1,5 @@
-local hidden_messages = {
-  "written",
-  "lines yanked",
-  "more lines",
-  "lines indented",
-  "; before",
-  "; after",
-  "Search word with letter:",
-  "Match found"
-}
+local hidden_messages = {"written", "lines yanked", "more lines", "lines indented", "; before", "; after", "Match found",
+                         "Search word with letter:"}
 require("noice").setup{
   lsp = {
     override = {

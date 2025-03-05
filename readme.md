@@ -136,7 +136,7 @@ The following plugins require some extra or different steps:
 - Noice &rightarrow; This should be installed at the same time as notify.nvim.
 - Coc &rightarrow; `lua\plugin\coc.lua` requires treesitter to run, so install that first. After following the pattern,
   run `:CocInstall coc-diagnostic coc-git coc-html coc-tsserver coc-css coc-json coc-xml coc-pyright coc-java coc-clangd
-  coc-clang-format-style-options` then `:q` to close the dialog once everything is installed. Now add
+  coc-rust-analyzer coc-clang-format-style-options` then `:q` to close the dialog once everything is installed. Now add
   `coc-settings.json`, where you should add the path to your java installation instead of my one, then restart again. If
   you don't want one of the listed servers, dont include them or just run `:CocUninstall [SERVER]` after the first
   command. If a language you want is missing, you can find it
