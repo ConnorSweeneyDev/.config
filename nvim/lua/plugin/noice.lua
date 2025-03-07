@@ -2,6 +2,7 @@ local hidden_messages = {
 	"B written",
 	" lines yanked",
 	" more lines",
+	" fewer lines",
 	" lines indented",
 	" lines >ed ",
 	" lines <ed ",
