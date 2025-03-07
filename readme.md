@@ -259,6 +259,8 @@ move the executable to `C:\WinLister`, then right click `winlister.exe` and sele
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and go through the
 installation wizard.
 
+Rust &rightarrow; Run `winget install Rustlang.Rustup`.
+
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in
 `C:\Dependencies`, make that folder is an environment variable, then right click `DependenciesGui.exe` and select
 "Create shortcut" and rename it to `Dependencies`, then move that to `C:\ProgramData\Microsoft\Windows\Start
@@ -271,6 +273,9 @@ this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
 Cutter &rightarrow; Download from [here](https://github.com/rizinorg/cutter/releases) and put the contents in
 `C:\Cutter`. Right click `cutter.exe` and select "Create shortcut", then rename it to `Cutter` and place this shortcut
 in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
+
+Stylua &rightarrow; Download from [here](https://github.com/JohnnyMorganz/StyLua/releases) and put the contents in
+`C:\StyLua`. Put that folder in your path.
 
 Black &rightarrow; Run `pip install git+https://github.com/psf/black`.
 
