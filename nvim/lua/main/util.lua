@@ -1,6 +1,11 @@
+diagnostic = vim.diagnostic
+notify = vim.notify
 map = vim.keymap.set
+cmd = vim.cmd
 opt = vim.opt
 api = vim.api
+lsp = vim.lsp
+fn = vim.fn
 g = vim.g
 
 ----------------------------------------------------------------------------------------------------
@@ -17,13 +22,13 @@ end
 general_util.make_relative_files = function(long_files)
 	local files = {}
 	for _, file in ipairs(long_files) do
-		local new_file = string.gsub(string.gsub(file, vim.fn.getcwd() .. "\\", ""), "\\", "/")
+		local new_file = string.gsub(string.gsub(file, fn.getcwd() .. "\\", ""), "\\", "/")
 		table.insert(files, new_file)
 	end
 	return files
 end
 general_util.find_target_directory = function()
-	local target_directory = string.gsub(vim.fn.expand("%"), vim.fn.getcwd() .. "\\", "")
+	local target_directory = string.gsub(fn.expand("%"), fn.getcwd() .. "\\", "")
 	target_directory = string.gsub(string.gsub(target_directory, "/", "\\"), "\\.*$", "")
 	if string.find(target_directory, "%.") then
 		target_directory = ""
@@ -31,11 +36,11 @@ general_util.find_target_directory = function()
 	return target_directory
 end
 general_util.get_patterns_from_gitignore = function()
-	local gitignore = vim.fn.glob(".gitignore")
+	local gitignore = fn.glob(".gitignore")
 	if gitignore == "" then
 		return {}
 	end
-	local lines = vim.fn.readfile(gitignore)
+	local lines = fn.readfile(gitignore)
 	local patterns = {}
 	for _, line in ipairs(lines) do
 		if line ~= "" and line ~= nil and not string.find(line, "^#") then
@@ -49,9 +54,9 @@ end
 
 color_util = {}
 color_util.initialize_colors = function(scheme, highlights)
-	vim.cmd.colorscheme(scheme)
+	cmd.colorscheme(scheme)
 	for _, highlight in ipairs(highlights) do
-		vim.cmd("highlight " .. highlight)
+		cmd("highlight " .. highlight)
 	end
 end
 
@@ -62,8 +67,7 @@ buffer_util.open_buffers = function(folders, file_extensions, ignore_patterns)
 	local original_buffer = api.nvim_get_current_buf()
 	for _, folder in ipairs(folders) do
 		for _, extension in ipairs(file_extensions) do
-			local files =
-				general_util.make_relative_files(vim.fn.globpath(vim.fn.getcwd() .. folder, "**/" .. extension, 0, 1))
+			local files = general_util.make_relative_files(fn.globpath(fn.getcwd() .. folder, "**/" .. extension, 0, 1))
 			for _, file in ipairs(files) do
 				local valid_file = true
 				for _, ignore_pattern in ipairs(ignore_patterns) do
@@ -79,7 +83,7 @@ buffer_util.open_buffers = function(folders, file_extensions, ignore_patterns)
 					end
 				end
 				if valid_file then
-					vim.cmd("edit " .. file)
+					cmd("edit " .. file)
 				end
 			end
 		end
@@ -95,26 +99,22 @@ buffer_util.close_buffers = function()
 		end
 	end
 end
-buffer_util.manual_open = function(folders, file_extensions, ignore_patterns, use_coc)
+buffer_util.manual_open = function(folders, file_extensions, ignore_patterns)
 	buffer_util.open_buffers(folders, file_extensions, ignore_patterns)
-	if use_coc then
-		vim.cmd("silent CocRestart")
-	end
-	vim.notify("Buffers opened.")
+	cmd("silent LspRestart")
+	notify("Buffers opened.")
 end
-buffer_util.manual_close = function(use_coc)
+buffer_util.manual_close = function()
 	buffer_util.close_buffers()
-	if use_coc then
-		vim.cmd("silent CocRestart")
-	end
-	vim.notify("Buffers closed.")
+	cmd("silent LspRestart")
+	notify("Buffers closed.")
 end
 buffer_util.open_on_startup = function(folders, file_extensions, ignore_patterns)
 	if general_util.floating_window_exists() then
 		return
 	end
 	buffer_util.open_buffers(folders, file_extensions, ignore_patterns)
-	vim.cmd("Ex .")
+	cmd("Ex .")
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -141,24 +141,24 @@ end
 
 language_util = {}
 language_util.format = function()
-	vim.cmd("w")
-	local extension = (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e") or vim.bo.ft
+	cmd("w")
+	local extension = (fn.expand("%:e") ~= "" and fn.expand("%:e") ~= nil) and fn.expand("%:e") or vim.bo.ft
 	if extension == "c" or extension == "h" or extension == "cpp" or extension == "hpp" or extension == "inl" then
-		vim.cmd("!clang-format -i %")
+		cmd("!clang-format -i %")
 	elseif extension == "rs" then
-		vim.cmd("!rustfmt %")
+		cmd("!rustfmt %")
 	elseif extension == "py" then
-		vim.cmd("!black %")
+		cmd("!black %")
 	elseif extension == "lua" then
-		vim.cmd("!stylua %")
+		cmd("!stylua %")
 	elseif extension == "js" or extension == "jsx" or extension == "css" or extension == "html" then
-		vim.cmd("!npx prettier % --write")
+		cmd("!npx prettier % --write")
 	else
-		vim.notify("Formatting not configured for " .. extension .. "!", "error")
+		notify("Formatting not configured for " .. extension .. "!", "error")
 	end
 end
 language_util.change_format_options = function()
-	local extension = vim.fn.expand("%:e")
+	local extension = fn.expand("%:e")
 	local ft = vim.bo.filetype
 	if extension == "md" or extension == "txt" or ft == "gitcommit" then
 		opt.formatoptions:append("t")
@@ -178,11 +178,11 @@ end
 
 lua_util = {}
 lua_util.source = function()
-	local extension = vim.fn.expand("%:e")
+	local extension = fn.expand("%:e")
 	if extension == "lua" then
-		vim.cmd("source %")
+		cmd("source %")
 	else
-		vim.notify("Not a lua file!", "error")
+		notify("Not a lua file!", "error")
 	end
 end
 
@@ -194,9 +194,9 @@ c_util.get_files_in_compilation_unit = function()
 	if target_directory ~= "" then
 		target_directory = "\\" .. target_directory
 	end
-	local directory = vim.fn.getcwd() .. target_directory
-	local name = vim.fn.expand("%:t:r")
-	local long_files = vim.fn.globpath(directory, "**/" .. name .. ".*", 0, 1)
+	local directory = fn.getcwd() .. target_directory
+	local name = fn.expand("%:t:r")
+	local long_files = fn.globpath(directory, "**/" .. name .. ".*", 0, 1)
 	local files = general_util.make_relative_files(long_files)
 	return files
 end
@@ -228,7 +228,7 @@ c_util.assign_cc_file_types = function(files)
 	return source, header
 end
 c_util.switch_file_in_compilation_unit = function(target_file)
-	local current_extension = vim.fn.expand("%:e")
+	local current_extension = fn.expand("%:e")
 	local files = c_util.get_files_in_compilation_unit()
 	if
 		string.match(current_extension, "cpp")
@@ -243,42 +243,42 @@ c_util.switch_file_in_compilation_unit = function(target_file)
 		elseif target_file == "inline" then
 			target_extension = "inl"
 		else
-			vim.notify("Unexpected target file!", "error")
+			notify("Unexpected target file!", "error")
 			return
 		end
 		if string.match(current_extension, target_extension) then
-			vim.notify("Already in " .. target_extension .. " file!", "error")
+			notify("Already in " .. target_extension .. " file!", "error")
 			return
 		end
 		if #files == 0 then
-			vim.notify("Problem reading filename!", "error")
+			notify("Problem reading filename!", "error")
 		elseif #files == 1 then
-			vim.notify("There is only one file in this compilation unit!", "error")
+			notify("There is only one file in this compilation unit!", "error")
 		elseif #files == 2 or #files == 3 then
 			local source, header, inline = c_util.assign_cxx_file_types(files)
 			if target_extension == "cpp" then
 				if source ~= "" then
-					vim.cmd("edit " .. source)
+					cmd("edit " .. source)
 				else
-					vim.notify("No cpp file found!", "error")
+					notify("No cpp file found!", "error")
 				end
 			elseif target_extension == "hpp" then
 				if header ~= "" then
-					vim.cmd("edit " .. header)
+					cmd("edit " .. header)
 				else
-					vim.notify("No hpp file found!", "error")
+					notify("No hpp file found!", "error")
 				end
 			elseif target_extension == "inl" then
 				if inline ~= "" then
-					vim.cmd("edit " .. inline)
+					cmd("edit " .. inline)
 				else
-					vim.notify("No inl file found!", "error")
+					notify("No inl file found!", "error")
 				end
 			else
-				vim.notify("Unexpected target file extension!", "error")
+				notify("Unexpected target file extension!", "error")
 			end
 		else
-			vim.notify("Unexpectedly high amount of corresponding files found!", "error")
+			notify("Unexpectedly high amount of corresponding files found!", "error")
 		end
 	elseif string.match(current_extension, "c") or string.match(current_extension, "h") then
 		local target_extension = ""
@@ -287,39 +287,39 @@ c_util.switch_file_in_compilation_unit = function(target_file)
 		elseif target_file == "header" then
 			target_extension = "h"
 		else
-			vim.notify("Unexpected target file!", "error")
+			notify("Unexpected target file!", "error")
 			return
 		end
 		if string.match(current_extension, target_extension) then
-			vim.notify("Already in " .. target_extension .. " file!", "error")
+			notify("Already in " .. target_extension .. " file!", "error")
 			return
 		end
 		if #files == 0 then
-			vim.notify("Problem reading filename!", "error")
+			notify("Problem reading filename!", "error")
 		elseif #files == 1 then
-			vim.notify("There is only one file in this compilation unit!", "error")
+			notify("There is only one file in this compilation unit!", "error")
 		elseif #files == 2 then
-			local source, header, inline = c_util.assign_cc_file_types(files)
+			local source, header = c_util.assign_cc_file_types(files)
 			if target_extension == "c" then
 				if source ~= "" then
-					vim.cmd("edit " .. source)
+					cmd("edit " .. source)
 				else
-					vim.notify("No c file found!", "error")
+					notify("No c file found!", "error")
 				end
 			elseif target_extension == "h" then
 				if header ~= "" then
-					vim.cmd("edit " .. header)
+					cmd("edit " .. header)
 				else
-					vim.notify("No h file found!", "error")
+					notify("No h file found!", "error")
 				end
 			else
-				vim.notify("Unexpected target file extension!", "error")
+				notify("Unexpected target file extension!", "error")
 			end
 		else
-			vim.notify("Unexpectedly high amount of corresponding files found!", "error")
+			notify("Unexpectedly high amount of corresponding files found!", "error")
 		end
 	else
-		vim.notify("Not a c, h, cpp, hpp or inl file!", "error")
+		notify("Not a c, h, cpp, hpp or inl file!", "error")
 	end
 end
 
@@ -327,17 +327,21 @@ end
 
 lazy_util = {}
 lazy_util.bootstrap = function()
-	local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+	local lazypath = fn.stdpath("data") .. "/lazy/lazy.nvim"
 	if not (vim.uv or vim.loop).fs_stat(lazypath) then
 		local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-		local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+		local out = fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 		if vim.v.shell_error ~= 0 then
 			api.nvim_echo(
-				{ { "Failed to clone lazy.nvim:\n", "ErrorMsg" }, { out, "WarningMsg" }, { "\nPress any key to exit..." } },
+				{
+					{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+					{ out, "WarningMsg" },
+					{ "\nPress any key to exit..." },
+				},
 				true,
 				{}
 			)
-			vim.fn.getchar()
+			fn.getchar()
 			os.exit(1)
 		end
 	end
@@ -367,8 +371,8 @@ end
 lualine_util = {}
 lualine_util.dynamic_path = function()
 	local filetype = vim.bo.filetype
-	local path = vim.fn.expand("%:.")
-	local cwd = vim.fn.getcwd()
+	local path = fn.expand("%:.")
+	local cwd = fn.getcwd()
 	local root = cwd:match("^[^:]")
 	local modified_symbol = " ⬤"
 	if path == "" and filetype == "" then
@@ -405,8 +409,6 @@ lualine_util.dynamic_path = function()
 		path = "diffview\\ours"
 	elseif string.find(path, ".git/:3:/") then
 		path = "diffview\\theirs"
-	elseif string.find(path, "__coc_refactor__") then
-		path = "refactor"
 	elseif string.match(filetype, "netrw") then
 		if not string.find(path, ":/") then
 			path = cwd:match("^.*\\(.*)$") .. "\\" .. path
@@ -447,7 +449,7 @@ lualine_util.dynamic_path = function()
 	return path
 end
 lualine_util.current_register = function()
-	local recording_register = vim.fn.reg_recording()
+	local recording_register = fn.reg_recording()
 	if recording_register ~= "" then
 		return "@" .. recording_register
 	end
@@ -461,7 +463,7 @@ oil_util.open_on_startup = function()
 	if general_util.floating_window_exists() then
 		return
 	end
-	vim.cmd("Oil .")
+	cmd("Oil .")
 	for _, buffer in ipairs(api.nvim_list_bufs()) do
 		if api.nvim_get_option_value("ft", { buf = buffer }) == "" then
 			api.nvim_buf_delete(buffer, { force = true })
@@ -474,54 +476,48 @@ end
 
 treesitter_util = {}
 treesitter_util.disable_for_large_files = function(max_size)
-	local size = vim.fn.getfsize(vim.fn.expand("%"))
+	local size = fn.getfsize(fn.expand("%"))
 	if size > max_size then
-		vim.cmd("TSBufDisable highlight")
+		cmd("TSBufDisable highlight")
 	else
-		vim.cmd("TSBufEnable highlight")
+		cmd("TSBufEnable highlight")
 	end
 end
 
 ----------------------------------------------------------------------------------------------------
 
-coc_util = {}
-coc_util.show_docs = function()
-	local cw = vim.fn.expand("<cword>")
-	if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
-		api.nvim_command("h " .. cw)
-	elseif api.nvim_eval("coc#rpc#ready()") then
-		vim.fn.CocActionAsync("doHover")
-	else
-		api.nvim_command("!" .. opt.keywordprg .. " " .. cw)
-	end
-end
-coc_util.refactor_handler = function()
-	local language = vim.bo.filetype
-	if language ~= "" and language ~= nil and language ~= "crf" then
-		vim.treesitter.language.register(language, "crf")
-	end
-	if string.find(vim.fn.expand("%"), "__coc_refactor__") then
-		vim.cmd("set filetype=crf")
-	end
+lsp_util = {}
+lsp_util.generate_handlers = function(lspconfig, cmp_nvim_lsp, servers)
+	local capabilities =
+		vim.tbl_deep_extend("force", lsp.protocol.make_client_capabilities(), cmp_nvim_lsp.default_capabilities())
+	local handlers = {
+		function(server_name)
+			local server = servers[server_name] or {}
+			server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+			lspconfig[server_name].setup({})
+			lspconfig[server_name].setup(server)
+		end,
+	}
+	return handlers
 end
 
 ----------------------------------------------------------------------------------------------------
 
 neogit_util = {}
 neogit_util.open_status_menu = function()
-	local cwd = vim.fn.getcwd()
-	vim.cmd("Neogit")
-	vim.api.nvim_set_current_dir(cwd)
+	local cwd = fn.getcwd()
+	cmd("Neogit")
+	api.nvim_set_current_dir(cwd)
 end
 
 ----------------------------------------------------------------------------------------------------
 
 supermaven_util = {}
-supermaven_util.disable_for_large_files = function(max_size)
-	local size = vim.fn.getfsize(vim.fn.expand("%"))
-	if size > max_size and require("supermaven-nvim.api").is_running() then
-		vim.cmd("SupermavenStop")
-	elseif size <= max_size and not require("supermaven-nvim.api").is_running() then
-		vim.cmd("SupermavenStart")
+supermaven_util.disable_for_large_files = function(supermaven_api, max_size)
+	local size = fn.getfsize(fn.expand("%"))
+	if size > max_size and supermaven_api.is_running() then
+		cmd("SupermavenStop")
+	elseif size <= max_size and not supermaven_api.is_running() then
+		cmd("SupermavenStart")
 	end
 end

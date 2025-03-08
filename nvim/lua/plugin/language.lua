@@ -13,7 +13,7 @@ end)
 map("n", "UI", function()
 	c_util.switch_file_in_compilation_unit("inline")
 end)
-vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "ModeChanged" }, {
+api.nvim_create_autocmd({ "BufEnter", "WinEnter", "ModeChanged" }, {
 	callback = function()
 		language_util.change_format_options()
 	end,

@@ -1,7 +1,10 @@
-scheme = "vscode"
-highlights = {
+local scheme = "vscode"
+local highlights = {
 	"Normal guibg=NONE guifg=NONE",
 	"NormalFloat guibg=NONE guifg=NONE",
+  "TabLineSel guibg=BG",
+  "Pmenu guibg=BG",
+  "CmpItemAbbrDeprecated guibg=BG guifg=#444444",
 	"LineNr guibg=BG",
 	"CursorLineNr guibg=BG",
 	"SignColumn guibg=BG",
@@ -11,7 +14,6 @@ highlights = {
 	"lualine_c_visual guibg=#262626 guifg=#ffffff",
 	"Directory guibg=BG",
 	"Question guibg=BG",
-	"CocInlayHint guibg=BG",
 	"Conceal guibg=BG",
 	"FoldColumn guibg=BG",
 	"Folded guibg=BG guifg=#43698a",
@@ -29,6 +31,10 @@ highlights = {
 	"DiagnosticUnderlineWarn gui=UNDERLINE guifg=#ffe88b",
 	"DiagnosticUnderlineInfo gui=UNDERLINE guifg=#0a7aca",
 	"DiagnosticUnderlineHint gui=UNDERLINE guifg=#0a7aca",
+  "DiagnosticDeprecated gui=UNDERLINE guifg=#0a7aca",
+  "GitSignsAdd guibg=BG guifg=#4b5632",
+  "GitSignsChange guibg=BG guifg=#646464",
+  "GitSignsDelete guibg=BG guifg=#6f1313",
 	"DiffAdd guibg=BG guifg=#4b5632",
 	"DiffChange guibg=BG guifg=#646464",
 	"DiffDelete guibg=BG guifg=#6f1313",

@@ -95,16 +95,15 @@ After completing the dependencies for this section, I recommend manually recreat
 just pasting it in, because this will allow you to single out any unexpected errors as they happen.
 
 You should start with the top level `init.lua` and then `lua\main\init.lua`. Then you can create `lua\main\util.lua`,
-`lua\main\set.lua` and `lua\main\map.lua` and paste the config into each. `set.lua` is for global neovim settings,
-`map.lua` is for neovim keybinds and `util.lua` is for helper functions used throughout the configuration, designed to
-remove the need for visible logic in any configuration files.
+`lua\main\set.lua` and `lua\main\map.lua` and paste the config into each. `set.lua` is for global settings, `map.lua` is
+for global keybinds and `util.lua` is for helper functions used throughout the configuration, designed to remove the
+need for visible logic in any configuration files.
 
 Now you can create `lua\main\lazy.lua`, and populate it with only the following lines:
 ```lua
 lazy_util.bootstrap()
 map("n", "<LEADER>l", "<CMD>Lazy<CR>")
-require("lazy").setup{
-}
+require("lazy").setup({})
 ```
 After creating an empty `lua\plugin\init.lua`, restart neovim and there should be no error messages.
 
@@ -121,12 +120,13 @@ The following plugins require some extra or different steps:
   - plenary.nvim &rightarrow; Required by telescope.nvim, harpoon and neogit.
   - nui.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
+  - cmp-... &rightarrow; Any plugin prefixed with cmp- is there only to support nvim-cmp.
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `lua\plugin\leap.lua` requires
   both of these plugins to be installed.
 - Colorscheme &rightarrow; vscode.nvim's plugin file is is `lua\plugin\colors.lua`. You don't have to use that
-  cholorscheme, but the file assumes you are and lualine is also set up to use the vscode colorscheme so you'll need to
-  change those too if you want a different scheme.
+  cholorscheme, but the file assumes you are and `lua\plugin\lualine.lua` is also set up to use the vscode colorscheme
+  so you'll need to change those as well as the `lua\main\lazy.lua` file if you want a different scheme.
 - Treesitter &rightarrow; After following the pattern, you should see it compiling languages - don't touch your keyboard
   until this is finished, though it is common to get errors at this point, if you do, generally restarting neovim a few
   times and deleting any directories manually that it says it doesn't have permission to delete will let them all figure
@@ -134,13 +134,10 @@ The following plugins require some extra or different steps:
   either your version of MinGW does not match your operating system or treesitter is using the wrong compiler for that
   specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Noice &rightarrow; This should be installed at the same time as notify.nvim.
-- Coc &rightarrow; `lua\plugin\coc.lua` requires treesitter to run, so install that first. After following the pattern,
-  run `:CocInstall coc-diagnostic coc-git coc-html coc-tsserver coc-css coc-json coc-xml coc-pyright coc-java coc-clangd
-  coc-rust-analyzer coc-clang-format-style-options` then `:q` to close the dialog once everything is installed. Now add
-  `coc-settings.json`, where you should add the path to your java installation instead of my one, then restart again. If
-  you don't want one of the listed servers, dont include them or just run `:CocUninstall [SERVER]` after the first
-  command. If a language you want is missing, you can find it
-  [here](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions).
+- Mason &rightarrow; This plugin should be installed at the same time as ALL other lsp-related plugins (down to
+  nvim-lspconfig) - the corresponding plugin files are `lua\plugin\lsp.lua`, `lua\plugin\cmp.lua`,
+  `lua\plugin\trouble.lua` and `lua\plugin\actions.lua`. After following the pattern, you should see it downloading all
+  the language servers specified in `lua\plugin\lsp.lua` - you can view all the available servers by running `:Mason`.
 - Neogit &rightarrow; This should be installed at the same time as diffview.nvim.
 - Supermaven &rightarrow; If you don't have a subscription, you can still use it by running `:SupermavenUseFree` when
   prompted, otherwise you can follow the instructions to use it with a subscription.
@@ -150,14 +147,12 @@ After all of that, don't forget to include these files that are not tied to any 
 - `lua\plugin\buffers.lua` is optional as it can slow down the startup time but will open, in separate buffers, every
   file in the specified directory that has any of the file extensions specified - this can be useful for certain
   language servers. If you need to close all the buffers except the current one (when you need to rename symbols, go to
-  references etc.), this file also provides the keybind for that, and the keybind for re-opening them all again too. It
-  also has a toggle for whether you are using Coc or not, so it is not necessary to use Coc to use this file.
+  references etc.), this file also provides the keybind for that, and the keybind for re-opening them all again too.
 
 > [!TIP]
 > All global keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective
 > `lua\plugin\[PLUGIN].lua` files and you can go into deeper detail inside `lua\main\util.lua`. Furthermore, all
-> language specific settings and mappings can be edited at `lua\plugin\language.lua` and language server settings
-> can be edited at `coc-settings.json`.
+> language specific settings and mappings can be edited at `lua\plugin\language.lua`.
 
 > [!NOTE]
 > I also have an extremely minimal setup (one file) that can be cloned and run on any machine that can run neovim. You

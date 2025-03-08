@@ -21,7 +21,6 @@ require("telescope").setup({
 			"packer_compiled.lua",
 		},
 	},
-	extensions = { coc = { timeout = 3000 } },
 })
 require("telescope").load_extension("fzf")
 local builtin = require("telescope.builtin")
@@ -34,21 +33,21 @@ end, default_opts)
 map("n", "<LEADER>ps", function()
 	builtin.grep_string({
 		find_command = { "rg", "--files", "--hidden" },
-		search = vim.fn.input("Search Term: "),
+		search = fn.input("Search Term: "),
 		ignorecase = false,
 	})
 end)
 map("n", "<LEADER>pw", function()
 	builtin.grep_string({
 		find_command = { "rg", "--files", "--hidden" },
-		search = vim.fn.expand("<cword>"),
+		search = fn.expand("<cword>"),
 		ignorecase = false,
 	})
 end)
 map("n", "<LEADER>pW", function()
 	builtin.grep_string({
 		find_command = { "rg", "--files", "--hidden" },
-		search = vim.fn.expand("<cWORD>"),
+		search = fn.expand("<cWORD>"),
 		ignorecase = false,
 	})
 end)
