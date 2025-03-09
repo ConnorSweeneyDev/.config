@@ -15,11 +15,11 @@ local file_extensions = {
 	"*.css",
 	"*.lua",
 }
-local ignore_patterns = general_util.get_patterns_from_gitignore()
-map("n", "<A-o>", function()
-	buffer_util.manual_open(folders, file_extensions, ignore_patterns)
+local ignore_patterns = General_util.get_patterns_from_gitignore()
+Map("n", "<A-o>", function()
+	Buffer_util.manual_open(folders, file_extensions, ignore_patterns)
 end)
-map("n", "<A-c>", function()
-	buffer_util.manual_close()
+Map("n", "<A-c>", function()
+	Buffer_util.manual_close()
 end)
-buffer_util.open_on_startup(folders, file_extensions, ignore_patterns)
+Buffer_util.open_on_startup(folders, file_extensions, ignore_patterns)

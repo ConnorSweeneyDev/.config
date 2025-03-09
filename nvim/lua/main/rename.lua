@@ -1,0 +1,17 @@
+Tbl_deep_extend = vim.tbl_deep_extend
+Diagnostic = vim.diagnostic
+Startswith = vim.startswith
+Tbl_keys = vim.tbl_keys
+Notify = vim.notify
+Map = vim.keymap.set
+Loop = vim.loop
+Cmd = vim.cmd
+Opt = vim.opt
+Api = vim.api
+Lsp = vim.lsp
+Fn = vim.fn
+Bo = vim.bo
+Uv = vim.uv
+V = vim.v
+O = vim.o
+G = vim.g

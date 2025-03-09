@@ -52,4 +52,4 @@ local highlights = {
 	"NeogitFloatHeader guibg=BG",
 	"NeogitFloatHeaderHighlight guibg=BG",
 }
-color_util.initialize_colors(scheme, highlights)
+Color_util.initialize_colors(scheme, highlights)

@@ -94,10 +94,11 @@ https://github.com/user-attachments/assets/298d47ea-595c-42d5-b092-fea8f2adaabf
 After completing the dependencies for this section, I recommend manually recreating `nvim` on your machine rather than
 just pasting it in, because this will allow you to single out any unexpected errors as they happen.
 
-You should start with the top level `init.lua` and then `lua\main\init.lua`. Then you can create `lua\main\util.lua`,
-`lua\main\set.lua` and `lua\main\map.lua` and paste the config into each. `set.lua` is for global settings, `map.lua` is
-for global keybinds and `util.lua` is for helper functions used throughout the configuration, designed to remove the
-need for visible logic in any configuration files.
+You should start with the top level `init.lua` and then `lua\main\init.lua`. Then you can create `lua\main\rename.lua`,
+`lua\main\util.lua`, `lua\main\set.lua` and `lua\main\map.lua` and paste the config into each. `set.lua` is for global
+settings, `map.lua` is for global keybinds and `util.lua` is for helper functions used throughout the configuration,
+designed to remove the need for visible logic in any configuration files. The `rename.lua` file is just for shortening
+commonly used lua functions.
 
 Now you can create `lua\main\lazy.lua`, and populate it with only the following lines:
 ```lua
@@ -121,6 +122,8 @@ The following plugins require some extra or different steps:
   - nui.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
   - cmp-... &rightarrow; Any plugin prefixed with cmp- is there only to support nvim-cmp.
+- Telescope &rightarrow; This should be installed at the same time as telescope-fzf-native.nvim,
+  `lua\plugin\telescope.lua` requires both of these plugins to be installed.
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `lua\plugin\leap.lua` requires
   both of these plugins to be installed.

@@ -25,5 +25,5 @@ require("noice").setup({
 		inc_rename = false,
 		lsp_doc_border = false,
 	},
-	routes = noice_util.create_routes(hidden_messages),
+	routes = Noice_util.create_routes(hidden_messages),
 })

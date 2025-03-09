@@ -10,8 +10,8 @@ require("neogit").setup({
 	commit_view = { kind = "vsplit", verify_commit = false },
 	mappings = { status = { ["<c-l>"] = "RefreshBuffer" } },
 })
-map("n", "<LEADER>gs", function()
-	neogit_util.open_status_menu()
+Map("n", "<LEADER>gs", function()
+	Neogit_util.open_status_menu()
 end)
-map("n", "<LEADER>gr", "<CMD>!git restore %<CR>")
-map("n", "<LEADER>gR", "<CMD>!git restore .<CR>")
+Map("n", "<LEADER>gr", "<CMD>!git restore %<CR>")
+Map("n", "<LEADER>gR", "<CMD>!git restore .<CR>")

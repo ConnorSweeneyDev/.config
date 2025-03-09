@@ -1,46 +1,34 @@
-diagnostic = vim.diagnostic
-notify = vim.notify
-map = vim.keymap.set
-cmd = vim.cmd
-opt = vim.opt
-api = vim.api
-lsp = vim.lsp
-fn = vim.fn
-g = vim.g
-
-----------------------------------------------------------------------------------------------------
-
-general_util = {}
-general_util.floating_window_exists = function()
-	for _, winid in pairs(api.nvim_tabpage_list_wins(0)) do
-		if api.nvim_win_get_config(winid).zindex then
+General_util = {}
+General_util.floating_window_exists = function()
+	for _, winid in pairs(Api.nvim_tabpage_list_wins(0)) do
+		if Api.nvim_win_get_config(winid).zindex then
 			return true
 		end
 	end
 	return false
 end
-general_util.make_relative_files = function(long_files)
+General_util.make_relative_files = function(long_files)
 	local files = {}
 	for _, file in ipairs(long_files) do
-		local new_file = string.gsub(string.gsub(file, fn.getcwd() .. "\\", ""), "\\", "/")
+		local new_file = string.gsub(string.gsub(file, Fn.getcwd() .. "\\", ""), "\\", "/")
 		table.insert(files, new_file)
 	end
 	return files
 end
-general_util.find_target_directory = function()
-	local target_directory = string.gsub(fn.expand("%"), fn.getcwd() .. "\\", "")
+General_util.find_target_directory = function()
+	local target_directory = string.gsub(Fn.expand("%"), Fn.getcwd() .. "\\", "")
 	target_directory = string.gsub(string.gsub(target_directory, "/", "\\"), "\\.*$", "")
 	if string.find(target_directory, "%.") then
 		target_directory = ""
 	end
 	return target_directory
 end
-general_util.get_patterns_from_gitignore = function()
-	local gitignore = fn.glob(".gitignore")
+General_util.get_patterns_from_gitignore = function()
+	local gitignore = Fn.glob(".gitignore")
 	if gitignore == "" then
 		return {}
 	end
-	local lines = fn.readfile(gitignore)
+	local lines = Fn.readfile(gitignore)
 	local patterns = {}
 	for _, line in ipairs(lines) do
 		if line ~= "" and line ~= nil and not string.find(line, "^#") then
@@ -52,22 +40,22 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-color_util = {}
-color_util.initialize_colors = function(scheme, highlights)
-	cmd.colorscheme(scheme)
+Color_util = {}
+Color_util.initialize_colors = function(scheme, highlights)
+	Cmd.colorscheme(scheme)
 	for _, highlight in ipairs(highlights) do
-		cmd("highlight " .. highlight)
+		Cmd("highlight " .. highlight)
 	end
 end
 
 ----------------------------------------------------------------------------------------------------
 
-buffer_util = {}
-buffer_util.open_buffers = function(folders, file_extensions, ignore_patterns)
-	local original_buffer = api.nvim_get_current_buf()
+Buffer_util = {}
+Buffer_util.open_buffers = function(folders, file_extensions, ignore_patterns)
+	local original_buffer = Api.nvim_get_current_buf()
 	for _, folder in ipairs(folders) do
 		for _, extension in ipairs(file_extensions) do
-			local files = general_util.make_relative_files(fn.globpath(fn.getcwd() .. folder, "**/" .. extension, 0, 1))
+			local files = General_util.make_relative_files(Fn.globpath(Fn.getcwd() .. folder, "**/" .. extension, 0, 1))
 			for _, file in ipairs(files) do
 				local valid_file = true
 				for _, ignore_pattern in ipairs(ignore_patterns) do
@@ -83,124 +71,124 @@ buffer_util.open_buffers = function(folders, file_extensions, ignore_patterns)
 					end
 				end
 				if valid_file then
-					cmd("edit " .. file)
+					Cmd("edit " .. file)
 				end
 			end
 		end
 	end
-	api.nvim_set_current_buf(original_buffer)
+	Api.nvim_set_current_buf(original_buffer)
 end
-buffer_util.close_buffers = function()
-	local original_buffer = api.nvim_get_current_buf()
-	local buffers = api.nvim_list_bufs()
+Buffer_util.close_buffers = function()
+	local original_buffer = Api.nvim_get_current_buf()
+	local buffers = Api.nvim_list_bufs()
 	for _, buffer in ipairs(buffers) do
 		if buffer ~= original_buffer then
-			api.nvim_buf_delete(buffer, { force = true })
+			Api.nvim_buf_delete(buffer, { force = true })
 		end
 	end
 end
-buffer_util.manual_open = function(folders, file_extensions, ignore_patterns)
-	buffer_util.open_buffers(folders, file_extensions, ignore_patterns)
-	cmd("silent LspRestart")
-	notify("Buffers opened.")
+Buffer_util.manual_open = function(folders, file_extensions, ignore_patterns)
+	Buffer_util.open_buffers(folders, file_extensions, ignore_patterns)
+	Cmd("silent LspRestart")
+	Notify("Buffers opened.")
 end
-buffer_util.manual_close = function()
-	buffer_util.close_buffers()
-	cmd("silent LspRestart")
-	notify("Buffers closed.")
+Buffer_util.manual_close = function()
+	Buffer_util.close_buffers()
+	Cmd("silent LspRestart")
+	Notify("Buffers closed.")
 end
-buffer_util.open_on_startup = function(folders, file_extensions, ignore_patterns)
-	if general_util.floating_window_exists() then
+Buffer_util.open_on_startup = function(folders, file_extensions, ignore_patterns)
+	if General_util.floating_window_exists() then
 		return
 	end
-	buffer_util.open_buffers(folders, file_extensions, ignore_patterns)
-	cmd("Ex .")
+	Buffer_util.open_buffers(folders, file_extensions, ignore_patterns)
+	Cmd("Ex .")
 end
 
 ----------------------------------------------------------------------------------------------------
 
-quickfix_util = {}
-quickfix_util.grep_search = function()
-	local target_directory = general_util.find_target_directory()
-	api.nvim_input(":silent grep  " .. target_directory .. "<C-Left><Left>")
+Quickfix_util = {}
+Quickfix_util.grep_search = function()
+	local target_directory = General_util.find_target_directory()
+	Api.nvim_input(":silent grep  " .. target_directory .. "<C-Left><Left>")
 end
-quickfix_util.grep_word = function()
-	local target_directory = general_util.find_target_directory()
-	api.nvim_input('"+yiw:silent grep <C-r><C-w> ' .. target_directory .. "<CR>")
+Quickfix_util.grep_word = function()
+	local target_directory = General_util.find_target_directory()
+	Api.nvim_input('"+yiw:silent grep <C-r><C-w> ' .. target_directory .. "<CR>")
 end
-quickfix_util.grep_full_word = function()
-	local target_directory = general_util.find_target_directory()
-	api.nvim_input('"+yiw:silent grep <C-r><C-a> ' .. target_directory .. "<CR>")
+Quickfix_util.grep_full_word = function()
+	local target_directory = General_util.find_target_directory()
+	Api.nvim_input('"+yiw:silent grep <C-r><C-a> ' .. target_directory .. "<CR>")
 end
-quickfix_util.grep_selection = function()
-	local target_directory = general_util.find_target_directory()
-	api.nvim_input('"+ygv"hy:silent grep <C-r>h ' .. target_directory .. "<CR>")
+Quickfix_util.grep_selection = function()
+	local target_directory = General_util.find_target_directory()
+	Api.nvim_input('"+ygv"hy:silent grep <C-r>h ' .. target_directory .. "<CR>")
 end
 
 ----------------------------------------------------------------------------------------------------
 
-language_util = {}
-language_util.format = function()
-	cmd("w")
-	local extension = (fn.expand("%:e") ~= "" and fn.expand("%:e") ~= nil) and fn.expand("%:e") or vim.bo.ft
+Language_util = {}
+Language_util.format = function()
+	Cmd("w")
+	local extension = (Fn.expand("%:e") ~= "" and Fn.expand("%:e") ~= nil) and Fn.expand("%:e") or Bo.ft
 	if extension == "c" or extension == "h" or extension == "cpp" or extension == "hpp" or extension == "inl" then
-		cmd("!clang-format -i %")
+		Cmd("!clang-format -i %")
 	elseif extension == "rs" then
-		cmd("!rustfmt %")
+		Cmd("!rustfmt %")
 	elseif extension == "py" then
-		cmd("!black %")
+		Cmd("!black %")
 	elseif extension == "lua" then
-		cmd("!stylua %")
+		Cmd("!stylua %")
 	elseif extension == "js" or extension == "jsx" or extension == "css" or extension == "html" then
-		cmd("!npx prettier % --write")
+		Cmd("!npx prettier % --write")
 	else
-		notify("Formatting not configured for " .. extension .. "!", "error")
+		Notify("Formatting not configured for " .. extension .. "!", "error")
 	end
 end
-language_util.change_format_options = function()
-	local extension = fn.expand("%:e")
-	local ft = vim.bo.filetype
+Language_util.change_format_options = function()
+	local extension = Fn.expand("%:e")
+	local ft = Bo.filetype
 	if extension == "md" or extension == "txt" or ft == "gitcommit" then
-		opt.formatoptions:append("t")
+		Opt.formatoptions:append("t")
 	else
-		opt.formatoptions:remove("t")
+		Opt.formatoptions:remove("t")
 	end
 	if ft == "gitcommit" then
-		opt.textwidth = 72
-		opt.colorcolumn = "72"
+		Opt.textwidth = 72
+		Opt.colorcolumn = "72"
 	else
-		opt.textwidth = 120
-		opt.colorcolumn = "120"
+		Opt.textwidth = 120
+		Opt.colorcolumn = "120"
 	end
 end
 
 ----------------------------------------------------------------------------------------------------
 
-lua_util = {}
-lua_util.source = function()
-	local extension = fn.expand("%:e")
+Lua_util = {}
+Lua_util.source = function()
+	local extension = Fn.expand("%:e")
 	if extension == "lua" then
-		cmd("source %")
+		Cmd("source %")
 	else
-		notify("Not a lua file!", "error")
+		Notify("Not a lua file!", "error")
 	end
 end
 
 ----------------------------------------------------------------------------------------------------
 
-c_util = {}
-c_util.get_files_in_compilation_unit = function()
-	local target_directory = general_util.find_target_directory()
+C_util = {}
+C_util.get_files_in_compilation_unit = function()
+	local target_directory = General_util.find_target_directory()
 	if target_directory ~= "" then
 		target_directory = "\\" .. target_directory
 	end
-	local directory = fn.getcwd() .. target_directory
-	local name = fn.expand("%:t:r")
-	local long_files = fn.globpath(directory, "**/" .. name .. ".*", 0, 1)
-	local files = general_util.make_relative_files(long_files)
+	local directory = Fn.getcwd() .. target_directory
+	local name = Fn.expand("%:t:r")
+	local long_files = Fn.globpath(directory, "**/" .. name .. ".*", 0, 1)
+	local files = General_util.make_relative_files(long_files)
 	return files
 end
-c_util.assign_cxx_file_types = function(files)
+C_util.assign_cxx_file_types = function(files)
 	local source = ""
 	local header = ""
 	local inline = ""
@@ -215,7 +203,7 @@ c_util.assign_cxx_file_types = function(files)
 	end
 	return source, header, inline
 end
-c_util.assign_cc_file_types = function(files)
+C_util.assign_cc_file_types = function(files)
 	local source = ""
 	local header = ""
 	for _, file in ipairs(files) do
@@ -227,9 +215,9 @@ c_util.assign_cc_file_types = function(files)
 	end
 	return source, header
 end
-c_util.switch_file_in_compilation_unit = function(target_file)
-	local current_extension = fn.expand("%:e")
-	local files = c_util.get_files_in_compilation_unit()
+C_util.switch_file_in_compilation_unit = function(target_file)
+	local current_extension = Fn.expand("%:e")
+	local files = C_util.get_files_in_compilation_unit()
 	if
 		string.match(current_extension, "cpp")
 		or string.match(current_extension, "hpp")
@@ -243,42 +231,42 @@ c_util.switch_file_in_compilation_unit = function(target_file)
 		elseif target_file == "inline" then
 			target_extension = "inl"
 		else
-			notify("Unexpected target file!", "error")
+			Notify("Unexpected target file!", "error")
 			return
 		end
 		if string.match(current_extension, target_extension) then
-			notify("Already in " .. target_extension .. " file!", "error")
+			Notify("Already in " .. target_extension .. " file!", "error")
 			return
 		end
 		if #files == 0 then
-			notify("Problem reading filename!", "error")
+			Notify("Problem reading filename!", "error")
 		elseif #files == 1 then
-			notify("There is only one file in this compilation unit!", "error")
+			Notify("There is only one file in this compilation unit!", "error")
 		elseif #files == 2 or #files == 3 then
-			local source, header, inline = c_util.assign_cxx_file_types(files)
+			local source, header, inline = C_util.assign_cxx_file_types(files)
 			if target_extension == "cpp" then
 				if source ~= "" then
-					cmd("edit " .. source)
+					Cmd("edit " .. source)
 				else
-					notify("No cpp file found!", "error")
+					Notify("No cpp file found!", "error")
 				end
 			elseif target_extension == "hpp" then
 				if header ~= "" then
-					cmd("edit " .. header)
+					Cmd("edit " .. header)
 				else
-					notify("No hpp file found!", "error")
+					Notify("No hpp file found!", "error")
 				end
 			elseif target_extension == "inl" then
 				if inline ~= "" then
-					cmd("edit " .. inline)
+					Cmd("edit " .. inline)
 				else
-					notify("No inl file found!", "error")
+					Notify("No inl file found!", "error")
 				end
 			else
-				notify("Unexpected target file extension!", "error")
+				Notify("Unexpected target file extension!", "error")
 			end
 		else
-			notify("Unexpectedly high amount of corresponding files found!", "error")
+			Notify("Unexpectedly high amount of corresponding files found!", "error")
 		end
 	elseif string.match(current_extension, "c") or string.match(current_extension, "h") then
 		local target_extension = ""
@@ -287,71 +275,67 @@ c_util.switch_file_in_compilation_unit = function(target_file)
 		elseif target_file == "header" then
 			target_extension = "h"
 		else
-			notify("Unexpected target file!", "error")
+			Notify("Unexpected target file!", "error")
 			return
 		end
 		if string.match(current_extension, target_extension) then
-			notify("Already in " .. target_extension .. " file!", "error")
+			Notify("Already in " .. target_extension .. " file!", "error")
 			return
 		end
 		if #files == 0 then
-			notify("Problem reading filename!", "error")
+			Notify("Problem reading filename!", "error")
 		elseif #files == 1 then
-			notify("There is only one file in this compilation unit!", "error")
+			Notify("There is only one file in this compilation unit!", "error")
 		elseif #files == 2 then
-			local source, header = c_util.assign_cc_file_types(files)
+			local source, header = C_util.assign_cc_file_types(files)
 			if target_extension == "c" then
 				if source ~= "" then
-					cmd("edit " .. source)
+					Cmd("edit " .. source)
 				else
-					notify("No c file found!", "error")
+					Notify("No c file found!", "error")
 				end
 			elseif target_extension == "h" then
 				if header ~= "" then
-					cmd("edit " .. header)
+					Cmd("edit " .. header)
 				else
-					notify("No h file found!", "error")
+					Notify("No h file found!", "error")
 				end
 			else
-				notify("Unexpected target file extension!", "error")
+				Notify("Unexpected target file extension!", "error")
 			end
 		else
-			notify("Unexpectedly high amount of corresponding files found!", "error")
+			Notify("Unexpectedly high amount of corresponding files found!", "error")
 		end
 	else
-		notify("Not a c, h, cpp, hpp or inl file!", "error")
+		Notify("Not a c, h, cpp, hpp or inl file!", "error")
 	end
 end
 
 ----------------------------------------------------------------------------------------------------
 
-lazy_util = {}
-lazy_util.bootstrap = function()
-	local lazypath = fn.stdpath("data") .. "/lazy/lazy.nvim"
-	if not (vim.uv or vim.loop).fs_stat(lazypath) then
+Lazy_util = {}
+Lazy_util.bootstrap = function()
+	local lazypath = Fn.stdpath("data") .. "/lazy/lazy.nvim"
+	if not (Uv or Loop).fs_stat(lazypath) then
 		local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-		local out = fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-		if vim.v.shell_error ~= 0 then
-			api.nvim_echo(
-				{
-					{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-					{ out, "WarningMsg" },
-					{ "\nPress any key to exit..." },
-				},
-				true,
-				{}
-			)
-			fn.getchar()
+		local out = Fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+		if V.shell_error ~= 0 then
+			Api.nvim_echo({
+				{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+				{ out, "WarningMsg" },
+				{ "\nPress any key to exit..." },
+			}, true, {})
+			Fn.getchar()
 			os.exit(1)
 		end
 	end
-	opt.rtp:prepend(lazypath)
+	Opt.rtp:prepend(lazypath)
 end
 
 ----------------------------------------------------------------------------------------------------
 
-noice_util = {}
-noice_util.create_routes = function(hidden_messages)
+Noice_util = {}
+Noice_util.create_routes = function(hidden_messages)
 	local routes = {}
 	for _, find_string in ipairs(hidden_messages) do
 		table.insert(routes, {
@@ -368,11 +352,11 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-lualine_util = {}
-lualine_util.dynamic_path = function()
-	local filetype = vim.bo.filetype
-	local path = fn.expand("%:.")
-	local cwd = fn.getcwd()
+Lualine_util = {}
+Lualine_util.dynamic_path = function()
+	local filetype = Bo.filetype
+	local path = Fn.expand("%:.")
+	local cwd = Fn.getcwd()
 	local root = cwd:match("^[^:]")
 	local modified_symbol = " ⬤"
 	if path == "" and filetype == "" then
@@ -422,7 +406,7 @@ lualine_util.dynamic_path = function()
 		if cwd ~= root .. ":\\" then
 			path = string.gsub(path, cwd, cwd:match("^.*\\(.*)$"))
 		end
-		if vim.bo.modified then
+		if Bo.modified then
 			path = path .. modified_symbol
 		end
 	else
@@ -435,7 +419,7 @@ lualine_util.dynamic_path = function()
 				path = cwd:match("^.*\\(.*)$") .. "\\" .. path
 			end
 		end
-		if vim.bo.modified then
+		if Bo.modified then
 			path = path .. modified_symbol
 		end
 	end
@@ -448,8 +432,8 @@ lualine_util.dynamic_path = function()
 	path = string.gsub(path, "\\", "/")
 	return path
 end
-lualine_util.current_register = function()
-	local recording_register = fn.reg_recording()
+Lualine_util.current_register = function()
+	local recording_register = Fn.reg_recording()
 	if recording_register ~= "" then
 		return "@" .. recording_register
 	end
@@ -458,15 +442,15 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-oil_util = {}
-oil_util.open_on_startup = function()
-	if general_util.floating_window_exists() then
+Oil_util = {}
+Oil_util.open_on_startup = function()
+	if General_util.floating_window_exists() then
 		return
 	end
-	cmd("Oil .")
-	for _, buffer in ipairs(api.nvim_list_bufs()) do
-		if api.nvim_get_option_value("ft", { buf = buffer }) == "" then
-			api.nvim_buf_delete(buffer, { force = true })
+	Cmd("Oil .")
+	for _, buffer in ipairs(Api.nvim_list_bufs()) do
+		if Api.nvim_get_option_value("ft", { buf = buffer }) == "" then
+			Api.nvim_buf_delete(buffer, { force = true })
 			break
 		end
 	end
@@ -474,26 +458,29 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-treesitter_util = {}
-treesitter_util.disable_for_large_files = function(max_size)
-	local size = fn.getfsize(fn.expand("%"))
+Treesitter_util = {}
+Treesitter_util.disable_for_large_files = function(max_size)
+	local size = Fn.getfsize(Fn.expand("%"))
 	if size > max_size then
-		cmd("TSBufDisable highlight")
+		Cmd("TSBufDisable highlight")
 	else
-		cmd("TSBufEnable highlight")
+		Cmd("TSBufEnable highlight")
 	end
 end
 
 ----------------------------------------------------------------------------------------------------
 
-lsp_util = {}
-lsp_util.generate_handlers = function(lspconfig, cmp_nvim_lsp, servers)
-	local capabilities =
-		vim.tbl_deep_extend("force", lsp.protocol.make_client_capabilities(), cmp_nvim_lsp.default_capabilities())
+Lsp_util = {}
+Lsp_util.generate_handlers = function(lspconfig, cmp_nvim_lsp, servers)
 	local handlers = {
 		function(server_name)
 			local server = servers[server_name] or {}
-			server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+			server.capabilities = Tbl_deep_extend(
+				"force",
+				{},
+				Tbl_deep_extend("force", Lsp.protocol.make_client_capabilities(), cmp_nvim_lsp.default_capabilities()),
+				server.capabilities or {}
+			)
 			lspconfig[server_name].setup({})
 			lspconfig[server_name].setup(server)
 		end,
@@ -503,21 +490,21 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-neogit_util = {}
-neogit_util.open_status_menu = function()
-	local cwd = fn.getcwd()
-	cmd("Neogit")
-	api.nvim_set_current_dir(cwd)
+Neogit_util = {}
+Neogit_util.open_status_menu = function()
+	local cwd = Fn.getcwd()
+	Cmd("Neogit")
+	Api.nvim_set_current_dir(cwd)
 end
 
 ----------------------------------------------------------------------------------------------------
 
-supermaven_util = {}
-supermaven_util.disable_for_large_files = function(supermaven_api, max_size)
-	local size = fn.getfsize(fn.expand("%"))
+Supermaven_util = {}
+Supermaven_util.disable_for_large_files = function(supermaven_api, max_size)
+	local size = Fn.getfsize(Fn.expand("%"))
 	if size > max_size and supermaven_api.is_running() then
-		cmd("SupermavenStop")
+		Cmd("SupermavenStop")
 	elseif size <= max_size and not supermaven_api.is_running() then
-		cmd("SupermavenStart")
+		Cmd("SupermavenStart")
 	end
 end

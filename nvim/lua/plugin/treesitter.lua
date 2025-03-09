@@ -35,8 +35,8 @@ require("nvim-treesitter.configs").setup({
 	highlight = { enable = true, additional_vim_regex_highlighting = false },
 })
 local max_size = 200000
-api.nvim_create_autocmd({ "BufEnter", "WinEnter", "ModeChanged" }, {
+Api.nvim_create_autocmd({ "BufEnter", "WinEnter", "ModeChanged" }, {
 	callback = function()
-		treesitter_util.disable_for_large_files(max_size)
+		Treesitter_util.disable_for_large_files(max_size)
 	end,
 })

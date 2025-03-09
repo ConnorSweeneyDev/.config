@@ -17,8 +17,8 @@ require("diffview").setup({
 		listing_style = "tree",
 		win_config = function()
 			local c = { type = "float" }
-			local editor_width = vim.o.columns
-			local editor_height = vim.o.lines
+			local editor_width = O.columns
+			local editor_height = O.lines
 			c.width = editor_width
 			c.height = editor_height
 			c.col = math.floor(editor_width * 0.5 - c.width * 0.5)

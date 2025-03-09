@@ -9,10 +9,10 @@ gitsigns.setup({
 	},
 	signs_staged_enable = false,
 	on_attach = function(bufnr)
-		map("n", "]g", function()
+		Map("n", "]g", function()
 			gitsigns.nav_hunk("next")
 		end, { buffer = bufnr })
-		map("n", "[g", function()
+		Map("n", "[g", function()
 			gitsigns.nav_hunk("prev")
 		end, { buffer = bufnr })
 	end,

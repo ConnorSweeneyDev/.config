@@ -1,11 +1,11 @@
 local actions = require("actions-preview")
 actions.setup()
-api.nvim_create_autocmd("LspAttach", {
+Api.nvim_create_autocmd("LspAttach", {
 	callback = function(event)
-		map("n", "<LEADER>ka", actions.code_actions, { buffer = event.buf })
-		map("n", "<LEADER>rn", lsp.buf.rename, { buffer = event.buf })
-		map("n", "K", lsp.buf.hover, { buffer = event.buf })
+		Map("n", "<LEADER>ka", actions.code_actions, { buffer = event.buf })
+		Map("n", "<LEADER>rn", Lsp.buf.rename, { buffer = event.buf })
+		Map("n", "K", Lsp.buf.hover, { buffer = event.buf })
 	end,
 })
-map("n", "<LEADER>h", "<CMD>Mason<CR>")
-map("n", "<LEADER>cr", "<CMD>LspRestart<CR>")
+Map("n", "<LEADER>h", "<CMD>Mason<CR>")
+Map("n", "<LEADER>cr", "<CMD>LspRestart<CR>")

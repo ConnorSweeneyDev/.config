@@ -4,7 +4,7 @@ require("oil").setup({
 	view_options = {
 		show_hidden = true,
 		is_hidden_file = function(name, _)
-			return vim.startswith(name, ".")
+			return Startswith(name, ".")
 		end,
 	},
 	keymaps = {
@@ -26,5 +26,5 @@ require("oil").setup({
 		["g\\"] = "actions.toggle_trash",
 	},
 })
-map("n", "<LEADER>pv", "<CMD>Oil<CR>")
-oil_util.open_on_startup()
+Map("n", "<LEADER>pv", "<CMD>Oil<CR>")
+Oil_util.open_on_startup()

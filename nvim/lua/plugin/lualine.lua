@@ -8,10 +8,10 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { { "dynamic_path", fmt = lualine_util.dynamic_path } },
+		lualine_b = { { "dynamic_path", fmt = Lualine_util.dynamic_path } },
 		lualine_c = { "diagnostics" },
 		lualine_x = { "diff" },
-		lualine_y = { { "current_register", fmt = lualine_util.current_register } },
+		lualine_y = { { "current_register", fmt = Lualine_util.current_register } },
 		lualine_z = { "progress", "location" },
 	},
 })

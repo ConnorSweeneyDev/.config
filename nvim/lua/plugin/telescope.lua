@@ -24,32 +24,32 @@ require("telescope").setup({
 })
 require("telescope").load_extension("fzf")
 local builtin = require("telescope.builtin")
-map("n", "<LEADER>pf", function()
+Map("n", "<LEADER>pf", function()
 	builtin.find_files({ find_command = { "rg", "--files", "--hidden" } })
-end, default_opts)
-map("n", "<LEADER>pl", function()
+end)
+Map("n", "<LEADER>pl", function()
 	builtin.live_grep({ find_command = { "rg", "--files", "--hidden" } })
-end, default_opts)
-map("n", "<LEADER>ps", function()
+end)
+Map("n", "<LEADER>ps", function()
 	builtin.grep_string({
 		find_command = { "rg", "--files", "--hidden" },
-		search = fn.input("Search Term: "),
+		search = Fn.input("Search Term: "),
 		ignorecase = false,
 	})
 end)
-map("n", "<LEADER>pw", function()
+Map("n", "<LEADER>pw", function()
 	builtin.grep_string({
 		find_command = { "rg", "--files", "--hidden" },
-		search = fn.expand("<cword>"),
+		search = Fn.expand("<cword>"),
 		ignorecase = false,
 	})
 end)
-map("n", "<LEADER>pW", function()
+Map("n", "<LEADER>pW", function()
 	builtin.grep_string({
 		find_command = { "rg", "--files", "--hidden" },
-		search = fn.expand("<cWORD>"),
+		search = Fn.expand("<cWORD>"),
 		ignorecase = false,
 	})
 end)
-map("n", "<LEADER>pg", builtin.git_files)
-map("n", "<LEADER>pb", builtin.buffers)
+Map("n", "<LEADER>pg", builtin.git_files)
+Map("n", "<LEADER>pb", builtin.buffers)
