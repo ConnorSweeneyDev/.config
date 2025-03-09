@@ -2,7 +2,8 @@ G.mapleader = " "
 G.netrw_banner = 0
 Opt.showtabline = 0
 Opt.shell = "pwsh.exe"
-Opt.shellcmdflag = "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$PSStyle.Formatting.Error = '';$PSStyle.Formatting.ErrorAccent = '';$PSStyle.Formatting.Warning = '';$PSStyle.OutputRendering = 'PlainText';"
+Opt.shellcmdflag =
+	"-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$PSStyle.Formatting.Error = '';$PSStyle.Formatting.ErrorAccent = '';$PSStyle.Formatting.Warning = '';$PSStyle.OutputRendering = 'PlainText';"
 Opt.shellredir = "2>&1 | Out-File -Encoding utf8 %s; exit $LastExitCode"
 Opt.shellpipe = "2>&1 | Out-File -Encoding utf8 %s; exit $LastExitCode"
 Opt.shellquote = ""
