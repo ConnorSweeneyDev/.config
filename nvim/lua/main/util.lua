@@ -337,7 +337,7 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Noice_util = {}
-Noice_util.hide_messages = function(hidden_messages)
+Noice_util.generate_routes = function(hidden_messages)
 	local routes = {}
 	for _, find_string in ipairs(hidden_messages) do
 		table.insert(routes, {

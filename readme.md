@@ -122,8 +122,8 @@ The following plugins require some extra or different steps:
   - nui.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
   - cmp-... &rightarrow; Any plugin prefixed with cmp- is there only to support nvim-cmp.
-- Telescope &rightarrow; This should be installed at the same time as telescope-fzf-native.nvim,
-  `lua\plugin\telescope.lua` requires both of these plugins to be installed.
+- Telescope &rightarrow; This should be installed at the same time as telescope-fzf-native.nvim and
+  telescope-ui-select.nvim, `lua\plugin\telescope.lua` requires all three of these plugins to be installed.
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `lua\plugin\leap.lua` requires
   both of these plugins to be installed.

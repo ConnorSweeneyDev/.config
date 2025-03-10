@@ -12,7 +12,7 @@ require("noice").setup({
 		inc_rename = false,
 		lsp_doc_border = false,
 	},
-	routes = Noice_util.hide_messages({
+	routes = Noice_util.generate_routes({
 		"B written",
 		" lines yanked",
 		" more lines",
