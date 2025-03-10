@@ -1,5 +1,11 @@
 Map("n", "<LEADER>kf", function()
-	Language_util.format()
+	Language_util.format({
+		[{ "c", "h", "cpp", "hpp", "inl" }] = "clang-format -i %",
+		[{ "py" }] = "black %",
+		[{ "js", "jsx", "css", "html" }] = "npx prettier % --write",
+		[{ "lua" }] = "stylua %",
+		[{ "rs" }] = "rustfmt %",
+	})
 end)
 Map("n", "<LEADER><LEADER>", function()
 	Lua_util.source()
@@ -15,6 +21,6 @@ Map("n", "UI", function()
 end)
 Api.nvim_create_autocmd({ "BufEnter", "WinEnter", "ModeChanged" }, {
 	callback = function()
-		Language_util.change_format_options()
+		Language_util.handle_text({ "txt", "md", "gitcommit" })
 	end,
 })

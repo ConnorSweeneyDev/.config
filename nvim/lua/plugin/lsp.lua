@@ -44,3 +44,8 @@ Diagnostic.config({
 		},
 	},
 })
+Map("n", "<LEADER>h", "<CMD>Mason<CR>")
+Map("n", "<LEADER>cr", "<CMD>LspRestart<CR>")
+Map("n", "<LEADER>ka", Lsp.buf.code_action)
+Map("n", "<LEADER>rn", Lsp.buf.rename)
+Map("n", "K", Lsp.buf.hover)

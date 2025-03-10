@@ -21,8 +21,14 @@ require("telescope").setup({
 			"packer_compiled.lua",
 		},
 	},
+	extensions = {
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown(),
+		},
+	},
 })
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("ui-select")
 local builtin = require("telescope.builtin")
 Map("n", "<LEADER>pf", function()
 	builtin.find_files({ find_command = { "rg", "--files", "--hidden" } })

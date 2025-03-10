@@ -1,16 +1,3 @@
-local hidden_messages = {
-	"B written",
-	" lines yanked",
-	" more lines",
-	" fewer lines",
-	" lines indented",
-	" lines >ed ",
-	" lines <ed ",
-	"; before",
-	"; after",
-	"Match found",
-	"Search word with letter:",
-}
 require("noice").setup({
 	lsp = {
 		override = {
@@ -25,5 +12,17 @@ require("noice").setup({
 		inc_rename = false,
 		lsp_doc_border = false,
 	},
-	routes = Noice_util.create_routes(hidden_messages),
+	routes = Noice_util.hide_messages({
+		"B written",
+		" lines yanked",
+		" more lines",
+		" fewer lines",
+		" lines indented",
+		" lines >ed ",
+		" lines <ed ",
+		"; before",
+		"; after",
+		"Match found",
+		"Search word with letter:",
+	}),
 })

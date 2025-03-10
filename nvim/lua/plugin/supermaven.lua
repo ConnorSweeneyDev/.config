@@ -6,9 +6,8 @@ require("supermaven-nvim").setup({
 		accept_word = "<A-m>",
 	},
 })
-local max_size = 200000
 Api.nvim_create_autocmd({ "BufEnter", "WinEnter", "ModeChanged" }, {
 	callback = function()
-		Supermaven_util.disable_for_large_files(require("supermaven-nvim.api"), max_size)
+		Supermaven_util.disable_for_large_files(require("supermaven-nvim.api"), 200000)
 	end,
 })

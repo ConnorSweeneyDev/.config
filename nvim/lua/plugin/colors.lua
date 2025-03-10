@@ -1,5 +1,4 @@
-local scheme = "vscode"
-local highlights = {
+Color_util.initialize_colors("vscode", {
 	"Normal guibg=none guifg=none",
 	"NormalFloat guibg=none guifg=none",
 	"TabLineSel guibg=bg",
@@ -32,7 +31,7 @@ local highlights = {
 	"DiagnosticUnderlineInfo gui=underline guifg=#0a7aca",
 	"DiagnosticUnderlineHint gui=underline guifg=#0a7aca",
 	"DiagnosticDeprecated gui=underline guifg=#0a7aca",
-  "DiagnosticUnnecessary gui=underline",
+	"DiagnosticUnnecessary gui=underline",
 	"GitSignsAdd guibg=bg guifg=#4b5632",
 	"GitSignsChange guibg=bg guifg=#646464",
 	"GitSignsDelete guibg=bg guifg=#6f1313",
@@ -52,5 +51,4 @@ local highlights = {
 	"NeogitHunkHeaderHighlight guibg=bg",
 	"NeogitFloatHeader guibg=bg",
 	"NeogitFloatHeaderHighlight guibg=bg",
-}
-Color_util.initialize_colors(scheme, highlights)
+})

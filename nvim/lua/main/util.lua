@@ -128,32 +128,34 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Language_util = {}
-Language_util.format = function()
+Language_util.format = function(formatters)
 	Cmd("w")
-	local extension = (Fn.expand("%:e") ~= "" and Fn.expand("%:e") ~= nil) and Fn.expand("%:e") or Bo.ft
-	if extension == "c" or extension == "h" or extension == "cpp" or extension == "hpp" or extension == "inl" then
-		Cmd("!clang-format -i %")
-	elseif extension == "rs" then
-		Cmd("!rustfmt %")
-	elseif extension == "py" then
-		Cmd("!black %")
-	elseif extension == "lua" then
-		Cmd("!stylua %")
-	elseif extension == "js" or extension == "jsx" or extension == "css" or extension == "html" then
-		Cmd("!npx prettier % --write")
-	else
-		Notify("Formatting not configured for " .. extension .. "!", "error")
+	local current_extension = (Fn.expand("%:e") ~= "" and Fn.expand("%:e") ~= nil) and Fn.expand("%:e") or Bo.filetype
+	for extensions, command in pairs(formatters) do
+		for _, target_extension in ipairs(extensions) do
+			if current_extension == target_extension then
+				Cmd("!" .. command)
+				return
+			end
+		end
 	end
+	Notify("Formatting not configured for " .. current_extension .. "!", "error")
 end
-Language_util.change_format_options = function()
-	local extension = Fn.expand("%:e")
-	local ft = Bo.filetype
-	if extension == "md" or extension == "txt" or ft == "gitcommit" then
-		Opt.formatoptions:append("t")
-	else
+Language_util.handle_text = function(files)
+	local current_extension = Fn.expand("%:e")
+	local current_filetype = Bo.filetype
+	local match = false
+	for _, file in ipairs(files) do
+		if current_extension == file or current_filetype == file then
+			Opt.formatoptions:append("t")
+			match = true
+			break
+		end
+	end
+	if not match then
 		Opt.formatoptions:remove("t")
 	end
-	if ft == "gitcommit" then
+	if current_filetype == "gitcommit" then
 		Opt.textwidth = 72
 		Opt.colorcolumn = "72"
 	else
@@ -335,7 +337,7 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Noice_util = {}
-Noice_util.create_routes = function(hidden_messages)
+Noice_util.hide_messages = function(hidden_messages)
 	local routes = {}
 	for _, find_string in ipairs(hidden_messages) do
 		table.insert(routes, {
