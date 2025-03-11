@@ -138,9 +138,9 @@ The following plugins require some extra or different steps:
   specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Noice &rightarrow; This should be installed at the same time as notify.nvim.
 - Mason &rightarrow; This plugin should be installed at the same time as ALL other lsp-related plugins (down to
-  nvim-lspconfig) - the corresponding plugin files are `lua\plugin\lsp.lua`, `lua\plugin\cmp.lua` and
-  `lua\plugin\trouble.lua`. After following the pattern, you should see it downloading all the language servers
-  specified in `lua\plugin\lsp.lua` - you can view all the available servers by running `:Mason`.
+  nvim-lspconfig) - the corresponding plugin files are `lua\plugin\lsp.lua`, `lua\plugin\mason.lua`,
+  `lua\plugin\cmp.lua` and `lua\plugin\trouble.lua`. After following the pattern, you should see it downloading all the
+  language servers specified in the mason file - you can view all the available servers by running `:Mason`.
 - Neogit &rightarrow; This should be installed at the same time as diffview.nvim.
 - Supermaven &rightarrow; If you don't have a subscription, you can still use it by running `:SupermavenUseFree` when
   prompted, otherwise you can follow the instructions to use it with a subscription.

@@ -1,22 +1,3 @@
-local servers = {
-	clangd = {},
-	glsl_analyzer = {},
-	pyright = {},
-	lua_ls = {},
-	html = {},
-	jsonls = {},
-	ts_ls = {},
-	cssls = {},
-	java_language_server = {},
-	rust_analyzer = {},
-	sqlls = {},
-}
-require("mason").setup()
-require("mason-lspconfig").setup({
-	ensure_installed = Tbl_keys(servers),
-	automatic_installation = true,
-	handlers = Lsp_util.generate_handlers(require("lspconfig"), require("cmp_nvim_lsp"), servers),
-})
 Lsp.handlers["textDocument/publishDiagnostics"] = Lsp.with(Lsp.diagnostic.on_publish_diagnostics, {
 	virtual_text = false,
 	signs = true,
@@ -44,7 +25,6 @@ Diagnostic.config({
 		},
 	},
 })
-Map("n", "<LEADER>h", "<CMD>Mason<CR>")
 Map("n", "<LEADER>cr", "<CMD>LspRestart<CR>")
 Map("n", "<LEADER>ka", Lsp.buf.code_action)
 Map("n", "<LEADER>rn", Lsp.buf.rename)

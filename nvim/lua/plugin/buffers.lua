@@ -1,5 +1,4 @@
-local folders = { "/program", "/src", "/lua" }
-local file_extensions = {
+Buffer_util.set_parameters({ "/program", "/src", "/lua" }, {
 	"*.cpp",
 	"*.hpp",
 	"*.inl",
@@ -14,12 +13,11 @@ local file_extensions = {
 	"*.jsx",
 	"*.css",
 	"*.lua",
-}
-local ignore_patterns = General_util.get_patterns_from_gitignore()
+}, General_util.get_patterns_from_gitignore())
 Map("n", "<A-o>", function()
-	Buffer_util.manual_open(folders, file_extensions, ignore_patterns)
+	Buffer_util.manual_open()
 end)
 Map("n", "<A-c>", function()
 	Buffer_util.manual_close()
 end)
-Buffer_util.open_on_startup(folders, file_extensions, ignore_patterns)
+Buffer_util.open_on_startup()

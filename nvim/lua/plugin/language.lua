@@ -2,7 +2,7 @@ Map("n", "<LEADER>kf", function()
 	Language_util.format({
 		[{ "c", "h", "cpp", "hpp", "inl" }] = "clang-format -i %",
 		[{ "py" }] = "black %",
-		[{ "js", "jsx", "css", "html" }] = "npx prettier % --write",
+		[{ "js", "jsx", "css", "html", "json" }] = "npx prettier % --write",
 		[{ "lua" }] = "stylua %",
 		[{ "rs" }] = "rustfmt %",
 	})

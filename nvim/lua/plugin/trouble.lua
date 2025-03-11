@@ -1,5 +1,4 @@
-local trouble = require("trouble")
-trouble.setup({ focus = true, preview = { scratch = false } })
+require("trouble").setup({ focus = true, preview = { scratch = false } })
 Map("n", "gd", "<CMD>Trouble lsp_definitions<CR>")
 Map("n", "gD", "<CMD>Trouble lsp_declarations<CR>")
 Map("n", "gr", "<CMD>Trouble lsp_references<CR>")

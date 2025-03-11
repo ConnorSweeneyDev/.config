@@ -51,14 +51,22 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Buffer_util = {}
-Buffer_util.open_buffers = function(folders, file_extensions, ignore_patterns)
+Buffer_util.folders = {}
+Buffer_util.file_extensions = {}
+Buffer_util.ignore_patterns = {}
+Buffer_util.set_parameters = function(folders, file_extensions, ignore_patterns)
+	Buffer_util.folders = folders
+	Buffer_util.file_extensions = file_extensions
+	Buffer_util.ignore_patterns = ignore_patterns
+end
+Buffer_util.open_buffers = function()
 	local original_buffer = Api.nvim_get_current_buf()
-	for _, folder in ipairs(folders) do
-		for _, extension in ipairs(file_extensions) do
+	for _, folder in ipairs(Buffer_util.folders) do
+		for _, extension in ipairs(Buffer_util.file_extensions) do
 			local files = General_util.make_relative_files(Fn.globpath(Fn.getcwd() .. folder, "**/" .. extension, 0, 1))
 			for _, file in ipairs(files) do
 				local valid_file = true
-				for _, ignore_pattern in ipairs(ignore_patterns) do
+				for _, ignore_pattern in ipairs(Buffer_util.ignore_patterns) do
 					if string.find(ignore_pattern, "^%.") then
 						ignore_pattern = ignore_pattern .. "$"
 					end
@@ -87,21 +95,19 @@ Buffer_util.close_buffers = function()
 		end
 	end
 end
-Buffer_util.manual_open = function(folders, file_extensions, ignore_patterns)
-	Buffer_util.open_buffers(folders, file_extensions, ignore_patterns)
-	Cmd("silent LspRestart")
+Buffer_util.manual_open = function()
+	Buffer_util.open_buffers()
 	Notify("Buffers opened.")
 end
 Buffer_util.manual_close = function()
 	Buffer_util.close_buffers()
-	Cmd("silent LspRestart")
 	Notify("Buffers closed.")
 end
-Buffer_util.open_on_startup = function(folders, file_extensions, ignore_patterns)
+Buffer_util.open_on_startup = function()
 	if General_util.floating_window_exists() then
 		return
 	end
-	Buffer_util.open_buffers(folders, file_extensions, ignore_patterns)
+	Buffer_util.open_buffers()
 	Cmd("Ex .")
 end
 
@@ -473,10 +479,15 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Lsp_util = {}
-Lsp_util.generate_handlers = function(lspconfig, cmp_nvim_lsp, servers)
+Lsp_util.servers = {}
+Lsp_util.set_servers = function(servers)
+	Lsp_util.servers = servers
+	return Tbl_keys(servers)
+end
+Lsp_util.generate_handlers = function(lspconfig, cmp_nvim_lsp)
 	local handlers = {
 		function(server_name)
-			local server = servers[server_name] or {}
+			local server = Lsp_util.servers[server_name] or {}
 			server.capabilities = Tbl_deep_extend(
 				"force",
 				{},
