@@ -1,6 +1,7 @@
 local cmp = require("cmp")
 cmp.setup({
-	completion = { completeopt = "menu,menuone,noinsert" },
+	preselect = cmp.PreselectMode.None,
+	completion = { completeopt = "menu,menuone,noinsert,noselect" },
 	mapping = {
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
 		["<Down>"] = cmp.mapping.select_next_item(),
@@ -10,10 +11,9 @@ cmp.setup({
 		["<C-k>"] = cmp.mapping.scroll_docs(-4),
 	},
 	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "nvim_lsp_signature_help" },
 		{ name = "path" },
 		{ name = "buffer" },
+		{ name = "nvim_lsp" },
+		{ name = "nvim_lsp_signature_help" },
 	},
-	preselect = cmp.PreselectMode.None,
 })
