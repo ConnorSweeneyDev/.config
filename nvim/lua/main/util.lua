@@ -408,11 +408,20 @@ Lualine_util.dynamic_path = function()
 	elseif string.match(filetype, "oil_preview") then
 		path = "confirm"
 	elseif string.match(filetype, "oil") then
-		path = string.gsub(path, "^oil:///", "")
+		local trash = false
+		if string.find(path, "^oil.-trash:///") then
+			path = string.gsub(path, "^oil.-trash:///", "")
+			trash = true
+		else
+			path = string.gsub(path, "^oil:///", "")
+		end
 		path = string.sub(path, 0, 1) .. ":" .. string.sub(path, 2)
 		path = string.gsub(path, "/", "\\")
 		if cwd ~= root .. ":\\" then
 			path = string.gsub(path, cwd, cwd:match("^.*\\(.*)$"))
+		end
+		if trash then
+			path = "trash -> " .. path
 		end
 		if Bo.modified then
 			path = path .. modified_symbol
