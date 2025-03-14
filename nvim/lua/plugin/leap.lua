@@ -1,6 +1,4 @@
-Map({ "n", "x", "o" }, "s", function()
-	require("leap-by-word").leap()
-end)
+Map({ "n", "x", "o" }, "s", function() require("leap-by-word").leap() end)
 Map("n", "S", "<Plug>(leap)")
 Map("n", "<A-s>", "<Plug>(leap-from-window)")
 Map({ "x", "o" }, "s", "<Plug>(leap-forward)")
