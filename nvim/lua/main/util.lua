@@ -92,7 +92,6 @@ end
 Buffer_util.open_on_startup = function()
   if General_util.floating_window_exists() then return end
   Buffer_util.open_buffers()
-  Cmd("Ex .")
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -470,9 +469,9 @@ Neogit_util.open_status_menu = function()
   Cmd("Neogit")
   Api.nvim_set_current_dir(cwd)
 end
-Neogit_util.close_status_menu = function()
-  if Neogit_util.last_buffer == nil or Neogit_util.last_buffer == "oil" then
-    Cmd("Oil .")
+Neogit_util.close_status_menu = function(file_explorer)
+  if Neogit_util.last_buffer == "netrw" or Neogit_util.last_buffer == "oil" or Neogit_util.last_buffer == nil then
+    Cmd(file_explorer .. " .")
   else
     Api.nvim_input("<C-o>")
   end
