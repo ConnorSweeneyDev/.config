@@ -326,14 +326,7 @@ Noice_util = {}
 Noice_util.generate_routes = function(hidden_messages)
   local routes = {}
   for _, find_string in ipairs(hidden_messages) do
-    table.insert(routes, {
-      filter = {
-        event = "msg_show",
-        kind = "",
-        find = find_string,
-      },
-      opts = { skip = true },
-    })
+    table.insert(routes, { filter = { event = "msg_show", kind = "", find = find_string }, opts = { skip = true } })
   end
   return routes
 end
@@ -470,10 +463,19 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Neogit_util = {}
+Neogit_util.last_buffer = nil
 Neogit_util.open_status_menu = function()
+  Neogit_util.last_buffer = Bo.filetype
   local cwd = Fn.getcwd()
   Cmd("Neogit")
   Api.nvim_set_current_dir(cwd)
+end
+Neogit_util.close_status_menu = function()
+  if Neogit_util.last_buffer == nil or Neogit_util.last_buffer == "oil" then
+    Cmd("Oil .")
+  else
+    Api.nvim_input("<C-o>")
+  end
 end
 
 ----------------------------------------------------------------------------------------------------

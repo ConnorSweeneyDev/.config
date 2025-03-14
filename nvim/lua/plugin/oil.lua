@@ -1,10 +1,7 @@
 require("oil").setup({
   default_file_explorer = false,
   skip_confirm_for_simple_edits = false,
-  view_options = {
-    show_hidden = true,
-    is_hidden_file = function(name, _) return Startswith(name, ".") end,
-  },
+  view_options = { show_hidden = true, is_hidden_file = function(name, _) return Startswith(name, ".") end },
   keymaps = {
     ["g?"] = "actions.show_help",
     ["<CR>"] = "actions.select",
