@@ -22,6 +22,9 @@ Opt.wrap = false
 Opt.linebreak = true
 Opt.scrolloff = 0
 Opt.textwidth = 120
+Opt.pumheight = 16
+Opt.list = true
+Opt.listchars = { tab = "▏ ", trail = "·", extends = "»", precedes = "«" }
 Opt.formatoptions:remove("t")
 Opt.formatoptions:remove("c")
 Opt.isfname:append("@-@")
