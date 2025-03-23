@@ -449,8 +449,8 @@ Lsp_util.generate_handlers = function(lspconfig, cmp_nvim_lsp)
       local server = Lsp_util.servers[server_name] or {}
       server.capabilities = Tbl_deep_extend(
         "force",
-        {},
-        Tbl_deep_extend("force", Lsp.protocol.make_client_capabilities(), cmp_nvim_lsp.default_capabilities()),
+        Lsp.protocol.make_client_capabilities(),
+        cmp_nvim_lsp.default_capabilities(),
         server.capabilities or {}
       )
       lspconfig[server_name].setup(server)
