@@ -5,4 +5,4 @@ require("notify").setup({
   render = "minimal",
   stages = "static",
 })
-Map("n", "<LEADER>pm", "<CMD>Telescope notify<CR>")
+Map("n", "<LEADER>pm", "<CMD>Telescope notify<CR>", { desc = "View notifications" })

@@ -1,4 +1,6 @@
-require("telescope").setup({
+local telescope = require("telescope")
+local builtin = require("telescope.builtin")
+telescope.setup({
   defaults = {
     layout_config = { horizontal = { height = 1000, width = 1000 } },
     file_ignore_patterns = {
@@ -21,13 +23,22 @@ require("telescope").setup({
       "packer_compiled.lua",
     },
   },
-  extensions = { ["ui-select"] = { require("telescope.themes").get_dropdown() } },
+  extensions = { ["ui-select"] = { require("telescope.themes").get_cursor() } },
 })
-require("telescope").load_extension("fzf")
-require("telescope").load_extension("ui-select")
-local builtin = require("telescope.builtin")
-Map("n", "<LEADER>pf", function() builtin.find_files({ find_command = { "rg", "--files", "--hidden" } }) end)
-Map("n", "<LEADER>pl", function() builtin.live_grep({ find_command = { "rg", "--files", "--hidden" } }) end)
+telescope.load_extension("fzf")
+telescope.load_extension("ui-select")
+Map(
+  "n",
+  "<LEADER>pf",
+  function() builtin.find_files({ find_command = { "rg", "--files", "--hidden" } }) end,
+  { desc = "Fuzzy find filenames" }
+)
+Map(
+  "n",
+  "<LEADER>pl",
+  function() builtin.live_grep({ find_command = { "rg", "--files", "--hidden" }, ignorecase = false }) end,
+  { desc = "Fuzzy find in filenames and files live" }
+)
 Map(
   "n",
   "<LEADER>ps",
@@ -37,7 +48,8 @@ Map(
       search = Fn.input("Search Term: "),
       ignorecase = false,
     })
-  end
+  end,
+  { desc = "Fuzzy find in files, then filenames" }
 )
 Map(
   "n",
@@ -48,7 +60,8 @@ Map(
       search = Fn.expand("<cword>"),
       ignorecase = false,
     })
-  end
+  end,
+  { desc = "Fuzzy find in files the current word" }
 )
 Map(
   "n",
@@ -59,7 +72,9 @@ Map(
       search = Fn.expand("<cWORD>"),
       ignorecase = false,
     })
-  end
+  end,
+  { desc = "Fuzzy find in files the current WORD" }
 )
-Map("n", "<LEADER>pg", builtin.git_files)
-Map("n", "<LEADER>pb", builtin.buffers)
+Map("n", "<LEADER>pg", builtin.git_files, { desc = "Fuzzy find git filenames" })
+Map("n", "<LEADER>pb", builtin.buffers, { desc = "Fuzzy find buffer filenames" })
+Map("n", "<LEADER>pk", builtin.keymaps, { desc = "Fuzzy find keymaps" })

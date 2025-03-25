@@ -12,7 +12,8 @@ Opt.shellxquote = ""
 Opt.nu = true
 Opt.relativenumber = true
 Opt.signcolumn = "yes"
-Opt.colorcolumn = "120"
+Opt.textwidth = Language_util.set_textwidth(120)
+Opt.colorcolumn = tostring(Language_util.textwidth)
 Opt.tabstop = 2
 Opt.softtabstop = 2
 Opt.shiftwidth = 2
@@ -21,7 +22,6 @@ Opt.smartindent = true
 Opt.wrap = false
 Opt.linebreak = true
 Opt.scrolloff = 0
-Opt.textwidth = 120
 Opt.pumheight = 16
 Opt.list = true
 Opt.listchars = { tab = "▏ ", trail = "·", extends = "»", precedes = "«" }

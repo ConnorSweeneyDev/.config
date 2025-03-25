@@ -11,5 +11,5 @@ require("yanky").setup({
     },
   },
 })
-Map("n", "<LEADER>py", "<CMD>Telescope yank_history<CR>", { noremap = true, silent = true })
-Map("n", "<LEADER>ky", "<CMD>YankyClearHistory<CR>", { noremap = true, silent = true })
+Map("n", "<LEADER>py", "<CMD>Telescope yank_history<CR>", { noremap = true, silent = true }, { desc = "Open Yanky" })
+Map("n", "<LEADER>ky", "<CMD>YankyClearHistory<CR>", { noremap = true, silent = true }, { desc = "Clear Yank History" })

@@ -1,5 +1,5 @@
 Lazy_util.bootstrap()
-Map("n", "<LEADER>l", "<CMD>Lazy<CR>")
+Map("n", "<LEADER>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 require("lazy").setup({
   { "nvim-lua/plenary.nvim" },
   { "stevearc/oil.nvim" },

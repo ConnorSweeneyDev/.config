@@ -21,5 +21,5 @@ require("oil").setup({
     ["g\\"] = "actions.toggle_trash",
   },
 })
-Map("n", "<LEADER>pv", "<CMD>Oil<CR>")
+Map("n", "<LEADER>pv", "<CMD>Oil<CR>", { desc = "Open Oil" })
 Oil_util.open_on_startup()

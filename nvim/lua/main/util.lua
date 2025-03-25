@@ -117,6 +117,11 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Language_util = {}
+Language_util.textwidth = 0
+Language_util.set_textwidth = function(textwidth)
+  Language_util.textwidth = textwidth
+  return textwidth
+end
 Language_util.format = function(formatters)
   Cmd("w")
   local current_extension = (Fn.expand("%:e") ~= "" and Fn.expand("%:e") ~= nil) and Fn.expand("%:e") or Bo.filetype
@@ -142,12 +147,14 @@ Language_util.handle_text = function(files)
     end
   end
   if not match then Opt.formatoptions:remove("t") end
-  if current_filetype == "gitcommit" then
-    Opt.textwidth = 72
-    Opt.colorcolumn = "72"
+end
+Language_util.handle_gitcommit = function(textwidth)
+  if Bo.filetype == "gitcommit" then
+    Opt.textwidth = textwidth
+    Opt.colorcolumn = tostring(textwidth)
   else
-    Opt.textwidth = 120
-    Opt.colorcolumn = "120"
+    Opt.textwidth = Language_util.textwidth
+    Opt.colorcolumn = tostring(Language_util.textwidth)
   end
 end
 
