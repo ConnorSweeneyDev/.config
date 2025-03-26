@@ -450,14 +450,14 @@ Lsp_util.set_servers = function(servers)
   Lsp_util.servers = servers
   return Tbl_keys(servers)
 end
-Lsp_util.generate_handlers = function(lspconfig, cmp_nvim_lsp)
+Lsp_util.generate_handlers = function(lspconfig, blink)
   local handlers = {
     function(server_name)
       local server = Lsp_util.servers[server_name] or {}
       server.capabilities = Tbl_deep_extend(
         "force",
         Lsp.protocol.make_client_capabilities(),
-        cmp_nvim_lsp.default_capabilities(),
+        blink.get_lsp_capabilities(),
         server.capabilities or {}
       )
       lspconfig[server_name].setup(server)

@@ -19,4 +19,9 @@ Map("n", "<LEADER>kr", "<CMD>LspRestart<CR>", { desc = "Restart LSP" })
 Map("n", "<LEADER>ka", Lsp.buf.code_action, { desc = "Code action" })
 Map("n", "<LEADER>rn", Lsp.buf.rename, { desc = "Rename symbol" })
 Map("n", "K", Lsp.buf.hover, { desc = "Popup hover" })
-Map("n", "<LEADER>e", function() Diagnostic.open_float({ scope = "cursor" }) end, { desc = "Show diagnostics under cursor" })
+Map(
+  "n",
+  "<LEADER>e",
+  function() Diagnostic.open_float({ scope = "cursor" }) end,
+  { desc = "Show diagnostics under cursor" }
+)

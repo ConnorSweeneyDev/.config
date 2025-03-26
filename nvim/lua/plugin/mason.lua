@@ -14,6 +14,6 @@ require("mason-lspconfig").setup({
     sqlls = {},
   }),
   automatic_installation = true,
-  handlers = Lsp_util.generate_handlers(require("lspconfig"), require("cmp_nvim_lsp")),
+  handlers = Lsp_util.generate_handlers(require("lspconfig"), require("blink.cmp")),
 })
 Map("n", "<LEADER>h", "<CMD>Mason<CR>", { desc = "Open Mason" })
