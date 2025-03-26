@@ -103,7 +103,7 @@ commonly used lua functions.
 Now you can create `lua\main\lazy.lua`, and populate it with only the following lines:
 ```lua
 lazy_util.bootstrap()
-map("n", "<LEADER>l", "<CMD>Lazy<CR>")
+Map("n", "<LEADER>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 require("lazy").setup({})
 ```
 After creating an empty `lua\plugin\init.lua`, restart neovim and there should be no error messages.
@@ -121,7 +121,6 @@ The following plugins require some extra or different steps:
   - plenary.nvim &rightarrow; Required by telescope.nvim, harpoon and neogit.
   - nui.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
-  - cmp-... &rightarrow; Any plugin prefixed with cmp- is there only to support nvim-cmp.
 - Telescope &rightarrow; This should be installed at the same time as telescope-fzf-native.nvim and
   telescope-ui-select.nvim, `lua\plugin\telescope.lua` requires all three of these plugins to be installed.
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
@@ -137,10 +136,11 @@ The following plugins require some extra or different steps:
   either your version of MinGW does not match your operating system or treesitter is using the wrong compiler for that
   specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Noice &rightarrow; This should be installed at the same time as notify.nvim.
-- Mason &rightarrow; This plugin should be installed at the same time as ALL other lsp-related plugins (down to
-  nvim-lspconfig) - the corresponding plugin files are `lua\plugin\lsp.lua`, `lua\plugin\mason.lua`,
-  `lua\plugin\cmp.lua` and `lua\plugin\trouble.lua`. After following the pattern, you should see it downloading all the
-  language servers specified in the mason file - you can view all the available servers by running `:Mason`.
+- LSP &rightarrow; All lsp-related (blink.cmp, trouble.nvim, mason.nvim, mason-lspconfig.nvim and nvim-lspconfig)
+  plugins should be installed at the same time as eachother - the corresponding plugin files are `lua\plugin\blink.lua`,
+  `lua\plugin\trouble.lua`, `lua\plugin\mason.lua` and `lua\plugin\lsp.lua`. After following the pattern, you should see
+  it downloading all the language servers specified in the mason file - you can view all the available servers by
+  running `:Mason`.
 - Neogit &rightarrow; This should be installed at the same time as diffview.nvim.
 - Supermaven &rightarrow; If you don't have a subscription, you can still use it by running `:SupermavenUseFree` when
   prompted, otherwise you can follow the instructions to use it with a subscription.
@@ -148,9 +148,9 @@ The following plugins require some extra or different steps:
 After all of that, don't forget to include these files that are not tied to any plugins if you want them:
 - `lua\plugin\language.lua` is the file this configuration uses to set up language specific settings and mappings.
 - `lua\plugin\buffers.lua` is optional as it can slow down the startup time but will open, in separate buffers, every
-  file in the specified directory that has any of the file extensions specified - this can be useful for certain
-  language servers. If you need to close all the buffers except the current one (when you need to rename symbols, go to
-  references etc.), this file also provides the keybind for that, and the keybind for re-opening them all again too.
+  file in the specified directories that has any of the file extensions specified - this can be useful for certain
+  language servers. If you need to close all the buffers except the current one, this file also provides the keybind for
+  that, and the keybind for re-opening them all again too.
 
 > [!TIP]
 > All global keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective
