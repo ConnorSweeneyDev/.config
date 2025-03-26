@@ -16,7 +16,8 @@ function fh # Searches your command history, sets your clipboard to the selected
 }
 function fzc # Runs fzf searching files then cd's to the directory of the selected file - Usage: fzc [d | u | c]
 {
-  if ($args -eq "d" -or $args.Count -eq 0) { cd D:\ }
+  if ($args -eq "." -or $args.Count -eq 0) {}
+  elseif ($args -eq "d") { cd D:\ }
   elseif ($args -eq "u") { cd $Env:USERPROFILE }
   elseif ($args -eq "c") { cd C:\ }
   else
@@ -37,7 +38,8 @@ function fzc # Runs fzf searching files then cd's to the directory of the select
 }
 function fze # Runs fzf searching files then opens the directory of the selected file in explorer - Usage: fze [d | u | c]
 {
-  if ($args -eq "d" -or $args.Count -eq 0) { cd D:\ }
+  if ($args -eq "." -or $args.Count -eq 0) {}
+  elseif ($args -eq "d") { cd D:\ }
   elseif ($args -eq "u") { cd $Env:USERPROFILE }
   elseif ($args -eq "c") { cd C:\ }
   else
@@ -59,7 +61,8 @@ function fze # Runs fzf searching files then opens the directory of the selected
 }
 function fzn # Runs fzf searching files then opens the directory of the selected file in neovim - Usage: fzn [d | u | c]
 {
-  if ($args -eq "d" -or $args.Count -eq 0) { cd D:\ }
+  if ($args -eq "." -or $args.Count -eq 0) {}
+  elseif ($args -eq "d") { cd D:\ }
   elseif ($args -eq "u") { cd $Env:USERPROFILE }
   elseif ($args -eq "c") { cd C:\ }
   else
@@ -83,7 +86,8 @@ function fzn # Runs fzf searching files then opens the directory of the selected
 }
 function dzc # Runs fzf searching directories then cd's to the selected directory - Usage: dzc [d | u | c]
 {
-  if ($args -eq "d" -or $args.Count -eq 0) { cd D:\ }
+  if ($args -eq "." -or $args.Count -eq 0) {}
+  elseif ($args -eq "d") { cd D:\ }
   elseif ($args -eq "u") { cd $Env:USERPROFILE }
   elseif ($args -eq "c") { cd C:\ }
   else
@@ -100,7 +104,8 @@ function dzc # Runs fzf searching directories then cd's to the selected director
 }
 function dze # Runs fzf searching directories then opens the selected directory in explorer - Usage: dze [d | u | c]
 {
-  if ($args -eq "d" -or $args.Count -eq 0) { cd D:\ }
+  if ($args -eq "." -or $args.Count -eq 0) {}
+  elseif ($args -eq "d") { cd D:\ }
   elseif ($args -eq "u") { cd $Env:USERPROFILE }
   elseif ($args -eq "c") { cd C:\ }
   else
@@ -121,7 +126,8 @@ function dze # Runs fzf searching directories then opens the selected directory 
 }
 function dzn # Runs fzf searching directories then opens the selected directory in neovim - Usage: dzn [d | u | c]
 {
-  if ($args -eq "d" -or $args.Count -eq 0) { cd D:\ }
+  if ($args -eq "." -or $args.Count -eq 0) {}
+  elseif ($args -eq "d") { cd D:\ }
   elseif ($args -eq "u") { cd $Env:USERPROFILE }
   elseif ($args -eq "c") { cd C:\ }
   else
