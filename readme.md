@@ -86,7 +86,7 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 - Python &rightarrow; Run `winget install --id Python.Python.3.10`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS` and say yes to installing Chocolatey.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
-- Neovim &rightarrow; Run `winget install neovim --version 0.10.3`.
+- Neovim &rightarrow; Run `winget install neovim --version 0.11.0`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 
@@ -136,11 +136,10 @@ The following plugins require some extra or different steps:
   either your version of MinGW does not match your operating system or treesitter is using the wrong compiler for that
   specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Noice &rightarrow; This should be installed at the same time as notify.nvim.
-- LSP &rightarrow; All lsp-related (blink.cmp, trouble.nvim, mason.nvim, mason-lspconfig.nvim and nvim-lspconfig)
-  plugins should be installed at the same time as eachother - the corresponding plugin files are `lua\plugin\blink.lua`,
-  `lua\plugin\trouble.lua`, `lua\plugin\mason.lua` and `lua\plugin\lsp.lua`. After following the pattern, you should see
-  it downloading all the language servers specified in the mason file - you can view all the available servers by
-  running `:Mason`.
+- LSP &rightarrow; All lsp-related (mason.nvim, blink.cmp and trouble.nvim) plugins should be installed at the same time
+  as eachother - the corresponding plugin files are `lua\plugin\blink.lua`, `lua\plugin\trouble.lua`,
+  `lua\plugin\mason.lua` and `lua\plugin\lsp.lua`. After following the pattern, you should see it downloading all the
+  language servers specified in the mason file - you can view all the available servers by running `:Mason`.
 - Neogit &rightarrow; This should be installed at the same time as diffview.nvim.
 - Supermaven &rightarrow; If you don't have a subscription, you can still use it by running `:SupermavenUseFree` when
   prompted, otherwise you can follow the instructions to use it with a subscription.

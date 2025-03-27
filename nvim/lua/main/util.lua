@@ -444,26 +444,13 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-Lsp_util = {}
-Lsp_util.servers = {}
-Lsp_util.set_servers = function(servers)
-  Lsp_util.servers = servers
-  return Tbl_keys(servers)
-end
-Lsp_util.generate_handlers = function(lspconfig, blink)
-  local handlers = {
-    function(server_name)
-      local server = Lsp_util.servers[server_name] or {}
-      server.capabilities = Tbl_deep_extend(
-        "force",
-        Lsp.protocol.make_client_capabilities(),
-        blink.get_lsp_capabilities(),
-        server.capabilities or {}
-      )
-      lspconfig[server_name].setup(server)
-    end,
-  }
-  return handlers
+Mason_util = {}
+Mason_util.install_and_enable = function(mason_registry, servers)
+  for _, server in ipairs(servers) do
+    if not mason_registry.is_installed(server.name) then Cmd("MasonInstall " .. server.name) end
+    Lsp.config(server.name, server.opts)
+    Lsp.enable(server.name)
+  end
 end
 
 ----------------------------------------------------------------------------------------------------

@@ -25,3 +25,15 @@ Map(
   function() Diagnostic.open_float({ scope = "cursor" }) end,
   { desc = "Show diagnostics under cursor" }
 )
+Map(
+  "n",
+  "]d",
+  function() Diagnostic.jump({ count = 1, wrap = true, float = true }) end,
+  { desc = "Go to next diagnostic and show it" }
+)
+Map(
+  "n",
+  "[d",
+  function() Diagnostic.jump({ count = -1, wrap = true, float = true }) end,
+  { desc = "Go to previous diagnostic and show it" }
+)
