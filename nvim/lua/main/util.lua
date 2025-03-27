@@ -463,14 +463,14 @@ end
 
 Diffview_util = {}
 Diffview_util.fullscreen = function()
-  local c = { type = "float" }
+  local window = { type = "float" }
   local editor_width = O.columns
   local editor_height = O.lines
-  c.width = editor_width
-  c.height = editor_height
-  c.col = math.floor(editor_width * 0.5 - c.width * 0.5)
-  c.row = math.floor(editor_height * 0.5 - c.height * 0.5)
-  return c
+  window.width = editor_width
+  window.height = editor_height
+  window.col = math.floor(editor_width * 0.5 - window.width * 0.5)
+  window.row = math.floor(editor_height * 0.5 - window.height * 0.5)
+  return window
 end
 
 ----------------------------------------------------------------------------------------------------
