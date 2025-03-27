@@ -461,6 +461,20 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
+Diffview_util = {}
+Diffview_util.fullscreen = function()
+  local c = { type = "float" }
+  local editor_width = O.columns
+  local editor_height = O.lines
+  c.width = editor_width
+  c.height = editor_height
+  c.col = math.floor(editor_width * 0.5 - c.width * 0.5)
+  c.row = math.floor(editor_height * 0.5 - c.height * 0.5)
+  return c
+end
+
+----------------------------------------------------------------------------------------------------
+
 Supermaven_util = {}
 Supermaven_util.disable_for_large_files = function(supermaven_api, max_size)
   local size = Fn.getfsize(Fn.expand("%"))

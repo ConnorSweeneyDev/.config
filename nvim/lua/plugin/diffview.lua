@@ -2,30 +2,10 @@ local actions = require("diffview.actions")
 require("diffview").setup({
   show_help_hints = false,
   view = {
-    default = {
-      layout = "diff2_vertical",
-      disable_diagnostics = false,
-      winbar_info = false,
-    },
-    merge_tool = {
-      layout = "diff3_mixed",
-      disable_diagnostics = true,
-      winbar_info = false,
-    },
+    default = { layout = "diff2_vertical", disable_diagnostics = false, winbar_info = false },
+    merge_tool = { layout = "diff3_mixed", disable_diagnostics = true, winbar_info = false },
   },
-  file_panel = {
-    listing_style = "tree",
-    win_config = function()
-      local c = { type = "float" }
-      local editor_width = O.columns
-      local editor_height = O.lines
-      c.width = editor_width
-      c.height = editor_height
-      c.col = math.floor(editor_width * 0.5 - c.width * 0.5)
-      c.row = math.floor(editor_height * 0.5 - c.height * 0.5)
-      return c
-    end,
-  },
+  file_panel = { listing_style = "tree", win_config = Diffview_util.fullscreen() },
   keymaps = {
     disable_defaults = true,
     help_panel = {
@@ -56,7 +36,7 @@ require("diffview").setup({
       { { "n", "x" }, "<LEADER>gg", actions.diffget("base"), { desc = "Choose Base Hunk" } },
       { { "n", "x" }, "<LEADER>gh", actions.diffget("ours"), { desc = "Choose Our Hunk" } },
       { { "n", "x" }, "<LEADER>gl", actions.diffget("theirs"), { desc = "Choose Their Hunk" } },
-      { "n", "g?", actions.help({ "view", "diff3" }), { desc = "Help" } },
+      { "n", "g?", actions.help({ "view", "diff4" }), { desc = "Help" } },
     },
   },
 })

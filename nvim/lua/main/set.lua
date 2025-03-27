@@ -23,6 +23,7 @@ Opt.wrap = false
 Opt.linebreak = true
 Opt.scrolloff = 0
 Opt.pumheight = 16
+Opt.winborder = "none"
 Opt.list = true
 Opt.listchars = { tab = "▏ ", trail = "·", extends = "»", precedes = "«" }
 Opt.formatoptions:remove("t")
