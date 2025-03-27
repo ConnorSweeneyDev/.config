@@ -15,25 +15,28 @@ Diagnostic.config({
     },
   },
 })
-Map("n", "<LEADER>kr", "<CMD>LspRestart<CR>", { desc = "Restart LSP" })
-Map("n", "<LEADER>ka", Lsp.buf.code_action, { desc = "Code action" })
-Map("n", "<LEADER>rn", Lsp.buf.rename, { desc = "Rename symbol" })
-Map("n", "K", Lsp.buf.hover, { desc = "Popup hover" })
-Map(
-  "n",
-  "<LEADER>e",
-  function() Diagnostic.open_float({ scope = "cursor" }) end,
-  { desc = "Show diagnostics under cursor" }
-)
-Map(
-  "n",
-  "]d",
-  function() Diagnostic.jump({ count = 1, wrap = true, float = true }) end,
-  { desc = "Go to next diagnostic and show it" }
-)
-Map(
-  "n",
-  "[d",
-  function() Diagnostic.jump({ count = -1, wrap = true, float = true }) end,
-  { desc = "Go to previous diagnostic and show it" }
-)
+Api.nvim_create_autocmd("LspAttach", {
+  callback = function(event)
+    Map("n", "<LEADER>ka", Lsp.buf.code_action, { buffer = event.buf, desc = "Code action" })
+    Map("n", "<LEADER>rn", Lsp.buf.rename, { buffer = event.buf, desc = "Rename symbol" })
+    Map("n", "K", Lsp.buf.hover, { buffer = event.buf, desc = "Popup hover" })
+    Map(
+      "n",
+      "<LEADER>e",
+      function() Diagnostic.open_float({ scope = "cursor" }) end,
+      { buffer = event.buf, desc = "Show diagnostics under cursor" }
+    )
+    Map(
+      "n",
+      "]d",
+      function() Diagnostic.jump({ count = 1, wrap = true, float = true }) end,
+      { buffer = event.buf, desc = "Go to next diagnostic and show it" }
+    )
+    Map(
+      "n",
+      "[d",
+      function() Diagnostic.jump({ count = -1, wrap = true, float = true }) end,
+      { buffer = event.buf, desc = "Go to previous diagnostic and show it" }
+    )
+  end
+})
