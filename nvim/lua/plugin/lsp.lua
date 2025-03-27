@@ -38,5 +38,5 @@ Api.nvim_create_autocmd("LspAttach", {
       function() Diagnostic.jump({ count = -1, wrap = true, float = true }) end,
       { buffer = event.buf, desc = "Go to previous diagnostic and show it" }
     )
-  end
+  end,
 })
