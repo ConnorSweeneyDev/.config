@@ -34,6 +34,3 @@ require("nvim-treesitter.configs").setup({
   auto_install = false,
   highlight = { enable = true, additional_vim_regex_highlighting = false },
 })
-Api.nvim_create_autocmd({ "BufEnter", "WinEnter", "ModeChanged" }, {
-  callback = function() Treesitter_util.disable_for_large_files(200000) end,
-})

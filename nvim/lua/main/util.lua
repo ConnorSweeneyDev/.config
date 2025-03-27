@@ -432,18 +432,6 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-Treesitter_util = {}
-Treesitter_util.disable_for_large_files = function(max_size)
-  local size = Fn.getfsize(Fn.expand("%"))
-  if size > max_size then
-    Cmd("TSBufDisable highlight")
-  else
-    Cmd("TSBufEnable highlight")
-  end
-end
-
-----------------------------------------------------------------------------------------------------
-
 Mason_util = {}
 Mason_util.install_and_enable = function(mason_registry, servers)
   for _, server in ipairs(servers) do
