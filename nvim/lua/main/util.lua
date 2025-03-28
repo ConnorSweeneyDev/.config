@@ -435,9 +435,16 @@ end
 Mason_util = {}
 Mason_util.install_and_enable = function(mason_registry, servers)
   for name, opts in pairs(servers) do
-    if not mason_registry.is_installed(name) then Cmd("MasonInstall " .. name) end
+    if name ~= "*" and not mason_registry.is_installed(name) then Cmd("MasonInstall " .. name) end
     Lsp.config(name, opts)
-    Lsp.enable(name)
+    if name ~= "*" then Lsp.enable(name) end
+  end
+end
+Mason_util.disable_capabilities = function(capabilities)
+  return function(client, _)
+    for _, capability in ipairs(capabilities) do
+      client.server_capabilities[capability] = nil
+    end
   end
 end
 

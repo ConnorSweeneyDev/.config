@@ -1,6 +1,7 @@
 require("mason").setup()
 Map("n", "<LEADER>h", "<CMD>Mason<CR>", { desc = "Open Mason" })
 Mason_util.install_and_enable(require("mason-registry"), {
+  ["*"] = { capabilities = require("blink.cmp").get_lsp_capabilities(Lsp.protocol.make_client_capabilities()) },
   ["clangd"] = {
     cmd = { "clangd", "--background-index" },
     root_markers = { ".git", "compile_commands.json", "compile_flags.txt" },
@@ -14,30 +15,30 @@ Mason_util.install_and_enable(require("mason-registry"), {
   ["pyright"] = {
     cmd = { "pyright-langserver", "--stdio" },
     root_markers = { ".git", "pyrightconfig.json", "pyproject.toml" },
+    filetypes = { "python" },
     settings = {
       python = {
         analysis = { autoSearchPaths = true, diagnosticMode = "openFilesOnly", useLibraryCodeForTypes = true },
       },
     },
-    filetypes = { "python" },
   },
   ["lua-language-server"] = {
     cmd = { "lua-language-server" },
     root_markers = { ".git", ".luarc.json", ".stylua.toml" },
     filetypes = { "lua" },
+    on_attach = Mason_util.disable_capabilities({ "semanticTokensProvider" }),
   },
   ["html-lsp"] = {
     cmd = { "vscode-html-language-server", "--stdio" },
+    root_markers = { ".git", "package.json" },
+    filetypes = { "html" },
     init_options = {
       configurationSection = { "html", "css", "javascript" },
       embeddedLanguages = { css = true, javascript = true },
     },
-    root_markers = { ".git", "package.json" },
-    filetypes = { "html" },
   },
   ["typescript-language-server"] = {
     cmd = { "typescript-language-server", "--stdio" },
-    init_options = { hostInfo = "neovim" },
     root_markers = { ".git", "package.json" },
     filetypes = {
       "javascript",
@@ -47,6 +48,7 @@ Mason_util.install_and_enable(require("mason-registry"), {
       "typescriptreact",
       "typescript.tsx",
     },
+    init_options = { hostInfo = "neovim" },
   },
   ["css-lsp"] = {
     cmd = { "vscode-css-language-server", "--stdio" },
