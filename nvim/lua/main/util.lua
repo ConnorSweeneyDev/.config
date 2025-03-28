@@ -434,10 +434,10 @@ end
 
 Mason_util = {}
 Mason_util.install_and_enable = function(mason_registry, servers)
-  for _, server in ipairs(servers) do
-    if not mason_registry.is_installed(server.name) then Cmd("MasonInstall " .. server.name) end
-    Lsp.config(server.name, server.opts)
-    Lsp.enable(server.name)
+  for name, opts in pairs(servers) do
+    if not mason_registry.is_installed(name) then Cmd("MasonInstall " .. name) end
+    Lsp.config(name, opts)
+    Lsp.enable(name)
   end
 end
 
