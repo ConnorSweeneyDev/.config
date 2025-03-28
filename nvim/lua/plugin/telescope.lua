@@ -78,3 +78,4 @@ Map(
 Map("n", "<LEADER>pg", builtin.git_files, { desc = "Fuzzy find git filenames" })
 Map("n", "<LEADER>pb", builtin.buffers, { desc = "Fuzzy find buffer filenames" })
 Map("n", "<LEADER>pk", builtin.keymaps, { desc = "Fuzzy find keymaps" })
+Map("n", "<LEADER>ph", builtin.help_tags, { desc = "Fuzzy find help" })
