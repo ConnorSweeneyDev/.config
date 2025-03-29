@@ -1,5 +1,4 @@
 require("mason").setup()
-Map("n", "<LEADER>h", "<CMD>Mason<CR>", { desc = "Open Mason" })
 Mason_util.install_and_enable(require("mason-registry"), {
   ["*"] = { capabilities = require("blink.cmp").get_lsp_capabilities(Lsp.protocol.make_client_capabilities()) },
   ["clangd"] = {
@@ -72,3 +71,4 @@ Mason_util.install_and_enable(require("mason-registry"), {
     filetypes = { "sql", "mysql" },
   },
 })
+Map("n", "<LEADER>h", "<CMD>Mason<CR>", { desc = "Open Mason" })
