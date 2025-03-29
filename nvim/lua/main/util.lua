@@ -90,7 +90,7 @@ Buffer_util.manual_close = function()
   Notify("Buffers closed.")
 end
 Buffer_util.open_on_startup = function()
-  if General_util.floating_window_exists() then return end
+  if General_util.floating_window_exists() or Fn.execute(":args"):match("COMMIT_EDITMSG") then return end
   Buffer_util.open_buffers()
 end
 
@@ -409,7 +409,7 @@ end
 
 Oil_util = {}
 Oil_util.open_on_startup = function()
-  if General_util.floating_window_exists() then return end
+  if General_util.floating_window_exists() or Fn.execute(":args"):match("COMMIT_EDITMSG") then return end
   Cmd("Oil .")
   for _, buffer in ipairs(Api.nvim_list_bufs()) do
     if Api.nvim_get_option_value("ft", { buf = buffer }) == "" then
