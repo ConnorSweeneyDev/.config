@@ -25,7 +25,7 @@ function fzc # Runs fzf searching files then cd's to the directory of the select
     echo "Invalid argument: $args"
     return
   }
-  $Env:FZF_DEFAULT_COMMAND = "fd --type f --strip-cwd-prefix --hidden --exclude .git"
+  $Env:FZF_DEFAULT_COMMAND = $Env:FZF_FILE_COMMAND
   $Env:FZF_DEFAULT_OPTS = $Env:FZF_FILE_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
@@ -47,7 +47,7 @@ function fze # Runs fzf searching files then opens the directory of the selected
     echo "Invalid argument: $args"
     return
   }
-  $Env:FZF_DEFAULT_COMMAND = "fd --type f --strip-cwd-prefix --hidden --exclude .git"
+  $Env:FZF_DEFAULT_COMMAND = $Env:FZF_FILE_COMMAND
   $Env:FZF_DEFAULT_OPTS = $Env:FZF_FILE_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
@@ -70,7 +70,7 @@ function fzn # Runs fzf searching files then opens the directory of the selected
     echo "Invalid argument: $args"
     return
   }
-  $Env:FZF_DEFAULT_COMMAND = "fd --type f --strip-cwd-prefix --hidden --exclude .git"
+  $Env:FZF_DEFAULT_COMMAND = $Env:FZF_FILE_COMMAND
   $Env:FZF_DEFAULT_OPTS = $Env:FZF_FILE_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
@@ -95,7 +95,7 @@ function dzc # Runs fzf searching directories then cd's to the selected director
     echo "Invalid argument: $args"
     return
   }
-  $Env:FZF_DEFAULT_COMMAND = "fd --type d --strip-cwd-prefix --hidden --exclude .git"
+  $Env:FZF_DEFAULT_COMMAND = $Env:FZF_DIRECTORY_COMMAND
   $Env:FZF_DEFAULT_OPTS = $Env:FZF_DIRECTORY_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
@@ -113,7 +113,7 @@ function dze # Runs fzf searching directories then opens the selected directory 
     echo "Invalid argument: $args"
     return
   }
-  $Env:FZF_DEFAULT_COMMAND = "fd --type d --strip-cwd-prefix --hidden --exclude .git"
+  $Env:FZF_DEFAULT_COMMAND = $Env:FZF_DIRECTORY_COMMAND
   $Env:FZF_DEFAULT_OPTS = $Env:FZF_DIRECTORY_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
@@ -135,7 +135,7 @@ function dzn # Runs fzf searching directories then opens the selected directory 
     echo "Invalid argument: $args"
     return
   }
-  $Env:FZF_DEFAULT_COMMAND = "fd --type d --strip-cwd-prefix --hidden --exclude .git"
+  $Env:FZF_DEFAULT_COMMAND = $Env:FZF_DIRECTORY_COMMAND
   $Env:FZF_DEFAULT_OPTS = $Env:FZF_DIRECTORY_OPTS
   $Host.UI.RawUI.WindowTitle = "FZF"
   $selected = fzf
