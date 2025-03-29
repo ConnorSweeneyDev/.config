@@ -48,6 +48,9 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 - Run `git config --system core.longpaths true` and ensure that `[PATH_TO_GIT]\bin` is in your path. After that you can
   use the following configuration in your `$Env:USERPROFILE\.gitconfig` file if you want:
   ```
+  [core]
+    autocrlf = true
+    editor = nvim
   [alias]
     i = init
     re = remote
