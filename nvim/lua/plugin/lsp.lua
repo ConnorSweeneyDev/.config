@@ -23,19 +23,19 @@ Api.nvim_create_autocmd("LspAttach", {
     Map(
       "n",
       "<LEADER>e",
-      function() Diagnostic.open_float({ scope = "cursor" }) end,
+      function() Diagnostic_util.display_virtual_line() end,
       { buffer = event.buf, desc = "Show diagnostics under cursor" }
     )
     Map(
       "n",
       "]d",
-      function() Diagnostic.jump({ count = 1, wrap = true, float = true }) end,
+      function() Diagnostic_util.jump_virtual_line(1) end,
       { buffer = event.buf, desc = "Go to next diagnostic and show it" }
     )
     Map(
       "n",
       "[d",
-      function() Diagnostic.jump({ count = -1, wrap = true, float = true }) end,
+      function() Diagnostic_util.jump_virtual_line(-1) end,
       { buffer = event.buf, desc = "Go to previous diagnostic and show it" }
     )
   end,

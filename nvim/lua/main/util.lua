@@ -451,6 +451,31 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
+Diagnostic_util = {}
+Diagnostic_util.create_virtual_line_autocmd = function()
+  local initial_virtual_text = Diagnostic.config().virtual_text
+  Defer_fn(function()
+    Api.nvim_create_autocmd("CursorMoved", {
+      once = true,
+      group = Api.nvim_create_augroup("VirtualLineDiagnostic", {}),
+      callback = function() Diagnostic.config({ virtual_lines = false, virtual_text = initial_virtual_text }) end,
+    })
+  end, 1)
+end
+Diagnostic_util.display_virtual_line = function()
+  pcall(vim.api.nvim_del_augroup_by_name, "VirtualLineDiagnostic")
+  Diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
+  Diagnostic_util.create_virtual_line_autocmd()
+end
+Diagnostic_util.jump_virtual_line = function(count)
+  pcall(vim.api.nvim_del_augroup_by_name, "VirtualLineDiagnostic")
+  Diagnostic.jump({ count = count })
+  Diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
+  Diagnostic_util.create_virtual_line_autocmd()
+end
+
+----------------------------------------------------------------------------------------------------
+
 Neogit_util = {}
 Neogit_util.last_buffer = nil
 Neogit_util.open_status_menu = function()
