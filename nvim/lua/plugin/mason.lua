@@ -1,5 +1,5 @@
 require("mason").setup()
-Mason_util.install_and_enable(require("mason-registry"), {
+Mason_util.configure_and_enable(require("mason-registry"), {
   ["*"] = { capabilities = require("blink.cmp").get_lsp_capabilities(Lsp.protocol.make_client_capabilities()) },
   ["clangd"] = {
     cmd = { "clangd", "--background-index" },

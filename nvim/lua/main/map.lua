@@ -25,17 +25,6 @@ Map({ "n", "v" }, "<LEADER>d", [["_d]], { desc = "Delete without copying" })
 Map({ "n", "v" }, "<LEADER>D", [["_D]], { desc = "Delete without copying" })
 Map({ "n", "v" }, "<LEADER>c", [["_c]], { desc = "Change without copying" })
 Map({ "n", "v" }, "<LEADER>C", [["_C]], { desc = "Change without copying" })
-Map("n", "<LEADER>s", ":%s/<C-r><C-w>/<C-r><C-w>", { desc = "Replace word under cursor in the current buffer" })
-Map("n", "<C-s>", ":%s/", { desc = "Substitution in the current buffer" })
-Map("v", "<LEADER>s", '"hy:%s/<C-r>h/<C-r>h', { desc = "Replace selection in the current buffer" })
-Map("v", "<C-s>", ":s/", { desc = "Substitution in the current selection" })
-Map("v", "<C-n>", ":normal ", { desc = "Perform normal mode actions for each line in the selection" })
-Map("n", "<LEADER>qg", function() Quickfix_util.grep_search() end, { desc = "Grep project for search term" })
-Map("n", "<LEADER>qw", function() Quickfix_util.grep_word() end, { desc = "Grep project for word under cursor" })
-Map("n", "<LEADER>qW", function() Quickfix_util.grep_full_word() end, { desc = "Grep project for WORD under cursor" })
-Map("v", "<LEADER>q", function() Quickfix_util.grep_selection() end, { desc = "Grep project for selection" })
-Map("n", "<LEADER>qo", "<CMD>copen<CR>", { desc = "Open the quickfix list" })
-Map("n", "<LEADER>qr", ":cdo s/", { desc = "Substitute in each line in the quickfix list" })
 Map("n", "<C-w>e", "<CMD>!explorer .<CR>", { desc = "Open the current directory in the file explorer" })
 Map("n", "<LEADER>v", "<CMD>!sh script/clean.sh<CR>", { desc = "Execute the clean script" })
 Map(
@@ -55,4 +44,35 @@ Map(
   "<LEADER>m",
   '<CMD>!wezterm cli spawn --cwd . pwsh -Command "sh script/debug.sh"<CR>',
   { desc = "Execute the debug script" }
+)
+Map("n", "<LEADER>s", ":%s/<C-r><C-w>/<C-r><C-w>", { desc = "Replace word under cursor in the current buffer" })
+Map("n", "<C-s>", ":%s/", { desc = "Substitution in the current buffer" })
+Map("v", "<LEADER>s", '"hy:%s/<C-r>h/<C-r>h', { desc = "Replace selection in the current buffer" })
+Map("v", "<C-s>", ":s/", { desc = "Substitution in the current selection" })
+Map("v", "<C-n>", ":normal ", { desc = "Perform normal mode actions for each line in the selection" })
+Map("n", "<LEADER>qo", "<CMD>copen<CR>", { desc = "Open the quickfix list" })
+Map("n", "<LEADER>qr", ":cdo s/", { desc = "Substitute in each line in the quickfix list" })
+Map(
+  "n",
+  "<LEADER>qg",
+  function() Quickfix_util.grep_search(General_util.find_target_directory()) end,
+  { desc = "Grep project for search term" }
+)
+Map(
+  "n",
+  "<LEADER>qw",
+  function() Quickfix_util.grep_word(General_util.find_target_directory()) end,
+  { desc = "Grep project for word under cursor" }
+)
+Map(
+  "n",
+  "<LEADER>qW",
+  function() Quickfix_util.grep_full_word(General_util.find_target_directory()) end,
+  { desc = "Grep project for WORD under cursor" }
+)
+Map(
+  "v",
+  "<LEADER>q",
+  function() Quickfix_util.grep_selection(General_util.find_target_directory()) end,
+  { desc = "Grep project for selection" }
 )

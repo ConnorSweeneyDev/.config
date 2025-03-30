@@ -1,4 +1,10 @@
 General_util = {}
+General_util.opened_file = function()
+  local args = Fn.execute(":args"):gsub("%s+", ""):gsub("%[", ""):gsub("%]", "")
+  if args ~= "." and (args:match("%.%w+$") or args:match("%.%w+%.%w+$")) then return true end
+  if args:match("%.git\\COMMIT_EDITMSG$") then return true end
+  return false
+end
 General_util.floating_window_exists = function()
   for _, winid in pairs(Api.nvim_tabpage_list_wins(0)) do
     if Api.nvim_win_get_config(winid).zindex then return true end
@@ -28,12 +34,6 @@ General_util.get_patterns_from_gitignore = function()
     if line ~= "" and line ~= nil and not string.find(line, "^#") then table.insert(patterns, line) end
   end
   return patterns
-end
-General_util.opened_file = function()
-  local args = Fn.execute(":args"):gsub("%s+", ""):gsub("%[", ""):gsub("%]", "")
-  if args ~= "." and (args:match("%.%w+$") or args:match("%.%w+%.%w+$")) then return true end
-  if args:match("%.git\\COMMIT_EDITMSG$") then return true end
-  return false
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -103,21 +103,19 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Quickfix_util = {}
-Quickfix_util.grep_search = function()
-  local target_directory = General_util.find_target_directory()
-  Api.nvim_input(":silent grep  " .. target_directory .. "<C-Left><Left>")
+Quickfix_util.grep_search = function(target_directory)
+  Api.nvim_input(
+    "mZ:silent grep " .. Fn.input("Search Term: ") .. " " .. Fn.input("Target Directory", target_directory) .. "<CR>`Z"
+  )
 end
-Quickfix_util.grep_word = function()
-  local target_directory = General_util.find_target_directory()
-  Api.nvim_input('"+yiw:silent grep <C-r><C-w> ' .. target_directory .. "<CR>")
+Quickfix_util.grep_word = function(target_directory)
+  Api.nvim_input('mZ"+yiw:silent grep <C-r><C-w> ' .. Fn.input("Target Directory", target_directory) .. "<CR>`Z")
 end
-Quickfix_util.grep_full_word = function()
-  local target_directory = General_util.find_target_directory()
-  Api.nvim_input('"+yiw:silent grep <C-r><C-a> ' .. target_directory .. "<CR>")
+Quickfix_util.grep_full_word = function(target_directory)
+  Api.nvim_input('mZ"+yiw:silent grep <C-r><C-a> ' .. Fn.input("Target Directory", target_directory) .. "<CR>`Z")
 end
-Quickfix_util.grep_selection = function()
-  local target_directory = General_util.find_target_directory()
-  Api.nvim_input('"+ygv"hy:silent grep <C-r>h ' .. target_directory .. "<CR>")
+Quickfix_util.grep_selection = function(target_directory)
+  Api.nvim_input('mZ"+ygv"hy:silent grep <C-r>h ' .. Fn.input("Target Directory", target_directory) .. "<CR>`Z")
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -443,7 +441,7 @@ Mason_util.custom_capabilities = function(modified_capabilities)
     end
   end
 end
-Mason_util.install_and_enable = function(mason_registry, servers)
+Mason_util.configure_and_enable = function(mason_registry, servers)
   for name, opts in pairs(servers) do
     if name ~= "*" and not mason_registry.is_installed(name) then Cmd("MasonInstall " .. name) end
     Lsp.config(name, opts)
