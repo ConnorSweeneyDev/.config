@@ -25,7 +25,7 @@ Mason_util.install_and_enable(require("mason-registry"), {
     cmd = { "lua-language-server" },
     root_markers = { ".git", ".luarc.json", ".stylua.toml" },
     filetypes = { "lua" },
-    on_attach = Mason_util.disable_capabilities({ "semanticTokensProvider" }),
+    on_attach = Mason_util.custom_capabilities({ [{ "semanticTokensProvider" }] = {} }),
   },
   ["html-lsp"] = {
     cmd = { "vscode-html-language-server", "--stdio" },

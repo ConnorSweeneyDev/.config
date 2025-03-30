@@ -1,7 +1,6 @@
 Tbl_deep_extend = vim.tbl_deep_extend
 Diagnostic = vim.diagnostic
 Startswith = vim.startswith
-Tbl_keys = vim.tbl_keys
 Notify = vim.notify
 Map = vim.keymap.set
 Loop = vim.loop

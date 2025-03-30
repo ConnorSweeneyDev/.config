@@ -345,6 +345,8 @@ Lualine_util.dynamic_path = function()
     return "none"
   elseif string.match(filetype, "help") then
     path = "help\\" .. string.match(path, "\\doc\\(.*)")
+  elseif string.match(filetype, "checkhealth") then
+    path = "checkhealth"
   elseif string.match(filetype, "list") then
     path = string.gsub(path, "^list:///", "")
   elseif string.match(filetype, "qf") then
@@ -428,18 +430,24 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Mason_util = {}
+Mason_util.custom_capabilities = function(modified_capabilities)
+  return function(client, _)
+    for capability, value in pairs(modified_capabilities) do
+      local current = client.server_capabilities
+      for index = 1, #capability - 1 do
+        local key = capability[index]
+        if current[key] == nil then current[key] = {} end
+        current = current[key]
+      end
+      current[capability[#capability]] = value
+    end
+  end
+end
 Mason_util.install_and_enable = function(mason_registry, servers)
   for name, opts in pairs(servers) do
     if name ~= "*" and not mason_registry.is_installed(name) then Cmd("MasonInstall " .. name) end
     Lsp.config(name, opts)
     if name ~= "*" then Lsp.enable(name) end
-  end
-end
-Mason_util.disable_capabilities = function(capabilities)
-  return function(client, _)
-    for _, capability in ipairs(capabilities) do
-      client.server_capabilities[capability] = nil
-    end
   end
 end
 
