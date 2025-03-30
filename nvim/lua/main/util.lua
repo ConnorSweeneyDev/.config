@@ -29,9 +29,11 @@ General_util.get_patterns_from_gitignore = function()
   end
   return patterns
 end
-General_util.opened_file = function()
-  if Fn.execute(":args") == "[.]" then return false end
-  return true
+General_util.opened_cwd = function()
+  local args = Fn.execute(":args")
+  local stripped_args = args:gsub("%s+", "")
+  if stripped_args == "[" .. Fn.getcwd() .. "]" or stripped_args == "[.]" then return true end
+  return false
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -94,7 +96,7 @@ Buffer_util.manual_close = function()
   Notify("Buffers closed.")
 end
 Buffer_util.open_on_startup = function()
-  if General_util.floating_window_exists() or General_util.opened_file() then return end
+  if General_util.floating_window_exists() or not General_util.opened_cwd() then return end
   Buffer_util.open_buffers()
 end
 
@@ -413,7 +415,7 @@ end
 
 Oil_util = {}
 Oil_util.open_on_startup = function()
-  if General_util.floating_window_exists() or General_util.opened_file() then return end
+  if General_util.floating_window_exists() or not General_util.opened_cwd() then return end
   Cmd("Oil .")
   for _, buffer in ipairs(Api.nvim_list_bufs()) do
     if Api.nvim_get_option_value("ft", { buf = buffer }) == "" then
