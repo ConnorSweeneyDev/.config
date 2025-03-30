@@ -30,9 +30,8 @@ General_util.get_patterns_from_gitignore = function()
   return patterns
 end
 General_util.opened_cwd = function()
-  local args = Fn.execute(":args")
-  local stripped_args = args:gsub("%s+", "")
-  if stripped_args == "[" .. Fn.getcwd() .. "]" or stripped_args == "[.]" then return true end
+  local args = Fn.execute(":args"):gsub("%s+", "")
+  if args == "[" .. Fn.getcwd() .. "]" or args == "[.]" then return true end
   return false
 end
 
