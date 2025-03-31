@@ -126,13 +126,19 @@ Language_util.set_textwidth = function(textwidth)
   Language_util.textwidth = textwidth
   return textwidth
 end
-Language_util.format = function(formatters)
-  Cmd("w")
+Language_util.formatters = {}
+Language_util.format = function(files)
   local current_extension = (Fn.expand("%:e") ~= "" and Fn.expand("%:e") ~= nil) and Fn.expand("%:e") or Bo.filetype
-  for extensions, command in pairs(formatters) do
+  for extensions, command in pairs(Language_util.formatters) do
     for _, target_extension in ipairs(extensions) do
       if current_extension == target_extension then
-        Cmd("!" .. command)
+        local start_pos, end_pos = string.find(command, "%[%|%]")
+        if not start_pos or not end_pos then
+          Notify("Formatter incorrectly configured!", "error")
+          return
+        end
+        Cmd("w")
+        Cmd("!" .. string.sub(command, 1, start_pos - 1) .. files .. string.sub(command, end_pos + 1))
         return
       end
     end
@@ -428,6 +434,20 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Mason_util = {}
+Mason_util.install_formatters = function(mason_registry, formatters)
+  Language_util.formatters = formatters
+  for _, command in pairs(formatters) do
+    local name = string.match(command, "^[^%s]+")
+    if not mason_registry.is_installed(name) then Cmd("MasonInstall " .. name) end
+  end
+end
+Mason_util.install_language_servers = function(mason_registry, servers)
+  for name, opts in pairs(servers) do
+    if name ~= "*" and not mason_registry.is_installed(name) then Cmd("MasonInstall " .. name) end
+    Lsp.config(name, opts)
+    if name ~= "*" then Lsp.enable(name) end
+  end
+end
 Mason_util.custom_capabilities = function(modified_capabilities)
   return function(client, _)
     for capability, value in pairs(modified_capabilities) do
@@ -439,13 +459,6 @@ Mason_util.custom_capabilities = function(modified_capabilities)
       end
       current[capability[#capability]] = value
     end
-  end
-end
-Mason_util.configure_and_enable = function(mason_registry, servers)
-  for name, opts in pairs(servers) do
-    if name ~= "*" and not mason_registry.is_installed(name) then Cmd("MasonInstall " .. name) end
-    Lsp.config(name, opts)
-    if name ~= "*" then Lsp.enable(name) end
   end
 end
 

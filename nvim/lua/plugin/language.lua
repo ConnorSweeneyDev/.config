@@ -1,17 +1,5 @@
-Map(
-  "n",
-  "<LEADER>kf",
-  function()
-    Language_util.format({
-      [{ "c", "h", "cpp", "hpp", "inl" }] = "clang-format -i %",
-      [{ "py" }] = "black %",
-      [{ "js", "jsx", "css", "html", "json" }] = "npx prettier % --write",
-      [{ "lua" }] = "stylua %",
-      [{ "rs" }] = "rustfmt %",
-    })
-  end,
-  { desc = "Format current buffer" }
-)
+Map("n", "<LEADER>kf", function() Language_util.format("%") end, { desc = "Format current buffer" })
+Map("n", "<LEADER>kF", function() Language_util.format(".") end, { desc = "Format current directory" })
 Map("n", "<LEADER><LEADER>", function() Lua_util.source() end, { desc = "Source current lua file" })
 Map(
   "n",

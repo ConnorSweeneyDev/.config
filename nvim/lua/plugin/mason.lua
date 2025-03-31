@@ -1,5 +1,12 @@
 require("mason").setup()
-Mason_util.configure_and_enable(require("mason-registry"), {
+local mason_registry = require("mason-registry")
+Mason_util.install_formatters(mason_registry, {
+  [{ "c", "h", "cpp", "hpp", "inl", "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" }] = "clang-format -i [|]",
+  [{ "py" }] = "black [|]",
+  [{ "js", "jsx", "css", "html", "json", "jsonc" }] = "prettier [|] --write",
+  [{ "lua" }] = "stylua [|]",
+})
+Mason_util.install_language_servers(mason_registry, {
   ["*"] = { capabilities = require("blink.cmp").get_lsp_capabilities(Lsp.protocol.make_client_capabilities()) },
   ["clangd"] = {
     cmd = { "clangd", "--background-index" },
@@ -54,11 +61,6 @@ Mason_util.configure_and_enable(require("mason-registry"), {
     root_markers = { ".git", "package.json" },
     filetypes = { "css", "scss", "less" },
     settings = { css = { validate = true }, scss = { validate = true }, less = { validate = true } },
-  },
-  ["rust-analyzer"] = {
-    cmd = { "rust-analyzer" },
-    root_markers = { ".git", "cargo.toml", "rustfmt.toml" },
-    filetypes = { "rust" },
   },
   ["json-lsp"] = {
     cmd = { "vscode-json-language-server", "--stdio" },

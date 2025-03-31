@@ -28,7 +28,6 @@ require("nvim-treesitter.configs").setup({
     "markdown",
     "regex",
     "bash",
-    "rust",
   },
   sync_install = false,
   auto_install = false,
