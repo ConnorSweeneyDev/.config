@@ -127,8 +127,8 @@ The following plugins require some extra or different steps:
 - Telescope &rightarrow; This should be installed at the same time as telescope-fzf-native.nvim and
   telescope-ui-select.nvim, `lua\plugin\telescope.lua` requires all three of these plugins to be installed.
 - Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
-- Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `lua\plugin\leap.lua` requires
-  both of these plugins to be installed.
+- Leap &rightarrow; This should be installed at the same time as leap-by-word.nvim, `lua\plugin\leap.lua` requires both
+  of these plugins to be installed.
 - Colorscheme &rightarrow; vscode.nvim's plugin file is is `lua\plugin\colors.lua`. You don't have to use that
   cholorscheme, but the file assumes you are and `lua\plugin\lualine.lua` is also set up to use the vscode colorscheme
   so you'll need to change those as well as the `lua\main\lazy.lua` file if you want a different scheme.
@@ -142,7 +142,7 @@ The following plugins require some extra or different steps:
 - LSP &rightarrow; All lsp-related (mason.nvim, blink.cmp and trouble.nvim) plugins should be installed at the same time
   as eachother - the corresponding plugin files are `lua\plugin\blink.lua`, `lua\plugin\trouble.lua`,
   `lua\plugin\mason.lua` and `lua\plugin\lsp.lua`. After following the pattern, you should see it downloading all the
-  language servers specified in the mason file - you can view all the available servers by running `:Mason`.
+  language servers and formatters specified in the mason file - view all the available downloads by running `:Mason`.
 - Neogit &rightarrow; This should be installed at the same time as diffview.nvim.
 - Supermaven &rightarrow; If you don't have a subscription, you can still use it by running `:SupermavenUseFree` when
   prompted, otherwise you can follow the instructions to use it with a subscription.

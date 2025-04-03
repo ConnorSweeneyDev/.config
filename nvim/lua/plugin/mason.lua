@@ -1,10 +1,22 @@
 require("mason").setup()
 local mason_registry = require("mason-registry")
 Mason_util.install_formatters(mason_registry, {
-  [{ "c", "h", "cpp", "hpp", "inl", "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" }] = "clang-format -i [|]",
-  [{ "py" }] = "black [|]",
-  [{ "js", "jsx", "css", "html", "json", "jsonc" }] = "prettier [|] --write",
-  [{ "lua" }] = "stylua [|]",
+  ["clang-format"] = {
+    cmd = { "clang-format", "-i", "[|]" },
+    filetypes = { "c", "h", "cpp", "hpp", "inl", "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+  },
+  ["black"] = {
+    cmd = { "black", "[|]" },
+    filetypes = { "py" },
+  },
+  ["prettier"] = {
+    cmd = { "prettier", "[|]", "--write" },
+    filetypes = { "js", "jsx", "css", "html", "json", "jsonc" },
+  },
+  ["stylua"] = {
+    cmd = { "stylua", "[|]" },
+    filetypes = { "lua" },
+  },
 })
 Mason_util.install_language_servers(mason_registry, {
   ["*"] = { capabilities = require("blink.cmp").get_lsp_capabilities(Lsp.protocol.make_client_capabilities()) },

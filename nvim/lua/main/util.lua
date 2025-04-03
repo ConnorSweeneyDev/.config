@@ -128,22 +128,22 @@ Language_util.set_textwidth = function(textwidth)
 end
 Language_util.formatters = {}
 Language_util.format = function(files)
-  local current_extension = (Fn.expand("%:e") ~= "" and Fn.expand("%:e") ~= nil) and Fn.expand("%:e") or Bo.filetype
-  for extensions, command in pairs(Language_util.formatters) do
-    for _, target_extension in ipairs(extensions) do
-      if current_extension == target_extension then
-        local start_pos, end_pos = string.find(command, "%[%|%]")
-        if not start_pos or not end_pos then
-          Notify("Formatter incorrectly configured!", "error")
-          return
+  local current_filetype = (Fn.expand("%:e") ~= "" and Fn.expand("%:e") ~= nil) and Fn.expand("%:e") or Bo.filetype
+  for _, opts in pairs(Language_util.formatters) do
+    for _, target_filetype in ipairs(opts.filetypes) do
+      if current_filetype == target_filetype then
+        local command = ""
+        for _, command_part in ipairs(opts.cmd) do
+          if command_part == "[|]" then command_part = files end
+          command = command .. command_part .. (next(opts.cmd, _) and " " or "")
         end
         Cmd("w")
-        Cmd("!" .. string.sub(command, 1, start_pos - 1) .. files .. string.sub(command, end_pos + 1))
+        Cmd("!" .. command)
         return
       end
     end
   end
-  Notify("Formatting not configured for " .. current_extension .. "!", "error")
+  Notify("Formatting not configured for " .. current_filetype .. "!", "error")
 end
 Language_util.handle_text = function(files)
   local current_extension = Fn.expand("%:e")
@@ -436,8 +436,7 @@ end
 Mason_util = {}
 Mason_util.install_formatters = function(mason_registry, formatters)
   Language_util.formatters = formatters
-  for _, command in pairs(formatters) do
-    local name = string.match(command, "^[^%s]+")
+  for name, _ in pairs(formatters) do
     if not mason_registry.is_installed(name) then Cmd("MasonInstall " .. name) end
   end
 end
