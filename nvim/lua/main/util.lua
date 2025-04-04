@@ -103,6 +103,11 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Quickfix_util = {}
+Quickfix_util.rename = function()
+  Api.nvim_input(
+    "<CMD>cdo s/" .. Fn.input("Original") .. "/" .. Fn.input("Substitute") .. "/" .. Fn.input("Options") .. "<CR>"
+  )
+end
 Quickfix_util.grep_search = function(target_directory)
   Api.nvim_input(
     "mZ:silent grep " .. Fn.input("Search Term: ") .. " " .. Fn.input("Target Directory", target_directory) .. "<CR>`Z"
