@@ -180,8 +180,7 @@ After all of that, don't forget to include these files that are not tied to any 
   unnecessary animations (when possible)".
 - Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the taskbar" under the
   taskbar behaviours.
-- Search `multitasking` and turn off everything under the snap windows section except "Show my snapped windows when I
-  hover over taskbar apps... ...when I press Alt+Tab".
+- Search `multitasking` and turn off "Snap windows".
 - Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors are configured.
 - Paste `yasb` into your config. Add `$Env:USERPROFILE\AppData\Local\Yasb` to your path.
 - Paste `ahk` into your config. Right click `wm.ahk` and create a shortcut, then rename that shortcut to just `wm` and
