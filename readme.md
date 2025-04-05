@@ -210,7 +210,7 @@ First, make firefox your default browser and make the folder containing `firefox
 - Home &rightarrow; Homepage and new windows &rightarrow; Custom URLs... &rightarrow; Open a new tab, then close it and
   go to your history, copy the url of that closed tab and paste it into the field - it should be of the form
   `moz-extension://[NUMBERS]/static/newtab.html`.
-- Home &rightarrow; Default search engine = Google.
+- Search &rightarrow; Default search engine = Google.
 - Now go to the url `about:config` and search for `full-screen-api.transition-duration.enter` and
   `full-screen-api.transition-duration.leave` and change both to `0 0`.
 - Scan the rest of the settings and disable things you don't want that will slow down the browser.
