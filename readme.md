@@ -22,9 +22,7 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
   explorer select all `.ttf` files and right click them, now select "Install". After that you can delete the files.
 - WezTerm &rightarrow; Run `winget install --id wez.wezterm`.
 - PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
-- gsudo &rightarrow; Run `winget install --id gerardog.gsudo`.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`.
-- Difftastic &rightarrow; Run `winget install difftastic`.
 - OhMyPosh &rightarrow; Run `winget install JanDeDobbeleer.OhMyPosh`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
@@ -40,11 +38,6 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 - Go back to `pwsh\main.ps1` and remove the line that sources `personal.ps1`, and delete that file too as it is specific
   to me. Other than that, skim the rest of the files and remove anything you know you won't need - everything is
   commented or self-explanatory so you can be sure of what you're doing.
-- To set up gsudo after installing it, run the following commands:
-  - `sudo config PowerShellLoadProfile true`.
-  - `sudo config CacheMode auto`.
-  - `sudo config CacheDuration infinite`.
-  - `sudo config LogLevel None`.
 - Run `git config --system core.longpaths true` and ensure that `[PATH_TO_GIT]\bin` is in your path. After that you can
   use the following configuration in your `$Env:USERPROFILE\.gitconfig` file if you want:
   ```
@@ -67,8 +60,6 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
     s = status
     d = diff
     l = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  [diff]
-    external = difft
   ```
 
 # Neovim
