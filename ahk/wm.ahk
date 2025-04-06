@@ -1,6 +1,5 @@
 #SingleInstance Force
 
-#e::Run("explorer")
 #t::Run("pwsh -NoProfile -Command wezterm", , "Hide")
 #f::Run("pwsh -NoProfile -Command firefox", , "Hide")
 #d::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Discord.lnk")
