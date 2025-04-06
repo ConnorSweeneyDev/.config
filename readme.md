@@ -225,20 +225,14 @@ native Vim toggle for QMK keyboards.
 PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` and enable Run at
 startup - my favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous query on launch
-  enabled, preferred monitor primary, all plugins off except "Program" - this behaves just like the windows run dialog
-  but without cortana, searching the internet or any other annoyances.
+  enabled, preferred monitor primary, all plugins off except "Program" and "Windows System Commands" - this behaves just
+  like the windows run dialog but without cortana, searching the internet or any other annoyances and the ability to
+  type shutdown, restart, etc.
 - Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
-- Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1200x900`.
-- Screen Ruler with an activation shortcut of `win+shift+p`.
+- Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1600x1200`.
+- Screen Ruler with an activation shortcut of `win+shift+p` and default measure style of `Spacing`.
 - Text Extractor with an activation shortcut of `win+shift+t`.
 - File Locksmith enabled.
-
-SysInternals &rightarrow; Download from [here](https://learn.microsoft.com/en-us/sysinternals/downloads/) and choose the
-executables that you want - the only one I use is ZoomIt with the following settings:
-- Run ZoomIt when Windows starts and Show tray icon both enabled.
-- Zoom on `ctrl+/` with animate zoom in and zoom out disabled.
-- Draw on `ctrl+'`.
-- Record on `ctrl+;`.
 
 WinLister &rightarrow; Go [here](https://www.nirsoft.net/utils/winlister.html) and click "Download WinLister 64-bit",
 move the executable to `C:\WinLister`, then right click `winlister.exe` and select "Create shortcut", then rename it to
