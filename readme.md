@@ -96,7 +96,7 @@ commonly used lua functions.
 
 Now you can create `lua\main\lazy.lua`, and populate it with only the following lines:
 ```lua
-lazy_util.bootstrap()
+Lazy_util.bootstrap()
 Map("n", "<LEADER>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 require("lazy").setup({})
 ```
