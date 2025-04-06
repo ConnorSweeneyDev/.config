@@ -155,12 +155,12 @@ After all of that, don't forget to include these files that are not tied to any 
 
 # Tiling Window Manager
 ### Dependencies
-- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi --version 0.1.30`.
-- Yasb &rightarrow; Run `winget install --id AmN.yasb --version 1.2.7`.
-- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey --version 2.0.18`.
+- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`.
+- Yasb &rightarrow; Run `winget install --id AmN.yasb`.
+- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
 - ToggleRoundedCorners &rightarrow; Download the portable executable from
   [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to `trc.exe`. Place it in
-  `C:\ToggleRoundedCorners` and put that folder in your path.
+  `C:\Program Files\ToggleRoundedCorners` and put that folder in your path.
 
 ### Setup
 - Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1` in
