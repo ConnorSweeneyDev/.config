@@ -10,7 +10,11 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 > Every folder in this repository is located locally at `$Env:USERPROFILE\.config`.
 
 ### Setup
-- Ensure "Developer Mode" is turned on in windows settings (Windows + I and then search `developer`).
+- Go to the "For Developers" section of the Windows settings and do the following:
+  - Ensure "Developer Mode" is turned on.
+  - Enable "Show hidden and system files" and "Show file extensions" under "File Explorer".
+  - Enable local powershell scripts to run without signing under "PowerShell".
+  - Enable Sudo.
 - Ensure you are able to access and use the Windows Store, winget relies on this for certain things. If you can't access
   the store (it's known to be glitchy for some accounts) then you can find alternative installs for all dependencies on
   either [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
