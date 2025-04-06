@@ -73,8 +73,8 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 - Java &rightarrow; Download the compressed archive from [here](https://www.oracle.com/java/technologies/downloads/) and
   place the folder named `jdk-[VERSION]` in `C:\Program Files\Java` then add `C:\Program Files\Java\jdk-[VERSION]\bin`
   to your path.
-- MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\MinGW` (I recommend 64-bit
-  with POSIX threads for general purpose use). Add `C:\MinGW\bin` to your path.
+- MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\Program Files\MinGW` (I
+  recommend 64-bit with POSIX threads for general purpose use). Add `C:\Program Files\MinGW\bin` to your path.
 - Make &rightarrow; Run `winget install --id ezwinports.make`.
 - CMake &rightarrow; Run `winget install --id Kitware.CMake`.
 - Python &rightarrow; Run `winget install --id Python.Python.3.10`.
