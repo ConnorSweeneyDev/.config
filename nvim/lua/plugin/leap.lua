@@ -1,5 +1,0 @@
-Map({ "n", "x", "o" }, "s", function() require("leap-by-word").leap() end, { desc = "Leap to beginning of word" })
-Map("n", "S", "<Plug>(leap)", { desc = "Leap to letter" })
-Map("n", "<A-s>", "<Plug>(leap-from-window)", { desc = "Leap to letter between windows" })
-Map({ "x", "o" }, "s", "<Plug>(leap-forward)", { desc = "Leap forward during motion" })
-Map({ "x", "o" }, "S", "<Plug>(leap-backward)", { desc = "Leap backward during motion" })

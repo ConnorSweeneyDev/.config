@@ -9,8 +9,6 @@ require("lazy").setup({
   { "theprimeagen/harpoon", branch = "harpoon2" },
   { "mbbill/undotree" },
   { "gbprod/yanky.nvim" },
-  { "ggandor/leap.nvim" },
-  { "Sleepful/leap-by-word.nvim" },
   { "kevinhwang91/nvim-bqf" },
   { "itchyny/vim-qfedit" },
   { "MunifTanjim/nui.nvim" },
