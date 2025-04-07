@@ -3,19 +3,19 @@ Map("n", "<LEADER>kF", function() Language_util.format(".") end, { desc = "Forma
 Map("n", "<LEADER><LEADER>", function() Lua_util.source() end, { desc = "Source current lua file" })
 Map(
   "n",
-  "UC",
+  "<LEADER>uc",
   function() C_util.switch_file_in_compilation_unit("source") end,
   { desc = "Switch to source file in compilation unit" }
 )
 Map(
   "n",
-  "UH",
+  "<LEADER>uh",
   function() C_util.switch_file_in_compilation_unit("header") end,
   { desc = "Switch to header file in compilation unit" }
 )
 Map(
   "n",
-  "UI",
+  "<LEADER>ui",
   function() C_util.switch_file_in_compilation_unit("inline") end,
   { desc = "Switch to inline file in compilation unit" }
 )
