@@ -8,9 +8,9 @@ Map(
   end,
   { desc = "Open Harpoon" }
 )
-Map("n", "<C-a>", function() harpoon:list():add() end, { desc = "Add current file to harpoon" })
-Map("n", "<C-z>", function() harpoon:list():remove() end, { desc = "Remove current file from harpoon" })
-Map("n", "<C-q>", function() harpoon:list():clear() end, { desc = "Remove all files from harpoon" })
+Map("n", "<LEADER>a", function() harpoon:list():add() end, { desc = "Add current file to harpoon" })
+Map("n", "<LEADER>z", function() harpoon:list():remove() end, { desc = "Remove current file from harpoon" })
+Map("n", "<C-z>", function() harpoon:list():clear() end, { desc = "Remove all files from harpoon" })
 Map("n", "<C-g>", function() harpoon:list():select(1) end, { desc = "Go to first harpoon file" })
 Map("n", "<C-h>", function() harpoon:list():select(2) end, { desc = "Go to second harpoon file" })
 Map("n", "<C-y>", function() harpoon:list():select(3) end, { desc = "Go to third harpoon file" })
