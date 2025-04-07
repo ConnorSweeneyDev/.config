@@ -7,7 +7,7 @@ function attend
 }
 function music
 {
-  cd C:\TuiMusic
+  cd E:\Custom\TuiMusic
   $p = Split-Path -leaf -path (Get-Location)
   $Host.UI.RawUI.WindowTitle = "$p"
   $arguments = $args
