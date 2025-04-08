@@ -226,8 +226,8 @@ Using Tridactyl, press `:` and type the following commands:
 VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForVoyager) and follow the setup guide for a
 native Vim toggle for QMK keyboards.
 
-PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` and enable Run at
-startup - my favourite tools are:
+PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` and enable "Run at startup" - my
+favourite tools are:
 - Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous query on launch
   enabled, preferred monitor primary, all plugins off except "Program" and "Windows System Commands" - this behaves just
   like the windows run dialog but without cortana, searching the internet or any other annoyances and the ability to
@@ -239,24 +239,22 @@ startup - my favourite tools are:
 - File Locksmith enabled.
 
 WinLister &rightarrow; Go [here](https://www.nirsoft.net/utils/winlister.html) and click "Download WinLister 64-bit",
-move the executable to `C:\WinLister`, then right click `winlister.exe` and select "Create shortcut", then rename it to
-`WinLister` and place this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
+move the executable to `C:\Program Files\WinLister`, then right click `winlister.exe` and select "Create shortcut", then
+rename it to `WinLister` and place this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
 
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and go through the
 installation wizard.
 
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in
-`C:\Dependencies`, make that folder is an environment variable, then right click `DependenciesGui.exe` and select
-"Create shortcut" and rename it to `Dependencies`, then move that to `C:\ProgramData\Microsoft\Windows\Start
+`C:\Program Files\Dependencies`, make that folder is an environment variable, then right click `DependenciesGui.exe` and
+select "Create shortcut" and rename it to `Dependencies`, then move that to `C:\ProgramData\Microsoft\Windows\Start
 Menu\Programs`.
 
 Everything &rightarrow; Download the portable zip from [here](https://www.voidtools.com/) and put the contents in
-`C:\Everything`. Right click `Everything.exe` and select "Create shortcut", then rename it to `Everything` and place
-this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
+`C:\Program Files\Everything`. Right click `Everything.exe` and select "Create shortcut", then rename it to `Everything`
+and place this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
 
 Mp3tag &rightarrow; Download from [here](https://www.mp3tag.de/en/download.html) and go through the installation wizard.
-
-scc &rightarrow; As an admin, run `choco install scc` - details can be found [here](https://github.com/boyter/scc).
 
 Better Cursor &rightarrow; Go [here](https://jepricreations.com) for a more fitting cursor. After buying, extract the
 contents to a known location and go to the version you desire, right click the `install.inf` file, click install and
