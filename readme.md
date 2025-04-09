@@ -236,10 +236,6 @@ favourite tools are:
 - Text Extractor with an activation shortcut of `win+shift+t`.
 - File Locksmith enabled.
 
-WinLister &rightarrow; Go [here](https://www.nirsoft.net/utils/winlister.html) and click "Download WinLister 64-bit",
-move the executable to `C:\Program Files\WinLister`, then right click `winlister.exe` and select "Create shortcut", then
-rename it to `WinLister` and place this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
-
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and go through the
 installation wizard.
 
@@ -247,6 +243,10 @@ Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Depende
 `C:\Program Files\Dependencies`, make that folder is an environment variable, then right click `DependenciesGui.exe` and
 select "Create shortcut" and rename it to `Dependencies`, then move that to `C:\ProgramData\Microsoft\Windows\Start
 Menu\Programs`.
+
+WinLister &rightarrow; Go [here](https://www.nirsoft.net/utils/winlister.html) and click "Download WinLister 64-bit",
+move the executable to `C:\Program Files\WinLister`, then right click `winlister.exe` and select "Create shortcut", then
+rename it to `WinLister` and place this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
 
 Everything &rightarrow; Download the portable zip from [here](https://www.voidtools.com/) and put the contents in
 `C:\Program Files\Everything`. Right click `Everything.exe` and select "Create shortcut", then rename it to `Everything`
