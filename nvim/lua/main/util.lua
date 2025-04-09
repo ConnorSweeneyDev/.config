@@ -2,7 +2,7 @@ General_util = {}
 General_util.opened_file = function()
   local args = Fn.execute(":args"):gsub("%s+", ""):gsub("%[", ""):gsub("%]", "")
   if args ~= "." and (args:match("%.%w+$") or args:match("%.%w+%.%w+$")) then return true end
-  if args:match("%.git\\COMMIT_EDITMSG$") then return true end
+  if args:match("%.git\\") then return true end
   return false
 end
 General_util.floating_window_exists = function()
