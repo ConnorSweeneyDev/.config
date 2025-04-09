@@ -6,7 +6,6 @@ require("lazy").setup({
   { "nvim-telescope/telescope.nvim" },
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   { "nvim-telescope/telescope-ui-select.nvim" },
-  { "theprimeagen/harpoon", branch = "harpoon2" },
   { "mbbill/undotree" },
   { "gbprod/yanky.nvim" },
   { "kevinhwang91/nvim-bqf" },

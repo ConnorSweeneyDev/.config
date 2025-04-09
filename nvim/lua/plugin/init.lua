@@ -1,5 +1,4 @@
 require("plugin.telescope")
-require("plugin.harpoon")
 require("plugin.undotree")
 require("plugin.yanky")
 require("plugin.language")

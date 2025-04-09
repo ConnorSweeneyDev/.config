@@ -116,7 +116,7 @@ Now, inside the `.setup` field start adding plugins, do so in the following patt
 The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
-  - plenary.nvim &rightarrow; Required by telescope.nvim, harpoon and neogit.
+  - plenary.nvim &rightarrow; Required by telescope.nvim and neogit.
   - nui.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
 - Telescope &rightarrow; This should be installed at the same time as telescope-fzf-native.nvim and
