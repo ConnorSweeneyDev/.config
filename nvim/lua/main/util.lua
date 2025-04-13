@@ -330,6 +330,15 @@ C_util.switch_file_in_compilation_unit = function(target_file)
     Notify("Not a c, h, cpp, hpp or inl file!", "error")
   end
 end
+C_util.open_visual_studio = function()
+  local solution = Fn.glob("*.sln")
+  if solution == "" then solution = Fn.glob("../*.sln") end
+  if solution ~= "" then
+    Cmd("!devenv " .. solution)
+    return
+  end
+  Notify("No solution file found!", "error")
+end
 
 ----------------------------------------------------------------------------------------------------
 
