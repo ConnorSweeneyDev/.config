@@ -237,7 +237,11 @@ favourite tools are:
 - File Locksmith enabled.
 
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and go through the
-installation wizard.
+installation wizard. You can use the `vs2022/Neovim.vssettings` file in this repository to use my recommended settings
+for neovim integration with VS. After importing those, you can install the extensions "VsVim 2022" and "Clang Power
+Tools 2022" from the marketplace. Put the `vs2022/.vimrc` file in your `$Env:USERPROFILE` folder and restart VS to get
+some nicer settings for vim mode. The Clang Power Tools extension is useful for generating compile_commands.json files
+for neovim - the `vs2022/ClangPowerToolsFlags.json` file contains the flags I personally add for warnings.
 
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in
 `C:\Program Files\Dependencies`, make that folder is an environment variable, then right click `DependenciesGui.exe` and
