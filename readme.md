@@ -238,11 +238,9 @@ favourite tools are:
 
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and go through the
 installation wizard. After that put `[PATH_TO_VS2022]\2022\Community\Common7\IDE` in your path. You can install the
-extensions "VsVim 2022" and "Clang Power Tools 2022" from the marketplace. Then you can use the
-`vs2022\Neovim.vssettings` file to import my recommended settings, and also put the `vs2022\.vimrc` file in your
-`$Env:USERPROFILE` folder and restart VS to get some good vim mode bindings. The Clang Power Tools extension is useful
-for generating compile_commands.json files for neovim - the `vs2022\ClangPowerToolsFlags.json` file contains the flags I
-personally add for warnings.
+extensions "VsVim 2022" from the marketplace. Then you can use the `vs2022\Neovim.vssettings` file to import my
+recommended settings, and also put the `vs2022\.vimrc` file in your `$Env:USERPROFILE` folder and restart VS to get some
+good vim mode bindings.
 
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in
 `C:\Program Files\Dependencies`, make that folder is an environment variable, then right click `DependenciesGui.exe` and

@@ -1,1 +1,0 @@
--Wall;-Wextra;-Wpedantic;-Wmicrosoft;-Wconversion;-Wshadow-all;-Wundef;-Wdeprecated;-Wtype-limits;-Wcast-qual;-Wcast-align;-Wfloat-equal;-Wparentheses;-Wunreachable-code-aggressive;-Wformat=2;
