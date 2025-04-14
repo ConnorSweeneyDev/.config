@@ -84,6 +84,37 @@ function fzn # Runs fzf searching files then opens the directory of the selected
   }
   else { cd C:\ }
 }
+function fzv # Runs fzf searching files then opens the directory of the selected file in visual studio - Usage: fzv [d | u | c]
+{
+  if ($args -eq "." -or $args.Count -eq 0) {}
+  elseif ($args -eq "d") { cd D:\ }
+  elseif ($args -eq "u") { cd $Env:USERPROFILE }
+  elseif ($args -eq "c") { cd C:\ }
+  else
+  {
+    echo "Invalid argument: $args"
+    return
+  }
+  $Env:FZF_DEFAULT_COMMAND = $Env:FZF_FILE_COMMAND
+  $Env:FZF_DEFAULT_OPTS = $Env:FZF_FILE_OPTS
+  $Host.UI.RawUI.WindowTitle = "FZF"
+  $selected = fzf
+  if (![string]::IsNullOrWhiteSpace($selected))
+  {
+    $parent = Split-Path -parent -path $selected
+    cd $parent
+    $p = Split-Path -leaf -path (Get-Location)
+    $Host.UI.RawUI.WindowTitle = "$p"
+    $solution = Get-ChildItem -Path (Get-Location) -Filter *.sln -File | Select-Object -First 1
+    if ($solution)
+    {
+      $solutionName = $solution.Name
+      devenv "$solutionName"
+    }
+    else { devenv . }
+  }
+  else { cd C:\ }
+}
 function dzc # Runs fzf searching directories then cd's to the selected directory - Usage: dzc [d | u | c]
 {
   if ($args -eq "." -or $args.Count -eq 0) {}
@@ -145,6 +176,37 @@ function dzn # Runs fzf searching directories then opens the selected directory 
     $p = Split-Path -leaf -path (Get-Location)
     $Host.UI.RawUI.WindowTitle = "$p"
     nvim .
+  }
+  else { cd C:\ }
+}
+function dzv # Runs fzf searching directories then opens the selected directory in visual studio - Usage: dzv [d | u | c]
+{
+  if ($args -eq "." -or $args.Count -eq 0) {}
+  elseif ($args -eq "d") { cd D:\ }
+  elseif ($args -eq "u") { cd $Env:USERPROFILE }
+  elseif ($args -eq "c") { cd C:\ }
+  else
+  {
+    echo "Invalid argument: $args"
+    return
+  }
+  $Env:FZF_DEFAULT_COMMAND = $Env:FZF_DIRECTORY_COMMAND
+  $Env:FZF_DEFAULT_OPTS = $Env:FZF_DIRECTORY_OPTS
+  $Host.UI.RawUI.WindowTitle = "FZF"
+  $selected = fzf
+  if (![string]::IsNullOrWhiteSpace($selected))
+  {
+    cd $selected
+    $p = Split-Path -leaf -path (Get-Location)
+    $Host.UI.RawUI.WindowTitle = "$p"
+
+    $solution = Get-ChildItem -Path (Get-Location) -Filter *.sln -File | Select-Object -First 1
+    if ($solution)
+    {
+      $solutionName = $solution.Name
+      devenv "$solutionName"
+    }
+    else { devenv . }
   }
   else { cd C:\ }
 }
