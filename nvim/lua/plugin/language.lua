@@ -19,7 +19,6 @@ Map(
   function() C_util.switch_file_in_compilation_unit("inline") end,
   { desc = "Switch to inline file in compilation unit" }
 )
-Map("n", "<C-w>c", function() C_util.open_visual_studio() end, { desc = "Open the current solution in Visual Studio" })
 Api.nvim_create_autocmd({ "BufEnter", "WinEnter", "ModeChanged" }, {
   callback = function()
     Language_util.handle_text({ "txt", "md", "gitcommit" })
