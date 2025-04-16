@@ -11,11 +11,11 @@ Mason_util.install_formatters(mason_registry, {
   },
   ["black"] = {
     cmd = { "black", "[|]" },
-    filetypes = { "py" },
+    filetypes = { "py", "python" },
   },
   ["prettier"] = {
     cmd = { "prettier", "[|]", "--write" },
-    filetypes = { "js", "jsx", "css", "html", "json", "jsonc" },
+    filetypes = { "js", "jsx", "css", "html", "javascript", "javascriptreact", "typescript", "typescriptreact" },
   },
   ["stylua"] = {
     cmd = { "stylua", "[|]" },
