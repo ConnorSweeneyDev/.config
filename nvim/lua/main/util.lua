@@ -446,11 +446,6 @@ Lualine_util.dynamic_path = function()
   path = string.gsub(path, "\\", "/")
   return path
 end
-Lualine_util.current_register = function()
-  local recording_register = vim.fn.reg_recording()
-  if recording_register ~= "" then return "@" .. recording_register end
-  return "@~"
-end
 
 ----------------------------------------------------------------------------------------------------
 

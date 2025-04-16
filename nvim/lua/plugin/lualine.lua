@@ -11,7 +11,7 @@ require("lualine").setup({
     lualine_b = { { "dynamic_path", fmt = Lualine_util.dynamic_path } },
     lualine_c = { "diagnostics" },
     lualine_x = { "diff" },
-    lualine_y = { { "current_register", fmt = Lualine_util.current_register } },
+    lualine_y = { "branch" },
     lualine_z = { "progress", "location" },
   },
 })
