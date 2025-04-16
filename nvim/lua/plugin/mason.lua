@@ -5,6 +5,10 @@ Mason_util.install_formatters(mason_registry, {
     cmd = { "clang-format", "-i", "[|]" },
     filetypes = { "c", "h", "cpp", "hpp", "inl", "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
   },
+  ["gersemi"] = {
+    cmd = { "gersemi", "-i", "[|]" },
+    filetypes = { "cmake" },
+  },
   ["black"] = {
     cmd = { "black", "[|]" },
     filetypes = { "py" },
@@ -29,6 +33,12 @@ Mason_util.install_language_servers(mason_registry, {
     cmd = { "glsl_analyzer" },
     root_markers = { ".git", "compile_commands.json", "compile_flags.txt" },
     filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+  },
+  ["cmake-language-server"] = {
+    cmd = { "cmake-language-server" },
+    root_markers = { ".git", "compile_commands.json", "compile_flags.txt", "CMakeLists.txt" },
+    filetypes = { "cmake" },
+    init_options = { buildDirectory = "build" },
   },
   ["pyright"] = {
     cmd = { "pyright-langserver", "--stdio" },

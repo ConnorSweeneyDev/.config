@@ -163,6 +163,9 @@ Language_util.formatters = {}
 Language_util.format = function(files)
   local current_filetype = (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e")
     or vim.bo.filetype
+  if current_filetype == "txt" then
+    if string.find(vim.fn.expand("%"), "^CMakeLists.txt$") then current_filetype = "cmake" end
+  end
   for _, opts in pairs(Language_util.formatters) do
     for _, target_filetype in ipairs(opts.filetypes) do
       if current_filetype == target_filetype then
