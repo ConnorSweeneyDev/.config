@@ -72,7 +72,8 @@ Buffer_util.open_buffers = function()
   if General_util.cwd_contains(Buffer_util.override_patterns) then Buffer_util.folders = { "*" } end
   for _, folder in ipairs(Buffer_util.folders) do
     for _, extension in ipairs(Buffer_util.file_extensions) do
-      local files = General_util.make_relative_files(vim.fn.globpath(vim.fn.getcwd() .. folder, "**/" .. extension, 0, 1))
+      local files =
+        General_util.make_relative_files(vim.fn.globpath(vim.fn.getcwd() .. folder, "**/" .. extension, 0, 1))
       for _, file in ipairs(files) do
         local valid_file = true
         for _, ignore_pattern in ipairs(Buffer_util.ignore_patterns) do
@@ -116,7 +117,13 @@ end
 Quickfix_util = {}
 Quickfix_util.rename = function()
   vim.api.nvim_input(
-    "<CMD>cdo s/" .. vim.fn.input("Original: ") .. "/" .. vim.fn.input("Substitute: ") .. "/" .. vim.fn.input("Options: ") .. "<CR>"
+    "<CMD>cdo s/"
+      .. vim.fn.input("Original: ")
+      .. "/"
+      .. vim.fn.input("Substitute: ")
+      .. "/"
+      .. vim.fn.input("Options: ")
+      .. "<CR>"
   )
 end
 Quickfix_util.grep_search = function(target_directory)
@@ -129,13 +136,19 @@ Quickfix_util.grep_search = function(target_directory)
   )
 end
 Quickfix_util.grep_word = function(target_directory)
-  vim.api.nvim_input('mZ"+yiw:silent grep <C-r><C-w> ' .. vim.fn.input("Target Directory: ", target_directory) .. "<CR>`Z")
+  vim.api.nvim_input(
+    'mZ"+yiw:silent grep <C-r><C-w> ' .. vim.fn.input("Target Directory: ", target_directory) .. "<CR>`Z"
+  )
 end
 Quickfix_util.grep_full_word = function(target_directory)
-  vim.api.nvim_input('mZ"+yiw:silent grep <C-r><C-a> ' .. vim.fn.input("Target Directory: ", target_directory) .. "<CR>`Z")
+  vim.api.nvim_input(
+    'mZ"+yiw:silent grep <C-r><C-a> ' .. vim.fn.input("Target Directory: ", target_directory) .. "<CR>`Z"
+  )
 end
 Quickfix_util.grep_selection = function(target_directory)
-  vim.api.nvim_input('mZ"+ygv"hy:silent grep <C-r>h ' .. vim.fn.input("Target Directory: ", target_directory) .. "<CR>`Z")
+  vim.api.nvim_input(
+    'mZ"+ygv"hy:silent grep <C-r>h ' .. vim.fn.input("Target Directory: ", target_directory) .. "<CR>`Z"
+  )
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -148,7 +161,8 @@ Language_util.set_textwidth = function(textwidth)
 end
 Language_util.formatters = {}
 Language_util.format = function(files)
-  local current_filetype = (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e") or vim.bo.filetype
+  local current_filetype = (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e")
+    or vim.bo.filetype
   for _, opts in pairs(Language_util.formatters) do
     for _, target_filetype in ipairs(opts.filetypes) do
       if current_filetype == target_filetype then

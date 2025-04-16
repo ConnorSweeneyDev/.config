@@ -11,5 +11,17 @@ require("yanky").setup({
     },
   },
 })
-vim.keymap.set("n", "<LEADER>py", "<CMD>Telescope yank_history<CR>", { noremap = true, silent = true }, { desc = "Open Yanky" })
-vim.keymap.set("n", "<LEADER>ky", "<CMD>YankyClearHistory<CR>", { noremap = true, silent = true }, { desc = "Clear Yank History" })
+vim.keymap.set(
+  "n",
+  "<LEADER>py",
+  "<CMD>Telescope yank_history<CR>",
+  { noremap = true, silent = true },
+  { desc = "Open Yanky" }
+)
+vim.keymap.set(
+  "n",
+  "<LEADER>ky",
+  "<CMD>YankyClearHistory<CR>",
+  { noremap = true, silent = true },
+  { desc = "Clear Yank History" }
+)
