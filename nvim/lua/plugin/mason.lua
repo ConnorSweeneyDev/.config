@@ -19,7 +19,7 @@ Mason_util.install_formatters(mason_registry, {
   },
 })
 Mason_util.install_language_servers(mason_registry, {
-  ["*"] = { capabilities = require("blink.cmp").get_lsp_capabilities(Lsp.protocol.make_client_capabilities()) },
+  ["*"] = { capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()) },
   ["clangd"] = {
     cmd = { "clangd", "--background-index" },
     root_markers = { ".git", "compile_commands.json", "compile_flags.txt" },
@@ -85,4 +85,4 @@ Mason_util.install_language_servers(mason_registry, {
     filetypes = { "sql", "mysql" },
   },
 })
-Map("n", "<LEADER>h", "<CMD>Mason<CR>", { desc = "Open Mason" })
+vim.keymap.set("n", "<LEADER>h", "<CMD>Mason<CR>", { desc = "Open Mason" })

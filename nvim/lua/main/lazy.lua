@@ -1,5 +1,5 @@
 Lazy_util.bootstrap()
-Map("n", "<LEADER>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
+vim.keymap.set("n", "<LEADER>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 require("lazy").setup({
   { "nvim-lua/plenary.nvim" },
   { "stevearc/oil.nvim" },
@@ -10,12 +10,9 @@ require("lazy").setup({
   { "gbprod/yanky.nvim" },
   { "kevinhwang91/nvim-bqf" },
   { "itchyny/vim-qfedit" },
-  { "MunifTanjim/nui.nvim" },
   { "nvim-tree/nvim-web-devicons" },
   { "Mofiqul/vscode.nvim", name = "vscode" },
   { "nvim-lualine/lualine.nvim" },
-  { "rcarriga/nvim-notify" },
-  { "folke/noice.nvim" },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "williamboman/mason.nvim" },
   { "saghen/blink.cmp", version = "*" },

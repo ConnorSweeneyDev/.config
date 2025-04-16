@@ -1,7 +1,7 @@
 require("oil").setup({
   default_file_explorer = false,
   skip_confirm_for_simple_edits = false,
-  view_options = { show_hidden = true, is_hidden_file = function(name, _) return Startswith(name, ".") end },
+  view_options = { show_hidden = true, is_hidden_file = function(name, _) return vim.startswith(name, ".") end },
   keymaps = {
     ["g?"] = "actions.show_help",
     ["<CR>"] = "actions.select",
@@ -21,5 +21,5 @@ require("oil").setup({
     ["g\\"] = "actions.toggle_trash",
   },
 })
-Map("n", "<LEADER>pv", "<CMD>Oil<CR>", { desc = "Open Oil" })
+vim.keymap.set("n", "<LEADER>pv", "<CMD>Oil<CR>", { desc = "Open Oil" })
 Oil_util.open_on_startup()

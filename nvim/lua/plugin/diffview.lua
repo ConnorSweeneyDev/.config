@@ -2,7 +2,7 @@ local actions = require("diffview.actions")
 require("diffview").setup({
   show_help_hints = false,
   view = {
-    default = { layout = "diff2_vertical", disable_diagnostics = false, winbar_info = false },
+    default = { layout = "diff2_vertical", disable_diagnostics = true, winbar_info = false },
     merge_tool = { layout = "diff3_mixed", disable_diagnostics = true, winbar_info = false },
   },
   file_panel = { listing_style = "tree", win_config = Diffview_util.fullscreen() },

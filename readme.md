@@ -74,9 +74,6 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 - Microsoft Visual C++ 2015-2022 Redistributable (x64) &rightarrow; Download from
   [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and run the
   installation wizard.
-- Java &rightarrow; Download the compressed archive from [here](https://www.oracle.com/java/technologies/downloads/) and
-  place the folder named `jdk-[VERSION]` in `C:\Program Files\Java` then add `C:\Program Files\Java\jdk-[VERSION]\bin`
-  to your path.
 - MinGW &rightarrow; Download from [here](https://winlibs.com/) and put the contents in `C:\Program Files\MinGW` (I
   recommend 64-bit with POSIX threads for general purpose use). Add `C:\Program Files\MinGW\bin` to your path.
 - Make &rightarrow; Run `winget install --id ezwinports.make`.
@@ -92,16 +89,15 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 After completing the dependencies for this section, I recommend manually recreating `nvim` on your machine rather than
 just pasting it in, because this will allow you to single out any unexpected errors as they happen.
 
-You should start with the top level `init.lua` and then `lua\main\init.lua`. Then you can create `lua\main\rename.lua`,
-`lua\main\util.lua`, `lua\main\set.lua` and `lua\main\map.lua` and paste the config into each. `set.lua` is for global
-settings, `map.lua` is for global keybinds and `util.lua` is for helper functions used throughout the configuration,
-designed to remove the need for visible logic in any configuration files. The `rename.lua` file is just for shortening
-commonly used lua functions.
+You should start with the top level `init.lua` and then `lua\main\init.lua`. Then you can create `lua\main\util.lua`,
+`lua\main\set.lua` and `lua\main\map.lua` and paste the config into each. `set.lua` is for global settings, `map.lua` is
+for global keybinds and `util.lua` is for helper functions used throughout the configuration, designed to remove the
+need for visible logic in any configuration files.
 
 Now you can create `lua\main\lazy.lua`, and populate it with only the following lines:
 ```lua
 Lazy_util.bootstrap()
-Map("n", "<LEADER>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
+vim.keymap.set("n", "<LEADER>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 require("lazy").setup({})
 ```
 After creating an empty `lua\plugin\init.lua`, restart neovim and there should be no error messages.
@@ -117,7 +113,6 @@ The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
   - plenary.nvim &rightarrow; Required by telescope.nvim and neogit.
-  - nui.nvim &rightarrow; Required by noice.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
 - Telescope &rightarrow; This should be installed at the same time as telescope-fzf-native.nvim and
   telescope-ui-select.nvim, `lua\plugin\telescope.lua` requires all three of these plugins to be installed.
@@ -131,7 +126,6 @@ The following plugins require some extra or different steps:
   themselves out. However if you get an error along the lines of `[LANGUAGE].so is not a valid Win32 app`, this means
   either your version of MinGW does not match your operating system or treesitter is using the wrong compiler for that
   specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
-- Noice &rightarrow; This should be installed at the same time as notify.nvim.
 - LSP &rightarrow; All lsp-related (mason.nvim, blink.cmp and trouble.nvim) plugins should be installed at the same time
   as eachother - the corresponding plugin files are `lua\plugin\blink.lua`, `lua\plugin\trouble.lua`,
   `lua\plugin\mason.lua` and `lua\plugin\lsp.lua`. After following the pattern, you should see it downloading all the
