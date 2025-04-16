@@ -123,7 +123,7 @@ Quickfix_util.rename = function()
       .. vim.fn.input("Substitute: ")
       .. "/"
       .. vim.fn.input("Options: ")
-      .. "<CR>"
+      .. "<CR><CR>"
   )
 end
 Quickfix_util.grep_search = function(target_directory)
