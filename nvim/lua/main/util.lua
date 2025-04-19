@@ -163,7 +163,7 @@ Language_util.formatters = {}
 Language_util.format = function(files)
   local current_filetype = vim.bo.filetype
     or (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e")
-  for _, opts in pairs(Language_util.formatters) do
+  for _, opts in ipairs(Language_util.formatters) do
     for _, target_filetype in ipairs(opts.filetypes) do
       if current_filetype == target_filetype then
         local command = ""
@@ -171,7 +171,7 @@ Language_util.format = function(files)
           if command_part == "[|]" then command_part = files end
           command = command .. command_part .. (next(opts.cmd, _) and " " or "")
         end
-        vim.cmd("w")
+        vim.cmd("wa")
         vim.cmd("!" .. command)
         vim.api.nvim_input("<CR>")
         return
@@ -179,6 +179,39 @@ Language_util.format = function(files)
     end
   end
   vim.notify("Formatting not configured for " .. current_filetype .. "!", "error")
+end
+Language_util.ides = {}
+Language_util.open_ide = function()
+  local current_filetype = vim.bo.filetype
+    or (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e")
+  for _, opts in ipairs(Language_util.ides) do
+    for _, target_filetype in ipairs(opts.filetypes) do
+      if current_filetype == target_filetype then
+        local command = ""
+        for _, command_part in ipairs(opts.cmd) do
+          if command_part == "[|]" then
+            if opts.targets == { "." } then
+              command_part = "."
+            else
+              for _, target in ipairs(opts.targets) do
+                command_part = vim.fn.glob(target)
+                if command_part ~= "" then break end
+              end
+              if command_part == "" then
+                vim.notify("No target file found!", "error")
+                return
+              end
+            end
+          end
+          command = command .. command_part .. (next(opts.cmd, _) and " " or "")
+        end
+        vim.cmd("!" .. command)
+        vim.api.nvim_input("<CR>")
+        return
+      end
+    end
+  end
+  vim.notify("IDE not configured for " .. current_filetype .. "!", "error")
 end
 Language_util.handle_text = function(files)
   local current_extension = vim.fn.expand("%:e")
@@ -464,17 +497,19 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Mason_util = {}
-Mason_util.install_formatters = function(mason_registry, formatters)
-  Language_util.formatters = formatters
-  for name, _ in pairs(formatters) do
-    if not mason_registry.is_installed(name) then vim.cmd("MasonInstall " .. name) end
-  end
-end
-Mason_util.install_language_servers = function(mason_registry, servers)
-  for name, opts in pairs(servers) do
-    if name ~= "*" and not mason_registry.is_installed(name) then vim.cmd("MasonInstall " .. name) end
-    vim.lsp.config(name, opts)
-    if name ~= "*" then vim.lsp.enable(name) end
+Mason_util.setup_languages = function(mason_registry, defaults, configs)
+  if defaults.lsp ~= nil and defaults.lsp ~= {} then vim.lsp.config(defaults.lsp.name, defaults.lsp.opts) end
+  for _, config in ipairs(configs) do
+    if config.lsp ~= nil and config.lsp ~= {} then
+      if not mason_registry.is_installed(config.lsp.name) then vim.cmd("MasonInstall " .. config.lsp.name) end
+      vim.lsp.config(config.lsp.name, config.lsp.opts)
+      vim.lsp.enable(config.lsp.name)
+    end
+    if config.fmt ~= nil and config.fmt ~= {} then
+      if not mason_registry.is_installed(config.fmt.name) then vim.cmd("MasonInstall " .. config.fmt.name) end
+      table.insert(Language_util.formatters, config.fmt.opts)
+    end
+    if config.ide ~= nil and config.ide ~= {} then table.insert(Language_util.ides, config.ide) end
   end
 end
 Mason_util.custom_capabilities = function(modified_capabilities)

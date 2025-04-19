@@ -1,98 +1,211 @@
 require("mason").setup()
-local mason_registry = require("mason-registry")
-Mason_util.install_formatters(mason_registry, {
-  ["clang-format"] = {
-    cmd = { "clang-format", "-i", "[|]" },
-    filetypes = { "c", "h", "cpp", "hpp", "inl", "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+Mason_util.setup_languages(require("mason-registry"), {
+  lsp = {
+    name = "*",
+    opts = {
+      capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    },
   },
-  ["gersemi"] = {
-    cmd = { "gersemi", "-i", "[|]" },
-    filetypes = { "cmake" },
+}, {
+  {
+    lsp = {
+      name = "clangd",
+      opts = {
+        cmd = { "clangd", "--background-index" },
+        root_markers = { ".git", "compile_commands.json", "compile_flags.txt" },
+        filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
+      },
+    },
+    fmt = {
+      name = "clang-format",
+      opts = {
+        cmd = { "clang-format", "-i", "[|]" },
+        filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
+      },
+    },
+    ide = {
+      cmd = { "devenv", "[|]" },
+      targets = { "*.sln", "build/*.sln" },
+      filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
+    },
   },
-  ["black"] = {
-    cmd = { "black", "[|]" },
-    filetypes = { "py", "python" },
+  {
+    lsp = {
+      name = "glsl_analyzer",
+      opts = {
+        cmd = { "glsl_analyzer" },
+        root_markers = { ".git", "compile_commands.json", "compile_flags.txt" },
+        filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+      },
+    },
+    fmt = {
+      name = "clang-format",
+      opts = {
+        cmd = { "clang-format", "-i", "[|]" },
+        filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+      },
+    },
+    ide = {
+      cmd = { "devenv", "[|]" },
+      targets = { "*.sln", "build/*.sln" },
+      filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+    },
   },
-  ["prettier"] = {
-    cmd = { "prettier", "[|]", "--write" },
-    filetypes = { "js", "jsx", "css", "html", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  {
+    lsp = {
+      name = "cmake-language-server",
+      opts = {
+        cmd = { "cmake-language-server" },
+        root_markers = { ".git", "compile_commands.json", "compile_flags.txt", "CMakeLists.txt" },
+        filetypes = { "cmake" },
+        init_options = { buildDirectory = "build" },
+      },
+    },
+    fmt = {
+      name = "gersemi",
+      opts = {
+        cmd = { "gersemi", "-i", "[|]" },
+        filetypes = { "cmake" },
+      },
+    },
+    ide = {
+      cmd = { "devenv", "[|]" },
+      targets = { "*.sln", "build/*.sln" },
+      filetypes = { "cmake" },
+    },
   },
-  ["stylua"] = {
-    cmd = { "stylua", "[|]" },
-    filetypes = { "lua" },
-  },
-})
-Mason_util.install_language_servers(mason_registry, {
-  ["*"] = { capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()) },
-  ["clangd"] = {
-    cmd = { "clangd", "--background-index" },
-    root_markers = { ".git", "compile_commands.json", "compile_flags.txt" },
-    filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
-  },
-  ["glsl_analyzer"] = {
-    cmd = { "glsl_analyzer" },
-    root_markers = { ".git", "compile_commands.json", "compile_flags.txt" },
-    filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
-  },
-  ["cmake-language-server"] = {
-    cmd = { "cmake-language-server" },
-    root_markers = { ".git", "compile_commands.json", "compile_flags.txt", "CMakeLists.txt" },
-    filetypes = { "cmake" },
-    init_options = { buildDirectory = "build" },
-  },
-  ["pyright"] = {
-    cmd = { "pyright-langserver", "--stdio" },
-    root_markers = { ".git", "pyrightconfig.json", "pyproject.toml" },
-    filetypes = { "python" },
-    settings = {
-      python = {
-        analysis = { autoSearchPaths = true, diagnosticMode = "openFilesOnly", useLibraryCodeForTypes = true },
+  {
+    lsp = {
+      name = "pyright",
+      opts = {
+        cmd = { "pyright-langserver", "--stdio" },
+        root_markers = { ".git", "pyrightconfig.json", "pyproject.toml" },
+        filetypes = { "python" },
+        settings = {
+          python = {
+            analysis = { autoSearchPaths = true, diagnosticMode = "openFilesOnly", useLibraryCodeForTypes = true },
+          },
+        },
+      },
+    },
+    fmt = {
+      name = "black",
+      opts = {
+        cmd = { "black", "[|]" },
+        filetypes = { "py", "python" },
       },
     },
   },
-  ["lua-language-server"] = {
-    cmd = { "lua-language-server" },
-    root_markers = { ".git", ".luarc.json", ".stylua.toml" },
-    filetypes = { "lua" },
-    on_attach = Mason_util.custom_capabilities({ [{ "semanticTokensProvider" }] = {} }),
-  },
-  ["html-lsp"] = {
-    cmd = { "vscode-html-language-server", "--stdio" },
-    root_markers = { ".git", "package.json" },
-    filetypes = { "html" },
-    init_options = {
-      configurationSection = { "html", "css", "javascript" },
-      embeddedLanguages = { css = true, javascript = true },
+  {
+    lsp = {
+      name = "lua-language-server",
+      opts = {
+        cmd = { "lua-language-server" },
+        root_markers = { ".git", ".luarc.json", ".stylua.toml" },
+        filetypes = { "lua" },
+        on_attach = Mason_util.custom_capabilities({ [{ "semanticTokensProvider" }] = {} }),
+      },
+    },
+    fmt = {
+      name = "stylua",
+      opts = {
+        cmd = { "stylua", "[|]" },
+        filetypes = { "lua" },
+      },
     },
   },
-  ["typescript-language-server"] = {
-    cmd = { "typescript-language-server", "--stdio" },
-    root_markers = { ".git", "package.json" },
-    filetypes = {
-      "javascript",
-      "javascriptreact",
-      "javascript.jsx",
-      "typescript",
-      "typescriptreact",
-      "typescript.tsx",
+  {
+    lsp = {
+      name = "html-lsp",
+      opts = {
+        cmd = { "vscode-html-language-server", "--stdio" },
+        root_markers = { ".git", "package.json" },
+        filetypes = { "html" },
+        init_options = {
+          configurationSection = { "html", "css", "javascript" },
+          embeddedLanguages = { css = true, javascript = true },
+        },
+      },
     },
-    init_options = { hostInfo = "neovim" },
+    fmt = {
+      name = "prettier",
+      opts = {
+        cmd = { "prettier", "[|]", "--write" },
+        filetypes = { "html" },
+      },
+    },
   },
-  ["css-lsp"] = {
-    cmd = { "vscode-css-language-server", "--stdio" },
-    root_markers = { ".git", "package.json" },
-    filetypes = { "css", "scss", "less" },
-    settings = { css = { validate = true }, scss = { validate = true }, less = { validate = true } },
+  {
+    lsp = {
+      name = "typescript-language-server",
+      opts = {
+        cmd = { "typescript-language-server", "--stdio" },
+        root_markers = { ".git", "package.json" },
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "javascript.jsx",
+          "typescript",
+          "typescriptreact",
+          "typescript.tsx",
+        },
+        init_options = { hostInfo = "neovim" },
+      },
+    },
+    fmt = {
+      name = "prettier",
+      opts = {
+        cmd = { "prettier", "[|]", "--write" },
+        filetypes = {
+          "js",
+          "jsx",
+          "javascript",
+          "javascriptreact",
+          "javascript.jsx",
+          "typescript",
+          "typescriptreact",
+          "typescript.tsx",
+        },
+      },
+    },
   },
-  ["json-lsp"] = {
-    cmd = { "vscode-json-language-server", "--stdio" },
-    root_markers = { ".git" },
-    filetypes = { "json", "jsonc" },
+  {
+    lsp = {
+      name = "css-lsp",
+      opts = {
+        cmd = { "vscode-css-language-server", "--stdio" },
+        root_markers = { ".git", "package.json" },
+        filetypes = { "css", "scss", "less" },
+        settings = { css = { validate = true }, scss = { validate = true }, less = { validate = true } },
+      },
+    },
+    fmt = {
+      name = "prettier",
+      opts = {
+        cmd = { "prettier", "[|]", "--write" },
+        filetypes = { "css", "scss", "less" },
+      },
+    },
   },
-  ["sqlls"] = {
-    cmd = { "sql-language-server", "up", "--method", "stdio" },
-    root_markers = { ".git" },
-    filetypes = { "sql", "mysql" },
+  {
+    lsp = {
+      name = "json-lsp",
+      opts = {
+        cmd = { "vscode-json-language-server", "--stdio" },
+        root_markers = { ".git" },
+        filetypes = { "json", "jsonc" },
+      },
+    },
+  },
+  {
+    lsp = {
+      name = "sqlls",
+      opts = {
+        cmd = { "sql-language-server", "up", "--method", "stdio" },
+        root_markers = { ".git" },
+        filetypes = { "sql", "mysql" },
+      },
+    },
   },
 })
 vim.keymap.set("n", "<LEADER>h", "<CMD>Mason<CR>", { desc = "Open Mason" })
