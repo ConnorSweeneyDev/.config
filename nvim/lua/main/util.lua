@@ -171,7 +171,11 @@ Language_util.format = function(files)
           if command_part == "[|]" then command_part = files end
           command = command .. command_part .. (next(opts.cmd, _) and " " or "")
         end
-        vim.cmd("wa")
+        if files == "%" then
+          vim.cmd("w")
+        else
+          vim.cmd("wa")
+        end
         vim.cmd("!" .. command)
         vim.api.nvim_input("<CR>")
         return
@@ -499,7 +503,7 @@ end
 Mason_util = {}
 Mason_util.setup_languages = function(mason_registry, defaults, configs)
   if defaults.lsp ~= nil and defaults.lsp ~= {} then vim.lsp.config(defaults.lsp.name, defaults.lsp.opts) end
-  for _, config in ipairs(configs) do
+  for _, config in pairs(configs) do
     if config.lsp ~= nil and config.lsp ~= {} then
       if not mason_registry.is_installed(config.lsp.name) then vim.cmd("MasonInstall " .. config.lsp.name) end
       vim.lsp.config(config.lsp.name, config.lsp.opts)

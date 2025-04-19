@@ -7,7 +7,7 @@ Mason_util.setup_languages(require("mason-registry"), {
     },
   },
 }, {
-  {
+  ["C/C++"] = {
     lsp = {
       name = "clangd",
       opts = {
@@ -29,7 +29,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
     },
   },
-  {
+  ["GLSL"] = {
     lsp = {
       name = "glsl_analyzer",
       opts = {
@@ -51,7 +51,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
     },
   },
-  {
+  ["CMake"] = {
     lsp = {
       name = "cmake-language-server",
       opts = {
@@ -74,7 +74,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       filetypes = { "cmake" },
     },
   },
-  {
+  ["Python"] = {
     lsp = {
       name = "pyright",
       opts = {
@@ -96,7 +96,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
   },
-  {
+  ["Lua"] = {
     lsp = {
       name = "lua-language-server",
       opts = {
@@ -114,7 +114,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
   },
-  {
+  ["HTML"] = {
     lsp = {
       name = "html-lsp",
       opts = {
@@ -135,7 +135,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
   },
-  {
+  ["TypeScript"] = {
     lsp = {
       name = "typescript-language-server",
       opts = {
@@ -169,7 +169,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
   },
-  {
+  ["CSS"] = {
     lsp = {
       name = "css-lsp",
       opts = {
@@ -187,7 +187,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
   },
-  {
+  ["JSON"] = {
     lsp = {
       name = "json-lsp",
       opts = {
@@ -197,7 +197,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
   },
-  {
+  ["SQL"] = {
     lsp = {
       name = "sqlls",
       opts = {
