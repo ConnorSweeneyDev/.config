@@ -34,8 +34,7 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 
 ### Setup
 - Paste `wezterm` into your config and change the font face to whatever NerdFont you installed. You can go to
-  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and rename the WezTerm shortcut to something shorter like `wt`
-  for ease of typing in the start menu.
+  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
 - Paste `posh` into your config and run `oh-my-posh disable notice` to stop the annoying update message every so often.
 - Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that is opened (you may
   have to create the file first if it doesn't exist): `. $Env:USERPROFILE"\.config\pwsh\main.ps1"`.
