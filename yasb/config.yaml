@@ -78,3 +78,5 @@ widgets:
       label: "{%a %d|%m|%Y %H:%M:%S}"
       label_alt: "{%a %d|%m|%Y %H:%M:%S}"
       timezones: []
+    calendar:
+      blur: False

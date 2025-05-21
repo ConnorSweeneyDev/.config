@@ -165,3 +165,22 @@
   margin-top: 0;
   padding-bottom: 1px;
 }
+.calendar {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+.calendar .calendar-table::item:selected {
+  background-color: rgb(70, 70, 70);
+}
+.calendar .day-label {
+  font-size: 60px;
+}
+.calendar .month-label {
+  font-size: 48px;
+}
+.calendar .date-label {
+  font-size: 36px;
+}
