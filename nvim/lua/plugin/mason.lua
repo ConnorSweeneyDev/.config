@@ -1,12 +1,13 @@
 require("mason").setup()
 Mason_util.setup_languages(require("mason-registry"), {
-  lsp = {
-    name = "*",
-    opts = {
-      capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  ["*"] = {
+    lsp = {
+      name = "*",
+      opts = {
+        capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()),
+      },
     },
   },
-}, {
   ["C/C++"] = {
     lsp = {
       name = "clangd",

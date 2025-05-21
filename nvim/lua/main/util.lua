@@ -501,13 +501,15 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Mason_util = {}
-Mason_util.setup_languages = function(mason_registry, defaults, configs)
-  if defaults.lsp ~= nil and defaults.lsp ~= {} then vim.lsp.config(defaults.lsp.name, defaults.lsp.opts) end
+Mason_util.setup_languages = function(mason_registry, configs)
+  mason_registry.refresh()
   for _, config in pairs(configs) do
     if config.lsp ~= nil and config.lsp ~= {} then
-      if not mason_registry.is_installed(config.lsp.name) then vim.cmd("MasonInstall " .. config.lsp.name) end
+      if config.lsp.name ~= "*" and not mason_registry.is_installed(config.lsp.name) then
+        vim.cmd("MasonInstall " .. config.lsp.name)
+      end
       vim.lsp.config(config.lsp.name, config.lsp.opts)
-      vim.lsp.enable(config.lsp.name)
+      if config.lsp.name ~= "*" then vim.lsp.enable(config.lsp.name) end
     end
     if config.fmt ~= nil and config.fmt ~= {} then
       if not mason_registry.is_installed(config.fmt.name) then vim.cmd("MasonInstall " .. config.fmt.name) end
