@@ -61,15 +61,13 @@ Buffer_util = {}
 Buffer_util.folders = {}
 Buffer_util.file_extensions = {}
 Buffer_util.ignore_patterns = {}
-Buffer_util.set_parameters = function(folders, file_extensions, override_patterns, ignore_patterns)
+Buffer_util.set_parameters = function(folders, file_extensions, ignore_patterns)
   Buffer_util.folders = folders
   Buffer_util.file_extensions = file_extensions
-  Buffer_util.override_patterns = override_patterns
   Buffer_util.ignore_patterns = ignore_patterns
 end
 Buffer_util.open_buffers = function()
   local original_buffer = vim.api.nvim_get_current_buf()
-  if General_util.cwd_contains(Buffer_util.override_patterns) then Buffer_util.folders = { "*" } end
   for _, folder in ipairs(Buffer_util.folders) do
     for _, extension in ipairs(Buffer_util.file_extensions) do
       local files =

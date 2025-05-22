@@ -13,9 +13,6 @@ Buffer_util.set_parameters({ "/program", "/asset/shader", "/src", "/lua" }, {
   "*.jsx",
   "*.css",
   "*.lua",
-}, {
-  "*.sln",
-  "*.vcxproj",
 }, General_util.get_patterns_from_gitignore())
 vim.keymap.set(
   "n",
