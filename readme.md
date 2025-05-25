@@ -49,8 +49,9 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
     editor = nvim
   [alias]
     i = init
-    re = remote
+    ro = remote
     rs = restore
+    re = reset
     cl = clone
     pl = pull
     a = add
