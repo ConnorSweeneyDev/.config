@@ -13,7 +13,7 @@ require("lazy").setup({
   { "nvim-tree/nvim-web-devicons" },
   { "Mofiqul/vscode.nvim", name = "vscode" },
   { "nvim-lualine/lualine.nvim" },
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter", branch = "master", build = ":TSUpdate" },
   { "williamboman/mason.nvim" },
   { "saghen/blink.cmp", version = "*" },
   { "folke/trouble.nvim" },
