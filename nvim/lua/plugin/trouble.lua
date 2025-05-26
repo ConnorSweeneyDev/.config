@@ -5,7 +5,7 @@ vim.keymap.set("n", "gr", "<CMD>Trouble lsp_references<CR>", { desc = "Go to ref
 vim.keymap.set("n", "gi", "<CMD>Trouble lsp_implementations<CR>", { desc = "Go to implementation(s)" })
 vim.keymap.set("n", "gy", "<CMD>Trouble lsp_type_definitions<CR>", { desc = "Go to type definition(s)" })
 vim.keymap.set("n", "gs", "<CMD>Trouble lsp_document_symbols<CR>", { desc = "Go to document symbol(s)" })
+vim.keymap.set("n", "<LEADER>tl", "<CMD>Trouble lsp<CR>", { desc = "View all lsp info for hovered symbol" })
 vim.keymap.set("n", "<LEADER>td", "<CMD>Trouble diagnostics filter.buf=0<CR>", { desc = "View diagnostics for buffer" })
 vim.keymap.set("n", "<LEADER>tD", "<CMD>Trouble diagnostics<CR>", { desc = "View diagnostics for all buffers" })
-vim.keymap.set("n", "<LEADER>tl", "<CMD>Trouble lsp<CR>", { desc = "View all lsp info for hovered symbol" })
 vim.keymap.set("n", "<LEADER>tc", "<CMD>Trouble close<CR>", { desc = "Close the trouble window" })
