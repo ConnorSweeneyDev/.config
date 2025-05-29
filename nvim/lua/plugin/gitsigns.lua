@@ -9,8 +9,8 @@ gitsigns.setup({
   },
   signs_staged_enable = false,
   on_attach = function(bufnr)
-    vim.keymap.set("n", "]g", function() gitsigns.nav_hunk("next") end, { buffer = bufnr, desc = "Next hunk" })
-    vim.keymap.set("n", "[g", function() gitsigns.nav_hunk("prev") end, { buffer = bufnr, desc = "Previous hunk" })
+    vim.keymap.set({ "n", "v" }, "]g", function() gitsigns.nav_hunk("next") end, { buffer = bufnr, desc = "Next hunk" })
+    vim.keymap.set({ "n", "v" }, "[g", function() gitsigns.nav_hunk("prev") end, { buffer = bufnr, desc = "Prev hunk" })
     vim.keymap.set("n", "<LEADER>gd", gitsigns.preview_hunk, { buffer = bufnr, desc = "Preview hunk" })
   end,
 })

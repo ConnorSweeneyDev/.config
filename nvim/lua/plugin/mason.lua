@@ -197,6 +197,13 @@ Mason_util.setup_languages(require("mason-registry"), {
         filetypes = { "json", "jsonc" },
       },
     },
+    fmt = {
+      name = "prettier",
+      opts = {
+        cmd = { "prettier", "[|]", "--write" },
+        filetypes = { "json", "jsonc" },
+      },
+    },
   },
   ["SQL"] = {
     lsp = {
