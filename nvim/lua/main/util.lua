@@ -425,6 +425,8 @@ Lualine_util.dynamic_path = function()
     path = string.gsub(path, "^list:///", "")
   elseif string.match(filetype, "qf") then
     path = "quickfix"
+  elseif string.match(filetype, "trouble") then
+    path = "trouble"
   elseif string.match(filetype, "lazy") then
     path = "lazy"
   elseif string.match(filetype, "harpoon") then
