@@ -22,21 +22,27 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = event.buf, desc = "Popup hover" })
     vim.keymap.set(
       "n",
+      "<LEADER>f",
+      function() vim.diagnostic.open_float({ scope = "cursor" }) end,
+      { buffer = event.buf, desc = "Show diagnostic under cursor" }
+    )
+    vim.keymap.set(
+      "n",
       "<LEADER>e",
       function() Diagnostic_util.display_virtual_line() end,
-      { buffer = event.buf, desc = "Show diagnostics under cursor" }
+      { buffer = event.buf, desc = "Show diagnostics on current line" }
     )
     vim.keymap.set(
-      "n",
+      { "n", "v" },
       "]d",
       function() Diagnostic_util.jump_virtual_line(1) end,
-      { buffer = event.buf, desc = "Go to next diagnostic and show it" }
+      { buffer = event.buf, desc = "Go to next diagnostic and show the ones on the current line" }
     )
     vim.keymap.set(
-      "n",
+      { "n", "v" },
       "[d",
       function() Diagnostic_util.jump_virtual_line(-1) end,
-      { buffer = event.buf, desc = "Go to previous diagnostic and show it" }
+      { buffer = event.buf, desc = "Go to previous diagnostic and show the ones on the current line" }
     )
   end,
 })
