@@ -625,28 +625,25 @@ Neogit_util.copy_current_file_url = function(use_line_number)
   local buffer_content = vim.api.nvim_buf_get_lines(0, 0, -1, false)
   local head_content = vim.fn.systemlist('git show HEAD:"' .. git_file_path .. '"')
   local context_threshold = 10
-  local search_start = math.max(line_number - context_threshold, 1)
   local found_line_number = false
-  for i = search_start, line_number do
-    local buffer_snippet = table.concat(buffer_content, "\n", i, line_number)
-    local should_break = false
-    for j = 1, #head_content - (line_number - i) do
-      local head_snippet = table.concat(head_content, "\n", j, j + (line_number - i))
+  for context = context_threshold, 0, -1 do
+    local start_line = math.max(line_number - context, 1)
+    local end_line = math.min(line_number + context, #buffer_content)
+    local snippet_length = end_line - start_line
+    local buffer_snippet = table.concat(buffer_content, "\n", start_line, end_line)
+    for j = 1, #head_content - snippet_length do
+      local head_snippet = table.concat(head_content, "\n", j, j + snippet_length)
       if buffer_snippet == head_snippet then
-        repo_url = repo_url .. "#L" .. (j + (line_number - i))
-        should_break = true
+        repo_url = repo_url .. "#L" .. (j + (line_number - start_line))
+        vim.fn.setreg("+", repo_url)
+        vim.notify("Copied: " .. repo_url)
         found_line_number = true
         break
       end
     end
-    if should_break then break end
+    if found_line_number then break end
   end
-  if not found_line_number then
-    vim.notify("Line not in HEAD!", "error")
-    return
-  end
-  vim.fn.setreg("+", repo_url)
-  vim.notify("Copied: " .. repo_url)
+  if not found_line_number then vim.notify("Line not in HEAD!", "error") end
 end
 
 ----------------------------------------------------------------------------------------------------
