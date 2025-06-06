@@ -626,20 +626,24 @@ Neogit_util.copy_current_file_url = function(use_line_number)
   local head_content = vim.fn.systemlist('git show HEAD:"' .. git_file_path .. '"')
   local context_threshold = 10
   local found_line_number = false
-  for context = context_threshold, 0, -1 do
-    local start_line = math.max(line_number - context, 1)
-    local end_line = math.min(line_number + context, #buffer_content)
-    local snippet_length = end_line - start_line
-    local buffer_snippet = table.concat(buffer_content, "\n", start_line, end_line)
-    for j = 1, #head_content - snippet_length do
-      local head_snippet = table.concat(head_content, "\n", j, j + snippet_length)
-      if buffer_snippet == head_snippet then
-        repo_url = repo_url .. "#L" .. (j + (line_number - start_line))
-        vim.fn.setreg("+", repo_url)
-        vim.notify("Copied: " .. repo_url)
-        found_line_number = true
-        break
+  for total_context = context_threshold, 0, -1 do
+    for above = total_context, 0, -1 do
+      local below = total_context - above
+      local start_line = math.max(line_number - above, 1)
+      local end_line = math.min(line_number + below, #buffer_content)
+      local snippet_length = end_line - start_line
+      local buffer_snippet = table.concat(buffer_content, "\n", start_line, end_line)
+      for j = 1, #head_content - snippet_length do
+        local head_snippet = table.concat(head_content, "\n", j, j + snippet_length)
+        if buffer_snippet == head_snippet then
+          repo_url = repo_url .. "#L" .. (j + (line_number - start_line))
+          vim.fn.setreg("+", repo_url)
+          vim.notify("Copied: " .. repo_url)
+          found_line_number = true
+          break
+        end
       end
+      if found_line_number then break end
     end
     if found_line_number then break end
   end
