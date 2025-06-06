@@ -38,3 +38,15 @@ require("neogit").setup({
 vim.keymap.set("n", "<LEADER>gs", function() Neogit_util.open_status_menu() end, { desc = "Open Neogit" })
 vim.keymap.set("n", "<LEADER>gr", "<CMD>!git restore %<CR><CR>", { desc = "Git restore the current file" })
 vim.keymap.set("n", "<LEADER>gR", "<CMD>!git restore .<CR><CR>", { desc = "Git restore the current directory" })
+vim.keymap.set(
+  "n",
+  "<C-g>",
+  function() Neogit_util.copy_current_file_url(false) end,
+  { desc = "Copy current file url" }
+)
+vim.keymap.set(
+  "n",
+  "g<C-g>",
+  function() Neogit_util.copy_current_file_url(true) end,
+  { desc = "Copy current file url with line number anchor" }
+)

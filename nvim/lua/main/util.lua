@@ -574,6 +574,80 @@ Neogit_util.close_status_menu = function(file_explorer)
     vim.api.nvim_input("<C-o>")
   end
 end
+Neogit_util.copy_current_file_url = function(use_line_number)
+  local relative_path = vim.fn.expand("%:p")
+  local output = vim.fn.systemlist(table.concat({
+    "git rev-parse --is-inside-work-tree && ",
+    'git ls-tree HEAD -- "' .. relative_path .. '" && ',
+    "git config --get remote.origin.url && ",
+    "git rev-parse --abbrev-ref HEAD && ",
+    'git ls-files --full-name "' .. relative_path .. '"',
+  }, " "))
+  local is_git_repo = false
+  local exists_in_head = false
+  local repo_url = ""
+  local branch_name = ""
+  local git_file_path = ""
+  local count = 1
+  for _, line in ipairs(output) do
+    if count == 1 then
+      if line:gsub("\n", "") == "true" then is_git_repo = true end
+    elseif count == 2 then
+      if line:find("blob") and vim.bo.filetype ~= "netrw" then exists_in_head = true end
+    elseif count == 3 then
+      repo_url = line
+        :gsub("\n", "")
+        :gsub("git@github.com:", "https://github.com/")
+        :gsub("git@gitlab.com:", "https://gitlab.com/")
+        :gsub("%.git$", "")
+    elseif count == 4 then
+      branch_name = line:gsub("\n", "")
+    elseif count == 5 then
+      git_file_path = line:gsub("\n", "")
+    end
+    count = count + 1
+  end
+  if not is_git_repo then
+    vim.notify("Not in a git repository!", "error")
+    return
+  end
+  if not exists_in_head then
+    vim.notify("File not in HEAD!", "error")
+    return
+  end
+  repo_url = repo_url .. "/blob/" .. branch_name .. "/" .. git_file_path
+  if not use_line_number then
+    vim.fn.setreg("+", repo_url)
+    vim.notify("Copied: " .. repo_url)
+    return
+  end
+  local line_number = vim.fn.line(".")
+  local buffer_content = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local head_content = vim.fn.systemlist('git show HEAD:"' .. git_file_path .. '"')
+  local context_threshold = 10
+  local search_start = math.max(line_number - context_threshold, 1)
+  local found_line_number = false
+  for i = search_start, line_number do
+    local buffer_snippet = table.concat(buffer_content, "\n", i, line_number)
+    local should_break = false
+    for j = 1, #head_content - (line_number - i) do
+      local head_snippet = table.concat(head_content, "\n", j, j + (line_number - i))
+      if buffer_snippet == head_snippet then
+        repo_url = repo_url .. "#L" .. (j + (line_number - i))
+        should_break = true
+        found_line_number = true
+        break
+      end
+    end
+    if should_break then break end
+  end
+  if not found_line_number then
+    vim.notify("Line not in HEAD!", "error")
+    return
+  end
+  vim.fn.setreg("+", repo_url)
+  vim.notify("Copied: " .. repo_url)
+end
 
 ----------------------------------------------------------------------------------------------------
 
