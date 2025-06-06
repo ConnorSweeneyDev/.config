@@ -215,6 +215,21 @@ Language_util.open_ide = function()
   end
   vim.notify("IDE not configured for " .. current_filetype .. "!", "error")
 end
+Language_util.copy_display_text = function(use_filename)
+  vim.cmd('normal! "zy')
+  local text = vim.fn.getreg("z")
+  local relative_path = ""
+  local output = vim.fn.system('git ls-files --full-name "' .. vim.fn.expand("%:p") .. '"')
+  if output:find("fatal:") then
+    relative_path = vim.fn.expand("%:.")
+  else
+    relative_path = output:gsub("\n", "")
+  end
+  local result = ""
+  if use_filename then result = result .. "[" .. relative_path .. "]\n" end
+  result = result .. "```" .. vim.bo.filetype .. "\n" .. text .. (text:sub(-1) == "\n" and "```" or "\n```")
+  vim.fn.setreg("+", result)
+end
 Language_util.handle_text = function(files)
   local current_extension = vim.fn.expand("%:e")
   local current_filetype = vim.bo.filetype
@@ -575,13 +590,13 @@ Neogit_util.close_status_menu = function(file_explorer)
   end
 end
 Neogit_util.copy_current_file_url = function(use_line_number)
-  local relative_path = vim.fn.expand("%:p")
+  local path = vim.fn.expand("%:p")
   local output = vim.fn.systemlist(table.concat({
     "git rev-parse --is-inside-work-tree && ",
-    'git ls-tree HEAD -- "' .. relative_path .. '" && ',
+    'git ls-tree HEAD -- "' .. path .. '" && ',
     "git config --get remote.origin.url && ",
     "git rev-parse --abbrev-ref HEAD && ",
-    'git ls-files --full-name "' .. relative_path .. '"',
+    'git ls-files --full-name "' .. path .. '"',
   }, " "))
   local is_git_repo = false
   local exists_in_head = false
