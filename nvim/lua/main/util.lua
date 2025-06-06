@@ -215,9 +215,18 @@ Language_util.open_ide = function()
   end
   vim.notify("IDE not configured for " .. current_filetype .. "!", "error")
 end
-Language_util.copy_display_text = function(use_filename)
+Language_util.copy_markdown_code = function(use_line_number)
   vim.cmd('normal! "zy')
   local text = vim.fn.getreg("z")
+  local numbered_lines = {}
+  if use_line_number then
+    local lines = vim.fn.split(text, "\n")
+    for index, line in ipairs(lines) do
+      local spaces = string.rep(" ", #tostring(#lines) - #tostring(index))
+      table.insert(numbered_lines, index .. spaces .. " | " .. line)
+    end
+    text = table.concat(numbered_lines, "\n")
+  end
   local relative_path = ""
   local output = vim.fn.system('git ls-files --full-name "' .. vim.fn.expand("%:p") .. '"')
   if output:find("fatal:") then
@@ -226,8 +235,15 @@ Language_util.copy_display_text = function(use_filename)
     relative_path = output:gsub("\n", "")
   end
   local result = ""
-  if use_filename then result = result .. "[" .. relative_path .. "]\n" end
-  result = result .. "```" .. vim.bo.filetype .. "\n" .. text .. (text:sub(-1) == "\n" and "```" or "\n```")
+  result = result
+    .. "`["
+    .. relative_path
+    .. "]`\n"
+    .. "```"
+    .. vim.bo.filetype
+    .. "\n"
+    .. text
+    .. (text:sub(-1) == "\n" and "```" or "\n```")
   vim.fn.setreg("+", result)
 end
 Language_util.handle_text = function(files)
