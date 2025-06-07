@@ -1,6 +1,7 @@
 require("plugin.telescope")
 require("plugin.undotree")
 require("plugin.yanky")
+require("plugin.surround")
 require("plugin.language")
 require("plugin.treesitter")
 require("plugin.mason")

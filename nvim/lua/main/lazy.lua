@@ -8,6 +8,7 @@ require("lazy").setup({
   { "nvim-telescope/telescope-ui-select.nvim" },
   { "mbbill/undotree" },
   { "gbprod/yanky.nvim" },
+  { "echasnovski/mini.surround" },
   { "kevinhwang91/nvim-bqf" },
   { "itchyny/vim-qfedit" },
   { "nvim-tree/nvim-web-devicons" },
