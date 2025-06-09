@@ -533,7 +533,6 @@ end
 
 Mason_util = {}
 Mason_util.setup_languages = function(mason_registry, configs)
-  mason_registry.refresh()
   for _, config in pairs(configs) do
     if config.lsp ~= nil and config.lsp ~= {} then
       if config.lsp.name ~= "*" and not mason_registry.is_installed(config.lsp.name) then
