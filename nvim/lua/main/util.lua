@@ -44,6 +44,15 @@ General_util.get_patterns_from_gitignore = function()
   end
   return patterns
 end
+General_util.get_input = function()
+  local ok, character = pcall(vim.fn.getcharstr)
+  local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
+  if ok and (character ~= esc) then
+    return character
+  else
+    return nil
+  end
+end
 
 ----------------------------------------------------------------------------------------------------
 
@@ -518,15 +527,6 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Leap_util = {}
-Leap_util.get_input = function()
-  local ok, character = pcall(vim.fn.getcharstr)
-  local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
-  if ok and (character ~= esc) then
-    return character
-  else
-    return nil
-  end
-end
 Leap_util.regex_by_word_start = function(word, start_position)
   local substitution = string.sub(word, start_position)
   local regex = vim.regex("\\k\\+")
@@ -549,7 +549,7 @@ Leap_util.get_match_positions = function(targets, line_number, character)
   return targets
 end
 Leap_util.leap_by_word = function(leap)
-  local character = Leap_util.get_input()
+  local character = General_util.get_input()
   if character == nil then return nil end
   local window_info = vim.fn.getwininfo(vim.api.nvim_get_current_win())[1]
   local start_line = window_info.topline
@@ -571,7 +571,7 @@ Leap_util.leap_by_word = function(leap)
   if #targets >= 1 then
     leap.leap({ targets = targets })
   else
-    vim.notify("No leap targets found!", "error")
+    vim.notify("No leap targets found for " .. character .. "!", "error")
   end
 end
 
