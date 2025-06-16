@@ -13,7 +13,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       name = "clangd",
       opts = {
         cmd = { "clangd", "--background-index" },
-        root_markers = { ".git", "compile_commands.json", "compile_flags.txt" },
+        root_markers = { "compile_commands.json", "compile_flags.txt", "CMakeLists.txt", ".git" },
         filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
       },
     },
@@ -35,7 +35,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       name = "glsl_analyzer",
       opts = {
         cmd = { "glsl_analyzer" },
-        root_markers = { ".git", "compile_commands.json", "compile_flags.txt" },
+        root_markers = { "compile_commands.json", "compile_flags.txt", "CMakeLists.txt", ".git" },
         filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
       },
     },
@@ -57,7 +57,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       name = "cmake-language-server",
       opts = {
         cmd = { "cmake-language-server" },
-        root_markers = { ".git", "compile_commands.json", "compile_flags.txt", "CMakeLists.txt" },
+        root_markers = { "compile_commands.json", "compile_flags.txt", "CMakeLists.txt", ".git" },
         filetypes = { "cmake" },
         init_options = { buildDirectory = "build" },
       },
@@ -80,7 +80,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       name = "pyright",
       opts = {
         cmd = { "pyright-langserver", "--stdio" },
-        root_markers = { ".git", "pyrightconfig.json", "pyproject.toml" },
+        root_markers = { "pyrightconfig.json", "pyproject.toml", ".git" },
         filetypes = { "python" },
         settings = {
           python = {
@@ -102,7 +102,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       name = "lua-language-server",
       opts = {
         cmd = { "lua-language-server" },
-        root_markers = { ".git", ".luarc.json", ".stylua.toml" },
+        root_markers = { ".luarc.json", ".stylua.toml", ".git" },
         filetypes = { "lua" },
         on_attach = Mason_util.custom_capabilities({ [{ "semanticTokensProvider" }] = {} }),
       },
@@ -120,7 +120,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       name = "html-lsp",
       opts = {
         cmd = { "vscode-html-language-server", "--stdio" },
-        root_markers = { ".git", "package.json" },
+        root_markers = { "package.json", ".git" },
         filetypes = { "html" },
         init_options = {
           configurationSection = { "html", "css", "javascript" },
@@ -141,7 +141,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       name = "typescript-language-server",
       opts = {
         cmd = { "typescript-language-server", "--stdio" },
-        root_markers = { ".git", "package.json" },
+        root_markers = { "package.json", ".git" },
         filetypes = {
           "javascript",
           "javascriptreact",
@@ -175,7 +175,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       name = "css-lsp",
       opts = {
         cmd = { "vscode-css-language-server", "--stdio" },
-        root_markers = { ".git", "package.json" },
+        root_markers = { "package.json", ".git" },
         filetypes = { "css", "scss", "less" },
         settings = { css = { validate = true }, scss = { validate = true }, less = { validate = true } },
       },
