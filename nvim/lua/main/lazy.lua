@@ -9,6 +9,7 @@ require("lazy").setup({
   { "mbbill/undotree" },
   { "gbprod/yanky.nvim" },
   { "echasnovski/mini.surround" },
+  { "ggandor/leap.nvim" },
   { "kevinhwang91/nvim-bqf" },
   { "itchyny/vim-qfedit" },
   { "nvim-tree/nvim-web-devicons" },
