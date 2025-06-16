@@ -569,7 +569,7 @@ Leap_util.leap_by_word = function(leap)
     function(target1, target2) return screen_rows_from_current(target1) < screen_rows_from_current(target2) end
   )
   if #targets >= 1 then
-    leap.leap({targets = targets})
+    leap.leap({ targets = targets })
   else
     vim.notify("No leap targets found!", "error")
   end
