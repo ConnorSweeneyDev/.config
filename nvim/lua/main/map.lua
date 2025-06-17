@@ -19,7 +19,6 @@ vim.keymap.set("n", "<C-A-k>", "3<C-w>+", { desc = "Move the window separator up
 vim.keymap.set("n", "<C-A-l>", "3<C-w>>", { desc = "Move the window separator right 3 columns" })
 vim.keymap.set({ "n", "v" }, "<LEADER>y", [["+y]], { desc = "Copy to the system clipboard" })
 vim.keymap.set({ "n", "v" }, "<LEADER>Y", [["+Y]], { desc = "Copy to the system clipboard" })
-vim.keymap.set({ "x", "v" }, "<LEADER>p", [["_dP]], { desc = "Paste over text without copying it" })
 vim.keymap.set({ "n", "v" }, "<LEADER>x", [["_x]], { desc = "Delete without copying" })
 vim.keymap.set({ "n", "v" }, "<LEADER>X", [["_X]], { desc = "Delete without copying" })
 vim.keymap.set({ "n", "v" }, "<LEADER>d", [["_d]], { desc = "Delete without copying" })
