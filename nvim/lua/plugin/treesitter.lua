@@ -20,6 +20,7 @@ require("nvim-treesitter.configs").setup({
     "sql",
     "xml",
     "json",
+    "yaml",
     "glsl",
     "cmake",
     "gitcommit",

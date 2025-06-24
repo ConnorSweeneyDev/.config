@@ -22,5 +22,6 @@ require("lazy").setup({
   { "lewis6991/gitsigns.nvim" },
   { "sindrets/diffview.nvim" },
   { "NeogitOrg/neogit" },
-  { "supermaven-inc/supermaven-nvim" },
+  { "github/copilot.vim" },
+  { "olimorris/codecompanion.nvim" },
 })

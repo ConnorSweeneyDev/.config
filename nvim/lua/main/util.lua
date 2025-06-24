@@ -244,10 +244,7 @@ Language_util.copy_markdown_code = function(use_line_number)
     relative_path = output:gsub("\n", "")
   end
   local result = ""
-  result = result
-    .. "`["
-    .. relative_path
-    .. "]`\n"
+  result = (relative_path ~= "" and ("`[" .. relative_path .. "]`\n") or "")
     .. "```"
     .. vim.bo.filetype
     .. "\n"
@@ -753,16 +750,4 @@ Diffview_util.fullscreen = function()
   window.col = math.floor(editor_width * 0.5 - window.width * 0.5)
   window.row = math.floor(editor_height * 0.5 - window.height * 0.5)
   return window
-end
-
-----------------------------------------------------------------------------------------------------
-
-Supermaven_util = {}
-Supermaven_util.disable_for_large_files = function(supermaven_api, max_size)
-  local size = vim.fn.getfsize(vim.fn.expand("%"))
-  if size > max_size and supermaven_api.is_running() then
-    vim.cmd("SupermavenStop")
-  elseif size <= max_size and not supermaven_api.is_running() then
-    vim.cmd("SupermavenStart")
-  end
 end

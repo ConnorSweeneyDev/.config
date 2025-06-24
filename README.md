@@ -112,7 +112,7 @@ Now, inside the `.setup` field start adding plugins, do so in the following patt
 The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
-  - plenary.nvim &rightarrow; Required by telescope.nvim and neogit.
+  - plenary.nvim &rightarrow; Required by telescope.nvim, neogit and codecompanion.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
 - Telescope &rightarrow; This should be installed at the same time as telescope-fzf-native.nvim and
   telescope-ui-select.nvim, `lua\plugin\telescope.lua` requires all three of these plugins to be installed.
@@ -131,8 +131,9 @@ The following plugins require some extra or different steps:
   `lua\plugin\mason.lua` and `lua\plugin\lsp.lua`. After following the pattern, you should see it downloading all the
   language servers and formatters specified in the mason file - view all the available downloads by running `:Mason`.
 - Neogit &rightarrow; This should be installed at the same time as diffview.nvim.
-- Supermaven &rightarrow; If you don't have a subscription, you can still use it by running `:SupermavenUseFree` when
-  prompted, otherwise you can follow the instructions to use it with a subscription.
+- Copilot &rightarrow; After following the pattern, run `:Copilot setup` and follow the instructions.
+- CodeCompanion &rightarrow; This should be installed after copilot has been set up, as it will use the copilot as the
+  model.
 
 After all of that, don't forget to include these files that are not tied to any plugins if you want them:
 - `lua\plugin\language.lua` is the file this configuration uses to set up language specific settings and mappings.
@@ -145,11 +146,6 @@ After all of that, don't forget to include these files that are not tied to any 
 > All global keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective
 > `lua\plugin\[PLUGIN].lua` files and you can go into deeper detail inside `lua\main\util.lua`. Furthermore, all
 > language specific settings and mappings can be edited at `lua\plugin\language.lua`.
-
-> [!NOTE]
-> I also have an extremely minimal setup (one file) that can be cloned and run on any machine that can run neovim. You
-> can find it [here](https://github.com/ConnorSweeneyDev/nvim-portable), I only use it when I have to use a remote
-> machine or someone else's computer.
 
 # Tiling Window Manager
 ### Dependencies

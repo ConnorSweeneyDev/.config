@@ -51,4 +51,5 @@ Color_util.initialize_colors("vscode", {
   "NeogitHunkHeaderHighlight guibg=bg",
   "NeogitFloatHeader guibg=bg",
   "NeogitFloatHeaderHighlight guibg=bg",
+  "CopilotSuggestion guibg=bg guifg=#888888",
 })
