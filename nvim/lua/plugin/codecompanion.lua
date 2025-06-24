@@ -24,8 +24,7 @@ require("codecompanion").setup({
     diff = { layout = "horizontal" },
   },
 })
-vim.keymap.set("n", "<leader>ac", "<CMD>CodeCompanionChat<CR>", { desc = "Open CodeCompanion" })
-vim.keymap.set("v", "<leader>ac", "<CMD>'<,'>CodeCompanionChat<CR>", { desc = "Open CodeCompanion with selection" })
-vim.keymap.set("v", "<leader>al", "<CMD>'<,'>CodeCompanion /lsp<CR>", { desc = "Run CodeCompanion lsp" })
-vim.keymap.set("v", "<leader>ae", "<CMD>'<,'>CodeCompanion /explain<CR>", { desc = "Run CodeCompanion explain" })
-vim.keymap.set("v", "<leader>ai", "<CMD>'<,'>CodeCompanion<CR>", { desc = "Run CodeCompanion inline" })
+vim.keymap.set({ "n", "v" }, "<LEADER>ai", "<CMD>CodeCompanion<CR>", { desc = "Run CodeCompanion inline" })
+vim.keymap.set({ "n", "v" }, "<LEADER>ac", "<CMD>CodeCompanionChat<CR>", { desc = "Open CodeCompanion chat" })
+vim.keymap.set({ "n", "v" }, "<LEADER>al", "<CMD>CodeCompanion /lsp<CR>", { desc = "Run CodeCompanion lsp" })
+vim.keymap.set({ "n", "v" }, "<LEADER>ae", "<CMD>CodeCompanion /explain<CR>", { desc = "Run CodeCompanion explain" })
