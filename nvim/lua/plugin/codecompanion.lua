@@ -1,16 +1,19 @@
 require("codecompanion").setup({
   strategies = {
     chat = {
+      adapter = "copilot",
       keymaps = {
         close = { modes = { n = "ZZ" } },
       },
     },
     inline = {
+      adapter = "copilot",
       keymaps = {
         accept_change = { modes = { n = "<LEADER>aa" } },
         reject_change = { modes = { n = "<LEADER>ar" } },
       },
     },
+    cmd = { adapter = "copilot" },
   },
   display = {
     chat = {
