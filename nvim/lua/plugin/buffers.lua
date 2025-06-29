@@ -1,4 +1,4 @@
-Buffer_util.set_parameters({ "/program", "/asset/shader", "/src", "/lua" }, {
+Buffer_util.set_targets({ "/program", "/asset/shader", "/src", "/lua" }, {
   "*.cpp",
   "*.hpp",
   "*.inl",
