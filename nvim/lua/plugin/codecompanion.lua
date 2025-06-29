@@ -1,4 +1,13 @@
 require("codecompanion").setup({
+  -- Use if you want to run locally, change adapters to "qwen3" instead of copilot and run a local server using ollama.
+  -- adapters = {
+  --   qwen3 = function()
+  --     return require("codecompanion.adapters").extend("ollama", {
+  --       name = "qwen3",
+  --       schema = { model = { default = "qwen3:8b" } },
+  --     })
+  --   end,
+  -- },
   strategies = {
     chat = {
       adapter = "copilot",
