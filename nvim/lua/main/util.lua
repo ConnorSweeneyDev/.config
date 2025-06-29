@@ -472,8 +472,6 @@ Lualine_util.dynamic_path = function()
     path = "notify"
   elseif string.match(filetype, "noice") then
     path = "noice"
-  elseif string.match(filetype, "TelescopePrompt") then
-    path = "telescope"
   elseif string.match(filetype, "gitcommit") then
     path = "neogit\\commit"
   elseif string.find(filetype, "Neogit") then
@@ -586,6 +584,24 @@ Oil_util.open_on_startup = function()
       break
     end
   end
+end
+
+----------------------------------------------------------------------------------------------------
+
+Fzf_util = {}
+Fzf_util.generate_fd_opts = function(opts, ignore_patterns)
+  local result = opts
+  for _, pattern in ipairs(ignore_patterns) do
+    result = result .. " --exclude " .. pattern
+  end
+  return result
+end
+Fzf_util.generate_rg_opts = function(opts, ignore_patterns)
+  local result = opts
+  for _, pattern in ipairs(ignore_patterns) do
+    result = result .. ' -g "!' .. pattern .. '"'
+  end
+  return result
 end
 
 ----------------------------------------------------------------------------------------------------

@@ -112,11 +112,8 @@ Now, inside the `.setup` field start adding plugins, do so in the following patt
 The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
-  - plenary.nvim &rightarrow; Required by telescope.nvim, neogit and codecompanion.nvim.
+  - plenary.nvim &rightarrow; Required by neogit and codecompanion.nvim.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
-- Telescope &rightarrow; This should be installed at the same time as telescope-fzf-native.nvim and
-  telescope-ui-select.nvim, `lua\plugin\telescope.lua` requires all three of these plugins to be installed.
-- Yanky &rightarrow; This plugin requires telescope to be installed, so make sure to do that first.
 - Colorscheme &rightarrow; vscode.nvim's plugin file is is `lua\plugin\colors.lua`. You don't have to use that
   cholorscheme, but the file assumes you are and `lua\plugin\lualine.lua` is also set up to use the vscode colorscheme
   so you'll need to change those as well as the `lua\main\lazy.lua` file if you want a different scheme.

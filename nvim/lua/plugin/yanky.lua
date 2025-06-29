@@ -1,20 +1,12 @@
-require("telescope").load_extension("yank_history")
 require("yanky").setup({
   picker = {
-    select = { action = nil },
-    telescope = {
-      mappings = {
-        i = {
-          ["<CR>"] = require("yanky.telescope.mapping").set_register(require("yanky.utils").get_default_register()),
-        },
-      },
-    },
+    select = { action = require("yanky.picker").actions.set_register(require("yanky.utils").get_default_register()) },
   },
 })
 vim.keymap.set(
   "n",
   "<LEADER>py",
-  "<CMD>Telescope yank_history<CR>",
+  "<CMD>YankyRingHistory<CR>",
   { noremap = true, silent = true },
   { desc = "Open Yanky" }
 )

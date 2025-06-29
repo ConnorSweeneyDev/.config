@@ -1,4 +1,4 @@
-require("plugin.telescope")
+require("plugin.fzf")
 require("plugin.undotree")
 require("plugin.yanky")
 require("plugin.surround")
