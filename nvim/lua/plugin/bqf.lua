@@ -1,6 +1,6 @@
 require("bqf").setup({
   preview = {
-    border = "single",
+    border = "none",
     win_height = 1000,
   },
 })
