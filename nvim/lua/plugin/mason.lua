@@ -25,9 +25,12 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
     ide = {
-      cmd = { "devenv", "[|]" },
-      targets = { "*.sln", "build/*.sln" },
-      filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
+      name = "Visual Studio",
+      opts = {
+        cmd = { "devenv", "[|]" },
+        targets = { "*.sln", "build/*.sln" },
+        filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
+      },
     },
   },
   ["GLSL"] = {
@@ -47,9 +50,12 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
     ide = {
-      cmd = { "devenv", "[|]" },
-      targets = { "*.sln", "build/*.sln" },
-      filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+      name = "Visual Studio",
+      opts = {
+        cmd = { "devenv", "[|]" },
+        targets = { "*.sln", "build/*.sln" },
+        filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+      },
     },
   },
   ["CMake"] = {
@@ -70,9 +76,12 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
     ide = {
-      cmd = { "devenv", "[|]" },
-      targets = { "*.sln", "build/*.sln" },
-      filetypes = { "cmake" },
+      name = "Visual Studio",
+      opts = {
+        cmd = { "devenv", "[|]" },
+        targets = { "*.sln", "build/*.sln" },
+        filetypes = { "cmake" },
+      },
     },
   },
   ["Python"] = {

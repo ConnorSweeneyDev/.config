@@ -620,7 +620,7 @@ Mason_util.setup_languages = function(mason_registry, configs)
       if not mason_registry.is_installed(config.fmt.name) then vim.cmd("MasonInstall " .. config.fmt.name) end
       table.insert(Language_util.formatters, config.fmt.opts)
     end
-    if config.ide ~= nil and config.ide ~= {} then table.insert(Language_util.ides, config.ide) end
+    if config.ide ~= nil and config.ide ~= {} then table.insert(Language_util.ides, config.ide.opts) end
   end
 end
 Mason_util.custom_capabilities = function(modified_capabilities)

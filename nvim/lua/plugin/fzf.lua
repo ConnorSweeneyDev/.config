@@ -15,11 +15,13 @@ local ignore_patterns = {
 }
 local fzf = require("fzf-lua")
 fzf.setup({
-  { "hide", "borderless" },
+  { "hide" },
   keymap = {
     builtin = {
-      ["<C-j>"] = "preview-down",
-      ["<C-k>"] = "preview-up",
+      ["<A-j>"] = "preview-down",
+      ["<A-k>"] = "preview-up",
+      ["<A-d>"] = "preview-page-down",
+      ["<A-u>"] = "preview-page-up",
       ["<C-r>"] = "preview-reset",
     },
     fzf = {
@@ -27,7 +29,17 @@ fzf.setup({
       ["ctrl-u"] = "half-page-up",
     },
   },
-  winopts = { fullscreen = true },
+  winopts = {
+    fullscreen = true,
+    border = { "▁", "▁", "▁", "▕", "▕", "", "", "" },
+    title_flags = false,
+    preview = {
+      layout = "horizontal",
+      horizontal = "right:70%",
+      border = { "▁", "▁", "▁", "", "", "", "▏", "▏" },
+    },
+  },
+  fzf_opts = { ["--layout"] = false },
   fzf_colors = true,
   files = {
     fd_opts = Fzf_util.generate_fd_opts("--color=never --hidden --type f", ignore_patterns),
@@ -39,6 +51,26 @@ fzf.setup({
       ignore_patterns
     ) .. " -e",
     hidden = true,
+    winopts = {
+      title = false,
+      border = { "▁", "▁", "▁", "", "", "", "", "" },
+      preview = {
+        layout = "vertical",
+        vertical = "up:60%",
+        border = { "▁", "▁", "▁", "", "", "", "", "" },
+      },
+    },
+  },
+  keymaps = {
+    winopts = {
+      title = false,
+      border = { "▁", "▁", "▁", "", "", "", "", "" },
+      preview = {
+        layout = "vertical",
+        vertical = "up:25%",
+        border = { "▁", "▁", "▁", "", "", "", "", "" },
+      },
+    },
   },
 })
 fzf.register_ui_select()
