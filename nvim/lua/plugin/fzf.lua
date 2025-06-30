@@ -29,9 +29,11 @@ fzf.setup({
       ["ctrl-u"] = "half-page-up",
     },
   },
+  fzf_opts = { ["--layout"] = false },
+  fzf_colors = true,
   winopts = {
     fullscreen = true,
-    border = { "▁", "▁", "▁", "▕", "▕", "", "", "" },
+    border = { "▁", "▁", "▁", "", "", "", "", "" },
     title_flags = false,
     preview = {
       layout = "horizontal",
@@ -39,11 +41,10 @@ fzf.setup({
       border = { "▁", "▁", "▁", "", "", "", "▏", "▏" },
     },
   },
-  fzf_opts = { ["--layout"] = false },
-  fzf_colors = true,
   files = {
     fd_opts = Fzf_util.generate_fd_opts("--color=never --hidden --type f", ignore_patterns),
     rg_opts = Fzf_util.generate_rg_opts("--color=never --hidden --files", ignore_patterns),
+    winopts = { border = { "▁", "▁", "▁", "▕", "▕", "", "", "" } },
   },
   grep = {
     rg_opts = Fzf_util.generate_rg_opts(
@@ -53,7 +54,6 @@ fzf.setup({
     hidden = true,
     winopts = {
       title = false,
-      border = { "▁", "▁", "▁", "", "", "", "", "" },
       preview = {
         layout = "vertical",
         vertical = "up:60%",
@@ -61,10 +61,11 @@ fzf.setup({
       },
     },
   },
+  git = { files = { winopts = { border = { "▁", "▁", "▁", "▕", "▕", "", "", "" } } } },
+  buffers = { winopts = { border = { "▁", "▁", "▁", "▕", "▕", "", "", "" } } },
   keymaps = {
     winopts = {
       title = false,
-      border = { "▁", "▁", "▁", "", "", "", "", "" },
       preview = {
         layout = "vertical",
         vertical = "up:25%",
@@ -72,6 +73,7 @@ fzf.setup({
       },
     },
   },
+  helptags = { winopts = { border = { "▁", "▁", "▁", "▕", "▕", "", "", "" } } },
 })
 fzf.register_ui_select()
 vim.keymap.set("n", "<LEADER>pf", function() fzf.files() end, { desc = "Find files in project" })
