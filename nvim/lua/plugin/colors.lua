@@ -7,6 +7,7 @@ Color_util.initialize_colors("vscode", {
   "VertSplit guibg=bg",
   "TabLineSel guibg=bg",
   "Pmenu guibg=bg",
+  "FzfLuaBorder guibg=bg guifg=#5a5a5a",
   "Directory guibg=bg",
   "Question guibg=bg",
   "Conceal guibg=bg",
