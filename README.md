@@ -112,9 +112,9 @@ Now, inside the `.setup` field start adding plugins, do so in the following patt
 The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
-  - plenary.nvim &rightarrow; Required by neogit and codecompanion.nvim.
+  - plenary.nvim &rightarrow; Required by neogit.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
-- Colorscheme &rightarrow; vscode.nvim's plugin file is is `lua\plugin\colors.lua`. You don't have to use that
+- Colorscheme &rightarrow; vscode.nvim's plugin file is `lua\plugin\colors.lua`. You don't have to use that
   cholorscheme, but the file assumes you are and `lua\plugin\lualine.lua` is also set up to use the vscode colorscheme
   so you'll need to change those as well as the `lua\main\lazy.lua` file if you want a different scheme.
 - Treesitter &rightarrow; After following the pattern, you should see it compiling languages - don't touch your keyboard
@@ -129,8 +129,6 @@ The following plugins require some extra or different steps:
   language servers and formatters specified in the mason file - view all the available downloads by running `:Mason`.
 - Neogit &rightarrow; This should be installed at the same time as diffview.nvim.
 - Copilot &rightarrow; After following the pattern, run `:Copilot setup` and follow the instructions.
-- CodeCompanion &rightarrow; This should be installed after copilot has been set up, as it will use the copilot as the
-  model.
 
 After all of that, don't forget to include these files that are not tied to any plugins if you want them:
 - `lua\plugin\language.lua` is the file this configuration uses to set up language specific settings and mappings.
@@ -230,7 +228,7 @@ recommended settings, and also put the `vs2022\.vsvimrc` file in your `$Env:USER
 some good vim mode bindings.
 
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in
-`C:\Program Files\Dependencies`, make that folder is an environment variable, then right click `DependenciesGui.exe` and
+`C:\Program Files\Dependencies`, make that folder an environment variable, then right click `DependenciesGui.exe` and
 select "Create shortcut" and rename it to `Dependencies`, then move that to `C:\ProgramData\Microsoft\Windows\Start
 Menu\Programs`.
 
