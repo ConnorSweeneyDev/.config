@@ -2,6 +2,7 @@
 
 #t::Run("pwsh -NoProfile -Command wezterm", , "Hide")
 #f::Run("pwsh -NoProfile -Command firefox", , "Hide")
+#b::Run("pwsh -NoProfile -Command explorer shell:RecycleBinFolder", , "Hide")
 #d::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Discord.lnk")
 #s::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam\Steam.lnk")
 

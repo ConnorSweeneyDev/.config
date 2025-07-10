@@ -54,23 +54,3 @@ vim.keymap.set(
   function() Quickfix_util.grep_selection(General_util.find_target_directory()) end,
   { desc = "Grep project for selection" }
 )
-vim.keymap.set("n", "<C-w>e", "<CMD>!explorer .<CR><CR>", { desc = "Open the current directory in the file explorer" })
-vim.keymap.set("n", "<LEADER>v", "<CMD>!sh script/clean.sh<CR>", { desc = "Execute the clean script" })
-vim.keymap.set(
-  "n",
-  "<LEADER>b",
-  '<CMD>!wezterm cli spawn --cwd . pwsh -NoExit -Command "sh script/build.sh"<CR><CR>',
-  { desc = "Execute the build script" }
-)
-vim.keymap.set(
-  "n",
-  "<LEADER>n",
-  '<CMD>!wezterm cli spawn --cwd . pwsh -NoExit -Command "sh script/run.sh"<CR><CR>',
-  { desc = "Execute the run script" }
-)
-vim.keymap.set(
-  "n",
-  "<LEADER>m",
-  '<CMD>!wezterm cli spawn --cwd . pwsh -Command "sh script/debug.sh"<CR><CR>',
-  { desc = "Execute the debug script" }
-)

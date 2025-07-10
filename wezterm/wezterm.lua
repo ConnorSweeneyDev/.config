@@ -10,21 +10,63 @@ config.animation_fps = 144
 
 ----------------------------------------------------------------------------------------------------
 
+config.leader = { key = "w", mods = "ALT", timeout_milliseconds = 1000 }
 config.keys = {
-  { key = "a", mods = "SHIFT | ALT", action = wezterm.action.ActivateTab(0) },
-  { key = "s", mods = "SHIFT | ALT", action = wezterm.action.ActivateTab(1) },
-  { key = "d", mods = "SHIFT | ALT", action = wezterm.action.ActivateTab(2) },
-  { key = "f", mods = "SHIFT | ALT", action = wezterm.action.ActivateTab(3) },
-  { key = "h", mods = "SHIFT | ALT", action = wezterm.action.ActivateTabRelative(-1) },
-  { key = "l", mods = "SHIFT | ALT", action = wezterm.action.ActivateTabRelative(1) },
-  { key = "z", mods = "SHIFT | ALT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
-  { key = "c", mods = "SHIFT | ALT", action = wezterm.action.CopyTo("Clipboard") },
-  { key = "v", mods = "SHIFT | ALT", action = wezterm.action.PasteFrom("Clipboard") },
-  { key = "t", mods = "SHIFT | ALT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
-  { key = "w", mods = "SHIFT | ALT", action = wezterm.action.SpawnWindow },
-  { key = "j", mods = "SHIFT | ALT", action = wezterm.action.ScrollByPage(1) },
-  { key = "k", mods = "SHIFT | ALT", action = wezterm.action.ScrollByPage(-1) },
-  { key = "f", mods = "CTRL | ALT", action = wezterm.action.Search({ CaseSensitiveString = "" }) },
+  { key = "a", mods = "ALT | SHIFT", action = wezterm.action.ActivateTab(0) },
+  { key = "s", mods = "ALT | SHIFT", action = wezterm.action.ActivateTab(1) },
+  { key = "d", mods = "ALT | SHIFT", action = wezterm.action.ActivateTab(2) },
+  { key = "f", mods = "ALT | SHIFT", action = wezterm.action.ActivateTab(3) },
+  { key = "h", mods = "ALT | SHIFT", action = wezterm.action.ActivateTabRelative(-1) },
+  { key = "l", mods = "ALT | SHIFT", action = wezterm.action.ActivateTabRelative(1) },
+  { key = "z", mods = "ALT | SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+  { key = "t", mods = "ALT | SHIFT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+  { key = "w", mods = "ALT | SHIFT", action = wezterm.action.SpawnWindow },
+  { key = "j", mods = "ALT | SHIFT", action = wezterm.action.ScrollByPage(1) },
+  { key = "k", mods = "ALT | SHIFT", action = wezterm.action.ScrollByPage(-1) },
+  { key = "c", mods = "ALT | SHIFT", action = wezterm.action.CopyTo("Clipboard") },
+  { key = "v", mods = "ALT | SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
+  { key = "f", mods = "LEADER | ALT", action = wezterm.action.Search({ CaseSensitiveString = "" }) },
+  {
+    key = "e",
+    mods = "LEADER | ALT",
+    action = wezterm.action_callback(function(_, pane)
+      local cwd_url = pane:get_current_working_dir()
+      local cwd = cwd_url.file_path:sub(2)
+      wezterm.open_with(cwd)
+    end),
+  },
+  {
+    key = "v",
+    mods = "LEADER | ALT",
+    action = wezterm.action.SpawnCommandInNewTab({
+      args = { "pwsh", "-NoExit", "-Command", "sh", "script/clean.sh" },
+      domain = "CurrentPaneDomain",
+    }),
+  },
+  {
+    key = "b",
+    mods = "LEADER | ALT",
+    action = wezterm.action.SpawnCommandInNewTab({
+      args = { "pwsh", "-NoExit", "-Command", "sh", "script/build.sh" },
+      domain = "CurrentPaneDomain",
+    }),
+  },
+  {
+    key = "n",
+    mods = "LEADER | ALT",
+    action = wezterm.action.SpawnCommandInNewTab({
+      args = { "pwsh", "-NoExit", "-Command", "sh", "script/run.sh" },
+      domain = "CurrentPaneDomain",
+    }),
+  },
+  {
+    key = "m",
+    mods = "LEADER | ALT",
+    action = wezterm.action.SpawnCommandInNewTab({
+      args = { "pwsh", "-NoExit", "-Command", "sh", "script/debug.sh" },
+      domain = "CurrentPaneDomain",
+    }),
+  },
 }
 
 ----------------------------------------------------------------------------------------------------

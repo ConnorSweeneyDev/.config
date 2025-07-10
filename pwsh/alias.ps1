@@ -1,16 +1,11 @@
-Set-Alias -Name "c" -Value "clear"
-function q { exit }
-function e { explorer . }
-function b { explorer shell:RecycleBinFolder }
+function c { Clear-Host }
 function n { nvim . }
-function w { wezterm cli spawn --new-window --cwd $pwd } # Opens a new window at the current directory
-function t { wezterm cli spawn --cwd $pwd } # Opens a new tab at the current directory
 function v
 {
-  $solution = Get-ChildItem -Path (Get-Location) -Filter *.sln -File | Select-Object -First 1
+  $solution = Get-ChildItem -Path (Get-Location) -Filter *.sln -File -Recurse -Depth 1 | Select-Object -First 1
   if ($solution)
   {
-    $solutionName = $solution.Name
+    $solutionName = $solution.FullName
     devenv "$solutionName"
   }
   else { devenv . }

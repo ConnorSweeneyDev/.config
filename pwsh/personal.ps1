@@ -1,14 +1,12 @@
 function attend
 {
   cd D:\Python\AttendanceLogger
-  $p = Split-Path -leaf -path (Get-Location)
-  $Host.UI.RawUI.WindowTitle = "$p"
+  update
   python program\main.py
 }
 function music
 {
   cd E:\Custom\TerMusic
-  $p = Split-Path -leaf -path (Get-Location)
-  $Host.UI.RawUI.WindowTitle = "$p"
+  update
   .\TerMusic.exe
 }
