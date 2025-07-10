@@ -114,9 +114,8 @@ The following plugins require some extra or different steps:
   need, these are:
   - plenary.nvim &rightarrow; Required by neogit.
   - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
-- Colorscheme &rightarrow; vscode.nvim's plugin file is `lua\plugin\colors.lua`. You don't have to use that
-  cholorscheme, but the file assumes you are and `lua\plugin\lualine.lua` is also set up to use the vscode colorscheme
-  so you'll need to change those as well as the `lua\main\lazy.lua` file if you want a different scheme.
+- Vscode &rightarrow; If you are going to use a different colorscheme, you'll have to modify `lua\main\lazy.lua`,
+  `lua\plugin\vscode.lua` and `lua\plugin\lualine.lua` to the corresponding theme.
 - Treesitter &rightarrow; After following the pattern, you should see it compiling languages - don't touch your keyboard
   until this is finished, though it is common to get errors at this point, if you do, generally restarting neovim a few
   times and deleting any directories manually that it says it doesn't have permission to delete will let them all figure
