@@ -16,9 +16,9 @@ function prompt # Run update every prompt and use a custom prompt display
   $cPath      = "${esc}[38;2;10;122;202m"
   $cBranch    = "${esc}[38;2;197;134;192m"
   $cAdded     = "${esc}[38;2;106;153;85m"
+  $cUntracked = "${esc}[38;2;170;170;170m"
   $cModified  = "${esc}[38;2;220;220;170m"
   $cRemoved   = "${esc}[38;2;244;71;71m"
-  $cUntracked = "${esc}[38;2;150;150;150m"
   $cBracket   = "${esc}[38;2;120;120;120m"
   $cCommits   = "${esc}[38;2;255;175;0m"
   $isGit = git rev-parse --is-inside-work-tree
@@ -26,44 +26,42 @@ function prompt # Run update every prompt and use a custom prompt display
   {
     $branch = git rev-parse --abbrev-ref HEAD
     $status = git status --porcelain
+    $untrackedCount = 0
     $addedCount = 0
     $modifiedUnstagedCount = 0
-    $modifiedStagedCount = 0
     $removedUnstagedCount = 0
+    $modifiedStagedCount = 0
     $removedStagedCount = 0
-    $untrackedCount = 0
     $unpushedCommits = 0
     foreach ($line in $status)
     {
       $first = $line.Substring(0, 1)
       $second = $line.Substring(1, 1)
-      if ($first -eq 'A') { $addedCount++ }
-      elseif ($first -eq 'M') { $modifiedStagedCount++ }
-      elseif ($first -eq 'D') { $removedStagedCount++ }
+      if ($first -eq '?' -and $second -eq '?') { $untrackedCount++ }
+      elseif ($first -eq 'A') { $addedCount++ }
       elseif ($second -eq 'M') { $modifiedUnstagedCount++ }
       elseif ($second -eq 'D') { $removedUnstagedCount++ }
-      elseif ($first -eq '?' -and $second -eq '?') { $untrackedCount++ }
+      elseif ($first -eq 'M' -or $first -eq 'R') { $modifiedStagedCount++ }
+      elseif ($first -eq 'D') { $removedStagedCount++ }
     }
+    $unstagedChanges = @()
+    if ($untrackedCount -gt 0) { $unstagedChanges += "${cUntracked}?$untrackedCount${cReset}" }
+    if ($modifiedUnstagedCount -gt 0) { $unstagedChanges += "${cModified}~$modifiedUnstagedCount${cReset}" }
+    if ($removedUnstagedCount -gt 0) { $unstagedChanges += "${cRemoved}-$removedUnstagedCount${cReset}" }
     $stagedChanges = @()
     if ($addedCount -gt 0) { $stagedChanges += "$cAdded+$addedCount$cReset" }
     if ($modifiedStagedCount -gt 0) { $stagedChanges += "${cModified}~$modifiedStagedCount${cReset}" }
     if ($removedStagedCount -gt 0) { $stagedChanges += "${cRemoved}-$removedStagedCount${cReset}" }
-    $unstagedChanges = @()
-    if ($modifiedUnstagedCount -gt 0) { $unstagedChanges += "${cModified}~$modifiedUnstagedCount${cReset}" }
-    if ($removedUnstagedCount -gt 0) { $unstagedChanges += "${cRemoved}-$removedUnstagedCount${cReset}" }
-    if ($untrackedCount -gt 0) { $unstagedChanges += "${cUntracked}?$untrackedCount${cReset}" }
     $status = @()
     $status += "${cBranch}$branch${cReset}"
-    if ($stagedChanges.Count -gt 0) { $status += "${cBracket}{${cReset}" + ($stagedChanges -join " ") + "${cBracket}}${cReset}"}
     if ($unstagedChanges.Count -gt 0) { $status += "${cBracket}[${cReset}" + ($unstagedChanges -join " ") + "${cBracket}]${cReset}" }
+    if ($stagedChanges.Count -gt 0) { $status += "${cBracket}{${cReset}" + ($stagedChanges -join " ") + "${cBracket}}${cReset}"}
     try {
       $commitCount = git rev-list --count origin/$branch..HEAD
       if ($commitCount -gt 0) { $unpushedCommits = $commitCount }
       else { $unpushedCommits = 0 }
     }
-    catch {
-      $unpushedCommits = 0
-    }
+    catch { $unpushedCommits = 0 }
     $commits = @()
     if ($unpushedCommits -gt 0) { $commits += "${cCommits}^$unpushedCommits${cReset}" }
   }
