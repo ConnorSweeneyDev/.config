@@ -20,6 +20,7 @@ function prompt # Run update every prompt and use a custom prompt display
   $cRemoved   = "${esc}[38;2;244;71;71m"
   $cUntracked = "${esc}[38;2;150;150;150m"
   $cBracket   = "${esc}[38;2;120;120;120m"
+  $cCommits   = "${esc}[38;2;255;175;0m"
   $isGit = git rev-parse --is-inside-work-tree
   if ($isGit)
   {
@@ -31,6 +32,7 @@ function prompt # Run update every prompt and use a custom prompt display
     $removedUnstagedCount = 0
     $removedStagedCount = 0
     $untrackedCount = 0
+    $unpushedCommits = 0
     foreach ($line in $status)
     {
       $first = $line.Substring(0, 1)
@@ -54,9 +56,19 @@ function prompt # Run update every prompt and use a custom prompt display
     $status += "${cBranch}$branch${cReset}"
     if ($stagedChanges.Count -gt 0) { $status += "${cBracket}{${cReset}" + ($stagedChanges -join " ") + "${cBracket}}${cReset}"}
     if ($unstagedChanges.Count -gt 0) { $status += "${cBracket}[${cReset}" + ($unstagedChanges -join " ") + "${cBracket}]${cReset}" }
+    try {
+      $commitCount = git rev-list --count origin/$branch..HEAD
+      if ($commitCount -gt 0) { $unpushedCommits = $commitCount }
+      else { $unpushedCommits = 0 }
+    }
+    catch {
+      $unpushedCommits = 0
+    }
+    $commits = @()
+    if ($unpushedCommits -gt 0) { $commits += "${cCommits}^$unpushedCommits${cReset}" }
   }
   else { $status = "" }
-  return "${cPath}$pwd${cReset} $status`n${cPath}>${cReset} "
+  return "${cPath}$pwd${cReset} $status $commits`n${cPath}>${cReset} "
 }
 
 function d # Better rm - Usage: d <path1> <path2> ... <pathN>
