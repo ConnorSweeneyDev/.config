@@ -47,7 +47,7 @@ fzf.setup({
   },
   grep = {
     rg_opts = Fzf_util.generate_rg_opts(
-      "--column --line-number --no-heading --color=always --smart-case --max-columns=4096",
+      "--color=always --hidden --no-heading --line-number --column --max-columns=4096",
       ignore_patterns
     ) .. " -e",
     hidden = true,
