@@ -24,7 +24,7 @@ config.keys = {
   { key = "w", mods = "SHIFT | ALT", action = wezterm.action.SpawnWindow },
   { key = "j", mods = "SHIFT | ALT", action = wezterm.action.ScrollByPage(1) },
   { key = "k", mods = "SHIFT | ALT", action = wezterm.action.ScrollByPage(-1) },
-  { key = "f", mods = "ALT", action = wezterm.action.Search({ CaseSensitiveString = "" }) },
+  { key = "f", mods = "CTRL | ALT", action = wezterm.action.Search({ CaseSensitiveString = "" }) },
 }
 
 ----------------------------------------------------------------------------------------------------
