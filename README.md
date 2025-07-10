@@ -43,27 +43,10 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
   commented or self-explanatory so you can be sure of what you're doing.
 - Run `git config --system core.longpaths true` and ensure that `[PATH_TO_GIT]\bin` is in your path. After that you can
   use the following configuration in your `$Env:USERPROFILE\.gitconfig` file if you want:
-  ```
+  ```gitconfig
   [core]
     autocrlf = true
     editor = nvim
-  [alias]
-    i = init
-    ro = remote
-    rs = restore
-    re = reset
-    cl = clone
-    pl = pull
-    a = add
-    co = commit
-    ps = push
-    sm = submodule
-    b = branch
-    ch = checkout
-    m = merge
-    s = status
-    d = diff
-    l = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ```
 
 # Neovim
