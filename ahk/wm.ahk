@@ -1,7 +1,7 @@
 #SingleInstance Force
 
 #t::Run("pwsh -NoProfile -Command wezterm", , "Hide")
-#f::Run("pwsh -NoProfile -Command firefox", , "Hide")
+#f::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Firefox.lnk")
 #b::Run("pwsh -NoProfile -Command explorer shell:RecycleBinFolder", , "Hide")
 #d::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Discord.lnk")
 #s::Run("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam\Steam.lnk")
