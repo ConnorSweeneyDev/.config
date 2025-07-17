@@ -33,20 +33,20 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
   },
-  ["GLSL"] = {
+  ["GLSL/HLSL"] = {
     lsp = {
       name = "glsl_analyzer",
       opts = {
         cmd = { "glsl_analyzer" },
         root_markers = { "compile_commands.json", "compile_flags.txt", "CMakeLists.txt", ".git" },
-        filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+        filetypes = { "glsl", "hlsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
       },
     },
     fmt = {
       name = "clang-format",
       opts = {
         cmd = { "clang-format", "-i", "[|]" },
-        filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+        filetypes = { "glsl", "hlsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
       },
     },
     ide = {
@@ -54,7 +54,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       opts = {
         cmd = { "devenv", "[|]" },
         targets = { "*.sln", "build/*.sln" },
-        filetypes = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+        filetypes = { "glsl", "hlsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
       },
     },
   },
