@@ -93,8 +93,10 @@ Now, inside the `.setup` field start adding plugins, do so in the following patt
 The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
   need, these are:
-  - plenary.nvim &rightarrow; Required by neogit.
-  - nvim-web-devicons &rightarrow; Required by most plugins that use icons.
+  - Plenary &rightarrow; Required by neogit.
+  - Web-devicons &rightarrow; Required by most plugins that use icons.
+- Quicker &rightarrow; Should be installed at the same time as nvim-bqf, the `lua\plugin\quicker.lua` expects both of
+  these to be installed.
 - Vscode &rightarrow; If you are going to use a different colorscheme, you'll have to modify `lua\main\lazy.lua`,
   `lua\plugin\vscode.lua` and `lua\plugin\lualine.lua` to the corresponding theme.
 - Treesitter &rightarrow; After following the pattern, you should see it compiling languages - don't touch your keyboard

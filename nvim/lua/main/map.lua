@@ -30,27 +30,3 @@ vim.keymap.set("n", "<C-s>", ":%s/", { desc = "Substitution in the current buffe
 vim.keymap.set("v", "<LEADER>s", '"hy:%s/<C-r>h/<C-r>h', { desc = "Replace selection in the current buffer" })
 vim.keymap.set("v", "<C-s>", ":s/", { desc = "Substitution in the current selection" })
 vim.keymap.set("v", "<C-n>", ":normal ", { desc = "Perform normal mode actions for each line in the selection" })
-vim.keymap.set(
-  "n",
-  "<LEADER>qg",
-  function() Quickfix_util.grep_search(General_util.find_target_directory()) end,
-  { desc = "Grep project for search term" }
-)
-vim.keymap.set(
-  "n",
-  "<LEADER>qw",
-  function() Quickfix_util.grep_word(General_util.find_target_directory()) end,
-  { desc = "Grep project for word under cursor" }
-)
-vim.keymap.set(
-  "n",
-  "<LEADER>qW",
-  function() Quickfix_util.grep_full_word(General_util.find_target_directory()) end,
-  { desc = "Grep project for WORD under cursor" }
-)
-vim.keymap.set(
-  "v",
-  "<LEADER>q",
-  function() Quickfix_util.grep_selection(General_util.find_target_directory()) end,
-  { desc = "Grep project for selection" }
-)
