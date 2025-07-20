@@ -26,6 +26,7 @@ function prompt # Run update every prompt and use a custom prompt display
   {
     $branch = git rev-parse --abbrev-ref HEAD
     $status = git status --porcelain
+    $commitCount = git rev-list --count origin/$branch..HEAD
     $untrackedCount = 0
     $addedCount = 0
     $modifiedUnstagedCount = 0
@@ -56,17 +57,12 @@ function prompt # Run update every prompt and use a custom prompt display
     $status += "${cBranch}$branch${cReset}"
     if ($unstagedChanges.Count -gt 0) { $status += "${cBracket}[${cReset}" + ($unstagedChanges -join " ") + "${cBracket}]${cReset}" }
     if ($stagedChanges.Count -gt 0) { $status += "${cBracket}{${cReset}" + ($stagedChanges -join " ") + "${cBracket}}${cReset}"}
-    try {
-      $commitCount = git rev-list --count origin/$branch..HEAD
-      if ($commitCount -gt 0) { $unpushedCommits = $commitCount }
-      else { $unpushedCommits = 0 }
-    }
-    catch { $unpushedCommits = 0 }
-    $commits = @()
-    if ($unpushedCommits -gt 0) { $commits += "${cCommits}^$unpushedCommits${cReset}" }
+    if ($commitCount -gt 0) { $unpushedCommits = $commitCount }
+    else { $unpushedCommits = 0 }
+    if ($unpushedCommits -gt 0) { $status += "${cCommits}^$unpushedCommits${cReset}" }
   }
   else { $status = "" }
-  return "${cPath}$pwd${cReset} $status $commits`n${cPath}>${cReset} "
+  return "${cPath}$pwd${cReset} $status`n${cPath}>${cReset} "
 }
 
 function d # Better rm - Usage: d <path1> <path2> ... <pathN>
@@ -86,7 +82,7 @@ function fh # Searches your command history, sets your clipboard to the selected
   if (![string]::IsNullOrWhiteSpace($selected)) { Set-Clipboard $selected }
 }
 
-function fzf_files
+function fzf_files # Utility macro for setting up fzf for file searching
 {
   if ($args -eq "." -or $args.Count -eq 0) {}
   elseif ($args -eq "d") { cd D:\ }
@@ -103,7 +99,7 @@ function fzf_files
   $selected = fzf
   return $selected
 }
-function fzf_directories
+function fzf_directories # Utility macro for setting up fzf for directory searching
 {
   if ($args -eq "." -or $args.Count -eq 0) {}
   elseif ($args -eq "d") { cd D:\ }
@@ -121,7 +117,7 @@ function fzf_directories
   return $selected
 }
 
-function fi # Runs fzf searching files then cd's to the directory of the selected file - Usage: fzc [d | u | c]
+function fi # Runs fzf searching files then cd's to the directory of the selected file - Usage: fi [d | u | c]
 {
   $selected = fzf_files @args
   if ([string]::IsNullOrWhiteSpace($selected))
@@ -132,7 +128,7 @@ function fi # Runs fzf searching files then cd's to the directory of the selecte
   $parent = Split-Path -parent -path $selected
   cd $parent
 }
-function di # Runs fzf searching directories then cd's to the selected directory - Usage: dzc [d | u | c]
+function di # Runs fzf searching directories then cd's to the selected directory - Usage: di [d | u | c]
 {
   $selected = fzf_directories @args
   if ([string]::IsNullOrWhiteSpace($selected))
