@@ -478,6 +478,8 @@ Lualine_util.dynamic_path = function()
     path = "neogit\\" .. string.lower(string.gsub(filetype, "Neogit", ""))
   elseif string.find(filetype, "Diffview") then
     path = "diffview\\" .. string.lower(string.gsub(filetype, "Diffview", ""))
+  elseif string.find(path, "diffview://null") then
+    path = "diffview\\null"
   elseif string.find(path, "diffview:///") then
     path = "diffview\\panel"
   elseif string.find(path, ".git/:0:/") or string.find(path, ".git//:0:") then
