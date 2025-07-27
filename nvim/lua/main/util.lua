@@ -668,9 +668,7 @@ Neogit_util = {}
 Neogit_util.last_buffer = nil
 Neogit_util.open_status_menu = function()
   Neogit_util.last_buffer = vim.bo.filetype
-  local cwd = vim.fn.getcwd()
-  vim.cmd("Neogit")
-  vim.api.nvim_set_current_dir(cwd)
+  vim.cmd("Neogit cwd=" .. vim.fn.getcwd())
 end
 Neogit_util.close_status_menu = function(file_explorer)
   if Neogit_util.last_buffer == "netrw" or Neogit_util.last_buffer == "oil" or Neogit_util.last_buffer == nil then
