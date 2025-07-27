@@ -183,8 +183,7 @@ Language_util.format = function(files)
         else
           vim.cmd("wa")
         end
-        vim.cmd("!" .. command)
-        vim.api.nvim_input("<CR>")
+        vim.cmd("silent !" .. command)
         return
       end
     end
@@ -216,8 +215,7 @@ Language_util.open_ide = function()
           end
           command = command .. command_part .. (next(opts.cmd, _) and " " or "")
         end
-        vim.cmd("!" .. command)
-        vim.api.nvim_input("<CR>")
+        vim.cmd("silent !" .. command)
         return
       end
     end
@@ -225,7 +223,7 @@ Language_util.open_ide = function()
   vim.notify("IDE not configured for " .. current_filetype .. "!", "error")
 end
 Language_util.copy_markdown_code = function(use_line_number)
-  vim.cmd('normal! "zy')
+  vim.cmd('silent normal! "zy')
   local text = vim.fn.getreg("z")
   local numbered_lines = {}
   if use_line_number then
