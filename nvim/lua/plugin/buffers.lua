@@ -4,6 +4,8 @@ Buffer_util.set_targets({ "/program", "/resource/shader", "/src", "/lua" }, {
   "*.inl",
   "*.glsl",
   "*.hlsl",
+  "*.vert",
+  "*.frag",
   "*.c",
   "*.h",
   "*.py",
