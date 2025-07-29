@@ -504,14 +504,14 @@ Lualine_util.dynamic_path = function()
     end
     path = string.sub(path, 0, 1) .. ":" .. string.sub(path, 2)
     path = string.gsub(path, "/", "\\")
-    if cwd ~= root .. ":\\" then path = string.gsub(path, cwd, cwd:match("^.*\\(.*)$")) end
+    if cwd ~= ":\\" then path = string.gsub(path, cwd, cwd:match("^.*\\(.*)$")) end
     if trash then path = "trash -> " .. path end
     if vim.bo.modified then path = path .. modified_symbol end
   else
     if cwd:match("^.*\\(.*)$") == nil or cwd:match("^.*\\(.*)$") == "" then
-      if not string.find(path, root .. ":\\") then path = root .. ":\\" .. path end
+      if not string.find(path, ":\\") then path = root .. ":\\" .. path end
     else
-      if not string.find(path, root .. ":\\") then path = cwd:match("^.*\\(.*)$") .. "\\" .. path end
+      if not string.find(path, ":\\") then path = cwd:match("^.*\\(.*)$") .. "\\" .. path end
     end
     if vim.bo.modified then path = path .. modified_symbol end
   end
