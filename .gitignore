@@ -1,6 +1,7 @@
 # Unrelated files
 coc/*
 github-copilot/*
+gh/*
 jgit/*
 nvim-data/*
 portal/*

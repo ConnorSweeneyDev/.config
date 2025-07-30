@@ -27,6 +27,7 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 - WezTerm &rightarrow; Run `winget install --id wez.wezterm`.
 - PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`.
+- Github CLI &rightarrow; Run `winget install --id GitHub.cli`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
 - bat &rightarrow; Run `winget install sharkdp.bat`.
 - fzf &rightarrow; Run `winget install junegunn.fzf`.
@@ -40,12 +41,10 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
   to me. Other than that, skim the rest of the files and remove anything you know you won't need - everything is
   commented or self-explanatory so you can be sure of what you're doing.
 - Run `git config --system core.longpaths true` and ensure that `[PATH_TO_GIT]\bin` is in your path. After that you can
-  use the following configuration in your `$Env:USERPROFILE\.gitconfig` file if you want:
-  ```gitconfig
-  [core]
-    autocrlf = true
-    editor = nvim
-  ```
+  run `git config --global user.name "[YOUR_NAME]"` and `git config --global user.email "[YOUR_EMAIL]"`, followed by
+  `git config --global core.autocrlf true` and `git config --global core.editor nvim` if you want.
+- Run `gh auth login` and follow the instructions to authenticate your local machine with your GitHub account. After
+  that you can run `gh config set editor nvim` if you want.
 
 # Neovim
 > [!IMPORTANT]
