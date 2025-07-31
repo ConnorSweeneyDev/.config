@@ -79,6 +79,7 @@ vim.keymap.set("n", "<LEADER>pf", function() fzf.files() end, { desc = "Find fil
 vim.keymap.set("n", "<LEADER>ps", function() fzf.grep() end, { desc = "Search substring in project" })
 vim.keymap.set("n", "<LEADER>pw", function() fzf.grep_cword() end, { desc = "Search word under cursor in project" })
 vim.keymap.set("n", "<LEADER>pW", function() fzf.grep_cWORD() end, { desc = "Search WORD under cursor in project" })
+vim.keymap.set("v", "<LEADER>p", function() fzf.grep_visual() end, { desc = "Search selection in project" })
 vim.keymap.set("n", "<LEADER>pl", function() fzf.live_grep() end, { desc = "Live search substring in project" })
 vim.keymap.set("n", "<LEADER>pg", function() fzf.git_files() end, { desc = "Find files in git repository" })
 vim.keymap.set("n", "<LEADER>pb", function() fzf.buffers() end, { desc = "Find open buffers" })
