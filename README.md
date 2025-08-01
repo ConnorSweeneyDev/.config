@@ -224,6 +224,9 @@ and place this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs
 
 Mp3tag &rightarrow; Download from [here](https://www.mp3tag.de/en/download.html) and go through the installation wizard.
 
+Claude Code &rightarrow; Run `npm install -g @anthropic-ai/claude-code` and then `claude` to start the authentication
+process.
+
 Better Cursor &rightarrow; Go [here](https://jepricreations.com) for a more fitting cursor. After buying, extract the
 contents to a known location and go to the version you desire, right click the `install.inf` file, click install and
 accept any dialogs that appear.
