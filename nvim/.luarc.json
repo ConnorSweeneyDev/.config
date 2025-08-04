@@ -1,3 +1,7 @@
 {
-  "diagnostics.disable": ["different-requires"]
+  "diagnostics.disable": [
+    "different-requires",
+    "missing-fields",
+    "param-type-mismatch"
+  ]
 }

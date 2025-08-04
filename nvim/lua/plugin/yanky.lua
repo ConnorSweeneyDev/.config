@@ -7,13 +7,11 @@ vim.keymap.set(
   "n",
   "<LEADER>py",
   "<CMD>YankyRingHistory<CR>",
-  { noremap = true, silent = true },
-  { desc = "Open Yanky" }
+  { noremap = true, silent = true, desc = "Open Yanky" }
 )
 vim.keymap.set(
   "n",
   "<LEADER>ky",
   "<CMD>YankyClearHistory<CR>",
-  { noremap = true, silent = true },
-  { desc = "Clear Yank History" }
+  { noremap = true, silent = true, desc = "Clear Yank History" }
 )
