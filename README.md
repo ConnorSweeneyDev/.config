@@ -9,6 +9,10 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 > [!NOTE]
 > Every folder in this repository is located locally at `$Env:USERPROFILE\.config`.
 
+### Dependencies
+- 7Zip &rightarrow; Run `winget install --id 7zip.7zip`.
+- PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget`.
+
 ### Setup
 - Go to the "For Developers" section of the Windows settings and do the following:
   - Ensure "Developer Mode" is turned on.
@@ -19,6 +23,16 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
   the store (it's known to be glitchy for some accounts) then you can find alternative installs for all dependencies on
   either [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
 - You can right click your desktop and go to "View" and then "Hide desktop icons" to have a clean desktop.
+- My PowerToys setup is as follows:
+    - Run with an activation shortcut of `win+shift+backspace`, input smoothing disabled, clear previous query on launch
+      enabled, preferred monitor primary, all plugins off except "Program" and "Windows System Commands" - this behaves
+      just like the windows run dialog but without cortana, searching the internet or any other annoyances and the
+      ability to type shutdown, restart, etc.
+    - Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
+    - Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1600x1200`.
+    - Screen Ruler with an activation shortcut of `win+shift+p` and default measure style of `Spacing`.
+    - Text Extractor with an activation shortcut of `win+shift+t`.
+    - File Locksmith enabled.
 
 # Terminal
 ### Dependencies
@@ -190,18 +204,6 @@ Using Tridactyl, press `:` and type the following commands:
 # Other Useful Tools
 VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForVoyager) and follow the setup guide for a
 native Vim toggle for QMK keyboards.
-
-PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget` and enable "Run at startup" - my
-favourite tools are:
-- Run with an activation shortcut of `shift+backspace`, input smoothing disabled, clear previous query on launch
-  enabled, preferred monitor primary, all plugins off except "Program" and "Windows System Commands" - this behaves just
-  like the windows run dialog but without cortana, searching the internet or any other annoyances and the ability to
-  type shutdown, restart, etc.
-- Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
-- Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1600x1200`.
-- Screen Ruler with an activation shortcut of `win+shift+p` and default measure style of `Spacing`.
-- Text Extractor with an activation shortcut of `win+shift+t`.
-- File Locksmith enabled.
 
 Visual Studio 2022 &rightarrow; Download from [here](https://visualstudio.microsoft.com/vs/) and go through the
 installation wizard. After that put `[PATH_TO_VS2022]\2022\Community\Common7\IDE` in your path. You can install the
