@@ -14,15 +14,15 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
 - PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget`.
 
 ### Setup
+- Ensure you are able to access and use the Windows Store, winget relies on this for certain things. If you can't access
+  the store (it's known to be glitchy for some accounts) then you can find alternative installs for all dependencies on
+  either [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
+- You can right click your desktop and go to "View" and then "Hide desktop icons" to have a clean desktop.
 - Go to the "For Developers" section of the Windows settings and do the following:
   - Ensure "Developer Mode" is turned on.
   - Enable "Show hidden and system files" and "Show file extensions" under "File Explorer".
   - Enable local powershell scripts to run without signing under "PowerShell".
   - Enable Sudo.
-- Ensure you are able to access and use the Windows Store, winget relies on this for certain things. If you can't access
-  the store (it's known to be glitchy for some accounts) then you can find alternative installs for all dependencies on
-  either [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
-- You can right click your desktop and go to "View" and then "Hide desktop icons" to have a clean desktop.
 - My PowerToys setup is as follows:
     - Run with an activation shortcut of `win+shift+backspace`, input smoothing disabled, clear previous query on launch
       enabled, preferred monitor primary, all plugins off except "Program" and "Windows System Commands" - this behaves
