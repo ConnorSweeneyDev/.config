@@ -24,15 +24,15 @@ https://github.com/user-attachments/assets/a3e978a1-b440-4f01-ad9c-3e6b171276df
   - Enable local powershell scripts to run without signing under "PowerShell".
   - Enable Sudo.
 - My PowerToys setup is as follows:
-    - Run with an activation shortcut of `win+shift+backspace`, input smoothing disabled, clear previous query on launch
-      enabled, preferred monitor primary, all plugins off except "Program" and "Windows System Commands" - this behaves
-      just like the windows run dialog but without cortana, searching the internet or any other annoyances and the
-      ability to type shutdown, restart, etc.
-    - Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
-    - Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1600x1200`.
-    - Screen Ruler with an activation shortcut of `win+shift+p` and default measure style of `Spacing`.
-    - Text Extractor with an activation shortcut of `win+shift+t`.
-    - File Locksmith enabled.
+  - Run with an activation shortcut of `win+shift+backspace`, input smoothing disabled, clear previous query on launch
+    enabled, preferred monitor primary, all plugins off except "Program" and "Windows System Commands" - this behaves
+    just like the windows run dialog but without cortana, searching the internet or any other annoyances and the ability
+    to type shutdown, restart, etc.
+  - Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
+  - Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1600x1200`.
+  - Screen Ruler with an activation shortcut of `win+shift+p` and default measure style of `Spacing`.
+  - Text Extractor with an activation shortcut of `win+shift+t`.
+  - File Locksmith enabled.
 
 # Terminal
 ### Dependencies
