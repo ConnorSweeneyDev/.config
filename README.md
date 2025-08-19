@@ -14,25 +14,25 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 - PowerToys &rightarrow; Run `winget install Microsoft.PowerToys --source winget`.
 
 ### Setup
-- Ensure you are able to access and use the Windows Store, winget relies on this for certain things. If you can't access
-  the store (it's known to be glitchy for some accounts) then you can find alternative installs for all dependencies on
-  either [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
-- You can right click your desktop and go to "View" and then "Hide desktop icons" to have a clean desktop.
-- Go to the "For Developers" section of the Windows settings and do the following:
-  - Ensure "Developer Mode" is turned on.
-  - Enable "Show hidden and system files" and "Show file extensions" under "File Explorer".
-  - Enable local powershell scripts to run without signing under "PowerShell".
-  - Enable Sudo.
-- My PowerToys setup is as follows:
-  - Run with an activation shortcut of `win+shift+backspace`, input smoothing disabled, clear previous query on launch
-    enabled, preferred monitor primary, all plugins off except "Program" and "Windows System Commands" - this behaves
-    just like the windows run dialog but without cortana, searching the internet or any other annoyances and the ability
-    to type shutdown, restart, etc.
-  - Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
-  - Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1600x1200`.
-  - Screen Ruler with an activation shortcut of `win+shift+p` and default measure style of `Spacing`.
-  - Text Extractor with an activation shortcut of `win+shift+t`.
-  - File Locksmith enabled.
+1. Ensure you are able to access and use the Windows Store, winget relies on this for certain things. If you can't
+   access the store (it's known to be glitchy for some accounts) then you can find alternative installs for all
+   dependencies on either [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
+2. You can right click your desktop and go to "View" and then "Hide desktop icons" to have a clean desktop.
+3. Go to the "For Developers" section of the Windows settings and do the following:
+   - Ensure "Developer Mode" is turned on.
+   - Enable "Show hidden and system files" and "Show file extensions" under "File Explorer".
+   - Enable local powershell scripts to run without signing under "PowerShell".
+   - Enable Sudo.
+4. My PowerToys setup is as follows:
+   - Run with an activation shortcut of `win+shift+backspace`, input smoothing disabled, clear previous query on launch
+     enabled, preferred monitor primary, all plugins off except "Program" and "Windows System Commands" - this behaves
+     just like the windows run dialog but without cortana, searching the internet or any other annoyances and the
+     ability to type shutdown, restart, etc.
+   - Color Picker with an activation shortcut of `win+shift+c` and HEX, RGB and VEC4 enabled.
+   - Mouse Jump with an activation shortcut of `win+shift+d` and a max size of `1600x1200`.
+   - Screen Ruler with an activation shortcut of `win+shift+p` and default measure style of `Spacing`.
+   - Text Extractor with an activation shortcut of `win+shift+t`.
+   - File Locksmith enabled.
 
 # Terminal
 ### Dependencies
@@ -47,18 +47,18 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 - fzf &rightarrow; Run `winget install junegunn.fzf`.
 
 ### Setup
-- Paste `wezterm` into your config and change the font face to whatever NerdFont you installed. You can go to
-  `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
-- Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that is opened (you may
-  have to create the file first if it doesn't exist): `. $Env:USERPROFILE"\.config\pwsh\main.ps1"`.
-- Go back to `pwsh\main.ps1` and remove the line that sources `personal.ps1`, and delete that file too as it is specific
-  to me. Other than that, skim the rest of the files and remove anything you know you won't need - everything is
-  commented or self-explanatory so you can be sure of what you're doing.
-- Run `git config --system core.longpaths true` and ensure that `[PATH_TO_GIT]\bin` is in your path. After that you can
-  run `git config --global user.name "[YOUR_NAME]"` and `git config --global user.email "[YOUR_EMAIL]"`, followed by
-  `git config --global core.autocrlf true` and `git config --global core.editor nvim` if you want.
-- Run `gh auth login` and follow the instructions to authenticate your local machine with your GitHub account. After
-  that you can run `gh config set editor nvim` if you want.
+1. Paste `wezterm` into your config and change the font face to whatever NerdFont you installed. You can go to
+   `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
+2. Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that is opened (you may
+   have to create the file first if it doesn't exist): `. $Env:USERPROFILE"\.config\pwsh\main.ps1"`.
+3. Go back to `pwsh\main.ps1` and remove the line that sources `personal.ps1`, and delete that file too as it is
+   specific to me. Other than that, skim the rest of the files and remove anything you know you won't need - everything
+   is commented or self-explanatory so you can be sure of what you're doing.
+4. Run `git config --system core.longpaths true` and ensure that `[PATH_TO_GIT]\bin` is in your path. After that you can
+   run `git config --global user.name "[YOUR_NAME]"` and `git config --global user.email "[YOUR_EMAIL]"`, followed by
+   `git config --global core.autocrlf true` and `git config --global core.editor nvim` if you want.
+5. Run `gh auth login` and follow the instructions to authenticate your local machine with your GitHub account. After
+   that you can run `gh config set editor nvim` if you want.
 
 # Neovim
 > [!IMPORTANT]
@@ -97,11 +97,11 @@ require("lazy").setup({})
 After creating an empty `lua\plugin\init.lua`, restart neovim and there should be no error messages.
 
 Now, inside the `.setup` field start adding plugins, do so in the following pattern (with some exceptions below):
-- Add the line to `lua\main\lazy.lua` and restart neovim.
-- If it needs one, add a `lua\plugin\[PLUGIN].lua` file for the plugin and add `require("plugin.[PLUGIN]")` to
-  `lua\plugin\init.lua` (order matters in this file), then restart neovim.
-- Customize the file to your liking.
-- Test the plugin.
+1. Add the line to `lua\main\lazy.lua` and restart neovim.
+2. If it needs one, add a `lua\plugin\[PLUGIN].lua` file for the plugin and add `require("plugin.[PLUGIN]")` to
+   `lua\plugin\init.lua` (order matters in this file), then restart neovim.
+3. Customize the file to your liking.
+4. Test the plugin.
 
 The following plugins require some extra or different steps:
 - Helpers &rightarrow; Some plugins are only here to help other plugins and files which you can remove if you don't
@@ -147,21 +147,21 @@ After all of that, don't forget to include these files that are not tied to any 
   `C:\Program Files\ToggleRoundedCorners` and put that folder in your path.
 
 ### Setup
-- Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1` in
-  PowerShellCore as an admin.
-- Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" - enable "Turn off all
-  unnecessary animations (when possible)".
-- Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the taskbar" under the
-  taskbar behaviours.
-- Search `multitasking` and turn off "Snap windows".
-- Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors are configured.
-- Paste `yasb` into your config. Add the directory containing `yasbc.exe` to your path (`C:\Program Files\YASB` by
-  default).
-- Paste `ahk` into your config. Right click `wm.ahk` and create a shortcut, then rename that shortcut to just `wm` and
-  create a copy of it, one should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and the other to
-  that folder's sub-directory `Start-up` (or `Startup`). Now it will be run at startup and is accessible from the start
-  menu in case you need to restart the manager, and all three processes can be killed from the task manager.
-- Restart your PC.
+1. Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1` in
+   PowerShellCore as an admin.
+2. Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" - enable "Turn off
+   all unnecessary animations (when possible)".
+3. Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the taskbar" under the
+   taskbar behaviours.
+4. Search `multitasking` and turn off "Snap windows".
+5. Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors are configured.
+6. Paste `yasb` into your config. Add the directory containing `yasbc.exe` to your path (`C:\Program Files\YASB` by
+   default).
+7. Paste `ahk` into your config. Right click `wm.ahk` and create a shortcut, then rename that shortcut to just `wm` and
+   create a copy of it, one should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and the other to
+   that folder's sub-directory `Start-up` (or `Startup`). Now it will be run at startup and is accessible from the start
+   menu in case you need to restart the manager, and all three processes can be killed from the task manager.
+8. Restart your PC.
 
 > [!TIP]
 > Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be configured in the Yasb
