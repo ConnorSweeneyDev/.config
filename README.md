@@ -17,12 +17,16 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 1. Ensure you are able to access and use the Windows Store, winget relies on this for certain things. If you can't
    access the store (it's known to be glitchy for some accounts) then you can find alternative installs for all
    dependencies on either [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
-2. You can right click your desktop and go to "View" and then "Hide desktop icons" to have a clean desktop.
-3. Go to the "For Developers" section of the Windows settings and do the following:
+2. Go to the "For Developers" section of the Windows settings and do the following:
    - Ensure "Developer Mode" is turned on.
    - Enable "Show hidden and system files" and "Show file extensions" under "File Explorer".
    - Enable local powershell scripts to run without signing under "PowerShell".
    - Enable Sudo.
+3. Add the following environment variables:
+   - `XDG_CONFIG_HOME` -> `$Env:USERPROFILE\.config`
+   - `XDG_DATA_HOME` -> `$Env:USERPROFILE\.config`
+   - `XDG_STATE_HOME` -> `$Env:USERPROFILE\.config`
+   - `XDG_CACHE_HOME` -> `$Env:USERPROFILE\.config\temp`
 4. My PowerToys setup is as follows:
    - Run with an activation shortcut of `win+shift+backspace`, input smoothing disabled, clear previous query on launch
      enabled, preferred monitor primary, all plugins off except "Program" and "Windows System Commands" - this behaves
@@ -33,6 +37,7 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
    - Screen Ruler with an activation shortcut of `win+shift+p` and default measure style of `Spacing`.
    - Text Extractor with an activation shortcut of `win+shift+t`.
    - File Locksmith enabled.
+5. You can right click your desktop and go to "View" and then "Hide desktop icons" to have a clean desktop.
 
 # Terminal
 ### Dependencies
@@ -43,7 +48,8 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`.
 - Github CLI &rightarrow; Run `winget install --id GitHub.cli`.
 - fd &rightarrow; Run `winget install --id sharkdp.fd --source winget`.
-- bat &rightarrow; Run `winget install sharkdp.bat`.
+- bat &rightarrow; Run `winget install sharkdp.bat` and add the environment variable `BAT_THEME` -> `Visual Studio
+  Dark+`. You can choose any of the themes from `bat --list-themes`.
 - fzf &rightarrow; Run `winget install junegunn.fzf`.
 
 ### Setup
@@ -75,7 +81,8 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 - Python &rightarrow; Run `winget install --id Python.Python.3.10`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS`.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
-- Neovim &rightarrow; Run `winget install neovim --version 0.11.1`.
+- Neovim &rightarrow; Run `winget install neovim --version 0.11.2` and add the environment variable `NVIM_LOG_FILE` ->
+  `$Env:USERPROFILE\.config\nvim-data`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 
@@ -139,7 +146,8 @@ After all of that, don't forget to include these files that are not tied to any 
 
 # Tiling Window Manager
 ### Dependencies
-- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi`.
+- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi` and add the environment variable `KOMOREBI_CONFIG_HOME`
+  -> `$Env:USERPROFILE\.config\komorebi`.
 - Yasb &rightarrow; Run `winget install --id AmN.yasb`.
 - AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
 - ToggleRoundedCorners &rightarrow; Download the portable executable from
