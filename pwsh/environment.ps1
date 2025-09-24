@@ -24,11 +24,7 @@ function msvc # Sets up the environment for MSVC command line tools - Usage: msv
     Write-Host "Windows SDK: $sdkVersion" -ForegroundColor Gray
     return
   }
-  if ($architecture -and $vsPath -and (Test-Path $vsPath) -and $toolsetVersion -and $sdkVersion)
-  {
-    Write-Host "MSVC environment already configured for $architecture" -ForegroundColor Yellow
-    return
-  }
+  if ($architecture -and $vsPath -and (Test-Path $vsPath) -and $toolsetVersion -and $sdkVersion) { return }
 
   if (-not $env:ORIGINAL_PATH) { $env:ORIGINAL_PATH = $env:PATH }
 
