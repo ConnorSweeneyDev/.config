@@ -489,8 +489,8 @@ Lualine_util.dynamic_path = function()
     path = "diffview\\ours"
   elseif string.find(path, ".git/:3:/") or string.find(path, ".git//:3:") then
     path = "diffview\\theirs"
-  elseif string.find(path, "%[CodeCompanion%]") then
-    path = "codecompanion"
+  elseif string.find(path, "claude%-prompt%-") then
+    path = "claude"
   elseif string.match(filetype, "netrw") then
     if not string.find(path, ":/") then path = cwd:match("^.*\\(.*)$") .. "\\" .. path end
   elseif string.match(filetype, "oil_preview") then
