@@ -85,9 +85,9 @@ function fh # Searches your command history, sets your clipboard to the selected
 function fzf_files # Utility macro for setting up fzf for file searching
 {
   if ($args -eq "." -or $args.Count -eq 0) {}
+  elseif ($args -eq "c") { cd C:\ }
   elseif ($args -eq "d") { cd D:\ }
   elseif ($args -eq "u") { cd $Env:USERPROFILE }
-  elseif ($args -eq "c") { cd C:\ }
   else
   {
     echo "Invalid argument: $args"
@@ -102,9 +102,9 @@ function fzf_files # Utility macro for setting up fzf for file searching
 function fzf_directories # Utility macro for setting up fzf for directory searching
 {
   if ($args -eq "." -or $args.Count -eq 0) {}
+  elseif ($args -eq "c") { cd C:\ }
   elseif ($args -eq "d") { cd D:\ }
   elseif ($args -eq "u") { cd $Env:USERPROFILE }
-  elseif ($args -eq "c") { cd C:\ }
   else
   {
     echo "Invalid argument: $args"
