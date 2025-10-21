@@ -26,6 +26,7 @@ config.keys = {
   { key = "c", mods = "ALT | SHIFT", action = wezterm.action.CopyTo("Clipboard") },
   { key = "v", mods = "ALT | SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
   { key = "f", mods = "LEADER | ALT", action = wezterm.action.Search({ CaseSensitiveString = "" }) },
+  { key = "Enter", mods = "SHIFT", action = wezterm.action({ SendString = "\x1b\r" }) },
   {
     key = "e",
     mods = "LEADER | ALT",
