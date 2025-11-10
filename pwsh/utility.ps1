@@ -11,29 +11,99 @@ function update # Keep the tab title and osc7 up to date
 function prompt # Run update every prompt and use a custom prompt display
 {
   update
-  $esc = [char]27
-  $cReset     = "${esc}[0m"
-  $cPath      = "${esc}[38;2;10;122;202m"
-  $cBranch    = "${esc}[38;2;197;134;192m"
-  $cAdded     = "${esc}[38;2;106;153;85m"
-  $cUntracked = "${esc}[38;2;170;170;170m"
-  $cModified  = "${esc}[38;2;220;220;170m"
-  $cRemoved   = "${esc}[38;2;244;71;71m"
-  $cBracket   = "${esc}[38;2;120;120;120m"
-  $cCommits   = "${esc}[38;2;255;175;0m"
-  $isGit = git rev-parse --is-inside-work-tree
-  if ($isGit)
+
+  $path = Get-Location
+  $gitDir = $null
+  $branch = $null
+  while ($path)
   {
-    $branch = git rev-parse --abbrev-ref HEAD
-    $status = git status --porcelain
-    $commitCount = git rev-list --count origin/$branch..HEAD
-    $untrackedCount = 0
-    $addedCount = 0
+    $gitPath = Join-Path $path '.git'
+    if (Test-Path $gitPath)
+    {
+      if (Test-Path $gitPath -PathType Container)
+      {
+        $gitDir = $gitPath
+        $headPath = Join-Path $gitPath 'HEAD'
+      }
+      else
+      {
+        $gitDirLine = Get-Content $gitPath | Select-Object -First 1
+        $gitDir = $gitDirLine -replace 'gitdir: ', ''
+        $headPath = Join-Path $gitDir 'HEAD'
+      }
+      if (Test-Path $headPath)
+      {
+        $branch = (Get-Content $headPath) -replace '^ref: refs/heads/', ''
+        $branch = $branch -replace '^ref: refs/tags/', 'tag:'
+        $branch = $branch -replace '^ref: refs/remotes/', 'remote:'
+        if ($branch -match '^[a-f0-9]{40}$') { $branch = $branch.Substring(0, 7) }
+        $rebaseDir = Join-Path $gitDir 'rebase-merge'
+        $mergeHead = Join-Path $gitDir 'MERGE_HEAD'
+        if (Test-Path $rebaseDir)
+        {
+          $headNameFile = Join-Path $rebaseDir 'head-name'
+          if (Test-Path $headNameFile)
+          {
+            $rebaseBranch = (Get-Content $headNameFile) -replace '^refs/heads/', ''
+            $branch = "rebase:$rebaseBranch"
+          }
+          else { $branch = "rebse:$branch" }
+        }
+        elseif (Test-Path $mergeHead) { $branch = "merge:$branch" }
+        break
+      }
+    }
+    $parent = Split-Path $path -Parent
+    if ($parent -eq $path) { break }
+    $path = $parent
+  }
+
+  if ($branch)
+  {
+    $status       = git status --porcelain 2>$null
+    $commitCount  = 0
+    $headCommit   = $null
+    $remoteCommit = $null
+    $headRefPath  = Join-Path $gitDir "refs/heads/$branch"
+    if (Test-Path $headRefPath) { $headCommit = Get-Content $headRefPath }
+    $remoteRefPath = Join-Path $gitDir "refs/remotes/origin/$branch"
+    if (Test-Path $remoteRefPath) { $remoteCommit = Get-Content $remoteRefPath }
+    else
+    {
+      $packedRefsPath = Join-Path $gitDir "packed-refs"
+      if (Test-Path $packedRefsPath)
+      {
+        $packedRefs = Get-Content $packedRefsPath
+        foreach ($line in $packedRefs)
+        {
+          if ($line -match "^([a-f0-9]+) refs/remotes/origin/$branch$")
+          {
+            $remoteCommit = $matches[1]
+            break
+          }
+        }
+      }
+    }
+    if (-not $remoteCommit)
+    {
+      $mainRef = Join-Path $gitDir "refs/heads/main"
+      $masterRef = Join-Path $gitDir "refs/heads/master"
+      if (Test-Path $mainRef) { $remoteCommit = Get-Content $mainRef }
+      elseif (Test-Path $masterRef) { $remoteCommit = Get-Content $masterRef }
+    }
+    if ($headCommit -and $remoteCommit -and $headCommit -ne $remoteCommit)
+    {
+      $commitCount = git rev-list --count "$remoteCommit..$headCommit" 2>$null
+      if (-not $commitCount) { $commitCount = 0 }
+    }
+
+    $untrackedCount        = 0
+    $addedCount            = 0
     $modifiedUnstagedCount = 0
-    $removedUnstagedCount = 0
-    $modifiedStagedCount = 0
-    $removedStagedCount = 0
-    $unpushedCommits = 0
+    $removedUnstagedCount  = 0
+    $modifiedStagedCount   = 0
+    $removedStagedCount    = 0
+    $unpushedCommits       = 0
     foreach ($line in $status)
     {
       $first = $line.Substring(0, 1)
@@ -45,6 +115,17 @@ function prompt # Run update every prompt and use a custom prompt display
       elseif ($first -eq 'M' -or $first -eq 'R') { $modifiedStagedCount++ }
       elseif ($first -eq 'D') { $removedStagedCount++ }
     }
+
+    $esc        = [char]27
+    $cReset     = "${esc}[0m"
+    $cPath      = "${esc}[38;2;10;122;202m"
+    $cBranch    = "${esc}[38;2;197;134;192m"
+    $cAdded     = "${esc}[38;2;106;153;85m"
+    $cUntracked = "${esc}[38;2;170;170;170m"
+    $cModified  = "${esc}[38;2;220;220;170m"
+    $cRemoved   = "${esc}[38;2;244;71;71m"
+    $cBracket   = "${esc}[38;2;120;120;120m"
+    $cCommits   = "${esc}[38;2;255;175;0m"
     $unstagedChanges = @()
     if ($untrackedCount -gt 0) { $unstagedChanges += "${cUntracked}?$untrackedCount${cReset}" }
     if ($modifiedUnstagedCount -gt 0) { $unstagedChanges += "${cModified}~$modifiedUnstagedCount${cReset}" }
@@ -62,6 +143,7 @@ function prompt # Run update every prompt and use a custom prompt display
     if ($unpushedCommits -gt 0) { $status += "${cCommits}^$unpushedCommits${cReset}" }
   }
   else { $status = "" }
+
   return "${cPath}$pwd${cReset} $status`n${cPath}>${cReset} "
 }
 
