@@ -58,6 +58,16 @@ function prompt # Run update every prompt and use a custom prompt display
     $path = $parent
   }
 
+  $esc        = [char]27
+  $cReset     = "${esc}[0m"
+  $cPath      = "${esc}[38;2;10;122;202m"
+  $cBranch    = "${esc}[38;2;197;134;192m"
+  $cAdded     = "${esc}[38;2;106;153;85m"
+  $cUntracked = "${esc}[38;2;170;170;170m"
+  $cModified  = "${esc}[38;2;220;220;170m"
+  $cRemoved   = "${esc}[38;2;244;71;71m"
+  $cBracket   = "${esc}[38;2;120;120;120m"
+  $cCommits   = "${esc}[38;2;255;175;0m"
   if ($branch)
   {
     $status       = git status --porcelain 2>$null
@@ -115,17 +125,6 @@ function prompt # Run update every prompt and use a custom prompt display
       elseif ($first -eq 'M' -or $first -eq 'R') { $modifiedStagedCount++ }
       elseif ($first -eq 'D') { $removedStagedCount++ }
     }
-
-    $esc        = [char]27
-    $cReset     = "${esc}[0m"
-    $cPath      = "${esc}[38;2;10;122;202m"
-    $cBranch    = "${esc}[38;2;197;134;192m"
-    $cAdded     = "${esc}[38;2;106;153;85m"
-    $cUntracked = "${esc}[38;2;170;170;170m"
-    $cModified  = "${esc}[38;2;220;220;170m"
-    $cRemoved   = "${esc}[38;2;244;71;71m"
-    $cBracket   = "${esc}[38;2;120;120;120m"
-    $cCommits   = "${esc}[38;2;255;175;0m"
     $unstagedChanges = @()
     if ($untrackedCount -gt 0) { $unstagedChanges += "${cUntracked}?$untrackedCount${cReset}" }
     if ($modifiedUnstagedCount -gt 0) { $unstagedChanges += "${cModified}~$modifiedUnstagedCount${cReset}" }
