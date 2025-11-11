@@ -12,7 +12,7 @@ function v
   else { devenv . }
 }
 
-function d # Better rm - Usage: d <path1> <path2> ... <pathN>
+function d
 {
   $paths = $args
   foreach ($path in $paths)
