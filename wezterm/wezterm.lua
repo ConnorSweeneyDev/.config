@@ -40,7 +40,7 @@ config.keys = {
     key = "v",
     mods = "LEADER | ALT",
     action = wezterm.action.SpawnCommandInNewTab({
-      args = { "pwsh", "-NoExit", "-Command", "./script/clean.ps1" },
+      args = { "pwsh", "-NoExit", "-Command", "./script/clean.bat" },
       domain = "CurrentPaneDomain",
     }),
   },
@@ -48,7 +48,7 @@ config.keys = {
     key = "b",
     mods = "LEADER | ALT",
     action = wezterm.action.SpawnCommandInNewTab({
-      args = { "pwsh", "-NoExit", "-Command", "./script/build.ps1" },
+      args = { "pwsh", "-NoExit", "-Command", "./script/build.bat" },
       domain = "CurrentPaneDomain",
     }),
   },
@@ -56,7 +56,7 @@ config.keys = {
     key = "n",
     mods = "LEADER | ALT",
     action = wezterm.action.SpawnCommandInNewTab({
-      args = { "pwsh", "-NoExit", "-Command", "./script/run.ps1" },
+      args = { "pwsh", "-NoExit", "-Command", "./script/run.bat" },
       domain = "CurrentPaneDomain",
     }),
   },
@@ -64,7 +64,7 @@ config.keys = {
     key = "m",
     mods = "LEADER | ALT",
     action = wezterm.action.SpawnCommandInNewTab({
-      args = { "pwsh", "-NoExit", "-Command", "./script/debug.ps1" },
+      args = { "pwsh", "-NoExit", "-Command", "./script/debug.bat" },
       domain = "CurrentPaneDomain",
     }),
   },
