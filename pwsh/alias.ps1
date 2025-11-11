@@ -1,4 +1,5 @@
-function c { Clear-Host }
+function cl { Clear-Host }
+function c { claude }
 function n { nvim . }
 function v
 {
@@ -9,4 +10,14 @@ function v
     devenv "$solutionName"
   }
   else { devenv . }
+}
+
+function d # Better rm - Usage: d <path1> <path2> ... <pathN>
+{
+  $paths = $args
+  foreach ($path in $paths)
+  {
+    if (Test-Path $path) { Remove-Item $path -Recurse -Force }
+    else { echo "Path does not exist: $path" }
+  }
 }

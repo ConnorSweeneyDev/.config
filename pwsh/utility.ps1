@@ -146,15 +146,6 @@ function prompt # Run update every prompt and use a custom prompt display
   return "${cPath}$pwd${cReset} $status`n${cPath}>${cReset} "
 }
 
-function d # Better rm - Usage: d <path1> <path2> ... <pathN>
-{
-  $paths = $args
-  foreach ($path in $paths)
-  {
-    if (Test-Path $path) { Remove-Item $path -Recurse -Force }
-    else { echo "Path does not exist: $path" }
-  }
-}
 function fh # Searches your command history, sets your clipboard to the selected item - Usage: fh [<string>]
 {
   $find = $args
@@ -197,7 +188,6 @@ function fzf_directories # Utility macro for setting up fzf for directory search
   $selected = fzf
   return $selected
 }
-
 function fi # Runs fzf searching files then cd's to the directory of the selected file - Usage: fi [d | u | c]
 {
   $selected = fzf_files @args
