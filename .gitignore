@@ -10,6 +10,7 @@ scoop/*
 simple-update-notifier/*
 supermaven/*
 temp/*
+lesshst
 
 # Generated files
 yasb/yasb.log

@@ -12,10 +12,12 @@ config.animation_fps = 144
 
 config.leader = { key = "w", mods = "ALT", timeout_milliseconds = 1000 }
 config.keys = {
+  { key = "Enter", mods = "ALT", action = wezterm.action({ SendString = "\x1b\r" }) },
   { key = "a", mods = "ALT | SHIFT", action = wezterm.action.ActivateTab(0) },
   { key = "s", mods = "ALT | SHIFT", action = wezterm.action.ActivateTab(1) },
   { key = "d", mods = "ALT | SHIFT", action = wezterm.action.ActivateTab(2) },
   { key = "f", mods = "ALT | SHIFT", action = wezterm.action.ActivateTab(3) },
+  { key = "g", mods = "ALT | SHIFT", action = wezterm.action.ActivateTab(4) },
   { key = "h", mods = "ALT | SHIFT", action = wezterm.action.ActivateTabRelative(-1) },
   { key = "l", mods = "ALT | SHIFT", action = wezterm.action.ActivateTabRelative(1) },
   { key = "z", mods = "ALT | SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
@@ -26,7 +28,6 @@ config.keys = {
   { key = "c", mods = "ALT | SHIFT", action = wezterm.action.CopyTo("Clipboard") },
   { key = "v", mods = "ALT | SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
   { key = "f", mods = "LEADER | ALT", action = wezterm.action.Search({ CaseSensitiveString = "" }) },
-  { key = "Enter", mods = "SHIFT", action = wezterm.action({ SendString = "\x1b\r" }) },
   {
     key = "e",
     mods = "LEADER | ALT",
