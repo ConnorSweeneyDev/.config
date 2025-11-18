@@ -81,7 +81,7 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 - Python &rightarrow; Run `winget install --id Python.Python.3.10`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS`.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
-- Neovim &rightarrow; Run `winget install neovim --version 0.11.2` and add the environment variables `NVIM_LOG_FILE` ->
+- Neovim &rightarrow; Run `winget install neovim --version 0.11.5` and add the environment variables `NVIM_LOG_FILE` ->
   `$Env:USERPROFILE\.config\nvim-data` and `EDITOR` -> `nvim`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
