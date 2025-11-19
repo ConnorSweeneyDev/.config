@@ -118,6 +118,11 @@ Buffer_util.open_on_startup = function()
   if General_util.floating_window_exists() or General_util.opened_file() then return end
   Buffer_util.open_buffers()
 end
+Buffer_util.restore_cursor_position = function(args)
+  local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
+  local line_count = vim.api.nvim_buf_line_count(args.buf)
+  if mark[1] > 0 and mark[1] <= line_count then vim.api.nvim_win_set_cursor(0, mark) end
+end
 
 ----------------------------------------------------------------------------------------------------
 
@@ -622,19 +627,6 @@ Mason_util.setup_languages = function(mason_registry, configs)
       table.insert(Language_util.formatters, config.fmt.opts)
     end
     if config.ide ~= nil and config.ide ~= {} then table.insert(Language_util.ides, config.ide.opts) end
-  end
-end
-Mason_util.custom_capabilities = function(modified_capabilities)
-  return function(client, _)
-    for capability, value in pairs(modified_capabilities) do
-      local current = client.server_capabilities
-      for index = 1, #capability - 1 do
-        local key = capability[index]
-        if current[key] == nil then current[key] = {} end
-        current = current[key]
-      end
-      current[capability[#capability]] = value
-    end
   end
 end
 

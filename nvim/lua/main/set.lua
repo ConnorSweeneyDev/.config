@@ -44,5 +44,6 @@ vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.termguicolors = true
 vim.opt.updatetime = 300
-vim.api.nvim_create_autocmd("VimResized", { command = "wincmd =" })
 vim.api.nvim_create_autocmd({ "CursorMoved", "BufEnter", "WinEnter" }, { command = "normal! zz" })
+vim.api.nvim_create_autocmd("BufReadPost", { callback = function(args) Buffer_util.restore_cursor_position(args) end })
+vim.api.nvim_create_autocmd("VimResized", { command = "wincmd =" })
