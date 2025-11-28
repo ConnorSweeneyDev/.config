@@ -11,6 +11,7 @@ local ignore_patterns = {
   "*.png",
   "*.jpg",
   "*.pyc",
+  "csb.hpp",
 }
 local fzf = require("fzf-lua")
 fzf.setup({
