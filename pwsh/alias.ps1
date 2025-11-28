@@ -1,4 +1,4 @@
-function cl { Clear-Host }
+function x { Clear-Host }
 function c { claude }
 function n { nvim . }
 function v
