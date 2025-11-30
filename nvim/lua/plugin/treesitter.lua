@@ -21,7 +21,7 @@ require("nvim-treesitter.configs").setup({
     "xml",
     "json",
     "yaml",
-    "glsl",
+    "hlsl",
     "cmake",
     "gitcommit",
     "vim",
@@ -34,8 +34,7 @@ require("nvim-treesitter.configs").setup({
   auto_install = false,
   highlight = { enable = true, additional_vim_regex_highlighting = false },
 })
-vim.treesitter.language.register("glsl", "hlsl")
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.hlsl",
+  pattern = "*.vert,*.frag,*.comp,*.geom,*.tesc,*.tese",
   callback = function() vim.bo.filetype = "hlsl" end,
 })

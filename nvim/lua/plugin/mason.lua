@@ -33,15 +33,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       },
     },
   },
-  ["GLSL/HLSL"] = {
-    lsp = {
-      name = "glsl_analyzer",
-      opts = {
-        cmd = { "glsl_analyzer" },
-        root_markers = { "compile_commands.json", "compile_flags.txt", "CMakeLists.txt", ".git" },
-        filetypes = { "glsl", "hlsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
-      },
-    },
+  ["HLSL"] = {
     fmt = {
       name = "clang-format",
       opts = {
@@ -55,32 +47,6 @@ Mason_util.setup_languages(require("mason-registry"), {
         cmd = { "devenv", "[|]" },
         targets = { "*.sln", "build/*.sln" },
         filetypes = { "glsl", "hlsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
-      },
-    },
-  },
-  ["CMake"] = {
-    lsp = {
-      name = "cmake-language-server",
-      opts = {
-        cmd = { "cmake-language-server" },
-        root_markers = { "compile_commands.json", "compile_flags.txt", "CMakeLists.txt", ".git" },
-        filetypes = { "cmake" },
-        init_options = { buildDirectory = "build" },
-      },
-    },
-    fmt = {
-      name = "gersemi",
-      opts = {
-        cmd = { "gersemi", "-i", "[|]" },
-        filetypes = { "cmake" },
-      },
-    },
-    ide = {
-      name = "Visual Studio",
-      opts = {
-        cmd = { "devenv", "[|]" },
-        targets = { "*.sln", "build/*.sln" },
-        filetypes = { "cmake" },
       },
     },
   },
