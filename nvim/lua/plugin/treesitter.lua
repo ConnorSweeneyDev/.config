@@ -38,3 +38,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.vert,*.frag,*.comp,*.geom,*.tesc,*.tese",
   callback = function() vim.bo.filetype = "hlsl" end,
 })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "hlsl",
+  callback = function() vim.bo.commentstring = "// %s" end,
+})
