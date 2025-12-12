@@ -529,57 +529,6 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-Leap_util = {}
-Leap_util.regex_by_word_start = function(word, start_position)
-  local substitution = string.sub(word, start_position)
-  local regex = vim.regex("\\k\\+")
-  if not regex then return nil end
-  return regex:match_str(substitution)
-end
-Leap_util.get_match_positions = function(targets, line_number, character)
-  local line = vim.api.nvim_buf_get_lines(0, line_number - 1, line_number, false)[1]
-  local start_position = 1
-  while true do
-    local starting, ending = Leap_util.regex_by_word_start(line, start_position)
-    if not starting then break end
-    starting = starting + start_position
-    ending = ending + start_position
-    if starting ~= ending and string.sub(line, starting, starting):lower() == character:lower() then
-      table.insert(targets, { pos = { line_number, starting } })
-    end
-    start_position = ending + 1
-  end
-  return targets
-end
-Leap_util.leap_by_word = function(leap)
-  local character = General_util.get_input()
-  if character == nil then return nil end
-  local window_info = vim.fn.getwininfo(vim.api.nvim_get_current_win())[1]
-  local start_line = window_info.topline
-  local end_line = window_info.botline
-  local targets = {}
-  while start_line <= end_line do
-    targets = Leap_util.get_match_positions(targets, start_line, character)
-    start_line = start_line + 1
-  end
-  local current_screen_row = vim.fn.screenpos(vim.api.nvim_get_current_win(), vim.fn.line("."), 1)["row"]
-  local function screen_rows_from_current(target)
-    local target_screen_row = vim.fn.screenpos(vim.api.nvim_get_current_win(), target.pos[1], target.pos[2])["row"]
-    return math.abs(current_screen_row - target_screen_row)
-  end
-  table.sort(
-    targets,
-    function(target1, target2) return screen_rows_from_current(target1) < screen_rows_from_current(target2) end
-  )
-  if #targets >= 1 then
-    leap.leap({ targets = targets })
-  else
-    vim.notify("No leap targets found for " .. character .. "!", "error")
-  end
-end
-
-----------------------------------------------------------------------------------------------------
-
 Oil_util = {}
 Oil_util.open_on_startup = function()
   if General_util.floating_window_exists() or General_util.opened_file() then return end

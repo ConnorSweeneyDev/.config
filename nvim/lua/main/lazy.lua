@@ -8,7 +8,6 @@ require("lazy").setup({
   { "mbbill/undotree" },
   { "gbprod/yanky.nvim" },
   { "echasnovski/mini.surround" },
-  { "ggandor/leap.nvim" },
   { "stevearc/quicker.nvim" },
   { "kevinhwang91/nvim-bqf" },
   { "Mofiqul/vscode.nvim", name = "vscode" },
