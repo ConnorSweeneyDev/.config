@@ -85,6 +85,7 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
   `$Env:USERPROFILE\.config\nvim-data` and `EDITOR` -> `nvim`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
+- TreeSitterCLI &rightarrow; Run `npm install -g tree-sitter-cli`.
 
 ### Setup
 After completing the dependencies for this section, I recommend manually recreating `nvim` on your machine rather than
