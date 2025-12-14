@@ -28,7 +28,9 @@ require("nvim-treesitter").install({
   "markdown",
   "regex",
   "bash",
+  "powershell",
 })
+vim.treesitter.language.register("bash", { "dosbatch" })
 vim.treesitter.language.register("hlsl", { "glsl", "vert", "frag", "comp", "geom", "tesc", "tese" })
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   pattern = "*.hlsl,*.glsl,*.vert,*.frag,*.comp,*.geom,*.tesc,*.tese",
