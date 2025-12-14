@@ -1,44 +1,37 @@
-require("nvim-treesitter.install").prefer_git = false
-require("nvim-treesitter.install").compilers = { "gcc" }
-require("nvim-treesitter.configs").setup({
-  ensure_installed = {
-    "c",
-    "lua",
-    "diff",
-    "vimdoc",
-    "query",
-    "hurl",
-    "http",
-    "html",
-    "javascript",
-    "css",
-    "java",
-    "cpp",
-    "markdown_inline",
-    "c_sharp",
-    "python",
-    "sql",
-    "xml",
-    "json",
-    "yaml",
-    "hlsl",
-    "cmake",
-    "gitcommit",
-    "vim",
-    "gitignore",
-    "markdown",
-    "regex",
-    "bash",
-  },
-  sync_install = false,
-  auto_install = false,
-  highlight = { enable = true, additional_vim_regex_highlighting = false },
+require("nvim-treesitter").setup({ install_dir = vim.fn.stdpath("data") .. "/site" })
+require("nvim-treesitter").install({
+  "vim",
+  "vimdoc",
+  "lua",
+  "diff",
+  "query",
+  "hurl",
+  "http",
+  "html",
+  "javascript",
+  "css",
+  "java",
+  "cpp",
+  "c",
+  "markdown_inline",
+  "c_sharp",
+  "python",
+  "sql",
+  "xml",
+  "json",
+  "yaml",
+  "toml",
+  "hlsl",
+  "cmake",
+  "gitcommit",
+  "gitignore",
+  "markdown",
+  "regex",
+  "bash",
 })
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.vert,*.frag,*.comp,*.geom,*.tesc,*.tese",
-  callback = function() vim.bo.filetype = "hlsl" end,
-})
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "hlsl",
+vim.treesitter.language.register("hlsl", { "glsl", "vert", "frag", "comp", "geom", "tesc", "tese" })
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  pattern = "*.hlsl,*.glsl,*.vert,*.frag,*.comp,*.geom,*.tesc,*.tese",
   callback = function() vim.bo.commentstring = "// %s" end,
 })
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, { callback = function() vim.treesitter.start() end })

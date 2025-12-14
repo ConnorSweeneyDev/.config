@@ -12,7 +12,7 @@ require("lazy").setup({
   { "kevinhwang91/nvim-bqf" },
   { "Mofiqul/vscode.nvim", name = "vscode" },
   { "nvim-lualine/lualine.nvim" },
-  { "nvim-treesitter/nvim-treesitter", branch = "master", build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "williamboman/mason.nvim" },
   { "saghen/blink.cmp", version = "*" },
   { "folke/trouble.nvim" },
