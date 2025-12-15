@@ -449,6 +449,21 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
+Treesitter_util = {}
+Treesitter_util.install = function(treesitter, parsers)
+  local all_filetypes = vim.tbl_keys(parsers)
+  treesitter.install(all_filetypes)
+  for parser, filetypes in pairs(parsers) do
+    if next(filetypes) ~= nil then
+      vim.treesitter.language.register(parser, filetypes)
+      vim.list_extend(all_filetypes, filetypes)
+    end
+  end
+  vim.api.nvim_create_autocmd("FileType", { pattern = all_filetypes, callback = function() vim.treesitter.start() end })
+end
+
+----------------------------------------------------------------------------------------------------
+
 Lualine_util = {}
 Lualine_util.dynamic_path = function()
   local filetype = vim.bo.filetype

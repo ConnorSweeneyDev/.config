@@ -38,3 +38,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "ModeChanged" }, {
     Language_util.handle_gitcommit(72)
   end,
 })
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  pattern = "*.hlsl,*.glsl,*.vert,*.frag,*.comp,*.geom,*.tesc,*.tese",
+  callback = function() vim.bo.commentstring = "// %s" end,
+})
