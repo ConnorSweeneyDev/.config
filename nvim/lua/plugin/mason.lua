@@ -38,7 +38,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       name = "clang-format",
       opts = {
         cmd = { "clang-format", "-i", "[|]" },
-        filetypes = { "glsl", "hlsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+        filetypes = { "hlsl", "glsl", "vert", "frag", "comp", "geom", "tesc", "tese" },
       },
     },
     ide = {
@@ -46,7 +46,7 @@ Mason_util.setup_languages(require("mason-registry"), {
       opts = {
         cmd = { "devenv", "[|]" },
         targets = { "*.sln", "build/*.sln" },
-        filetypes = { "glsl", "hlsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+        filetypes = { "hlsl", "glsl", "vert", "frag", "comp", "geom", "tesc", "tese" },
       },
     },
   },
