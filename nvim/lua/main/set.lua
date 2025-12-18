@@ -28,6 +28,7 @@ vim.opt.pumheight = 16
 vim.opt.winborder = "none"
 vim.opt.list = true
 vim.opt.listchars = { tab = "▏ ", trail = "·", extends = "»", precedes = "«" }
+vim.opt.fillchars:append({ eob = "▌" })
 vim.opt.formatoptions:remove("t")
 vim.opt.formatoptions:remove("c")
 vim.opt.isfname:append("@-@")
