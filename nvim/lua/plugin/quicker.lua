@@ -13,7 +13,7 @@ quicker.setup({
       { desc = "Collapse quickfix entry" },
     },
   },
-  higlight = { load_buffers = true },
+  highlight = { load_buffers = true },
 })
 vim.keymap.set("n", "<LEADER>tq", function() quicker.toggle() end, { desc = "Toggle quickfix list" })
 vim.keymap.set(
