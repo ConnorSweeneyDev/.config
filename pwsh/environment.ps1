@@ -150,13 +150,13 @@ function msvc # Sets up the environment for MSVC command line tools - Usage: msv
   $env:PreferredToolArchitecture = $architecture
   $env:VSCMD_ARG_HOST_ARCH = $architecture
   $env:VSCMD_ARG_TGT_ARCH = $architecture
-  $env:VSINSTALLDIR = $vsPath
+  $env:VSINSTALLDIR = "$vsPath\"
   $env:VCINSTALLDIR = Join-Path $vsPath "VC"
   $env:VCToolsVersion = $toolsetVersion
 
   $env:WindowsLibPath = Join-Path $sdkRoot "UnionMetadata\$sdkVersion"
   $env:WindowsSdkDir = $sdkRoot
-  $env:WindowsSDKVersion = $sdkVersion
+  $env:WindowsSDKVersion = "$sdkVersion\"
   $env:UniversalCRTSdkDir = $sdkRoot
   $env:UCRTVersion = $sdkVersion
 }
