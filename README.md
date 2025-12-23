@@ -53,8 +53,7 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 - fzf &rightarrow; Run `winget install junegunn.fzf`.
 
 ### Setup
-1. Paste `wezterm` into your config and change the font face to whatever NerdFont you installed. You can go to
-   `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
+1. Paste `wezterm` into your config and change the font face to whatever NerdFont you installed.
 2. Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that is opened (you may
    have to create the file first if it doesn't exist): `. $Env:USERPROFILE"\.config\pwsh\main.ps1"`.
 3. Go back to `pwsh\main.ps1` and remove the line that sources `personal.ps1`, and delete that file too as it is
@@ -124,8 +123,8 @@ The following plugins require some extra or different steps:
   until this is finished, though it is common to get errors at this point, if you do, generally restarting neovim a few
   times and deleting any directories manually that it says it doesn't have permission to delete will let them all figure
   themselves out. However if you get an error along the lines of `[LANGUAGE].so is not a valid Win32 app`, this means
-  either your version of MinGW does not match your operating system or treesitter is using the wrong compiler for that
-  specific language. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
+  either your version of MinGW does not match your operating system. After fixing the issue you can run `:TSInstall
+  [LANGUAGE]` to recompile it.
 - LSP &rightarrow; All lsp-related (mason.nvim, blink.cmp and trouble.nvim) plugins should be installed at the same time
   as eachother - the corresponding plugin files are `lua\plugin\blink.lua`, `lua\plugin\trouble.lua`,
   `lua\plugin\mason.lua` and `lua\plugin\lsp.lua`. After following the pattern, you should see it downloading all the
@@ -175,7 +174,7 @@ After all of that, don't forget to include these files that are not tied to any 
 > [!TIP]
 > Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be configured in the Yasb
 > `config.yaml` and `styles.css` files, and the window manager can be configured by Komorebi's `komorebi.json`,
-> `applications.yaml` and any `.json` files for custom layouts.
+> `applications.json` and any `.json` files for custom layouts.
 
 # Firefox with Tridactyl
 ### Dependencies
