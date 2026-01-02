@@ -183,12 +183,13 @@ Language_util.format = function(files)
           if command_part == "[|]" then command_part = files end
           command = command .. command_part .. (next(opts.cmd, _) and " " or "")
         end
+        local save = ""
         if files == "%" then
-          vim.cmd("w")
+          save = "silent w"
         else
-          vim.cmd("wa")
+          save = "silent wa"
         end
-        vim.cmd("silent !" .. command)
+        vim.cmd(save .. " | silent !" .. command)
         return
       end
     end
