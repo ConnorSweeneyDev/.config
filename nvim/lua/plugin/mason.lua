@@ -79,7 +79,12 @@ Mason_util.setup_languages(require("mason-registry"), {
         cmd = { "lua-language-server" },
         root_markers = { ".luarc.json", ".stylua.toml", ".git" },
         filetypes = { "lua" },
-        settings = { Lua = { workspace = { library = vim.api.nvim_get_runtime_file("", true) } } },
+        settings = {
+          Lua = {
+            runtime = { version = "LuaJIT", path = { "lua/?.lua", "lua/?/init.lua" } },
+            workspace = { checkThirdParty = false, library = { vim.env.VIMRUNTIME } },
+          },
+        },
         on_attach = function(client, _) client.server_capabilities.semanticTokensProvider = {} end,
       },
     },
