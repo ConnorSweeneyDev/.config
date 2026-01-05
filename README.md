@@ -214,7 +214,8 @@ VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForV
 native Vim toggle for QMK keyboards.
 
 OpenCode &rightarrow; Run `npm install -g opencode-ai`. You can copy the contents of `opencode` into your
-`.config\opencode` folder to use my setup.
+`.config\opencode` folder to use my setup. Ensure that you create the environment variable
+`OPENCODE_EXPERIMENTAL_LSP_TOOL` -> `true` to enable the LSP tool for agents.
 
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in
 `C:\Program Files\Dependencies`, make that folder an environment variable, then right click `DependenciesGui.exe` and
