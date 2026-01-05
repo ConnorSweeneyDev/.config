@@ -3,46 +3,72 @@ description: Save session state for continuation in a new chat
 agent: plan
 ---
 
-Create a context handoff document for session continuation.
+Create a context handoff document for session continuation. The handoff should be comprehensive yet concise, adapting to
+the specific work being done.
 
 ## Gather Context
-1. Review the current todo list (if any).
+1. Review the current todo list (if any)
+2. Review the current phase of work and overall objectives
+3. Check git state: !`git log --oneline -10` and !`git status --short`
+4. Identify the type of work being done (feature dev, debugging, refactoring, exploration, etc.)
 
-2. Review the current phase of the plan/implementation that you are on.
+## Create Adaptive Handoff
+Use the following structure, **adapting sections based on what's relevant**:
 
-3. Review current local git changes:
-   !`git log --oneline -10`
-   !`git status --short`
-
-## Create Handoff
-Use this format:
 ```
 # Context Handoff
 
-## Project
-Brief description of what we're working on.
+## Objective
+[1-2 sentences: What are we trying to accomplish?]
 
-## Active Plan
-Somewhat short summary of current status.
+## Current Status
+[Brief summary: Where are we in the process? What phase/stage?]
 
-## Work Completed This Session
-- Bullet list of completed items.
+## Work Done This Session
+[Bullet list of completed items - be specific about outcomes, not just actions]
 
-## Key Files
-List of files and their changes / what the purpose was:
-- `path/to/file`: What it does / what was changed
+## Active State
+[Include relevant subsections as needed:]
 
-## Important Decisions
-- Decision made and why.
+### Modified Files
+- `path/to/file`: [Purpose/changes]
 
-## Blockers or Issues
-- Any unresolved problems (or "None").
+### Key Decisions & Rationale
+- [Decision]: [Why this approach was chosen]
 
-## Next Steps
-- Immediate next action
-- Following actions
+### Architecture/Design Notes
+[Only if relevant - patterns, structure, important constraints]
+
+### Dependencies & Integration Points
+[Only if relevant - external APIs, services, other modules]
+
+### Test Coverage
+[Only if relevant - what's tested, what needs testing]
+
+### Configuration Changes
+[Only if relevant - env vars, config files, feature flags]
+
+## Context for Next Agent
+
+### Immediate Next Action
+[The single most important next step]
+
+### Subsequent Steps
+- [Ordered list of following actions]
+
+### Known Issues/Blockers
+[Be specific about problems and any attempted solutions, or "None"]
+
+### Important Notes
+[Anything else the next agent needs to know - gotchas, constraints, user preferences]
 ```
 
+## Guidelines
+- **Be selective**: Only include sections with meaningful information
+- **Be specific**: Use file paths with line numbers where relevant
+- **Be concise**: Prefer bulleted facts over prose
+- **Prioritize**: Lead with what matters most for continuation
+- **Contextualize**: Explain *why* decisions were made, not just what was done
+
 ## Output
-You should output the completed handoff, and only the handoff, so that it is easily pasteable. Do not include any
-additional commentary or explanation.
+Output only the completed handoff document with no additional commentary, formatted for easy copy-paste.
