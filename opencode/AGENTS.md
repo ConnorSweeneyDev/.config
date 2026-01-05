@@ -17,10 +17,10 @@
 
 # Tool Usage
 ## Essential Tools
+- **File operation tools**: Always use Read, Edit, Write, Glob, and Grep for file interactions instead of bash commands.
+- **Task tool**: Always use for complex exploration, open-ended searches, or when delegating multi-step subtasks.
 - **LSP tools**: Always use when exploring or working with codebases for navigation, definitions, and references.
 - **Context7 tools**: Always use for third-party services, libraries, or APIs - prefer over web searches.
-- **Task tool**: Always use for complex exploration, open-ended searches, or when delegating multi-step subtasks.
-- **File operation tools**: Always use Read, Edit, Write, Glob, and Grep for file interactions instead of bash commands.
 ## Best Practices
 - Use parallel tool calls when operations are independent to maximize efficiency.
 - Use LSP to understand code relationships before making changes.
