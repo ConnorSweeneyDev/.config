@@ -213,6 +213,9 @@ Using Tridactyl, press `:` and type the following commands:
 VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForVoyager) and follow the setup guide for a
 native Vim toggle for QMK keyboards.
 
+OpenCode &rightarrow; Run `npm install -g opencode-ai`. You can copy the contents of `opencode` into your
+`.config\opencode` folder to use my setup.
+
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in
 `C:\Program Files\Dependencies`, make that folder an environment variable, then right click `DependenciesGui.exe` and
 select "Create shortcut" and rename it to `Dependencies`, then move that to `C:\ProgramData\Microsoft\Windows\Start
@@ -227,9 +230,6 @@ Everything &rightarrow; Download the portable zip from [here](https://www.voidto
 and place this shortcut in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs`.
 
 Mp3tag &rightarrow; Download from [here](https://www.mp3tag.de/en/download.html) and go through the installation wizard.
-
-OpenCode &rightarrow; Run `npm install -g opencode-ai`. You can copy the contents of `opencode` into your
-`.config\opencode` folder to use my setup.
 
 Better Cursor &rightarrow; Go [here](https://jepricreations.com) for a more fitting cursor. After buying, extract the
 contents to a known location and go to the version you desire, right click the `install.inf` file, click install and
