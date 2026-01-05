@@ -9,9 +9,15 @@ portal/*
 scoop/*
 simple-update-notifier/*
 supermaven/*
+opentui/*
 temp/*
 lesshst
 
 # Generated files
 yasb/yasb.log
 nvim/lazy-lock.json
+opencode/*
+!opencode/command
+!opencode/themes
+!opencode/opencode.json
+!opencode/kv.json
