@@ -19,5 +19,6 @@ nvim/lazy-lock.json
 opencode/*
 !opencode/command
 !opencode/themes
+!opencode/AGENTS.md
 !opencode/opencode.json
 !opencode/kv.json

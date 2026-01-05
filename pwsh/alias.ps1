@@ -1,5 +1,5 @@
-function x { Clear-Host }
-function c { claude }
+function c { Clear-Host }
+function o { opencode }
 function n { nvim . }
 function v
 {
