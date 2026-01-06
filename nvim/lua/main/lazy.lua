@@ -20,4 +20,5 @@ require("lazy").setup({
   { "sindrets/diffview.nvim" },
   { "NeogitOrg/neogit" },
   { "github/copilot.vim" },
+  { "NickvanDyke/opencode.nvim" },
 })

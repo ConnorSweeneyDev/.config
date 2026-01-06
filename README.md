@@ -85,6 +85,9 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 - TreeSitterCLI &rightarrow; Run `npm install -g tree-sitter-cli`.
+- Opencode &rightarrow; Run `npm install -g opencode-ai`. You can copy the contents of `opencode` into your
+  `.config\opencode` folder to use my setup. Ensure that you create the environment variable
+  `OPENCODE_EXPERIMENTAL_LSP_TOOL` -> `true` to enable the LSP tool for agents.
 
 ### Setup
 After completing the dependencies for this section, I recommend manually recreating `nvim` on your machine rather than
@@ -212,10 +215,6 @@ Using Tridactyl, press `:` and type the following commands:
 # Other Useful Tools
 VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForVoyager) and follow the setup guide for a
 native Vim toggle for QMK keyboards.
-
-OpenCode &rightarrow; Run `npm install -g opencode-ai`. You can copy the contents of `opencode` into your
-`.config\opencode` folder to use my setup. Ensure that you create the environment variable
-`OPENCODE_EXPERIMENTAL_LSP_TOOL` -> `true` to enable the LSP tool for agents.
 
 Dependencies &rightarrow; Download from [here](https://github.com/lucasg/Dependencies) and put the contents in
 `C:\Program Files\Dependencies`, make that folder an environment variable, then right click `DependenciesGui.exe` and
