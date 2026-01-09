@@ -31,9 +31,3 @@ vim.keymap.set("n", "<C-s>", ":%s/", { desc = "Substitution in the current buffe
 vim.keymap.set("v", "<LEADER>s", '"hy:%s/<C-r>h/<C-r>h', { desc = "Replace selection in the current buffer" })
 vim.keymap.set("v", "<C-s>", ":s/", { desc = "Substitution in the current selection" })
 vim.keymap.set("v", "<C-n>", ":normal ", { desc = "Perform normal mode actions for each line in the selection" })
-vim.keymap.set(
-  "n",
-  "<LEADER>b",
-  '<CMD>cexpr system("./script/build.bat")<CR><CMD>copen<CR>',
-  { desc = "Build project and put the output in the quickfix list" }
-)
