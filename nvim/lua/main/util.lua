@@ -127,40 +127,41 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Quickfix_util = {}
-Quickfix_util.rename = function()
-  vim.api.nvim_input(
-    "<CMD>cdo s/"
-      .. vim.fn.input("Original: ")
-      .. "/"
-      .. vim.fn.input("Substitute: ")
-      .. "/"
-      .. vim.fn.input("Options: ")
-      .. "<CR><CR>"
-  )
+Quickfix_util.literal_search = function()
+  local search_term = vim.fn.input("Search Term: ")
+  search_term = string.gsub(search_term, "'", "''")
+  local directory = vim.fn.input("Target Directory: ", General_util.find_target_directory())
+  vim.cmd("silent grep! -F '" .. search_term .. "' " .. directory)
+  vim.cmd("copen")
 end
-Quickfix_util.grep_search = function(target_directory)
-  vim.api.nvim_input(
-    "mZ:silent grep "
-      .. vim.fn.input("Search Term: ")
-      .. " "
-      .. vim.fn.input("Target Directory: ", target_directory)
-      .. "<CR>`Z"
-  )
+Quickfix_util.literal_word = function()
+  local word = vim.fn.expand("<cword>")
+  word = string.gsub(word, "'", "''")
+  local directory = vim.fn.input("Target Directory: ", General_util.find_target_directory())
+  vim.cmd("silent grep! -F '" .. word .. "' " .. directory)
+  vim.cmd("copen")
 end
-Quickfix_util.grep_word = function(target_directory)
-  vim.api.nvim_input(
-    'mZ"+yiw:silent grep <C-r><C-w> ' .. vim.fn.input("Target Directory: ", target_directory) .. "<CR>`Z"
-  )
+Quickfix_util.literal_full_word = function()
+  local word = vim.fn.expand("<cWORD>")
+  word = string.gsub(word, "'", "''")
+  local directory = vim.fn.input("Target Directory: ", General_util.find_target_directory())
+  vim.cmd("silent grep! -F '" .. word .. "' " .. directory)
+  vim.cmd("copen")
 end
-Quickfix_util.grep_full_word = function(target_directory)
-  vim.api.nvim_input(
-    'mZ"+yiw:silent grep <C-r><C-a> ' .. vim.fn.input("Target Directory: ", target_directory) .. "<CR>`Z"
-  )
+Quickfix_util.literal_selection = function()
+  vim.cmd('normal! "zy')
+  local selection = vim.fn.getreg("z")
+  selection = string.gsub(selection, "'", "''")
+  local directory = vim.fn.input("Target Directory: ", General_util.find_target_directory())
+  vim.cmd("silent grep! -F '" .. selection .. "' " .. directory)
+  vim.cmd("copen")
 end
-Quickfix_util.grep_selection = function(target_directory)
-  vim.api.nvim_input(
-    'mZ"+ygv"hy:silent grep <C-r>h ' .. vim.fn.input("Target Directory: ", target_directory) .. "<CR>`Z"
-  )
+Quickfix_util.grep_search = function()
+  local search_term = vim.fn.input("Search Term: ")
+  search_term = string.gsub(search_term, "'", "''")
+  local directory = vim.fn.input("Target Directory: ", General_util.find_target_directory())
+  vim.cmd("silent grep! '" .. search_term .. "' " .. directory)
+  vim.cmd("copen")
 end
 
 ----------------------------------------------------------------------------------------------------

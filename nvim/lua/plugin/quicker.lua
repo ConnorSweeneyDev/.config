@@ -15,28 +15,34 @@ quicker.setup({
   },
   highlight = { load_buffers = true },
 })
-vim.keymap.set("n", "<LEADER>tq", function() quicker.toggle() end, { desc = "Toggle quickfix list" })
+vim.keymap.set("n", "<LEADER>qt", function() quicker.toggle() end, { desc = "Toggle quickfix list" })
 vim.keymap.set(
   "n",
-  "<LEADER>qg",
-  function() Quickfix_util.grep_search(General_util.find_target_directory()) end,
-  { desc = "Grep project for search term" }
+  "<LEADER>qs",
+  function() Quickfix_util.literal_search() end,
+  { desc = "Search project for literal search term" }
 )
 vim.keymap.set(
   "n",
   "<LEADER>qw",
-  function() Quickfix_util.grep_word(General_util.find_target_directory()) end,
-  { desc = "Grep project for word under cursor" }
+  function() Quickfix_util.literal_word() end,
+  { desc = "Search project for word under cursor" }
 )
 vim.keymap.set(
   "n",
   "<LEADER>qW",
-  function() Quickfix_util.grep_full_word(General_util.find_target_directory()) end,
-  { desc = "Grep project for WORD under cursor" }
+  function() Quickfix_util.literal_full_word() end,
+  { desc = "Search project for WORD under cursor" }
 )
 vim.keymap.set(
   "v",
   "<LEADER>q",
-  function() Quickfix_util.grep_selection(General_util.find_target_directory()) end,
-  { desc = "Grep project for selection" }
+  function() Quickfix_util.literal_selection() end,
+  { desc = "Search project for selection" }
+)
+vim.keymap.set(
+  "n",
+  "<LEADER>qg",
+  function() Quickfix_util.grep_search() end,
+  { desc = "Search project for grep search term" }
 )
