@@ -2,6 +2,19 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "main",
   "compaction": { "auto": false, "prune": false },
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": { "baseURL": "http://localhost:11434/v1" },
+      "models": {
+        "qwen3-coder-opencode:latest": {
+          "name": "Qwen3 Coder",
+          "limit": { "context": 65536, "output": 8192 }
+        }
+      }
+    }
+  },
   "mcp": {
     "context7": { "type": "remote", "url": "https://mcp.context7.com/mcp" }
   },
