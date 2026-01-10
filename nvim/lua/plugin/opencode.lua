@@ -1,4 +1,4 @@
-vim.g.opencode_opts = { provider = { enabled = "wezterm" } }
+vim.g.opencode_opts = { provider = { enabled = false } }
 local opencode = require("opencode")
 vim.keymap.set({ "n", "x" }, "<LEADER>ot", function() opencode.prompt("@this") end, { desc = "Opencode this" })
 vim.keymap.set({ "n", "x" }, "<LEADER>ov", function() opencode.prompt("@visible") end, { desc = "Opencode visible" })
