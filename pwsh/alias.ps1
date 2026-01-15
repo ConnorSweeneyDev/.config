@@ -10,7 +10,7 @@ function d
 }
 
 function n { nvim . }
-function o { $Env:OPENCODE_EXPERIMENTAL = "ALL"; opencode . --port; Remove-Item Env:OPENCODE_EXPERIMENTAL }
+function o { $Env:OPENCODE_EXPERIMENTAL = "1"; opencode . --port; Remove-Item Env:OPENCODE_EXPERIMENTAL }
 function v
 {
   $solution = Get-ChildItem -Path (Get-Location) -Filter *.sln -File -Recurse -Depth 1 | Select-Object -First 1

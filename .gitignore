@@ -16,6 +16,7 @@ lesshst
 # Generated files
 yasb/yasb.log
 nvim/lazy-lock.json
+.opencode/*
 opencode/*
 !opencode/command
 !opencode/themes
