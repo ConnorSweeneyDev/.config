@@ -86,8 +86,7 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 - TreeSitterCLI &rightarrow; Run `npm install -g tree-sitter-cli`.
 - Opencode &rightarrow; Run `npm install -g opencode-ai`. You can copy the contents of `opencode` into your
-  `.config\opencode` folder to use my setup. Ensure that you create the environment variable
-  `OPENCODE_EXPERIMENTAL_LSP_TOOL` -> `true` to enable the LSP tool for agents.
+  `.config\opencode` folder to use my setup.
 
 ### Setup
 After completing the dependencies for this section, I recommend manually recreating `nvim` on your machine rather than
