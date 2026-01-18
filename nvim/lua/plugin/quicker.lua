@@ -15,7 +15,7 @@ quicker.setup({
   },
   highlight = { load_buffers = true },
 })
-vim.keymap.set("n", "<LEADER>qt", function() quicker.toggle() end, { desc = "Toggle quickfix list" })
+vim.keymap.set("n", "<LEADER>qt", function() Quickfix_util.toggle(quicker) end, { desc = "Toggle quickfix list" })
 vim.keymap.set(
   "n",
   "<LEADER>qs",

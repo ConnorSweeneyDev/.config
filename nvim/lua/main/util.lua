@@ -127,26 +127,27 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Quickfix_util = {}
+Quickfix_util.toggle = function(quicker)
+  quicker.toggle()
+  vim.cmd("normal! zz")
+end
 Quickfix_util.literal_search = function()
   local search_term = vim.fn.input("Search Term: ")
   search_term = string.gsub(search_term, "'", "''")
   local directory = vim.fn.input("Target Directory: ", General_util.find_target_directory())
   vim.cmd("silent grep! -F '" .. search_term .. "' " .. directory)
-  vim.cmd("copen")
 end
 Quickfix_util.literal_word = function()
   local word = vim.fn.expand("<cword>")
   word = string.gsub(word, "'", "''")
   local directory = vim.fn.input("Target Directory: ", General_util.find_target_directory())
   vim.cmd("silent grep! -F '" .. word .. "' " .. directory)
-  vim.cmd("copen")
 end
 Quickfix_util.literal_full_word = function()
   local word = vim.fn.expand("<cWORD>")
   word = string.gsub(word, "'", "''")
   local directory = vim.fn.input("Target Directory: ", General_util.find_target_directory())
   vim.cmd("silent grep! -F '" .. word .. "' " .. directory)
-  vim.cmd("copen")
 end
 Quickfix_util.literal_selection = function()
   vim.cmd('normal! "zy')
@@ -154,14 +155,12 @@ Quickfix_util.literal_selection = function()
   selection = string.gsub(selection, "'", "''")
   local directory = vim.fn.input("Target Directory: ", General_util.find_target_directory())
   vim.cmd("silent grep! -F '" .. selection .. "' " .. directory)
-  vim.cmd("copen")
 end
 Quickfix_util.grep_search = function()
   local search_term = vim.fn.input("Search Term: ")
   search_term = string.gsub(search_term, "'", "''")
   local directory = vim.fn.input("Target Directory: ", General_util.find_target_directory())
   vim.cmd("silent grep! '" .. search_term .. "' " .. directory)
-  vim.cmd("copen")
 end
 
 ----------------------------------------------------------------------------------------------------
