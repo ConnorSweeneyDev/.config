@@ -1,7 +1,7 @@
 # Welcome
-Thes are all my Windows dotfiles and how to set them up, using Wezterm with Neovim in PowerShellCore along with fzf.
+These are all my Windows dotfiles and how to set them up, using Wezterm with Neovim in PowerShellCore along with fzf.
 Additionally there's a setup for a Tiling Window Manager using Komorebi, Yasb and AutoHotkey, and a Tridactyl setup for
-Firefox. You will also fin a list of other useful tools at the end.
+Firefox. You will also find a list of other useful tools at the end.
 
 https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 
