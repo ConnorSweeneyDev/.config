@@ -56,6 +56,29 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
+Key_util = {}
+Key_util.half_page = function(up)
+  local window = vim.api.nvim_get_current_win()
+  local position = vim.api.nvim_win_get_cursor(window)
+  local height = vim.api.nvim_win_get_height(window)
+  local half = math.floor(height / 2)
+  if height % 2 == 0 then
+    if up or position[1] == 1 then half = half - 1 end
+  end
+  vim.api.nvim_win_set_cursor(window, {
+    math.max(
+      1,
+      math.min(
+        vim.api.nvim_buf_line_count(vim.api.nvim_win_get_buf(window)),
+        up and (position[1] - half) or (position[1] + half)
+      )
+    ),
+    position[2],
+  })
+end
+
+----------------------------------------------------------------------------------------------------
+
 Color_util = {}
 Color_util.initialize_colors = function(scheme, highlights)
   vim.cmd.colorscheme(scheme)
@@ -714,12 +737,10 @@ end
 Diffview_util = {}
 Diffview_util.fullscreen = function()
   local window = { type = "float" }
-  local editor_width = vim.o.columns
-  local editor_height = vim.o.lines
   window.border = "none"
-  window.width = editor_width
-  window.height = editor_height - 1
-  window.col = math.floor(editor_width * 0.5 - window.width * 0.5)
-  window.row = math.floor(editor_height * 0.5 - window.height * 0.5)
+  window.width = vim.o.columns
+  window.height = vim.o.lines - 1
+  window.col = math.floor(vim.o.columns * 0.5 - window.width * 0.5)
+  window.row = math.floor(vim.o.lines * 0.5 - window.height * 0.5)
   return window
 end
