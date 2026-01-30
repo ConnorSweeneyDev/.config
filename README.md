@@ -167,10 +167,11 @@ After all of that, don't forget to include these files that are not tied to any 
 5. Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors are configured.
 6. Paste `yasb` into your config. Add the directory containing `yasbc.exe` to your path (`C:\Program Files\YASB` by
    default).
-7. Paste `ahk` into your config. Right click `wm.ahk` and create a shortcut, then rename that shortcut to just `wm` and
-   create a copy of it, one should be moved to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` and the other to
-   that folder's sub-directory `Start-up` (or `Startup`). Now it will be run at startup and is accessible from the start
-   menu in case you need to restart the manager, and all three processes can be killed from the task manager.
+7. Paste `ahk` into your config. Remove `personal.ahk`, then right click `wm.ahk` and create a shortcut, then rename
+   that shortcut to just `wm` and create a copy of it, one should be moved to `C:\ProgramData\Microsoft\Windows\Start
+   Menu\Programs` and the other to that folder's sub-directory `Start-up` (or `Startup`). Now it will be run at startup
+   and is accessible from the start menu in case you need to restart the manager, and all three processes can be killed
+   from the task manager.
 8. Restart your PC.
 
 > [!TIP]
