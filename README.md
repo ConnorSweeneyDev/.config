@@ -1,8 +1,8 @@
 <div align="center">
 
 # Windows Dotfiles
-[System](#system) | [Komorebi](#komorebi) | [Wezterm](#wezterm) | [Neovim](#neovim) | [Firefox](#firefox) |
-[Extras](#extras)
+[System](#system) | [Komorebi](#komorebi) | [Wezterm](#wezterm) | [Neovim](#neovim) | [Opencode](#opencode) |
+[Firefox](#firefox) | [Extras](#extras)
 
 https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 
@@ -182,6 +182,21 @@ After all of that, don't forget to include these files that are not tied to any 
 > All global keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective
 > `lua\plugin\[PLUGIN].lua` files and you can go into deeper detail inside `lua\main\util.lua`. Furthermore, all
 > language specific settings and mappings can be edited at `lua\plugin\language.lua`.
+
+# Opencode
+> [!IMPORTANT]
+> This section requires completion of the terminal setup first.
+
+### Dependencies
+- Opencode &rightarrow; Run `npm install -g opencode-ai`.
+
+### Setup
+You only need to paste the `opencode` folder into your config and then run opencode and connect whatever providers you
+want to use.
+
+> [!TIP]
+> `AGENTS.md` is the prompt that every agent will be fed and `opencode.json` contains the bulk of the configuration of
+> opencode. The `command` folder contains custom /command definitions, and the `themes` folder contains custom themes.
 
 # Firefox
 ### Dependencies
