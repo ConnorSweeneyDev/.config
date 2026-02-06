@@ -1,8 +1,10 @@
 <div align="center">
 
-https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 # Windows Dotfiles
+https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
+
 My whole config and how to set it up.
+
 [Welcome](#welcome) · [System](#system) · [Komorebi, Yasb and AutoHotkey](#komorebi-yasb-and-autohotkey) · [Wezterm](#wezterm) · [Neovim](#neovim) · [Firefox with Tridactyl](#firefox-with-tridactyl) · [Other Useful Tools](#other-useful-tools)
 
 </div>
