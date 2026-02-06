@@ -191,8 +191,8 @@ After all of that, don't forget to include these files that are not tied to any 
 - Opencode &rightarrow; Run `npm install -g opencode-ai`.
 
 ### Setup
-You only need to paste the `opencode` folder into your config and then run opencode and connect whatever providers you
-want to use.
+You only need to paste the `opencode` folder into your config, run opencode and connect whatever providers you want to
+use.
 
 > [!TIP]
 > `AGENTS.md` is the prompt that every agent will be fed and `opencode.json` contains the bulk of the configuration of
