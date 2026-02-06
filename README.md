@@ -1,4 +1,4 @@
-# Welcome
+# Windows Dotfiles
 These are all my Windows dotfiles and how to set them up, using Wezterm with Neovim in PowerShellCore along with fzf.
 Additionally there's a setup for a Tiling Window Manager using Komorebi, Yasb and AutoHotkey, and a Tridactyl setup for
 Firefox. You will also find a list of other useful tools at the end.
@@ -17,8 +17,9 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 1. Ensure you are able to access and use the Windows Store, winget relies on this for certain things. If you can't
    access the store (it's known to be glitchy for some accounts) then you can find alternative installs for all
    dependencies on either [Chocolatey](https://chocolatey.org/install#individual) or the dependency's official website.
-2. Go to the "For Developers" section of the Windows settings and do the following:
+2. Go to the "System" and then "Advanced" section of the Windows settings and do the following:
    - Ensure "Developer Mode" is turned on.
+   - Ensure "Enable long paths" is turned on.
    - Enable "Show hidden and system files" and "Show file extensions" under "File Explorer".
    - Enable local powershell scripts to run without signing under "PowerShell".
    - Enable Sudo.
@@ -39,7 +40,40 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
    - File Locksmith enabled.
 5. You can right click your desktop and go to "View" and then "Hide desktop icons" to have a clean desktop.
 
-# Terminal
+# Komorebi, Yasb and AutoHotkey
+### Dependencies
+- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi` and add the environment variable `KOMOREBI_CONFIG_HOME`
+  -> `$Env:USERPROFILE\.config\komorebi`.
+- Yasb &rightarrow; Run `winget install --id AmN.yasb`.
+- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
+- ToggleRoundedCorners &rightarrow; Download the portable executable from
+  [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to `trc.exe`. Place it in
+  `C:\Program Files\ToggleRoundedCorners` and put that folder in your path.
+
+### Setup
+1. Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1` in
+   PowerShellCore as an admin.
+2. Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" - enable "Turn off
+   all unnecessary animations (when possible)".
+3. Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the taskbar" under the
+   taskbar behaviours.
+4. Search `multitasking` and turn off "Snap windows".
+5. Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors are configured.
+6. Paste `yasb` into your config. Add the directory containing `yasbc.exe` to your path (`C:\Program Files\YASB` by
+   default).
+7. Paste `ahk` into your config. Remove `personal.ahk`, then right click `wm.ahk` and create a shortcut, then rename
+   that shortcut to just `wm` and create a copy of it, one should be moved to `C:\ProgramData\Microsoft\Windows\Start
+   Menu\Programs` and the other to that folder's sub-directory `Start-up` (or `Startup`). Now it will be run at startup
+   and is accessible from the start menu in case you need to restart the manager, and all three processes can be killed
+   from the task manager.
+8. Restart your PC.
+
+> [!TIP]
+> Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be configured in the Yasb
+> `config.yaml` and `styles.css` files, and the window manager can be configured by Komorebi's `komorebi.json`,
+> `applications.json` and any `.json` files for custom layouts.
+
+# Wezterm
 ### Dependencies
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) (I use CaskaydiaCove), then in
   explorer select all `.ttf` files and right click them, now select "Install". After that you can delete the files.
@@ -145,39 +179,6 @@ After all of that, don't forget to include these files that are not tied to any 
 > All global keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective
 > `lua\plugin\[PLUGIN].lua` files and you can go into deeper detail inside `lua\main\util.lua`. Furthermore, all
 > language specific settings and mappings can be edited at `lua\plugin\language.lua`.
-
-# Tiling Window Manager
-### Dependencies
-- Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi` and add the environment variable `KOMOREBI_CONFIG_HOME`
-  -> `$Env:USERPROFILE\.config\komorebi`.
-- Yasb &rightarrow; Run `winget install --id AmN.yasb`.
-- AutoHotkey &rightarrow; Run `winget install AutoHotkey.AutoHotkey`.
-- ToggleRoundedCorners &rightarrow; Download the portable executable from
-  [here](https://github.com/oberrich/win11-toggle-rounded-corners/releases) and rename it to `trc.exe`. Place it in
-  `C:\Program Files\ToggleRoundedCorners` and put that folder in your path.
-
-### Setup
-1. Run `Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1` in
-   PowerShellCore as an admin.
-2. Open control panel and go to the "Ease of Access Center" then "Make the computer easier to see" - enable "Turn off
-   all unnecessary animations (when possible)".
-3. Press Windows + I and search `taskbar`, go to taskbar settings and turn on "Automatically hide the taskbar" under the
-   taskbar behaviours.
-4. Search `multitasking` and turn off "Snap windows".
-5. Paste `komorebi` into your config. In `komorebi.json` ensure that the correct amount of monitors are configured.
-6. Paste `yasb` into your config. Add the directory containing `yasbc.exe` to your path (`C:\Program Files\YASB` by
-   default).
-7. Paste `ahk` into your config. Remove `personal.ahk`, then right click `wm.ahk` and create a shortcut, then rename
-   that shortcut to just `wm` and create a copy of it, one should be moved to `C:\ProgramData\Microsoft\Windows\Start
-   Menu\Programs` and the other to that folder's sub-directory `Start-up` (or `Startup`). Now it will be run at startup
-   and is accessible from the start menu in case you need to restart the manager, and all three processes can be killed
-   from the task manager.
-8. Restart your PC.
-
-> [!TIP]
-> Keybinds and commands to run on startup can be configured in `wm.ahk`, the status bar can be configured in the Yasb
-> `config.yaml` and `styles.css` files, and the window manager can be configured by Komorebi's `komorebi.json`,
-> `applications.json` and any `.json` files for custom layouts.
 
 # Firefox with Tridactyl
 ### Dependencies
