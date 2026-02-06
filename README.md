@@ -1,10 +1,10 @@
 <div align="center">
 
 # Windows Dotfiles
-https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
-
 [System](#system) | [Komorebi](#komorebi) | [Wezterm](#wezterm) | [Neovim](#neovim) | [Firefox](#firefox) |
 [Extras](#extras)
+
+https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 
 </div>
 
