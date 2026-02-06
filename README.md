@@ -5,7 +5,8 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 
 My whole config and how to set it up.
 
-[Welcome](#welcome) · [System](#system) · [Komorebi, Yasb and AutoHotkey](#komorebi-yasb-and-autohotkey) · [Wezterm](#wezterm) · [Neovim](#neovim) · [Firefox with Tridactyl](#firefox-with-tridactyl) · [Other Useful Tools](#other-useful-tools)
+[System](#system) · [Komorebi](#komorebi) · [Wezterm](#wezterm) · [Neovim](#neovim) · [Firefox](#firefox) ·
+[Extras](#extras)
 
 </div>
 
@@ -44,7 +45,7 @@ My whole config and how to set it up.
    - File Locksmith enabled.
 5. You can right click your desktop and go to "View" and then "Hide desktop icons" to have a clean desktop.
 
-# Komorebi, Yasb and AutoHotkey
+# Komorebi
 ### Dependencies
 - Komorebi &rightarrow; Run `winget install LGUG2Z.komorebi` and add the environment variable `KOMOREBI_CONFIG_HOME`
   -> `$Env:USERPROFILE\.config\komorebi`.
@@ -184,7 +185,7 @@ After all of that, don't forget to include these files that are not tied to any 
 > `lua\plugin\[PLUGIN].lua` files and you can go into deeper detail inside `lua\main\util.lua`. Furthermore, all
 > language specific settings and mappings can be edited at `lua\plugin\language.lua`.
 
-# Firefox with Tridactyl
+# Firefox
 ### Dependencies
 - Firefox &rightarrow; Download from [here](https://www.mozilla.org/en-GB/firefox/new/).
 - Tridactyl &rightarrow; Go
@@ -217,7 +218,7 @@ Using Tridactyl, press `:` and type the following commands:
 > You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to view all the most
 > important Tridactyl bindings.
 
-# Other Useful Tools
+# Extras
 VimForVoyager &rightarrow; Go [here](https://github.com/ConnorSweeneyDev/VimForVoyager) and follow the setup guide for a
 native Vim toggle for QMK keyboards.
 
