@@ -3,10 +3,12 @@ function update # Keep the tab title and osc7 up to date
   $title = Split-Path -Leaf -Path (Get-Location)
   $Host.UI.RawUI.WindowTitle = $title
   $esc = [char]27
-  $path = '/' + (Get-Location)
   $bel = [char]7
-  $osc7 = "${esc}]7;file://$path${bel}"
-  Write-Host -NoNewline "$osc7"
+  $fsPath = (Get-Location).ProviderPath
+  $osc7Path = $fsPath -replace '\\','/'
+  $osc7 = "${esc}]7;file:///$osc7Path${bel}"
+  $osc99 = "${esc}]9;9;`"$fsPath`"${esc}\"
+  Write-Host -NoNewline ($osc7 + $osc99)
 }
 function prompt # Run update every prompt and use a custom prompt display
 {
