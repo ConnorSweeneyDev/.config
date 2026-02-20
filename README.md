@@ -1,7 +1,7 @@
 <div align="center">
 
 # Windows Dotfiles
-[System](#system) | [Komorebi](#komorebi) | [Wezterm](#wezterm) | [Neovim](#neovim) | [Opencode](#opencode) |
+[System](#system) | [Komorebi](#komorebi) | [Terminal](#terminal) | [Neovim](#neovim) | [Opencode](#opencode) |
 [Firefox](#firefox) | [Extras](#extras)
 
 https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
@@ -75,11 +75,11 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 > `config.yaml` and `styles.css` files, and the window manager can be configured by Komorebi's `komorebi.json`,
 > `applications.json` and any `.json` files for custom layouts.
 
-# Wezterm
+# Terminal
 ### Dependencies
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) (I use CaskaydiaCove), then in
   explorer select all `.ttf` files and right click them, now select "Install". After that you can delete the files.
-- WezTerm &rightarrow; Run `winget install --id wez.wezterm`.
+- WezTerm &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
 - PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`.
 - Github CLI &rightarrow; Run `winget install --id GitHub.cli`.
@@ -89,16 +89,21 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 - fzf &rightarrow; Run `winget install junegunn.fzf`.
 
 ### Setup
-1. Paste `wezterm` into your config and change the font face to whatever NerdFont you installed.
-2. Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that is opened (you may
+1. Paste `terminal` into your config and change the font face to whatever NerdFont you installed. Also, make sure you
+   add whatever profiles you want to use other than the three that i have set up. Each new profile needs a unique guid -
+   you can generate one by running `[guid]::NewGuid()` in PowerShellCore.
+2. Find the location of the windows terminal settings file (it's different per machine) - open that directory and delete
+   `settings.json` - then run this command in PowerShellCore: `New-Item -ItemType SymbolicLink -Path ".\settings.json"
+   -Target "$env:USERPROFILE\.config\terminal\settings.json"`.
+3. Paste `pwsh` into your config, then run `notepad $PROFILE` and paste this line into the file that is opened (you may
    have to create the file first if it doesn't exist): `. $Env:USERPROFILE"\.config\pwsh\main.ps1"`.
-3. Go back to `pwsh\main.ps1` and remove the line that sources `personal.ps1`, and delete that file too as it is
+4. Go back to `pwsh\main.ps1` and remove the line that sources `personal.ps1`, and delete that file too as it is
    specific to me. Other than that, skim the rest of the files and remove anything you know you won't need - everything
    is commented or self-explanatory so you can be sure of what you're doing.
-4. Run `git config --system core.longpaths true` and ensure that `[PATH_TO_GIT]\bin` is in your path. After that you can
+5. Run `git config --system core.longpaths true` and ensure that `[PATH_TO_GIT]\bin` is in your path. After that you can
    run `git config --global user.name "[YOUR_NAME]"` and `git config --global user.email "[YOUR_EMAIL]"`, followed by
    `git config --global core.autocrlf true` and `git config --global core.editor nvim` if you want.
-5. Run `gh auth login` and follow the instructions to authenticate your local machine with your GitHub account. After
+6. Run `gh auth login` and follow the instructions to authenticate your local machine with your GitHub account. After
    that you can run `gh config set editor nvim` if you want.
 
 # Neovim

@@ -1,0 +1,150 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [
+    { "id": "User.SendEscEnter", "command": { "action": "sendInput", "input": "\u001b\r" } },
+    { "id": "User.Copy", "command": "copy" },
+    { "id": "User.Paste", "command": "paste" },
+    { "id": "User.Find", "command": "find" },
+
+    { "id": "User.Tab0", "command": { "action": "switchToTab", "index": 0 } },
+    { "id": "User.Tab1", "command": { "action": "switchToTab", "index": 1 } },
+    { "id": "User.Tab2", "command": { "action": "switchToTab", "index": 2 } },
+    { "id": "User.Tab3", "command": { "action": "switchToTab", "index": 3 } },
+    { "id": "User.Tab4", "command": { "action": "switchToTab", "index": 4 } },
+    { "id": "User.PrevTab", "command": "prevTab" },
+    { "id": "User.NextTab", "command": "nextTab" },
+    { "id": "User.CloseTab", "command": "closeTab" },
+    { "id": "User.DuplicateTab", "command": "duplicateTab" },
+    { "id": "User.NewWindow", "command": "newWindow" },
+    { "id": "User.ScrollUp12", "command": { "action": "scrollUp", "rowsToScroll": 12 } },
+    { "id": "User.ScrollDown12", "command": { "action": "scrollDown", "rowsToScroll": 12 } },
+
+    { "id": "User.OpenCwdInExplorer", "command": { "action": "sendInput", "input": "start .\r" } },
+    { "id": "User.CleanTab", "command": { "action": "sendInput", "input": "./script/clean.bat\r" } },
+    { "id": "User.BuildTab", "command": { "action": "sendInput", "input": "./script/build.bat\r" } },
+    { "id": "User.RunTab", "command": { "action": "sendInput", "input": "./script/run.bat\r" } },
+    { "id": "User.DebugTab", "command": { "action": "sendInput", "input": "./script/debug.bat\r" } }
+  ],
+  "keybindings": [
+    { "keys": "alt+enter", "id": "User.SendEscEnter" },
+    { "keys": "alt+ctrl+c", "id": "User.Copy" },
+    { "keys": "alt+ctrl+v", "id": "User.Paste" },
+    { "keys": "alt+ctrl+f", "id": "User.Find" },
+
+    { "keys": "alt+shift+a", "id": "User.Tab0" },
+    { "keys": "alt+shift+s", "id": "User.Tab1" },
+    { "keys": "alt+shift+d", "id": "User.Tab2" },
+    { "keys": "alt+shift+f", "id": "User.Tab3" },
+    { "keys": "alt+shift+g", "id": "User.Tab4" },
+    { "keys": "alt+shift+h", "id": "User.PrevTab" },
+    { "keys": "alt+shift+l", "id": "User.NextTab" },
+    { "keys": "alt+shift+z", "id": "User.CloseTab" },
+    { "keys": "alt+shift+t", "id": "User.DuplicateTab" },
+    { "keys": "alt+shift+w", "id": "User.NewWindow" },
+    { "keys": "alt+shift+j", "id": "User.ScrollDown12" },
+    { "keys": "alt+shift+k", "id": "User.ScrollUp12" },
+
+    { "keys": "alt+shift+e", "id": "User.OpenCwdInExplorer" },
+    { "keys": "alt+shift+v", "id": "User.CleanTab" },
+    { "keys": "alt+shift+b", "id": "User.BuildTab" },
+    { "keys": "alt+shift+n", "id": "User.RunTab" },
+    { "keys": "alt+shift+m", "id": "User.DebugTab" }
+  ],
+  "schemes": [
+    {
+      "name": "Dark",
+      "background": "#000000",
+      "foreground": "#E1E1E1",
+      "cursorColor": "#E1E1E1",
+      "selectionBackground": "#3F638B",
+
+      "black": "#1A1A1A",
+      "red": "#CC372E",
+      "green": "#26A439",
+      "yellow": "#CDAC08",
+      "blue": "#0869CB",
+      "purple": "#9647BF",
+      "cyan": "#479EC2",
+      "white": "#98989D",
+      "brightBlack": "#464646",
+      "brightRed": "#FF453A",
+      "brightGreen": "#32D74B",
+      "brightYellow": "#FFD60A",
+      "brightBlue": "#0A84FF",
+      "brightPurple": "#BF5AF2",
+      "brightCyan": "#76D6FF",
+      "brightWhite": "#FFFFFF"
+    }
+  ],
+  "themes": [
+    {
+      "name": "DarkUI",
+      "window": {
+        "frame": "#000000",
+        "unfocusedFrame": "#000000"
+      },
+      "tabRow": {
+        "background": "#000000",
+        "unfocusedBackground": "#000000"
+      },
+      "tab": {
+        "iconStyle": "hidden",
+        "showCloseButton": "never",
+        "background": "#0F0F0F",
+        "unfocusedBackground": "#000000"
+      }
+    }
+  ],
+  "newTabMenu": [
+    { "type": "profile", "profile": "pwsh" },
+    { "type": "separator" },
+    { "type": "remainingProfiles" }
+  ],
+  "alwaysShowTabs": true,
+  "showTabsInTitlebar": true,
+  "showTabsFullscreen": true,
+  "useAcrylicInTabRow": false,
+  "warning.confirmCloseAllTabs": false,
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "warning.largePaste": false,
+  "warning.multiLinePaste": false,
+  "defaultProfile": "pwsh",
+  "theme": "DarkUI",
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Dark",
+      "opacity": 70,
+      "padding": "0, 0, 0, 0",
+      "cursorShape": "filledBox",
+      "font": {
+        "face": "CaskaydiaCove NF",
+        "size": 20,
+        "weight": "semi-bold",
+        "cellHeight": "1.15"
+      }
+    },
+    "list": [
+      {
+        "guid": "{249bd472-7dac-4e35-baf0-322088565153}",
+        "name": "pwsh",
+        "commandline": "pwsh.exe -NoLogo",
+        "startingDirectory": "C:\\",
+        "hidden": false
+      },
+      {
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "name": "Windows PowerShell",
+        "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "hidden": false
+      },
+      {
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "name": "Command Prompt",
+        "commandline": "%SystemRoot%\\System32\\cmd.exe",
+        "hidden": false
+      }
+    ]
+  }
+}
