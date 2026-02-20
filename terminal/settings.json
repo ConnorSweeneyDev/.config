@@ -1,103 +1,31 @@
 {
   "$help": "https://aka.ms/terminal-documentation",
   "$schema": "https://aka.ms/terminal-profiles-schema",
-  "actions": [
-    { "id": "User.SendEscEnter", "command": { "action": "sendInput", "input": "\u001b\r" } },
-    { "id": "User.Copy", "command": "copy" },
-    { "id": "User.Paste", "command": "paste" },
-    { "id": "User.Find", "command": "find" },
-    { "id": "User.Tab0", "command": { "action": "switchToTab", "index": 0 } },
-    { "id": "User.Tab1", "command": { "action": "switchToTab", "index": 1 } },
-    { "id": "User.Tab2", "command": { "action": "switchToTab", "index": 2 } },
-    { "id": "User.Tab3", "command": { "action": "switchToTab", "index": 3 } },
-    { "id": "User.Tab4", "command": { "action": "switchToTab", "index": 4 } },
-    { "id": "User.PrevTab", "command": "prevTab" },
-    { "id": "User.NextTab", "command": "nextTab" },
-    { "id": "User.CloseTab", "command": "closeTab" },
-    { "id": "User.DuplicateTab", "command": "duplicateTab" },
-    { "id": "User.NewWindow", "command": "newWindow" },
-    { "id": "User.ScrollUp12", "command": { "action": "scrollUp", "rowsToScroll": 12 } },
-    { "id": "User.ScrollDown12", "command": { "action": "scrollDown", "rowsToScroll": 12 } },
-    { "id": "User.OpenCwdInExplorer", "command": { "action": "sendInput", "input": "start .\r" } },
-    { "id": "User.CleanTab", "command": { "action": "sendInput", "input": "./script/clean.bat\r" } },
-    { "id": "User.BuildTab", "command": { "action": "sendInput", "input": "./script/build.bat\r" } },
-    { "id": "User.RunTab", "command": { "action": "sendInput", "input": "./script/run.bat\r" } },
-    { "id": "User.DebugTab", "command": { "action": "sendInput", "input": "./script/debug.bat\r" } }
-  ],
-  "keybindings": [
-    { "keys": "alt+enter", "id": "User.SendEscEnter" },
-    { "keys": "alt+ctrl+c", "id": "User.Copy" },
-    { "keys": "alt+ctrl+v", "id": "User.Paste" },
-    { "keys": "alt+ctrl+f", "id": "User.Find" },
-    { "keys": "alt+shift+a", "id": "User.Tab0" },
-    { "keys": "alt+shift+s", "id": "User.Tab1" },
-    { "keys": "alt+shift+d", "id": "User.Tab2" },
-    { "keys": "alt+shift+f", "id": "User.Tab3" },
-    { "keys": "alt+shift+g", "id": "User.Tab4" },
-    { "keys": "alt+shift+h", "id": "User.PrevTab" },
-    { "keys": "alt+shift+l", "id": "User.NextTab" },
-    { "keys": "alt+shift+z", "id": "User.CloseTab" },
-    { "keys": "alt+shift+t", "id": "User.DuplicateTab" },
-    { "keys": "alt+shift+w", "id": "User.NewWindow" },
-    { "keys": "alt+shift+j", "id": "User.ScrollDown12" },
-    { "keys": "alt+shift+k", "id": "User.ScrollUp12" },
-    { "keys": "alt+shift+e", "id": "User.OpenCwdInExplorer" },
-    { "keys": "alt+shift+v", "id": "User.CleanTab" },
-    { "keys": "alt+shift+b", "id": "User.BuildTab" },
-    { "keys": "alt+shift+n", "id": "User.RunTab" },
-    { "keys": "alt+shift+m", "id": "User.DebugTab" }
-  ],
-  "schemes": [
-    {
-      "name": "Dark",
-      "background": "#000000",
-      "foreground": "#E1E1E1",
-      "cursorColor": "#E1E1E1",
-      "selectionBackground": "#3F638B",
-      "black": "#1A1A1A",
-      "red": "#CC372E",
-      "green": "#26A439",
-      "yellow": "#CDAC08",
-      "blue": "#0869CB",
-      "purple": "#9647BF",
-      "cyan": "#479EC2",
-      "white": "#98989D",
-      "brightBlack": "#464646",
-      "brightRed": "#FF453A",
-      "brightGreen": "#32D74B",
-      "brightYellow": "#FFD60A",
-      "brightBlue": "#0A84FF",
-      "brightPurple": "#BF5AF2",
-      "brightCyan": "#76D6FF",
-      "brightWhite": "#FFFFFF"
-    }
-  ],
-  "themes": [
-    {
-      "name": "DarkUI",
-      "window": { "frame": "#000000", "unfocusedFrame": "#000000" },
-      "tabRow": { "background": "#000000", "unfocusedBackground": "#000000" },
-      "tab": { "iconStyle": "hidden", "showCloseButton": "never", "background": "#0F0F0F", "unfocusedBackground": "#000000" }
-    }
-  ],
-  "newTabMenu": [ { "type": "profile", "profile": "pwsh" }, { "type": "separator" }, { "type": "remainingProfiles" } ],
+
+  "launchMode": "default",
+  "defaultProfile": "pwsh",
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "warning.largePaste": false,
+  "warning.multiLinePaste": false,
+
+  "theme": "DarkUI",
   "disableAnimations": true,
   "alwaysShowTabs": true,
   "showTabsInTitlebar": true,
   "showTabsFullscreen": true,
   "useAcrylicInTabRow": false,
+  "tabSwitcherMode": "inOrder",
+  "tabWidthMode": "titleLength",
+  "newTabPosition": "afterLastTab",
   "warning.confirmCloseAllTabs": false,
-  "copyFormatting": "none",
-  "copyOnSelect": false,
-  "warning.largePaste": false,
-  "warning.multiLinePaste": false,
-  "defaultProfile": "pwsh",
-  "theme": "DarkUI",
+  "newTabMenu": [ { "type": "profile", "profile": "pwsh" }, { "type": "separator" }, { "type": "remainingProfiles" } ],
+
   "profiles": {
     "defaults": {
       "colorScheme": "Dark",
       "opacity": 70,
-      "padding": "0, 0, 0, 0",
+      "padding": "14, 0, 0, 0",
       "cursorShape": "filledBox",
       "antialiasingMode": "grayscale",
       "font": { "face": "CaskaydiaCove NF", "size": 20, "weight": "semi-bold", "cellWidth": "0.6", "cellHeight": "1.15" }
@@ -123,5 +51,88 @@
         "hidden": false
       }
     ]
-  }
+  },
+
+  "keybindings": [
+    { "keys": "alt+enter", "id": "User.SendEscEnter" },
+    { "keys": "alt+ctrl+c", "id": "User.Copy" },
+    { "keys": "alt+ctrl+v", "id": "User.Paste" },
+    { "keys": "alt+ctrl+f", "id": "User.Find" },
+    { "keys": "alt+ctrl+m", "id": "User.ToggleMarkMode" },
+    { "keys": "alt+shift+a", "id": "User.Tab0" },
+    { "keys": "alt+shift+s", "id": "User.Tab1" },
+    { "keys": "alt+shift+d", "id": "User.Tab2" },
+    { "keys": "alt+shift+f", "id": "User.Tab3" },
+    { "keys": "alt+shift+g", "id": "User.Tab4" },
+    { "keys": "alt+shift+h", "id": "User.PrevTab" },
+    { "keys": "alt+shift+l", "id": "User.NextTab" },
+    { "keys": "alt+shift+z", "id": "User.CloseTab" },
+    { "keys": "alt+shift+t", "id": "User.DuplicateTab" },
+    { "keys": "alt+shift+w", "id": "User.NewWindow" },
+    { "keys": "alt+shift+j", "id": "User.ScrollDown12" },
+    { "keys": "alt+shift+k", "id": "User.ScrollUp12" },
+    { "keys": "alt+shift+e", "id": "User.OpenCwdInExplorer" },
+    { "keys": "alt+shift+v", "id": "User.CleanTab" },
+    { "keys": "alt+shift+b", "id": "User.BuildTab" },
+    { "keys": "alt+shift+n", "id": "User.RunTab" },
+    { "keys": "alt+shift+m", "id": "User.DebugTab" }
+  ],
+  "actions": [
+    { "id": "User.SendEscEnter", "command": { "action": "sendInput", "input": "\u001b\r" } },
+    { "id": "User.Copy", "command": "copy" },
+    { "id": "User.Paste", "command": "paste" },
+    { "id": "User.Find", "command": "find" },
+    { "id": "User.ToggleMarkMode", "command": "markMode" },
+    { "id": "User.Tab0", "command": { "action": "switchToTab", "index": 0 } },
+    { "id": "User.Tab1", "command": { "action": "switchToTab", "index": 1 } },
+    { "id": "User.Tab2", "command": { "action": "switchToTab", "index": 2 } },
+    { "id": "User.Tab3", "command": { "action": "switchToTab", "index": 3 } },
+    { "id": "User.Tab4", "command": { "action": "switchToTab", "index": 4 } },
+    { "id": "User.PrevTab", "command": "prevTab" },
+    { "id": "User.NextTab", "command": "nextTab" },
+    { "id": "User.CloseTab", "command": "closeTab" },
+    { "id": "User.DuplicateTab", "command": "duplicateTab" },
+    { "id": "User.NewWindow", "command": "newWindow" },
+    { "id": "User.ScrollUp12", "command": { "action": "scrollUp", "rowsToScroll": 12 } },
+    { "id": "User.ScrollDown12", "command": { "action": "scrollDown", "rowsToScroll": 12 } },
+    { "id": "User.OpenCwdInExplorer", "command": { "action": "sendInput", "input": "start .\r" } },
+    { "id": "User.CleanTab", "command": { "action": "sendInput", "input": "./script/clean.bat\r" } },
+    { "id": "User.BuildTab", "command": { "action": "sendInput", "input": "./script/build.bat\r" } },
+    { "id": "User.RunTab", "command": { "action": "sendInput", "input": "./script/run.bat\r" } },
+    { "id": "User.DebugTab", "command": { "action": "sendInput", "input": "./script/debug.bat\r" } }
+  ],
+
+  "themes": [
+    {
+      "name": "DarkUI",
+      "window": { "frame": "#000000", "unfocusedFrame": "#000000" },
+      "tabRow": { "background": "#000000", "unfocusedBackground": "#000000" },
+      "tab": { "iconStyle": "hidden", "showCloseButton": "never", "background": "#0F0F0F", "unfocusedBackground": "#000000" }
+    }
+  ],
+  "schemes": [
+    {
+      "name": "Dark",
+      "background": "#000000",
+      "foreground": "#E1E1E1",
+      "cursorColor": "#E1E1E1",
+      "selectionBackground": "#3F638B",
+      "black": "#1A1A1A",
+      "red": "#CC372E",
+      "green": "#26A439",
+      "yellow": "#CDAC08",
+      "blue": "#0869CB",
+      "purple": "#9647BF",
+      "cyan": "#479EC2",
+      "white": "#98989D",
+      "brightBlack": "#464646",
+      "brightRed": "#FF453A",
+      "brightGreen": "#32D74B",
+      "brightYellow": "#FFD60A",
+      "brightBlue": "#0A84FF",
+      "brightPurple": "#BF5AF2",
+      "brightCyan": "#76D6FF",
+      "brightWhite": "#FFFFFF"
+    }
+  ]
 }
