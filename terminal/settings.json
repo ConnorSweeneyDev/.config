@@ -6,7 +6,6 @@
     { "id": "User.Copy", "command": "copy" },
     { "id": "User.Paste", "command": "paste" },
     { "id": "User.Find", "command": "find" },
-
     { "id": "User.Tab0", "command": { "action": "switchToTab", "index": 0 } },
     { "id": "User.Tab1", "command": { "action": "switchToTab", "index": 1 } },
     { "id": "User.Tab2", "command": { "action": "switchToTab", "index": 2 } },
@@ -19,7 +18,6 @@
     { "id": "User.NewWindow", "command": "newWindow" },
     { "id": "User.ScrollUp12", "command": { "action": "scrollUp", "rowsToScroll": 12 } },
     { "id": "User.ScrollDown12", "command": { "action": "scrollDown", "rowsToScroll": 12 } },
-
     { "id": "User.OpenCwdInExplorer", "command": { "action": "sendInput", "input": "start .\r" } },
     { "id": "User.CleanTab", "command": { "action": "sendInput", "input": "./script/clean.bat\r" } },
     { "id": "User.BuildTab", "command": { "action": "sendInput", "input": "./script/build.bat\r" } },
@@ -31,7 +29,6 @@
     { "keys": "alt+ctrl+c", "id": "User.Copy" },
     { "keys": "alt+ctrl+v", "id": "User.Paste" },
     { "keys": "alt+ctrl+f", "id": "User.Find" },
-
     { "keys": "alt+shift+a", "id": "User.Tab0" },
     { "keys": "alt+shift+s", "id": "User.Tab1" },
     { "keys": "alt+shift+d", "id": "User.Tab2" },
@@ -44,7 +41,6 @@
     { "keys": "alt+shift+w", "id": "User.NewWindow" },
     { "keys": "alt+shift+j", "id": "User.ScrollDown12" },
     { "keys": "alt+shift+k", "id": "User.ScrollUp12" },
-
     { "keys": "alt+shift+e", "id": "User.OpenCwdInExplorer" },
     { "keys": "alt+shift+v", "id": "User.CleanTab" },
     { "keys": "alt+shift+b", "id": "User.BuildTab" },
@@ -58,7 +54,6 @@
       "foreground": "#E1E1E1",
       "cursorColor": "#E1E1E1",
       "selectionBackground": "#3F638B",
-
       "black": "#1A1A1A",
       "red": "#CC372E",
       "green": "#26A439",
@@ -80,27 +75,12 @@
   "themes": [
     {
       "name": "DarkUI",
-      "window": {
-        "frame": "#000000",
-        "unfocusedFrame": "#000000"
-      },
-      "tabRow": {
-        "background": "#000000",
-        "unfocusedBackground": "#000000"
-      },
-      "tab": {
-        "iconStyle": "hidden",
-        "showCloseButton": "never",
-        "background": "#0F0F0F",
-        "unfocusedBackground": "#000000"
-      }
+      "window": { "frame": "#000000", "unfocusedFrame": "#000000" },
+      "tabRow": { "background": "#000000", "unfocusedBackground": "#000000" },
+      "tab": { "iconStyle": "hidden", "showCloseButton": "never", "background": "#0F0F0F", "unfocusedBackground": "#000000" }
     }
   ],
-  "newTabMenu": [
-    { "type": "profile", "profile": "pwsh" },
-    { "type": "separator" },
-    { "type": "remainingProfiles" }
-  ],
+  "newTabMenu": [ { "type": "profile", "profile": "pwsh" }, { "type": "separator" }, { "type": "remainingProfiles" } ],
   "alwaysShowTabs": true,
   "showTabsInTitlebar": true,
   "showTabsFullscreen": true,
@@ -118,12 +98,7 @@
       "opacity": 70,
       "padding": "0, 0, 0, 0",
       "cursorShape": "filledBox",
-      "font": {
-        "face": "CaskaydiaCove NF",
-        "size": 20,
-        "weight": "semi-bold",
-        "cellHeight": "1.15"
-      }
+      "font": { "face": "CaskaydiaCove NF", "size": 20, "weight": "semi-bold", "cellHeight": "1.15" }
     },
     "list": [
       {
