@@ -89,9 +89,9 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 - fzf &rightarrow; Run `winget install junegunn.fzf`.
 
 ### Setup
-1. Paste `terminal` into your config and change the font face to whatever NerdFont you installed. Also, make sure you
-   add whatever profiles you want to use other than the three that i have set up. Each new profile needs a unique guid -
-   you can generate one by running `[guid]::NewGuid()` in PowerShellCore.
+1. Paste `terminal` into your config and change the font settings account for whatever NerdFont you installed. Also,
+   make sure you add whatever profiles you want to use other than the three that i have set up. Each new profile needs a
+   unique guid - you can generate one by running `[guid]::NewGuid()` in PowerShellCore.
 2. Find the location of the windows terminal settings file (it's different per machine) - open that directory and delete
    `settings.json` - then run this command in PowerShellCore: `New-Item -ItemType SymbolicLink -Path ".\settings.json"
    -Target "$env:USERPROFILE\.config\terminal\settings.json"`.

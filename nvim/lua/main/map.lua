@@ -11,8 +11,6 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move the highlighted line
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move the highlighted line(s) up" })
 vim.keymap.set({ "n", "v" }, "j", "gj", { desc = "Move cursor down" })
 vim.keymap.set({ "n", "v" }, "k", "gk", { desc = "Move cursor up" })
-vim.keymap.set({ "n", "v" }, "<C-d>", function() Key_util.half_page(false) end, { desc = "Move cursor half page down" })
-vim.keymap.set({ "n", "v" }, "<C-u>", function() Key_util.half_page(true) end, { desc = "Move cursor half page up" })
 vim.keymap.set("n", "<A-h>", "<C-w>h", { desc = "Move the cursor left one window" })
 vim.keymap.set("n", "<A-j>", "<C-w>j", { desc = "Move the cursor down one window" })
 vim.keymap.set("n", "<A-k>", "<C-w>k", { desc = "Move the cursor up one window" })
