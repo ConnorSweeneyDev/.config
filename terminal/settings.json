@@ -81,6 +81,7 @@
     }
   ],
   "newTabMenu": [ { "type": "profile", "profile": "pwsh" }, { "type": "separator" }, { "type": "remainingProfiles" } ],
+  "disableAnimations": true,
   "alwaysShowTabs": true,
   "showTabsInTitlebar": true,
   "showTabsFullscreen": true,
@@ -98,6 +99,7 @@
       "opacity": 70,
       "padding": "0, 0, 0, 0",
       "cursorShape": "filledBox",
+      "antialiasingMode": "grayscale",
       "font": { "face": "CaskaydiaCove NF", "size": 20, "weight": "semi-bold", "cellHeight": "1.15" }
     },
     "list": [
