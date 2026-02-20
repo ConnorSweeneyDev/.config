@@ -79,7 +79,7 @@ https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
 ### Dependencies
 - NerdFont &rightarrow; Download from [here](https://www.nerdfonts.com/font-downloads) (I use CaskaydiaCove), then in
   explorer select all `.ttf` files and right click them, now select "Install". After that you can delete the files.
-- WezTerm &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
+- Windows Terminal &rightarrow; Run `winget install --id Microsoft.WindowsTerminal`.
 - PowerShellCore &rightarrow; Run `winget install --id Microsoft.Powershell --source winget`.
 - Git &rightarrow; Run `winget install --id Git.Git --source winget`.
 - Github CLI &rightarrow; Run `winget install --id GitHub.cli`.
