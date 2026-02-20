@@ -4,7 +4,7 @@
 [System](#system) | [Komorebi](#komorebi) | [Terminal](#terminal) | [Neovim](#neovim) | [Opencode](#opencode) |
 [Firefox](#firefox) | [Extras](#extras)
 
-https://github.com/user-attachments/assets/7ffa9e6e-c100-42c7-b80f-6e992116d302
+https://github.com/user-attachments/assets/9cc1e7b9-8ae9-40cd-bf11-87ae4bc6b123
 
 </div>
 
