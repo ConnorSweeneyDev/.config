@@ -1,7 +1,7 @@
 /* DESIGNED FOR 2560x1440 SCREENS */
 
 * {
-  font-size: 22px;
+  font-size: 26px;
   color: #ffffff;
   font-weight: 500;
   font-family: "CaskaydiaCove NF";
@@ -20,7 +20,7 @@
   max-width: 3000px;
 }
 .container-right {
-  max-width: 322px;
+  max-width: 363px;
   margin: 0;
   padding: 0;
 }
@@ -43,8 +43,8 @@
 }
 .power-menu-widget .label {
   color: #ffffff;
-  font-size: 18px;
-  padding-right: 4px;
+  font-size: 26px;
+  padding-right: 6px;
 }
 .power-menu-popup {
   background-color: rgba(20, 20, 20, 0);
@@ -127,13 +127,14 @@
 
 .komorebi-workspaces {
   margin-left: -8px;
+  margin-right: -10px;
   padding-bottom: 2px;
 }
 .komorebi-workspaces .ws-btn {
-  border-radius: 2;
-  width: 16px;
-  height: 16px;
-  margin: 2px 6px 0 3px;
+  border-radius: 0;
+  width: 20px;
+  height: 20px;
+  margin: 4px 4px 0 3px;
   color: rgba(255, 255, 255, 0);
   background-color: rgb(80, 80, 80);
 }
@@ -146,8 +147,8 @@
 }
 .komorebi-workspaces .ws-btn.active {
   background-color: rgb(255, 255, 255);
-  width: 28px;
-  height: 16px;
+  width: 30px;
+  height: 20px;
 }
 
 .active-window-widget {
@@ -155,8 +156,11 @@
   margin-left: -7px;
   padding-bottom: 0;
 }
+.active-window-widget .label {
+  padding-bottom: 4px;
+}
 .active-window-widget .label.icon {
-  padding-top: 0;
+  padding-top: 4px;
 }
 
 .clock-widget {
