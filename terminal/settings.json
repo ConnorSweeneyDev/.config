@@ -25,7 +25,7 @@
     "defaults": {
       "colorScheme": "Dark",
       "opacity": 70,
-      "padding": "14, 0, 0, 0",
+      "padding": "14, 10, 0, 0",
       "cursorShape": "filledBox",
       "antialiasingMode": "grayscale",
       "font": { "face": "CaskaydiaCove NF", "size": 20, "weight": "semi-bold", "cellWidth": "0.6", "cellHeight": "1.15" }
