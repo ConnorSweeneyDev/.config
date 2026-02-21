@@ -58,7 +58,7 @@
     { "keys": "alt+ctrl+c", "id": "User.Copy" },
     { "keys": "alt+ctrl+v", "id": "User.Paste" },
     { "keys": "alt+ctrl+f", "id": "User.Find" },
-    { "keys": "alt+ctrl+m", "id": "User.ToggleMarkMode" },
+    { "keys": "alt+ctrl+j", "id": "User.ToggleMarkMode" },
     { "keys": "alt+shift+a", "id": "User.Tab0" },
     { "keys": "alt+shift+s", "id": "User.Tab1" },
     { "keys": "alt+shift+d", "id": "User.Tab2" },
