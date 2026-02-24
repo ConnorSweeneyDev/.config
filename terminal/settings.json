@@ -95,7 +95,7 @@
     { "id": "User.NewWindow", "command": "newWindow" },
     { "id": "User.ScrollUp12", "command": { "action": "scrollUp", "rowsToScroll": 12 } },
     { "id": "User.ScrollDown12", "command": { "action": "scrollDown", "rowsToScroll": 12 } },
-    { "id": "User.OpenCwdInExplorer", "command": { "action": "sendInput", "input": "start .\r" } },
+    { "id": "User.OpenCwdInExplorer", "command": { "action": "sendInput", "input": "explorer .\r" } },
     { "id": "User.CleanTab", "command": { "action": "sendInput", "input": "./script/clean.bat\r" } },
     { "id": "User.BuildTab", "command": { "action": "sendInput", "input": "./script/build.bat\r" } },
     { "id": "User.RunTab", "command": { "action": "sendInput", "input": "./script/run.bat\r" } },
