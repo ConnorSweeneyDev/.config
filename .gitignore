@@ -23,4 +23,5 @@ opencode/*
 !opencode/command
 !opencode/themes
 !opencode/opencode.json
+!opencode/tui.json
 !opencode/AGENTS.md
