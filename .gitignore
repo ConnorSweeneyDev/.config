@@ -20,6 +20,8 @@ yasb/yasb.log
 nvim/lazy-lock.json
 .opencode/*
 opencode/*
+
+# Exceptions
 !opencode/command
 !opencode/themes
 !opencode/opencode.json
