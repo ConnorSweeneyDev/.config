@@ -484,6 +484,12 @@ Lualine_util.dynamic_path = function()
     path = "quickfix"
   elseif string.match(filetype, "trouble") then
     path = "trouble"
+  elseif string.match(filetype, "dap%-view%-term") then
+    path = "dap-terminal"
+  elseif string.match(filetype, "dap%-view") then
+    path = "dap-view"
+  elseif string.match(filetype, "dap%-repl") then
+    path = "dap-repl"
   elseif string.match(filetype, "lazy") then
     path = "lazy"
   elseif string.match(filetype, "harpoon") then
@@ -576,7 +582,7 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Mason_util = {}
-Mason_util.setup_languages = function(mason_registry, configs)
+Mason_util.setup_languages = function(mason_registry, dap, configs)
   for _, config in pairs(configs) do
     if config.lsp ~= nil and config.lsp ~= {} then
       if config.lsp.name ~= "*" and not mason_registry.is_installed(config.lsp.name) then
@@ -584,6 +590,13 @@ Mason_util.setup_languages = function(mason_registry, configs)
       end
       vim.lsp.config(config.lsp.name, config.lsp.opts)
       if config.lsp.name ~= "*" then vim.lsp.enable(config.lsp.name) end
+    end
+    if config.dap ~= nil and config.dap ~= {} then
+      if not mason_registry.is_installed(config.dap.name) then vim.cmd("MasonInstall " .. config.dap.name) end
+      dap.adapters[config.dap.name] = config.dap.opts
+      for _, language in ipairs(config.dap.languages) do
+        dap.configurations[language] = { config.dap.config }
+      end
     end
     if config.fmt ~= nil and config.fmt ~= {} then
       if not mason_registry.is_installed(config.fmt.name) then vim.cmd("MasonInstall " .. config.fmt.name) end

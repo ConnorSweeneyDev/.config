@@ -1,5 +1,5 @@
 require("mason").setup()
-Mason_util.setup_languages(require("mason-registry"), {
+Mason_util.setup_languages(require("mason-registry"), require("dap"), {
   ["*"] = {
     lsp = {
       name = "*",
@@ -16,6 +16,23 @@ Mason_util.setup_languages(require("mason-registry"), {
         root_markers = { "compile_commands.json", "compile_flags.txt", "CMakeLists.txt", ".git" },
         filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
       },
+    },
+    dap = {
+      name = "codelldb",
+      opts = {
+        type = "executable",
+        command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe",
+        detached = false,
+      },
+      config = {
+        name = "Launch",
+        type = "codelldb",
+        request = "launch",
+        program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "\\", "file") end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+      },
+      languages = { "c", "cpp" },
     },
     fmt = {
       name = "clang-format",

@@ -16,6 +16,8 @@ require("lazy").setup({
   { "williamboman/mason.nvim" },
   { "saghen/blink.cmp", version = "*" },
   { "folke/trouble.nvim" },
+  { "mfussenegger/nvim-dap" },
+  { "igorlfs/nvim-dap-view" },
   { "lewis6991/gitsigns.nvim" },
   { "sindrets/diffview.nvim" },
   { "NeogitOrg/neogit" },
