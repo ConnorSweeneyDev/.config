@@ -1,5 +1,6 @@
 local dap = require("dap")
-vim.keymap.set("n", "<LEADER>b", dap.toggle_breakpoint, { desc = "DAP Toggle Breakpoint" })
+vim.keymap.set("n", "<LEADER>ba", dap.toggle_breakpoint, { desc = "DAP Toggle Breakpoint" })
+vim.keymap.set("n", "<LEADER>bc", dap.clear_breakpoints, { desc = "DAP Clear Breakpoints" })
 vim.keymap.set("n", "<F4>", function() dap.terminate({ hierarchy = true }) end, { desc = "DAP Terminate" })
 vim.keymap.set("n", "<F5>", dap.continue, { desc = "DAP Continue" })
 vim.keymap.set("n", "<F8>", dap.step_over, { desc = "DAP Step Over" })
