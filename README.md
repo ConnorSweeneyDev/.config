@@ -126,8 +126,6 @@ https://github.com/user-attachments/assets/9cc1e7b9-8ae9-40cd-bf11-87ae4bc6b123
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 - TreeSitterCLI &rightarrow; Run `npm install -g tree-sitter-cli`.
-- Opencode &rightarrow; Run `npm install -g opencode-ai`. You can copy the contents of `opencode` into your
-  `.config\opencode` folder to use my setup.
 
 ### Setup
 After completing the dependencies for this section, I recommend manually recreating `nvim` on your machine rather than
