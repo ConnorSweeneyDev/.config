@@ -13,7 +13,7 @@ Color_util.initialize_colors("vscode", {
   "Conceal guibg=bg",
   "FoldColumn guibg=bg",
   "Folded guibg=bg guifg=#43698a",
-  "Error guibg=bg",
+  "Error guibg=bg gui=underline",
   "ErrorMsg guibg=bg",
   "WarningMsg guibg=bg",
   "MoreMsg guibg=bg",
