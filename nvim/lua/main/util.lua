@@ -196,38 +196,6 @@ Language_util.format = function(files)
   end
   vim.notify("Formatting not configured for " .. current_filetype .. "!", "error")
 end
-Language_util.ides = {}
-Language_util.open_ide = function()
-  local current_filetype = vim.bo.filetype
-    or (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e")
-  for _, opts in ipairs(Language_util.ides) do
-    for _, target_filetype in ipairs(opts.filetypes) do
-      if current_filetype == target_filetype then
-        local command = ""
-        for _, command_part in ipairs(opts.cmd) do
-          if command_part == "[|]" then
-            if opts.targets == { "." } then
-              command_part = "."
-            else
-              for _, target in ipairs(opts.targets) do
-                command_part = vim.fn.glob(target)
-                if command_part ~= "" then break end
-              end
-              if command_part == "" then
-                vim.notify("No target file found!", "error")
-                return
-              end
-            end
-          end
-          command = command .. command_part .. (next(opts.cmd, _) and " " or "")
-        end
-        vim.cmd("silent !" .. command)
-        return
-      end
-    end
-  end
-  vim.notify("IDE not configured for " .. current_filetype .. "!", "error")
-end
 Language_util.copy_markdown_code = function(use_line_number)
   vim.cmd('silent normal! "zy')
   local text = vim.fn.getreg("z")
@@ -602,7 +570,6 @@ Mason_util.setup_languages = function(mason_registry, dap, configs)
       if not mason_registry.is_installed(config.fmt.name) then vim.cmd("MasonInstall " .. config.fmt.name) end
       table.insert(Language_util.formatters, config.fmt.opts)
     end
-    if config.ide ~= nil and config.ide ~= {} then table.insert(Language_util.ides, config.ide.opts) end
   end
 end
 

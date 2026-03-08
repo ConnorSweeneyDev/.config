@@ -41,28 +41,12 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
         filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
       },
     },
-    ide = {
-      name = "Visual Studio",
-      opts = {
-        cmd = { "devenv", "[|]" },
-        targets = { "*.sln", "build/*.sln" },
-        filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
-      },
-    },
   },
   ["HLSL"] = {
     fmt = {
       name = "clang-format",
       opts = {
         cmd = { "clang-format", "-i", "[|]" },
-        filetypes = { "hlsl", "glsl", "vert", "frag", "comp", "geom", "tesc", "tese" },
-      },
-    },
-    ide = {
-      name = "Visual Studio",
-      opts = {
-        cmd = { "devenv", "[|]" },
-        targets = { "*.sln", "build/*.sln" },
         filetypes = { "hlsl", "glsl", "vert", "frag", "comp", "geom", "tesc", "tese" },
       },
     },
