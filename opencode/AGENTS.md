@@ -6,11 +6,4 @@
 - In plan mode, never try to use the exit plan tool without me telling you to, just keep following the pattern and I
   will tell you when to exit plan mode.
 - You can still use the tool normally to ask real questions, just ensure that you follow the rules above.
-
 - Never try to run a build command on your own, I will run it or tell you to run it when I want you to.
-- Use subagents liberally to keep main context window clean.
-- For complex problems, throw more compute at it via subagents.
-
-- For non-trivial changes, pause and ask "is there a more elegant way".
-- Hacky solutions should set off red flags in your mind.
-- For very small or obvious fixes, don't overcomplicate it.
