@@ -17,7 +17,7 @@ lesshst
 
 # Generated files
 yasb/yasb.log
-nvim/lazy-lock.json
+nvim/nvim-pack-lock.json
 .opencode/*
 opencode/*
 

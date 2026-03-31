@@ -32,4 +32,3 @@ vim.keymap.set(
   function() Buffer_util.manual_close() end,
   { desc = "Close all buffers except the current one" }
 )
-Buffer_util.open_on_startup()

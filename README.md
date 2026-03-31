@@ -121,8 +121,8 @@ https://github.com/user-attachments/assets/9cc1e7b9-8ae9-40cd-bf11-87ae4bc6b123
 - Python &rightarrow; Run `winget install --id Python.Python.3.10`.
 - NodeJS &rightarrow; Run `winget install OpenJS.NodeJS`.
 - ripgrep &rightarrow; Run `winget install BurntSushi.ripgrep.MSVC`.
-- Neovim &rightarrow; Run `winget install neovim --version 0.11.5` and add the environment variables `NVIM_LOG_FILE` ->
-  `$Env:USERPROFILE\.config\nvim-data` and `EDITOR` -> `nvim`.
+- Neovim &rightarrow; Run `winget install neovim --version 0.12.0` and add the environment variables `NVIM_LOG_FILE` ->
+  `$Env:USERPROFILE\.config\nvim-data\nvim.log` and `EDITOR` -> `nvim`.
 - Python Provider &rightarrow; Run `pip install pynvim --upgrade`.
 - NodeJS Provider &rightarrow; Run `npm install -g neovim`.
 - TreeSitterCLI &rightarrow; Run `npm install -g tree-sitter-cli`.
@@ -136,16 +136,14 @@ You should start with the top level `init.lua` and then `lua\main\init.lua`. The
 for global keybinds and `util.lua` is for helper functions used throughout the configuration, designed to remove the
 need for visible logic in any configuration files.
 
-Now you can create `lua\main\lazy.lua`, and populate it with only the following lines:
+Now you can create `lua\main\pack.lua`, and populate it with only the following lines:
 ```lua
-Lazy_util.bootstrap()
-vim.keymap.set("n", "<LEADER>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
-require("lazy").setup({})
+vim.keymap.set("n", "<leader>pu", function() vim.pack.update() end, { desc = "Update plugins" })
 ```
 After creating an empty `lua\plugin\init.lua`, restart neovim and there should be no error messages.
 
-Now, inside the `.setup` field start adding plugins, do so in the following pattern (with some exceptions below):
-1. Add the line to `lua\main\lazy.lua` and restart neovim.
+Now, call the `vim.pack.add({})` function and start adding plugins, do so in the following pattern (with some exceptions below):
+1. Add the line to `lua\main\pack.lua` and restart neovim.
 2. If it needs one, add a `lua\plugin\[PLUGIN].lua` file for the plugin and add `require("plugin.[PLUGIN]")` to
    `lua\plugin\init.lua` (order matters in this file), then restart neovim.
 3. Customize the file to your liking.
@@ -158,14 +156,14 @@ The following plugins require some extra or different steps:
   - Web-devicons &rightarrow; Required by most plugins that use icons.
 - Quicker &rightarrow; Should be installed at the same time as nvim-bqf, the `lua\plugin\quicker.lua` expects both of
   these to be installed.
-- Vscode &rightarrow; If you are going to use a different colorscheme, you'll have to modify `lua\main\lazy.lua`,
+- Vscode &rightarrow; If you are going to use a different colorscheme, you'll have to modify `lua\main\pack.lua`,
   `lua\plugin\vscode.lua` and `lua\plugin\lualine.lua` to the corresponding theme.
-- Treesitter &rightarrow; After following the pattern, you should see it compiling languages - don't touch your keyboard
-  until this is finished, though it is common to get errors at this point, if you do, generally restarting neovim a few
-  times and deleting any directories manually that it says it doesn't have permission to delete will let them all figure
-  themselves out. However if you get an error along the lines of `[LANGUAGE].so is not a valid Win32 app`, this means
-  either your version of MinGW does not match your operating system. After fixing the issue you can run `:TSInstall
-  [LANGUAGE]` to recompile it.
+- Treesitter &rightarrow; The autocmd is necessary to add as well as the line inside pack.add. After following the
+  pattern, you should see it compiling languages - don't touch your keyboard until this is finished, though it is common
+  to get errors at this point, if you do, generally restarting neovim a few times and deleting any directories manually
+  that it says it doesn't have permission to delete will let them all figure themselves out. However if you get an error
+  along the lines of `[LANGUAGE].so is not a valid Win32 app`, this means your version of MinGW does not match your
+  operating system. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
 - Protocols &rightarrow; All protocol-related plugins (mason.nvim, blink.cmp, trouble.nvim, nvim-dap and nvim-dap-view)
   should be installed at the same time as eachother - the corresponding plugin files are `lua\plugin\blink.lua`,
   `lua\plugin\trouble.lua`, `lua\plugin\mason.lua`, `lua\plugin\lsp.lua` and `lua\plugin\dap.lua`. After following the
@@ -176,10 +174,9 @@ The following plugins require some extra or different steps:
 
 After all of that, don't forget to include these files that are not tied to any plugins if you want them:
 - `lua\plugin\language.lua` is the file this configuration uses to set up language specific settings and mappings.
-- `lua\plugin\buffers.lua` is optional as it can slow down the startup time but will open, in separate buffers, every
-  file in the specified directories that has any of the file extensions specified - this can be useful for certain
-  language servers. If you need to close all the buffers except the current one, this file also provides the keybind for
-  that, and the keybind for re-opening them all again too.
+- `lua\plugin\buffers.lua` will open, in separate buffers, every file in the specified directories that has any of the
+  file extensions specified upon pressing the bind for it - this can be useful for certain language servers. If you need
+  to close all the buffers except the current one, this file also provides the keybind for that.
 
 > [!TIP]
 > All global keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective

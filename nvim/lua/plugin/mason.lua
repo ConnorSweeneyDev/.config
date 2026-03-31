@@ -86,7 +86,6 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
             workspace = { checkThirdParty = false, library = { vim.env.VIMRUNTIME } },
           },
         },
-        on_attach = function(client, _) client.server_capabilities.semanticTokensProvider = {} end,
       },
     },
     fmt = {

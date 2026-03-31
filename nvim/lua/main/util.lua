@@ -396,28 +396,6 @@ end
 
 ----------------------------------------------------------------------------------------------------
 
-Lazy_util = {}
-Lazy_util.bootstrap = function()
-  local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-  ---@diagnostic disable-next-line: undefined-field
-  if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-    local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-    if vim.v.shell_error ~= 0 then
-      vim.api.nvim_echo({
-        { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-        { out, "WarningMsg" },
-        { "\nPress any key to exit..." },
-      }, true, {})
-      vim.fn.getchar()
-      os.exit(1)
-    end
-  end
-  vim.opt.rtp:prepend(lazypath)
-end
-
-----------------------------------------------------------------------------------------------------
-
 Treesitter_util = {}
 Treesitter_util.install = function(treesitter, parsers)
   local all_filetypes = vim.tbl_keys(parsers)
@@ -444,6 +422,8 @@ Lualine_util.dynamic_path = function()
     return "none"
   elseif string.match(filetype, "help") then
     path = "help\\" .. string.match(path, "\\doc\\(.*)")
+  elseif string.match(filetype, "nvim%-pack") then
+    path = "pack"
   elseif string.match(filetype, "checkhealth") then
     path = "checkhealth"
   elseif string.match(filetype, "list") then
@@ -458,14 +438,6 @@ Lualine_util.dynamic_path = function()
     path = "dap-view"
   elseif string.match(filetype, "dap%-repl") then
     path = "dap-repl"
-  elseif string.match(filetype, "lazy") then
-    path = "lazy"
-  elseif string.match(filetype, "harpoon") then
-    path = "harpoon"
-  elseif string.match(filetype, "notify") then
-    path = "notify"
-  elseif string.match(filetype, "noice") then
-    path = "noice"
   elseif string.match(filetype, "gitcommit") then
     path = "neogit\\commit"
   elseif string.find(filetype, "Neogit") then
