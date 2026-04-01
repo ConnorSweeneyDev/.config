@@ -1,7 +1,7 @@
 /* DESIGNED FOR 2560x1440 SCREENS */
 
 * {
-  font-size: 26px;
+  font-size: 24px;
   color: #ffffff;
   font-weight: 500;
   font-family: "CaskaydiaCove NF";
@@ -43,8 +43,9 @@
 }
 .power-menu-widget .label {
   color: #ffffff;
-  font-size: 26px;
+  font-size: 24px;
   padding-right: 6px;
+  padding-top: 3px;
 }
 .power-menu-popup {
   background-color: rgba(20, 20, 20, 0);

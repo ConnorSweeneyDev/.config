@@ -20,7 +20,7 @@ bars:
       windows_app_bar: true
     dimensions:
       width: "100%"
-      height: 46
+      height: 34
     padding:
       top: 0
       left: 0
