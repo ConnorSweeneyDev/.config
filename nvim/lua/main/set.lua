@@ -1,3 +1,4 @@
+require("vim._core.ui2").enable({ msg = { targets = "msg" } })
 vim.g.mapleader = " "
 vim.g.netrw_banner = 0
 vim.opt.showtabline = 0
@@ -10,7 +11,7 @@ vim.opt.shellredir = "2>&1 | Out-File -Encoding utf8 %s; exit $LastExitCode"
 vim.opt.shellpipe = "2>&1 | Out-File -Encoding utf8 %s; exit $LastExitCode"
 vim.opt.shellquote = ""
 vim.opt.shellxquote = ""
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"

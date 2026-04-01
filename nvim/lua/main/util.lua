@@ -424,6 +424,8 @@ Lualine_util.dynamic_path = function()
     path = "help\\" .. string.match(path, "\\doc\\(.*)")
   elseif string.match(filetype, "nvim%-pack") then
     path = "pack"
+  elseif string.match(filetype, "pager") then
+    path = "pager"
   elseif string.match(filetype, "checkhealth") then
     path = "checkhealth"
   elseif string.match(filetype, "list") then
