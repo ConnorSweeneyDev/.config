@@ -46,7 +46,7 @@ General_util.get_patterns_from_gitignore = function()
 end
 General_util.get_input = function()
   local ok, character = pcall(vim.fn.getcharstr)
-  local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
+  local esc = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
   if ok and (character ~= esc) then
     return character
   else
@@ -425,7 +425,7 @@ Lualine_util.dynamic_path = function()
   elseif string.match(filetype, "nvim%-pack") then
     path = "pack"
   elseif string.match(filetype, "pager") then
-    path = "pager"
+    path = "messages"
   elseif string.match(filetype, "checkhealth") then
     path = "checkhealth"
   elseif string.match(filetype, "list") then
