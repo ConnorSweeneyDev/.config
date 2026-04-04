@@ -61,10 +61,14 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Color_util = {}
-Color_util.initialize_colors = function(scheme, highlights)
+Color_util.initialize = function(scheme, highlights)
   vim.cmd.colorscheme(scheme)
-  for _, highlight in ipairs(highlights) do
-    vim.cmd("highlight " .. highlight)
+  for group, properties in pairs(highlights) do
+    local final_properties = ""
+    for name, value in pairs(properties) do
+      final_properties = final_properties .. " " .. name .. "=" .. value
+    end
+    vim.cmd("highlight " .. group .. final_properties)
   end
 end
 
@@ -348,12 +352,6 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Treesitter_util = {}
-Treesitter_util.changed = function(event)
-  if event.data.spec.name == "nvim-treesitter" and event.data.kind == "update" then
-    if not event.data.active then vim.cmd.packadd("nvim-treesitter") end
-    vim.cmd("TSUpdate")
-  end
-end
 Treesitter_util.install = function(treesitter, parsers)
   local all_filetypes = vim.tbl_keys(parsers)
   treesitter.install(all_filetypes)
@@ -365,6 +363,12 @@ Treesitter_util.install = function(treesitter, parsers)
   end
   vim.api.nvim_create_autocmd("FileType", { pattern = all_filetypes, callback = function() vim.treesitter.start() end })
 end
+Treesitter_util.changed = function(event)
+  if event.data.spec.name == "nvim-treesitter" and event.data.kind == "update" then
+    if not event.data.active then vim.cmd.packadd("nvim-treesitter") end
+    vim.cmd("TSUpdate")
+  end
+end
 
 ----------------------------------------------------------------------------------------------------
 
@@ -372,6 +376,11 @@ Lualine_util = {}
 Lualine_util.live_register = function()
   local current = vim.fn.reg_recording()
   return "@" .. ((current ~= "") and current or "~")
+end
+Lualine_util.search_count = function()
+  local result = vim.fn.searchcount()
+  if result.total == 0 then return "0/0" end
+  return string.format("%d/%d", result.current, result.total)
 end
 Lualine_util.dynamic_path = function()
   local filetype = vim.bo.filetype

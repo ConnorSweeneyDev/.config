@@ -1,7 +1,7 @@
 vim.pack.add({ "https://github.com/mfussenegger/nvim-dap", "https://github.com/igorlfs/nvim-dap-view" })
 local dap = require("dap")
 Dap_util.setup(dap, {
-  ["codelldb"] = {
+  codelldb = {
     opts = {
       type = "executable",
       command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe",

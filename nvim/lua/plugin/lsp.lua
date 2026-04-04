@@ -1,8 +1,8 @@
 vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
 Lsp_util.setup({
-  ["clangd"] = {},
-  ["pyright"] = {},
-  ["lua_ls"] = {
+  clangd = {},
+  pyright = {},
+  lua_ls = {
     settings = {
       Lua = {
         runtime = { version = "LuaJIT", path = { "lua/?.lua", "lua/?/init.lua" } },
@@ -10,11 +10,11 @@ Lsp_util.setup({
       },
     },
   },
-  ["html"] = {},
-  ["ts_ls"] = {},
-  ["cssls"] = {},
-  ["jsonls"] = {},
-  ["sqlls"] = {},
+  html = {},
+  ts_ls = {},
+  cssls = {},
+  jsonls = {},
+  sqlls = {},
 })
 vim.lsp.inlay_hint.enable(false)
 vim.diagnostic.config({

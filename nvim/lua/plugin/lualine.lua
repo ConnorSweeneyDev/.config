@@ -16,6 +16,6 @@ require("lualine").setup({
     lualine_c = { "diagnostics" },
     lualine_x = { "diff" },
     lualine_y = { "branch" },
-    lualine_z = { "progress", "location" },
+    lualine_z = { {"search_count", fmt = Lualine_util.search_count }, "progress", "location" },
   },
 })
