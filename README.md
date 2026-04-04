@@ -164,11 +164,11 @@ The following plugins require some extra or different steps:
   that it says it doesn't have permission to delete will let them all figure themselves out. However if you get an error
   along the lines of `[LANGUAGE].so is not a valid Win32 app`, this means your version of MinGW does not match your
   operating system. After fixing the issue you can run `:TSInstall [LANGUAGE]` to recompile it.
-- Protocols &rightarrow; All protocol-related plugins (mason.nvim, blink.cmp, trouble.nvim, nvim-dap and nvim-dap-view)
-  should be installed at the same time as eachother - the corresponding plugin files are `lua\plugin\blink.lua`,
-  `lua\plugin\trouble.lua`, `lua\plugin\mason.lua`, `lua\plugin\lsp.lua` and `lua\plugin\dap.lua`. After following the
-  pattern, you should see it downloading all the protocols and formatters specified in the mason file - view all the
-  available downloads by running `:Mason`.
+- Protocols &rightarrow; All protocol-related plugins (mason.nvim, nvim-lspconfig, blink.cmp, trouble.nvim, nvim-dap and
+  nvim-dap-view) should be installed at the same time as eachother - the corresponding plugin files are
+  `lua\plugin\mason.lua`, `lua\plugin\lsp.lua`, `lua\plugin\blink.lua`, `lua\plugin\trouble.lua` and
+  `lua\plugin\dap.lua`. After following the pattern, you should see it downloading all the protocols and formatters
+  specified in the mason file - view all the available downloads by running `:Mason`.
 - Neogit &rightarrow; This should be installed at the same time as diffview.nvim.
 - Copilot &rightarrow; After following the pattern, run `:Copilot setup` and follow the instructions.
 

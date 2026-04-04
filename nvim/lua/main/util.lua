@@ -540,8 +540,8 @@ Mason_util.setup_languages = function(mason_registry, dap, configs)
       if config.lsp.name ~= "*" and not mason_registry.is_installed(config.lsp.name) then
         vim.cmd("MasonInstall " .. config.lsp.name)
       end
-      vim.lsp.config(config.lsp.name, config.lsp.opts)
-      if config.lsp.name ~= "*" then vim.lsp.enable(config.lsp.name) end
+      if config.lsp.opts ~= nil and config.lsp.opts ~= {} then vim.lsp.config(config.lsp.config, config.lsp.opts) end
+      if config.lsp.config ~= "*" then vim.lsp.enable(config.lsp.config) end
     end
     if config.dap ~= nil and config.dap ~= {} then
       if not mason_registry.is_installed(config.dap.name) then vim.cmd("MasonInstall " .. config.dap.name) end

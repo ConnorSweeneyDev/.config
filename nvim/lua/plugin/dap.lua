@@ -10,7 +10,6 @@ for _, group in pairs({ "DapBreakpoint", "DapBreakpointCondition", "DapBreakpoin
   vim.fn.sign_define(group, { text = "●", texthl = group })
 end
 vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStopped", linehl = "debugPC", numhl = "debugPC" })
-
 require("dap-view").setup({
   winbar = {
     show = true,

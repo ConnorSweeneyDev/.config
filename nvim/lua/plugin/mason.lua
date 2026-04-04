@@ -3,27 +3,17 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
   ["*"] = {
     lsp = {
       name = "*",
-      opts = {
-        capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()),
-      },
+      config = "*",
+      opts = { capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()) },
     },
   },
   ["C/C++"] = {
     lsp = {
       name = "clangd",
-      opts = {
-        cmd = { "clangd", "--background-index" },
-        root_markers = { "compile_commands.json", "compile_flags.txt", "CMakeLists.txt", ".git" },
-        filetypes = { "c", "h", "cpp", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
-      },
+      config = "clangd",
     },
     dap = {
       name = "codelldb",
-      opts = {
-        type = "executable",
-        command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe",
-        detached = false,
-      },
       config = {
         name = "Launch",
         type = "codelldb",
@@ -31,6 +21,11 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
         program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "\\", "file") end,
         cwd = "${workspaceFolder}",
         stopOnEntry = false,
+      },
+      opts = {
+        type = "executable",
+        command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe",
+        detached = false,
       },
       languages = { "c", "cpp" },
     },
@@ -54,16 +49,7 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
   ["Python"] = {
     lsp = {
       name = "pyright",
-      opts = {
-        cmd = { "pyright-langserver", "--stdio" },
-        root_markers = { "pyrightconfig.json", "pyproject.toml", ".git" },
-        filetypes = { "python" },
-        settings = {
-          python = {
-            analysis = { autoSearchPaths = true, diagnosticMode = "openFilesOnly", useLibraryCodeForTypes = true },
-          },
-        },
-      },
+      config = "pyright",
     },
     fmt = {
       name = "black",
@@ -76,10 +62,8 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
   ["Lua"] = {
     lsp = {
       name = "lua-language-server",
+      config = "lua_ls",
       opts = {
-        cmd = { "lua-language-server" },
-        root_markers = { ".luarc.json", ".stylua.toml", ".git" },
-        filetypes = { "lua" },
         settings = {
           Lua = {
             runtime = { version = "LuaJIT", path = { "lua/?.lua", "lua/?/init.lua" } },
@@ -99,15 +83,7 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
   ["HTML"] = {
     lsp = {
       name = "html-lsp",
-      opts = {
-        cmd = { "vscode-html-language-server", "--stdio" },
-        root_markers = { "package.json", ".git" },
-        filetypes = { "html" },
-        init_options = {
-          configurationSection = { "html", "css", "javascript" },
-          embeddedLanguages = { css = true, javascript = true },
-        },
-      },
+      config = "html",
     },
     fmt = {
       name = "prettier",
@@ -120,19 +96,7 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
   ["TypeScript"] = {
     lsp = {
       name = "typescript-language-server",
-      opts = {
-        cmd = { "typescript-language-server", "--stdio" },
-        root_markers = { "package.json", ".git" },
-        filetypes = {
-          "javascript",
-          "javascriptreact",
-          "javascript.jsx",
-          "typescript",
-          "typescriptreact",
-          "typescript.tsx",
-        },
-        init_options = { hostInfo = "neovim" },
-      },
+      config = "ts_ls",
     },
     fmt = {
       name = "prettier",
@@ -154,12 +118,7 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
   ["CSS"] = {
     lsp = {
       name = "css-lsp",
-      opts = {
-        cmd = { "vscode-css-language-server", "--stdio" },
-        root_markers = { "package.json", ".git" },
-        filetypes = { "css", "scss", "less" },
-        settings = { css = { validate = true }, scss = { validate = true }, less = { validate = true } },
-      },
+      config = "cssls",
     },
     fmt = {
       name = "prettier",
@@ -172,11 +131,7 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
   ["JSON"] = {
     lsp = {
       name = "json-lsp",
-      opts = {
-        cmd = { "vscode-json-language-server", "--stdio" },
-        root_markers = { ".git" },
-        filetypes = { "json", "jsonc" },
-      },
+      config = "jsonls",
     },
     fmt = {
       name = "prettier",
@@ -189,11 +144,7 @@ Mason_util.setup_languages(require("mason-registry"), require("dap"), {
   ["SQL"] = {
     lsp = {
       name = "sqlls",
-      opts = {
-        cmd = { "sql-language-server", "up", "--method", "stdio" },
-        root_markers = { ".git" },
-        filetypes = { "sql", "mysql" },
-      },
+      config = "sqlls",
     },
   },
 })

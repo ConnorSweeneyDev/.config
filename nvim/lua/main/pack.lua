@@ -13,6 +13,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/williamboman/mason.nvim" },
+  { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("*") },
   { src = "https://github.com/folke/trouble.nvim" },
   { src = "https://github.com/mfussenegger/nvim-dap" },
