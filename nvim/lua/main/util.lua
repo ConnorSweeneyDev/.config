@@ -418,6 +418,10 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Lualine_util = {}
+Lualine_util.live_register = function()
+  local current = vim.fn.reg_recording()
+  return "@" .. ((current ~= "") and current or "~")
+end
 Lualine_util.dynamic_path = function()
   local filetype = vim.bo.filetype
   local path = vim.fn.expand("%:.")

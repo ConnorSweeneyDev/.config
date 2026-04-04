@@ -10,7 +10,7 @@ require("lualine").setup({
     refresh = { statusline = 10, tabline = 10, winbar = 10 },
   },
   sections = {
-    lualine_a = { "mode" },
+    lualine_a = { "mode", { "live_register", fmt = Lualine_util.live_register } },
     lualine_b = { { "dynamic_path", fmt = Lualine_util.dynamic_path } },
     lualine_c = { "diagnostics" },
     lualine_x = { "diff" },
