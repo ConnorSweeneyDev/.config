@@ -1,3 +1,4 @@
+vim.pack.add({ "https://github.com/folke/trouble.nvim" })
 require("trouble").setup({ focus = true, preview = { scratch = false } })
 vim.keymap.set("n", "gd", "<CMD>Trouble lsp_definitions<CR>", { desc = "Go to definition(s)" })
 vim.keymap.set("n", "gD", "<CMD>Trouble lsp_declarations<CR>", { desc = "Go to declaration(s)" })

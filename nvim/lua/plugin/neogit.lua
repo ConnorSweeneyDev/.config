@@ -1,3 +1,4 @@
+vim.pack.add({ "https://github.com/NeogitOrg/neogit" })
 require("neogit").setup({
   disable_hint = true,
   disable_context_highlighting = true,

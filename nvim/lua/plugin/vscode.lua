@@ -1,3 +1,4 @@
+vim.pack.add({ { src = "https://github.com/Mofiqul/vscode.nvim", name = "vscode" } })
 Color_util.initialize_colors("vscode", {
   "Normal guibg=none guifg=none",
   "NormalFloat guibg=none guifg=none",

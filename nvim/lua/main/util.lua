@@ -1,3 +1,7 @@
+vim.pack.add({ "https://github.com/nvim-lua/plenary.nvim", "https://github.com/nvim-tree/nvim-web-devicons" })
+
+----------------------------------------------------------------------------------------------------
+
 General_util = {}
 General_util.opened_file = function()
   local args = vim.fn.execute(":args"):gsub("%s+", ""):gsub("%[", ""):gsub("%]", "")
@@ -170,59 +174,6 @@ Language_util.textwidth = 0
 Language_util.set_textwidth = function(textwidth)
   Language_util.textwidth = textwidth
   return textwidth
-end
-Language_util.formatters = {}
-Language_util.format = function(files)
-  local current_filetype = vim.bo.filetype
-    or (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e")
-  for _, opts in ipairs(Language_util.formatters) do
-    for _, target_filetype in ipairs(opts.filetypes) do
-      if current_filetype == target_filetype then
-        local command = ""
-        for _, command_part in ipairs(opts.cmd) do
-          if command_part == "[|]" then command_part = files end
-          command = command .. command_part .. (next(opts.cmd, _) and " " or "")
-        end
-        local save = ""
-        if files == "%" then
-          save = "silent w"
-        else
-          save = "silent wa"
-        end
-        vim.cmd(save .. " | silent !" .. command)
-        return
-      end
-    end
-  end
-  vim.notify("Formatting not configured for " .. current_filetype .. "!", "error")
-end
-Language_util.copy_markdown_code = function(use_line_number)
-  vim.cmd('silent normal! "zy')
-  local text = vim.fn.getreg("z")
-  local numbered_lines = {}
-  if use_line_number then
-    local lines = vim.fn.split(text, "\n")
-    for index, line in ipairs(lines) do
-      local spaces = string.rep(" ", #tostring(#lines) - #tostring(index))
-      table.insert(numbered_lines, index .. spaces .. " | " .. line)
-    end
-    text = table.concat(numbered_lines, "\n")
-  end
-  local relative_path = ""
-  local output = vim.fn.system('git ls-files --full-name "' .. vim.fn.expand("%:p") .. '"')
-  if output:find("fatal:") then
-    relative_path = vim.fn.expand("%:.")
-  else
-    relative_path = output:gsub("\n", "")
-  end
-  local result = ""
-  result = (relative_path ~= "" and ("`[" .. relative_path .. "]`\n") or "")
-    .. "```"
-    .. vim.bo.filetype
-    .. "\n"
-    .. text
-    .. (text:sub(-1) == "\n" and "```" or "\n```")
-  vim.fn.setreg("+", result)
 end
 Language_util.handle_text = function(files)
   local current_extension = vim.fn.expand("%:e")
@@ -534,26 +485,19 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Mason_util = {}
-Mason_util.setup_languages = function(mason_registry, dap, configs)
-  for _, config in pairs(configs) do
-    if config.lsp ~= nil and config.lsp ~= {} then
-      if config.lsp.name ~= "*" and not mason_registry.is_installed(config.lsp.name) then
-        vim.cmd("MasonInstall " .. config.lsp.name)
-      end
-      if config.lsp.opts ~= nil and config.lsp.opts ~= {} then vim.lsp.config(config.lsp.config, config.lsp.opts) end
-      if config.lsp.config ~= "*" then vim.lsp.enable(config.lsp.config) end
-    end
-    if config.dap ~= nil and config.dap ~= {} then
-      if not mason_registry.is_installed(config.dap.name) then vim.cmd("MasonInstall " .. config.dap.name) end
-      dap.adapters[config.dap.name] = config.dap.opts
-      for _, language in ipairs(config.dap.languages) do
-        dap.configurations[language] = { config.dap.config }
-      end
-    end
-    if config.fmt ~= nil and config.fmt ~= {} then
-      if not mason_registry.is_installed(config.fmt.name) then vim.cmd("MasonInstall " .. config.fmt.name) end
-      table.insert(Language_util.formatters, config.fmt.opts)
-    end
+Mason_util.install = function(mason_registry, dependencies)
+  for _, dependency in ipairs(dependencies) do
+    if not mason_registry.is_installed(dependency) then vim.cmd("MasonInstall " .. dependency) end
+  end
+end
+
+----------------------------------------------------------------------------------------------------
+
+Lsp_util = {}
+Lsp_util.setup = function(servers)
+  for name, opts in pairs(servers) do
+    if opts ~= nil and opts ~= {} then vim.lsp.config(name, opts) end
+    vim.lsp.enable(name)
   end
 end
 
@@ -580,6 +524,48 @@ Diagnostic_util.jump_virtual_line = function(count)
   vim.diagnostic.jump({ count = count })
   vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
   Diagnostic_util.create_virtual_line_autocmd()
+end
+
+----------------------------------------------------------------------------------------------------
+
+Dap_util = {}
+Dap_util.setup = function(dap, adapters)
+  for name, adapter in pairs(adapters) do
+    dap.adapters[name] = adapter.opts
+    for _, language in ipairs(adapter.languages) do
+      dap.configurations[language] = { adapter.config }
+    end
+  end
+end
+
+----------------------------------------------------------------------------------------------------
+
+Format_util = {}
+Format_util.formatters = {}
+Format_util.setup = function(formatters) Format_util.formatters = formatters end
+Format_util.format = function(files)
+  local current_filetype = vim.bo.filetype
+    or (vim.fn.expand("%:e") ~= "" and vim.fn.expand("%:e") ~= nil) and vim.fn.expand("%:e")
+  for command, filetypes in pairs(Format_util.formatters) do
+    for _, target_filetype in ipairs(filetypes) do
+      if current_filetype == target_filetype then
+        local current_command = ""
+        for _, command_part in ipairs(command) do
+          if command_part == "[|]" then command_part = files end
+          current_command = current_command .. command_part .. (next(command, _) and " " or "")
+        end
+        local save = ""
+        if files == "%" then
+          save = "silent w"
+        else
+          save = "silent wa"
+        end
+        vim.cmd(save .. " | silent !" .. current_command)
+        return
+      end
+    end
+  end
+  vim.notify("Formatting not configured for " .. current_filetype .. "!", "error")
 end
 
 ----------------------------------------------------------------------------------------------------

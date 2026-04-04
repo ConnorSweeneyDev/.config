@@ -1,3 +1,5 @@
+vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
+vim.api.nvim_create_autocmd("PackChanged", { callback = function(event) Treesitter_util.changed(event) end })
 Treesitter_util.install(require("nvim-treesitter"), {
   ["vim"] = {},
   ["vimdoc"] = {},

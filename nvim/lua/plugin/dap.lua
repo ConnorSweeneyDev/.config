@@ -1,4 +1,23 @@
+vim.pack.add({ "https://github.com/mfussenegger/nvim-dap", "https://github.com/igorlfs/nvim-dap-view" })
 local dap = require("dap")
+Dap_util.setup(dap, {
+  ["codelldb"] = {
+    opts = {
+      type = "executable",
+      command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb.exe",
+      detached = false,
+    },
+    config = {
+      name = "Launch",
+      type = "codelldb",
+      request = "launch",
+      program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "\\", "file") end,
+      cwd = "${workspaceFolder}",
+      stopOnEntry = false,
+    },
+    languages = { "c", "cpp" },
+  },
+})
 vim.keymap.set("n", "<LEADER>tb", dap.toggle_breakpoint, { desc = "DAP Toggle Breakpoint" })
 vim.keymap.set("n", "<LEADER>bc", dap.clear_breakpoints, { desc = "DAP Clear Breakpoints" })
 vim.keymap.set("n", "<F4>", function() dap.terminate({ hierarchy = true }) end, { desc = "DAP Terminate" })

@@ -1,3 +1,4 @@
+vim.pack.add({ "https://github.com/kevinhwang91/nvim-bqf", "https://github.com/stevearc/quicker.nvim" })
 require("bqf").setup({ preview = { border = "none", win_height = 1000 } })
 local quicker = require("quicker")
 quicker.setup({

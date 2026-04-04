@@ -1,3 +1,4 @@
+vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
 local vscode = require("lualine.themes.vscode")
 vscode.normal.a.fg = "#262626"
 vscode.visual.b.bg = "#373737"

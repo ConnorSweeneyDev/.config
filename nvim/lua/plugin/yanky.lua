@@ -1,3 +1,4 @@
+vim.pack.add({ "https://github.com/gbprod/yanky.nvim" })
 require("yanky").setup({
   picker = {
     select = { action = require("yanky.picker").actions.set_register(require("yanky.utils").get_default_register()) },

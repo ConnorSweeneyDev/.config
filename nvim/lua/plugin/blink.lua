@@ -1,3 +1,4 @@
+vim.pack.add({ { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") } })
 require("blink.cmp").setup({
   keymap = { preset = "enter", ["<C-j>"] = { "scroll_documentation_down" }, ["<C-k>"] = { "scroll_documentation_up" } },
   sources = { default = { "lsp", "path", "buffer" } },

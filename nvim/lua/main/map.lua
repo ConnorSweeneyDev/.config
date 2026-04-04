@@ -1,4 +1,5 @@
 vim.keymap.set("n", " ", "<NOP>")
+vim.keymap.set("n", "<leader>pu", function() vim.pack.update() end, { desc = "Update plugins" })
 vim.keymap.set("n", "<LEADER>w", "<CMD>w<CR>", { desc = "Write" })
 vim.keymap.set("n", "<LEADER>W", "<CMD>wa<CR>", { desc = "Write all" })
 vim.keymap.set("n", "ZA", "<CMD>wqa<CR>", { desc = "Write all and quit" })

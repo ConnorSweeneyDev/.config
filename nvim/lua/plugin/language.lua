@@ -1,17 +1,3 @@
-vim.keymap.set("n", "<LEADER>kf", function() Language_util.format("%") end, { desc = "Format current buffer" })
-vim.keymap.set("n", "<LEADER>kF", function() Language_util.format(".") end, { desc = "Format current directory" })
-vim.keymap.set(
-  "v",
-  "<C-g>",
-  function() Language_util.copy_markdown_code(false) end,
-  { desc = "Copy code as a markdown code block" }
-)
-vim.keymap.set(
-  "v",
-  "g<C-g>",
-  function() Language_util.copy_markdown_code(true) end,
-  { desc = "Copy code as a markdown code block with line numbers" }
-)
 vim.keymap.set("n", "<LEADER><LEADER>", function() Lua_util.source() end, { desc = "Source current lua file" })
 vim.keymap.set(
   "n",
