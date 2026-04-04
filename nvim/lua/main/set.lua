@@ -12,6 +12,7 @@ vim.opt.shellpipe = "2>&1 | Out-File -Encoding utf8 %s; exit $LastExitCode"
 vim.opt.shellquote = ""
 vim.opt.shellxquote = ""
 vim.opt.cmdheight = 0
+vim.opt.report = 1000000000
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -46,6 +47,6 @@ vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.termguicolors = true
 vim.opt.updatetime = 300
-vim.api.nvim_create_autocmd({ "CursorMoved", "BufEnter", "WinEnter" }, { command = "normal! zz" })
+vim.api.nvim_create_autocmd({ "CursorMoved", "TabEnter", "BufEnter", "WinEnter" }, { command = "normal! zz" })
 vim.api.nvim_create_autocmd("BufReadPost", { callback = function(args) Buffer_util.restore_cursor_position(args) end })
 vim.api.nvim_create_autocmd("VimResized", { command = "wincmd =" })

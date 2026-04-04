@@ -397,6 +397,12 @@ end
 ----------------------------------------------------------------------------------------------------
 
 Treesitter_util = {}
+Treesitter_util.changed = function(event)
+  if event.data.spec.name == "nvim-treesitter" and event.data.kind == "update" then
+    if not event.data.active then vim.cmd.packadd("nvim-treesitter") end
+    vim.cmd("TSUpdate")
+  end
+end
 Treesitter_util.install = function(treesitter, parsers)
   local all_filetypes = vim.tbl_keys(parsers)
   treesitter.install(all_filetypes)

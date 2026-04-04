@@ -22,11 +22,4 @@ vim.pack.add({
   { src = "https://github.com/NeogitOrg/neogit" },
   { src = "https://github.com/github/copilot.vim" },
 })
-vim.api.nvim_create_autocmd("PackChanged", {
-  callback = function(ev)
-    if ev.data.spec.name == "nvim-treesitter" and ev.data.kind == "update" then
-      if not ev.data.active then vim.cmd.packadd("nvim-treesitter") end
-      vim.cmd("TSUpdate")
-    end
-  end,
-})
+vim.api.nvim_create_autocmd("PackChanged", { callback = function(event) Treesitter_util.changed(event) end })
