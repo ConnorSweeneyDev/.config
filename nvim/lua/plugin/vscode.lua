@@ -8,6 +8,8 @@ Color_util.initialize("vscode", {
   VertSplit = { guibg = "none" },
   TabLineSel = { guibg = "none" },
   Pmenu = { guibg = "none" },
+  PmenuSbar = { guibg = "none", guifg = "#5a5a5a" },
+  PmenuSel = { guibg = "none", guifg = "#d7ba7d" },
   FzfLuaBorder = { guibg = "none", guifg = "#5a5a5a" },
   Directory = { guibg = "none" },
   Question = { guibg = "none" },

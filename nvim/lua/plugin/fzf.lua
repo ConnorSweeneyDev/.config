@@ -16,7 +16,7 @@ local ignore_patterns = {
   "csb.hpp",
 }
 fzf.setup({
-  { "hide" },
+  { "borderless" },
   keymap = {
     builtin = {
       ["<A-j>"] = "preview-down",
