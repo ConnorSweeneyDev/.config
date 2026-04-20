@@ -41,7 +41,7 @@ Color_util.initialize("vscode", {
   DapBreakpointCondition = { guibg = "none", guifg = "#ffe88b" },
   DapBreakpointRejected = { guibg = "none", guifg = "#f44747" },
   DapLogPoint = { guibg = "none", guifg = "#a0a0a0" },
-  DapStopped = { guibg = "none", guifg = "#4c4c19" },
+  DapStopped = { guibg = "none", guifg = "#4b5632" },
   GitSignsAdd = { guibg = "none", guifg = "#4b5632" },
   GitSignsChange = { guibg = "none", guifg = "#646464" },
   GitSignsDelete = { guibg = "none", guifg = "#6f1313" },
