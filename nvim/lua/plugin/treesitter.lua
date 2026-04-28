@@ -20,6 +20,7 @@ Treesitter_util.install(require("nvim-treesitter"), {
   toml = {},
   java = {},
   c_sharp = {},
+  razor = {},
   c = {},
   cpp = {},
   hlsl = { "glsl", "vert", "frag", "comp", "geom", "tesc", "tese" },
