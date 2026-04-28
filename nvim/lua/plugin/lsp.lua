@@ -1,6 +1,7 @@
 vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
 Lsp_util.setup({
   clangd = {},
+  omnisharp = {},
   pyright = {},
   lua_ls = {
     settings = {

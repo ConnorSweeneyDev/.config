@@ -5,6 +5,7 @@ Mason_util.install(require("mason-registry"), {
   "clangd",
   "codelldb",
   "clang-format",
+  "omnisharp",
   "pyright",
   "black",
   "lua-language-server",
