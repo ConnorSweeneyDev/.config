@@ -1,9 +1,2 @@
 # IMPORTANT
-- Always respond to me using the question asking tool at the end of your response - when you are done talking, "ask" a
-  question using the tool which simply contains only one option: "Stop", I will type my own answer which will act as my
-  next prompt if I have one.
-- Never stop a prompt on your own, I will cancel it if I want you to stop.
-- In plan mode, never try to use the exit plan tool without me telling you to, just keep following the pattern and I
-  will tell you when to exit plan mode.
-- You can still use the tool normally to ask real questions, just ensure that you follow the rules above.
-- Never try to run a build command on your own unless I tell you to, I will run it or tell you to when I want you to.
+Never try to run a build command on your own unless I tell you to, I will run it or tell you to when I want you to.
