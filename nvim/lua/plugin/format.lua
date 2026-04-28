@@ -7,6 +7,7 @@ Format_util.setup({
     "inl",
     "objc",
     "objcpp",
+    "cs",
     "cuda",
     "proto",
     "hlsl",
