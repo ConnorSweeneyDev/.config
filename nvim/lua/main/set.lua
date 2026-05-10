@@ -1,6 +1,7 @@
 require("vim._core.ui2").enable({ msg = { targets = "msg", msg = { height = 0.2, timeout = 2000 } } })
 vim.g.mapleader = " "
 vim.g.netrw_banner = 0
+vim.opt.mouse = ""
 vim.opt.showtabline = 0
 vim.opt.showmode = false
 vim.opt.shell = "pwsh.exe -NoLogo"
