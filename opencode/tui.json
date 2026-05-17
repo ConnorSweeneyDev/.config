@@ -7,7 +7,6 @@
     "editor_open": "ctrl+g",
     "theme_list": "none",
     "sidebar_toggle": "<leader>alt+b",
-    "username_toggle": "none",
     "status_view": "<leader>alt+s",
     "session_export": "none",
     "session_new": "<leader>alt+n",
