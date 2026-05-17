@@ -24,6 +24,7 @@ Treesitter_util.install(require("nvim-treesitter"), {
   c = {},
   cpp = {},
   hlsl = { "glsl", "vert", "frag", "comp", "geom", "tesc", "tese" },
+  haskell = {},
   cmake = {},
   gitcommit = {},
   gitignore = {},
