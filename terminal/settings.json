@@ -96,10 +96,10 @@
     { "id": "User.ScrollUp12", "command": { "action": "scrollUp", "rowsToScroll": 12 } },
     { "id": "User.ScrollDown12", "command": { "action": "scrollDown", "rowsToScroll": 12 } },
     { "id": "User.OpenCwdInExplorer", "command": { "action": "sendInput", "input": "explorer .\r" } },
-    { "id": "User.CleanTab", "command": { "action": "sendInput", "input": "./script/clean.bat\r" } },
-    { "id": "User.BuildTab", "command": { "action": "sendInput", "input": "./script/build.bat\r" } },
-    { "id": "User.RunTab", "command": { "action": "sendInput", "input": "./script/run.bat\r" } },
-    { "id": "User.DebugTab", "command": { "action": "sendInput", "input": "./script/debug.bat\r" } }
+    { "id": "User.CleanTab", "command": { "action": "sendInput", "input": "./csb/script/clean.bat\r" } },
+    { "id": "User.BuildTab", "command": { "action": "sendInput", "input": "./csb/script/build.bat\r" } },
+    { "id": "User.RunTab", "command": { "action": "sendInput", "input": "./csb/script/run.bat\r" } },
+    { "id": "User.DebugTab", "command": { "action": "sendInput", "input": "./csb/script/debug.bat\r" } }
   ],
 
   "themes": [
