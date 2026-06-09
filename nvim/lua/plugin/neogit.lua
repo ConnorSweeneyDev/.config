@@ -37,8 +37,8 @@ require("neogit").setup({
   },
 })
 vim.keymap.set("n", "<LEADER>gs", function() Neogit_util.open_status_menu() end, { desc = "Open Neogit" })
-vim.keymap.set("n", "<LEADER>gr", "<CMD>!git restore %<CR><CR>", { desc = "Git restore the current file" })
-vim.keymap.set("n", "<LEADER>gR", "<CMD>!git restore .<CR><CR>", { desc = "Git restore the current directory" })
+vim.keymap.set("n", "<LEADER>gr", "<CMD>!git restore %<CR>", { desc = "Git restore the current file" })
+vim.keymap.set("n", "<LEADER>gR", "<CMD>!git restore .<CR>", { desc = "Git restore the current directory" })
 vim.keymap.set(
   "n",
   "<C-g>",
