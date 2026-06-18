@@ -10,6 +10,7 @@ local ignore_patterns = {
   "*.jar",
   "*.sln",
   "*.vcxproj",
+  "*.ttf",
   "*.png",
   "*.aseprite",
   "*.ase",
