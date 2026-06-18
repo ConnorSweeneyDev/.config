@@ -10,6 +10,7 @@ function d
 }
 
 function n { nvim . }
+function nn { nvim . -u NORC }
 function a { claude }
 function v
 {
