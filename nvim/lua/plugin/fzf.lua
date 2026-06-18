@@ -11,6 +11,8 @@ local ignore_patterns = {
   "*.sln",
   "*.vcxproj",
   "*.png",
+  "*.aseprite",
+  "*.ase",
   "*.wav",
   "*.opus",
   "*.jpg",
