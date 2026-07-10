@@ -11,6 +11,7 @@ function d
 
 function n { nvim . }
 function nn { nvim . -u NORC }
+function o { opencode . --port }
 function v
 {
   $solution = Get-ChildItem -Path (Get-Location) -Filter *.sln -File -Recurse -Depth 1 | Select-Object -First 1
