@@ -1,6 +1,13 @@
 vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
 Lsp_util.setup({
-  clangd = {},
+  clangd = {
+    cmd = {
+      "clangd",
+      "--background-index",
+      "--clang-tidy",
+      "--j=" .. vim.fn.max({ 1, vim.fn.system("[Environment]::ProcessorCount") - 1 }),
+    },
+  },
   omnisharp = {},
   pyright = {},
   lua_ls = {
@@ -19,7 +26,7 @@ Lsp_util.setup({
 })
 vim.lsp.inlay_hint.enable(false)
 vim.diagnostic.config({
-  update_in_insert = true,
+  update_in_insert = false,
   severity_sort = true,
   virtual_text = false,
   virtual_lines = false,
