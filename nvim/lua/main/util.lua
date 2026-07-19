@@ -57,6 +57,10 @@ General_util.get_input = function()
     return nil
   end
 end
+General_util.get_processors = function()
+  local processors = vim.fn.system("[Environment]::ProcessorCount")
+  return vim.fn.max({ 1, processors })
+end
 
 ----------------------------------------------------------------------------------------------------
 

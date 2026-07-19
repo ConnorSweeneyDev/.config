@@ -5,7 +5,7 @@ Lsp_util.setup({
       "clangd",
       "--background-index",
       "--clang-tidy",
-      "--j=" .. vim.fn.max({ 1, vim.fn.system("[Environment]::ProcessorCount") - 1 }),
+      "--j=" .. General_util.get_processors(),
     },
   },
   omnisharp = {},
