@@ -150,7 +150,6 @@ The following plugins have some extra things you need to know:
   to recompile it.
 - Mason &rightarrow; After following the pattern, you should see it downloading all the dependencies specified in the
   mason file - view all the available downloads by running `:Mason`.
-- Copilot &rightarrow; After following the pattern, run `:Copilot setup` and follow the instructions.
 
 > [!TIP]
 > All keybinds and settings can be edited at `lua\main\map.lua`, `lua\main\set.lua` or the respective
