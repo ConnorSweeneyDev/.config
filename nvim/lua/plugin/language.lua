@@ -1,3 +1,4 @@
+vim.filetype.add({ extension = { rcss = "css", rml = "html" } })
 vim.keymap.set("n", "<LEADER><LEADER>", function() Lua_util.source() end, { desc = "Source current lua file" })
 vim.keymap.set(
   "n",
