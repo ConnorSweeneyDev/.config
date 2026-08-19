@@ -365,6 +365,14 @@ Treesitter_util.install = function(treesitter, parsers)
       vim.list_extend(all_filetypes, filetypes)
     end
   end
+  vim.api.nvim_create_autocmd("BufReadPost", {
+    callback = function()
+      if vim.bo.filetype == "" then
+        local ext = vim.fn.expand("%:e")
+        if ext ~= "" then vim.bo.filetype = ext end
+      end
+    end,
+  })
   vim.api.nvim_create_autocmd("FileType", { pattern = all_filetypes, callback = function() vim.treesitter.start() end })
 end
 Treesitter_util.changed = function(event)
