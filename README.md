@@ -199,6 +199,7 @@ Using Tridactyl, press `:` and type the following commands:
 - `set modeindicatorshowkeys true`.
 - `set modeindicatormodes
   {"normal":"true","insert":"true","input":"true","ignore":"false","ex":"true","hint":"true","visual":"true"}`.
+- If you want to reverse the order of J and K: `bind --mode=normal J tabnext` && `bind --mode=normal K tabprev`.
 
 > [!TIP]
 > You can go [here](https://github.com/tridactyl/tridactyl?tab=readme-ov-file#highlighted-features) to view all the most
