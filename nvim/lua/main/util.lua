@@ -357,15 +357,20 @@ end
 
 Treesitter_util = {}
 Treesitter_util.install = function(treesitter, parsers)
-  local all_filetypes = vim.tbl_keys(parsers)
-  treesitter.install(all_filetypes)
-  for parser, filetypes in pairs(parsers) do
-    if next(filetypes) ~= nil then
-      vim.treesitter.language.register(parser, filetypes)
-      vim.list_extend(all_filetypes, filetypes)
-    end
+  local fts = {}
+  local langs = vim.tbl_keys(parsers)
+  treesitter.install(langs)
+  for lang, extra in pairs(parsers) do
+    if next(extra) ~= nil then vim.treesitter.language.register(lang, extra) end
+    vim.list_extend(fts, vim.treesitter.language.get_filetypes(lang))
   end
-  vim.api.nvim_create_autocmd("FileType", { pattern = all_filetypes, callback = function() vim.treesitter.start() end })
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = fts,
+    callback = function(args)
+      local lang = vim.treesitter.language.get_lang(args.match) or args.match
+      pcall(vim.treesitter.start, args.buf, lang)
+    end,
+  })
 end
 Treesitter_util.changed = function(event)
   if event.data.spec.name == "nvim-treesitter" and event.data.kind == "update" then
